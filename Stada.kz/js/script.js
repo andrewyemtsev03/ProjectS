@@ -66,11 +66,11 @@ const translations = {
     product_enterogermina_page_title: 'Энтерожермина',
     product_enterogermina_page_desc: 'Энтерожермина — пробиотик для лечения и профилактики дисбактериоза. Содержит споры Bacillus clausii, которые помогают восстановить кишечную микрофлору.',
     product_magneb6kids_page_title: 'Магне B6 Кидс',
-    product_magneb6kids_page_desc: 'Магне B6 Кидс содержит магний и витамин B6 и помогает поддерживать спокойствие и хорошее настроение у детей.',
+    product_magneb6kids_page_desc: 'Магне B6 Кидс — жевательные таблетки с магнием и витамином B6 для детей с 4 лет. Компоненты помогают поддерживать нормальную работу нервной системы и энергетический обмен.',
     product_sinulan_duo_page_title: 'Синулан Дуо',
     product_sinulan_duo_page_desc: 'Синулан Дуо — комплекс растительных экстрактов для облегчения дыхания при простуде и поддержания здоровья дыхательных путей.',
     product_snup_page_title: 'Снуп',
-    product_snup_page_desc: 'Снуп — дозированный назальный спрей для облегчения заложенности носа, содержащий ксилометазолин и морскую воду.',
+    product_snup_page_desc: 'Снуп — дозированный назальный спрей с ксилометазолином и морской водой для облегчения носового дыхания при заложенности носа.',
     product_edarbi_klo_page_title: 'Эдарби Кло',
     product_edarbi_klo_page_desc: 'Эдарби Кло — комбинированный препарат на основе азилсартана медоксомила и хлорталидона для снижения артериального давления.',
         product_back: 'Назад к продуктам',
@@ -79,6 +79,44 @@ const translations = {
     product_enterogermina_benefit2: 'Содержит споры Bacillus clausii, устойчивые к влиянию антибиотиков',
     product_enterogermina_benefit3: 'Удобная жидкая форма — подходит детям и взрослым',
     product_enterogermina_benefit4: 'Подходит для лечения и профилактики дисбактериоза',
+    product_enterogermina_kicker: 'Пробиотик для микрофлоры',
+    product_enterogermina_badge_spores: 'Споры Bacillus clausii',
+    product_enterogermina_badge_pack: '10 флаконов',
+    product_enterogermina_badge_liquid: 'Жидкая форма',
+    product_enterogermina_metric_spores: 'споры Bacillus clausii',
+    product_enterogermina_metric_pack: 'флаконов в упаковке',
+    product_enterogermina_metric_format: 'готовая жидкая форма',
+    product_enterogermina_overview_label: 'Поддержка микрофлоры',
+    product_enterogermina_overview_heading: 'Формат для восстановления баланса кишечной микрофлоры',
+    product_enterogermina_overview_intro: 'Энтерожермина помогает восполнить полезные бактерии при нарушении баланса кишечной микрофлоры и после воздействия неблагоприятных факторов.',
+    product_enterogermina_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_card_bacillus_text: 'Пробиотические споры помогают поддерживать нормальный состав кишечной микрофлоры.',
+    product_enterogermina_card_spores_title: 'Споровая форма',
+    product_enterogermina_card_spores_text: 'Споры устойчивы к кислой среде и помогают доставить Bacillus clausii в кишечник.',
+    product_enterogermina_card_pack_title: '10 флаконов',
+    product_enterogermina_card_pack_text: 'Упаковка рассчитана на удобный курсовой прием согласно инструкции.',
+    product_enterogermina_card_format_title: '5 мл',
+    product_enterogermina_card_format_text: 'Флакон легко открыть и принять без дополнительных приготовлений.',
+    product_enterogermina_formula_label: 'Формула',
+    product_enterogermina_formula_heading: 'В центре — Bacillus clausii и удобная жидкая форма',
+    product_enterogermina_formula_intro: 'Компоненты собраны вокруг упаковки, чтобы сразу показать состав, устойчивость спор и удобство приема.',
+    product_enterogermina_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_formula_bacillus_text: 'Пробиотические споры помогают поддерживать нормальную кишечную микрофлору.',
+    product_enterogermina_formula_spores_title: 'Споровая форма',
+    product_enterogermina_formula_spores_text: 'Форма спор помогает бактериям сохранять стабильность до попадания в кишечник.',
+    product_enterogermina_formula_pack_title: 'Готовая суспензия',
+    product_enterogermina_formula_pack_text: 'Жидкая форма во флаконе: удобно принимать без предварительного приготовления.',
+    product_enterogermina_usage_label: 'Когда актуально',
+    product_enterogermina_usage_heading: 'Для поддержки кишечной микрофлоры в повседневной заботе',
+    product_enterogermina_usage_microflora_title: 'При нарушении баланса',
+    product_enterogermina_usage_microflora_text: 'Подходит для восстановления микрофлоры при дисбактериозе согласно инструкции.',
+    product_enterogermina_usage_antibiotic_title: 'После антибиотиков',
+    product_enterogermina_usage_antibiotic_text: 'Может применяться для поддержки микрофлоры во время или после антибактериальной терапии согласно инструкции.',
+    product_enterogermina_usage_family_title: 'Для семьи',
+    product_enterogermina_usage_family_text: 'Жидкий формат подходит детям и взрослым при соблюдении рекомендаций по применению.',
+    product_enterogermina_note_title: 'Важно помнить',
+    product_enterogermina_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно для детей.',
+    product_enterogermina_buy_intro: 'Ищите Энтерожермину у аптечных партнеров STADA в Казахстане.',
     // Career page translations (added)
     career_heading: 'Карьера в STADA',
     career_par1: 'Работать в STADA — это уникальное путешествие. Мы предлагаем разнообразные и увлекательные роли: от стартовых должностей для выпускников до экспертных позиций. Наши вакансии охватывают широкий спектр навыков и не ограничиваются фармацевтической отраслью — вы также найдёте возможности в области цепочки поставок, маркетинга, финансов, управления проектами и многого другого.',
@@ -136,20 +174,129 @@ const translations = {
     product_coldrex_page_title: 'Колдрекс',
     product_coldrex_page_desc: 'Колдрекс — комбинированный препарат для облегчения симптомов простуды и гриппа.',
     // Coldrex benefits
-    product_coldrex_benefit1: 'Парацетамол снижает боль и температуру',
-    product_coldrex_benefit2: 'Фенилэфрин снимает заложенность носа и синусов',
-    product_coldrex_benefit3: 'Кофеин действует как мягкий стимулятор для бодрости',
-    product_coldrex_benefit4: 'Терпингидрат способствует выведению мокроты',
-    product_coldrex_benefit5: 'Витамин C восполняет потерянный при простуде запас',
-    // Magne B6 Kids benefits
-    product_magneb6kids_benefit1: 'Сочетание магния и витамина B6 снижает стресс сильнее, чем магний отдельно',
-    product_magneb6kids_benefit2: 'Улучшает настроение и уменьшает тревожность и депрессию',
-    product_magneb6kids_benefit3: 'Витамин B6 помогает синтезу нейромедиаторов, снижая раздражительность и усталость',
-    product_magneb6kids_benefit4: 'Поддерживает нормальное функционирование нервной системы',
+    product_coldrex_benefit1: 'Парацетамол помогает снижать повышенную температуру и облегчать боль',
+    product_coldrex_benefit2: 'Фенилэфрин помогает уменьшать заложенность носа и синусов',
+    product_coldrex_benefit3: 'Витамин C дополняет формулу и поддерживает организм в сезон простуд',
+    product_coldrex_benefit4: 'Горячий формат помогает сделать прием привычным и комфортным',
+    product_coldrex_benefit5: 'Комплексное действие направлено на основные симптомы простуды и гриппа',
+    product_coldrex_benefit6: 'Применяется согласно инструкции с учетом возраста и противопоказаний',
+    product_coldrex_overview_label: 'О продукте',
+    product_coldrex_overview_heading: 'Комплексная помощь при симптомах простуды',
+    product_coldrex_overview_intro: 'Колдрекс ХотРем объединяет жаропонижающий, противозаложенный и поддерживающий компоненты в формате горячего напитка, чтобы помогать при типичных симптомах простуды и гриппа.',
+    product_coldrex_card_format_title: '10 пакетиков',
+    product_coldrex_card_format_text: 'Упаковка рассчитана на несколько приемов по схеме, указанной в инструкции.',
+    product_coldrex_card_action_title: 'Тройной фокус',
+    product_coldrex_card_action_text: 'Формула сфокусирована на температуре, боли, заложенности носа и общем самочувствии.',
+    product_coldrex_card_vitamin_title: 'Витамин C',
+    product_coldrex_card_vitamin_text: 'Аскорбиновая кислота дополняет формулу в сезон повышенной нагрузки на организм.',
+    product_coldrex_card_pack_title: 'Порционный формат',
+    product_coldrex_card_pack_text: 'Каждый пакетик удобно использовать для приготовления одной порции горячего напитка.',
+    product_coldrex_formula_label: 'Формула',
+    product_coldrex_formula_heading: 'Три компонента комплексного действия',
+    product_coldrex_formula_intro: 'Формула Колдрекс ХотРем объединяет компоненты для облегчения основных симптомов простуды и поддержки организма.',
+    product_coldrex_formula_paracetamol_title: 'Парацетамол',
+    product_coldrex_formula_paracetamol_text: 'Помогает снижать повышенную температуру и облегчать головную боль, боль в горле и ломоту.',
+    product_coldrex_formula_phenylephrine_title: 'Фенилэфрин',
+    product_coldrex_formula_phenylephrine_text: 'Помогает уменьшать заложенность носа и синусов, облегчая дыхание.',
+    product_coldrex_formula_vitamin_c_title: 'Витамин C',
+    product_coldrex_formula_vitamin_c_text: 'Дополняет формулу и поддерживает организм в сезон простуд.',
+    product_coldrex_usage_label: 'Когда особенно актуально',
+    product_coldrex_usage_heading: 'При температуре, боли и заложенности',
+    product_coldrex_usage_fever_title: 'Температура и ломота',
+    product_coldrex_usage_fever_text: 'Актуален, когда простуда сопровождается повышенной температурой, головной болью и ломотой.',
+    product_coldrex_usage_congestion_title: 'Заложенность носа',
+    product_coldrex_usage_congestion_text: 'Подходит при симптомах заложенности носа и синусов, когда дыхание становится менее свободным.',
+    product_coldrex_usage_season_title: 'Сезон простуд',
+    product_coldrex_usage_season_text: 'Уместен как симптоматическая поддержка в периоды простуды и гриппа согласно инструкции.',
+    product_coldrex_note_title: 'Ответственное применение',
+    product_coldrex_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно при хронических заболеваниях или приеме других средств.',
+    // Magne B6 Kids
+    product_magneb6kids_benefit1: 'Магний и витамин B6 помогают поддерживать нормальную работу нервной системы',
+    product_magneb6kids_benefit2: 'Компоненты участвуют в энергетическом обмене и помогают снижать утомляемость',
+    product_magneb6kids_benefit3: 'Витамин B6 дополняет действие магния и поддерживает его усвоение',
+    product_magneb6kids_benefit4: 'Формула помогает поддерживать нормальную психологическую функцию',
+    product_magneb6kids_benefit5: 'Жевательный формат удобен для ежедневного приема детьми согласно инструкции',
+    product_magneb6kids_benefit6: 'Подходит детям с 4 лет; дозировку выбирают с учетом возраста',
+    product_magneb6kids_kicker: 'Магний + витамин B6',
+    product_magneb6kids_badge_age: 'Для детей 4+',
+    product_magneb6kids_badge_chewable: 'Жевательные таблетки',
+    product_magneb6kids_badge_formula: 'Mg + B6',
+    product_magneb6kids_metric_magnesium: 'мг магния',
+    product_magneb6kids_metric_vitamin: 'витамин B6',
+    product_magneb6kids_metric_age: 'для детей',
+    product_magneb6kids_overview_label: 'О продукте',
+    product_magneb6kids_overview_heading: 'Поддержка нервной системы в детском ритме',
+    product_magneb6kids_overview_intro: 'Магне B6 Кидс объединяет магний и витамин B6 в жевательном формате, который помогает встроить нутриентную поддержку в ежедневный режим ребенка.',
+    product_magneb6kids_card_magnesium_title: '70 мг магния',
+    product_magneb6kids_card_magnesium_text: 'Магний важен для нормальной работы нервной системы и мышц, а также для ежедневного обмена веществ.',
+    product_magneb6kids_card_b6_title: 'Витамин B6',
+    product_magneb6kids_card_b6_text: 'Витамин B6 участвует в энергетическом обмене и помогает снижать утомляемость.',
+    product_magneb6kids_card_format_title: '30 таблеток',
+    product_magneb6kids_card_format_text: 'Жевательная форма помогает сделать прием понятным и привычным для ребенка.',
+    product_magneb6kids_card_age_title: 'С 4 лет',
+    product_magneb6kids_card_age_text: 'Формат предназначен для детей старше 4 лет; режим приема подбирают по инструкции.',
+    product_magneb6kids_formula_label: 'Формула',
+    product_magneb6kids_formula_heading: 'Три элемента спокойной поддержки',
+    product_magneb6kids_formula_intro: 'Формула строится вокруг магния, витамина B6 и детского жевательного формата, чтобы поддержка была понятной и регулярной.',
+    product_magneb6kids_formula_magnesium_title: 'Магний',
+    product_magneb6kids_formula_magnesium_text: 'Помогает поддерживать нормальную работу нервной системы и мышц.',
+    product_magneb6kids_formula_b6_title: 'Витамин B6',
+    product_magneb6kids_formula_b6_text: 'Дополняет магний и участвует в процессах энергетического обмена.',
+    product_magneb6kids_formula_format_title: 'Детский формат',
+    product_magneb6kids_formula_format_text: 'Жевательные таблетки удобно вписываются в ежедневный режим согласно инструкции.',
+    product_magneb6kids_usage_label: 'Когда особенно актуально',
+    product_magneb6kids_usage_heading: 'В период учебы, роста и активного ритма',
+    product_magneb6kids_usage_school_title: 'Учебная нагрузка',
+    product_magneb6kids_usage_school_text: 'Подходит как нутриентная поддержка в периоды, когда ребенку важно сохранять устойчивый ежедневный ритм.',
+    product_magneb6kids_usage_activity_title: 'Активные дни',
+    product_magneb6kids_usage_activity_text: 'Магний и витамин B6 помогают поддерживать энергетический обмен при насыщенном графике.',
+    product_magneb6kids_usage_diet_title: 'Особенности рациона',
+    product_magneb6kids_usage_diet_text: 'Может быть уместен, когда рациону нужна дополнительная поддержка магнием и витамином B6.',
+    product_magneb6kids_note_title: 'Ответственный прием',
+    product_magneb6kids_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно если у ребенка есть хронические заболевания или он принимает другие средства.',
+    product_magneb6kids_buy_intro: 'Ищите Магне B6 Кидс у аптечных партнеров STADA в Казахстане.',
     // Snup benefits
-    product_snup_benefit1: 'Ксилометазолин быстро уменьшает отёк слизистой и снимает заложенность',
-    product_snup_benefit2: 'Начинает действовать уже через 2 минуты',
-    product_snup_benefit3: 'Обеспечивает облегчение до 10 часов',
+    product_snup_benefit1: 'Ксилометазолин помогает уменьшать отек слизистой оболочки носа и облегчать носовое дыхание',
+    product_snup_benefit2: 'Действие обычно начинается в течение 5–10 минут после применения',
+    product_snup_benefit3: 'Деконгестантный эффект в среднем сохраняется 6–8 часов после однократного применения',
+    product_snup_benefit4: 'Морская вода поддерживает нормальное физиологическое состояние слизистой оболочки носа',
+    product_snup_benefit5: 'Формат 0,1% предназначен для взрослых и детей старше 6 лет',
+    product_snup_benefit6: 'Курс применения по инструкции не должен превышать 5–7 дней',
+    product_snup_kicker: 'Назальный спрей',
+    product_snup_badge_spray: 'Дозированный спрей',
+    product_snup_badge_seawater: 'Морская вода',
+    product_snup_badge_age: 'С 6 лет для 0,1%',
+    product_snup_metric_minutes: 'минут до начала действия',
+    product_snup_metric_hours: 'часов эффекта в среднем',
+    product_snup_metric_doses: 'доз во флаконе',
+    product_snup_overview_label: 'О продукте',
+    product_snup_overview_heading: 'Дыхание свободнее при заложенности носа',
+    product_snup_overview_intro: 'Снуп сочетает местное сосудосуживающее действие ксилометазолина и морскую воду, чтобы помогать уменьшать отек слизистой и облегчать носовое дыхание при рините.',
+    product_snup_card_strength_title: '0,1% / 90 мкг',
+    product_snup_card_strength_text: 'Формат на упаковке предназначен для взрослых и детей старше 6 лет согласно инструкции.',
+    product_snup_card_action_title: 'Ксилометазолин',
+    product_snup_card_action_text: 'Деконгестант помогает уменьшать отек и гиперемию слизистой оболочки носа.',
+    product_snup_card_seawater_title: 'Морская вода',
+    product_snup_card_seawater_text: 'Компонент поддерживает физиологическое состояние слизистой и работу мерцательного эпителия.',
+    product_snup_card_course_title: '5–7 дней',
+    product_snup_card_course_text: 'Рекомендуемая продолжительность курса не должна превышать 5–7 дней.',
+    product_snup_formula_label: 'Формула',
+    product_snup_formula_heading: 'Три элемента одной системы',
+    product_snup_formula_intro: 'Ксилометазолин, морская вода и дозированный формат работают вместе: помогают облегчать дыхание, поддерживать слизистую и делать применение понятным.',
+    product_snup_formula_active_text: 'Помогает сужать сосуды слизистой оболочки носа, уменьшая отек и освобождая носовое дыхание.',
+    product_snup_formula_seawater_text: 'Дополняет действие формулы поддержкой физиологического состояния слизистой оболочки носа.',
+    product_snup_formula_format_text: 'Дозированный спрей соединяет действие компонентов в привычном местном применении по инструкции.',
+    product_snup_usage_label: 'Когда особенно актуально',
+    product_snup_usage_heading: 'При насморке, аллергии и заложенности',
+    product_snup_usage_cold_title: 'Ринит при ОРЗ',
+    product_snup_usage_cold_text: 'Подходит для облегчения носового дыхания при рините на фоне острых респираторных заболеваний.',
+    product_snup_usage_allergy_title: 'Аллергический ринит',
+    product_snup_usage_allergy_text: 'Может применяться при аллергическом рините и поллинозе согласно инструкции.',
+    product_snup_usage_sinus_title: 'Околоносовые пазухи',
+    product_snup_usage_sinus_text: 'Используется для улучшения оттока секрета при воспалении околоносовых пазух.',
+    product_snup_note_title: 'Важная информация',
+    product_snup_note_text: 'Перед применением ознакомьтесь с инструкцией. Не применяйте чаще 3 раз в день и дольше 5–7 дней; для детей выбирайте концентрацию по возрасту.',
+    product_snup_buy_intro: 'Ищите Снуп у аптечных партнеров STADA в Казахстане.',
     // Sinulan Duo benefits
     product_sinulan_duo_benefit1: 'Комбинация растительных экстрактов поддерживает верхние и нижние дыхательные пути',
     product_sinulan_duo_benefit2: 'Люцерна способствует иммунной защите и здоровью дыхательных путей',
@@ -157,6 +304,44 @@ const translations = {
     product_sinulan_duo_benefit4: 'Вербена укрепляет дыхательную систему и природную защиту',
     product_sinulan_duo_benefit5: 'Корень желтолистника улучшает общее состояние организма',
     product_sinulan_duo_benefit6: 'Подходит для взрослых и детей с 6 лет',
+    product_sinulan_duo_kicker: 'Растительный комплекс для дыхания',
+    product_sinulan_duo_badge_plant: 'Растительные экстракты',
+    product_sinulan_duo_badge_breathing: 'Свободное дыхание',
+    product_sinulan_duo_badge_age: 'Для детей с 6 лет',
+    product_sinulan_duo_metric_complex: 'растительный комплекс',
+    product_sinulan_duo_metric_tablets: 'таблеток в упаковке',
+    product_sinulan_duo_metric_age: 'детям и взрослым',
+    product_sinulan_duo_overview_label: 'Дыхательные пути',
+    product_sinulan_duo_overview_heading: 'Поддержка свободного дыхания в растительном формате',
+    product_sinulan_duo_overview_intro: 'Синулан Дуо сочетает растительные компоненты для поддержки дыхательных путей и естественной защиты организма.',
+    product_sinulan_duo_card_plant_title: 'Растительный комплекс',
+    product_sinulan_duo_card_plant_text: 'Комбинация экстрактов помогает поддерживать верхние и нижние дыхательные пути.',
+    product_sinulan_duo_card_breathing_title: 'Свободное дыхание',
+    product_sinulan_duo_card_breathing_text: 'Формула направлена на поддержку комфортного дыхания в сезон простуды.',
+    product_sinulan_duo_card_format_title: '15 таблеток',
+    product_sinulan_duo_card_format_text: 'Удобный таблетированный формат для приема согласно инструкции.',
+    product_sinulan_duo_card_age_title: 'С 6 лет',
+    product_sinulan_duo_card_age_text: 'Подходит взрослым и детям с 6 лет при соблюдении рекомендаций по применению.',
+    product_sinulan_duo_formula_label: 'Формула',
+    product_sinulan_duo_formula_heading: 'В центре — растительный комплекс и поддержка дыхания',
+    product_sinulan_duo_formula_intro: 'Карточки показывают ключевые свойства продукта: растительную основу, дыхательный фокус и применение с 6 лет.',
+    product_sinulan_duo_formula_plant_title: 'Растительные экстракты',
+    product_sinulan_duo_formula_plant_text: 'Комплекс компонентов помогает поддерживать здоровье дыхательных путей.',
+    product_sinulan_duo_formula_breathing_title: 'Свободное дыхание',
+    product_sinulan_duo_formula_breathing_text: 'Подходит для поддержки дыхания при простуде и сезонном дискомфорте.',
+    product_sinulan_duo_formula_format_title: 'С 6 лет',
+    product_sinulan_duo_formula_format_text: 'Подходит детям с 6 лет и взрослым при соблюдении рекомендаций по применению.',
+    product_sinulan_duo_usage_label: 'Когда актуально',
+    product_sinulan_duo_usage_heading: 'Для поддержки дыхательных путей в сезон простуды',
+    product_sinulan_duo_usage_cold_title: 'При простуде',
+    product_sinulan_duo_usage_cold_text: 'Может использоваться для поддержки дыхания и общего самочувствия согласно инструкции.',
+    product_sinulan_duo_usage_sinus_title: 'При заложенности',
+    product_sinulan_duo_usage_sinus_text: 'Растительная формула помогает поддерживать комфорт дыхательных путей.',
+    product_sinulan_duo_usage_family_title: 'Для семьи',
+    product_sinulan_duo_usage_family_text: 'Подходит взрослым и детям с 6 лет при соблюдении рекомендаций по применению.',
+    product_sinulan_duo_note_title: 'Важно помнить',
+    product_sinulan_duo_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом при наличии хронических заболеваний.',
+    product_sinulan_duo_buy_intro: 'Ищите Синулан Дуо у аптечных партнеров STADA в Казахстане.',
     // Vitrum Immunaktiv
     product_vitrum_immunaktiv_name: 'Витрум Иммунактив',
     product_vitrum_immunaktiv_page_title: 'Витрум Иммунактив',
@@ -205,24 +390,50 @@ const translations = {
     product_vitrum_immunaktiv_note_title: 'Ответственный прием',
     product_vitrum_immunaktiv_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно при хронических заболеваниях или одновременном приеме других средств.',
     product_vitrum_immunaktiv_buy_intro: 'Ищите Витрум Иммунактив у аптечных партнеров STADA в Казахстане.',
-    product_vitrum_immunaktiv_photo_label: 'В фокусе продукта',
-    product_vitrum_immunaktiv_photo_heading: 'Упаковка, формула и иммунная поддержка',
-    product_vitrum_immunaktiv_photo_intro: 'Витрум Иммунактив представлен как витаминно-минеральный комплекс для взрослых: 13 витаминов, 8 минералов и β-глюканы в курсовом формате.',
-    product_vitrum_immunaktiv_photo_quality_title: 'Официальная упаковка',
-    product_vitrum_immunaktiv_photo_quality_text: 'Флакон и коробка таблеток помогают быстрее считать формат продукта и его основные акценты.',
-    product_vitrum_immunaktiv_photo_daily_title: 'Поддержание ресурсов',
-    product_vitrum_immunaktiv_photo_daily_text: 'Акцент на ресурсах организма связывает комплекс с периодами сезонной нагрузки и восстановления.',
-    product_vitrum_immunaktiv_photo_access_title: 'β-глюканы в формуле',
-    product_vitrum_immunaktiv_photo_access_text: 'Компонент дополняет витаминно-минеральную основу для комплексной поддержки иммунитета.',
-    product_vitrum_immunaktiv_tab_vitamins: '13 витаминов',
-    product_vitrum_immunaktiv_tab_minerals: '8 минералов',
-    product_vitrum_immunaktiv_tab_beta: 'β-глюкан',
     // Edarbi Klo benefits
     product_edarbi_klo_benefit1: 'Комбинация азилсартана и хлорталидона для эффективного контроля гипертонии',
     product_edarbi_klo_benefit2: 'Азилсартан блокирует сосудосуживающее действие ангиотензина II и снижает задержку натрия',
     product_edarbi_klo_benefit3: 'Хлорталидон вызывает диурез, увеличивая выведение натрия и хлорида',
     product_edarbi_klo_benefit4: 'Снижают кровяное давление за счет снижения периферического сопротивления по взаимодополняющим механизмам',
-    product_edarbi_klo_benefit5: 'Рекомендуется пациентам, которым недостаточно одного препарата для контроля давления'
+    product_edarbi_klo_benefit5: 'Рекомендуется пациентам, которым недостаточно одного препарата для контроля давления',
+    product_edarbi_klo_kicker: 'Комбинированный контроль давления',
+    product_edarbi_klo_badge_combo: 'Азилсартан + хлорталидон',
+    product_edarbi_klo_badge_pressure: 'Контроль АД',
+    product_edarbi_klo_badge_pack: '28 таблеток',
+    product_edarbi_klo_metric_dose: 'мг активных компонентов',
+    product_edarbi_klo_metric_pack: 'таблеток в упаковке',
+    product_edarbi_klo_metric_mechanism: 'механизма действия',
+    product_edarbi_klo_overview_label: 'Артериальное давление',
+    product_edarbi_klo_overview_heading: 'Комбинация для контроля гипертонии',
+    product_edarbi_klo_overview_intro: 'Эдарби Кло объединяет азилсартан и хлорталидон для контроля артериального давления по назначению врача.',
+    product_edarbi_klo_card_azilsartan_title: 'Азилсартан',
+    product_edarbi_klo_card_azilsartan_text: 'Помогает блокировать действие ангиотензина II, связанного с сосудистым тонусом.',
+    product_edarbi_klo_card_chlorthalidone_title: 'Хлорталидон',
+    product_edarbi_klo_card_chlorthalidone_text: 'Диуретический компонент способствует выведению натрия и жидкости согласно механизму действия.',
+    product_edarbi_klo_card_pack_title: '28 таблеток',
+    product_edarbi_klo_card_pack_text: 'Формат упаковки для регулярного приема по назначенной врачом схеме.',
+    product_edarbi_klo_card_control_title: 'Контроль давления',
+    product_edarbi_klo_card_control_text: 'Компоненты дополняют друг друга в терапии артериальной гипертензии.',
+    product_edarbi_klo_formula_label: 'Формула',
+    product_edarbi_klo_formula_heading: 'В центре — два активных компонента',
+    product_edarbi_klo_formula_intro: 'Линии показывают, как азилсартан, хлорталидон и общий контроль давления собираются вокруг упаковки.',
+    product_edarbi_klo_formula_azilsartan_title: 'Азилсартан',
+    product_edarbi_klo_formula_azilsartan_text: 'Компонент направлен на блокирование рецепторов ангиотензина II.',
+    product_edarbi_klo_formula_chlorthalidone_title: 'Хлорталидон',
+    product_edarbi_klo_formula_chlorthalidone_text: 'Диуретический компонент помогает уменьшать объем жидкости и нагрузку на сосуды.',
+    product_edarbi_klo_formula_control_title: 'Контроль АД',
+    product_edarbi_klo_formula_control_text: 'Два механизма действия дополняют друг друга в контроле повышенного давления.',
+    product_edarbi_klo_usage_label: 'Когда назначают',
+    product_edarbi_klo_usage_heading: 'Для пациентов, которым нужен комбинированный контроль давления',
+    product_edarbi_klo_usage_pressure_title: 'Артериальная гипертензия',
+    product_edarbi_klo_usage_pressure_text: 'Используется для снижения повышенного артериального давления по назначению врача.',
+    product_edarbi_klo_usage_combo_title: 'Когда одного средства недостаточно',
+    product_edarbi_klo_usage_combo_text: 'Комбинация компонентов может быть назначена, если монотерапия не обеспечивает нужный контроль.',
+    product_edarbi_klo_usage_routine_title: 'Ежедневная схема',
+    product_edarbi_klo_usage_routine_text: 'Принимается в режиме, который определяет врач; важно соблюдать рекомендации и контроль давления.',
+    product_edarbi_klo_note_title: 'Важно',
+    product_edarbi_klo_note_text: 'Эдарби Кло применяют по назначению врача. Перед применением ознакомьтесь с инструкцией и не изменяйте схему терапии самостоятельно.',
+    product_edarbi_klo_buy_intro: 'Ищите Эдарби Кло у аптечных партнеров STADA в Казахстане.'
   },
   kz: {
     nav_about: 'Компания туралы',
@@ -284,11 +495,11 @@ const translations = {
     product_enterogermina_page_title: 'Энтерожермина',
     product_enterogermina_page_desc: 'Энтерожермина — пробиотик, дисбактериозды емдеу және алдын алу үшін қолданылады. Bacillus clausii спораларын қамтиды, ішек микрофлорасын қалпына келтіруге көмектеседі.',
     product_magneb6kids_page_title: 'Магне B6 Кидс',
-    product_magneb6kids_page_desc: 'Магне B6 Кидс құрамында магний мен B6 дәрумені бар, балалардың сабырлы және жақсы көңіл-күйін қолдайды.',
+    product_magneb6kids_page_desc: 'Магне B6 Кидс — 4 жастан бастап балаларға арналған магний мен B6 дәрумені бар шайнайтын таблеткалар. Компоненттер жүйке жүйесінің қалыпты жұмысын және энергия алмасуын қолдауға көмектеседі.',
     product_sinulan_duo_page_title: 'Синулан Дуо',
     product_sinulan_duo_page_desc: 'Синулан Дуо — суық тию кезінде тыныс алуды жеңілдетуге және тыныс алу жолдарының денсаулығын қолдауға арналған өсімдік сығындыларының кешені.',
     product_snup_page_title: 'Снуп',
-    product_snup_page_desc: 'Снуп — мұрын бітелуін жеңілдететін дозаланған мұрын спрейі, құрамында ксилометазолин мен теңіз суы бар.',
+    product_snup_page_desc: 'Снуп — мұрын бітелгенде тыныс алуды жеңілдетуге арналған ксилометазолин мен теңіз суы бар дозаланған мұрын спрейі.',
     product_edarbi_klo_page_title: 'Эдарби Кло',
     product_edarbi_klo_page_desc: 'Эдарби Кло — азилсартан медоксомил калийі мен хлорталидон негізіндегі артериялық қысымды төмендететін біріктірілген препарат.',
         product_back: 'Өнімдерге оралу',
@@ -297,6 +508,44 @@ const translations = {
     product_enterogermina_benefit2: 'Антибиотиктерге төзімді Bacillus clausii спораларын қамтиды',
     product_enterogermina_benefit3: 'Ыңғайлы сұйық түрі – балалар мен ересектерге арналған',
     product_enterogermina_benefit4: 'Дисбактериозды емдеу және алдын алу үшін қолайлы',
+    product_enterogermina_kicker: 'Микрофлораға арналған пробиотик',
+    product_enterogermina_badge_spores: 'Bacillus clausii споралары',
+    product_enterogermina_badge_pack: '10 флакон',
+    product_enterogermina_badge_liquid: 'Сұйық түрі',
+    product_enterogermina_metric_spores: 'Bacillus clausii споралары',
+    product_enterogermina_metric_pack: 'қаптамадағы флакон',
+    product_enterogermina_metric_format: 'дайын сұйық түрі',
+    product_enterogermina_overview_label: 'Микрофлораны қолдау',
+    product_enterogermina_overview_heading: 'Ішек микрофлорасының тепе-теңдігін қалпына келтіруге арналған формат',
+    product_enterogermina_overview_intro: 'Энтерожермина ішек микрофлорасының тепе-теңдігі бұзылғанда және қолайсыз факторлардан кейін пайдалы бактерияларды толықтыруға көмектеседі.',
+    product_enterogermina_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_card_bacillus_text: 'Пробиотикалық споралар ішек микрофлорасының қалыпты құрамын қолдауға көмектеседі.',
+    product_enterogermina_card_spores_title: 'Споралы түрі',
+    product_enterogermina_card_spores_text: 'Споралар қышқыл ортаға төзімді және Bacillus clausii-ді ішекке жеткізуге көмектеседі.',
+    product_enterogermina_card_pack_title: '10 флакон',
+    product_enterogermina_card_pack_text: 'Қаптама нұсқаулыққа сай ыңғайлы курстық қабылдауға арналған.',
+    product_enterogermina_card_format_title: '5 мл',
+    product_enterogermina_card_format_text: 'Флаконды ашып, қосымша дайындаусыз қабылдау оңай.',
+    product_enterogermina_formula_label: 'Формула',
+    product_enterogermina_formula_heading: 'Ортасында — Bacillus clausii және ыңғайлы сұйық түрі',
+    product_enterogermina_formula_intro: 'Негізгі акцент қаптамаға қойылған: құрамы, споралардың тұрақтылығы және қабылдау ыңғайлылығы бірден көрінеді.',
+    product_enterogermina_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_formula_bacillus_text: 'Пробиотикалық споралар қалыпты ішек микрофлорасын қолдауға көмектеседі.',
+    product_enterogermina_formula_spores_title: 'Споралы түрі',
+    product_enterogermina_formula_spores_text: 'Споралы түрі бактериялардың ішекке жеткенге дейін тұрақтылығын сақтауға көмектеседі.',
+    product_enterogermina_formula_pack_title: 'Дайын суспензия',
+    product_enterogermina_formula_pack_text: 'Флакондағы сұйық түрі: алдын ала дайындаусыз қабылдауға ыңғайлы.',
+    product_enterogermina_usage_label: 'Қашан өзекті',
+    product_enterogermina_usage_heading: 'Күнделікті күтімде ішек микрофлорасын қолдау үшін',
+    product_enterogermina_usage_microflora_title: 'Тепе-теңдік бұзылғанда',
+    product_enterogermina_usage_microflora_text: 'Нұсқаулыққа сай дисбактериоз кезінде микрофлораны қалпына келтіруге қолайлы.',
+    product_enterogermina_usage_antibiotic_title: 'Антибиотиктерден кейін',
+    product_enterogermina_usage_antibiotic_text: 'Нұсқаулыққа сай антибактериалды терапия кезінде немесе одан кейін микрофлораны қолдау үшін қолданылуы мүмкін.',
+    product_enterogermina_usage_family_title: 'Отбасы үшін',
+    product_enterogermina_usage_family_text: 'Сұйық формат қолдану бойынша ұсынымдарды сақтағанда балалар мен ересектерге қолайлы.',
+    product_enterogermina_note_title: 'Есте сақтау маңызды',
+    product_enterogermina_note_text: 'Қолданар алдында нұсқаулықты оқып, әсіресе балаларға қолданғанда маманмен кеңесіңіз.',
+    product_enterogermina_buy_intro: 'Энтерожерминаны Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Career page translations (added)
     career_heading: 'STADA компаниясындағы мансап',
     career_par1: 'STADA-да жұмыс істеу – бұл бірегей саяхат. Біз түлектерге арналған бастапқы лауазымдардан бастап сарапшылық позицияларға дейін әртүрлі және қызықты рөлдерді ұсынамыз. Біздің бос орындар дағдылардың кең ауқымын қамтиды және тек фармацевтика саласымен шектелмейді – сіз жеткізілім тізбегі, маркетинг, қаржы, жобаларды басқару және тағы басқа салаларда мүмкіндіктер таба аласыз.',
@@ -353,20 +602,129 @@ const translations = {
     product_coldrex_page_title: 'Колдрекс',
     product_coldrex_page_desc: 'Колдрекс — суық тию мен тұмаудың белгілерін жеңілдететін кешенді препарат.',
     // Coldrex benefits
-    product_coldrex_benefit1: 'Парацетамол ауырсыну мен қызбаны төмендетеді',
-    product_coldrex_benefit2: 'Фенилэфрин мұрын мен қойнаулардың бітелуін жояды',
-    product_coldrex_benefit3: 'Кофеин жұмсақ стимулятор ретінде сергектік береді',
-    product_coldrex_benefit4: 'Терпингидрат қақырықтың шығуына көмектеседі',
-    product_coldrex_benefit5: 'C дәрумені суық кезде жоғалған қорды толықтырады',
-    // Magne B6 Kids benefits
-    product_magneb6kids_benefit1: 'Магний мен B6 дәруменінің үйлесуі стрессті магнийге қарағанда тиімдірек төмендетеді',
-    product_magneb6kids_benefit2: 'Көңіл күйді жақсартып, мазасыздық пен депрессияны азайтады',
-    product_magneb6kids_benefit3: 'B6 дәрумені нейротрансмиттерлер синтезіне қатысып, ашушаңдық пен шаршауды азайтады',
-    product_magneb6kids_benefit4: 'Жүйке жүйесінің қалыпты қызметін қолдайды',
+    product_coldrex_benefit1: 'Парацетамол жоғары температураны төмендетуге және ауырсынуды жеңілдетуге көмектеседі',
+    product_coldrex_benefit2: 'Фенилэфрин мұрын мен қойнаулардың бітелуін азайтуға көмектеседі',
+    product_coldrex_benefit3: 'C дәрумені формуланы толықтырып, суық тию маусымында ағзаны қолдайды',
+    product_coldrex_benefit4: 'Ыстық сусын форматы қабылдауды үйреншікті әрі жайлы етеді',
+    product_coldrex_benefit5: 'Кешенді әсер суық тию мен тұмаудың негізгі симптомдарына бағытталған',
+    product_coldrex_benefit6: 'Нұсқаулыққа сай, жас пен қарсы көрсетілімдерді ескере отырып қолданылады',
+    product_coldrex_overview_label: 'Өнім туралы',
+    product_coldrex_overview_heading: 'Суық тию симптомдары кезіндегі кешенді көмек',
+    product_coldrex_overview_intro: 'Колдрекс ХотРем қызуды түсіретін, мұрын бітелуін азайтатын және ағзаны қолдайтын компоненттерді ыстық сусын форматында біріктіріп, суық тию мен тұмаудың типтік симптомдарын жеңілдетуге көмектеседі.',
+    product_coldrex_card_format_title: '10 пакетик',
+    product_coldrex_card_format_text: 'Қаптама нұсқаулықта көрсетілген схема бойынша бірнеше қабылдауға арналған.',
+    product_coldrex_card_action_title: 'Үш бағыт',
+    product_coldrex_card_action_text: 'Формула температура, ауырсыну, мұрын бітелуі және жалпы хал-жағдайға бағытталған.',
+    product_coldrex_card_vitamin_title: 'C дәрумені',
+    product_coldrex_card_vitamin_text: 'Аскорбин қышқылы ағзаға жүктеме артатын маусымда формуланы толықтырады.',
+    product_coldrex_card_pack_title: 'Порциялық формат',
+    product_coldrex_card_pack_text: 'Әр пакетик ыстық сусынның бір порциясын дайындауға ыңғайлы.',
+    product_coldrex_formula_label: 'Формула',
+    product_coldrex_formula_heading: 'Кешенді әсердің үш компоненті',
+    product_coldrex_formula_intro: 'Колдрекс ХотРем формуласы суық тиюдің негізгі симптомдарын жеңілдетуге және ағзаны қолдауға арналған компоненттерді біріктіреді.',
+    product_coldrex_formula_paracetamol_title: 'Парацетамол',
+    product_coldrex_formula_paracetamol_text: 'Жоғары температураны төмендетуге, бас ауыруы, тамақ ауыруы және дене сырқырауын жеңілдетуге көмектеседі.',
+    product_coldrex_formula_phenylephrine_title: 'Фенилэфрин',
+    product_coldrex_formula_phenylephrine_text: 'Мұрын мен қойнаулардың бітелуін азайтып, тыныс алуды жеңілдетуге көмектеседі.',
+    product_coldrex_formula_vitamin_c_title: 'C дәрумені',
+    product_coldrex_formula_vitamin_c_text: 'Формуланы толықтырып, суық тию маусымында ағзаны қолдауға көмектеседі.',
+    product_coldrex_usage_label: 'Қашан әсіресе өзекті',
+    product_coldrex_usage_heading: 'Температура, ауырсыну және мұрын бітелуі кезінде',
+    product_coldrex_usage_fever_title: 'Температура және сырқырау',
+    product_coldrex_usage_fever_text: 'Суық тию жоғары температурамен, бас ауыруымен және дене сырқырауымен қатар жүргенде өзекті.',
+    product_coldrex_usage_congestion_title: 'Мұрын бітелуі',
+    product_coldrex_usage_congestion_text: 'Мұрын мен қойнаулар бітеліп, тыныс алу қиындаған симптомдарда қолайлы.',
+    product_coldrex_usage_season_title: 'Суық тию маусымы',
+    product_coldrex_usage_season_text: 'Нұсқаулыққа сәйкес суық тию және тұмау кезеңінде симптоматикалық қолдау ретінде қолданылады.',
+    product_coldrex_note_title: 'Жауапты қолдану',
+    product_coldrex_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз, әсіресе созылмалы аурулар немесе басқа дәрілерді бірге қабылдау жағдайында.',
+    // Magne B6 Kids
+    product_magneb6kids_benefit1: 'Магний мен B6 дәрумені жүйке жүйесінің қалыпты жұмысын қолдауға көмектеседі',
+    product_magneb6kids_benefit2: 'Компоненттер энергия алмасуына қатысып, шаршауды азайтуға көмектеседі',
+    product_magneb6kids_benefit3: 'B6 дәрумені магнийдің әсерін толықтырып, оның сіңірілуін қолдайды',
+    product_magneb6kids_benefit4: 'Формула қалыпты психологиялық функцияны қолдауға көмектеседі',
+    product_magneb6kids_benefit5: 'Шайнайтын формат балалардың күнделікті қабылдауына ыңғайлы',
+    product_magneb6kids_benefit6: '4 жастан бастап балаларға арналған; дозасы жасына қарай таңдалады',
+    product_magneb6kids_kicker: 'Магний + B6 дәрумені',
+    product_magneb6kids_badge_age: 'Балаларға 4+',
+    product_magneb6kids_badge_chewable: 'Шайнайтын таблеткалар',
+    product_magneb6kids_badge_formula: 'Mg + B6',
+    product_magneb6kids_metric_magnesium: 'мг магний',
+    product_magneb6kids_metric_vitamin: 'B6 дәрумені',
+    product_magneb6kids_metric_age: 'балаларға',
+    product_magneb6kids_overview_label: 'Өнім туралы',
+    product_magneb6kids_overview_heading: 'Баланың күнделікті ырғағына жүйке жүйесін қолдау',
+    product_magneb6kids_overview_intro: 'Магне B6 Кидс магний мен B6 дәруменін шайнайтын форматта біріктіріп, нутриенттік қолдауды баланың күнделікті режиміне ыңғайлы енгізуге көмектеседі.',
+    product_magneb6kids_card_magnesium_title: '70 мг магний',
+    product_magneb6kids_card_magnesium_text: 'Магний жүйке жүйесі мен бұлшықеттердің қалыпты жұмысына және күнделікті зат алмасуға маңызды.',
+    product_magneb6kids_card_b6_title: 'B6 дәрумені',
+    product_magneb6kids_card_b6_text: 'B6 дәрумені энергия алмасуына қатысып, шаршауды азайтуға көмектеседі.',
+    product_magneb6kids_card_format_title: '30 таблетка',
+    product_magneb6kids_card_format_text: 'Шайнайтын форма қабылдауды балаға түсінікті әрі үйреншікті етуге көмектеседі.',
+    product_magneb6kids_card_age_title: '4 жастан бастап',
+    product_magneb6kids_card_age_text: 'Формат 4 жастан асқан балаларға арналған; қабылдау режимі нұсқаулық бойынша таңдалады.',
+    product_magneb6kids_formula_label: 'Формула',
+    product_magneb6kids_formula_heading: 'Сабырлы қолдаудың үш элементі',
+    product_magneb6kids_formula_intro: 'Формула магний, B6 дәрумені және балаларға арналған шайнайтын форматқа негізделген.',
+    product_magneb6kids_formula_magnesium_title: 'Магний',
+    product_magneb6kids_formula_magnesium_text: 'Жүйке жүйесі мен бұлшықеттердің қалыпты жұмысын қолдауға көмектеседі.',
+    product_magneb6kids_formula_b6_title: 'B6 дәрумені',
+    product_magneb6kids_formula_b6_text: 'Магнийді толықтырып, энергия алмасу процестеріне қатысады.',
+    product_magneb6kids_formula_format_title: 'Балалар форматы',
+    product_magneb6kids_formula_format_text: 'Шайнайтын таблеткалар нұсқаулыққа сай күнделікті режимге ыңғайлы қосылады.',
+    product_magneb6kids_usage_label: 'Қашан әсіресе өзекті',
+    product_magneb6kids_usage_heading: 'Оқу, өсу және белсенді ырғақ кезеңінде',
+    product_magneb6kids_usage_school_title: 'Оқу жүктемесі',
+    product_magneb6kids_usage_school_text: 'Балаға тұрақты күнделікті ырғақты сақтау маңызды болған кезеңдерде нутриенттік қолдау ретінде жарайды.',
+    product_magneb6kids_usage_activity_title: 'Белсенді күндер',
+    product_magneb6kids_usage_activity_text: 'Магний мен B6 дәрумені қарқынды кесте кезінде энергия алмасуын қолдауға көмектеседі.',
+    product_magneb6kids_usage_diet_title: 'Рацион ерекшеліктері',
+    product_magneb6kids_usage_diet_text: 'Рационға магний мен B6 дәрумені бойынша қосымша қолдау қажет болғанда орынды болуы мүмкін.',
+    product_magneb6kids_note_title: 'Жауапты қабылдау',
+    product_magneb6kids_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз, әсіресе балада созылмалы аурулар болса немесе басқа құралдарды қабылдаса.',
+    product_magneb6kids_buy_intro: 'Магне B6 Кидсті Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Snup benefits
-    product_snup_benefit1: 'Ксилометазолин шырышты ісінуді тез азайтып, бітелуді жояды',
-    product_snup_benefit2: '2 минут ішінде әсер етеді',
-    product_snup_benefit3: 'Әсері 10 сағатқа дейін сақталады',
+    product_snup_benefit1: 'Ксилометазолин мұрын шырышты қабығының ісінуін азайтып, тыныс алуды жеңілдетуге көмектеседі',
+    product_snup_benefit2: 'Әсері қолданғаннан кейін әдетте 5–10 минут ішінде басталады',
+    product_snup_benefit3: 'Деконгестанттық әсер бір қолданудан кейін орта есеппен 6–8 сағат сақталады',
+    product_snup_benefit4: 'Теңіз суы мұрын шырышты қабығының қалыпты физиологиялық жағдайын қолдайды',
+    product_snup_benefit5: '0,1% форматы ересектерге және 6 жастан асқан балаларға арналған',
+    product_snup_benefit6: 'Нұсқаулық бойынша қолдану курсы 5–7 күннен аспауы керек',
+    product_snup_kicker: 'Мұрын спрейі',
+    product_snup_badge_spray: 'Дозаланған спрей',
+    product_snup_badge_seawater: 'Теңіз суы',
+    product_snup_badge_age: '0,1% үшін 6+',
+    product_snup_metric_minutes: 'әсер басталуына минут',
+    product_snup_metric_hours: 'орташа әсер сағаты',
+    product_snup_metric_doses: 'құтыдағы доза',
+    product_snup_overview_label: 'Өнім туралы',
+    product_snup_overview_heading: 'Мұрын бітелгенде тыныс алу жеңілдейді',
+    product_snup_overview_intro: 'Снуп ксилометазолиннің жергілікті тамыр тарылтатын әсерін және теңіз суын біріктіріп, ринит кезінде шырышты қабықтың ісінуін азайтуға және мұрынмен тыныс алуды жеңілдетуге көмектеседі.',
+    product_snup_card_strength_title: '0,1% / 90 мкг',
+    product_snup_card_strength_text: 'Қаптамадағы формат нұсқаулыққа сәйкес ересектерге және 6 жастан асқан балаларға арналған.',
+    product_snup_card_action_title: 'Ксилометазолин',
+    product_snup_card_action_text: 'Деконгестант мұрын шырышты қабығының ісінуі мен гиперемиясын азайтуға көмектеседі.',
+    product_snup_card_seawater_title: 'Теңіз суы',
+    product_snup_card_seawater_text: 'Компонент шырышты қабықтың физиологиялық жағдайын және кірпікшелі эпителий жұмысын қолдайды.',
+    product_snup_card_course_title: '5–7 күн',
+    product_snup_card_course_text: 'Ұсынылатын қолдану курсының ұзақтығы 5–7 күннен аспауы керек.',
+    product_snup_formula_label: 'Формула',
+    product_snup_formula_heading: 'Бір жүйенің үш элементі',
+    product_snup_formula_intro: 'Ксилометазолин, теңіз суы және дозаланған формат бірге жұмыс істейді: тыныс алуды жеңілдетуге, шырышты қабықты қолдауға және қолдануды түсінікті етуге көмектеседі.',
+    product_snup_formula_active_text: 'Мұрын шырышты қабығының тамырларын тарылтып, ісінуді азайтуға және тыныс алуды жеңілдетуге көмектеседі.',
+    product_snup_formula_seawater_text: 'Формуланың әсерін мұрын шырышты қабығының физиологиялық жағдайын қолдаумен толықтырады.',
+    product_snup_formula_format_text: 'Дозаланған спрей компоненттердің әсерін нұсқаулық бойынша жергілікті қолданудың үйреншікті форматына біріктіреді.',
+    product_snup_usage_label: 'Қашан әсіресе өзекті',
+    product_snup_usage_heading: 'Тұмауратқанда, аллергияда және мұрын бітелгенде',
+    product_snup_usage_cold_title: 'ЖРВИ кезіндегі ринит',
+    product_snup_usage_cold_text: 'Жедел респираторлық аурулар аясындағы ринит кезінде мұрынмен тыныс алуды жеңілдетуге жарамды.',
+    product_snup_usage_allergy_title: 'Аллергиялық ринит',
+    product_snup_usage_allergy_text: 'Нұсқаулыққа сәйкес аллергиялық ринит және поллиноз кезінде қолданылуы мүмкін.',
+    product_snup_usage_sinus_title: 'Мұрын маңы қойнаулары',
+    product_snup_usage_sinus_text: 'Мұрын маңы қойнаулары қабынғанда секреттің ағуын жақсарту үшін қолданылады.',
+    product_snup_note_title: 'Маңызды ақпарат',
+    product_snup_note_text: 'Қолданар алдында нұсқаулықпен танысыңыз. Күніне 3 реттен жиі және 5–7 күннен ұзақ қолданбаңыз; балаларға концентрацияны жасына қарай таңдаңыз.',
+    product_snup_buy_intro: 'Снупты Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Sinulan Duo benefits
     product_sinulan_duo_benefit1: 'Өсімдік сығындыларының комбинациясы жоғарғы және төменгі тыныс жолдарын қолдайды',
     product_sinulan_duo_benefit2: 'Жоңышқа иммундық қорғауды және тыныс жолдарының саулығын қолдайды',
@@ -374,6 +732,44 @@ const translations = {
     product_sinulan_duo_benefit4: 'Вербена тыныс алу жүйесін және табиғи қорғанысты нығайтады',
     product_sinulan_duo_benefit5: 'Сары теңгежапырақ тамыры дененің жалпы жағдайын жақсартады',
     product_sinulan_duo_benefit6: '6 жастан бастап ересектер мен балаларға жарамды',
+    product_sinulan_duo_kicker: 'Тыныс алуға арналған өсімдік кешені',
+    product_sinulan_duo_badge_plant: 'Өсімдік сығындылары',
+    product_sinulan_duo_badge_breathing: 'Еркін тыныс алу',
+    product_sinulan_duo_badge_age: '6 жастан бастап',
+    product_sinulan_duo_metric_complex: 'өсімдік кешені',
+    product_sinulan_duo_metric_tablets: 'қаптамадағы таблетка',
+    product_sinulan_duo_metric_age: 'балалар мен ересектерге',
+    product_sinulan_duo_overview_label: 'Тыныс алу жолдары',
+    product_sinulan_duo_overview_heading: 'Өсімдік форматында еркін тыныс алуды қолдау',
+    product_sinulan_duo_overview_intro: 'Синулан Дуо тыныс алу жолдарын және ағзаның табиғи қорғанысын қолдау үшін өсімдік компоненттерін біріктіреді.',
+    product_sinulan_duo_card_plant_title: 'Өсімдік кешені',
+    product_sinulan_duo_card_plant_text: 'Сығындылар комбинациясы жоғарғы және төменгі тыныс алу жолдарын қолдауға көмектеседі.',
+    product_sinulan_duo_card_breathing_title: 'Еркін тыныс алу',
+    product_sinulan_duo_card_breathing_text: 'Формула суық тию маусымында жайлы тыныс алуды қолдауға бағытталған.',
+    product_sinulan_duo_card_format_title: '15 таблетка',
+    product_sinulan_duo_card_format_text: 'Нұсқаулыққа сай қабылдауға арналған ыңғайлы таблетка форматы.',
+    product_sinulan_duo_card_age_title: '6 жастан бастап',
+    product_sinulan_duo_card_age_text: 'Қолдану бойынша ұсынымдарды сақтағанда ересектер мен 6 жастан асқан балаларға жарамды.',
+    product_sinulan_duo_formula_label: 'Формула',
+    product_sinulan_duo_formula_heading: 'Ортасында — өсімдік кешені және тыныс алуды қолдау',
+    product_sinulan_duo_formula_intro: 'Карточкалар өнімнің негізгі қасиеттерін көрсетеді: өсімдік негізі, тыныс алу фокусы және 6 жастан бастап қолдану.',
+    product_sinulan_duo_formula_plant_title: 'Өсімдік сығындылары',
+    product_sinulan_duo_formula_plant_text: 'Компоненттер кешені тыныс алу жолдарының саулығын қолдауға көмектеседі.',
+    product_sinulan_duo_formula_breathing_title: 'Еркін тыныс алу',
+    product_sinulan_duo_formula_breathing_text: 'Суық тию және маусымдық жайсыздық кезінде тыныс алуды қолдауға жарамды.',
+    product_sinulan_duo_formula_format_title: '6 жастан бастап',
+    product_sinulan_duo_formula_format_text: 'Қолдану бойынша ұсынымдарды сақтағанда 6 жастан асқан балалар мен ересектерге жарамды.',
+    product_sinulan_duo_usage_label: 'Қашан өзекті',
+    product_sinulan_duo_usage_heading: 'Суық тию маусымында тыныс алу жолдарын қолдау үшін',
+    product_sinulan_duo_usage_cold_title: 'Суық тигенде',
+    product_sinulan_duo_usage_cold_text: 'Нұсқаулыққа сай тыныс алуды және жалпы жай-күйді қолдау үшін қолданылуы мүмкін.',
+    product_sinulan_duo_usage_sinus_title: 'Мұрын бітелгенде',
+    product_sinulan_duo_usage_sinus_text: 'Өсімдік формуласы тыныс алу жолдарының жайлылығын қолдауға көмектеседі.',
+    product_sinulan_duo_usage_family_title: 'Отбасы үшін',
+    product_sinulan_duo_usage_family_text: 'Қолдану бойынша ұсынымдарды сақтағанда ересектер мен 6 жастан асқан балаларға жарамды.',
+    product_sinulan_duo_note_title: 'Есте сақтау маңызды',
+    product_sinulan_duo_note_text: 'Қолданар алдында нұсқаулықты оқып, созылмалы аурулар болса маманмен кеңесіңіз.',
+    product_sinulan_duo_buy_intro: 'Синулан Дуоны Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Vitrum Immunaktiv translations
     product_vitrum_immunaktiv_page_title: 'Витрум Иммунактив',
     product_vitrum_immunaktiv_page_desc: 'Витрум Иммунактив — иммунитетті қолдау үшін 13 витамин, 8 минерал және β-глюканнан тұратын витамин-минерал кешені.',
@@ -421,24 +817,50 @@ const translations = {
     product_vitrum_immunaktiv_note_title: 'Жауапты қабылдау',
     product_vitrum_immunaktiv_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз, әсіресе созылмалы аурулар немесе басқа құралдарды бірге қабылдау жағдайында.',
     product_vitrum_immunaktiv_buy_intro: 'Витрум Иммунактивті Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-    product_vitrum_immunaktiv_photo_label: 'Өнім фокусында',
-    product_vitrum_immunaktiv_photo_heading: 'Қаптама, формула және иммундық қолдау',
-    product_vitrum_immunaktiv_photo_intro: 'Витрум Иммунактив ересектерге арналған витамин-минерал кешені ретінде ұсынылған: курстық форматта 13 витамин, 8 минерал және β-глюкандар.',
-    product_vitrum_immunaktiv_photo_quality_title: 'Ресми қаптама',
-    product_vitrum_immunaktiv_photo_quality_text: 'Құты мен таблетка қорабы өнім форматын және негізгі акценттерін тез түсінуге көмектеседі.',
-    product_vitrum_immunaktiv_photo_daily_title: 'Ресурстарды қолдау',
-    product_vitrum_immunaktiv_photo_daily_text: 'Ағза ресурстарына арналған акцент кешенді маусымдық жүктеме және қалпына келу кезеңдерімен байланыстырады.',
-    product_vitrum_immunaktiv_photo_access_title: 'Формуладағы β-глюкандар',
-    product_vitrum_immunaktiv_photo_access_text: 'Бұл компонент иммунитетті кешенді қолдау үшін витамин-минерал негізін толықтырады.',
-    product_vitrum_immunaktiv_tab_vitamins: '13 витамин',
-    product_vitrum_immunaktiv_tab_minerals: '8 минерал',
-    product_vitrum_immunaktiv_tab_beta: 'β-глюкан',
     // Edarbi Klo benefits
     product_edarbi_klo_benefit1: 'Азилсартан мен хлорталидонның комбинациясы гипертонияны тиімді бақылау үшін',
     product_edarbi_klo_benefit2: 'Азилсартан ангиотензин II-нің тамырларды тарылту және натрийді ұстап қалу әсерін блоктайды',
     product_edarbi_klo_benefit3: 'Хлорталидон натрий мен хлоридтің бөлінуін арттыра отырып, диурез тудырады',
     product_edarbi_klo_benefit4: 'Қан қысымын шеткері кедергіні төмендету арқылы толықтыратын механизмдермен төмендетеді',
-    product_edarbi_klo_benefit5: 'Қан қысымын бақылауға бір дәрі жеткіліксіз науқастарға ұсынылады'
+    product_edarbi_klo_benefit5: 'Қан қысымын бақылауға бір дәрі жеткіліксіз науқастарға ұсынылады',
+    product_edarbi_klo_kicker: 'Қан қысымын біріктірілген бақылау',
+    product_edarbi_klo_badge_combo: 'Азилсартан + хлорталидон',
+    product_edarbi_klo_badge_pressure: 'Қан қысымын бақылау',
+    product_edarbi_klo_badge_pack: '28 таблетка',
+    product_edarbi_klo_metric_dose: 'мг белсенді компоненттер',
+    product_edarbi_klo_metric_pack: 'қаптамадағы таблетка',
+    product_edarbi_klo_metric_mechanism: 'әсер ету механизмі',
+    product_edarbi_klo_overview_label: 'Артериялық қысым',
+    product_edarbi_klo_overview_heading: 'Гипертонияны бақылауға арналған комбинация',
+    product_edarbi_klo_overview_intro: 'Эдарби Кло дәрігердің тағайындауы бойынша артериялық қысымды бақылау үшін азилсартан мен хлорталидонды біріктіреді.',
+    product_edarbi_klo_card_azilsartan_title: 'Азилсартан',
+    product_edarbi_klo_card_azilsartan_text: 'Тамыр тонусымен байланысты ангиотензин II әсерін тежеуге көмектеседі.',
+    product_edarbi_klo_card_chlorthalidone_title: 'Хлорталидон',
+    product_edarbi_klo_card_chlorthalidone_text: 'Диуретикалық компонент натрий мен сұйықтықтың шығарылуына ықпал етеді.',
+    product_edarbi_klo_card_pack_title: '28 таблетка',
+    product_edarbi_klo_card_pack_text: 'Дәрігер тағайындаған схема бойынша тұрақты қабылдауға арналған қаптама форматы.',
+    product_edarbi_klo_card_control_title: 'Қысымды бақылау',
+    product_edarbi_klo_card_control_text: 'Компоненттер артериялық гипертензия терапиясында бірін-бірі толықтырады.',
+    product_edarbi_klo_formula_label: 'Формула',
+    product_edarbi_klo_formula_heading: 'Ортасында — екі белсенді компонент',
+    product_edarbi_klo_formula_intro: 'Сызықтар азилсартан, хлорталидон және жалпы қысым бақылауы қаптама айналасында қалай бірігетінін көрсетеді.',
+    product_edarbi_klo_formula_azilsartan_title: 'Азилсартан',
+    product_edarbi_klo_formula_azilsartan_text: 'Компонент ангиотензин II рецепторларын тежеуге бағытталған.',
+    product_edarbi_klo_formula_chlorthalidone_title: 'Хлорталидон',
+    product_edarbi_klo_formula_chlorthalidone_text: 'Диуретикалық компонент сұйықтық көлемін және тамырларға түсетін жүктемені азайтуға көмектеседі.',
+    product_edarbi_klo_formula_control_title: 'Қан қысымын бақылау',
+    product_edarbi_klo_formula_control_text: 'Екі әсер ету механизмі жоғары қысымды бақылауда бірін-бірі толықтырады.',
+    product_edarbi_klo_usage_label: 'Қашан тағайындалады',
+    product_edarbi_klo_usage_heading: 'Біріктірілген қысым бақылауы қажет пациенттерге',
+    product_edarbi_klo_usage_pressure_title: 'Артериялық гипертензия',
+    product_edarbi_klo_usage_pressure_text: 'Жоғары артериялық қысымды төмендету үшін дәрігердің тағайындауы бойынша қолданылады.',
+    product_edarbi_klo_usage_combo_title: 'Бір препарат жеткіліксіз болғанда',
+    product_edarbi_klo_usage_combo_text: 'Монотерапия қажетті бақылауды қамтамасыз етпесе, компоненттер комбинациясы тағайындалуы мүмкін.',
+    product_edarbi_klo_usage_routine_title: 'Күнделікті схема',
+    product_edarbi_klo_usage_routine_text: 'Қабылдау режимін дәрігер анықтайды; ұсыныстарды және қысым бақылауын сақтау маңызды.',
+    product_edarbi_klo_note_title: 'Маңызды',
+    product_edarbi_klo_note_text: 'Эдарби Кло дәрігердің тағайындауы бойынша қолданылады. Қолданар алдында нұсқаулықпен танысыңыз және терапия схемасын өз бетіңізше өзгертпеңіз.',
+    product_edarbi_klo_buy_intro: 'Эдарби Кло препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.'
   }
 };
 
@@ -841,8 +1263,8 @@ function initProductCatalogFilters() {
   });
 }
 
-function initVitrumDetailPage() {
-  const page = document.querySelector('.product-vitrum-page');
+function initProductDetailPage() {
+  const page = document.querySelector('.product-detail-page');
   if (!page) return;
 
   page.classList.add('vitrum-reveal-ready');
@@ -874,71 +1296,6 @@ function initVitrumDetailPage() {
     window.addEventListener('resize', revealPassedItems);
   }
 
-  const formula = page.querySelector('[data-vitrum-tabs]');
-  if (formula) {
-    const tabs = Array.from(formula.querySelectorAll('[data-vitrum-tab]'));
-    const panels = Array.from(formula.querySelectorAll('[data-vitrum-panel]'));
-    const photos = Array.from(formula.querySelectorAll('[data-vitrum-photo]'));
-    let activeIndex = Math.max(0, tabs.findIndex(tab => tab.classList.contains('is-active')));
-    let timerId = null;
-
-    const setFormulaTab = index => {
-      activeIndex = (index + tabs.length) % tabs.length;
-      const activeKey = tabs[activeIndex].dataset.vitrumTab;
-
-      tabs.forEach((tab, tabIndex) => {
-        const isActive = tabIndex === activeIndex;
-        tab.classList.toggle('is-active', isActive);
-        tab.setAttribute('aria-selected', String(isActive));
-        tab.tabIndex = isActive ? 0 : -1;
-      });
-
-      panels.forEach(panel => {
-        panel.classList.toggle('is-active', panel.dataset.vitrumPanel === activeKey);
-      });
-
-      photos.forEach(photo => {
-        photo.classList.toggle('is-active', photo.dataset.vitrumPhoto === activeKey);
-      });
-    };
-
-    const stopFormulaAutoplay = () => {
-      if (timerId) {
-        window.clearInterval(timerId);
-        timerId = null;
-      }
-    };
-
-    const startFormulaAutoplay = () => {
-      if (reduceMotion) return;
-      stopFormulaAutoplay();
-      timerId = window.setInterval(() => setFormulaTab(activeIndex + 1), 5200);
-    };
-
-    tabs.forEach((tab, tabIndex) => {
-      tab.addEventListener('click', () => {
-        setFormulaTab(tabIndex);
-        startFormulaAutoplay();
-      });
-
-      tab.addEventListener('keydown', event => {
-        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
-        event.preventDefault();
-        const direction = event.key === 'ArrowRight' ? 1 : -1;
-        setFormulaTab(tabIndex + direction);
-        tabs[activeIndex].focus();
-        startFormulaAutoplay();
-      });
-    });
-
-    formula.addEventListener('pointerenter', stopFormulaAutoplay);
-    formula.addEventListener('pointerleave', startFormulaAutoplay);
-    formula.addEventListener('focusin', stopFormulaAutoplay);
-    formula.addEventListener('focusout', startFormulaAutoplay);
-    setFormulaTab(activeIndex);
-    startFormulaAutoplay();
-  }
-
   const usageItems = Array.from(page.querySelectorAll('[data-vitrum-usage] .usage-item'));
   usageItems.forEach(item => {
     const activate = () => {
@@ -952,6 +1309,34 @@ function initVitrumDetailPage() {
       activate();
     });
   });
+}
+
+function initMagneHeroLevitation() {
+  const page = document.querySelector('.product-magne-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--magne');
+  const packshot = page.querySelector('.magne-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    packshot.style.setProperty('--magne-hero-float-y', '0px');
+    heroImage.style.setProperty('--magne-hero-shadow-opacity', '0.78');
+    heroImage.style.setProperty('--magne-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('magne-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
 }
 
 // Highlight the current navigation link as its section enters the viewport
@@ -1100,7 +1485,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsCarousel();
   initProductsCarousel();
   initProductCatalogFilters();
-  initVitrumDetailPage();
+  initProductDetailPage();
+  initMagneHeroLevitation();
   // Bind hamburger menu
   const hamburger = document.querySelector('.hamburger');
   const menu = document.querySelector('.menu');

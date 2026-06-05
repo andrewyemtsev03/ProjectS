@@ -1,0 +1,19 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blood pressure control">
+  <defs>
+    <linearGradient id="gaugeGradient" x1="34" y1="128" x2="126" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5f6f89"/>
+      <stop offset="0.5" stop-color="#94135f"/>
+      <stop offset="1" stop-color="#c34886"/>
+    </linearGradient>
+    <filter id="gaugeShadow" x="0" y="0" width="160" height="160" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#5f6f89" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="128" height="128" rx="22" fill="#f8f2f6"/>
+  <path d="M42 95a38 38 0 0 1 76 0" fill="none" stroke="#d9dfe7" stroke-width="13" stroke-linecap="round"/>
+  <path d="M42 95a38 38 0 0 1 57-33" fill="none" stroke="url(#gaugeGradient)" stroke-width="13" stroke-linecap="round" filter="url(#gaugeShadow)"/>
+  <path d="M80 96l25-28" fill="none" stroke="#94135f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="80" cy="96" r="9" fill="#ffffff" stroke="#94135f" stroke-width="5"/>
+  <path d="M48 116h64" stroke="#5f6f89" stroke-width="8" stroke-linecap="round"/>
+  <path d="M58 46h12M124 88h12M91 41v12" stroke="#94135f" stroke-width="6" stroke-linecap="round" opacity="0.78"/>
+</svg>

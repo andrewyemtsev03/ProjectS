@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STADA - Витрум Иммунактив</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css?v=vitrum-detail-3" />
   </head>
   <body class="product-detail-page product-vitrum-page">
     <nav>
@@ -118,77 +118,40 @@
         </div>
       </section>
 
-      <section class="product-detail-section product-photo-story" aria-labelledby="vitrum-photo-heading">
-        <div class="product-section-inner">
-          <div class="product-photo-layout">
-            <div class="product-section-header vitrum-animate">
-              <span class="product-kicker" data-i18n-key="product_vitrum_immunaktiv_photo_label"></span>
-              <h2 id="vitrum-photo-heading" data-i18n-key="product_vitrum_immunaktiv_photo_heading"></h2>
-              <p data-i18n-key="product_vitrum_immunaktiv_photo_intro"></p>
-            </div>
-            <div class="product-photo-grid product-photo-grid--official vitrum-stagger">
-              <article class="product-photo-card product-photo-card--large vitrum-animate">
-                <img src="../assets/products/vitrum-immunaktiv/official-banner.jpg" alt="" />
-                <div>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_photo_quality_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_photo_quality_text"></p>
-                </div>
-              </article>
-              <article class="product-photo-card vitrum-animate">
-                <img src="../assets/products/vitrum-immunaktiv/benefit-resources.svg" alt="" />
-                <div>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_photo_daily_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_photo_daily_text"></p>
-                </div>
-              </article>
-              <article class="product-photo-card vitrum-animate">
-                <img src="../assets/products/vitrum-immunaktiv/benefit-beta.svg" alt="" />
-                <div>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_photo_access_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_photo_access_text"></p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="product-detail-section product-formula" aria-labelledby="vitrum-formula-heading">
-        <div class="product-section-inner product-formula-layout">
+        <div class="product-section-inner product-formula-layout snup-formula-layout vitrum-formula-layout">
           <div class="product-section-header vitrum-animate">
             <span class="product-kicker" data-i18n-key="product_vitrum_immunaktiv_formula_label"></span>
             <h2 id="vitrum-formula-heading" data-i18n-key="product_vitrum_immunaktiv_formula_heading"></h2>
             <p data-i18n-key="product_vitrum_immunaktiv_formula_intro"></p>
           </div>
-          <div class="formula-interactive vitrum-animate" data-vitrum-tabs>
-            <div class="formula-tabs" role="tablist" aria-label="Vitrum Immunaktiv formula">
-              <button class="formula-tab is-active" id="vitrum-tab-vitamins" type="button" role="tab" aria-selected="true" aria-controls="vitrum-panel-vitamins" data-vitrum-tab="vitamins" data-i18n-key="product_vitrum_immunaktiv_tab_vitamins"></button>
-              <button class="formula-tab" id="vitrum-tab-minerals" type="button" role="tab" aria-selected="false" aria-controls="vitrum-panel-minerals" data-vitrum-tab="minerals" data-i18n-key="product_vitrum_immunaktiv_tab_minerals"></button>
-              <button class="formula-tab" id="vitrum-tab-beta" type="button" role="tab" aria-selected="false" aria-controls="vitrum-panel-beta" data-vitrum-tab="beta" data-i18n-key="product_vitrum_immunaktiv_tab_beta"></button>
+          <div class="snup-formula-system vitrum-formula-system vitrum-animate" aria-label="Vitrum Immunaktiv formula components">
+            <svg class="snup-formula-lines vitrum-formula-lines" viewBox="0 0 960 760" aria-hidden="true" focusable="false">
+              <path class="snup-formula-line vitrum-formula-line" d="M 430 330 C 384 314 378 250 328 214 C 300 194 280 184 258 178" />
+              <path class="snup-formula-line vitrum-formula-line" d="M 596 330 C 650 310 630 246 668 212 C 684 198 696 188 704 178" />
+              <path class="snup-formula-line vitrum-formula-line" d="M 594 456 C 650 494 640 548 598 568 C 574 580 558 582 548 582" />
+              <circle class="snup-formula-dot vitrum-formula-dot" cx="258" cy="178" r="7" />
+              <circle class="snup-formula-dot vitrum-formula-dot" cx="704" cy="178" r="7" />
+              <circle class="snup-formula-dot vitrum-formula-dot" cx="548" cy="582" r="7" />
+            </svg>
+            <div class="snup-formula-core vitrum-formula-core" aria-hidden="true">
+              <div class="snup-formula-pack vitrum-formula-pack">
+                <img class="snup-formula-product vitrum-formula-product" src="../assets/products/vitrum-immunaktiv/hero-product.png" alt="" />
+              </div>
             </div>
-            <div class="formula-showcase">
-              <div class="formula-photo-stage formula-photo-stage--vitrum" aria-hidden="true">
-                <img class="formula-photo is-active" src="../assets/products/vitrum-immunaktiv/benefit-protection.svg" alt="" data-vitrum-photo="vitamins" />
-                <img class="formula-photo" src="../assets/products/vitrum-immunaktiv/packshot-60-cropped.png" alt="" data-vitrum-photo="minerals" />
-                <img class="formula-photo" src="../assets/products/vitrum-immunaktiv/benefit-beta.svg" alt="" data-vitrum-photo="beta" />
-              </div>
-              <div class="formula-grid">
-                <article class="formula-card is-active" id="vitrum-panel-vitamins" role="tabpanel" aria-labelledby="vitrum-tab-vitamins" data-vitrum-panel="vitamins">
-                  <strong>01</strong>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_formula_vitamins_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_formula_vitamins_text"></p>
-                </article>
-                <article class="formula-card" id="vitrum-panel-minerals" role="tabpanel" aria-labelledby="vitrum-tab-minerals" data-vitrum-panel="minerals">
-                  <strong>02</strong>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_formula_minerals_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_formula_minerals_text"></p>
-                </article>
-                <article class="formula-card formula-card--accent" id="vitrum-panel-beta" role="tabpanel" aria-labelledby="vitrum-tab-beta" data-vitrum-panel="beta">
-                  <strong>03</strong>
-                  <h3 data-i18n-key="product_vitrum_immunaktiv_formula_beta_title"></h3>
-                  <p data-i18n-key="product_vitrum_immunaktiv_formula_beta_text"></p>
-                </article>
-              </div>
+            <div class="snup-formula-points vitrum-formula-points">
+              <article class="snup-formula-point snup-formula-point--active vitrum-formula-point vitrum-formula-point--vitamins">
+                <img src="../assets/products/vitrum-immunaktiv/benefit-protection.svg" alt="" />
+                <p data-i18n-key="product_vitrum_immunaktiv_formula_vitamins_text"></p>
+              </article>
+              <article class="snup-formula-point snup-formula-point--seawater vitrum-formula-point vitrum-formula-point--minerals">
+                <img src="../assets/products/vitrum-immunaktiv/benefit-resources.svg" alt="" />
+                <p data-i18n-key="product_vitrum_immunaktiv_formula_minerals_text"></p>
+              </article>
+              <article class="snup-formula-point snup-formula-point--format vitrum-formula-point vitrum-formula-point--beta">
+                <img src="../assets/products/vitrum-immunaktiv/benefit-beta.svg" alt="" />
+                <p data-i18n-key="product_vitrum_immunaktiv_formula_beta_text"></p>
+              </article>
             </div>
           </div>
         </div>
