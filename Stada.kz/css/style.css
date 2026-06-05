@@ -1032,7 +1032,7 @@ footer {
     order: 2;
     display: flex;
     flex: 0 0 auto;
-    margin-left: auto;
+    margin-left: 0;
     border-width: 1.5px;
     border-radius: 999px;
   }
@@ -2091,10 +2091,12 @@ footer {
   }
 }
 
-/* Vitrum Immunaktiv detail page */
+/* Product detail pages */
 .product-detail-page {
   --product-accent: #008a72;
+  --product-accent-rgb: 0, 138, 114;
   --product-accent-strong: #006f5d;
+  --product-accent-strong-rgb: 0, 111, 93;
   --product-accent-soft: #e9f7f4;
   --product-citrus: #f8c400;
   --product-citrus-soft: #fff6cf;
@@ -2103,6 +2105,87 @@ footer {
   --product-ink: #172841;
   --product-muted: #536174;
   background: #ffffff;
+}
+
+.product-snup-page {
+  --product-accent: #0097c8;
+  --product-accent-rgb: 0, 151, 200;
+  --product-accent-strong: #006a9c;
+  --product-accent-strong-rgb: 0, 106, 156;
+  --product-accent-soft: #e7f8fd;
+  --product-citrus: #e4002b;
+  --product-citrus-soft: #ffe8ee;
+  --product-berry: #00a7a5;
+}
+
+.product-coldrex-page {
+  --product-accent: #f8c400;
+  --product-accent-rgb: 248, 196, 0;
+  --product-accent-strong: #9a7600;
+  --product-accent-strong-rgb: 154, 118, 0;
+  --product-accent-soft: #fff5c4;
+  --product-citrus: #00a651;
+  --product-citrus-soft: #e7f8ea;
+  --product-berry: #d50058;
+  --product-blue-dark: #073b75;
+  --product-ink: #172841;
+  --product-muted: #536174;
+}
+
+.product-enterogermina-page {
+  --product-accent: #0071ce;
+  --product-accent-rgb: 0, 113, 206;
+  --product-accent-strong: #00579c;
+  --product-accent-strong-rgb: 0, 87, 156;
+  --product-accent-soft: #eaf6ff;
+  --product-citrus: #00a651;
+  --product-citrus-soft: #e8f8ee;
+  --product-berry: #00a7a5;
+  --product-blue-dark: #073b75;
+  --product-ink: #172841;
+  --product-muted: #536174;
+}
+
+.product-sinulan-page {
+  --product-accent: #4d8f38;
+  --product-accent-rgb: 77, 143, 56;
+  --product-accent-strong: #2f6f28;
+  --product-accent-strong-rgb: 47, 111, 40;
+  --product-accent-soft: #edf8e9;
+  --product-citrus: #f05a28;
+  --product-citrus-soft: #fff0e8;
+  --product-berry: #00a7a5;
+  --product-blue-dark: #073b75;
+  --product-ink: #172841;
+  --product-muted: #536174;
+}
+
+.product-edarbi-page {
+  --product-accent: #9b145f;
+  --product-accent-rgb: 155, 20, 95;
+  --product-accent-strong: #701044;
+  --product-accent-strong-rgb: 112, 16, 68;
+  --product-accent-soft: #fbecf4;
+  --product-citrus: #4d6a82;
+  --product-citrus-soft: #eef3f7;
+  --product-berry: #2b7fb7;
+  --product-blue-dark: #26364b;
+  --product-ink: #172841;
+  --product-muted: #566276;
+}
+
+.product-magne-page {
+  --product-accent: #7b61c8;
+  --product-accent-rgb: 123, 97, 200;
+  --product-accent-strong: #4f3ea7;
+  --product-accent-strong-rgb: 79, 62, 167;
+  --product-accent-soft: #f0ebff;
+  --product-citrus: #f3c43b;
+  --product-citrus-soft: #fff6cf;
+  --product-berry: #00a7a5;
+  --product-blue-dark: #18296c;
+  --product-ink: #172841;
+  --product-muted: #566276;
 }
 
 .product-detail-page main {
@@ -2134,7 +2217,7 @@ footer {
   right: 0;
   width: 38%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(248, 196, 0, 0.24), rgba(0, 138, 114, 0.1), rgba(0, 93, 185, 0.08));
+  background: linear-gradient(135deg, rgba(248, 196, 0, 0.24), rgba(var(--product-accent-rgb), 0.1), rgba(0, 93, 185, 0.08));
   clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
   pointer-events: none;
 }
@@ -2233,14 +2316,14 @@ footer {
 .product-button--primary {
   color: #ffffff;
   background: var(--product-accent);
-  box-shadow: 0 14px 28px rgba(0, 138, 114, 0.22);
+  box-shadow: 0 14px 28px rgba(var(--product-accent-rgb), 0.22);
 }
 
 .product-button--primary:hover {
   border-color: var(--product-accent-strong);
   background: var(--product-accent-strong);
   color: #ffffff;
-  box-shadow: 0 18px 34px rgba(0, 111, 93, 0.28);
+  box-shadow: 0 18px 34px rgba(var(--product-accent-strong-rgb), 0.28);
 }
 
 .product-button--secondary {
@@ -2265,7 +2348,7 @@ footer {
   align-items: center;
   min-height: 34px;
   padding: 0.42rem 0.68rem;
-  border: 1px solid rgba(0, 138, 114, 0.18);
+  border: 1px solid rgba(var(--product-accent-rgb), 0.18);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.82);
   color: #23485a;
@@ -2311,7 +2394,7 @@ footer {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(0, 138, 114, 0.14);
+  border: 1px solid rgba(var(--product-accent-rgb), 0.14);
   border-radius: 8px;
   color: var(--product-accent-strong);
   background: rgba(255, 255, 255, 0.9);
@@ -2436,7 +2519,6 @@ footer {
 }
 
 .product-fact-card,
-.formula-card,
 .usage-item,
 .product-note,
 .product-detail-page .partner-card {
@@ -2481,7 +2563,6 @@ footer {
 }
 
 .product-fact-card h3,
-.formula-card h3,
 .usage-item h3,
 .product-note h3 {
   margin: 0;
@@ -2492,7 +2573,6 @@ footer {
 }
 
 .product-fact-card p,
-.formula-card p,
 .usage-item p,
 .product-note p {
   margin: 0.75rem 0 0;
@@ -2521,7 +2601,7 @@ footer {
   min-height: 94px;
   margin: 0;
   padding: 1rem 1rem 1rem 3rem;
-  border: 1px solid rgba(0, 138, 114, 0.14);
+  border: 1px solid rgba(var(--product-accent-rgb), 0.14);
   border-radius: 8px;
   background: #ffffff;
   color: #26384a;
@@ -2546,143 +2626,6 @@ footer {
   font-weight: 700;
 }
 
-.product-photo-story {
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #fffaf0 100%),
-    repeating-linear-gradient(90deg, rgba(248, 196, 0, 0.08) 0 1px, transparent 1px 96px);
-}
-
-.product-photo-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.48fr) minmax(0, 1fr);
-  gap: 2rem;
-  align-items: start;
-}
-
-.product-photo-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.56fr);
-  grid-template-rows: repeat(2, minmax(210px, auto));
-  gap: 1rem;
-}
-
-.product-photo-card {
-  position: relative;
-  min-height: 210px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #10263f;
-  color: #ffffff;
-  box-shadow: 0 22px 46px rgba(8, 46, 84, 0.14);
-  transform: translateZ(0);
-}
-
-.product-photo-card--large {
-  grid-row: span 2;
-}
-
-.product-photo-card img {
-  width: 100%;
-  height: 100%;
-  min-height: 210px;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.55s ease, filter 0.55s ease;
-}
-
-.product-photo-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(6, 29, 54, 0) 34%, rgba(6, 29, 54, 0.88) 100%);
-}
-
-.product-photo-card div {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 1;
-}
-
-.product-photo-card h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 1.12rem;
-  line-height: 1.25;
-  letter-spacing: 0;
-}
-
-.product-photo-card p {
-  margin: 0.45rem 0 0;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
-.product-photo-card:hover img {
-  transform: scale(1.06);
-  filter: saturate(1.06);
-}
-
-.product-photo-grid--official {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(230px, auto) minmax(250px, auto);
-}
-
-.product-photo-grid--official .product-photo-card {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  min-height: 0;
-  border: 1px solid rgba(15, 39, 66, 0.09);
-  background: #ffffff;
-  color: var(--product-ink);
-}
-
-.product-photo-grid--official .product-photo-card::after {
-  display: none;
-}
-
-.product-photo-grid--official .product-photo-card--large {
-  grid-column: 1 / -1;
-  grid-row: auto;
-}
-
-.product-photo-grid--official .product-photo-card img {
-  height: 170px;
-  min-height: 0;
-  padding: 1rem;
-  object-fit: contain;
-  background: linear-gradient(135deg, #fff6cf, #ecf8f5);
-}
-
-.product-photo-grid--official .product-photo-card--large img {
-  height: 230px;
-  padding: 0;
-  object-fit: cover;
-  object-position: center;
-  background: #ffd51d;
-}
-
-.product-photo-grid--official .product-photo-card div {
-  position: static;
-  padding: 1rem 1.1rem 1.15rem;
-}
-
-.product-photo-grid--official .product-photo-card h3 {
-  color: var(--product-ink);
-}
-
-.product-photo-grid--official .product-photo-card p {
-  color: var(--product-muted);
-}
-
-.product-photo-grid--official .product-photo-card:hover img {
-  transform: none;
-  filter: saturate(1.04);
-}
-
 .product-formula {
   background:
     linear-gradient(180deg, #f3f9fb 0%, #ffffff 100%),
@@ -2694,136 +2637,6 @@ footer {
   grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
   gap: 2rem;
   align-items: start;
-}
-
-.formula-interactive {
-  display: grid;
-  gap: 1rem;
-  min-width: 0;
-}
-
-.formula-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-.formula-tab {
-  min-height: 44px;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid rgba(0, 138, 114, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
-  color: #25405f;
-  font: inherit;
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.formula-tab:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 138, 114, 0.34);
-}
-
-.formula-tab.is-active {
-  color: #ffffff;
-  border-color: var(--product-accent);
-  background: var(--product-accent);
-  box-shadow: 0 12px 26px rgba(0, 138, 114, 0.22);
-}
-
-.formula-showcase {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.formula-photo-stage {
-  position: relative;
-  min-height: 458px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #dfeaf2;
-  box-shadow: 0 18px 38px rgba(8, 46, 84, 0.12);
-}
-
-.formula-photo-stage--vitrum {
-  border: 1px solid rgba(0, 138, 114, 0.1);
-  background:
-    linear-gradient(150deg, #fff6cf 0%, #ffffff 46%, #eaf7f4 100%);
-}
-
-.formula-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.04);
-  transition: opacity 0.45s ease, transform 0.8s ease;
-}
-
-.formula-photo-stage--vitrum .formula-photo {
-  padding: 1.45rem;
-  object-fit: contain;
-}
-
-.formula-photo-stage--vitrum .formula-photo[data-vitrum-photo="minerals"] {
-  padding: 1.35rem;
-}
-
-.formula-photo.is-active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.formula-grid {
-  display: block;
-  min-width: 0;
-}
-
-.formula-card {
-  position: relative;
-  display: none;
-  align-content: center;
-  min-height: 458px;
-  padding: 2rem 1.8rem 2rem 6.2rem;
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.24s ease, transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
-}
-
-.formula-card strong {
-  position: absolute;
-  top: 2rem;
-  left: 1.8rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 8px;
-  color: var(--product-accent-strong);
-  background: var(--product-accent-soft);
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-.formula-card--accent {
-  border-color: rgba(0, 138, 114, 0.22);
-  background: linear-gradient(135deg, #ffffff, #edf9f6);
-}
-
-.formula-card.is-active {
-  display: grid;
-  opacity: 1;
-  transform: translateY(0);
-  border-color: rgba(0, 138, 114, 0.34);
-  box-shadow: 0 24px 46px rgba(8, 46, 84, 0.13);
 }
 
 .product-usage-layout {
@@ -2857,7 +2670,7 @@ footer {
 .usage-item:focus-visible,
 .usage-item.is-active {
   transform: translateX(6px);
-  border-color: rgba(0, 138, 114, 0.3);
+  border-color: rgba(var(--product-accent-rgb), 0.3);
   background: #fbfffe;
   box-shadow: 0 22px 42px rgba(8, 46, 84, 0.12);
 }
@@ -2941,6 +2754,1431 @@ footer {
   transform: translateX(-4px);
 }
 
+.product-snup-page .product-hero {
+  background:
+    linear-gradient(120deg, #ffffff 0%, #e8f8ff 36%, #f6fbfd 64%, #fff1f4 100%),
+    repeating-linear-gradient(90deg, rgba(0, 151, 200, 0.055) 0 1px, transparent 1px 80px);
+}
+
+.product-snup-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 151, 200, 0.2), rgba(0, 167, 165, 0.12), rgba(228, 0, 43, 0.1));
+}
+
+.product-snup-page .product-hero-image {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(229, 249, 255, 0.96)),
+    linear-gradient(90deg, rgba(0, 151, 200, 0.12), rgba(228, 0, 43, 0.06));
+}
+
+.product-snup-page .product-hero-image > img {
+  width: min(82%, 420px);
+}
+
+.product-hero-nutrients--snup {
+  grid-template-columns: repeat(2, minmax(58px, auto));
+}
+
+.product-hero-nutrients--snup span {
+  width: auto;
+  min-width: 58px;
+  padding: 0 0.45rem;
+}
+
+.product-snup-page .product-fact-card:nth-child(4) span {
+  color: #b0002d;
+  background: var(--product-citrus-soft);
+}
+
+.product-snup-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 67% 52%, rgba(0, 151, 200, 0.16), transparent 24%),
+    linear-gradient(180deg, #f3fbff 0%, #ffffff 100%);
+}
+
+.product-snup-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-snup-page .snup-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.snup-formula-system {
+  position: relative;
+  min-height: 760px;
+  isolation: isolate;
+}
+
+.snup-formula-system::before {
+  content: '';
+  position: absolute;
+  inset: 4% 2% 4%;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 151, 200, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 151, 200, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 151, 200, 0.065) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 151, 200, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.snup-formula-system::after {
+  content: '';
+  position: absolute;
+  right: 18%;
+  bottom: 19%;
+  z-index: 1;
+  width: min(52%, 520px);
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 151, 200, 0.2), transparent 68%);
+  filter: blur(10px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.snup-formula-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.snup-formula-line {
+  fill: none;
+  stroke: rgba(21, 151, 223, 0.58);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 7px rgba(21, 151, 223, 0.16));
+  vector-effect: non-scaling-stroke;
+}
+
+.snup-formula-dot {
+  fill: #1597df;
+  stroke: #ffffff;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 5px rgba(21, 151, 223, 0.42));
+  vector-effect: non-scaling-stroke;
+}
+
+.snup-formula-core {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  z-index: 3;
+  width: min(48vw, 450px);
+  height: 440px;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.snup-formula-pack {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.snup-formula-pack::after {
+  content: '';
+  position: absolute;
+  right: 20%;
+  bottom: 7%;
+  left: 18%;
+  z-index: 0;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 95, 145, 0.16);
+  filter: blur(10px);
+}
+
+.snup-formula-pack img {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 28px rgba(8, 46, 84, 0.18));
+}
+
+.snup-formula-product {
+  left: 50%;
+  bottom: 1%;
+  width: auto;
+  height: min(100%, 430px);
+  max-width: min(82%, 340px);
+  transform: translateX(-50%);
+}
+
+.snup-formula-connector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 151, 200, 0.1), rgba(0, 151, 200, 0.78));
+  box-shadow: 0 0 14px rgba(0, 151, 200, 0.2);
+  transform-origin: left center;
+  animation: snupConnectorPulse 4.8s ease-in-out infinite;
+}
+
+.snup-formula-connector::after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #1597df;
+  box-shadow: 0 0 0 2px rgba(21, 151, 223, 0.34);
+  transform: translateY(-50%);
+}
+
+.snup-formula-connector--active {
+  width: 250px;
+  transform: translate(-130px, -54px) rotate(180deg);
+}
+
+.snup-formula-connector--seawater {
+  width: 250px;
+  transform: translate(130px, -54px) rotate(0deg);
+  animation-delay: 0.35s;
+}
+
+.snup-formula-connector--format {
+  width: 170px;
+  transform: translate(0, 126px) rotate(90deg);
+  animation-delay: 0.7s;
+}
+
+.snup-formula-connector--bridge {
+  display: none;
+}
+
+.snup-formula-points {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.snup-formula-point {
+  --point-x: 0;
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 260px;
+  min-height: 220px;
+  padding: 1.1rem 1.2rem 1.25rem;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.05);
+  backdrop-filter: blur(3px);
+  overflow: visible;
+  text-align: center;
+  transform: translate(var(--point-x), 0);
+  animation: snupFormulaPointFloat 6s ease-in-out infinite;
+}
+
+.snup-formula-point::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(21, 151, 223, 0.3);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.snup-formula-point::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 74px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #1597df, transparent);
+  box-shadow: 0 0 10px rgba(21, 151, 223, 0.28);
+  transform: translateX(-50%);
+}
+
+.snup-formula-point--active {
+  top: 0.8rem;
+  left: 0;
+}
+
+.snup-formula-point--seawater {
+  top: 0.8rem;
+  right: 0;
+  animation-delay: 0.45s;
+}
+
+.snup-formula-point--format {
+  --point-x: -50%;
+  bottom: -2.2rem;
+  left: 55%;
+  animation-delay: 0.9s;
+}
+
+.snup-formula-point img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 98px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 16px rgba(8, 46, 84, 0.1));
+}
+
+.snup-formula-point--active img {
+  max-width: 160px;
+  height: 92px;
+  padding: 0.25rem;
+}
+
+.snup-formula-point--seawater img {
+  max-width: 88px;
+  height: 110px;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.snup-formula-point--format img {
+  max-width: 78px;
+  height: 102px;
+}
+
+.snup-formula-point p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.product-vitrum-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 50%, rgba(248, 196, 0, 0.18), transparent 24%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-vitrum-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-vitrum-page .vitrum-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-vitrum-page .vitrum-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(248, 196, 0, 0.2) 151px 152px, transparent 153px 208px, rgba(0, 138, 114, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(248, 196, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 138, 114, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-vitrum-page .vitrum-formula-system::after {
+  right: 19%;
+  bottom: 18%;
+  background: radial-gradient(ellipse at center, rgba(248, 196, 0, 0.22), transparent 68%);
+}
+
+.product-vitrum-page .vitrum-formula-line {
+  stroke: rgba(0, 138, 114, 0.56);
+  filter: drop-shadow(0 0 7px rgba(0, 138, 114, 0.16));
+}
+
+.product-vitrum-page .vitrum-formula-dot {
+  fill: var(--product-accent);
+  filter: drop-shadow(0 0 5px rgba(0, 138, 114, 0.36));
+}
+
+.product-vitrum-page .vitrum-formula-core {
+  top: 42%;
+  width: min(52vw, 540px);
+  height: 460px;
+}
+
+.product-vitrum-page .vitrum-formula-pack::after {
+  right: 14%;
+  bottom: 8%;
+  left: 14%;
+  background: rgba(68, 92, 38, 0.14);
+}
+
+.product-vitrum-page .vitrum-formula-product {
+  left: 50%;
+  bottom: 7%;
+  width: min(104%, 520px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}
+
+.product-vitrum-page .vitrum-formula-point::before {
+  border-color: rgba(0, 138, 114, 0.28);
+}
+
+.product-vitrum-page .vitrum-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-citrus), var(--product-accent), transparent);
+  box-shadow: 0 0 10px rgba(248, 196, 0, 0.24);
+}
+
+.product-vitrum-page .vitrum-formula-point img {
+  max-width: 132px;
+  height: 104px;
+  padding: 0.3rem;
+}
+
+.product-vitrum-page .vitrum-formula-point--minerals img {
+  max-width: 124px;
+}
+
+.product-vitrum-page .vitrum-formula-point--beta img {
+  max-width: 142px;
+  height: 100px;
+}
+
+.product-coldrex-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(248, 196, 0, 0.16), transparent 30%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.58) 0%, rgba(255, 249, 223, 0.66) 35%, rgba(239, 248, 255, 0.54) 68%, rgba(248, 251, 255, 0.42) 100%);
+}
+
+.product-coldrex-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 93, 185, 0.07), rgba(248, 196, 0, 0.12), rgba(213, 0, 88, 0.045));
+}
+
+.product-coldrex-page .product-hero-image {
+  min-height: 430px;
+  padding: 1.25rem;
+  border-color: rgba(0, 93, 185, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 219, 0.94)),
+    linear-gradient(90deg, rgba(0, 93, 185, 0.08), rgba(213, 0, 88, 0.06));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+  transform: translateZ(0);
+}
+
+.product-coldrex-page .product-hero-image > img {
+  width: min(78%, 390px);
+  max-height: 370px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: coldrexHeroFloat 9s linear infinite;
+}
+
+.product-coldrex-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-coldrex-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-citrus);
+}
+
+.product-coldrex-page .product-fact-card span {
+  color: var(--product-blue-dark);
+  background: linear-gradient(135deg, #fff5c4, #ffffff);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-blue-dark);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-coldrex-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 50%, rgba(248, 196, 0, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(213, 0, 88, 0.1), transparent 18%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-coldrex-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-coldrex-page .coldrex-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-coldrex-page .coldrex-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(248, 196, 0, 0.22) 151px 152px, transparent 153px 208px, rgba(0, 93, 185, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 93, 185, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(248, 196, 0, 0.065) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-coldrex-page .coldrex-formula-system::after {
+  right: 18%;
+  bottom: 17%;
+  background: radial-gradient(ellipse at center, rgba(248, 196, 0, 0.24), transparent 68%);
+}
+
+.product-coldrex-page .coldrex-formula-line {
+  stroke: rgba(0, 93, 185, 0.62);
+  stroke-width: 2.35;
+  filter: drop-shadow(0 0 9px rgba(0, 93, 185, 0.18));
+}
+
+.product-coldrex-page .coldrex-formula-dot {
+  fill: var(--product-accent);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 93, 185, 0.36));
+}
+
+.product-coldrex-page .coldrex-formula-core {
+  top: 50%;
+  width: min(50vw, 520px);
+  height: 440px;
+}
+
+.product-coldrex-page .coldrex-formula-pack::after {
+  right: 13%;
+  bottom: 10%;
+  left: 13%;
+  background: rgba(8, 46, 84, 0.14);
+}
+
+.product-coldrex-page .coldrex-formula-product {
+  left: 50%;
+  bottom: 10%;
+  width: min(66%, 340px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 28px 28px rgba(8, 46, 84, 0.18));
+}
+
+.product-coldrex-page .coldrex-formula-point {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+}
+
+.product-coldrex-page .coldrex-formula-point::before {
+  border-color: rgba(0, 93, 185, 0.28);
+}
+
+.product-coldrex-page .coldrex-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-berry), var(--product-accent), transparent);
+  box-shadow: 0 0 10px rgba(248, 196, 0, 0.28);
+}
+
+.product-coldrex-page .coldrex-formula-point img {
+  max-width: 132px;
+  height: 98px;
+  margin-bottom: 0.75rem;
+  padding: 0.1rem;
+}
+
+.product-coldrex-page .coldrex-formula-point--phenylephrine img {
+  max-width: 138px;
+}
+
+.product-coldrex-page .coldrex-formula-point--vitamin-c img {
+  max-width: 142px;
+}
+
+.product-coldrex-page .coldrex-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-coldrex-page .coldrex-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(0, 166, 81, 0.14), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 113, 206, 0.1), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #edf8ff 34%, #f4fbf7 66%, #eef8ff 100%);
+}
+
+.product-enterogermina-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 113, 206, 0.16), rgba(0, 166, 81, 0.12), rgba(0, 167, 165, 0.06));
+}
+
+.product-enterogermina-page .product-hero-image {
+  --enterogermina-hero-shadow-opacity: 0.76;
+  --enterogermina-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  padding: 1.2rem;
+  border-color: rgba(0, 113, 206, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(234, 246, 255, 0.96)),
+    linear-gradient(90deg, rgba(0, 113, 206, 0.1), rgba(0, 166, 81, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-enterogermina-page .product-hero-image::after {
+  left: 16%;
+  right: 16%;
+  bottom: 2.05rem;
+  height: 22px;
+  background: rgba(8, 46, 84, 0.13);
+  filter: blur(13px);
+  opacity: var(--enterogermina-hero-shadow-opacity);
+  transform: var(--enterogermina-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: enterogerminaHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+  width: min(92%, 520px);
+  max-height: 300px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: enterogerminaHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-enterogermina-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-enterogermina-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #eaf6ff, #ffffff);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-enterogermina-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(0, 113, 206, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(0, 166, 81, 0.12), transparent 18%),
+    linear-gradient(180deg, #f1faff 0%, #ffffff 100%);
+}
+
+.product-enterogermina-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-enterogermina-page .enterogermina-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-enterogermina-page .enterogermina-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 113, 206, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 166, 81, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 113, 206, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 166, 81, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-enterogermina-page .enterogermina-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(0, 113, 206, 0.18), transparent 68%);
+}
+
+.product-enterogermina-page .enterogermina-formula-line {
+  stroke: rgba(0, 113, 206, 0.74);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(0, 113, 206, 0.22));
+}
+
+.product-enterogermina-page .enterogermina-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 113, 206, 0.32));
+}
+
+.product-enterogermina-page .enterogermina-formula-core {
+  top: 50%;
+  width: min(56vw, 560px);
+  height: 430px;
+}
+
+.product-enterogermina-page .enterogermina-formula-pack::after {
+  right: 7%;
+  bottom: 18%;
+  left: 7%;
+  height: 24px;
+  background: rgba(8, 46, 84, 0.13);
+}
+
+.product-enterogermina-page .enterogermina-formula-product {
+  left: 50%;
+  bottom: 27%;
+  z-index: 3;
+  width: min(100%, 540px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(8, 46, 84, 0.16));
+}
+
+.product-enterogermina-page .enterogermina-formula-point {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+  animation: none;
+}
+
+.product-enterogermina-page .enterogermina-formula-point::before {
+  border-color: rgba(0, 113, 206, 0.28);
+}
+
+.product-enterogermina-page .enterogermina-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(0, 113, 206, 0.24);
+}
+
+.product-enterogermina-page .enterogermina-formula-point > span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 0.82rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--product-accent), var(--product-accent-strong));
+  box-shadow: 0 16px 24px rgba(0, 113, 206, 0.16);
+  font-size: 1.34rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-enterogermina-page .enterogermina-formula-point--spores > span {
+  background: linear-gradient(135deg, var(--product-citrus), #007d3d);
+  box-shadow: 0 16px 24px rgba(0, 166, 81, 0.16);
+}
+
+.product-enterogermina-page .enterogermina-formula-point--format > span {
+  color: var(--product-accent-strong);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2px rgba(0, 113, 206, 0.16), 0 16px 24px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-page .enterogermina-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-enterogermina-page .enterogermina-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-page .product-note {
+  border-top-color: var(--product-citrus);
+  background: linear-gradient(135deg, #ffffff, #effaf3);
+}
+
+.product-enterogermina-page .product-where-to-buy {
+  background: #f1faff;
+}
+
+.product-sinulan-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(240, 90, 40, 0.14), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(77, 143, 56, 0.1), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #f1faee 34%, #fff5ef 66%, #eff8ff 100%);
+}
+
+.product-sinulan-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(77, 143, 56, 0.16), rgba(240, 90, 40, 0.12), rgba(0, 93, 185, 0.05));
+}
+
+.product-sinulan-page .product-hero-image {
+  --sinulan-hero-shadow-opacity: 0.76;
+  --sinulan-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  padding: 1.2rem;
+  border-color: rgba(77, 143, 56, 0.16);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(241, 250, 238, 0.96)),
+    linear-gradient(90deg, rgba(77, 143, 56, 0.1), rgba(240, 90, 40, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-sinulan-page .product-hero-image::after {
+  left: 16%;
+  right: 16%;
+  bottom: 2.05rem;
+  height: 22px;
+  background: rgba(49, 79, 39, 0.14);
+  filter: blur(13px);
+  opacity: var(--sinulan-hero-shadow-opacity);
+  transform: var(--sinulan-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: sinulanHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-sinulan-page .product-hero-image > .sinulan-hero-packshot {
+  width: min(104%, 590px);
+  max-height: 320px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: sinulanHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-sinulan-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-sinulan-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-sinulan-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #edf8e9, #ffffff);
+}
+
+.product-sinulan-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-sinulan-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-sinulan-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-sinulan-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(77, 143, 56, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(240, 90, 40, 0.12), transparent 18%),
+    linear-gradient(180deg, #f5fbf2 0%, #ffffff 100%);
+}
+
+.product-sinulan-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-sinulan-page .sinulan-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-sinulan-page .sinulan-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(77, 143, 56, 0.18) 151px 152px, transparent 153px 208px, rgba(240, 90, 40, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(77, 143, 56, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(240, 90, 40, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-sinulan-page .sinulan-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(77, 143, 56, 0.18), transparent 68%);
+}
+
+.product-sinulan-page .sinulan-formula-line {
+  stroke: rgba(77, 143, 56, 0.74);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(77, 143, 56, 0.22));
+}
+
+.product-sinulan-page .sinulan-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(77, 143, 56, 0.32));
+}
+
+.product-sinulan-page .sinulan-formula-core {
+  top: 50%;
+  width: min(52vw, 520px);
+  height: 430px;
+}
+
+.product-sinulan-page .sinulan-formula-pack::after {
+  right: 14%;
+  bottom: 19%;
+  left: 14%;
+  height: 18px;
+  background: rgba(49, 79, 39, 0.13);
+}
+
+.product-sinulan-page .sinulan-formula-product {
+  left: 50%;
+  bottom: 24%;
+  z-index: 3;
+  width: min(86%, 430px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(49, 79, 39, 0.15));
+}
+
+.product-sinulan-page .sinulan-formula-point {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+  animation: none;
+}
+
+.product-sinulan-page .sinulan-formula-point::before {
+  border-color: rgba(77, 143, 56, 0.28);
+}
+
+.product-sinulan-page .sinulan-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(77, 143, 56, 0.24);
+}
+
+.product-sinulan-page .sinulan-formula-point--plant {
+  left: -0.75rem;
+}
+
+.product-sinulan-page .sinulan-formula-point--breathing {
+  right: -0.75rem;
+}
+
+.product-sinulan-page .sinulan-formula-point > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 0.82rem;
+  padding: 0.2rem;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 24px rgba(49, 79, 39, 0.08);
+  object-fit: contain;
+}
+
+.product-sinulan-page .sinulan-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-sinulan-page .sinulan-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-sinulan-page .product-note {
+  border-top-color: var(--product-citrus);
+  background: linear-gradient(135deg, #ffffff, #fff2ec);
+}
+
+.product-sinulan-page .product-where-to-buy {
+  background: #f5fbf2;
+}
+
+.product-edarbi-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(155, 20, 95, 0.13), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(43, 127, 183, 0.1), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #fff3f8 34%, #f4f7fb 66%, #eef8ff 100%);
+}
+
+.product-edarbi-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(155, 20, 95, 0.14), rgba(77, 106, 130, 0.12), rgba(43, 127, 183, 0.06));
+}
+
+.product-edarbi-page .product-hero-image {
+  --edarbi-hero-shadow-opacity: 0.76;
+  --edarbi-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  padding: 1.2rem;
+  border-color: rgba(155, 20, 95, 0.14);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(251, 236, 244, 0.94)),
+    linear-gradient(90deg, rgba(155, 20, 95, 0.09), rgba(43, 127, 183, 0.07));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-edarbi-page .product-hero-image::after {
+  left: 13%;
+  right: 13%;
+  bottom: 2rem;
+  height: 22px;
+  background: rgba(62, 45, 72, 0.14);
+  filter: blur(13px);
+  opacity: var(--edarbi-hero-shadow-opacity);
+  transform: var(--edarbi-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: edarbiHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
+  width: min(100%, 560px);
+  max-height: 285px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: edarbiHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-edarbi-page .product-hero-metric:first-child strong {
+  font-size: 1.45rem;
+}
+
+.product-edarbi-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-edarbi-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-berry);
+}
+
+.product-edarbi-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #fbecf4, #ffffff);
+}
+
+.product-edarbi-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-edarbi-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-edarbi-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-edarbi-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(155, 20, 95, 0.14), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(43, 127, 183, 0.12), transparent 18%),
+    linear-gradient(180deg, #fff6fa 0%, #ffffff 100%);
+}
+
+.product-edarbi-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-edarbi-page .edarbi-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-edarbi-page .edarbi-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(155, 20, 95, 0.16) 151px 152px, transparent 153px 208px, rgba(43, 127, 183, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(155, 20, 95, 0.052) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(43, 127, 183, 0.052) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-edarbi-page .edarbi-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(155, 20, 95, 0.16), transparent 68%);
+}
+
+.product-edarbi-page .edarbi-formula-line {
+  stroke: rgba(155, 20, 95, 0.72);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(155, 20, 95, 0.2));
+  animation: none;
+}
+
+.product-edarbi-page .edarbi-formula-dot {
+  fill: var(--product-berry);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(155, 20, 95, 0.28));
+  animation: none;
+}
+
+.product-edarbi-page .edarbi-formula-core {
+  top: 50%;
+  width: min(58vw, 580px);
+  height: 420px;
+}
+
+.product-edarbi-page .edarbi-formula-pack::after {
+  right: 10%;
+  bottom: 22%;
+  left: 10%;
+  height: 20px;
+  background: rgba(62, 45, 72, 0.12);
+}
+
+.product-edarbi-page .edarbi-formula-product {
+  left: 50%;
+  bottom: 29%;
+  z-index: 3;
+  width: min(96%, 520px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(62, 45, 72, 0.15));
+}
+
+.product-edarbi-page .edarbi-formula-point {
+  width: 230px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+  animation: none;
+}
+
+.product-edarbi-page .edarbi-formula-point::before {
+  border-color: rgba(155, 20, 95, 0.26);
+}
+
+.product-edarbi-page .edarbi-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-berry), transparent);
+  box-shadow: 0 0 10px rgba(155, 20, 95, 0.22);
+}
+
+.product-edarbi-page .edarbi-formula-point > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 0.82rem;
+  padding: 0.2rem;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 24px rgba(62, 45, 72, 0.08);
+  object-fit: contain;
+}
+
+.product-edarbi-page .edarbi-formula-point--azilsartan {
+  left: -0.35rem;
+}
+
+.product-edarbi-page .edarbi-formula-point--chlorthalidone {
+  right: -0.35rem;
+}
+
+.product-edarbi-page .edarbi-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-edarbi-page .edarbi-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-edarbi-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #fbecf4);
+}
+
+.product-edarbi-page .product-where-to-buy {
+  background: #fff6fa;
+}
+
+.product-magne-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(243, 196, 59, 0.18), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 167, 165, 0.08), transparent 24%),
+    linear-gradient(120deg, #ffffff 0%, #fff9de 32%, #f3efff 66%, #eef9fb 100%);
+}
+
+.product-magne-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(123, 97, 200, 0.12), rgba(243, 196, 59, 0.16), rgba(0, 167, 165, 0.06));
+}
+
+.product-magne-page .product-hero-image {
+  --magne-hero-shadow-opacity: 0.78;
+  --magne-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  overflow: hidden;
+  border-color: rgba(0, 93, 185, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 249, 225, 0.96)),
+    linear-gradient(90deg, rgba(123, 97, 200, 0.1), rgba(243, 196, 59, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-magne-page .product-hero-image::after {
+  left: 24%;
+  right: 24%;
+  bottom: 2.2rem;
+  height: 24px;
+  background: rgba(47, 40, 104, 0.14);
+  filter: blur(13px);
+  opacity: var(--magne-hero-shadow-opacity);
+  transform: var(--magne-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: magneHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-magne-page .product-hero-image > .magne-hero-packshot {
+  width: auto;
+  max-height: 320px;
+  filter: none;
+  backface-visibility: hidden;
+  transform: translate3d(0, var(--magne-hero-float-y, 0px), 0);
+  will-change: transform;
+  animation: magneHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-magne-page.magne-hero-paused .product-hero-image > .magne-hero-packshot,
+.product-magne-page.magne-hero-paused .product-hero-image::after {
+  animation-play-state: paused;
+}
+
+.product-hero-nutrients--magne span {
+  border-color: rgba(123, 97, 200, 0.18);
+  color: var(--product-accent-strong);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.product-hero-nutrients--magne span:nth-child(2),
+.product-hero-nutrients--magne span:nth-child(4) {
+  color: #7d6200;
+  background: rgba(255, 247, 212, 0.94);
+}
+
+.product-magne-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-magne-page .product-hero-metric:nth-child(3) strong {
+  color: #7d6200;
+}
+
+.product-magne-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #f0ebff, #ffffff);
+}
+
+.product-magne-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-magne-page .product-fact-card:nth-child(3) span {
+  color: #7d6200;
+  background: var(--product-citrus);
+}
+
+.product-magne-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-magne-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(123, 97, 200, 0.14), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(243, 196, 59, 0.14), transparent 18%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-magne-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-magne-page .magne-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-magne-page .magne-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(123, 97, 200, 0.18) 151px 152px, transparent 153px 208px, rgba(243, 196, 59, 0.16) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(123, 97, 200, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(243, 196, 59, 0.065) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-magne-page .magne-formula-system::after {
+  right: 18%;
+  bottom: 17%;
+  background: radial-gradient(ellipse at center, rgba(123, 97, 200, 0.18), transparent 68%);
+}
+
+.product-magne-page .magne-formula-line {
+  stroke: rgba(79, 62, 167, 0.58);
+  stroke-width: 2.35;
+  filter: drop-shadow(0 0 8px rgba(79, 62, 167, 0.18));
+}
+
+.product-magne-page .magne-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(79, 62, 167, 0.32));
+}
+
+.product-magne-page .magne-formula-core {
+  top: 43%;
+  width: min(50vw, 500px);
+  height: 460px;
+}
+
+.product-magne-page .magne-formula-pack::after {
+  right: 23%;
+  bottom: 13%;
+  left: 23%;
+  background: rgba(47, 40, 104, 0.14);
+}
+
+.product-magne-page .magne-formula-product {
+  left: 50%;
+  bottom: 16%;
+  z-index: 3;
+  width: min(48%, 235px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(47, 40, 104, 0.18));
+}
+
+.product-magne-page .magne-formula-point {
+  background: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 16px 34px rgba(47, 40, 104, 0.06);
+}
+
+.product-magne-page .magne-formula-point::before {
+  border-color: rgba(123, 97, 200, 0.28);
+}
+
+.product-magne-page .magne-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(123, 97, 200, 0.24);
+}
+
+.product-magne-page .magne-formula-point img {
+  max-width: 138px;
+  height: 104px;
+  margin-bottom: 0.7rem;
+  padding: 0.1rem;
+}
+
+.product-magne-page .magne-formula-point--b6 img {
+  max-width: 132px;
+}
+
+.product-magne-page .magne-formula-point--format img {
+  max-width: 136px;
+}
+
+.product-magne-page .magne-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-magne-page .magne-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-magne-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #fff8dc);
+}
+
+.product-magne-page .product-where-to-buy {
+  background: #f7f4ff;
+}
+
+.product-snup-page .product-note {
+  border-top-color: var(--product-citrus);
+  background: linear-gradient(135deg, #ffffff, #fff4f6);
+}
+
+.product-snup-page .product-where-to-buy {
+  background: #f2f9fd;
+}
+
 .product-detail-page.vitrum-reveal-ready .vitrum-animate {
   opacity: 0;
   transform: translateY(22px);
@@ -2974,6 +4212,124 @@ footer {
   }
 }
 
+@keyframes magneHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+@keyframes magneHeroShadow {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.94, 0.88, 1);
+  }
+}
+
+@keyframes enterogerminaHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes enterogerminaHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes sinulanHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes sinulanHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes edarbiHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes edarbiHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes coldrexHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  12.5%,
+  87.5% {
+    transform: translate3d(0, -1px, 0);
+  }
+  25%,
+  75% {
+    transform: translate3d(0, -4px, 0);
+  }
+  37.5%,
+  62.5% {
+    transform: translate3d(0, -7px, 0);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
 @keyframes vitrumPhotoDrift {
   0%,
   100% {
@@ -2984,13 +4340,42 @@ footer {
   }
 }
 
+@keyframes snupFormulaLevitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes snupFormulaPointFloat {
+  0%,
+  100% {
+    transform: translate(var(--point-x), 0);
+  }
+  50% {
+    transform: translate(var(--point-x), -10px);
+  }
+}
+
+@keyframes snupConnectorPulse {
+  0%,
+  100% {
+    opacity: 0.52;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
 @media (max-width: 980px) {
   .product-detail-page .product-hero {
     padding-top: 3rem;
   }
 
   .product-detail-page .product-hero-content,
-  .product-photo-layout,
   .product-formula-layout,
   .product-usage-layout {
     grid-template-columns: 1fr;
@@ -3009,21 +4394,18 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .product-photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .product-photo-card--large {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-
-  .formula-showcase {
+  .product-snup-page .snup-formula-layout,
+  .product-vitrum-page .vitrum-formula-layout,
+  .product-coldrex-page .coldrex-formula-layout,
+  .product-enterogermina-page .enterogermina-formula-layout,
+  .product-sinulan-page .sinulan-formula-layout,
+  .product-edarbi-page .edarbi-formula-layout,
+  .product-magne-page .magne-formula-layout {
     grid-template-columns: 1fr;
   }
 
-  .formula-photo-stage {
-    min-height: 280px;
+  .snup-formula-system {
+    min-height: 620px;
   }
 }
 
@@ -3033,6 +4415,35 @@ footer {
   .product-detail-page .product-where-to-buy {
     padding-right: 0.85rem;
     padding-left: 0.85rem;
+  }
+
+  .product-detail-page .product-hero-content,
+  .product-detail-page .product-section-inner,
+  .product-detail-page .product-hero-text,
+  .product-detail-page .product-hero-visual,
+  .product-detail-page .product-hero-image,
+  .product-detail-page .product-facts-grid,
+  .product-detail-page .product-benefits-panel,
+  .product-detail-page .usage-list,
+  .product-detail-page .product-note {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .product-detail-page .product-hero-content,
+  .product-detail-page .product-section-inner {
+    width: calc(100vw - 1.7rem);
+    max-width: calc(100vw - 1.7rem);
+  }
+
+  .product-detail-page .product-hero-text,
+  .product-detail-page .product-section-header,
+  .product-detail-page .product-fact-card,
+  .product-detail-page .benefits-list li,
+  .product-detail-page .usage-item,
+  .product-detail-page .product-note {
+    overflow-wrap: anywhere;
   }
 
   .product-detail-page .product-hero-text h1,
@@ -3049,8 +4460,6 @@ footer {
   .product-hero-actions,
   .product-detail-page .benefits-list,
   .product-facts-grid,
-  .product-photo-grid,
-  .formula-tabs,
   .product-detail-page .partners-grid,
   .product-hero-metrics {
     grid-template-columns: 1fr;
@@ -3058,6 +4467,21 @@ footer {
 
   .product-hero-actions {
     display: grid;
+  }
+
+  .product-badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-badges span {
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .product-magne-page .product-badges span:last-child {
+    grid-column: 1 / -1;
   }
 
   .product-button {
@@ -3073,6 +4497,25 @@ footer {
     max-height: 190px;
   }
 
+  .product-magne-page .product-hero-image > .magne-hero-packshot {
+    max-height: 190px;
+  }
+
+  .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+    width: min(100%, 420px);
+    max-height: 170px;
+  }
+
+  .product-sinulan-page .product-hero-image > .sinulan-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 175px;
+  }
+
+  .product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 165px;
+  }
+
   .product-hero-nutrients {
     display: none;
   }
@@ -3081,44 +4524,13 @@ footer {
     display: none;
   }
 
-  .product-photo-card,
-  .product-photo-card img {
-    min-height: 250px;
-  }
-
-  .product-photo-grid--official .product-photo-card,
-  .product-photo-grid--official .product-photo-card img {
-    min-height: 0;
-  }
-
-  .product-photo-grid--official .product-photo-card img,
-  .product-photo-grid--official .product-photo-card--large img {
-    height: 210px;
-  }
-
-  .formula-photo-stage {
-    min-height: 220px;
-  }
-
-  .formula-card {
-    min-height: auto;
-    padding: 1rem;
-    transform: none;
-  }
-
-  .formula-card strong {
-    position: static;
-    margin-bottom: 0.85rem;
-  }
-
   .usage-item {
     grid-template-columns: 1fr;
   }
 
   .usage-item:hover,
   .usage-item:focus-visible,
-  .usage-item.is-active,
-  .formula-card.is-active {
+  .usage-item.is-active {
     transform: none;
   }
 
@@ -3126,6 +4538,126 @@ footer {
     width: 100%;
     height: 6px;
     min-height: 6px;
+  }
+
+  .snup-formula-system {
+    display: grid;
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  .snup-formula-system::before,
+  .snup-formula-lines,
+  .snup-formula-connector {
+    display: none;
+  }
+
+  .snup-formula-core {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(100%, 220px);
+    height: 300px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .snup-formula-points {
+    position: relative;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .snup-formula-point,
+  .snup-formula-point--active,
+  .snup-formula-point--seawater,
+  .snup-formula-point--format {
+    --point-x: 0;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 0;
+    transform: none;
+    animation: none;
+  }
+
+  .product-coldrex-page .coldrex-formula-core {
+    width: min(100%, 260px);
+    height: 310px;
+  }
+
+  .product-coldrex-page .coldrex-formula-product {
+    bottom: 5%;
+    width: 100%;
+  }
+
+  .product-magne-page .magne-formula-core {
+    width: min(100%, 240px);
+    height: 280px;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-magne-page .magne-formula-product {
+    bottom: 22%;
+    width: min(100%, 120px);
+  }
+
+  .product-magne-page .magne-formula-points {
+    margin-top: 1.5rem;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-core {
+    width: min(100%, 300px);
+    height: 220px;
+    margin-bottom: 1rem;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-product {
+    bottom: 20%;
+    width: 100%;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-pack::after {
+    bottom: 14%;
+  }
+
+  .product-sinulan-page .sinulan-formula-core {
+    width: min(100%, 280px);
+    height: 225px;
+    margin-bottom: 1rem;
+  }
+
+  .product-sinulan-page .sinulan-formula-product {
+    bottom: 14%;
+    width: 100%;
+  }
+
+  .product-sinulan-page .sinulan-formula-pack::after {
+    bottom: 13%;
+  }
+
+  .product-edarbi-page .edarbi-formula-core {
+    width: min(100%, 300px);
+    height: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .product-edarbi-page .edarbi-formula-product {
+    bottom: 22%;
+    width: 100%;
+  }
+
+  .product-edarbi-page .edarbi-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-edarbi-page .edarbi-formula-point,
+  .product-edarbi-page .edarbi-formula-point--azilsartan,
+  .product-edarbi-page .edarbi-formula-point--chlorthalidone,
+  .product-edarbi-page .edarbi-formula-point--control {
+    right: auto;
+    left: auto;
+    width: 100%;
   }
 }
 
@@ -3143,8 +4675,36 @@ footer {
     max-height: 175px;
   }
 
+  .product-magne-page .product-hero-image > .magne-hero-packshot {
+    max-height: 175px;
+  }
+
+  .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-sinulan-page .product-hero-image > .sinulan-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-core {
+    height: 190px;
+  }
+
+  .product-sinulan-page .sinulan-formula-core {
+    height: 205px;
+  }
+
+  .product-edarbi-page .edarbi-formula-core {
+    height: 185px;
+  }
+
   .product-fact-card,
-  .formula-card,
+  .snup-formula-point,
   .usage-item,
   .product-note {
     min-height: auto;
@@ -3152,15 +4712,26 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .product-enterogermina-page .product-hero-image::after,
+  .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot,
+  .product-sinulan-page .product-hero-image::after,
+  .product-sinulan-page .product-hero-image > .sinulan-hero-packshot,
+  .product-edarbi-page .product-hero-image::after,
+  .product-edarbi-page .product-hero-image > .edarbi-hero-packshot,
+  .product-magne-page .product-hero-image::after,
+  .product-magne-page .product-hero-image > .magne-hero-packshot,
   .product-detail-page .product-hero-image > img,
-  .product-hero-nutrients span {
+  .product-hero-nutrients span,
+  .snup-formula-pack,
+  .snup-formula-point,
+  .snup-formula-line,
+  .coldrex-formula-line,
+  .snup-formula-dot,
+  .snup-formula-connector {
     animation: none;
   }
 
   .product-detail-page.vitrum-reveal-ready .vitrum-animate,
-  .formula-photo,
-  .product-photo-card img,
-  .formula-card,
   .usage-item {
     transition: none;
   }
