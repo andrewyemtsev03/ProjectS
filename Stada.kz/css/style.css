@@ -2118,6 +2118,48 @@ footer {
   --product-berry: #00a7a5;
 }
 
+.product-zodak-page {
+  --product-accent: #7a2f91;
+  --product-accent-rgb: 122, 47, 145;
+  --product-accent-strong: #55206f;
+  --product-accent-strong-rgb: 85, 32, 111;
+  --product-accent-soft: #f4e9f8;
+  --product-citrus: #009fd8;
+  --product-citrus-soft: #e7f7fd;
+  --product-berry: #d50058;
+  --product-blue-dark: #26315f;
+  --product-ink: #172841;
+  --product-muted: #566276;
+}
+
+.product-kamistad-page {
+  --product-accent: #d50058;
+  --product-accent-rgb: 213, 0, 88;
+  --product-accent-strong: #a50045;
+  --product-accent-strong-rgb: 165, 0, 69;
+  --product-accent-soft: #fff0f6;
+  --product-citrus: #f4d400;
+  --product-citrus-soft: #fff9d8;
+  --product-berry: #005db9;
+  --product-blue-dark: #063a74;
+  --product-ink: #172841;
+  --product-muted: #566276;
+}
+
+.product-kamistad-baby-page {
+  --product-accent: #00a7a5;
+  --product-accent-rgb: 0, 167, 165;
+  --product-accent-strong: #007a80;
+  --product-accent-strong-rgb: 0, 122, 128;
+  --product-accent-soft: #e8fbfb;
+  --product-citrus: #ffd400;
+  --product-citrus-soft: #fff8cf;
+  --product-berry: #d50058;
+  --product-blue-dark: #063a74;
+  --product-ink: #172841;
+  --product-muted: #566276;
+}
+
 .product-coldrex-page {
   --product-accent: #f8c400;
   --product-accent-rgb: 248, 196, 0;
@@ -2170,6 +2212,20 @@ footer {
   --product-citrus-soft: #eef3f7;
   --product-berry: #2b7fb7;
   --product-blue-dark: #26364b;
+  --product-ink: #172841;
+  --product-muted: #566276;
+}
+
+.product-vitaprost-page {
+  --product-accent: #1f7a9a;
+  --product-accent-rgb: 31, 122, 154;
+  --product-accent-strong: #115f7f;
+  --product-accent-strong-rgb: 17, 95, 127;
+  --product-accent-soft: #e8f5f8;
+  --product-citrus: #b6a05a;
+  --product-citrus-soft: #fbf5de;
+  --product-berry: #7c315f;
+  --product-blue-dark: #173a56;
   --product-ink: #172841;
   --product-muted: #566276;
 }
@@ -4179,6 +4235,678 @@ footer {
   background: #f2f9fd;
 }
 
+.product-zodak-page .product-hero {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(0, 159, 216, 0.18), transparent 28%),
+    radial-gradient(circle at 58% 78%, rgba(213, 0, 88, 0.08), transparent 24%),
+    linear-gradient(120deg, #ffffff 0%, #f4e9f8 38%, #e8f8fd 72%, #ffffff 100%);
+}
+
+.product-zodak-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(122, 47, 145, 0.15), rgba(0, 159, 216, 0.16), rgba(213, 0, 88, 0.08));
+}
+
+.product-zodak-page .product-hero-image {
+  min-height: 340px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(242, 233, 248, 0.96)),
+    linear-gradient(90deg, rgba(122, 47, 145, 0.1), rgba(0, 159, 216, 0.1));
+}
+
+.product-zodak-page .product-hero-image::after {
+  left: 15%;
+  right: 15%;
+  bottom: 2rem;
+  background: rgba(52, 32, 92, 0.16);
+  filter: blur(13px);
+}
+
+.product-zodak-page .product-hero-image > .zodak-hero-packshot {
+  width: min(100%, 570px);
+  max-height: 285px;
+  filter: drop-shadow(0 24px 26px rgba(52, 32, 92, 0.16));
+}
+
+.product-zodak-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-zodak-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-berry);
+}
+
+.product-zodak-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #f4e9f8, #ffffff);
+}
+
+.product-zodak-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-zodak-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-zodak-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-zodak-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(0, 159, 216, 0.12), transparent 24%),
+    linear-gradient(180deg, #f1fbff 0%, #ffffff 100%);
+}
+
+.product-zodak-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-zodak-page .zodak-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-zodak-page .zodak-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(122, 47, 145, 0.16) 151px 152px, transparent 153px 208px, rgba(0, 159, 216, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 159, 216, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 159, 216, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-zodak-page .zodak-formula-system::after {
+  right: 18%;
+  bottom: 17%;
+  background: radial-gradient(ellipse at center, rgba(122, 47, 145, 0.16), transparent 68%);
+}
+
+.product-zodak-page .zodak-formula-line {
+  stroke: rgba(0, 159, 216, 0.66);
+  stroke-width: 2.35;
+  filter: drop-shadow(0 0 8px rgba(0, 159, 216, 0.24));
+}
+
+.product-zodak-page .zodak-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 159, 216, 0.34));
+}
+
+.product-zodak-page .zodak-formula-core {
+  top: 47%;
+  width: min(54vw, 620px);
+  height: 460px;
+}
+
+.product-zodak-page .zodak-formula-pack::after {
+  right: 16%;
+  bottom: 14%;
+  left: 16%;
+  background: rgba(52, 32, 92, 0.14);
+}
+
+.product-zodak-page .zodak-formula-product {
+  left: 50%;
+  bottom: 18%;
+  z-index: 3;
+  width: min(92%, 520px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(52, 32, 92, 0.18));
+}
+
+.product-zodak-page .zodak-formula-point {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 34px rgba(52, 32, 92, 0.06);
+}
+
+.product-zodak-page .zodak-formula-point::before {
+  border-color: rgba(0, 159, 216, 0.3);
+}
+
+.product-zodak-page .zodak-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-citrus), var(--product-accent), transparent);
+  box-shadow: 0 0 10px rgba(0, 159, 216, 0.24);
+}
+
+.product-zodak-page .zodak-formula-icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(0, 159, 216, 0.22);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--product-accent-strong);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 16px 24px rgba(52, 32, 92, 0.08);
+}
+
+.product-zodak-page .zodak-formula-point--symptoms .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-zodak-page .zodak-formula-point--format .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-zodak-page .zodak-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-zodak-page .zodak-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-zodak-page .product-note {
+  border-top-color: var(--stada-red);
+  background: linear-gradient(135deg, #ffffff, #fff1f5);
+}
+
+.product-zodak-page .product-note h3 {
+  color: var(--stada-red);
+}
+
+.product-zodak-page .product-where-to-buy {
+  background: #f6f0fb;
+}
+
+.product-vitaprost-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 16%, rgba(182, 160, 90, 0.18), transparent 30%),
+    linear-gradient(135deg, #f4fbfc 0%, #ffffff 58%, #eef8fb 100%);
+}
+
+.product-vitaprost-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(31, 122, 154, 0.14), rgba(182, 160, 90, 0.12), rgba(124, 49, 95, 0.06));
+}
+
+.product-vitaprost-page .product-hero-image {
+  min-height: 360px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(31, 122, 154, 0.12), transparent 52%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(232, 245, 248, 0.72));
+}
+
+.product-vitaprost-page .product-hero-image > .vitaprost-hero-packshot {
+  width: min(82%, 430px);
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.product-vitaprost-page .product-hero-metric:nth-child(2) strong,
+.product-vitaprost-page .product-fact-card:nth-child(2) span {
+  color: var(--product-citrus);
+}
+
+.product-vitaprost-page .product-hero-metric:nth-child(3) strong,
+.product-vitaprost-page .product-fact-card:nth-child(4) span {
+  color: var(--product-berry);
+}
+
+.product-vitaprost-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, var(--product-accent-soft), #ffffff);
+}
+
+.product-vitaprost-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-vitaprost-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(31, 122, 154, 0.11), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f4fbfc 100%);
+}
+
+.product-vitaprost-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-vitaprost-page .vitaprost-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+}
+
+.product-vitaprost-page .vitaprost-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(31, 122, 154, 0.15) 151px 152px, transparent 153px 208px, rgba(182, 160, 90, 0.16) 209px 210px, transparent 211px),
+    radial-gradient(circle at 50% 50%, rgba(31, 122, 154, 0.09), transparent 58%);
+}
+
+.product-vitaprost-page .vitaprost-formula-line {
+  stroke: rgba(31, 122, 154, 0.68);
+  stroke-width: 2.5;
+}
+
+.product-vitaprost-page .vitaprost-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+}
+
+.product-vitaprost-page .vitaprost-formula-core {
+  top: 50%;
+  width: min(46vw, 520px);
+}
+
+.product-vitaprost-page .vitaprost-formula-product {
+  left: 50%;
+  bottom: 38%;
+  width: min(86%, 420px);
+  height: auto;
+  max-width: min(86%, 420px);
+  object-fit: contain;
+}
+
+.product-vitaprost-page .vitaprost-formula-pack::after {
+  right: 16%;
+  bottom: 20%;
+  left: 16%;
+}
+
+.product-vitaprost-page .vitaprost-formula-point {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 34px rgba(23, 58, 86, 0.07);
+}
+
+.product-vitaprost-page .vitaprost-formula-point::before {
+  border-color: rgba(31, 122, 154, 0.28);
+}
+
+.product-vitaprost-page .vitaprost-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+}
+
+.product-vitaprost-page .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-vitaprost-page .vitaprost-formula-point--indications .zodak-formula-icon {
+  background: var(--product-citrus);
+}
+
+.product-vitaprost-page .vitaprost-formula-point--format .zodak-formula-icon {
+  background: var(--product-berry);
+}
+
+.product-vitaprost-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, var(--product-accent-soft));
+}
+
+.product-vitaprost-page .product-note h3 {
+  color: var(--product-accent-strong);
+}
+
+.product-vitaprost-page .product-where-to-buy {
+  background: #f2fafb;
+}
+
+.product-kamistad-page .product-hero {
+  background:
+    radial-gradient(circle at 86% 14%, rgba(244, 212, 0, 0.24), transparent 27%),
+    radial-gradient(circle at 56% 82%, rgba(0, 93, 185, 0.1), transparent 24%),
+    linear-gradient(120deg, #ffffff 0%, #fff5c7 34%, #fff0f6 66%, #eef7ff 100%);
+}
+
+.product-kamistad-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(213, 0, 88, 0.14), rgba(244, 212, 0, 0.16), rgba(0, 93, 185, 0.1));
+}
+
+.product-kamistad-page .product-hero-image {
+  min-height: 360px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 249, 216, 0.95)),
+    linear-gradient(90deg, rgba(213, 0, 88, 0.08), rgba(0, 93, 185, 0.08));
+}
+
+.product-kamistad-page .product-hero-image::after {
+  left: 13%;
+  right: 13%;
+  bottom: 2rem;
+  background: rgba(6, 58, 116, 0.15);
+  filter: blur(13px);
+}
+
+.product-kamistad-page .product-hero-image > .kamistad-hero-packshot {
+  width: min(100%, 660px);
+  max-height: 285px;
+  filter: drop-shadow(0 24px 26px rgba(6, 58, 116, 0.16));
+}
+
+.product-kamistad-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-berry);
+}
+
+.product-kamistad-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent);
+}
+
+.product-kamistad-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+}
+
+.product-kamistad-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent);
+}
+
+.product-kamistad-page .product-fact-card:nth-child(3) span {
+  color: #073b75;
+  background: var(--product-citrus);
+}
+
+.product-kamistad-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-kamistad-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(213, 0, 88, 0.1), transparent 24%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-kamistad-page .zodak-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(213, 0, 88, 0.16) 151px 152px, transparent 153px 208px, rgba(0, 93, 185, 0.13) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(213, 0, 88, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 93, 185, 0.05) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-kamistad-page .zodak-formula-system::after {
+  background: radial-gradient(ellipse at center, rgba(244, 212, 0, 0.24), transparent 68%);
+}
+
+.product-kamistad-page .zodak-formula-line {
+  stroke: rgba(0, 93, 185, 0.58);
+}
+
+.product-kamistad-page .zodak-formula-dot {
+  fill: var(--product-citrus);
+}
+
+.product-kamistad-page .kamistad-formula-core {
+  top: 49%;
+  width: min(56vw, 660px);
+  height: 380px;
+}
+
+.product-kamistad-page .kamistad-formula-product {
+  bottom: 24%;
+  width: min(96%, 620px);
+  filter: drop-shadow(0 22px 24px rgba(6, 58, 116, 0.16));
+}
+
+.product-kamistad-page .zodak-formula-point--symptoms .zodak-formula-icon {
+  color: #073b75;
+  background: var(--product-citrus);
+}
+
+.product-kamistad-page .zodak-formula-point--format .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-kamistad-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #fff2c9);
+}
+
+.product-kamistad-page .product-note h3 {
+  color: var(--product-accent-strong);
+}
+
+.product-kamistad-page .product-where-to-buy {
+  background: #fff7df;
+}
+
+.product-kamistad-baby-page .product-hero {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 251, 251, 0.98) 34%, rgba(255, 248, 207, 0.92) 66%, rgba(255, 240, 246, 0.96) 100%);
+}
+
+.product-kamistad-baby-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 167, 165, 0.12), rgba(255, 212, 0, 0.14), rgba(213, 0, 88, 0.1));
+}
+
+.product-kamistad-baby-page .product-hero-image {
+  min-height: 360px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(232, 251, 251, 0.95)),
+    linear-gradient(90deg, rgba(0, 167, 165, 0.08), rgba(213, 0, 88, 0.06));
+}
+
+.product-kamistad-baby-page .product-hero-image::after {
+  left: 14%;
+  right: 14%;
+  bottom: 1.9rem;
+  background: rgba(6, 58, 116, 0.13);
+  filter: blur(12px);
+}
+
+.product-kamistad-baby-page .product-hero-image > .kamistad-baby-hero-packshot {
+  width: min(100%, 700px);
+  max-height: 300px;
+  filter: drop-shadow(0 24px 24px rgba(6, 58, 116, 0.15));
+}
+
+.product-kamistad-baby-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-berry);
+}
+
+.product-kamistad-baby-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-blue-dark);
+}
+
+.product-kamistad-baby-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #e8fbfb, #ffffff);
+}
+
+.product-kamistad-baby-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-kamistad-baby-page .product-fact-card:nth-child(3) span {
+  color: #063a74;
+  background: var(--product-citrus);
+}
+
+.product-kamistad-baby-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-blue-dark);
+}
+
+.product-kamistad-baby-page .product-formula {
+  background: linear-gradient(180deg, #f3fdfd 0%, #ffffff 54%, #fff8df 100%);
+}
+
+.product-kamistad-baby-page .zodak-formula-system::before {
+  background:
+    linear-gradient(90deg, rgba(0, 167, 165, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(213, 0, 88, 0.05) 1px, transparent 1px);
+  background-size: 62px 62px;
+}
+
+.product-kamistad-baby-page .zodak-formula-system::after {
+  background: linear-gradient(135deg, rgba(255, 212, 0, 0.18), rgba(0, 167, 165, 0.14));
+}
+
+.product-kamistad-baby-page .zodak-formula-line {
+  stroke: rgba(0, 122, 128, 0.58);
+}
+
+.product-kamistad-baby-page .zodak-formula-dot {
+  fill: var(--product-citrus);
+}
+
+.product-kamistad-baby-page .kamistad-baby-formula-core {
+  top: 49%;
+  width: min(56vw, 680px);
+  height: 380px;
+}
+
+.product-kamistad-baby-page .kamistad-baby-formula-product {
+  bottom: 25%;
+  width: min(98%, 650px);
+  filter: drop-shadow(0 22px 24px rgba(6, 58, 116, 0.15));
+}
+
+.product-kamistad-baby-page .zodak-formula-point--active .zodak-formula-icon {
+  background: var(--product-accent);
+}
+
+.product-kamistad-baby-page .zodak-formula-point--symptoms .zodak-formula-icon {
+  color: #063a74;
+  background: var(--product-citrus);
+}
+
+.product-kamistad-baby-page .zodak-formula-point--format .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-kamistad-baby-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #e8fbfb);
+}
+
+.product-kamistad-baby-page .product-note h3 {
+  color: var(--product-accent-strong);
+}
+
+.product-kamistad-baby-page .product-where-to-buy {
+  background: #f2fcfc;
+}
+
+.product-zodak-drops-page {
+  --product-accent: #7a2f91;
+  --product-accent-rgb: 122, 47, 145;
+  --product-accent-strong: #55206f;
+  --product-accent-strong-rgb: 85, 32, 111;
+  --product-accent-soft: #f4e9f8;
+  --product-citrus: #8cc63f;
+  --product-citrus-soft: #eff8dc;
+  --product-berry: #009fd8;
+}
+
+.product-zodak-drops-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(140, 198, 63, 0.18), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 159, 216, 0.08), transparent 24%),
+    linear-gradient(120deg, #ffffff 0%, #f4e9f8 36%, #eff8dc 68%, #e8f8fd 100%);
+}
+
+.product-zodak-drops-page .product-hero-image {
+  min-height: 410px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 248, 220, 0.94)),
+    linear-gradient(90deg, rgba(122, 47, 145, 0.1), rgba(140, 198, 63, 0.1));
+}
+
+.product-zodak-drops-page .product-hero-image::after {
+  left: 30%;
+  right: 30%;
+  bottom: 2.2rem;
+  background: rgba(52, 32, 92, 0.14);
+}
+
+.product-zodak-drops-page .product-hero-image > .zodak-drops-hero-packshot {
+  width: auto;
+  max-width: min(78%, 400px);
+  max-height: 355px;
+  filter: drop-shadow(0 24px 26px rgba(52, 32, 92, 0.16));
+}
+
+.product-zodak-drops-page .product-hero-metric:nth-child(2) strong,
+.product-zodak-drops-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-zodak-drops-page .product-hero-metric:nth-child(2) strong {
+  color: #6d9a24;
+  background: transparent;
+}
+
+.product-zodak-drops-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-berry);
+}
+
+.product-zodak-drops-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-zodak-drops-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-zodak-drops-page .zodak-formula-icon {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-zodak-drops-page .zodak-formula-point--active .zodak-formula-icon {
+  color: var(--product-accent-strong);
+  background: #ffffff;
+}
+
+.product-zodak-drops-page .zodak-formula-point--format .zodak-formula-icon {
+  background: var(--product-berry);
+}
+
+.product-zodak-drops-page .zodak-formula-line {
+  stroke-width: 2.8;
+}
+
+.product-zodak-drops-page .zodak-drops-formula-core {
+  top: 48%;
+  width: min(44vw, 430px);
+  height: 430px;
+}
+
+.product-zodak-drops-page .zodak-drops-formula-product {
+  bottom: 17%;
+  width: min(52%, 200px);
+  max-height: 350px;
+}
+
+.product-zodak-drops-page .zodak-formula-pack::after {
+  right: 28%;
+  left: 28%;
+  bottom: 17%;
+}
+
 .product-detail-page.vitrum-reveal-ready .vitrum-animate {
   opacity: 0;
   transform: translateY(22px);
@@ -4400,7 +5128,9 @@ footer {
   .product-enterogermina-page .enterogermina-formula-layout,
   .product-sinulan-page .sinulan-formula-layout,
   .product-edarbi-page .edarbi-formula-layout,
-  .product-magne-page .magne-formula-layout {
+  .product-magne-page .magne-formula-layout,
+  .product-vitaprost-page .vitaprost-formula-layout,
+  .product-zodak-page .zodak-formula-layout {
     grid-template-columns: 1fr;
   }
 
@@ -4501,6 +5231,27 @@ footer {
     max-height: 190px;
   }
 
+  .product-zodak-page .product-hero-image > .zodak-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 165px;
+  }
+
+  .product-kamistad-page .product-hero-image > .kamistad-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 165px;
+  }
+
+  .product-kamistad-baby-page .product-hero-image > .kamistad-baby-hero-packshot {
+    width: min(100%, 450px);
+    max-height: 175px;
+  }
+
+  .product-zodak-drops-page .product-hero-image > .zodak-drops-hero-packshot {
+    width: auto;
+    max-width: min(80%, 280px);
+    max-height: 190px;
+  }
+
   .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
     width: min(100%, 420px);
     max-height: 170px;
@@ -4514,6 +5265,11 @@ footer {
   .product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
     width: min(100%, 430px);
     max-height: 165px;
+  }
+
+  .product-vitaprost-page .product-hero-image > .vitaprost-hero-packshot {
+    width: min(88%, 330px);
+    max-height: 180px;
   }
 
   .product-hero-nutrients {
@@ -4659,6 +5415,70 @@ footer {
     left: auto;
     width: 100%;
   }
+
+  .product-zodak-page .zodak-formula-core {
+    width: min(100%, 330px);
+    height: 260px;
+    margin-bottom: 1rem;
+  }
+
+  .product-zodak-page .zodak-formula-product {
+    bottom: 22%;
+    width: min(100%, 300px);
+  }
+
+  .product-vitaprost-page .vitaprost-formula-core {
+    width: min(100%, 310px);
+    height: 240px;
+    margin-bottom: 1rem;
+  }
+
+  .product-vitaprost-page .vitaprost-formula-product {
+    bottom: 36%;
+    width: min(92%, 260px);
+    max-width: min(92%, 260px);
+  }
+
+  .product-kamistad-page .kamistad-formula-core {
+    width: min(100%, 330px);
+    height: 250px;
+  }
+
+  .product-kamistad-page .kamistad-formula-product {
+    bottom: 26%;
+    width: min(100%, 310px);
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-core {
+    width: min(100%, 340px);
+    height: 250px;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-product {
+    bottom: 28%;
+    width: min(100%, 320px);
+  }
+
+  .product-zodak-page .zodak-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-zodak-drops-page .zodak-drops-formula-core {
+    width: min(100%, 235px);
+    height: 300px;
+  }
+
+  .product-zodak-drops-page .zodak-drops-formula-product {
+    bottom: 12%;
+    width: min(72%, 135px);
+    max-height: 265px;
+  }
+
+  .product-zodak-drops-page .zodak-formula-pack::after {
+    right: 30%;
+    left: 30%;
+    bottom: 11%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4679,6 +5499,22 @@ footer {
     max-height: 175px;
   }
 
+  .product-zodak-page .product-hero-image > .zodak-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-kamistad-page .product-hero-image > .kamistad-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-kamistad-baby-page .product-hero-image > .kamistad-baby-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-zodak-drops-page .product-hero-image > .zodak-drops-hero-packshot {
+    max-height: 175px;
+  }
+
   .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
     max-height: 150px;
   }
@@ -4691,6 +5527,10 @@ footer {
     max-height: 145px;
   }
 
+  .product-vitaprost-page .product-hero-image > .vitaprost-hero-packshot {
+    max-height: 150px;
+  }
+
   .product-enterogermina-page .enterogermina-formula-core {
     height: 190px;
   }
@@ -4701,6 +5541,10 @@ footer {
 
   .product-edarbi-page .edarbi-formula-core {
     height: 185px;
+  }
+
+  .product-vitaprost-page .vitaprost-formula-core {
+    height: 200px;
   }
 
   .product-fact-card,
@@ -4718,6 +5562,8 @@ footer {
   .product-sinulan-page .product-hero-image > .sinulan-hero-packshot,
   .product-edarbi-page .product-hero-image::after,
   .product-edarbi-page .product-hero-image > .edarbi-hero-packshot,
+  .product-vitaprost-page .product-hero-image::after,
+  .product-vitaprost-page .product-hero-image > .vitaprost-hero-packshot,
   .product-magne-page .product-hero-image::after,
   .product-magne-page .product-hero-image > .magne-hero-packshot,
   .product-detail-page .product-hero-image > img,
