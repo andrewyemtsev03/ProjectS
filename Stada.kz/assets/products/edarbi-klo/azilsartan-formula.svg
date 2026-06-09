@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" role="img" aria-labelledby="title desc">
+  <title id="title">Azilsartan formula image</title>
+  <desc id="desc">Azilsartan formula on a soft white rounded card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="80" x2="1190" y2="743" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff1f8" />
+      <stop offset="1" stop-color="#edf6ff" />
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#1c2b43" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect x="36" y="42" width="1192" height="742" rx="62" fill="#ffffff" filter="url(#cardShadow)" />
+  <rect x="74" y="81" width="1116" height="662" rx="38" fill="url(#bg)" />
+  <g transform="translate(-136 -100)" fill="none" stroke="#9b145f" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+    <path d="M326 250 392 242 430 300 391 360 325 346 306 284Z" />
+    <path d="M336 264 384 258" />
+    <path d="M320 288 308 338" />
+    <path d="M414 304 384 350" />
+    <path d="M325 346 290 326" />
+    <path d="M306 284 292 322" />
+    <path d="M430 300 522 336" />
+    <path d="M522 336 596 292 672 336 672 424 596 468 522 424Z" />
+    <path d="M540 348 540 410" />
+    <path d="M606 310 654 338" />
+    <path d="M606 450 654 420" />
+    <path d="M672 424 748 468 812 432 876 468 942 430" />
+    <path d="M942 430 942 354" />
+    <path d="M934 354 934 310" />
+    <path d="M950 354 950 310" />
+    <path d="M942 430 996 466" />
+    <path d="M1046 466 1110 452 1160 506 1130 572 1054 572 1020 506Z" />
+    <path d="M1088 468 1138 468" />
+    <path d="M1038 518 1060 558" />
+    <path d="M1150 520 1130 558" />
+    <path d="M996 466 1046 466" />
+    <path d="M1054 572 1018 636 938 628 862 700" />
+    <path d="M862 700 798 668" />
+    <path d="M862 700 938 738 1018 636" />
+    <path d="M1018 636 1052 712 1094 720" />
+    <path d="M1052 712 1012 780" />
+    <path d="M1036 710 996 770" />
+  </g>
+  <path d="M726 600 726 644" stroke="#9b145f" stroke-width="8" stroke-linecap="round" opacity="0.2" />
+  <g transform="translate(-136 -100)" fill="#006ac8" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="290" y="264" font-size="45">N</text>
+    <text x="386" y="252" font-size="45">N</text>
+    <text x="268" y="336" font-size="45">N</text>
+    <text x="355" y="366" font-size="45">N</text>
+    <text x="922" y="310" font-size="50">O</text>
+    <text x="964" y="500" font-size="45">N</text>
+    <text x="964" y="548" font-size="45">H</text>
+    <text x="1218" y="516" font-size="45">N</text>
+    <text x="1004" y="820" font-size="45">O</text>
+    <text x="1102" y="730" font-size="45">OH</text>
+  </g>
+</svg>
