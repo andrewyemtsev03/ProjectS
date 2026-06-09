@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 160" role="img" aria-label="Magnesium mineral">
+  <defs>
+    <linearGradient id="mgCrystal" x1="38" y1="18" x2="178" y2="142" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7d6"/>
+      <stop offset="0.5" stop-color="#f3c43b"/>
+      <stop offset="1" stop-color="#7b61c8"/>
+    </linearGradient>
+    <linearGradient id="mgSpark" x1="38" y1="70" x2="185" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b61c8"/>
+      <stop offset="1" stop-color="#f3c43b"/>
+    </linearGradient>
+  </defs>
+  <path d="M65 122 42 76 72 30h64l36 43-28 55Z" fill="url(#mgCrystal)" opacity=".95"/>
+  <path d="M72 30 96 78 65 122 42 76Z" fill="#fff7d6" opacity=".42"/>
+  <path d="M136 30 114 79l30 49 28-55Z" fill="#4f3ea7" opacity=".22"/>
+  <path d="M96 78h18l22-48M96 78 72 30M96 78l-31 44M114 79l30 49" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+  <path d="M32 48h22M43 37v22M170 42h18M179 33v18M154 118h28M168 104v28" fill="none" stroke="url(#mgSpark)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="49" cy="126" r="5" fill="#f3c43b"/>
+  <circle cx="178" cy="88" r="6" fill="#7b61c8" opacity=".72"/>
+  <circle cx="118" cy="22" r="4" fill="#00a7a5" opacity=".8"/>
+</svg>

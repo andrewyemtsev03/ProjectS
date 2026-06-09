@@ -1,0 +1,17 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chlorthalidone">
+  <defs>
+    <linearGradient id="dropGradient" x1="46" y1="130" x2="116" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f7fb7"/>
+      <stop offset="0.72" stop-color="#5f6f89"/>
+      <stop offset="1" stop-color="#94135f"/>
+    </linearGradient>
+    <filter id="dropShadow" x="0" y="0" width="160" height="160" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#2f7fb7" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="128" height="128" rx="22" fill="#eef6fb"/>
+  <path d="M80 32c20 29 34 49 34 72 0 22-15 38-34 38s-34-16-34-38c0-23 14-43 34-72Z" fill="url(#dropGradient)" filter="url(#dropShadow)"/>
+  <path d="M66 108c8 8 19 10 31 4" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.86"/>
+  <path d="M45 50h23M56 39v23" stroke="#94135f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M105 50h22M116 39v23" stroke="#5f6f89" stroke-width="7" stroke-linecap="round"/>
+</svg>
