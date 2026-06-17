@@ -5,6 +5,16 @@
  * toggling, hero carousel initialisation and scroll animations.
  */
 
+function hideStadaPageLoader() {
+  document.body.classList.add('stada-page-loaded');
+}
+
+if (document.readyState === 'complete') {
+  hideStadaPageLoader();
+} else {
+  window.addEventListener('load', hideStadaPageLoader, { once: true });
+}
+
 // Translation dictionary. Each key maps to a Russian and Kazakh version.
 const translations = {
   ru: {
