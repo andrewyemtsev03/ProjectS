@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="72" viewBox="0 0 220 72" role="img" aria-labelledby="apteka-plus-title">
+  <title id="apteka-plus-title">Аптека плюс</title>
+  <rect width="220" height="72" rx="8" fill="none"/>
+  <circle cx="36" cy="36" r="28" fill="#2c5e61"/>
+  <path d="M36 13.5c-6.2 0-11.8 2.5-15.9 6.5-4 4-6.5 9.6-6.5 15.9s2.5 11.9 6.5 15.9c4.1 4 9.7 6.5 15.9 6.5s11.8-2.5 15.9-6.5c4-4 6.5-9.6 6.5-15.9S55.9 24 51.9 20c-4.1-4-9.7-6.5-15.9-6.5Zm0 2.4c4.3 2.9 7.3 11.9 8.6 25.8.1.9-.2 1.6-.9 2.1-2.1 1.6-4.8 2.4-7.7 2.4s-5.6-.8-7.7-2.4c-.7-.5-1-1.2-.9-2.1C28.7 27.8 31.7 18.8 36 15.9Z" fill="#ffffff" opacity=".92"/>
+  <rect x="33" y="31" width="6" height="17" rx="1.4" fill="#ffffff"/>
+  <rect x="27.5" y="36.5" width="17" height="6" rx="1.4" fill="#ffffff"/>
+  <text x="76" y="33" fill="#0b7972" font-family="Noto Sans, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing=".08em">АПТЕКА</text>
+  <text x="76" y="54" fill="#2c5e61" font-family="Noto Sans, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing=".08em">ПЛЮС</text>
+</svg>

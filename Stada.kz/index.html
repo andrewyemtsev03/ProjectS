@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STADA – О компании</title>
+  <link rel="icon" type="image/png" href="assets/logos/stada_logo.png">
+  <link rel="apple-touch-icon" href="assets/logos/stada_logo.png">
   <!-- Corporate font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
   <!-- Main stylesheet -->
@@ -21,6 +23,7 @@
       </button>
       <ul class="menu">
         <li><a href="#about" data-i18n-key="nav_about"></a></li>
+        <li><a href="history.html" data-i18n-key="nav_history"></a></li>
         <li><a href="#news" data-i18n-key="nav_news"></a></li>
         <li><a href="products/index.html" data-i18n-key="nav_products"></a></li>
         <li><a href="#career" data-i18n-key="nav_career"></a></li>
@@ -62,8 +65,9 @@
           <div class="hero-carousel-slide is-active" data-caption-key="hero_caption_office">
             <img src="assets/hero/carousel-office.png" alt="STADA Kazakhstan office building">
           </div>
-          <div class="hero-carousel-slide" data-caption-key="hero_caption_scientists">
-            <img src="assets/hero/carousel-scientists.png" alt="STADA production specialists reviewing quality data">
+          <div class="hero-carousel-slide hero-carousel-slide--awards" data-caption-key="hero_caption_awards">
+            <span class="hero-awards-kicker">Recognition 2025</span>
+            <img class="hero-awards-image" src="assets/hero/awards/esg-recognition-2025.png" alt="STADA ESG Recognition 2025: EcoVadis, Sustainalytics, Carbon Disclosure Project and Top Employer">
           </div>
           <div class="hero-carousel-slide" data-caption-key="hero_caption_logo">
             <img src="assets/hero/carousel-logo-wall.png" alt="STADA logo on a brick wall">
@@ -123,13 +127,13 @@
             <p data-i18n-key="news_section_lead"></p>
           </div>
           <div class="news-carousel__controls" aria-label="News carousel controls">
-            <button class="news-carousel__button" type="button" data-news-prev aria-label="Previous news">‹</button>
+            <button class="news-carousel__button" type="button" data-news-prev aria-label="Previous news">&lsaquo;</button>
             <div class="news-carousel__status" aria-live="polite">
               <span data-news-current>01</span>
               <span>/</span>
               <span data-news-total>--</span>
             </div>
-            <button class="news-carousel__button" type="button" data-news-next aria-label="Next news">›</button>
+            <button class="news-carousel__button" type="button" data-news-next aria-label="Next news">&rsaquo;</button>
           </div>
         </div>
         <div class="news-carousel" data-news-carousel>
@@ -226,20 +230,13 @@
     <section class="career-section home-section" id="career">
       <div class="career-layout home-section__inner">
     <div class="career-media">
-      <img src="assets/hero/carousel-scientists.png" alt="STADA production specialists reviewing quality data">
+      <img src="assets/products/awards/top-employer-kazakhstan-2025.png" alt="Top Employer Kazakhstan 2025">
+      <img src="assets/products/awards/top-employer-europe-2025.png" alt="Top Employer Europe 2025">
     </div>
     <div class="career-content">
       <p class="section-kicker" data-i18n-key="nav_career"></p>
       <h2 data-i18n-key="career_heading"></h2>
       <p data-i18n-key="career_par1"></p>
-      <p data-i18n-key="career_par2"></p>
-      <ul class="career-list">
-        <li data-i18n-key="career_list1"></li>
-        <li data-i18n-key="career_list2"></li>
-        <li data-i18n-key="career_list3"></li>
-        <li data-i18n-key="career_list4"></li>
-        <li data-i18n-key="career_list5"></li>
-      </ul>
       <div class="career-facts">
         <div class="career-fact">
           <span class="number">&gt;50%</span>
@@ -250,7 +247,7 @@
           <span class="text" data-i18n-key="career_fact2"></span>
         </div>
         <div class="career-fact">
-          <span class="number">&gt;11 600</span>
+          <span class="number">&gt;11В 600</span>
           <span class="text" data-i18n-key="career_fact3"></span>
         </div>
         <div class="career-fact">
@@ -258,11 +255,10 @@
           <span class="text" data-i18n-key="career_fact4"></span>
         </div>
         <div class="career-fact">
-          <span class="number">Топ 6%</span>
+          <span class="number">Топ&nbsp;6%</span>
           <span class="text" data-i18n-key="career_fact5"></span>
         </div>
       </div>
-      <p data-i18n-key="career_par3"></p>
       <a href="https://jobs.stada.com" class="hero-btn" target="_blank" rel="noopener" data-i18n-key="career_button"></a>
     </div>
       </div>
@@ -277,7 +273,7 @@
         <p class="hero-description" data-i18n-key="hero_products_description"></p>
         <div class="products-highlights" aria-label="Product portfolio facts">
           <div class="products-highlight">
-            <strong>11</strong>
+            <strong>38</strong>
             <span data-i18n-key="products_metric_portfolio"></span>
           </div>
           <div class="products-highlight">
@@ -301,17 +297,17 @@
       <div class="product-preview-grid">
         <a class="product-preview-card product-preview-card--cold" href="products/coldrex.html">
           <span class="product-preview-card__category" data-i18n-key="products_category_cold"></span>
-          <img src="assets/products/Coldrex.png" alt="Coldrex">
+          <img src="assets/products/coldrex/packshot.png" alt="Coldrex">
           <span class="product-preview-card__name" data-i18n-key="product_coldrex_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--digestive" href="products/enterogermina.html">
           <span class="product-preview-card__category" data-i18n-key="products_category_digestive"></span>
-          <img src="assets/products/EnterogerminaNew.png" alt="Enterogermina">
+          <img src="assets/products/enterogermina/packshot.png" alt="Enterogermina">
           <span class="product-preview-card__name" data-i18n-key="product_enterogermina_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--respiratory" href="products/sinulan-duo.html">
           <span class="product-preview-card__category" data-i18n-key="products_category_respiratory"></span>
-          <img src="assets/products/Sinulan.png" alt="Sinulan Duo">
+          <img src="assets/products/sinulan-duo/packshot.png" alt="Sinulan Duo">
           <span class="product-preview-card__name" data-i18n-key="product_sinulan_duo_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--immunity" href="products/vitrum-immunaktiv.html">
@@ -345,6 +341,7 @@
           <div class="footer-nav__group">
             <h3 data-i18n-key="footer_company_title"></h3>
             <a href="#about" data-i18n-key="nav_about"></a>
+            <a href="history.html" data-i18n-key="nav_history"></a>
             <a href="#news" data-i18n-key="nav_news"></a>
             <a href="#career" data-i18n-key="nav_career"></a>
             <a href="https://www.stada.com" target="_blank" rel="noopener" data-i18n-key="footer_global_link"></a>
@@ -352,8 +349,6 @@
           <div class="footer-nav__group">
             <h3 data-i18n-key="footer_products_title"></h3>
             <a href="products/index.html" data-i18n-key="products_browse_catalog"></a>
-            <a href="products/kamistad-baby.html" data-i18n-key="product_kamistad_baby_name"></a>
-            <a href="products/kamistad.html" data-i18n-key="product_kamistad_name"></a>
             <a href="products/coldrex.html" data-i18n-key="product_coldrex_name"></a>
             <a href="products/enterogermina.html" data-i18n-key="product_enterogermina_name"></a>
             <a href="products/vitrum-immunaktiv.html" data-i18n-key="product_vitrum_immunaktiv_name"></a>
@@ -362,7 +357,6 @@
             <h3 data-i18n-key="footer_access_title"></h3>
             <a href="products/index.html#pharmacy-partners" data-i18n-key="where_to_buy_heading"></a>
             <a href="products/index.html#products-catalog" data-i18n-key="products_filter_all"></a>
-            <a href="products/index.html#products-catalog" data-i18n-key="products_category_oral"></a>
             <a href="products/index.html#products-catalog" data-i18n-key="products_category_respiratory"></a>
             <a href="products/index.html#products-catalog" data-i18n-key="products_category_cardio"></a>
           </div>

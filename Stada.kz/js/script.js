@@ -9,6 +9,7 @@
 const translations = {
   ru: {
     nav_about: 'О компании',
+    nav_history: 'История компании',
     nav_news: 'Новости и Медия',
     nav_products: 'Продукты',
     nav_career: 'Карьера',
@@ -23,7 +24,8 @@ const translations = {
     hero_metric_employees: 'сотрудников по всему миру',
     hero_media_caption: 'Фармацевтическое качество, которому доверяют каждый день',
     hero_caption_office: 'STADA в Казахстане: ближе к пациентам и партнерам',
-    hero_caption_scientists: 'Качество и безопасность на каждом этапе производства',
+        hero_caption_scientists: 'Качество и безопасность на каждом этапе производства',
+        hero_caption_awards: 'ESG-награды и признание устойчивого развития STADA',
     hero_caption_logo: '130 лет опыта STADA в заботе о здоровье людей',
     about_heading: 'О компании STADA',
     about_par1: 'STADA — ведущий производитель высококачественных фармацевтических препаратов. С более чем 130‑летней историей, уходящей корнями в аптечную практику, мы являемся надежным и заслуживающим доверия партнером.',
@@ -57,37 +59,104 @@ const translations = {
     // Products section
     products_heading: 'Наши продукты',
     product_enterogermina_name: 'Энтерожермина',
+    product_enterogermina_capsules_name: 'Энтерожермина капсулы',
+    product_enterogermina_forte_name: 'Энтерожермина Форте',
     product_magneb6kids_name: 'Магне B6 Кидс',
     product_sinulan_duo_name: 'Синулан Дуо',
     product_snup_name: 'Снуп',
-    product_zodak_name: 'Зодак таблетки',
-    product_zodak_drops_name: 'Зодак капли',
-    product_vitaprost_name: 'Витапрост таблетки',
-    product_kamistad_name: 'Камистад-Гель N',
-    product_kamistad_baby_name: 'Камистад Бэби',
     product_edarbi_klo_name: 'Эдарби Кло',
+    product_cardiomagnil_name: 'Кардиомагнил',
+    product_noshpa_name: 'НО-ШПА',
+    product_essentiale_name: 'Эссенциале',
+    product_aqualor_name: 'Аквалор',
+    product_aqualor_forte_name: 'Аквалор Актив Форте',
+    product_aqualor_baby_name: 'Аквалор Беби',
+    product_aqualor_gorlo_name: 'Аквалор Горло',
+    product_aqualor_soft_name: 'Аквалор Софт',
+    product_aqualor_soft_mini_name: 'Аквалор Софт мини',
     product_coldrex_name: 'Колдрекс',
     // Product page titles and descriptions
     product_enterogermina_page_title: 'Энтерожермина',
     product_enterogermina_page_desc: 'Энтерожермина — пробиотик для лечения и профилактики дисбактериоза. Содержит споры Bacillus clausii, которые помогают восстановить кишечную микрофлору.',
+    product_enterogermina_capsules_page_title: 'Энтерожермина капсулы',
+    product_enterogermina_capsules_page_desc: 'Энтерожермина капсулы — пробиотик со спорами Bacillus clausii для лечения и профилактики дисбактериоза. Формат капсул удобен для взрослых и детей старше 6 лет согласно инструкции.',
+    product_enterogermina_forte_page_title: 'Энтерожермина Форте',
+    product_enterogermina_forte_page_desc: 'Энтерожермина Форте — пробиотик со спорами Bacillus clausii для лечения и профилактики дисбактериоза. Формат суспензии рассчитан на удобный прием 1 раз в день согласно инструкции.',
     product_magneb6kids_page_title: 'Магне B6 Кидс',
     product_magneb6kids_page_desc: 'Магне B6 Кидс — жевательные таблетки с магнием и витамином B6 для детей с 4 лет. Компоненты помогают поддерживать нормальную работу нервной системы и энергетический обмен.',
     product_sinulan_duo_page_title: 'Синулан Дуо',
     product_sinulan_duo_page_desc: 'Синулан Дуо — комплекс растительных экстрактов для облегчения дыхания при простуде и поддержания здоровья дыхательных путей.',
     product_snup_page_title: 'Снуп',
     product_snup_page_desc: 'Снуп — дозированный назальный спрей с ксилометазолином и морской водой для облегчения носового дыхания при заложенности носа.',
-    product_zodak_page_title: 'Зодак таблетки',
-    product_zodak_page_desc: 'Зодак таблетки — противоаллергический препарат с цетиризином 10 мг для облегчения симптомов аллергического ринита и крапивницы согласно инструкции.',
-    product_zodak_drops_page_title: 'Зодак капли',
-    product_zodak_drops_page_desc: 'Зодак капли — противоаллергический препарат с цетиризином 10 мг/мл в форме капель для приема внутрь, предназначенный для детей с 2 лет и взрослых согласно инструкции.',
-    product_vitaprost_page_title: 'Витапрост таблетки 20 мг',
-    product_vitaprost_page_desc: 'Витапрост таблетки 20 мг — препарат с экстрактом простаты для применения при хроническом абактериальном простатите, доброкачественной гиперплазии предстательной железы и состояниях до и после операций на предстательной железе согласно инструкции.',
-    product_kamistad_page_title: 'Камистад-Гель N',
-    product_kamistad_page_desc: 'Камистад-Гель N — гель 10 г для нанесения на слизистую оболочку полости рта при умеренном воспалении слизистой и десен; содержит лидокаина гидрохлорид и цветки ромашки, применяется с 12 лет согласно инструкции.',
-    product_kamistad_baby_page_title: 'Камистад Бэби',
-    product_kamistad_baby_page_desc: 'Камистад Бэби — детский гель 20 мл для массажа десен при прорезывании зубов; содержит гиалуроновую кислоту и экстракт ромашки, не содержит сахара и алкоголя.',
     product_edarbi_klo_page_title: 'Эдарби Кло',
     product_edarbi_klo_page_desc: 'Эдарби Кло — комбинированный препарат на основе азилсартана медоксомила и хлорталидона для снижения артериального давления.',
+    product_cardiomagnil_page_title: 'Кардиомагнил',
+    product_cardiomagnil_page_desc: 'Кардиомагнил 150 мг — препарат ацетилсалициловой кислоты с магния гидроксидом для профилактики инфаркта и тромбоза по назначению врача.',
+    product_noshpa_page_title: 'НО-ШПА',
+    product_noshpa_page_desc: 'НО-ШПА 40 мг — таблетки с дротаверина гидрохлоридом для облегчения спазмов гладкой мускулатуры согласно инструкции.',
+    product_noshpa_forte_name: 'НО-ШПА Форте',
+    product_noshpa_forte_kicker: 'Спазмолитик 80 мг',
+    product_noshpa_forte_page_title: 'НО-ШПА Форте',
+    product_noshpa_forte_page_desc: 'НО-ШПА Форте 80 мг — таблетки с дротаверина гидрохлоридом для облегчения спазмов гладкой мускулатуры согласно инструкции.',
+    product_noshpa_forte_badge_drotaverine: 'Дротаверин 80 мг',
+    product_noshpa_forte_badge_spasm: 'Форте формат',
+    product_noshpa_forte_badge_pack: '24 таблетки',
+    product_noshpa_forte_metric_dose: 'мг дротаверина',
+    product_noshpa_forte_metric_pack: 'таблетки в упаковке',
+    product_noshpa_forte_metric_component: 'активный компонент',
+    product_noshpa_forte_overview_label: 'При спазмах',
+    product_noshpa_forte_overview_heading: 'Усиленная дозировка НО-ШПА в формате Форте',
+    product_noshpa_forte_overview_intro: 'Одна таблетка содержит 80 мг дротаверина гидрохлорида. Применение должно соответствовать инструкции, дозировке и рекомендациям специалиста.',
+    product_noshpa_forte_card_drotaverine_title: 'Дротаверин',
+    product_noshpa_forte_card_drotaverine_text: 'Активное вещество препарата, относящееся к миотропным спазмолитикам.',
+    product_noshpa_forte_card_dose_title: '80 мг',
+    product_noshpa_forte_card_dose_text: 'Дозировка дротаверина гидрохлорида в одной таблетке НО-ШПА Форте.',
+    product_noshpa_forte_card_pack_title: '24 таблетки',
+    product_noshpa_forte_card_pack_text: 'Упаковка на 24 таблетки для приема по схеме, указанной в инструкции.',
+    product_noshpa_forte_card_age_title: 'С 12 лет',
+    product_noshpa_forte_card_age_text: 'Возрастные ограничения и режим приема необходимо сверять с инструкцией.',
+    product_noshpa_forte_benefit1: 'Содержит дротаверина гидрохлорид 80 мг в каждой таблетке',
+    product_noshpa_forte_benefit2: 'Формат Форте рассчитан на прием согласно инструкции',
+    product_noshpa_forte_benefit3: 'Применяется при спазмах гладкой мускулатуры в показаниях, перечисленных в инструкции',
+    product_noshpa_forte_benefit4: 'Упаковка 24 таблетки подходит для рекомендованной схемы приема',
+    product_noshpa_forte_benefit5: 'Перед применением важно учитывать противопоказания и ограничения',
+    product_noshpa_forte_formula_label: 'Формула',
+    product_noshpa_forte_formula_heading: 'В центре — дротаверин 80 мг, показания и формат Форте',
+    product_noshpa_forte_formula_intro: 'Линии от упаковки уходят вниз к карточкам: дозировка, спазмолитическое направление и упаковка на 24 таблетки.',
+    product_noshpa_forte_formula_drotaverine_title: 'Дротаверин',
+    product_noshpa_forte_formula_drotaverine_text: 'Дротаверина гидрохлорид 80 мг является активным веществом препарата.',
+    product_noshpa_forte_formula_spasm_title: 'Спазмолитическое направление',
+    product_noshpa_forte_formula_spasm_text: 'Применяется при спазмах гладкой мускулатуры согласно инструкции.',
+    product_noshpa_forte_formula_pack_title: '24 таблетки',
+    product_noshpa_forte_formula_pack_text: 'Формат упаковки поддерживает прием по рекомендованной схеме.',
+    product_noshpa_forte_usage_label: 'Когда применяют',
+    product_noshpa_forte_usage_heading: 'При спазмах гладкой мускулатуры по инструкции',
+    product_noshpa_forte_usage_biliary_title: 'Желчевыводящие пути',
+    product_noshpa_forte_usage_biliary_text: 'В инструкции указаны спазмы гладкой мускулатуры при заболеваниях желчевыводящих путей.',
+    product_noshpa_forte_usage_gi_title: 'Желудочно-кишечный тракт',
+    product_noshpa_forte_usage_gi_text: 'Может применяться как вспомогательная терапия при спазмах гладкой мускулатуры ЖКТ.',
+    product_noshpa_forte_usage_doctor_title: 'Ответственный прием',
+    product_noshpa_forte_usage_doctor_text: 'Дозировку, длительность и совместимость с другими препаратами следует сверять с инструкцией и специалистом.',
+    product_noshpa_forte_note_title: 'Важно',
+    product_noshpa_forte_note_text: 'НО-ШПА Форте применяют согласно инструкции. Перед приемом ознакомьтесь с противопоказаниями, дозировкой и обратитесь к врачу при сомнениях.',
+    product_noshpa_forte_buy_intro: 'НО-ШПА Форте 80 мг №24 можно найти у аптечных партнеров STADA в Казахстане.',
+    product_essentiale_page_title: 'Эссенциале Форте Н',
+    product_essentiale_page_desc: 'Эссенциале Форте Н — капсулы с эссенциальными фосфолипидами для поддержки функций печени согласно инструкции и рекомендациям специалиста.',
+    product_aqualor_page_title: 'Аквалор Экстра Форте',
+    product_aqualor_page_desc: 'Аквалор Экстра Форте — стерильный раствор морской воды 125 мл для ухода за полостью носа при сильном насморке согласно инструкции.',
+    product_aqualor_forte_page_title: 'Аквалор Актив Форте',
+    product_aqualor_forte_page_desc: 'Аквалор Актив Форте — спрей морской воды 150 мл с CO2 для ухода и промывания полости носа согласно инструкции.',
+    product_aqualor_baby_page_title: 'Аквалор Беби',
+    product_aqualor_baby_page_desc: 'Аквалор Беби — капли морской воды 15 мл для ежедневного ухода за носом малыша согласно инструкции.',
+    product_aqualor_gorlo_page_title: 'Аквалор Горло спрей',
+    product_aqualor_gorlo_page_desc: 'Аквалор Горло спрей — стерильный гипертонический раствор морской воды 50 мл для орошения и промывания горла согласно инструкции.',
+    product_aqualor_soft_page_title: 'Аквалор Софт',
+    product_aqualor_soft_page_desc: 'Аквалор Софт — стерильный изотонический раствор морской воды 125 мл в формате душ для орошения и промывания полости носа согласно инструкции.',
+    product_aqualor_soft_mini_page_title: 'Аквалор Софт мини',
+    product_aqualor_soft_mini_page_desc: 'Аквалор Софт мини — стерильный изотонический раствор морской воды 50 мл в формате душ для орошения и промывания полости носа согласно инструкции.',
+    product_related_label: 'Похожие товары',
+    product_related_heading: 'Другие варианты Аквалор',
+    product_related_intro: 'Подберите похожий формат линейки Аквалор по объему, способу распыления и зоне применения.',
         product_back: 'Назад к продуктам',
     // Enterogermina benefits
     product_enterogermina_benefit1: 'Восстанавливает здоровую микрофлору кишечника',
@@ -132,21 +201,100 @@ const translations = {
     product_enterogermina_note_title: 'Важно помнить',
     product_enterogermina_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно для детей.',
     product_enterogermina_buy_intro: 'Ищите Энтерожермину у аптечных партнеров STADA в Казахстане.',
+    // Enterogermina capsules benefits
+    product_enterogermina_capsules_benefit1: 'Помогает восстановить баланс кишечной микрофлоры при дисбактериозе',
+    product_enterogermina_capsules_benefit2: 'Содержит споры Bacillus clausii, устойчивые к неблагоприятным факторам среды',
+    product_enterogermina_capsules_benefit3: 'Капсульный формат удобно взять с собой и встроить в ежедневный прием',
+    product_enterogermina_capsules_benefit4: 'Подходит взрослым и детям старше 6 лет при соблюдении инструкции',
+    product_enterogermina_capsules_kicker: 'Пробиотик в капсулах',
+    product_enterogermina_capsules_badge_spores: 'Споры Bacillus clausii',
+    product_enterogermina_capsules_badge_pack: '12 капсул',
+    product_enterogermina_capsules_badge_capsules: 'Капсульная форма',
+    product_enterogermina_capsules_metric_spores: 'споры Bacillus clausii',
+    product_enterogermina_capsules_metric_pack: 'капсул в упаковке',
+    product_enterogermina_capsules_metric_age: 'для детей старше 6 лет',
+    product_enterogermina_capsules_overview_label: 'Баланс микрофлоры',
+    product_enterogermina_capsules_overview_heading: 'Знакомая пробиотическая поддержка в компактном формате',
+    product_enterogermina_capsules_overview_intro: 'Капсулы Энтерожермина сохраняют фокус на Bacillus clausii и подходят для ситуаций, когда нужен аккуратный формат без жидкой формы.',
+    product_enterogermina_capsules_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_capsules_card_bacillus_text: 'Пробиотические споры помогают поддерживать нормальный состав кишечной микрофлоры.',
+    product_enterogermina_capsules_card_spores_title: 'Споровая форма',
+    product_enterogermina_capsules_card_spores_text: 'Споры устойчивы к воздействию кислой среды и помогают доставить Bacillus clausii в кишечник.',
+    product_enterogermina_capsules_card_pack_title: '12 капсул',
+    product_enterogermina_capsules_card_pack_text: 'Упаковка рассчитана на удобный прием согласно режиму, указанному в инструкции.',
+    product_enterogermina_capsules_card_age_title: 'Старше 6 лет',
+    product_enterogermina_capsules_card_age_text: 'Капсулы предназначены для взрослых и детей старше 6 лет, которые могут проглотить капсулу.',
+    product_enterogermina_capsules_formula_label: 'Формула',
+    product_enterogermina_capsules_formula_heading: 'В центре — Bacillus clausii и капсульный формат',
+    product_enterogermina_capsules_formula_intro: 'Карточки показывают три ключевых акцента продукта: пробиотические споры, устойчивую форму и упаковку на 12 капсул.',
+    product_enterogermina_capsules_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_capsules_formula_bacillus_text: 'Помогает восполнить полезные бактерии при нарушении баланса микрофлоры.',
+    product_enterogermina_capsules_formula_spores_title: 'Споры',
+    product_enterogermina_capsules_formula_spores_text: 'Споровая форма помогает бактериям сохранять стабильность до попадания в кишечник.',
+    product_enterogermina_capsules_formula_pack_title: '12 капсул',
+    product_enterogermina_capsules_formula_pack_text: 'Компактная упаковка подходит для курсового приема согласно инструкции.',
+    product_enterogermina_capsules_usage_label: 'Когда актуально',
+    product_enterogermina_capsules_usage_heading: 'Для поддержки микрофлоры в удобном взрослом формате',
+    product_enterogermina_capsules_usage_microflora_title: 'При дисбактериозе',
+    product_enterogermina_capsules_usage_microflora_text: 'Может применяться для лечения и профилактики дисбактериоза согласно инструкции.',
+    product_enterogermina_capsules_usage_antibiotic_title: 'После антибиотиков',
+    product_enterogermina_capsules_usage_antibiotic_text: 'Уместна для поддержки микрофлоры во время или после антибактериальной терапии по рекомендации специалиста.',
+    product_enterogermina_capsules_usage_format_title: 'Когда важен формат',
+    product_enterogermina_capsules_usage_format_text: 'Капсулы удобно хранить, брать с собой и принимать без дополнительной подготовки.',
+    product_enterogermina_capsules_note_title: 'Важно помнить',
+    product_enterogermina_capsules_note_text: 'Перед применением ознакомьтесь с инструкцией. Капсулы не рекомендуются детям до 6 лет, если ребенок не может проглотить капсулу.',
+    product_enterogermina_capsules_buy_intro: 'Ищите Энтерожермину капсулы у аптечных партнеров STADA в Казахстане.',
+    // Enterogermina Forte benefits
+    product_enterogermina_forte_benefit1: 'Помогает восстановить баланс кишечной микрофлоры при дисбактериозе',
+    product_enterogermina_forte_benefit2: 'Содержит споры Bacillus clausii, устойчивые к неблагоприятным факторам среды',
+    product_enterogermina_forte_benefit3: 'Удобный режим приема — 1 раз в день согласно инструкции',
+    product_enterogermina_forte_benefit4: 'Формат суспензии во флаконах подходит для курсового применения',
+    product_enterogermina_forte_kicker: 'Пробиотик в усиленном формате',
+    product_enterogermina_forte_badge_spores: 'Споры Bacillus clausii',
+    product_enterogermina_forte_badge_daily: '1 раз в день',
+    product_enterogermina_forte_badge_pack: '10 флаконов',
+    product_enterogermina_forte_metric_spores: 'споры Bacillus clausii',
+    product_enterogermina_forte_metric_daily: 'раз в день',
+    product_enterogermina_forte_metric_pack: 'флаконов в упаковке',
+    product_enterogermina_forte_overview_label: 'Поддержка микрофлоры',
+    product_enterogermina_forte_overview_heading: 'Знакомая пробиотическая поддержка в формате Форте',
+    product_enterogermina_forte_overview_intro: 'Энтерожермина Форте сохраняет акцент на Bacillus clausii и выделяет удобный режим применения для восстановления баланса кишечной микрофлоры.',
+    product_enterogermina_forte_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_forte_card_bacillus_text: 'Пробиотические споры помогают поддерживать нормальный состав кишечной микрофлоры.',
+    product_enterogermina_forte_card_spores_title: 'Споровая форма',
+    product_enterogermina_forte_card_spores_text: 'Споры устойчивы к воздействию кислой среды и помогают доставить Bacillus clausii в кишечник.',
+    product_enterogermina_forte_card_daily_title: '1 раз в день',
+    product_enterogermina_forte_card_daily_text: 'Режим приема помогает встроить продукт в повседневный график согласно инструкции.',
+    product_enterogermina_forte_card_pack_title: '10 флаконов',
+    product_enterogermina_forte_card_pack_text: 'Упаковка с флаконами суспензии подходит для аккуратного курсового приема.',
+    product_enterogermina_forte_formula_label: 'Формула',
+    product_enterogermina_forte_formula_heading: 'В центре — Bacillus clausii, суспензия и формат Форте',
+    product_enterogermina_forte_formula_intro: 'Блок показывает три ключевых акцента продукта: пробиотические споры, устойчивую форму и готовую суспензию.',
+    product_enterogermina_forte_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_forte_formula_bacillus_text: 'Помогает восполнить полезные бактерии при нарушении баланса микрофлоры.',
+    product_enterogermina_forte_formula_spores_title: 'Споры',
+    product_enterogermina_forte_formula_spores_text: 'Споровая форма помогает бактериям сохранять стабильность до попадания в кишечник.',
+    product_enterogermina_forte_formula_pack_title: 'Готовая суспензия',
+    product_enterogermina_forte_formula_pack_text: 'Жидкая форма во флаконе: удобно принимать без предварительного приготовления.',
+    product_enterogermina_forte_usage_label: 'Когда актуально',
+    product_enterogermina_forte_usage_heading: 'Для поддержки кишечной микрофлоры в формате 1 раз в день',
+    product_enterogermina_forte_usage_microflora_title: 'При дисбактериозе',
+    product_enterogermina_forte_usage_microflora_text: 'Может применяться для лечения и профилактики дисбактериоза согласно инструкции.',
+    product_enterogermina_forte_usage_antibiotic_title: 'После антибиотиков',
+    product_enterogermina_forte_usage_antibiotic_text: 'Уместна для поддержки микрофлоры во время или после антибактериальной терапии по рекомендации специалиста.',
+    product_enterogermina_forte_usage_daily_title: 'Когда важен режим',
+    product_enterogermina_forte_usage_daily_text: 'Прием 1 раз в день помогает не усложнять ежедневную схему применения.',
+    product_enterogermina_forte_note_title: 'Важно помнить',
+    product_enterogermina_forte_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно при применении у детей.',
+    product_enterogermina_forte_buy_intro: 'Ищите Энтерожермину Форте у аптечных партнеров STADA в Казахстане.',
     // Career page translations (added)
     career_heading: 'Карьера в STADA',
     career_par1: 'Работать в STADA — это уникальное путешествие. Мы предлагаем разнообразные и увлекательные роли: от стартовых должностей для выпускников до экспертных позиций. Наши вакансии охватывают широкий спектр навыков и не ограничиваются фармацевтической отраслью — вы также найдёте возможности в области цепочки поставок, маркетинга, финансов, управления проектами и многого другого.',
-    career_par2: 'Мы работаем в пяти основных функциональных областях, чтобы вы могли выбрать направление, которое лучше всего подходит вашему карьерному пути:',
-    career_list1: 'Технические операции',
-    career_list2: 'Продажи и маркетинг',
-    career_list3: 'Разработка продуктов и портфеля',
-    career_list4: 'Стратегия и развитие бизнеса',
-    career_list5: 'Бизнес‑функции',
     career_fact1: 'руководителей — женщины',
     career_fact2: 'сотрудников гордятся нашей целью «Забота о здоровье людей как надёжный партнёр»',
     career_fact3: 'сотрудников по всему миру',
     career_fact4: 'национальности в нашей команде',
     career_fact5: 'фармацевтических компаний по рейтингу Sustainalytics ESG 2023',
-    career_par3: 'Мы были признаны «Top Employer Europe 2025», что подтверждает нашу уникальную культуру роста и заботы о сотрудниках. Вы можете подать заявку на конкретную вакансию или отправить резюме, чтобы стать частью нашего сообщества талантов. После подачи заявки вы получите подтверждение по электронной почте.',
     career_button: 'Смотреть вакансии',
     hero_products_label: 'НАШИ ПРОДУКТЫ',
     hero_products_heading: 'Качественные лекарства для лучшей жизни',
@@ -160,11 +308,8 @@ const translations = {
     products_category_cold: 'Простуда и дыхание',
     products_category_immunity: 'Иммунитет',
     products_category_digestive: 'Пищеварение',
-    products_category_allergy: 'Аллергия',
-    products_category_oral: 'Полость рта',
     products_category_kids: 'Для детей',
     products_category_cardio: 'Кардио',
-    products_category_urology: 'Урология',
     products_category_respiratory: 'Дыхательные пути',
     products_partners_heading: 'Доступны в аптеках и онлайн-сервисах',
     products_partners_intro: 'Продукты STADA можно найти у партнеров в Казахстане: от крупных аптечных сетей до удобных цифровых сервисов.',
@@ -228,6 +373,7 @@ const translations = {
     product_coldrex_usage_season_text: 'Уместен как симптоматическая поддержка в периоды простуды и гриппа согласно инструкции.',
     product_coldrex_note_title: 'Ответственное применение',
     product_coldrex_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно при хронических заболеваниях или приеме других средств.',
+    product_coldrex_buy_intro: 'Ищите Колдрекс у аптечных партнеров STADA в Казахстане.',
     // Magne B6 Kids
     product_magneb6kids_benefit1: 'Магний и витамин B6 помогают поддерживать нормальную работу нервной системы',
     product_magneb6kids_benefit2: 'Компоненты участвуют в энергетическом обмене и помогают снижать утомляемость',
@@ -315,231 +461,6 @@ const translations = {
     product_snup_note_title: 'Важная информация',
     product_snup_note_text: 'Перед применением ознакомьтесь с инструкцией. Не применяйте чаще 3 раз в день и дольше 5–7 дней; для детей выбирайте концентрацию по возрасту.',
     product_snup_buy_intro: 'Ищите Снуп у аптечных партнеров STADA в Казахстане.',
-    // Zodak tablets
-    product_zodak_benefit1: 'Цетиризин помогает облегчать симптомы аллергического ринита, включая чихание, зуд и выделения из носа',
-    product_zodak_benefit2: 'Может применяться при сезонном и круглогодичном аллергическом рините согласно инструкции',
-    product_zodak_benefit3: 'Подходит для симптоматического облегчения проявлений крапивницы',
-    product_zodak_benefit4: 'Удобный режим приема: 1 таблетка в сутки для взрослых и детей старше 6 лет',
-    product_zodak_benefit5: 'Формат упаковки 30 таблеток помогает поддерживать регулярный прием в рамках назначенного курса',
-    product_zodak_benefit6: 'Перед применением важно учитывать возраст, противопоказания и рекомендации специалиста',
-    product_zodak_kicker: 'Цетиризин 10 мг',
-    product_zodak_badge_active: 'Цетиризин',
-    product_zodak_badge_daily: '1 таблетка в сутки',
-    product_zodak_badge_age: 'С 6 лет',
-    product_zodak_metric_strength: 'мг цетиризина',
-    product_zodak_metric_daily: 'таблетка в сутки',
-    product_zodak_metric_pack: 'таблеток в упаковке',
-    product_zodak_overview_label: 'О продукте',
-    product_zodak_overview_heading: 'Ежедневная помощь при симптомах аллергии',
-    product_zodak_overview_intro: 'Зодак в таблетках содержит цетиризин — антигистаминный компонент, который применяется для облегчения симптомов аллергического ринита и крапивницы.',
-    product_zodak_card_strength_title: '10 мг цетиризина',
-    product_zodak_card_strength_text: 'Дозировка активного вещества указана на упаковке и используется согласно инструкции по медицинскому применению.',
-    product_zodak_card_action_title: 'Антигистаминное действие',
-    product_zodak_card_action_text: 'Цетиризин относится к блокаторам H1-гистаминовых рецепторов и помогает уменьшать аллергические проявления.',
-    product_zodak_card_daily_title: '1 таблетка в сутки',
-    product_zodak_card_daily_text: 'Для взрослых и детей старше 6 лет режим приема обычно составляет одну таблетку в день, если врач не назначил иначе.',
-    product_zodak_card_age_title: 'С 6 лет',
-    product_zodak_card_age_text: 'Таблетированная форма предназначена для взрослых и детей старше 6 лет с учетом инструкции и противопоказаний.',
-    product_zodak_formula_label: 'Формат',
-    product_zodak_formula_heading: 'Три опоры понятного приема',
-    product_zodak_formula_intro: 'Страница выделяет ключевые ориентиры упаковки: активное вещество, симптоматическое действие и удобный таблетированный формат.',
-    product_zodak_formula_active_title: 'Активный компонент',
-    product_zodak_formula_active_text: 'Цетиризин 10 мг помогает контролировать симптомы аллергии за счет антигистаминного действия.',
-    product_zodak_formula_symptoms_title: 'Симптомы аллергии',
-    product_zodak_formula_symptoms_text: 'Применяется при проявлениях аллергического ринита и крапивницы согласно инструкции.',
-    product_zodak_formula_format_title: 'Таблетки 30 шт.',
-    product_zodak_formula_format_text: 'Компактная упаковка рассчитана на ежедневный прием в рамках рекомендованного режима.',
-    product_zodak_usage_label: 'Когда особенно актуально',
-    product_zodak_usage_heading: 'При сезонной аллергии, круглогодичных симптомах и крапивнице',
-    product_zodak_usage_seasonal_title: 'Сезонный аллергический ринит',
-    product_zodak_usage_seasonal_text: 'Может применяться в периоды пыльцы и сезонных аллергенов для облегчения симптомов аллергического ринита.',
-    product_zodak_usage_yearround_title: 'Круглогодичные аллергены',
-    product_zodak_usage_yearround_text: 'Подходит для симптоматической помощи при круглогодичном аллергическом рините согласно инструкции.',
-    product_zodak_usage_skin_title: 'Крапивница',
-    product_zodak_usage_skin_text: 'Используется для облегчения проявлений крапивницы в рамках показаний к применению.',
-    product_zodak_note_title: 'Ответственное применение',
-    product_zodak_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом, особенно при беременности, грудном вскармливании, заболеваниях почек или приеме других средств.',
-    product_zodak_buy_intro: 'Ищите Зодак таблетки у аптечных партнеров STADA в Казахстане.',
-
-    product_vitaprost_benefit1: 'Содержит экстракт простаты в дозировке 20 мг',
-    product_vitaprost_benefit2: 'Применяется в составе комплексной терапии при обострении хронического абактериального простатита',
-    product_vitaprost_benefit3: 'Может применяться при доброкачественной гиперплазии предстательной железы согласно инструкции',
-    product_vitaprost_benefit4: 'Указан для состояний до и после оперативных вмешательств на предстательной железе',
-    product_vitaprost_benefit5: 'Таблетированная форма для приема внутрь, 20 таблеток в упаковке',
-    product_vitaprost_benefit6: 'Перед применением важно ознакомиться с инструкцией и проконсультироваться со специалистом',
-    product_vitaprost_kicker: 'Экстракт простаты 20 мг',
-    product_vitaprost_badge_active: 'Простаты экстракт',
-    product_vitaprost_badge_format: 'Таблетки внутрь',
-    product_vitaprost_badge_age: 'С 18 лет',
-    product_vitaprost_metric_strength: 'мг действующего вещества',
-    product_vitaprost_metric_pack: 'таблеток в упаковке',
-    product_vitaprost_metric_age: 'возрастное ограничение',
-    product_vitaprost_overview_label: 'Урологический препарат',
-    product_vitaprost_overview_heading: 'Таблетированная форма для мужского здоровья',
-    product_vitaprost_overview_intro: 'Витапрост относится к урологическим препаратам и содержит экстракт простаты. Информация на странице основана на характеристиках и инструкции товара.',
-    product_vitaprost_card_strength_title: '20 мг',
-    product_vitaprost_card_strength_text: 'Дозировка действующего вещества указана на упаковке и используется согласно инструкции по медицинскому применению.',
-    product_vitaprost_card_active_title: 'Экстракт простаты',
-    product_vitaprost_card_active_text: 'Действующее вещество продукта — экстракт простаты.',
-    product_vitaprost_card_daily_title: '2 раза в день',
-    product_vitaprost_card_daily_text: 'В инструкции указан прием внутрь по 1 таблетке 2 раза в день; длительность курса определяют по показанию и назначению специалиста.',
-    product_vitaprost_card_storage_title: '+15...+25 °C',
-    product_vitaprost_card_storage_text: 'Хранить при комнатной температуре от +15 до +25 градусов.',
-    product_vitaprost_formula_label: 'Формула',
-    product_vitaprost_formula_heading: 'Ключевые ориентиры упаковки',
-    product_vitaprost_formula_intro: 'Страница выделяет активное вещество, взрослую возрастную категорию и упаковку на 20 таблеток.',
-    product_vitaprost_formula_active_title: '20 мг экстракта',
-    product_vitaprost_formula_active_text: 'Каждая таблетка содержит экстракт простаты в дозировке 20 мг.',
-    product_vitaprost_formula_age_title: 'Для взрослых',
-    product_vitaprost_formula_age_text: 'Возрастное ограничение для продукта — с 18 лет.',
-    product_vitaprost_formula_format_title: '20 таблеток',
-    product_vitaprost_formula_format_text: 'Упаковка содержит 20 таблеток для приема внутрь.',
-    product_vitaprost_usage_label: 'Показания',
-    product_vitaprost_usage_heading: 'Когда Витапрост указан в инструкции',
-    product_vitaprost_usage_prostatitis_title: 'Хронический абактериальный простатит',
-    product_vitaprost_usage_prostatitis_text: 'Применяется при обострении хронического абактериального простатита в составе комплексной терапии.',
-    product_vitaprost_usage_bph_title: 'Доброкачественная гиперплазия',
-    product_vitaprost_usage_bph_text: 'Указан при доброкачественной гиперплазии предстательной железы согласно инструкции.',
-    product_vitaprost_usage_surgery_title: 'До и после операций',
-    product_vitaprost_usage_surgery_text: 'Может применяться при состояниях до и после оперативных вмешательств на предстательной железе.',
-    product_vitaprost_note_title: 'Ответственное применение',
-    product_vitaprost_note_text: 'Препарат имеет противопоказания, включая гиперчувствительность к компонентам и возраст до 18 лет. Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом.',
-    product_vitaprost_buy_intro: 'Ищите Витапрост таблетки у аптечных партнеров STADA в Казахстане.',
-    // Zodak drops
-    product_zodak_drops_benefit1: 'Цетиризин помогает облегчать симптомы аллергического ринита, включая чихание, зуд и выделения из носа',
-    product_zodak_drops_benefit2: 'Форма капель для приема внутрь подходит детям с 2 лет и взрослым согласно инструкции',
-    product_zodak_drops_benefit3: 'Может применяться при аллергическом конъюнктивите в рамках показаний',
-    product_zodak_drops_benefit4: 'Подходит для симптоматического облегчения проявлений крапивницы',
-    product_zodak_drops_benefit5: 'Флакон 20 мл с капельным форматом помогает точно отмерять прием по возрасту',
-    product_zodak_drops_benefit6: 'Режим дозирования зависит от возраста; перед применением важно ознакомиться с инструкцией',
-    product_zodak_drops_kicker: 'Капли для приема внутрь',
-    product_zodak_drops_badge_active: 'Цетиризин 10 мг/мл',
-    product_zodak_drops_badge_format: 'Капли внутрь',
-    product_zodak_drops_badge_age: 'С 2 лет',
-    product_zodak_drops_metric_strength: 'мг/мл цетиризина',
-    product_zodak_drops_metric_age: 'для детей',
-    product_zodak_drops_metric_pack: 'мл во флаконе',
-    product_zodak_drops_overview_label: 'О продукте',
-    product_zodak_drops_overview_heading: 'Капельный формат для помощи при аллергии',
-    product_zodak_drops_overview_intro: 'Зодак капли содержат цетиризин и применяются для облегчения симптомов аллергического ринита, аллергического конъюнктивита и крапивницы согласно инструкции.',
-    product_zodak_drops_card_strength_title: '10 мг/мл цетиризина',
-    product_zodak_drops_card_strength_text: 'Концентрация активного вещества указана на упаковке и используется согласно инструкции по медицинскому применению.',
-    product_zodak_drops_card_age_title: 'С 2 лет',
-    product_zodak_drops_card_age_text: 'Форма капель предназначена для детей с 2 лет и взрослых; дозирование выбирают по возрасту.',
-    product_zodak_drops_card_action_title: 'Антигистаминное действие',
-    product_zodak_drops_card_action_text: 'Цетиризин относится к блокаторам H1-гистаминовых рецепторов и помогает уменьшать аллергические проявления.',
-    product_zodak_drops_card_pack_title: 'Флакон 20 мл',
-    product_zodak_drops_card_pack_text: 'Капли для приема внутрь позволяют отмерять дозу в соответствии с инструкцией.',
-    product_zodak_drops_formula_label: 'Формат',
-    product_zodak_drops_formula_heading: 'Три ориентира капельной формы',
-    product_zodak_drops_formula_intro: 'Ключевые особенности упаковки: цетиризин 10 мг/мл, применение с 2 лет и флакон с каплями для приема внутрь.',
-    product_zodak_drops_formula_active_title: 'Активный компонент',
-    product_zodak_drops_formula_active_text: 'Цетиризин 10 мг/мл помогает контролировать симптомы аллергии за счет антигистаминного действия.',
-    product_zodak_drops_formula_age_title: 'Для детей с 2 лет',
-    product_zodak_drops_formula_age_text: 'Капельная форма помогает подобрать возрастной режим приема согласно инструкции.',
-    product_zodak_drops_formula_format_title: 'Флакон 20 мл',
-    product_zodak_drops_formula_format_text: 'Формат капель для приема внутрь удобен, когда нужно отмерять дозу по возрасту.',
-    product_zodak_drops_usage_label: 'Когда особенно актуально',
-    product_zodak_drops_usage_heading: 'При аллергическом рините, конъюнктивите и крапивнице',
-    product_zodak_drops_usage_rhinitis_title: 'Аллергический ринит',
-    product_zodak_drops_usage_rhinitis_text: 'Может применяться для облегчения симптомов аллергического ринита согласно инструкции.',
-    product_zodak_drops_usage_conjunctivitis_title: 'Аллергический конъюнктивит',
-    product_zodak_drops_usage_conjunctivitis_text: 'Используется при аллергическом конъюнктивите в рамках показаний к применению.',
-    product_zodak_drops_usage_skin_title: 'Крапивница',
-    product_zodak_drops_usage_skin_text: 'Подходит для симптоматического облегчения проявлений крапивницы согласно инструкции.',
-    product_zodak_drops_note_title: 'Ответственное применение',
-    product_zodak_drops_note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом. Для детей дозу выбирают строго по возрасту и рекомендациям по применению.',
-    product_zodak_drops_buy_intro: 'Ищите Зодак капли у аптечных партнеров STADA в Казахстане.',
-    // Kamistad
-    product_kamistad_benefit1: 'Применяется при умеренном воспалении слизистой оболочки рта и десен',
-    product_kamistad_benefit2: 'Содержит лидокаина гидрохлорид и цветки ромашки',
-    product_kamistad_benefit3: 'Предназначен для нанесения на слизистую оболочку полости рта',
-    product_kamistad_benefit4: 'Полоску геля длиной около 1/2 см наносят на воспаленные участки 3 раза в сутки согласно инструкции',
-    product_kamistad_benefit5: 'Формат выпуска — туба 10 г',
-    product_kamistad_benefit6: 'Если симптомы воспаления не уменьшаются в течение недели, необходимо проконсультироваться с врачом',
-    product_kamistad_kicker: 'Гель для полости рта',
-    product_kamistad_badge_active: 'Лидокаин + ромашка',
-    product_kamistad_badge_format: 'Гель 10 г',
-    product_kamistad_badge_age: 'С 12 лет',
-    product_kamistad_metric_pack: 'г геля в тубе',
-    product_kamistad_metric_daily: 'раза в сутки',
-    product_kamistad_metric_age: 'лет и старше',
-    product_kamistad_overview_label: 'О продукте',
-    product_kamistad_overview_heading: 'Местное нанесение при воспалении слизистой рта и десен',
-    product_kamistad_overview_intro: 'Камистад-Гель N используют на слизистой оболочке полости рта. Страница выделяет основные ориентиры из карточки продукта и инструкции: состав, формат, возраст и правила ответственного применения.',
-    product_kamistad_card_pack_title: 'Туба 10 г',
-    product_kamistad_card_pack_text: 'Гель выпускается в тубе 10 г для местного нанесения на слизистую оболочку полости рта.',
-    product_kamistad_card_age_title: 'С 12 лет',
-    product_kamistad_card_age_text: 'Возрастное ограничение для применения — с 12 лет; препарат не предназначен для детей младше 12 лет.',
-    product_kamistad_card_dose_title: 'Полоска 1/2 см',
-    product_kamistad_card_dose_text: 'По инструкции полоску геля длиной около 1/2 см наносят на воспаленные участки 3 раза в сутки и слегка втирают.',
-    product_kamistad_card_storage_title: '+15...+25 °C',
-    product_kamistad_card_storage_text: 'Хранить при комнатной температуре от +15 до +25 °C согласно данным карточки продукта.',
-    product_kamistad_formula_label: 'Состав',
-    product_kamistad_formula_heading: 'Два компонента и гелевая форма',
-    product_kamistad_formula_intro: 'В центре страницы — ключевые элементы продукта: лидокаина гидрохлорид, цветки ромашки и формат геля для нанесения на слизистую оболочку полости рта.',
-    product_kamistad_formula_active_title: 'Лидокаина гидрохлорид',
-    product_kamistad_formula_active_text: 'Активный компонент в составе препарата; применяйте средство только согласно инструкции и рекомендациям специалиста.',
-    product_kamistad_formula_chamomile_title: 'Цветки ромашки',
-    product_kamistad_formula_chamomile_text: 'Растительный компонент формулы, указанный в составе продукта вместе с лидокаина гидрохлоридом.',
-    product_kamistad_formula_format_title: 'Гель 10 г',
-    product_kamistad_formula_format_text: 'Гелевая форма предназначена для нанесения на воспаленные участки слизистой оболочки полости рта.',
-    product_kamistad_usage_label: 'Когда особенно актуально',
-    product_kamistad_usage_heading: 'При воспалении слизистой рта и десен',
-    product_kamistad_usage_gums_title: 'Десны',
-    product_kamistad_usage_gums_text: 'Может применяться при умеренном воспалении десен в рамках показаний к применению.',
-    product_kamistad_usage_mucosa_title: 'Слизистая оболочка рта',
-    product_kamistad_usage_mucosa_text: 'Средство наносят непосредственно на воспаленные участки слизистой оболочки полости рта.',
-    product_kamistad_usage_week_title: 'Контроль симптомов',
-    product_kamistad_usage_week_text: 'Если симптомы воспаления не уменьшаются в течение недели, необходимо обратиться к врачу.',
-    product_kamistad_note_title: 'Ответственное применение',
-    product_kamistad_note_text: 'Перед применением ознакомьтесь с инструкцией. Не применяйте при гиперчувствительности к компонентам или другим местным анестетикам, у детей до 12 лет, при беременности и в период лактации; при нежелательных реакциях прекратите применение и проконсультируйтесь с врачом.',
-    product_kamistad_buy_intro: 'Ищите Камистад-Гель N у аптечных партнеров STADA в Казахстане.',
-    // Kamistad Baby
-    product_kamistad_baby_benefit1: 'Предназначен для массажа десен у детей при прорезывании зубов',
-    product_kamistad_baby_benefit2: 'Содержит гиалуроновую кислоту и экстракт ромашки',
-    product_kamistad_baby_benefit3: 'Формула без сахара и без алкоголя согласно данным STADA',
-    product_kamistad_baby_benefit4: 'Подходит для нанесения на слизистую оболочку полости рта',
-    product_kamistad_baby_benefit5: 'Формат выпуска — туба 20 мл',
-    product_kamistad_baby_benefit6: 'Хранить при комнатной температуре от +15 до +25 °C согласно карточке продукта',
-    product_kamistad_baby_kicker: 'Гель для малышей',
-    product_kamistad_baby_badge_active: 'Ромашка + гиалуронат',
-    product_kamistad_baby_badge_format: 'Гель 20 мл',
-    product_kamistad_baby_badge_age: 'С рождения',
-    product_kamistad_baby_metric_pack: 'мл геля в тубе',
-    product_kamistad_baby_metric_age: 'с рождения',
-    product_kamistad_baby_metric_storage: '°C хранения',
-    product_kamistad_baby_overview_label: 'О продукте',
-    product_kamistad_baby_overview_heading: 'Мягкий формат для ухода за деснами малышей',
-    product_kamistad_baby_overview_intro: 'Камистад Бэби представлен как гель для массажа десен при прорезывании зубов. Страница выделяет основные ориентиры из карточки продукта и материалов STADA: формат, возраст, состав и условия хранения.',
-    product_kamistad_baby_card_pack_title: 'Туба 20 мл',
-    product_kamistad_baby_card_pack_text: 'Гель выпускается в тубе 20 мл для местного нанесения на слизистую оболочку полости рта.',
-    product_kamistad_baby_card_age_title: 'С рождения',
-    product_kamistad_baby_card_age_text: 'В карточке продукта указан детский формат с применением с рождения.',
-    product_kamistad_baby_card_use_title: '2-3 раза в день',
-    product_kamistad_baby_card_use_text: 'STADA указывает нанесение 2-3 раза в день на десны с легким массированием.',
-    product_kamistad_baby_card_storage_title: '+15...+25 °C',
-    product_kamistad_baby_card_storage_text: 'Хранить при комнатной температуре от +15 до +25 °C согласно данным карточки продукта.',
-    product_kamistad_baby_formula_label: 'Состав',
-    product_kamistad_baby_formula_heading: 'Гиалуроновая кислота, ромашка и гелевая форма',
-    product_kamistad_baby_formula_intro: 'Визуальный блок собирает ключевые элементы продукта: гиалуроновую кислоту, экстракт ромашки и тубу 20 мл для ухода за деснами.',
-    product_kamistad_baby_formula_hyaluron_title: 'Гиалуроновая кислота',
-    product_kamistad_baby_formula_hyaluron_text: 'Компонент формулы, указанный STADA для Камистад Бэби вместе с ромашкой.',
-    product_kamistad_baby_formula_chamomile_title: 'Экстракт ромашки',
-    product_kamistad_baby_formula_chamomile_text: 'Растительный компонент, который поддерживает мягкий уход за чувствительными деснами.',
-    product_kamistad_baby_formula_format_title: '20 мл геля',
-    product_kamistad_baby_formula_format_text: 'Гелевая форма рассчитана на местное нанесение на десны и слизистую оболочку полости рта.',
-    product_kamistad_baby_usage_label: 'Когда особенно актуально',
-    product_kamistad_baby_usage_heading: 'В период прорезывания зубов',
-    product_kamistad_baby_usage_teething_title: 'Прорезывание зубов',
-    product_kamistad_baby_usage_teething_text: 'Средство используют для массажа десен у детей в период прорезывания зубов.',
-    product_kamistad_baby_usage_mucosa_title: 'Слизистая оболочка рта',
-    product_kamistad_baby_usage_mucosa_text: 'Гель предназначен для нанесения на слизистую оболочку полости рта согласно карточке продукта.',
-    product_kamistad_baby_usage_care_title: 'Ежедневный уход',
-    product_kamistad_baby_usage_care_text: 'При использовании у малышей соблюдайте рекомендации на упаковке и аккуратно наносите небольшое количество геля.',
-    product_kamistad_baby_note_title: 'Ответственное применение',
-    product_kamistad_baby_note_text: 'Перед применением ознакомьтесь с информацией на упаковке. Если у ребенка есть индивидуальная чувствительность к компонентам или дискомфорт сохраняется, проконсультируйтесь со специалистом.',
-    product_kamistad_baby_buy_intro: 'Ищите Камистад Бэби у аптечных партнеров STADA в Казахстане.',
     // Sinulan Duo benefits
     product_sinulan_duo_benefit1: 'Комбинация растительных экстрактов поддерживает верхние и нижние дыхательные пути',
     product_sinulan_duo_benefit2: 'Люцерна способствует иммунной защите и здоровью дыхательных путей',
@@ -676,10 +597,407 @@ const translations = {
     product_edarbi_klo_usage_routine_text: 'Принимается в режиме, который определяет врач; важно соблюдать рекомендации и контроль давления.',
     product_edarbi_klo_note_title: 'Важно',
     product_edarbi_klo_note_text: 'Эдарби Кло применяют по назначению врача. Перед применением ознакомьтесь с инструкцией и не изменяйте схему терапии самостоятельно.',
-    product_edarbi_klo_buy_intro: 'Ищите Эдарби Кло у аптечных партнеров STADA в Казахстане.'
+    product_edarbi_klo_buy_intro: 'Ищите Эдарби Кло у аптечных партнеров STADA в Казахстане.',
+    // Cardiomagnil
+    product_cardiomagnil_benefit1: 'Содержит ацетилсалициловую кислоту 150 мг в формате таблеток, покрытых пленочной оболочкой',
+    product_cardiomagnil_benefit2: 'Магния гидроксид входит в состав препарата как компонент, связанный с защитой слизистой желудка',
+    product_cardiomagnil_benefit3: 'Используется для профилактики инфаркта и тромбоза по назначению врача',
+    product_cardiomagnil_benefit4: 'Упаковка 30 таблеток подходит для регулярного курса согласно инструкции',
+    product_cardiomagnil_benefit5: 'Важно соблюдать назначенную схему и учитывать противопоказания к ацетилсалициловой кислоте',
+    product_cardiomagnil_kicker: 'Антиагрегантная терапия',
+    product_cardiomagnil_badge_asa: 'АСК 150 мг',
+    product_cardiomagnil_badge_magnesium: 'Магния гидроксид',
+    product_cardiomagnil_badge_pack: '30 таблеток',
+    product_cardiomagnil_metric_dose: 'мг ацетилсалициловой кислоты',
+    product_cardiomagnil_metric_pack: 'таблеток в упаковке',
+    product_cardiomagnil_metric_component: 'активный компонент',
+    product_cardiomagnil_overview_label: 'Сердечно-сосудистая профилактика',
+    product_cardiomagnil_overview_heading: 'Кардиомагнил в формате 150 мг для назначенной врачом профилактики',
+    product_cardiomagnil_overview_intro: 'Кардиомагнил объединяет ацетилсалициловую кислоту и магния гидроксид в таблетках, покрытых пленочной оболочкой. Применение требует соблюдения инструкции и рекомендаций специалиста.',
+    product_cardiomagnil_card_asa_title: 'Ацетилсалициловая кислота',
+    product_cardiomagnil_card_asa_text: 'Активный компонент препарата, используемый в антиагрегантной терапии по назначению врача.',
+    product_cardiomagnil_card_magnesium_title: 'Магния гидроксид',
+    product_cardiomagnil_card_magnesium_text: 'Компонент состава, который нейтрализует соляную кислоту и обладает обволакивающим свойством.',
+    product_cardiomagnil_card_dose_title: '150 мг',
+    product_cardiomagnil_card_dose_text: 'Дозировка ацетилсалициловой кислоты, указанная для представленного формата упаковки.',
+    product_cardiomagnil_card_pack_title: '30 таблеток',
+    product_cardiomagnil_card_pack_text: 'Формат упаковки для приема по схеме, определенной врачом.',
+    product_cardiomagnil_formula_label: 'Формула',
+    product_cardiomagnil_formula_heading: 'В центре — АСК, магний и регулярный формат',
+    product_cardiomagnil_formula_intro: 'Визуальная схема показывает ключевые элементы продукта: ацетилсалициловую кислоту, магния гидроксид и упаковку на 30 таблеток.',
+    product_cardiomagnil_formula_asa_title: 'АСК',
+    product_cardiomagnil_formula_asa_text: 'Ацетилсалициловая кислота 150 мг является активным веществом препарата.',
+    product_cardiomagnil_formula_magnesium_title: 'Магния гидроксид',
+    product_cardiomagnil_formula_magnesium_text: 'Входит в состав препарата и связан с антацидным, обволакивающим действием.',
+    product_cardiomagnil_formula_pack_title: 'Курс под контролем',
+    product_cardiomagnil_formula_pack_text: '30 таблеток в упаковке помогают поддерживать назначенный режим приема.',
+    product_cardiomagnil_usage_label: 'Когда назначают',
+    product_cardiomagnil_usage_heading: 'Для профилактики инфаркта и тромбоза по рекомендации специалиста',
+    product_cardiomagnil_usage_prevention_title: 'Профилактика инфаркта',
+    product_cardiomagnil_usage_prevention_text: 'Может применяться в профилактических схемах, если врач оценил показания и риски.',
+    product_cardiomagnil_usage_thrombosis_title: 'Профилактика тромбоза',
+    product_cardiomagnil_usage_thrombosis_text: 'Антиагрегантная терапия требует регулярности приема и контроля со стороны специалиста.',
+    product_cardiomagnil_usage_doctor_title: 'Индивидуальная схема',
+    product_cardiomagnil_usage_doctor_text: 'Дозировку, длительность и совместимость с другими препаратами определяет врач.',
+    product_cardiomagnil_note_title: 'Важно',
+    product_cardiomagnil_note_text: 'Кардиомагнил применяют по назначению врача. Перед применением ознакомьтесь с инструкцией, противопоказаниями и возможными лекарственными взаимодействиями.',
+    product_cardiomagnil_buy_intro: 'Ищите Кардиомагнил у аптечных партнеров STADA в Казахстане.',
+    // No-Spa
+    product_noshpa_benefit1: 'Содержит дротаверина гидрохлорид 40 мг в каждой таблетке',
+    product_noshpa_benefit2: 'Применяется при спазмах гладкой мускулатуры согласно инструкции',
+    product_noshpa_benefit3: 'Может использоваться как вспомогательная терапия при спазмах желудочно-кишечного тракта',
+    product_noshpa_benefit4: 'Формат 24 таблетки подходит для приема по рекомендованной схеме',
+    product_noshpa_benefit5: 'Перед применением важно учитывать противопоказания и возрастные ограничения',
+    product_noshpa_kicker: 'Спазмолитик',
+    product_noshpa_badge_drotaverine: 'Дротаверин 40 мг',
+    product_noshpa_badge_spasm: 'При спазмах',
+    product_noshpa_badge_pack: '24 таблетки',
+    product_noshpa_metric_dose: 'мг дротаверина',
+    product_noshpa_metric_pack: 'таблетки в упаковке',
+    product_noshpa_metric_component: 'активный компонент',
+    product_noshpa_overview_label: 'При спазмах',
+    product_noshpa_overview_heading: 'НО-ШПА 40 мг для облегчения спазмов гладкой мускулатуры',
+    product_noshpa_overview_intro: 'НО-ШПА содержит дротаверина гидрохлорид и применяется при спазмах гладкой мускулатуры. Прием должен соответствовать инструкции и рекомендациям специалиста.',
+    product_noshpa_card_drotaverine_title: 'Дротаверин',
+    product_noshpa_card_drotaverine_text: 'Активное вещество препарата, относящееся к миотропным спазмолитикам.',
+    product_noshpa_card_dose_title: '40 мг',
+    product_noshpa_card_dose_text: 'Дозировка дротаверина гидрохлорида в одной таблетке НО-ШПА.',
+    product_noshpa_card_pack_title: '24 таблетки',
+    product_noshpa_card_pack_text: 'Упаковка с одним блистером для приема согласно инструкции.',
+    product_noshpa_card_age_title: 'С 6 лет',
+    product_noshpa_card_age_text: 'Возрастные ограничения и режим приема необходимо сверять с инструкцией.',
+    product_noshpa_formula_label: 'Формула',
+    product_noshpa_formula_heading: 'В центре — дротаверин, дозировка и удобный формат',
+    product_noshpa_formula_intro: 'Схема собирает основные элементы продукта: дротаверин 40 мг, спазмолитическое направление и упаковку на 24 таблетки.',
+    product_noshpa_formula_drotaverine_title: 'Дротаверин',
+    product_noshpa_formula_drotaverine_text: 'Дротаверина гидрохлорид 40 мг является активным веществом препарата.',
+    product_noshpa_formula_spasm_title: 'Спазмолитическое действие',
+    product_noshpa_formula_spasm_text: 'Применяется при спазмах гладкой мускулатуры в показаниях, перечисленных в инструкции.',
+    product_noshpa_formula_pack_title: '24 таблетки',
+    product_noshpa_formula_pack_text: 'Формат упаковки поддерживает прием по рекомендованной схеме.',
+    product_noshpa_usage_label: 'Когда применяют',
+    product_noshpa_usage_heading: 'При спазмах гладкой мускулатуры по инструкции',
+    product_noshpa_usage_biliary_title: 'Желчевыводящие пути',
+    product_noshpa_usage_biliary_text: 'В инструкции указаны спазмы гладкой мускулатуры при заболеваниях желчевыводящих путей.',
+    product_noshpa_usage_gi_title: 'Желудочно-кишечный тракт',
+    product_noshpa_usage_gi_text: 'Может применяться как вспомогательная терапия при спазмах гладкой мускулатуры ЖКТ.',
+    product_noshpa_usage_doctor_title: 'Ответственный прием',
+    product_noshpa_usage_doctor_text: 'Дозировку, длительность и совместимость с другими препаратами следует сверять с инструкцией и специалистом.',
+    product_noshpa_note_title: 'Важно',
+    product_noshpa_note_text: 'НО-ШПА применяют согласно инструкции. Перед приемом ознакомьтесь с противопоказаниями, дозировкой и обратитесь к врачу при сомнениях.',
+    product_noshpa_buy_intro: 'Ищите НО-ШПА у аптечных партнеров STADA в Казахстане.',
+    // Essentiale
+    product_essentiale_benefit1: 'Содержит эссенциальные фосфолипиды в формате капсул',
+    product_essentiale_benefit2: 'Упаковка 30 капсул подходит для приема по схеме, указанной в инструкции',
+    product_essentiale_benefit3: 'Формат продукта связан с заботой о клетках печени',
+    product_essentiale_benefit4: 'На упаковке выделены три направления: защита, восстановление и повышение устойчивости клеток печени',
+    product_essentiale_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать рекомендации специалиста',
+    product_essentiale_kicker: 'Забота о печени',
+    product_essentiale_badge_phospholipids: 'Эссенциальные фосфолипиды',
+    product_essentiale_badge_liver: 'Для клеток печени',
+    product_essentiale_badge_pack: '30 капсул',
+    product_essentiale_metric_pack: 'капсул в упаковке',
+    product_essentiale_metric_actions: 'направления заботы',
+    product_essentiale_metric_component: 'фосфолипиды',
+    product_essentiale_overview_label: 'Печень и фосфолипиды',
+    product_essentiale_overview_heading: 'Эссенциале Форте Н в формате 30 капсул',
+    product_essentiale_overview_intro: 'Страница оформлена вокруг ключевых элементов продукта: эссенциальных фосфолипидов, упаковки на 30 капсул и ответственного приема согласно инструкции.',
+    product_essentiale_card_phospholipids_title: 'Эссенциальные фосфолипиды',
+    product_essentiale_card_phospholipids_text: 'Компоненты, которые указаны как основа продукта Эссенциале Форте Н.',
+    product_essentiale_card_pack_title: '30 капсул',
+    product_essentiale_card_pack_text: 'Формат упаковки, показанный на packshot, для приема по инструкции.',
+    product_essentiale_card_actions_title: '3 направления',
+    product_essentiale_card_actions_text: 'На упаковке отмечены защита, восстановление и повышение устойчивости клеток печени.',
+    product_essentiale_card_instruction_title: 'По инструкции',
+    product_essentiale_card_instruction_text: 'Режим приема и ограничения необходимо сверять с инструкцией и специалистом.',
+    product_essentiale_formula_label: 'Формула',
+    product_essentiale_formula_heading: 'В центре — фосфолипиды, печень и компактный формат',
+    product_essentiale_formula_intro: 'Схема показывает продукт в спокойном масштабе: упаковка остается в фокусе, но не перекрывает карточки и линии формулы.',
+    product_essentiale_formula_phospholipids_title: 'Фосфолипиды',
+    product_essentiale_formula_phospholipids_text: 'Эссенциальные фосфолипиды вынесены как главный компонент продукта.',
+    product_essentiale_formula_liver_title: 'Забота о печени',
+    product_essentiale_formula_liver_text: 'Визуальная логика страницы связана с поддержкой клеток печени согласно информации на упаковке.',
+    product_essentiale_formula_pack_title: '30 капсул',
+    product_essentiale_formula_pack_text: 'Упаковка в центре подобрана гармоничного размера, чтобы формула читалась легко.',
+    product_essentiale_usage_label: 'Когда применяют',
+    product_essentiale_usage_heading: 'Для заботы о печени согласно инструкции',
+    product_essentiale_usage_liver_title: 'Функции печени',
+    product_essentiale_usage_liver_text: 'Применение продукта следует сверять с инструкцией и рекомендациями специалиста.',
+    product_essentiale_usage_cells_title: 'Клетки печени',
+    product_essentiale_usage_cells_text: 'На упаковке акцент сделан на защите, восстановлении и устойчивости клеток печени.',
+    product_essentiale_usage_doctor_title: 'Ответственный прием',
+    product_essentiale_usage_doctor_text: 'Дозировку, длительность курса и совместимость с другими препаратами определяет специалист.',
+    product_essentiale_note_title: 'Важно',
+    product_essentiale_note_text: 'Эссенциале Форте Н применяют согласно инструкции. Перед приемом ознакомьтесь с противопоказаниями и обратитесь к врачу при сомнениях.',
+    product_essentiale_buy_intro: 'Ищите Эссенциале у аптечных партнеров STADA в Казахстане.',
+    // Aqualor
+    product_aqualor_benefit1: 'Содержит стерильный раствор морской воды в формате спрея 125 мл',
+    product_aqualor_benefit2: 'На упаковке указан формат для сильного насморка',
+    product_aqualor_benefit3: 'Гипертоническая концентрация соли отмечена как 16-27 г/л',
+    product_aqualor_benefit4: 'Подходит для ухода и промывания полости носа согласно инструкции',
+    product_aqualor_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать индивидуальные особенности',
+    product_aqualor_kicker: 'Спрей морской воды',
+    product_aqualor_badge_seawater: 'Морская вода',
+    product_aqualor_badge_strong: 'Сильный насморк',
+    product_aqualor_badge_volume: '125 мл',
+    product_aqualor_metric_volume: 'мл в упаковке',
+    product_aqualor_metric_concentration: 'г/л концентрация',
+    product_aqualor_metric_component: 'раствор морской воды',
+    product_aqualor_overview_label: 'Уход за носом',
+    product_aqualor_overview_heading: 'Аквалор Экстра Форте для ухода за полостью носа',
+    product_aqualor_overview_intro: 'Страница собирает ключевые элементы продукта: стерильный раствор морской воды, формат 125 мл и применение при сильном насморке согласно информации на упаковке.',
+    product_aqualor_card_seawater_title: 'Морская вода',
+    product_aqualor_card_seawater_text: 'Стерильный раствор морской воды указан как основа продукта.',
+    product_aqualor_card_volume_title: '125 мл',
+    product_aqualor_card_volume_text: 'Объем упаковки, показанный на packshot, для использования по инструкции.',
+    product_aqualor_card_concentration_title: '16-27 г/л',
+    product_aqualor_card_concentration_text: 'На упаковке отмечена гипертоническая концентрация солей.',
+    product_aqualor_card_instruction_title: 'По инструкции',
+    product_aqualor_card_instruction_text: 'Режим применения и ограничения необходимо сверять с инструкцией.',
+    product_aqualor_formula_label: 'Формула',
+    product_aqualor_formula_heading: 'В центре — морская вода, концентрация и формат спрея',
+    product_aqualor_formula_intro: 'Упаковка показана компактно, чтобы формула читалась спокойно и не перекрывала карточки компонентов.',
+    product_aqualor_formula_seawater_title: 'Стерильная морская вода',
+    product_aqualor_formula_seawater_text: 'Основа продукта — стерильный раствор морской воды.',
+    product_aqualor_formula_nose_title: 'Для полости носа',
+    product_aqualor_formula_nose_text: 'Формат спрея связан с уходом и промыванием полости носа согласно инструкции.',
+    product_aqualor_formula_volume_title: '125 мл',
+    product_aqualor_formula_volume_text: 'Объем упаковки выделен как практичный формат продукта.',
+    product_aqualor_usage_label: 'Когда применяют',
+    product_aqualor_usage_heading: 'Для ухода за носом при сильном насморке согласно инструкции',
+    product_aqualor_usage_rhinitis_title: 'Сильный насморк',
+    product_aqualor_usage_rhinitis_text: 'На упаковке продукт обозначен для ситуации сильного насморка.',
+    product_aqualor_usage_hygiene_title: 'Промывание носа',
+    product_aqualor_usage_hygiene_text: 'Использование должно соответствовать инструкции по применению.',
+    product_aqualor_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_usage_doctor_text: 'При сомнениях, особенностях состояния или длительных симптомах следует обратиться к специалисту.',
+    product_aqualor_note_title: 'Важно',
+    product_aqualor_note_text: 'Аквалор Экстра Форте применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_buy_intro: 'Ищите Аквалор у аптечных партнеров STADA в Казахстане.',
+    // Aqualor Forte
+    product_aqualor_forte_benefit1: 'Содержит гипертонический раствор натуральной морской воды в формате душ 150 мл',
+    product_aqualor_forte_benefit2: 'На упаковке указан формат для затяжного насморка',
+    product_aqualor_forte_benefit3: 'Раствор обогащен CO2; этот акцент вынесен на packshot',
+    product_aqualor_forte_benefit4: 'Подходит для ухода и промывания полости носа детям с 2 лет и взрослым согласно инструкции',
+    product_aqualor_forte_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать индивидуальные особенности',
+    product_aqualor_forte_kicker: 'Спрей морской воды',
+    product_aqualor_forte_badge_seawater: 'Морская вода',
+    product_aqualor_forte_badge_co2: 'CO2',
+    product_aqualor_forte_badge_volume: '150 мл',
+    product_aqualor_forte_metric_volume: 'мл в упаковке',
+    product_aqualor_forte_metric_age: 'для детей с 2 лет',
+    product_aqualor_forte_metric_component: 'обогащение раствора',
+    product_aqualor_forte_overview_label: 'Уход за носом',
+    product_aqualor_forte_overview_heading: 'Аквалор Актив Форте для ухода и промывания полости носа',
+    product_aqualor_forte_overview_intro: 'Страница собирает ключевые элементы продукта: натуральную морскую воду, объем 150 мл, формат душ и акцент CO2, показанный на упаковке.',
+    product_aqualor_forte_card_seawater_title: 'Натуральная морская вода',
+    product_aqualor_forte_card_seawater_text: 'Гипертонический раствор натуральной морской воды указан как основа продукта.',
+    product_aqualor_forte_card_volume_title: '150 мл',
+    product_aqualor_forte_card_volume_text: 'Объем упаковки, показанный на packshot, для использования по инструкции.',
+    product_aqualor_forte_card_co2_title: 'CO2',
+    product_aqualor_forte_card_co2_text: 'На упаковке отмечено обогащение раствора CO2.',
+    product_aqualor_forte_card_age_title: '2+',
+    product_aqualor_forte_card_age_text: 'На упаковке указан формат для детей с 2 лет и взрослых.',
+    product_aqualor_forte_formula_label: 'Формула',
+    product_aqualor_forte_formula_heading: 'В центре — морская вода, CO2 и формат душ',
+    product_aqualor_forte_formula_intro: 'Упаковка показана в более спокойном размере, чтобы формула оставалась гармоничной и карточки компонентов читались без перекрытий.',
+    product_aqualor_forte_formula_seawater_title: 'Морская вода',
+    product_aqualor_forte_formula_seawater_text: 'Основа продукта — гипертонический раствор натуральной морской воды.',
+    product_aqualor_forte_formula_co2_title: 'Обогащен CO2',
+    product_aqualor_forte_formula_co2_text: 'CO2 вынесен как отдельный визуальный акцент на упаковке.',
+    product_aqualor_forte_formula_volume_title: '150 мл',
+    product_aqualor_forte_formula_volume_text: 'Объем упаковки выделен как практичный формат продукта.',
+    product_aqualor_forte_usage_label: 'Когда применяют',
+    product_aqualor_forte_usage_heading: 'Для ухода за носом при затяжном насморке согласно инструкции',
+    product_aqualor_forte_usage_rhinitis_title: 'Затяжной насморк',
+    product_aqualor_forte_usage_rhinitis_text: 'На упаковке продукт обозначен для ситуации затяжного насморка.',
+    product_aqualor_forte_usage_hygiene_title: 'Промывание носа',
+    product_aqualor_forte_usage_hygiene_text: 'Использование должно соответствовать инструкции по применению.',
+    product_aqualor_forte_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_forte_usage_doctor_text: 'При сомнениях, особенностях состояния или длительных симптомах следует обратиться к специалисту.',
+    product_aqualor_forte_note_title: 'Важно',
+    product_aqualor_forte_note_text: 'Аквалор Актив Форте применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_forte_buy_intro: 'Ищите Аквалор Актив Форте у аптечных партнеров STADA в Казахстане.',
+    // Aqualor Baby
+    product_aqualor_baby_benefit1: 'Содержит раствор морской воды в формате капель 15 мл',
+    product_aqualor_baby_benefit2: 'На упаковке указан формат для применения с рождения',
+    product_aqualor_baby_benefit3: 'Капли подходят для мягкого ежедневного ухода за носом малыша согласно инструкции',
+    product_aqualor_baby_benefit4: 'Компактный объем удобно держать под рукой для регулярного ухода',
+    product_aqualor_baby_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать возрастные рекомендации',
+    product_aqualor_baby_kicker: 'Капли морской воды',
+    product_aqualor_baby_badge_seawater: 'Морская вода',
+    product_aqualor_baby_badge_from_birth: 'С рождения',
+    product_aqualor_baby_badge_volume: '15 мл',
+    product_aqualor_baby_metric_volume: 'мл в упаковке',
+    product_aqualor_baby_metric_age: 'для малышей',
+    product_aqualor_baby_metric_component: 'раствор морской воды',
+    product_aqualor_baby_overview_label: 'Уход за носом малыша',
+    product_aqualor_baby_overview_heading: 'Аквалор Беби для мягкого ежедневного ухода',
+    product_aqualor_baby_overview_intro: 'Страница собирает ключевые элементы продукта: морскую воду, формат капель, объем 15 мл и применение с рождения согласно информации на упаковке.',
+    product_aqualor_baby_card_seawater_title: 'Морская вода',
+    product_aqualor_baby_card_seawater_text: 'Раствор морской воды указан как основа продукта.',
+    product_aqualor_baby_card_volume_title: '15 мл',
+    product_aqualor_baby_card_volume_text: 'Компактный формат капель, показанный на packshot, для ухода по инструкции.',
+    product_aqualor_baby_card_age_title: 'С рождения',
+    product_aqualor_baby_card_age_text: 'На упаковке указан формат для применения с рождения.',
+    product_aqualor_baby_card_instruction_title: 'По инструкции',
+    product_aqualor_baby_card_instruction_text: 'Режим применения и ограничения необходимо сверять с инструкцией.',
+    product_aqualor_baby_formula_label: 'Формула',
+    product_aqualor_baby_formula_heading: 'В центре — морская вода, возрастной формат и капли',
+    product_aqualor_baby_formula_intro: 'Упаковка показана гармонично, а линии заведены под карточки снизу, чтобы при движении элементы оставались визуально связанными.',
+    product_aqualor_baby_formula_seawater_title: 'Морская вода',
+    product_aqualor_baby_formula_seawater_text: 'Основа продукта — раствор морской воды.',
+    product_aqualor_baby_formula_age_title: 'С рождения',
+    product_aqualor_baby_formula_age_text: 'Возрастной формат вынесен как отдельный акцент на упаковке.',
+    product_aqualor_baby_formula_volume_title: '15 мл',
+    product_aqualor_baby_formula_volume_text: 'Объем упаковки выделен как компактный формат капель.',
+    product_aqualor_baby_usage_label: 'Когда применяют',
+    product_aqualor_baby_usage_heading: 'Для ежедневного ухода за носом малыша согласно инструкции',
+    product_aqualor_baby_usage_daily_title: 'Ежедневный уход',
+    product_aqualor_baby_usage_daily_text: 'Капли можно использовать для бережного ухода за полостью носа согласно инструкции.',
+    product_aqualor_baby_usage_hygiene_title: 'Гигиена носа',
+    product_aqualor_baby_usage_hygiene_text: 'Использование должно соответствовать инструкции по применению.',
+    product_aqualor_baby_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_baby_usage_doctor_text: 'Для малышей особенно важно учитывать инструкцию и обращаться к специалисту при сомнениях.',
+    product_aqualor_baby_note_title: 'Важно',
+    product_aqualor_baby_note_text: 'Аквалор Беби применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_baby_buy_intro: 'Ищите Аквалор Беби у аптечных партнеров STADA в Казахстане.'
+,
+    product_aqualor_gorlo_benefit1: 'Содержит стерильный гипертонический раствор морской воды',
+    product_aqualor_gorlo_benefit2: 'На упаковке указана концентрация соли 19-23 г/л',
+    product_aqualor_gorlo_benefit3: 'Формат спрея 50 мл предназначен для орошения и промывания горла согласно инструкции',
+    product_aqualor_gorlo_benefit4: 'На упаковке указан возрастной формат для детей с 6 месяцев и взрослых',
+    product_aqualor_gorlo_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать индивидуальные ограничения',
+    product_aqualor_gorlo_kicker: 'Спрей для горла',
+    product_aqualor_gorlo_badge_seawater: 'Морская вода',
+    product_aqualor_gorlo_badge_salt: '19-23 г/л',
+    product_aqualor_gorlo_badge_volume: '50 мл',
+    product_aqualor_gorlo_metric_volume: 'мл в упаковке',
+    product_aqualor_gorlo_metric_age: 'с 6 месяцев',
+    product_aqualor_gorlo_metric_component: 'раствор морской воды',
+    product_aqualor_gorlo_overview_label: 'Уход за горлом',
+    product_aqualor_gorlo_overview_heading: 'Аквалор Горло для орошения и промывания горла',
+    product_aqualor_gorlo_overview_intro: 'Страница собирает ключевые элементы продукта: стерильный раствор морской воды, гипертоническую концентрацию 19-23 г/л, формат спрея и объем 50 мл.',
+    product_aqualor_gorlo_card_seawater_title: 'Морская вода',
+    product_aqualor_gorlo_card_seawater_text: 'Стерильный раствор морской воды указан как основа продукта.',
+    product_aqualor_gorlo_card_volume_title: '50 мл',
+    product_aqualor_gorlo_card_volume_text: 'Компактный формат спрея, показанный на packshot, для применения по инструкции.',
+    product_aqualor_gorlo_card_age_title: '6+ месяцев',
+    product_aqualor_gorlo_card_age_text: 'На упаковке указан формат для детей с 6 месяцев и взрослых.',
+    product_aqualor_gorlo_card_instruction_title: 'По инструкции',
+    product_aqualor_gorlo_card_instruction_text: 'Режим применения и ограничения необходимо сверять с инструкцией.',
+    product_aqualor_gorlo_formula_label: 'Формула',
+    product_aqualor_gorlo_formula_heading: 'В центре — морская вода, концентрация и формат спрея',
+    product_aqualor_gorlo_formula_intro: 'Упаковка показана в спокойном размере, а линии заведены под карточки снизу, чтобы связь сохранялась при движении элементов.',
+    product_aqualor_gorlo_formula_seawater_title: 'Морская вода',
+    product_aqualor_gorlo_formula_seawater_text: 'Основа продукта — стерильный раствор морской воды.',
+    product_aqualor_gorlo_formula_age_title: '19-23 г/л',
+    product_aqualor_gorlo_formula_age_text: 'Гипертоническая концентрация соли вынесена как отдельный акцент.',
+    product_aqualor_gorlo_formula_volume_title: '50 мл',
+    product_aqualor_gorlo_formula_volume_text: 'Объем упаковки выделен как компактный формат спрея для горла.',
+    product_aqualor_gorlo_usage_label: 'Когда применяют',
+    product_aqualor_gorlo_usage_heading: 'Для орошения и промывания горла согласно инструкции',
+    product_aqualor_gorlo_usage_daily_title: 'Орошение горла',
+    product_aqualor_gorlo_usage_daily_text: 'Спрей можно использовать для орошения горла согласно инструкции.',
+    product_aqualor_gorlo_usage_hygiene_title: 'Промывание',
+    product_aqualor_gorlo_usage_hygiene_text: 'Применение должно соответствовать инструкции по использованию.',
+    product_aqualor_gorlo_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_gorlo_usage_doctor_text: 'При воспалении, боли или сомнениях важно учитывать инструкцию и обращаться к специалисту.',
+    product_aqualor_gorlo_note_title: 'Важно',
+    product_aqualor_gorlo_note_text: 'Аквалор Горло применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_gorlo_buy_intro: 'Ищите Аквалор Горло у аптечных партнеров STADA в Казахстане.'
+,
+    product_aqualor_soft_benefit1: 'Содержит стерильный изотонический раствор морской воды',
+    product_aqualor_soft_benefit2: 'На упаковке и аптечных карточках указана концентрация соли 8-11 г/л',
+    product_aqualor_soft_benefit3: 'Формат душ 125 мл предназначен для орошения и промывания полости носа согласно инструкции',
+    product_aqualor_soft_benefit4: 'На аптечной карточке указан возрастной формат с 6 месяцев',
+    product_aqualor_soft_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать индивидуальные ограничения',
+    product_aqualor_soft_kicker: 'Душ для носа',
+    product_aqualor_soft_badge_seawater: 'Морская вода',
+    product_aqualor_soft_badge_salt: '8-11 г/л',
+    product_aqualor_soft_badge_volume: '125 мл',
+    product_aqualor_soft_metric_volume: 'мл в упаковке',
+    product_aqualor_soft_metric_age: 'с 6 месяцев',
+    product_aqualor_soft_metric_component: 'раствор морской воды',
+    product_aqualor_soft_overview_label: 'Уход за носом',
+    product_aqualor_soft_overview_heading: 'Аквалор Софт для мягкого орошения и промывания носа',
+    product_aqualor_soft_overview_intro: 'Страница собирает ключевые элементы продукта: стерильный раствор морской воды, изотоническую концентрацию 8-11 г/л, формат душ и объем 125 мл.',
+    product_aqualor_soft_card_seawater_title: 'Морская вода',
+    product_aqualor_soft_card_seawater_text: 'Стерильный раствор морской воды указан как основа продукта.',
+    product_aqualor_soft_card_volume_title: '125 мл',
+    product_aqualor_soft_card_volume_text: 'Формат упаковки 125 мл подходит для регулярного применения по инструкции.',
+    product_aqualor_soft_card_age_title: '6+ месяцев',
+    product_aqualor_soft_card_age_text: 'Возрастной формат вынесен согласно информации аптечных карточек.',
+    product_aqualor_soft_card_instruction_title: 'По инструкции',
+    product_aqualor_soft_card_instruction_text: 'Режим применения и ограничения необходимо сверять с инструкцией.',
+    product_aqualor_soft_formula_label: 'Формула',
+    product_aqualor_soft_formula_heading: 'В центре — морская вода, изотоническая концентрация и формат душ',
+    product_aqualor_soft_formula_intro: 'Упаковка показана в спокойном размере, а линии заведены под карточки снизу, чтобы связь сохранялась при левитации.',
+    product_aqualor_soft_formula_seawater_title: 'Морская вода',
+    product_aqualor_soft_formula_seawater_text: 'Основа продукта — стерильный раствор морской воды.',
+    product_aqualor_soft_formula_salt_title: '8-11 г/л',
+    product_aqualor_soft_formula_salt_text: 'Изотоническая концентрация соли вынесена как отдельный акцент.',
+    product_aqualor_soft_formula_volume_title: '125 мл',
+    product_aqualor_soft_formula_volume_text: 'Объем упаковки выделен как формат для орошения и промывания носа.',
+    product_aqualor_soft_usage_label: 'Когда применяют',
+    product_aqualor_soft_usage_heading: 'Для орошения и промывания полости носа согласно инструкции',
+    product_aqualor_soft_usage_daily_title: 'Орошение носа',
+    product_aqualor_soft_usage_daily_text: 'Формат душ можно использовать для орошения полости носа согласно инструкции.',
+    product_aqualor_soft_usage_hygiene_title: 'Промывание',
+    product_aqualor_soft_usage_hygiene_text: 'Применение должно соответствовать инструкции по использованию.',
+    product_aqualor_soft_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_soft_usage_doctor_text: 'При выраженных симптомах или сомнениях важно учитывать инструкцию и обращаться к специалисту.',
+    product_aqualor_soft_note_title: 'Важно',
+    product_aqualor_soft_note_text: 'Аквалор Софт применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_soft_buy_intro: 'Аквалор Софт доступен у аптечных партнеров STADA в Казахстане.'
+,
+    product_aqualor_soft_mini_benefit1: 'Содержит стерильный изотонический раствор морской воды',
+    product_aqualor_soft_mini_benefit2: 'На упаковке и аптечных карточках указана концентрация соли 8-11 г/л',
+    product_aqualor_soft_mini_benefit3: 'Компактный формат душ 50 мл предназначен для орошения и промывания полости носа согласно инструкции',
+    product_aqualor_soft_mini_benefit4: 'На аптечной карточке указан возрастной формат с 6 месяцев',
+    product_aqualor_soft_mini_benefit5: 'Перед применением важно ознакомиться с инструкцией и учитывать индивидуальные ограничения',
+    product_aqualor_soft_mini_kicker: 'Компактный душ для носа',
+    product_aqualor_soft_mini_badge_seawater: 'Морская вода',
+    product_aqualor_soft_mini_badge_salt: '8-11 г/л',
+    product_aqualor_soft_mini_badge_volume: '50 мл',
+    product_aqualor_soft_mini_metric_volume: 'мл в упаковке',
+    product_aqualor_soft_mini_metric_age: 'с 6 месяцев',
+    product_aqualor_soft_mini_metric_component: 'раствор морской воды',
+    product_aqualor_soft_mini_overview_label: 'Уход за носом',
+    product_aqualor_soft_mini_overview_heading: 'Аквалор Софт мини для мягкого орошения носа в компактном формате',
+    product_aqualor_soft_mini_overview_intro: 'Страница собирает ключевые элементы продукта: стерильный раствор морской воды, изотоническую концентрацию 8-11 г/л, формат душ и объем 50 мл.',
+    product_aqualor_soft_mini_card_seawater_title: 'Морская вода',
+    product_aqualor_soft_mini_card_seawater_text: 'Стерильный раствор морской воды указан как основа продукта.',
+    product_aqualor_soft_mini_card_volume_title: '50 мл',
+    product_aqualor_soft_mini_card_volume_text: 'Компактный объем удобно брать с собой и применять по инструкции.',
+    product_aqualor_soft_mini_card_age_title: '6+ месяцев',
+    product_aqualor_soft_mini_card_age_text: 'Возрастной формат вынесен согласно информации аптечных карточек.',
+    product_aqualor_soft_mini_card_instruction_title: 'По инструкции',
+    product_aqualor_soft_mini_card_instruction_text: 'Режим применения и ограничения необходимо сверять с инструкцией.',
+    product_aqualor_soft_mini_formula_label: 'Формула',
+    product_aqualor_soft_mini_formula_heading: 'В центре — морская вода, изотоническая концентрация и мини-формат',
+    product_aqualor_soft_mini_formula_intro: 'Упаковка показана в спокойном размере, карточки мягко левитируют, а линии заведены снизу под карточки с запасом для движения.',
+    product_aqualor_soft_mini_formula_seawater_title: 'Морская вода',
+    product_aqualor_soft_mini_formula_seawater_text: 'Основа продукта — стерильный раствор морской воды.',
+    product_aqualor_soft_mini_formula_salt_title: '8-11 г/л',
+    product_aqualor_soft_mini_formula_salt_text: 'Изотоническая концентрация соли вынесена как отдельный акцент.',
+    product_aqualor_soft_mini_formula_volume_title: '50 мл',
+    product_aqualor_soft_mini_formula_volume_text: 'Объем упаковки выделен как компактный формат для орошения и промывания носа.',
+    product_aqualor_soft_mini_usage_label: 'Когда применяют',
+    product_aqualor_soft_mini_usage_heading: 'Для орошения и промывания полости носа согласно инструкции',
+    product_aqualor_soft_mini_usage_daily_title: 'Орошение носа',
+    product_aqualor_soft_mini_usage_daily_text: 'Формат душ можно использовать для орошения полости носа согласно инструкции.',
+    product_aqualor_soft_mini_usage_hygiene_title: 'Промывание',
+    product_aqualor_soft_mini_usage_hygiene_text: 'Применение должно соответствовать инструкции по использованию.',
+    product_aqualor_soft_mini_usage_doctor_title: 'Ответственный уход',
+    product_aqualor_soft_mini_usage_doctor_text: 'При выраженных симптомах или сомнениях важно учитывать инструкцию и обращаться к специалисту.',
+    product_aqualor_soft_mini_note_title: 'Важно',
+    product_aqualor_soft_mini_note_text: 'Аквалор Софт мини применяют согласно инструкции. Перед использованием ознакомьтесь со способом применения и ограничениями.',
+    product_aqualor_soft_mini_buy_intro: 'Аквалор Софт мини доступен у аптечных партнеров STADA в Казахстане.'
   },
   kz: {
     nav_about: 'Компания туралы',
+    nav_history: 'Компания тарихы',
     nav_news: 'Жаңалықтар мен медиа',
     nav_products: 'Өнімдер',
     nav_career: 'Мансап',
@@ -694,7 +1012,8 @@ const translations = {
     hero_metric_employees: 'қызметкер әлем бойынша',
     hero_media_caption: 'Күн сайын сенім артатын фармацевтикалық сапа',
     hero_caption_office: 'STADA Қазақстанда: пациенттер мен серіктестерге жақын',
-    hero_caption_scientists: 'Өндірістің әр кезеңіндегі сапа мен қауіпсіздік',
+        hero_caption_scientists: 'Өндірістің әр кезеңіндегі сапа мен қауіпсіздік',
+        hero_caption_awards: 'STADA тұрақты дамуы үшін ESG марапаттары мен мойындауы',
     hero_caption_logo: 'STADA-ның адамдар денсаулығына қамқорлық жасаудағы 130 жылдық тәжірибесі',
     about_heading: 'STADA компаниясы туралы',
     about_par1: 'STADA – жоғары сапалы фармацевтикалық өнімдердің жетекші өндірушісі. 130 жылдық тарихы бар біздің компания дәріхана тәжірибесінен бастау алып, сенімді серіктес ретінде танылған.',
@@ -728,38 +1047,105 @@ const translations = {
     // Products section
     products_heading: 'Өнімдеріміз',
     product_enterogermina_name: 'Энтерожермина',
+    product_enterogermina_capsules_name: 'Энтерожермина капсулалары',
+    product_enterogermina_forte_name: 'Энтерожермина Форте',
     product_magneb6kids_name: 'Магне B6 Кидс',
     product_sinulan_duo_name: 'Синулан Дуо',
     product_snup_name: 'Снуп',
-    product_zodak_name: 'Зодак таблеткалары',
-    product_zodak_drops_name: 'Зодак тамшылары',
-    product_vitaprost_name: 'Витапрост таблеткалары',
-    product_kamistad_name: 'Камистад-Гель N',
-    product_kamistad_baby_name: 'Камистад Бэби',
     product_edarbi_klo_name: 'Эдарби Кло',
+    product_cardiomagnil_name: 'Кардиомагнил',
+    product_noshpa_name: 'НО-ШПА',
+    product_essentiale_name: 'Эссенциале',
+    product_aqualor_name: 'Аквалор',
+    product_aqualor_forte_name: 'Аквалор Актив Форте',
+    product_aqualor_baby_name: 'Аквалор Беби',
+    product_aqualor_gorlo_name: 'Аквалор Горло',
+    product_aqualor_soft_name: 'Аквалор Софт',
     product_coldrex_name: 'Колдрекс',
     product_vitrum_immunaktiv_name: 'Витрум Иммунактив',
     // Product page titles and descriptions
     product_enterogermina_page_title: 'Энтерожермина',
     product_enterogermina_page_desc: 'Энтерожермина — пробиотик, дисбактериозды емдеу және алдын алу үшін қолданылады. Bacillus clausii спораларын қамтиды, ішек микрофлорасын қалпына келтіруге көмектеседі.',
+    product_enterogermina_capsules_page_title: 'Энтерожермина капсулалары',
+    product_enterogermina_capsules_page_desc: 'Энтерожермина капсулалары — Bacillus clausii споралары бар пробиотик, дисбактериозды емдеу және алдын алу үшін қолданылады. Капсула форматы ересектерге және 6 жастан асқан балаларға нұсқаулыққа сай ыңғайлы.',
+    product_enterogermina_forte_page_title: 'Энтерожермина Форте',
+    product_enterogermina_forte_page_desc: 'Энтерожермина Форте — Bacillus clausii споралары бар пробиотик, дисбактериозды емдеу және алдын алу үшін қолданылады. Суспензия форматы нұсқаулыққа сай күніне 1 рет қабылдауға ыңғайлы.',
     product_magneb6kids_page_title: 'Магне B6 Кидс',
     product_magneb6kids_page_desc: 'Магне B6 Кидс — 4 жастан бастап балаларға арналған магний мен B6 дәрумені бар шайнайтын таблеткалар. Компоненттер жүйке жүйесінің қалыпты жұмысын және энергия алмасуын қолдауға көмектеседі.',
     product_sinulan_duo_page_title: 'Синулан Дуо',
     product_sinulan_duo_page_desc: 'Синулан Дуо — суық тию кезінде тыныс алуды жеңілдетуге және тыныс алу жолдарының денсаулығын қолдауға арналған өсімдік сығындыларының кешені.',
     product_snup_page_title: 'Снуп',
     product_snup_page_desc: 'Снуп — мұрын бітелгенде тыныс алуды жеңілдетуге арналған ксилометазолин мен теңіз суы бар дозаланған мұрын спрейі.',
-    product_zodak_page_title: 'Зодак таблеткалары',
-    product_zodak_page_desc: 'Зодак таблеткалары — нұсқаулыққа сәйкес аллергиялық ринит пен есекжем симптомдарын жеңілдетуге арналған 10 мг цетиризині бар аллергияға қарсы препарат.',
-    product_zodak_drops_page_title: 'Зодак тамшылары',
-    product_zodak_drops_page_desc: 'Зодак тамшылары — нұсқаулыққа сәйкес 2 жастан бастап балаларға және ересектерге арналған, ішке қабылданатын тамшы түріндегі 10 мг/мл цетиризині бар аллергияға қарсы препарат.',
-    product_vitaprost_page_title: 'Витапрост таблеткалары 20 мг',
-    product_vitaprost_page_desc: 'Витапрост таблеткалары 20 мг — простата экстракты бар препарат; нұсқаулыққа сәйкес созылмалы абактериялық простатитте, қуықасты безінің қатерсіз гиперплазиясында және қуықасты безіне операцияға дейінгі және кейінгі жағдайларда қолданылады.',
-    product_kamistad_page_title: 'Камистад-Гель N',
-    product_kamistad_page_desc: 'Камистад-Гель N — ауыз қуысының шырышты қабығы мен қызыл иектің орташа қабынуы кезінде қолданылатын 10 г гель; құрамында лидокаин гидрохлориді және түймедақ гүлдері бар, нұсқаулыққа сәйкес 12 жастан бастап қолданылады.',
-    product_kamistad_baby_page_title: 'Камистад Бэби',
-    product_kamistad_baby_page_desc: 'Камистад Бэби — тіс шығу кезінде қызыл иекті уқалауға арналған 20 мл балалар гелі; құрамында гиалурон қышқылы және түймедақ экстракты бар, қант пен алкогольсіз.',
     product_edarbi_klo_page_title: 'Эдарби Кло',
     product_edarbi_klo_page_desc: 'Эдарби Кло — азилсартан медоксомил калийі мен хлорталидон негізіндегі артериялық қысымды төмендететін біріктірілген препарат.',
+    product_cardiomagnil_page_title: 'Кардиомагнил',
+    product_cardiomagnil_page_desc: 'Кардиомагнил 150 мг — дәрігер тағайындауы бойынша инфаркт пен тромбоздың профилактикасына арналған магний гидроксиді бар ацетилсалицил қышқылы препараты.',
+    product_noshpa_page_title: 'НО-ШПА',
+    product_noshpa_page_desc: 'НО-ШПА 40 мг — нұсқаулыққа сай тегіс бұлшықет түйілуін жеңілдетуге арналған дротаверин гидрохлориді бар таблеткалар.',
+    product_noshpa_forte_name: 'НО-ШПА Форте',
+    product_noshpa_forte_kicker: '80 мг спазмолитик',
+    product_noshpa_forte_page_title: 'НО-ШПА Форте',
+    product_noshpa_forte_page_desc: 'НО-ШПА Форте 80 мг — нұсқаулыққа сай тегіс бұлшықет түйілуін жеңілдетуге арналған дротаверин гидрохлориді бар таблеткалар.',
+    product_noshpa_forte_badge_drotaverine: 'Дротаверин 80 мг',
+    product_noshpa_forte_badge_spasm: 'Форте форматы',
+    product_noshpa_forte_badge_pack: '24 таблетка',
+    product_noshpa_forte_metric_dose: 'мг дротаверин',
+    product_noshpa_forte_metric_pack: 'қаптамадағы таблетка',
+    product_noshpa_forte_metric_component: 'белсенді компонент',
+    product_noshpa_forte_overview_label: 'Түйілулер кезінде',
+    product_noshpa_forte_overview_heading: 'НО-ШПА препаратының Форте форматындағы күшейтілген дозасы',
+    product_noshpa_forte_overview_intro: 'Бір таблеткада 80 мг дротаверин гидрохлориді бар. Қолдану нұсқаулыққа, дозировкаға және маман ұсынымына сәйкес болуы керек.',
+    product_noshpa_forte_card_drotaverine_title: 'Дротаверин',
+    product_noshpa_forte_card_drotaverine_text: 'Миотропты спазмолитиктерге жататын препараттың белсенді заты.',
+    product_noshpa_forte_card_dose_title: '80 мг',
+    product_noshpa_forte_card_dose_text: 'НО-ШПА Форте препаратының бір таблеткасындағы дротаверин гидрохлоридінің дозасы.',
+    product_noshpa_forte_card_pack_title: '24 таблетка',
+    product_noshpa_forte_card_pack_text: 'Нұсқаулықта көрсетілген схема бойынша қабылдауға арналған 24 таблеткалық қаптама.',
+    product_noshpa_forte_card_age_title: '12 жастан бастап',
+    product_noshpa_forte_card_age_text: 'Жас шектеулері мен қабылдау режимін нұсқаулықпен салыстыру қажет.',
+    product_noshpa_forte_benefit1: 'Әр таблеткада 80 мг дротаверин гидрохлориді бар',
+    product_noshpa_forte_benefit2: 'Форте форматы нұсқаулыққа сай қабылдауға арналған',
+    product_noshpa_forte_benefit3: 'Нұсқаулықта көрсетілген көрсетілімдер бойынша тегіс бұлшықет түйілулері кезінде қолданылады',
+    product_noshpa_forte_benefit4: '24 таблеткалық қаптама ұсынылған қабылдау схемасына ыңғайлы',
+    product_noshpa_forte_benefit5: 'Қолданар алдында қарсы көрсетілімдер мен шектеулерді ескеру маңызды',
+    product_noshpa_forte_formula_label: 'Формула',
+    product_noshpa_forte_formula_heading: 'Ортасында — дротаверин 80 мг, көрсетілімдер және Форте форматы',
+    product_noshpa_forte_formula_intro: 'Қаптамадан сызықтар төмендегі карточкаларға өтеді: дозировка, спазмолитикалық бағыт және 24 таблеткалық қаптама.',
+    product_noshpa_forte_formula_drotaverine_title: 'Дротаверин',
+    product_noshpa_forte_formula_drotaverine_text: 'Дротаверин гидрохлориді 80 мг препараттың белсенді заты болып табылады.',
+    product_noshpa_forte_formula_spasm_title: 'Спазмолитикалық бағыт',
+    product_noshpa_forte_formula_spasm_text: 'Нұсқаулыққа сай тегіс бұлшықет түйілулері кезінде қолданылады.',
+    product_noshpa_forte_formula_pack_title: '24 таблетка',
+    product_noshpa_forte_formula_pack_text: 'Қаптама форматы ұсынылған схема бойынша қабылдауға сәйкес келеді.',
+    product_noshpa_forte_usage_label: 'Қашан қолданылады',
+    product_noshpa_forte_usage_heading: 'Нұсқаулыққа сай тегіс бұлшықет түйілулері кезінде',
+    product_noshpa_forte_usage_biliary_title: 'Өт шығару жолдары',
+    product_noshpa_forte_usage_biliary_text: 'Нұсқаулықта өт шығару жолдары аурулары кезіндегі тегіс бұлшықет түйілулері көрсетілген.',
+    product_noshpa_forte_usage_gi_title: 'Асқазан-ішек жолы',
+    product_noshpa_forte_usage_gi_text: 'Асқазан-ішек жолының тегіс бұлшықет түйілулері кезінде қосымша терапия ретінде қолданылуы мүмкін.',
+    product_noshpa_forte_usage_doctor_title: 'Жауапты қабылдау',
+    product_noshpa_forte_usage_doctor_text: 'Дозаны, ұзақтығын және басқа препараттармен үйлесімділігін нұсқаулықпен және маманмен салыстыру қажет.',
+    product_noshpa_forte_note_title: 'Маңызды',
+    product_noshpa_forte_note_text: 'НО-ШПА Форте нұсқаулыққа сай қолданылады. Қабылдар алдында қарсы көрсетілімдермен, дозировкасымен танысып, күмән болса дәрігерге жүгініңіз.',
+    product_noshpa_forte_buy_intro: 'НО-ШПА Форте 80 мг №24 препаратын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+    product_essentiale_page_title: 'Эссенциале Форте Н',
+    product_essentiale_page_desc: 'Эссенциале Форте Н — нұсқаулық пен маман ұсынымдарына сай бауыр функцияларын қолдауға арналған эссенциальды фосфолипидтері бар капсулалар.',
+    product_aqualor_page_title: 'Аквалор Экстра Форте',
+    product_aqualor_page_desc: 'Аквалор Экстра Форте — нұсқаулыққа сай қатты тұмау кезінде мұрын қуысына күтім жасауға арналған 125 мл стерильді теңіз суы ерітіндісі.',
+    product_aqualor_forte_page_title: 'Аквалор Актив Форте',
+    product_aqualor_forte_page_desc: 'Аквалор Актив Форте — нұсқаулыққа сай мұрын қуысын күту және шаюға арналған CO2 қосылған 150 мл теңіз суы спрейі.',
+    product_aqualor_baby_page_title: 'Аквалор Беби',
+    product_aqualor_baby_page_desc: 'Аквалор Беби — нұсқаулыққа сай сәбидің мұрнына күнделікті күтім жасауға арналған 15 мл теңіз суы тамшылары.',
+    product_aqualor_gorlo_page_title: 'Аквалор Горло спрей',
+    product_aqualor_gorlo_page_desc: 'Аквалор Горло спрей — нұсқаулыққа сай тамақты шаюға және бүркуге арналған 50 мл стерильді гипертониялық теңіз суы ерітіндісі.',
+    product_aqualor_soft_page_title: 'Аквалор Софт',
+    product_aqualor_soft_page_desc: 'Аквалор Софт — нұсқаулыққа сай мұрын қуысын сулауға және шаюға арналған душ форматындағы 125 мл стерильді изотониялық теңіз суы ерітіндісі.',
+    product_aqualor_soft_mini_name: 'Аквалор Софт мини',
+    product_aqualor_soft_mini_page_title: 'Аквалор Софт мини',
+    product_aqualor_soft_mini_page_desc: 'Аквалор Софт мини — нұсқаулыққа сай мұрын қуысын сулауға және шаюға арналған душ форматындағы 50 мл стерильді изотониялық теңіз суы ерітіндісі.',
+    product_related_label: 'Ұқсас тауарлар',
+    product_related_heading: 'Аквалордың басқа нұсқалары',
+    product_related_intro: 'Аквалор желісінен көлемі, бүрку форматы және қолдану аймағы бойынша ұқсас нұсқаны таңдаңыз.',
         product_back: 'Өнімдерге оралу',
     // Enterogermina benefits
     product_enterogermina_benefit1: 'Ішектің сау микрофлорасын қалпына келтіреді',
@@ -804,21 +1190,100 @@ const translations = {
     product_enterogermina_note_title: 'Есте сақтау маңызды',
     product_enterogermina_note_text: 'Қолданар алдында нұсқаулықты оқып, әсіресе балаларға қолданғанда маманмен кеңесіңіз.',
     product_enterogermina_buy_intro: 'Энтерожерминаны Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Enterogermina capsules benefits
+    product_enterogermina_capsules_benefit1: 'Дисбактериоз кезінде ішек микрофлорасының тепе-теңдігін қалпына келтіруге көмектеседі',
+    product_enterogermina_capsules_benefit2: 'Қолайсыз орта факторларына төзімді Bacillus clausii спораларын қамтиды',
+    product_enterogermina_capsules_benefit3: 'Капсула форматын өзіңізбен алып жүру және күнделікті қабылдауға қосу ыңғайлы',
+    product_enterogermina_capsules_benefit4: 'Нұсқаулық сақталған жағдайда ересектерге және 6 жастан асқан балаларға жарамды',
+    product_enterogermina_capsules_kicker: 'Капсуладағы пробиотик',
+    product_enterogermina_capsules_badge_spores: 'Bacillus clausii споралары',
+    product_enterogermina_capsules_badge_pack: '12 капсула',
+    product_enterogermina_capsules_badge_capsules: 'Капсула түрі',
+    product_enterogermina_capsules_metric_spores: 'Bacillus clausii споралары',
+    product_enterogermina_capsules_metric_pack: 'қаптамадағы капсула',
+    product_enterogermina_capsules_metric_age: '6 жастан асқан балаларға',
+    product_enterogermina_capsules_overview_label: 'Микрофлора тепе-теңдігі',
+    product_enterogermina_capsules_overview_heading: 'Таныс пробиотикалық қолдау ықшам форматта',
+    product_enterogermina_capsules_overview_intro: 'Энтерожермина капсулалары Bacillus clausii-ге бағытталған және сұйық түр қажет емес кезде ұқыпты формат ұсынады.',
+    product_enterogermina_capsules_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_capsules_card_bacillus_text: 'Пробиотикалық споралар ішек микрофлорасының қалыпты құрамын қолдауға көмектеседі.',
+    product_enterogermina_capsules_card_spores_title: 'Споралы түрі',
+    product_enterogermina_capsules_card_spores_text: 'Споралар қышқыл орта әсеріне төзімді және Bacillus clausii-ді ішекке жеткізуге көмектеседі.',
+    product_enterogermina_capsules_card_pack_title: '12 капсула',
+    product_enterogermina_capsules_card_pack_text: 'Қаптама нұсқаулықта көрсетілген қабылдау режиміне сай ыңғайлы қолдануға арналған.',
+    product_enterogermina_capsules_card_age_title: '6 жастан жоғары',
+    product_enterogermina_capsules_card_age_text: 'Капсулалар ересектерге және капсуланы жұта алатын 6 жастан асқан балаларға арналған.',
+    product_enterogermina_capsules_formula_label: 'Формула',
+    product_enterogermina_capsules_formula_heading: 'Ортасында — Bacillus clausii және капсула форматы',
+    product_enterogermina_capsules_formula_intro: 'Карточкалар өнімнің үш негізгі акцентін көрсетеді: пробиотикалық споралар, тұрақты форма және 12 капсулалық қаптама.',
+    product_enterogermina_capsules_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_capsules_formula_bacillus_text: 'Микрофлора тепе-теңдігі бұзылғанда пайдалы бактерияларды толықтыруға көмектеседі.',
+    product_enterogermina_capsules_formula_spores_title: 'Споралар',
+    product_enterogermina_capsules_formula_spores_text: 'Споралы түрі бактериялардың ішекке жеткенге дейін тұрақтылығын сақтауға көмектеседі.',
+    product_enterogermina_capsules_formula_pack_title: '12 капсула',
+    product_enterogermina_capsules_formula_pack_text: 'Ықшам қаптама нұсқаулыққа сай курстық қабылдауға қолайлы.',
+    product_enterogermina_capsules_usage_label: 'Қашан өзекті',
+    product_enterogermina_capsules_usage_heading: 'Микрофлораны қолдауға арналған ыңғайлы ересек формат',
+    product_enterogermina_capsules_usage_microflora_title: 'Дисбактериоз кезінде',
+    product_enterogermina_capsules_usage_microflora_text: 'Нұсқаулыққа сай дисбактериозды емдеу және алдын алу үшін қолданылуы мүмкін.',
+    product_enterogermina_capsules_usage_antibiotic_title: 'Антибиотиктерден кейін',
+    product_enterogermina_capsules_usage_antibiotic_text: 'Маман ұсынымы бойынша антибактериялық терапия кезінде немесе одан кейін микрофлораны қолдауға орынды.',
+    product_enterogermina_capsules_usage_format_title: 'Формат маңызды болғанда',
+    product_enterogermina_capsules_usage_format_text: 'Капсулаларды сақтау, өзіңізбен алып жүру және қосымша дайындаусыз қабылдау ыңғайлы.',
+    product_enterogermina_capsules_note_title: 'Есте сақтау маңызды',
+    product_enterogermina_capsules_note_text: 'Қолданар алдында нұсқаулықты оқыңыз. Бала капсуланы жұта алмаса, капсулалар 6 жасқа дейінгі балаларға ұсынылмайды.',
+    product_enterogermina_capsules_buy_intro: 'Энтерожермина капсулаларын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Enterogermina Forte benefits
+    product_enterogermina_forte_benefit1: 'Дисбактериоз кезінде ішек микрофлорасының тепе-теңдігін қалпына келтіруге көмектеседі',
+    product_enterogermina_forte_benefit2: 'Қолайсыз орта факторларына төзімді Bacillus clausii спораларын қамтиды',
+    product_enterogermina_forte_benefit3: 'Қабылдау режимі ыңғайлы — нұсқаулыққа сай күніне 1 рет',
+    product_enterogermina_forte_benefit4: 'Флакондағы суспензия форматы курстық қолдануға қолайлы',
+    product_enterogermina_forte_kicker: 'Күшейтілген форматтағы пробиотик',
+    product_enterogermina_forte_badge_spores: 'Bacillus clausii споралары',
+    product_enterogermina_forte_badge_daily: 'күніне 1 рет',
+    product_enterogermina_forte_badge_pack: '10 флакон',
+    product_enterogermina_forte_metric_spores: 'Bacillus clausii споралары',
+    product_enterogermina_forte_metric_daily: 'рет күніне',
+    product_enterogermina_forte_metric_pack: 'қаптамадағы флакон',
+    product_enterogermina_forte_overview_label: 'Микрофлораны қолдау',
+    product_enterogermina_forte_overview_heading: 'Форте форматындағы таныс пробиотикалық қолдау',
+    product_enterogermina_forte_overview_intro: 'Энтерожермина Форте Bacillus clausii-ге бағытталған және ішек микрофлорасының тепе-теңдігін қалпына келтіруге арналған ыңғайлы қолдану режимін көрсетеді.',
+    product_enterogermina_forte_card_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_forte_card_bacillus_text: 'Пробиотикалық споралар ішек микрофлорасының қалыпты құрамын қолдауға көмектеседі.',
+    product_enterogermina_forte_card_spores_title: 'Споралы түрі',
+    product_enterogermina_forte_card_spores_text: 'Споралар қышқыл орта әсеріне төзімді және Bacillus clausii-ді ішекке жеткізуге көмектеседі.',
+    product_enterogermina_forte_card_daily_title: 'Күніне 1 рет',
+    product_enterogermina_forte_card_daily_text: 'Қабылдау режимі өнімді нұсқаулыққа сай күнделікті графикке қосуға көмектеседі.',
+    product_enterogermina_forte_card_pack_title: '10 флакон',
+    product_enterogermina_forte_card_pack_text: 'Суспензия флакондары бар қаптама ұқыпты курстық қабылдауға қолайлы.',
+    product_enterogermina_forte_formula_label: 'Формула',
+    product_enterogermina_forte_formula_heading: 'Ортасында — Bacillus clausii, суспензия және Форте форматы',
+    product_enterogermina_forte_formula_intro: 'Блок өнімнің үш негізгі акцентін көрсетеді: пробиотикалық споралар, тұрақты форма және дайын суспензия.',
+    product_enterogermina_forte_formula_bacillus_title: 'Bacillus clausii',
+    product_enterogermina_forte_formula_bacillus_text: 'Микрофлора тепе-теңдігі бұзылғанда пайдалы бактерияларды толықтыруға көмектеседі.',
+    product_enterogermina_forte_formula_spores_title: 'Споралар',
+    product_enterogermina_forte_formula_spores_text: 'Споралы түрі бактериялардың ішекке жеткенге дейін тұрақтылығын сақтауға көмектеседі.',
+    product_enterogermina_forte_formula_pack_title: 'Дайын суспензия',
+    product_enterogermina_forte_formula_pack_text: 'Флакондағы сұйық түрі: алдын ала дайындаусыз қабылдауға ыңғайлы.',
+    product_enterogermina_forte_usage_label: 'Қашан өзекті',
+    product_enterogermina_forte_usage_heading: 'Күніне 1 рет форматында ішек микрофлорасын қолдау үшін',
+    product_enterogermina_forte_usage_microflora_title: 'Дисбактериоз кезінде',
+    product_enterogermina_forte_usage_microflora_text: 'Нұсқаулыққа сай дисбактериозды емдеу және алдын алу үшін қолданылуы мүмкін.',
+    product_enterogermina_forte_usage_antibiotic_title: 'Антибиотиктерден кейін',
+    product_enterogermina_forte_usage_antibiotic_text: 'Маман ұсынымы бойынша антибактериялық терапия кезінде немесе одан кейін микрофлораны қолдауға орынды.',
+    product_enterogermina_forte_usage_daily_title: 'Режим маңызды болғанда',
+    product_enterogermina_forte_usage_daily_text: 'Күніне 1 рет қабылдау күнделікті қолдану схемасын күрделендірмеуге көмектеседі.',
+    product_enterogermina_forte_note_title: 'Есте сақтау маңызды',
+    product_enterogermina_forte_note_text: 'Қолданар алдында нұсқаулықты оқып, әсіресе балаларға қолданғанда маманмен кеңесіңіз.',
+    product_enterogermina_forte_buy_intro: 'Энтерожермина Фортені Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Career page translations (added)
     career_heading: 'STADA компаниясындағы мансап',
     career_par1: 'STADA-да жұмыс істеу – бұл бірегей саяхат. Біз түлектерге арналған бастапқы лауазымдардан бастап сарапшылық позицияларға дейін әртүрлі және қызықты рөлдерді ұсынамыз. Біздің бос орындар дағдылардың кең ауқымын қамтиды және тек фармацевтика саласымен шектелмейді – сіз жеткізілім тізбегі, маркетинг, қаржы, жобаларды басқару және тағы басқа салаларда мүмкіндіктер таба аласыз.',
-    career_par2: 'Біз бес негізгі функционалдық салада жұмыс істейміз, сондықтан сіз өз мансап жолыңызға ең жақсы сәйкес келетін бағытты таңдай аласыз:',
-    career_list1: 'Техникалық операциялар',
-    career_list2: 'Сату және маркетинг',
-    career_list3: 'Өнімдер мен портфельді әзірлеу',
-    career_list4: 'Стратегия және бизнесті дамыту',
-    career_list5: 'Бизнес функциялары',
     career_fact1: 'басшылар – әйелдер',
     career_fact2: 'қызметкерлер біздің «Адамдардың денсаулығына сенімді серіктес ретінде қамқорлық жасау» мақсатымызды мақтан тұтады',
     career_fact3: 'қызметкер әлем бойынша',
     career_fact4: 'командамызда 93 ұлт өкілі',
     career_fact5: 'Sustainalytics ESG 2023 рейтингі бойынша фармацевтикалық компаниялардың жоғарғы 6%-ы',
-    career_par3: 'Біз «Top Employer Europe 2025» ретінде танылдық, бұл біздің өсу мен қызметкерлерге қамқорлық жасау мәдениетіміздің бірегейлігін растайды. Сіз нақты бос орынға өтініш бере аласыз немесе таланттар қауымдастығымыздың бір бөлігі болу үшін түйіндемеңізді жібере аласыз. Өтініш бергеннен кейін сізге электрондық пошта арқылы растау келеді.',
     career_button: 'Вакансияларды көру',
     hero_products_label: 'БІЗДІҢ ӨНІМДЕР',
     hero_products_heading: 'Үздік өмір үшін сапалы дәрілер',
@@ -832,11 +1297,8 @@ const translations = {
     products_category_cold: 'Суық тию және тыныс алу',
     products_category_immunity: 'Иммунитет',
     products_category_digestive: 'Ас қорыту',
-    products_category_allergy: 'Аллергия',
-    products_category_oral: 'Ауыз қуысы',
     products_category_kids: 'Балаларға арналған',
     products_category_cardio: 'Кардио',
-    products_category_urology: 'Урология',
     products_category_respiratory: 'Тыныс алу жолдары',
     products_partners_heading: 'Дәріханалар мен онлайн-сервистерде қолжетімді',
     products_partners_intro: 'STADA өнімдерін Қазақстандағы серіктестерден табуға болады: ірі дәріхана желілерінен бастап ыңғайлы цифрлық сервистерге дейін.',
@@ -899,6 +1361,7 @@ const translations = {
     product_coldrex_usage_season_text: 'Нұсқаулыққа сәйкес суық тию және тұмау кезеңінде симптоматикалық қолдау ретінде қолданылады.',
     product_coldrex_note_title: 'Жауапты қолдану',
     product_coldrex_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз, әсіресе созылмалы аурулар немесе басқа дәрілерді бірге қабылдау жағдайында.',
+    product_coldrex_buy_intro: 'Колдрексті Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Magne B6 Kids
     product_magneb6kids_benefit1: 'Магний мен B6 дәрумені жүйке жүйесінің қалыпты жұмысын қолдауға көмектеседі',
     product_magneb6kids_benefit2: 'Компоненттер энергия алмасуына қатысып, шаршауды азайтуға көмектеседі',
@@ -986,231 +1449,6 @@ const translations = {
     product_snup_note_title: 'Маңызды ақпарат',
     product_snup_note_text: 'Қолданар алдында нұсқаулықпен танысыңыз. Күніне 3 реттен жиі және 5–7 күннен ұзақ қолданбаңыз; балаларға концентрацияны жасына қарай таңдаңыз.',
     product_snup_buy_intro: 'Снупты Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-    // Zodak tablets
-    product_zodak_benefit1: 'Цетиризин аллергиялық ринит симптомдарын, соның ішінде түшкіруді, қышуды және мұрыннан бөлінуді жеңілдетуге көмектеседі',
-    product_zodak_benefit2: 'Нұсқаулыққа сәйкес маусымдық және жыл бойғы аллергиялық ринит кезінде қолданылуы мүмкін',
-    product_zodak_benefit3: 'Есекжем көріністерін симптоматикалық жеңілдетуге арналған',
-    product_zodak_benefit4: 'Қабылдау режимі ыңғайлы: ересектер мен 6 жастан асқан балаларға тәулігіне 1 таблетка',
-    product_zodak_benefit5: '30 таблеткалық қаптама тағайындалған курс шеңберінде тұрақты қабылдауды қолдауға көмектеседі',
-    product_zodak_benefit6: 'Қолданар алдында жасын, қарсы көрсетілімдерді және маман ұсынымдарын ескеру маңызды',
-    product_zodak_kicker: 'Цетиризин 10 мг',
-    product_zodak_badge_active: 'Цетиризин',
-    product_zodak_badge_daily: 'Күніне 1 таблетка',
-    product_zodak_badge_age: '6 жастан бастап',
-    product_zodak_metric_strength: 'мг цетиризин',
-    product_zodak_metric_daily: 'тәулігіне таблетка',
-    product_zodak_metric_pack: 'қаптамадағы таблетка',
-    product_zodak_overview_label: 'Өнім туралы',
-    product_zodak_overview_heading: 'Аллергия симптомдары кезінде күнделікті көмек',
-    product_zodak_overview_intro: 'Зодак таблеткаларының құрамында цетиризин бар — аллергиялық ринит пен есекжем симптомдарын жеңілдету үшін қолданылатын антигистаминдік компонент.',
-    product_zodak_card_strength_title: '10 мг цетиризин',
-    product_zodak_card_strength_text: 'Белсенді зат дозасы қаптамада көрсетілген және медициналық қолдану жөніндегі нұсқаулыққа сәйкес пайдаланылады.',
-    product_zodak_card_action_title: 'Антигистаминдік әсер',
-    product_zodak_card_action_text: 'Цетиризин H1-гистамин рецепторларының блокаторларына жатады және аллергиялық көріністерді азайтуға көмектеседі.',
-    product_zodak_card_daily_title: 'Күніне 1 таблетка',
-    product_zodak_card_daily_text: 'Ересектер мен 6 жастан асқан балалар үшін қабылдау режимі, дәрігер басқаша тағайындамаса, әдетте күніне бір таблетка.',
-    product_zodak_card_age_title: '6 жастан бастап',
-    product_zodak_card_age_text: 'Таблетка түрі нұсқаулық пен қарсы көрсетілімдерді ескере отырып, ересектерге және 6 жастан асқан балаларға арналған.',
-    product_zodak_formula_label: 'Формат',
-    product_zodak_formula_heading: 'Түсінікті қабылдаудың үш тірегі',
-    product_zodak_formula_intro: 'Бет қаптамадағы негізгі бағдарларды көрсетеді: белсенді зат, симптоматикалық әсер және ыңғайлы таблетка форматы.',
-    product_zodak_formula_active_title: 'Белсенді компонент',
-    product_zodak_formula_active_text: 'Цетиризин 10 мг антигистаминдік әсері арқылы аллергия симптомдарын бақылауға көмектеседі.',
-    product_zodak_formula_symptoms_title: 'Аллергия симптомдары',
-    product_zodak_formula_symptoms_text: 'Нұсқаулыққа сәйкес аллергиялық ринит пен есекжем көріністерінде қолданылады.',
-    product_zodak_formula_format_title: '30 таблетка',
-    product_zodak_formula_format_text: 'Ықшам қаптама ұсынылған режим аясында күнделікті қабылдауға арналған.',
-    product_zodak_usage_label: 'Қашан әсіресе өзекті',
-    product_zodak_usage_heading: 'Маусымдық аллергияда, жыл бойғы симптомдарда және есекжемде',
-    product_zodak_usage_seasonal_title: 'Маусымдық аллергиялық ринит',
-    product_zodak_usage_seasonal_text: 'Тозаң және маусымдық аллергендер кезеңінде аллергиялық ринит симптомдарын жеңілдету үшін қолданылуы мүмкін.',
-    product_zodak_usage_yearround_title: 'Жыл бойғы аллергендер',
-    product_zodak_usage_yearround_text: 'Нұсқаулыққа сәйкес жыл бойғы аллергиялық ринит кезінде симптоматикалық көмекке жарамды.',
-    product_zodak_usage_skin_title: 'Есекжем',
-    product_zodak_usage_skin_text: 'Қолдану көрсетілімдері шеңберінде есекжем көріністерін жеңілдету үшін пайдаланылады.',
-    product_zodak_note_title: 'Жауапты қолдану',
-    product_zodak_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз, әсіресе жүктілік, бала емізу, бүйрек аурулары немесе басқа дәрілерді қабылдау жағдайында.',
-    product_zodak_buy_intro: 'Зодак таблеткаларын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-
-    product_vitaprost_benefit1: 'Құрамында 20 мг дозада простата экстракты бар',
-    product_vitaprost_benefit2: 'Созылмалы абактериялық простатиттің өршуі кезінде кешенді терапия құрамында қолданылады',
-    product_vitaprost_benefit3: 'Нұсқаулыққа сәйкес қуықасты безінің қатерсіз гиперплазиясында қолданылуы мүмкін',
-    product_vitaprost_benefit4: 'Қуықасты безіне операцияға дейінгі және кейінгі жағдайларға арналған',
-    product_vitaprost_benefit5: 'Ішке қабылдауға арналған таблетка түрі, қаптамада 20 таблетка',
-    product_vitaprost_benefit6: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесу маңызды',
-    product_vitaprost_kicker: 'Простата экстракты 20 мг',
-    product_vitaprost_badge_active: 'Простата экстракты',
-    product_vitaprost_badge_format: 'Ішке таблеткалар',
-    product_vitaprost_badge_age: '18 жастан бастап',
-    product_vitaprost_metric_strength: 'мг белсенді зат',
-    product_vitaprost_metric_pack: 'қаптамадағы таблетка',
-    product_vitaprost_metric_age: 'жас шектеуі',
-    product_vitaprost_overview_label: 'Урологиялық препарат',
-    product_vitaprost_overview_heading: 'Ерлер денсаулығына арналған таблетка түрі',
-    product_vitaprost_overview_intro: 'Витапрост урологиялық препараттарға жатады және құрамында простата экстракты бар. Беттегі ақпарат өнім сипаттамалары мен нұсқаулығына негізделген.',
-    product_vitaprost_card_strength_title: '20 мг',
-    product_vitaprost_card_strength_text: 'Белсенді зат дозасы қаптамада көрсетілген және медициналық қолдану жөніндегі нұсқаулыққа сәйкес пайдаланылады.',
-    product_vitaprost_card_active_title: 'Простата экстракты',
-    product_vitaprost_card_active_text: 'Өнімнің белсенді заты — простата экстракты.',
-    product_vitaprost_card_daily_title: 'Күніне 2 рет',
-    product_vitaprost_card_daily_text: 'Нұсқаулықта ішке күніне 2 рет 1 таблеткадан қабылдау көрсетілген; курс ұзақтығы көрсетілімге және маман тағайындауына байланысты.',
-    product_vitaprost_card_storage_title: '+15...+25 °C',
-    product_vitaprost_card_storage_text: '+15-тен +25 градусқа дейінгі бөлме температурасында сақтау керек.',
-    product_vitaprost_formula_label: 'Формула',
-    product_vitaprost_formula_heading: 'Қаптаманың негізгі бағдарлары',
-    product_vitaprost_formula_intro: 'Бет белсенді затты, ересектерге арналған жас санатын және 20 таблеткалық қаптаманы көрсетеді.',
-    product_vitaprost_formula_active_title: '20 мг экстракт',
-    product_vitaprost_formula_active_text: 'Әр таблеткада 20 мг дозада простата экстракты бар.',
-    product_vitaprost_formula_age_title: 'Ересектерге арналған',
-    product_vitaprost_formula_age_text: 'Өнімнің жас шектеуі — 18 жастан бастап.',
-    product_vitaprost_formula_format_title: '20 таблетка',
-    product_vitaprost_formula_format_text: 'Қаптамада ішке қабылдауға арналған 20 таблетка бар.',
-    product_vitaprost_usage_label: 'Көрсетілімдер',
-    product_vitaprost_usage_heading: 'Витапрост нұсқаулықта қашан көрсетілген',
-    product_vitaprost_usage_prostatitis_title: 'Созылмалы абактериялық простатит',
-    product_vitaprost_usage_prostatitis_text: 'Созылмалы абактериялық простатиттің өршуі кезінде кешенді терапия құрамында қолданылады.',
-    product_vitaprost_usage_bph_title: 'Қатерсіз гиперплазия',
-    product_vitaprost_usage_bph_text: 'Нұсқаулыққа сәйкес қуықасты безінің қатерсіз гиперплазиясында көрсетілген.',
-    product_vitaprost_usage_surgery_title: 'Операцияға дейін және кейін',
-    product_vitaprost_usage_surgery_text: 'Қуықасты безіне операцияға дейінгі және кейінгі жағдайларда қолданылуы мүмкін.',
-    product_vitaprost_note_title: 'Жауапты қолдану',
-    product_vitaprost_note_text: 'Препараттың қарсы көрсетілімдері бар, соның ішінде компоненттерге жоғары сезімталдық және 18 жасқа дейінгі жас. Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз.',
-    product_vitaprost_buy_intro: 'Витапрост таблеткаларын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-    // Zodak drops
-    product_zodak_drops_benefit1: 'Цетиризин аллергиялық ринит симптомдарын, соның ішінде түшкіруді, қышуды және мұрыннан бөлінуді жеңілдетуге көмектеседі',
-    product_zodak_drops_benefit2: 'Ішке қабылданатын тамшы түрі нұсқаулыққа сәйкес 2 жастан бастап балаларға және ересектерге арналған',
-    product_zodak_drops_benefit3: 'Қолдану көрсетілімдері шеңберінде аллергиялық конъюнктивит кезінде қолданылуы мүмкін',
-    product_zodak_drops_benefit4: 'Есекжем көріністерін симптоматикалық жеңілдетуге жарамды',
-    product_zodak_drops_benefit5: '20 мл құтыдағы тамшы форматы жасына қарай қабылдауды дәл өлшеуге көмектеседі',
-    product_zodak_drops_benefit6: 'Дозалау режимі жасына байланысты; қолданар алдында нұсқаулықпен танысу маңызды',
-    product_zodak_drops_kicker: 'Ішке қабылданатын тамшылар',
-    product_zodak_drops_badge_active: 'Цетиризин 10 мг/мл',
-    product_zodak_drops_badge_format: 'Ішке тамшылар',
-    product_zodak_drops_badge_age: '2 жастан бастап',
-    product_zodak_drops_metric_strength: 'мг/мл цетиризин',
-    product_zodak_drops_metric_age: 'балаларға',
-    product_zodak_drops_metric_pack: 'құтыдағы мл',
-    product_zodak_drops_overview_label: 'Өнім туралы',
-    product_zodak_drops_overview_heading: 'Аллергия кезінде көмекке арналған тамшы форматы',
-    product_zodak_drops_overview_intro: 'Зодак тамшыларының құрамында цетиризин бар және нұсқаулыққа сәйкес аллергиялық ринит, аллергиялық конъюнктивит және есекжем симптомдарын жеңілдету үшін қолданылады.',
-    product_zodak_drops_card_strength_title: '10 мг/мл цетиризин',
-    product_zodak_drops_card_strength_text: 'Белсенді зат концентрациясы қаптамада көрсетілген және медициналық қолдану жөніндегі нұсқаулыққа сәйкес пайдаланылады.',
-    product_zodak_drops_card_age_title: '2 жастан бастап',
-    product_zodak_drops_card_age_text: 'Тамшы түрі 2 жастан бастап балаларға және ересектерге арналған; дозалау жасына қарай таңдалады.',
-    product_zodak_drops_card_action_title: 'Антигистаминдік әсер',
-    product_zodak_drops_card_action_text: 'Цетиризин H1-гистамин рецепторларының блокаторларына жатады және аллергиялық көріністерді азайтуға көмектеседі.',
-    product_zodak_drops_card_pack_title: '20 мл құты',
-    product_zodak_drops_card_pack_text: 'Ішке қабылданатын тамшылар нұсқаулыққа сәйкес дозаны өлшеуге мүмкіндік береді.',
-    product_zodak_drops_formula_label: 'Формат',
-    product_zodak_drops_formula_heading: 'Тамшы формасының үш бағдары',
-    product_zodak_drops_formula_intro: 'Қаптаманың негізгі ерекшеліктері: цетиризин 10 мг/мл, 2 жастан бастап қолдану және ішке қабылданатын тамшы құтысы.',
-    product_zodak_drops_formula_active_title: 'Белсенді компонент',
-    product_zodak_drops_formula_active_text: 'Цетиризин 10 мг/мл антигистаминдік әсері арқылы аллергия симптомдарын бақылауға көмектеседі.',
-    product_zodak_drops_formula_age_title: '2 жастан бастап балаларға',
-    product_zodak_drops_formula_age_text: 'Тамшы формасы нұсқаулыққа сәйкес жасына қарай қабылдау режимін таңдауға көмектеседі.',
-    product_zodak_drops_formula_format_title: '20 мл құты',
-    product_zodak_drops_formula_format_text: 'Ішке қабылданатын тамшы форматы дозаны жасына қарай өлшеу қажет болғанда ыңғайлы.',
-    product_zodak_drops_usage_label: 'Қашан әсіресе өзекті',
-    product_zodak_drops_usage_heading: 'Аллергиялық ринитте, конъюнктивитте және есекжемде',
-    product_zodak_drops_usage_rhinitis_title: 'Аллергиялық ринит',
-    product_zodak_drops_usage_rhinitis_text: 'Нұсқаулыққа сәйкес аллергиялық ринит симптомдарын жеңілдету үшін қолданылуы мүмкін.',
-    product_zodak_drops_usage_conjunctivitis_title: 'Аллергиялық конъюнктивит',
-    product_zodak_drops_usage_conjunctivitis_text: 'Қолдану көрсетілімдері шеңберінде аллергиялық конъюнктивит кезінде пайдаланылады.',
-    product_zodak_drops_usage_skin_title: 'Есекжем',
-    product_zodak_drops_usage_skin_text: 'Нұсқаулыққа сәйкес есекжем көріністерін симптоматикалық жеңілдетуге жарамды.',
-    product_zodak_drops_note_title: 'Жауапты қолдану',
-    product_zodak_drops_note_text: 'Қолданар алдында нұсқаулықпен танысып, маманмен кеңесіңіз. Балалар үшін доза жасына және қолдану жөніндегі ұсынымдарға қатаң сәйкес таңдалады.',
-    product_zodak_drops_buy_intro: 'Зодак тамшыларын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-    // Kamistad
-    product_kamistad_benefit1: 'Ауыз қуысының шырышты қабығы мен қызыл иектің орташа қабынуы кезінде қолданылады',
-    product_kamistad_benefit2: 'Құрамында лидокаин гидрохлориді және түймедақ гүлдері бар',
-    product_kamistad_benefit3: 'Ауыз қуысының шырышты қабығына жағуға арналған',
-    product_kamistad_benefit4: 'Нұсқаулыққа сәйкес ұзындығы шамамен 1/2 см гель жолағын қабынған жерлерге күніне 3 рет жағып, жеңіл ысқылайды',
-    product_kamistad_benefit5: 'Шығарылу форматы — 10 г туба',
-    product_kamistad_benefit6: 'Егер қабыну симптомдары бір апта ішінде азаймаса, дәрігермен кеңесу қажет',
-    product_kamistad_kicker: 'Ауыз қуысына арналған гель',
-    product_kamistad_badge_active: 'Лидокаин + түймедақ',
-    product_kamistad_badge_format: '10 г гель',
-    product_kamistad_badge_age: '12 жастан бастап',
-    product_kamistad_metric_pack: 'тубадағы г гель',
-    product_kamistad_metric_daily: 'рет күніне',
-    product_kamistad_metric_age: 'жас және одан жоғары',
-    product_kamistad_overview_label: 'Өнім туралы',
-    product_kamistad_overview_heading: 'Ауыз қуысының шырышты қабығы мен қызыл иек қабынғанда жергілікті қолдану',
-    product_kamistad_overview_intro: 'Камистад-Гель N ауыз қуысының шырышты қабығына қолданылады. Бұл бет өнім карточкасы мен нұсқаулықтағы негізгі бағдарларды көрсетеді: құрамы, форматы, жас шектеуі және жауапты қолдану ережелері.',
-    product_kamistad_card_pack_title: '10 г туба',
-    product_kamistad_card_pack_text: 'Гель ауыз қуысының шырышты қабығына жергілікті жағуға арналған 10 г тубада шығарылады.',
-    product_kamistad_card_age_title: '12 жастан бастап',
-    product_kamistad_card_age_text: 'Қолдануға жас шектеуі — 12 жастан бастап; препарат 12 жасқа дейінгі балаларға арналмаған.',
-    product_kamistad_card_dose_title: '1/2 см жолақ',
-    product_kamistad_card_dose_text: 'Нұсқаулық бойынша ұзындығы шамамен 1/2 см гель жолағын қабынған жерлерге күніне 3 рет жағып, жеңіл ысқылайды.',
-    product_kamistad_card_storage_title: '+15...+25 °C',
-    product_kamistad_card_storage_text: 'Өнім карточкасының деректеріне сәйкес бөлме температурасында +15-тен +25 °C-қа дейін сақтау керек.',
-    product_kamistad_formula_label: 'Құрамы',
-    product_kamistad_formula_heading: 'Екі компонент және гель формасы',
-    product_kamistad_formula_intro: 'Беттің ортасында өнімнің негізгі элементтері көрсетілген: лидокаин гидрохлориді, түймедақ гүлдері және ауыз қуысының шырышты қабығына жағуға арналған гель формасы.',
-    product_kamistad_formula_active_title: 'Лидокаин гидрохлориді',
-    product_kamistad_formula_active_text: 'Препарат құрамындағы белсенді компонент; құралды тек нұсқаулыққа және маман ұсынымдарына сәйкес қолданыңыз.',
-    product_kamistad_formula_chamomile_title: 'Түймедақ гүлдері',
-    product_kamistad_formula_chamomile_text: 'Өнім құрамында лидокаин гидрохлоридімен бірге көрсетілген өсімдік компоненті.',
-    product_kamistad_formula_format_title: '10 г гель',
-    product_kamistad_formula_format_text: 'Гель формасы ауыз қуысының шырышты қабығындағы қабынған жерлерге жағуға арналған.',
-    product_kamistad_usage_label: 'Қашан әсіресе өзекті',
-    product_kamistad_usage_heading: 'Ауыз қуысының шырышты қабығы мен қызыл иек қабынғанда',
-    product_kamistad_usage_gums_title: 'Қызыл иек',
-    product_kamistad_usage_gums_text: 'Қолдану көрсетілімдері шеңберінде қызыл иектің орташа қабынуы кезінде қолданылуы мүмкін.',
-    product_kamistad_usage_mucosa_title: 'Ауыз қуысының шырышты қабығы',
-    product_kamistad_usage_mucosa_text: 'Құрал ауыз қуысының шырышты қабығындағы қабынған жерлерге тікелей жағылады.',
-    product_kamistad_usage_week_title: 'Симптомдарды бақылау',
-    product_kamistad_usage_week_text: 'Егер қабыну симптомдары бір апта ішінде азаймаса, дәрігерге жүгіну қажет.',
-    product_kamistad_note_title: 'Жауапты қолдану',
-    product_kamistad_note_text: 'Қолданар алдында нұсқаулықпен танысыңыз. Компоненттерге немесе басқа жергілікті анестетиктерге жоғары сезімталдықта, 12 жасқа дейінгі балаларға, жүктілік және лактация кезеңінде қолданбаңыз; жағымсыз реакциялар болса, қолдануды тоқтатып, дәрігермен кеңесіңіз.',
-    product_kamistad_buy_intro: 'Камистад-Гель N өнімін Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
-    // Kamistad Baby
-    product_kamistad_baby_benefit1: 'Тіс шығу кезінде балалардың қызыл иегін уқалауға арналған',
-    product_kamistad_baby_benefit2: 'Құрамында гиалурон қышқылы және түймедақ экстракты бар',
-    product_kamistad_baby_benefit3: 'STADA деректеріне сәйкес формула қантсыз және алкогольсіз',
-    product_kamistad_baby_benefit4: 'Ауыз қуысының шырышты қабығына жағуға арналған',
-    product_kamistad_baby_benefit5: 'Шығарылу форматы — 20 мл туба',
-    product_kamistad_baby_benefit6: 'Өнім карточкасына сәйкес +15-тен +25 °C-қа дейінгі бөлме температурасында сақтау керек',
-    product_kamistad_baby_kicker: 'Сәбилерге арналған гель',
-    product_kamistad_baby_badge_active: 'Түймедақ + гиалуронат',
-    product_kamistad_baby_badge_format: '20 мл гель',
-    product_kamistad_baby_badge_age: 'Туғаннан бастап',
-    product_kamistad_baby_metric_pack: 'тубадағы мл гель',
-    product_kamistad_baby_metric_age: 'туғаннан бастап',
-    product_kamistad_baby_metric_storage: '°C сақтау',
-    product_kamistad_baby_overview_label: 'Өнім туралы',
-    product_kamistad_baby_overview_heading: 'Сәбилердің қызыл иегіне күтім жасауға арналған жұмсақ формат',
-    product_kamistad_baby_overview_intro: 'Камистад Бэби тіс шығу кезінде қызыл иекті уқалауға арналған гель ретінде ұсынылады. Бұл бет өнім карточкасы мен STADA материалдарындағы негізгі бағдарларды көрсетеді: форматы, жасы, құрамы және сақтау шарттары.',
-    product_kamistad_baby_card_pack_title: '20 мл туба',
-    product_kamistad_baby_card_pack_text: 'Гель ауыз қуысының шырышты қабығына жергілікті жағуға арналған 20 мл тубада шығарылады.',
-    product_kamistad_baby_card_age_title: 'Туғаннан бастап',
-    product_kamistad_baby_card_age_text: 'Өнім карточкасында балаларға арналған формат және туғаннан бастап қолдану көрсетілген.',
-    product_kamistad_baby_card_use_title: 'Күніне 2-3 рет',
-    product_kamistad_baby_card_use_text: 'STADA гельді қызыл иекке күніне 2-3 рет жағып, жеңіл уқалауды көрсетеді.',
-    product_kamistad_baby_card_storage_title: '+15...+25 °C',
-    product_kamistad_baby_card_storage_text: 'Өнім карточкасының деректеріне сәйкес бөлме температурасында +15-тен +25 °C-қа дейін сақтау керек.',
-    product_kamistad_baby_formula_label: 'Құрамы',
-    product_kamistad_baby_formula_heading: 'Гиалурон қышқылы, түймедақ және гель формасы',
-    product_kamistad_baby_formula_intro: 'Көрнекі блок өнімнің негізгі элементтерін біріктіреді: гиалурон қышқылы, түймедақ экстракты және қызыл иек күтіміне арналған 20 мл туба.',
-    product_kamistad_baby_formula_hyaluron_title: 'Гиалурон қышқылы',
-    product_kamistad_baby_formula_hyaluron_text: 'STADA Камистад Бэби құрамында түймедақпен бірге көрсеткен формула компоненті.',
-    product_kamistad_baby_formula_chamomile_title: 'Түймедақ экстракты',
-    product_kamistad_baby_formula_chamomile_text: 'Сезімтал қызыл иекке жұмсақ күтімді қолдайтын өсімдік компоненті.',
-    product_kamistad_baby_formula_format_title: '20 мл гель',
-    product_kamistad_baby_formula_format_text: 'Гель формасы қызыл иекке және ауыз қуысының шырышты қабығына жергілікті жағуға арналған.',
-    product_kamistad_baby_usage_label: 'Қашан әсіресе өзекті',
-    product_kamistad_baby_usage_heading: 'Тіс шығу кезеңінде',
-    product_kamistad_baby_usage_teething_title: 'Тіс шығу',
-    product_kamistad_baby_usage_teething_text: 'Құрал балаларда тіс шығу кезінде қызыл иекті уқалау үшін қолданылады.',
-    product_kamistad_baby_usage_mucosa_title: 'Ауыз қуысының шырышты қабығы',
-    product_kamistad_baby_usage_mucosa_text: 'Өнім карточкасына сәйкес гель ауыз қуысының шырышты қабығына жағуға арналған.',
-    product_kamistad_baby_usage_care_title: 'Күнделікті күтім',
-    product_kamistad_baby_usage_care_text: 'Сәбилерге қолданғанда қаптамадағы ұсынымдарды сақтап, гельдің аз мөлшерін абайлап жағыңыз.',
-    product_kamistad_baby_note_title: 'Жауапты қолдану',
-    product_kamistad_baby_note_text: 'Қолданар алдында қаптамадағы ақпаратпен танысыңыз. Балада компоненттерге жеке сезімталдық болса немесе жайсыздық сақталса, маманмен кеңесіңіз.',
-    product_kamistad_baby_buy_intro: 'Камистад Бэби өнімін Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
     // Sinulan Duo benefits
     product_sinulan_duo_benefit1: 'Өсімдік сығындыларының комбинациясы жоғарғы және төменгі тыныс жолдарын қолдайды',
     product_sinulan_duo_benefit2: 'Жоңышқа иммундық қорғауды және тыныс жолдарының саулығын қолдайды',
@@ -1346,12 +1584,1284 @@ const translations = {
     product_edarbi_klo_usage_routine_text: 'Қабылдау режимін дәрігер анықтайды; ұсыныстарды және қысым бақылауын сақтау маңызды.',
     product_edarbi_klo_note_title: 'Маңызды',
     product_edarbi_klo_note_text: 'Эдарби Кло дәрігердің тағайындауы бойынша қолданылады. Қолданар алдында нұсқаулықпен танысыңыз және терапия схемасын өз бетіңізше өзгертпеңіз.',
-    product_edarbi_klo_buy_intro: 'Эдарби Кло препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.'
+    product_edarbi_klo_buy_intro: 'Эдарби Кло препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Cardiomagnil
+    product_cardiomagnil_benefit1: 'Құрамында үлбірлі қабықпен қапталған таблетка форматында 150 мг ацетилсалицил қышқылы бар',
+    product_cardiomagnil_benefit2: 'Магний гидроксиді препарат құрамына асқазан шырышты қабығын қорғаумен байланысты компонент ретінде кіреді',
+    product_cardiomagnil_benefit3: 'Дәрігер тағайындауы бойынша инфаркт пен тромбоз профилактикасында қолданылады',
+    product_cardiomagnil_benefit4: '30 таблеткадан тұратын қаптама нұсқаулыққа сай тұрақты қабылдау курсына ыңғайлы',
+    product_cardiomagnil_benefit5: 'Тағайындалған схеманы сақтау және ацетилсалицил қышқылына қарсы көрсетілімдерді ескеру маңызды',
+    product_cardiomagnil_kicker: 'Антиагреганттық терапия',
+    product_cardiomagnil_badge_asa: 'АСК 150 мг',
+    product_cardiomagnil_badge_magnesium: 'Магний гидроксиді',
+    product_cardiomagnil_badge_pack: '30 таблетка',
+    product_cardiomagnil_metric_dose: 'мг ацетилсалицил қышқылы',
+    product_cardiomagnil_metric_pack: 'қаптамадағы таблетка',
+    product_cardiomagnil_metric_component: 'белсенді компонент',
+    product_cardiomagnil_overview_label: 'Жүрек-қантамыр профилактикасы',
+    product_cardiomagnil_overview_heading: 'Дәрігер тағайындаған профилактикаға арналған 150 мг Кардиомагнил',
+    product_cardiomagnil_overview_intro: 'Кардиомагнил ацетилсалицил қышқылы мен магний гидроксидін үлбірлі қабықпен қапталған таблеткада біріктіреді. Қолдану нұсқаулық пен маман ұсынымдарын сақтауды талап етеді.',
+    product_cardiomagnil_card_asa_title: 'Ацетилсалицил қышқылы',
+    product_cardiomagnil_card_asa_text: 'Дәрігер тағайындауы бойынша антиагреганттық терапияда қолданылатын препараттың белсенді компоненті.',
+    product_cardiomagnil_card_magnesium_title: 'Магний гидроксиді',
+    product_cardiomagnil_card_magnesium_text: 'Тұз қышқылын бейтараптандырып, бүркеуші қасиет көрсететін құрам компоненті.',
+    product_cardiomagnil_card_dose_title: '150 мг',
+    product_cardiomagnil_card_dose_text: 'Ұсынылған қаптама форматында көрсетілген ацетилсалицил қышқылының дозасы.',
+    product_cardiomagnil_card_pack_title: '30 таблетка',
+    product_cardiomagnil_card_pack_text: 'Дәрігер анықтаған схема бойынша қабылдауға арналған қаптама форматы.',
+    product_cardiomagnil_formula_label: 'Формула',
+    product_cardiomagnil_formula_heading: 'Ортасында — АСК, магний және тұрақты формат',
+    product_cardiomagnil_formula_intro: 'Көрнекі схема өнімнің негізгі элементтерін көрсетеді: ацетилсалицил қышқылы, магний гидроксиді және 30 таблеткалық қаптама.',
+    product_cardiomagnil_formula_asa_title: 'АСК',
+    product_cardiomagnil_formula_asa_text: 'Ацетилсалицил қышқылы 150 мг препараттың белсенді заты болып табылады.',
+    product_cardiomagnil_formula_magnesium_title: 'Магний гидроксиді',
+    product_cardiomagnil_formula_magnesium_text: 'Препарат құрамына кіреді және антацидтік, бүркеуші әсермен байланысты.',
+    product_cardiomagnil_formula_pack_title: 'Бақылаудағы курс',
+    product_cardiomagnil_formula_pack_text: 'Қаптамадағы 30 таблетка тағайындалған қабылдау режимін сақтауға көмектеседі.',
+    product_cardiomagnil_usage_label: 'Қашан тағайындалады',
+    product_cardiomagnil_usage_heading: 'Маман ұсынымы бойынша инфаркт пен тромбоз профилактикасы үшін',
+    product_cardiomagnil_usage_prevention_title: 'Инфаркт профилактикасы',
+    product_cardiomagnil_usage_prevention_text: 'Дәрігер көрсетілімдер мен қауіптерді бағалаған жағдайда профилактикалық схемаларда қолданылуы мүмкін.',
+    product_cardiomagnil_usage_thrombosis_title: 'Тромбоз профилактикасы',
+    product_cardiomagnil_usage_thrombosis_text: 'Антиагреганттық терапия тұрақты қабылдауды және маман бақылауын талап етеді.',
+    product_cardiomagnil_usage_doctor_title: 'Жеке схема',
+    product_cardiomagnil_usage_doctor_text: 'Дозаны, ұзақтығын және басқа препараттармен үйлесімділігін дәрігер анықтайды.',
+    product_cardiomagnil_note_title: 'Маңызды',
+    product_cardiomagnil_note_text: 'Кардиомагнил дәрігердің тағайындауы бойынша қолданылады. Қолданар алдында нұсқаулықпен, қарсы көрсетілімдермен және ықтимал дәрілік өзара әрекеттесулермен танысыңыз.',
+    product_cardiomagnil_buy_intro: 'Кардиомагнил препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // No-Spa
+    product_noshpa_benefit1: 'Әр таблеткада 40 мг дротаверин гидрохлориді бар',
+    product_noshpa_benefit2: 'Нұсқаулыққа сәйкес тегіс бұлшықет түйілуі кезінде қолданылады',
+    product_noshpa_benefit3: 'Асқазан-ішек жолдарының тегіс бұлшықет түйілуінде қосымша терапия ретінде қолданылуы мүмкін',
+    product_noshpa_benefit4: '24 таблетка форматы ұсынылған схема бойынша қабылдауға ыңғайлы',
+    product_noshpa_benefit5: 'Қолданар алдында қарсы көрсетілімдер мен жас шектеулерін ескеру маңызды',
+    product_noshpa_kicker: 'Спазмолитик',
+    product_noshpa_badge_drotaverine: 'Дротаверин 40 мг',
+    product_noshpa_badge_spasm: 'Түйілу кезінде',
+    product_noshpa_badge_pack: '24 таблетка',
+    product_noshpa_metric_dose: 'мг дротаверин',
+    product_noshpa_metric_pack: 'қаптамадағы таблетка',
+    product_noshpa_metric_component: 'белсенді компонент',
+    product_noshpa_overview_label: 'Түйілу кезінде',
+    product_noshpa_overview_heading: 'Тегіс бұлшықет түйілуін жеңілдетуге арналған НО-ШПА 40 мг',
+    product_noshpa_overview_intro: 'НО-ШПА құрамында дротаверин гидрохлориді бар және тегіс бұлшықет түйілуі кезінде қолданылады. Қабылдау нұсқаулық пен маман ұсынымдарына сай болуы керек.',
+    product_noshpa_card_drotaverine_title: 'Дротаверин',
+    product_noshpa_card_drotaverine_text: 'Миотропты спазмолитиктерге жататын препараттың белсенді заты.',
+    product_noshpa_card_dose_title: '40 мг',
+    product_noshpa_card_dose_text: 'НО-ШПА бір таблеткасындағы дротаверин гидрохлоридінің дозасы.',
+    product_noshpa_card_pack_title: '24 таблетка',
+    product_noshpa_card_pack_text: 'Нұсқаулыққа сәйкес қабылдауға арналған бір блистері бар қаптама.',
+    product_noshpa_card_age_title: '6 жастан бастап',
+    product_noshpa_card_age_text: 'Жас шектеулері мен қабылдау режимін нұсқаулықпен салыстыру қажет.',
+    product_noshpa_formula_label: 'Формула',
+    product_noshpa_formula_heading: 'Ортасында — дротаверин, доза және ыңғайлы формат',
+    product_noshpa_formula_intro: 'Схема өнімнің негізгі элементтерін біріктіреді: дротаверин 40 мг, спазмолитикалық бағыт және 24 таблеткалық қаптама.',
+    product_noshpa_formula_drotaverine_title: 'Дротаверин',
+    product_noshpa_formula_drotaverine_text: 'Дротаверин гидрохлориді 40 мг препараттың белсенді заты болып табылады.',
+    product_noshpa_formula_spasm_title: 'Спазмолитикалық әсер',
+    product_noshpa_formula_spasm_text: 'Нұсқаулықта көрсетілген көрсетілімдерде тегіс бұлшықет түйілуі кезінде қолданылады.',
+    product_noshpa_formula_pack_title: '24 таблетка',
+    product_noshpa_formula_pack_text: 'Қаптама форматы ұсынылған қабылдау схемасын сақтауға көмектеседі.',
+    product_noshpa_usage_label: 'Қашан қолданылады',
+    product_noshpa_usage_heading: 'Нұсқаулыққа сай тегіс бұлшықет түйілуі кезінде',
+    product_noshpa_usage_biliary_title: 'Өт шығару жолдары',
+    product_noshpa_usage_biliary_text: 'Нұсқаулықта өт шығару жолдары ауруларындағы тегіс бұлшықет түйілулері көрсетілген.',
+    product_noshpa_usage_gi_title: 'Асқазан-ішек жолдары',
+    product_noshpa_usage_gi_text: 'Асқазан-ішек жолдарының тегіс бұлшықет түйілуінде қосымша терапия ретінде қолданылуы мүмкін.',
+    product_noshpa_usage_doctor_title: 'Жауапты қабылдау',
+    product_noshpa_usage_doctor_text: 'Дозаны, ұзақтығын және басқа препараттармен үйлесімділігін нұсқаулықпен және маманмен нақтылаған жөн.',
+    product_noshpa_note_title: 'Маңызды',
+    product_noshpa_note_text: 'НО-ШПА нұсқаулыққа сәйкес қолданылады. Қабылдар алдында қарсы көрсетілімдермен, дозамен танысыңыз және күмән болса дәрігерге жүгініңіз.',
+    product_noshpa_buy_intro: 'НО-ШПА препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Essentiale
+    product_essentiale_benefit1: 'Құрамында капсула форматындағы эссенциальды фосфолипидтер бар',
+    product_essentiale_benefit2: '30 капсулалық қаптама нұсқаулықта көрсетілген схема бойынша қабылдауға ыңғайлы',
+    product_essentiale_benefit3: 'Өнім форматы бауыр жасушаларына күтіммен байланысты',
+    product_essentiale_benefit4: 'Қаптамада үш бағыт көрсетілген: қорғайды, қалпына келтіреді және бауыр жасушаларының төзімділігін арттырады',
+    product_essentiale_benefit5: 'Қолданар алдында нұсқаулықпен танысып, маман ұсынымдарын ескеру маңызды',
+    product_essentiale_kicker: 'Бауырға күтім',
+    product_essentiale_badge_phospholipids: 'Эссенциальды фосфолипидтер',
+    product_essentiale_badge_liver: 'Бауыр жасушалары үшін',
+    product_essentiale_badge_pack: '30 капсула',
+    product_essentiale_metric_pack: 'қаптамадағы капсула',
+    product_essentiale_metric_actions: 'күтім бағыты',
+    product_essentiale_metric_component: 'фосфолипидтер',
+    product_essentiale_overview_label: 'Бауыр және фосфолипидтер',
+    product_essentiale_overview_heading: '30 капсулалық форматтағы Эссенциале Форте Н',
+    product_essentiale_overview_intro: 'Бет өнімнің негізгі элементтері айналасында құрылған: эссенциальды фосфолипидтер, 30 капсулалық қаптама және нұсқаулыққа сай жауапты қабылдау.',
+    product_essentiale_card_phospholipids_title: 'Эссенциальды фосфолипидтер',
+    product_essentiale_card_phospholipids_text: 'Эссенциале Форте Н өнімінің негізі ретінде көрсетілген компоненттер.',
+    product_essentiale_card_pack_title: '30 капсула',
+    product_essentiale_card_pack_text: 'Packshot-та көрсетілген, нұсқаулық бойынша қабылдауға арналған қаптама форматы.',
+    product_essentiale_card_actions_title: '3 бағыт',
+    product_essentiale_card_actions_text: 'Қаптамада қорғаныс, қалпына келтіру және бауыр жасушаларының төзімділігін арттыру көрсетілген.',
+    product_essentiale_card_instruction_title: 'Нұсқаулық бойынша',
+    product_essentiale_card_instruction_text: 'Қабылдау режимі мен шектеулерді нұсқаулықпен және маманмен нақтылау қажет.',
+    product_essentiale_formula_label: 'Формула',
+    product_essentiale_formula_heading: 'Ортасында — фосфолипидтер, бауыр және жинақы формат',
+    product_essentiale_formula_intro: 'Схема өнімді байсалды масштабта көрсетеді: қаптама назарда қалады, бірақ формула карточкалары мен сызықтарын жаппайды.',
+    product_essentiale_formula_phospholipids_title: 'Фосфолипидтер',
+    product_essentiale_formula_phospholipids_text: 'Эссенциальды фосфолипидтер өнімнің негізгі компоненті ретінде бөлектелген.',
+    product_essentiale_formula_liver_title: 'Бауырға күтім',
+    product_essentiale_formula_liver_text: 'Беттің визуалды логикасы қаптамадағы ақпаратқа сай бауыр жасушаларын қолдаумен байланысты.',
+    product_essentiale_formula_pack_title: '30 капсула',
+    product_essentiale_formula_pack_text: 'Орталықтағы қаптама формула жеңіл оқылуы үшін үйлесімді өлшемде берілген.',
+    product_essentiale_usage_label: 'Қашан қолданылады',
+    product_essentiale_usage_heading: 'Нұсқаулыққа сай бауырға күтім үшін',
+    product_essentiale_usage_liver_title: 'Бауыр функциялары',
+    product_essentiale_usage_liver_text: 'Өнімді қолдануды нұсқаулықпен және маман ұсынымдарымен салыстыру қажет.',
+    product_essentiale_usage_cells_title: 'Бауыр жасушалары',
+    product_essentiale_usage_cells_text: 'Қаптамада бауыр жасушаларын қорғау, қалпына келтіру және төзімділігін арттыруға акцент жасалған.',
+    product_essentiale_usage_doctor_title: 'Жауапты қабылдау',
+    product_essentiale_usage_doctor_text: 'Дозаны, курс ұзақтығын және басқа препараттармен үйлесімділігін маман анықтайды.',
+    product_essentiale_note_title: 'Маңызды',
+    product_essentiale_note_text: 'Эссенциале Форте Н нұсқаулыққа сәйкес қолданылады. Қабылдар алдында қарсы көрсетілімдермен танысып, күмән болса дәрігерге жүгініңіз.',
+    product_essentiale_buy_intro: 'Эссенциале препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Aqualor
+    product_aqualor_benefit1: 'Құрамында 125 мл спрей форматындағы стерильді теңіз суы ерітіндісі бар',
+    product_aqualor_benefit2: 'Қаптамада қатты тұмауға арналған формат көрсетілген',
+    product_aqualor_benefit3: 'Тұздардың гипертониялық концентрациясы 16-27 г/л деп белгіленген',
+    product_aqualor_benefit4: 'Мұрын қуысын күту және шаю үшін нұсқаулыққа сәйкес қолданылады',
+    product_aqualor_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жеке ерекшеліктерді ескеру маңызды',
+    product_aqualor_kicker: 'Теңіз суы спрейі',
+    product_aqualor_badge_seawater: 'Теңіз суы',
+    product_aqualor_badge_strong: 'Қатты тұмау',
+    product_aqualor_badge_volume: '125 мл',
+    product_aqualor_metric_volume: 'қаптамадағы мл',
+    product_aqualor_metric_concentration: 'г/л концентрация',
+    product_aqualor_metric_component: 'теңіз суы ерітіндісі',
+    product_aqualor_overview_label: 'Мұрынға күтім',
+    product_aqualor_overview_heading: 'Мұрын қуысына күтім жасауға арналған Аквалор Экстра Форте',
+    product_aqualor_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: стерильді теңіз суы ерітіндісі, 125 мл формат және қаптамада көрсетілген қатты тұмау кезіндегі қолдану.',
+    product_aqualor_card_seawater_title: 'Теңіз суы',
+    product_aqualor_card_seawater_text: 'Стерильді теңіз суы ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_card_volume_title: '125 мл',
+    product_aqualor_card_volume_text: 'Packshot-та көрсетілген, нұсқаулық бойынша қолдануға арналған қаптама көлемі.',
+    product_aqualor_card_concentration_title: '16-27 г/л',
+    product_aqualor_card_concentration_text: 'Қаптамада тұздардың гипертониялық концентрациясы белгіленген.',
+    product_aqualor_card_instruction_title: 'Нұсқаулық бойынша',
+    product_aqualor_card_instruction_text: 'Қолдану режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+    product_aqualor_formula_label: 'Формула',
+    product_aqualor_formula_heading: 'Ортасында — теңіз суы, концентрация және спрей форматы',
+    product_aqualor_formula_intro: 'Қаптама формула жеңіл оқылуы және компонент карточкаларын жаппауы үшін жинақы өлшемде көрсетілген.',
+    product_aqualor_formula_seawater_title: 'Стерильді теңіз суы',
+    product_aqualor_formula_seawater_text: 'Өнімнің негізі — стерильді теңіз суы ерітіндісі.',
+    product_aqualor_formula_nose_title: 'Мұрын қуысы үшін',
+    product_aqualor_formula_nose_text: 'Спрей форматы нұсқаулыққа сай мұрын қуысын күту және шаюмен байланысты.',
+    product_aqualor_formula_volume_title: '125 мл',
+    product_aqualor_formula_volume_text: 'Қаптама көлемі өнімнің практикалық форматы ретінде бөлектелген.',
+    product_aqualor_usage_label: 'Қашан қолданылады',
+    product_aqualor_usage_heading: 'Нұсқаулыққа сай қатты тұмау кезінде мұрынға күтім үшін',
+    product_aqualor_usage_rhinitis_title: 'Қатты тұмау',
+    product_aqualor_usage_rhinitis_text: 'Қаптамада өнім қатты тұмау жағдайына арналған деп көрсетілген.',
+    product_aqualor_usage_hygiene_title: 'Мұрынды шаю',
+    product_aqualor_usage_hygiene_text: 'Қолдану нұсқаулыққа сәйкес болуы керек.',
+    product_aqualor_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_usage_doctor_text: 'Күмән болса, жағдай ерекшеліктері немесе ұзақ симптомдар кезінде маманға жүгінген жөн.',
+    product_aqualor_note_title: 'Маңызды',
+    product_aqualor_note_text: 'Аквалор Экстра Форте нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_buy_intro: 'Аквалор препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Aqualor Forte
+    product_aqualor_forte_benefit1: 'Құрамында 150 мл душ форматындағы табиғи теңіз суының гипертониялық ерітіндісі бар',
+    product_aqualor_forte_benefit2: 'Қаптамада ұзаққа созылған тұмауға арналған формат көрсетілген',
+    product_aqualor_forte_benefit3: 'Ерітінді CO2-мен байытылған; бұл акцент packshot-та көрсетілген',
+    product_aqualor_forte_benefit4: 'Нұсқаулыққа сай 2 жастан бастап балаларға және ересектерге мұрын қуысын күту және шаю үшін қолданылады',
+    product_aqualor_forte_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жеке ерекшеліктерді ескеру маңызды',
+    product_aqualor_forte_kicker: 'Теңіз суы спрейі',
+    product_aqualor_forte_badge_seawater: 'Теңіз суы',
+    product_aqualor_forte_badge_co2: 'CO2',
+    product_aqualor_forte_badge_volume: '150 мл',
+    product_aqualor_forte_metric_volume: 'қаптамадағы мл',
+    product_aqualor_forte_metric_age: '2 жастан бастап балаларға',
+    product_aqualor_forte_metric_component: 'ерітіндіні байыту',
+    product_aqualor_forte_overview_label: 'Мұрынға күтім',
+    product_aqualor_forte_overview_heading: 'Мұрын қуысын күту және шаюға арналған Аквалор Актив Форте',
+    product_aqualor_forte_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: табиғи теңіз суы, 150 мл көлем, душ форматы және қаптамада көрсетілген CO2 акценті.',
+    product_aqualor_forte_card_seawater_title: 'Табиғи теңіз суы',
+    product_aqualor_forte_card_seawater_text: 'Табиғи теңіз суының гипертониялық ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_forte_card_volume_title: '150 мл',
+    product_aqualor_forte_card_volume_text: 'Packshot-та көрсетілген, нұсқаулық бойынша қолдануға арналған қаптама көлемі.',
+    product_aqualor_forte_card_co2_title: 'CO2',
+    product_aqualor_forte_card_co2_text: 'Қаптамада ерітіндінің CO2-мен байытылғаны көрсетілген.',
+    product_aqualor_forte_card_age_title: '2+',
+    product_aqualor_forte_card_age_text: 'Қаптамада 2 жастан бастап балаларға және ересектерге арналған формат көрсетілген.',
+    product_aqualor_forte_formula_label: 'Формула',
+    product_aqualor_forte_formula_heading: 'Ортасында — теңіз суы, CO2 және душ форматы',
+    product_aqualor_forte_formula_intro: 'Формула үйлесімді көрінуі және компонент карточкалары жабылмауы үшін қаптама жинақырақ өлшемде көрсетілген.',
+    product_aqualor_forte_formula_seawater_title: 'Теңіз суы',
+    product_aqualor_forte_formula_seawater_text: 'Өнімнің негізі — табиғи теңіз суының гипертониялық ерітіндісі.',
+    product_aqualor_forte_formula_co2_title: 'CO2-мен байытылған',
+    product_aqualor_forte_formula_co2_text: 'CO2 қаптамада жеке визуалды акцент ретінде көрсетілген.',
+    product_aqualor_forte_formula_volume_title: '150 мл',
+    product_aqualor_forte_formula_volume_text: 'Қаптама көлемі өнімнің практикалық форматы ретінде бөлектелген.',
+    product_aqualor_forte_usage_label: 'Қашан қолданылады',
+    product_aqualor_forte_usage_heading: 'Нұсқаулыққа сай ұзаққа созылған тұмау кезінде мұрынға күтім үшін',
+    product_aqualor_forte_usage_rhinitis_title: 'Ұзаққа созылған тұмау',
+    product_aqualor_forte_usage_rhinitis_text: 'Қаптамада өнім ұзаққа созылған тұмау жағдайына арналған деп көрсетілген.',
+    product_aqualor_forte_usage_hygiene_title: 'Мұрынды шаю',
+    product_aqualor_forte_usage_hygiene_text: 'Қолдану нұсқаулыққа сәйкес болуы керек.',
+    product_aqualor_forte_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_forte_usage_doctor_text: 'Күмән болса, жағдай ерекшеліктері немесе ұзақ симптомдар кезінде маманға жүгінген жөн.',
+    product_aqualor_forte_note_title: 'Маңызды',
+    product_aqualor_forte_note_text: 'Аквалор Актив Форте нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_forte_buy_intro: 'Аквалор Актив Форте препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.',
+    // Aqualor Baby
+    product_aqualor_baby_benefit1: 'Құрамында 15 мл тамшы форматындағы теңіз суы ерітіндісі бар',
+    product_aqualor_baby_benefit2: 'Қаптамада туғаннан бастап қолдануға арналған формат көрсетілген',
+    product_aqualor_baby_benefit3: 'Тамшылар нұсқаулыққа сай сәбидің мұрнына жұмсақ күнделікті күтім жасауға арналған',
+    product_aqualor_baby_benefit4: 'Ықшам көлемді тұрақты күтім үшін қолда ұстау ыңғайлы',
+    product_aqualor_baby_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жасқа қатысты ұсынымдарды ескеру маңызды',
+    product_aqualor_baby_kicker: 'Теңіз суы тамшылары',
+    product_aqualor_baby_badge_seawater: 'Теңіз суы',
+    product_aqualor_baby_badge_from_birth: 'Туғаннан бастап',
+    product_aqualor_baby_badge_volume: '15 мл',
+    product_aqualor_baby_metric_volume: 'қаптамадағы мл',
+    product_aqualor_baby_metric_age: 'сәбилерге арналған',
+    product_aqualor_baby_metric_component: 'теңіз суы ерітіндісі',
+    product_aqualor_baby_overview_label: 'Сәбидің мұрнына күтім',
+    product_aqualor_baby_overview_heading: 'Жұмсақ күнделікті күтімге арналған Аквалор Беби',
+    product_aqualor_baby_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: теңіз суы, тамшы форматы, 15 мл көлем және қаптамада көрсетілген туғаннан бастап қолдану.',
+    product_aqualor_baby_card_seawater_title: 'Теңіз суы',
+    product_aqualor_baby_card_seawater_text: 'Теңіз суы ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_baby_card_volume_title: '15 мл',
+    product_aqualor_baby_card_volume_text: 'Packshot-та көрсетілген, нұсқаулық бойынша күтімге арналған ықшам тамшы форматы.',
+    product_aqualor_baby_card_age_title: 'Туғаннан бастап',
+    product_aqualor_baby_card_age_text: 'Қаптамада туғаннан бастап қолдануға арналған формат көрсетілген.',
+    product_aqualor_baby_card_instruction_title: 'Нұсқаулық бойынша',
+    product_aqualor_baby_card_instruction_text: 'Қолдану режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+    product_aqualor_baby_formula_label: 'Формула',
+    product_aqualor_baby_formula_heading: 'Ортасында — теңіз суы, жас форматы және тамшылар',
+    product_aqualor_baby_formula_intro: 'Қаптама үйлесімді өлшемде көрсетілген, ал сызықтар карточкалардың төменгі жағынан кіріп, қозғалыс кезінде байланыс үзілмей көрінеді.',
+    product_aqualor_baby_formula_seawater_title: 'Теңіз суы',
+    product_aqualor_baby_formula_seawater_text: 'Өнімнің негізі — теңіз суы ерітіндісі.',
+    product_aqualor_baby_formula_age_title: 'Туғаннан бастап',
+    product_aqualor_baby_formula_age_text: 'Жас форматы қаптамада жеке акцент ретінде көрсетілген.',
+    product_aqualor_baby_formula_volume_title: '15 мл',
+    product_aqualor_baby_formula_volume_text: 'Қаптама көлемі ықшам тамшы форматы ретінде бөлектелген.',
+    product_aqualor_baby_usage_label: 'Қашан қолданылады',
+    product_aqualor_baby_usage_heading: 'Нұсқаулыққа сай сәбидің мұрнына күнделікті күтім үшін',
+    product_aqualor_baby_usage_daily_title: 'Күнделікті күтім',
+    product_aqualor_baby_usage_daily_text: 'Тамшыларды нұсқаулыққа сай мұрын қуысына жұмсақ күтім жасау үшін қолдануға болады.',
+    product_aqualor_baby_usage_hygiene_title: 'Мұрын гигиенасы',
+    product_aqualor_baby_usage_hygiene_text: 'Қолдану нұсқаулыққа сәйкес болуы керек.',
+    product_aqualor_baby_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_baby_usage_doctor_text: 'Сәбилер үшін нұсқаулықты ескеріп, күмән болса маманға жүгіну ерекше маңызды.',
+    product_aqualor_baby_note_title: 'Маңызды',
+    product_aqualor_baby_note_text: 'Аквалор Беби нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_baby_buy_intro: 'Аквалор Беби препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.'
+,
+    product_aqualor_gorlo_benefit1: 'Құрамында стерильді гипертониялық теңіз суы ерітіндісі бар',
+    product_aqualor_gorlo_benefit2: 'Қаптамада тұз концентрациясы 19-23 г/л деп көрсетілген',
+    product_aqualor_gorlo_benefit3: '50 мл спрей форматы нұсқаулыққа сай тамақты бүркуге және шаюға арналған',
+    product_aqualor_gorlo_benefit4: 'Қаптамада 6 айдан бастап балаларға және ересектерге арналған формат көрсетілген',
+    product_aqualor_gorlo_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жеке шектеулерді ескеру маңызды',
+    product_aqualor_gorlo_kicker: 'Тамаққа арналған спрей',
+    product_aqualor_gorlo_badge_seawater: 'Теңіз суы',
+    product_aqualor_gorlo_badge_salt: '19-23 г/л',
+    product_aqualor_gorlo_badge_volume: '50 мл',
+    product_aqualor_gorlo_metric_volume: 'қаптамадағы мл',
+    product_aqualor_gorlo_metric_age: '6 айдан бастап',
+    product_aqualor_gorlo_metric_component: 'теңіз суы ерітіндісі',
+    product_aqualor_gorlo_overview_label: 'Тамақ күтімі',
+    product_aqualor_gorlo_overview_heading: 'Тамақты бүркуге және шаюға арналған Аквалор Горло',
+    product_aqualor_gorlo_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: стерильді теңіз суы ерітіндісі, 19-23 г/л гипертониялық концентрация, спрей форматы және 50 мл көлем.',
+    product_aqualor_gorlo_card_seawater_title: 'Теңіз суы',
+    product_aqualor_gorlo_card_seawater_text: 'Стерильді теңіз суы ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_gorlo_card_volume_title: '50 мл',
+    product_aqualor_gorlo_card_volume_text: 'Packshot-та көрсетілген, нұсқаулық бойынша қолдануға арналған ықшам спрей форматы.',
+    product_aqualor_gorlo_card_age_title: '6+ ай',
+    product_aqualor_gorlo_card_age_text: 'Қаптамада 6 айдан бастап балаларға және ересектерге арналған формат көрсетілген.',
+    product_aqualor_gorlo_card_instruction_title: 'Нұсқаулық бойынша',
+    product_aqualor_gorlo_card_instruction_text: 'Қолдану режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+    product_aqualor_gorlo_formula_label: 'Формула',
+    product_aqualor_gorlo_formula_heading: 'Ортасында — теңіз суы, концентрация және спрей форматы',
+    product_aqualor_gorlo_formula_intro: 'Қаптама тыныш өлшемде көрсетілген, ал сызықтар карточкалардың төменгі жағынан кіріп, қозғалыс кезінде байланыс сақталады.',
+    product_aqualor_gorlo_formula_seawater_title: 'Теңіз суы',
+    product_aqualor_gorlo_formula_seawater_text: 'Өнімнің негізі — стерильді теңіз суы ерітіндісі.',
+    product_aqualor_gorlo_formula_age_title: '19-23 г/л',
+    product_aqualor_gorlo_formula_age_text: 'Тұздың гипертониялық концентрациясы жеке акцент ретінде шығарылған.',
+    product_aqualor_gorlo_formula_volume_title: '50 мл',
+    product_aqualor_gorlo_formula_volume_text: 'Қаптама көлемі тамаққа арналған ықшам спрей форматы ретінде бөлектелген.',
+    product_aqualor_gorlo_usage_label: 'Қашан қолданылады',
+    product_aqualor_gorlo_usage_heading: 'Нұсқаулыққа сай тамақты бүрку және шаю үшін',
+    product_aqualor_gorlo_usage_daily_title: 'Тамақты бүрку',
+    product_aqualor_gorlo_usage_daily_text: 'Спрейді нұсқаулыққа сай тамақты бүрку үшін қолдануға болады.',
+    product_aqualor_gorlo_usage_hygiene_title: 'Шаю',
+    product_aqualor_gorlo_usage_hygiene_text: 'Қолдану пайдалану нұсқаулығына сәйкес болуы керек.',
+    product_aqualor_gorlo_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_gorlo_usage_doctor_text: 'Қабыну, ауырсыну немесе күмән болса, нұсқаулықты ескеріп, маманға жүгіну маңызды.',
+    product_aqualor_gorlo_note_title: 'Маңызды',
+    product_aqualor_gorlo_note_text: 'Аквалор Горло нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_gorlo_buy_intro: 'Аквалор Горло препаратын Қазақстандағы STADA дәріхана серіктестерінен іздеңіз.'
+,
+    product_aqualor_soft_benefit1: 'Құрамында стерильді изотониялық теңіз суы ерітіндісі бар',
+    product_aqualor_soft_benefit2: 'Қаптамада және дәріхана карточкаларында тұз концентрациясы 8-11 г/л деп көрсетілген',
+    product_aqualor_soft_benefit3: '125 мл душ форматы нұсқаулыққа сай мұрын қуысын сулауға және шаюға арналған',
+    product_aqualor_soft_benefit4: 'Дәріхана карточкасында 6 айдан бастап қолдануға арналған формат көрсетілген',
+    product_aqualor_soft_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жеке шектеулерді ескеру маңызды',
+    product_aqualor_soft_kicker: 'Мұрынға арналған душ',
+    product_aqualor_soft_badge_seawater: 'Теңіз суы',
+    product_aqualor_soft_badge_salt: '8-11 г/л',
+    product_aqualor_soft_badge_volume: '125 мл',
+    product_aqualor_soft_metric_volume: 'қаптамадағы мл',
+    product_aqualor_soft_metric_age: '6 айдан бастап',
+    product_aqualor_soft_metric_component: 'теңіз суы ерітіндісі',
+    product_aqualor_soft_overview_label: 'Мұрын күтімі',
+    product_aqualor_soft_overview_heading: 'Мұрынды жұмсақ сулауға және шаюға арналған Аквалор Софт',
+    product_aqualor_soft_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: стерильді теңіз суы ерітіндісі, 8-11 г/л изотониялық концентрация, душ форматы және 125 мл көлем.',
+    product_aqualor_soft_card_seawater_title: 'Теңіз суы',
+    product_aqualor_soft_card_seawater_text: 'Стерильді теңіз суы ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_soft_card_volume_title: '125 мл',
+    product_aqualor_soft_card_volume_text: '125 мл қаптама форматы нұсқаулық бойынша тұрақты қолдануға арналған.',
+    product_aqualor_soft_card_age_title: '6+ ай',
+    product_aqualor_soft_card_age_text: 'Жас форматы дәріхана карточкаларындағы ақпаратқа сай көрсетілген.',
+    product_aqualor_soft_card_instruction_title: 'Нұсқаулық бойынша',
+    product_aqualor_soft_card_instruction_text: 'Қолдану режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+    product_aqualor_soft_formula_label: 'Формула',
+    product_aqualor_soft_formula_heading: 'Ортасында — теңіз суы, изотониялық концентрация және душ форматы',
+    product_aqualor_soft_formula_intro: 'Қаптама тыныш өлшемде көрсетілген, ал сызықтар карточкалардың төменгі жағынан кіріп, левитация кезінде байланыс сақталады.',
+    product_aqualor_soft_formula_seawater_title: 'Теңіз суы',
+    product_aqualor_soft_formula_seawater_text: 'Өнімнің негізі — стерильді теңіз суы ерітіндісі.',
+    product_aqualor_soft_formula_salt_title: '8-11 г/л',
+    product_aqualor_soft_formula_salt_text: 'Тұздың изотониялық концентрациясы жеке акцент ретінде шығарылған.',
+    product_aqualor_soft_formula_volume_title: '125 мл',
+    product_aqualor_soft_formula_volume_text: 'Қаптама көлемі мұрынды сулауға және шаюға арналған формат ретінде бөлектелген.',
+    product_aqualor_soft_usage_label: 'Қашан қолданылады',
+    product_aqualor_soft_usage_heading: 'Нұсқаулыққа сай мұрын қуысын сулау және шаю үшін',
+    product_aqualor_soft_usage_daily_title: 'Мұрынды сулау',
+    product_aqualor_soft_usage_daily_text: 'Душ форматын нұсқаулыққа сай мұрын қуысын сулау үшін қолдануға болады.',
+    product_aqualor_soft_usage_hygiene_title: 'Шаю',
+    product_aqualor_soft_usage_hygiene_text: 'Қолдану пайдалану нұсқаулығына сәйкес болуы керек.',
+    product_aqualor_soft_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_soft_usage_doctor_text: 'Айқын симптомдар немесе күмән болса, нұсқаулықты ескеріп, маманға жүгіну маңызды.',
+    product_aqualor_soft_note_title: 'Маңызды',
+    product_aqualor_soft_note_text: 'Аквалор Софт нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_soft_buy_intro: 'Аквалор Софт препаратын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.'
+,
+    product_aqualor_soft_mini_benefit1: 'Құрамында стерильді изотониялық теңіз суы ерітіндісі бар',
+    product_aqualor_soft_mini_benefit2: 'Қаптамада және дәріхана карточкаларында тұз концентрациясы 8-11 г/л деп көрсетілген',
+    product_aqualor_soft_mini_benefit3: '50 мл ықшам душ форматы нұсқаулыққа сай мұрын қуысын сулауға және шаюға арналған',
+    product_aqualor_soft_mini_benefit4: 'Дәріхана карточкасында 6 айдан бастап қолдануға арналған формат көрсетілген',
+    product_aqualor_soft_mini_benefit5: 'Қолданар алдында нұсқаулықпен танысып, жеке шектеулерді ескеру маңызды',
+    product_aqualor_soft_mini_kicker: 'Мұрынға арналған ықшам душ',
+    product_aqualor_soft_mini_badge_seawater: 'Теңіз суы',
+    product_aqualor_soft_mini_badge_salt: '8-11 г/л',
+    product_aqualor_soft_mini_badge_volume: '50 мл',
+    product_aqualor_soft_mini_metric_volume: 'қаптамадағы мл',
+    product_aqualor_soft_mini_metric_age: '6 айдан бастап',
+    product_aqualor_soft_mini_metric_component: 'теңіз суы ерітіндісі',
+    product_aqualor_soft_mini_overview_label: 'Мұрын күтімі',
+    product_aqualor_soft_mini_overview_heading: 'Ықшам форматта мұрынды жұмсақ сулауға арналған Аквалор Софт мини',
+    product_aqualor_soft_mini_overview_intro: 'Бет өнімнің негізгі элементтерін біріктіреді: стерильді теңіз суы ерітіндісі, 8-11 г/л изотониялық концентрация, душ форматы және 50 мл көлем.',
+    product_aqualor_soft_mini_card_seawater_title: 'Теңіз суы',
+    product_aqualor_soft_mini_card_seawater_text: 'Стерильді теңіз суы ерітіндісі өнімнің негізі ретінде көрсетілген.',
+    product_aqualor_soft_mini_card_volume_title: '50 мл',
+    product_aqualor_soft_mini_card_volume_text: 'Ықшам көлемді бірге алып жүруге және нұсқаулық бойынша қолдануға ыңғайлы.',
+    product_aqualor_soft_mini_card_age_title: '6+ ай',
+    product_aqualor_soft_mini_card_age_text: 'Жас форматы дәріхана карточкаларындағы ақпаратқа сай көрсетілген.',
+    product_aqualor_soft_mini_card_instruction_title: 'Нұсқаулық бойынша',
+    product_aqualor_soft_mini_card_instruction_text: 'Қолдану режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+    product_aqualor_soft_mini_formula_label: 'Формула',
+    product_aqualor_soft_mini_formula_heading: 'Ортасында — теңіз суы, изотониялық концентрация және мини-формат',
+    product_aqualor_soft_mini_formula_intro: 'Қаптама тыныш өлшемде көрсетілген, карточкалар жұмсақ левитация жасайды, ал сызықтар қозғалысқа жеткілікті қорымен карточкалардың төменгі жағынан кіреді.',
+    product_aqualor_soft_mini_formula_seawater_title: 'Теңіз суы',
+    product_aqualor_soft_mini_formula_seawater_text: 'Өнімнің негізі — стерильді теңіз суы ерітіндісі.',
+    product_aqualor_soft_mini_formula_salt_title: '8-11 г/л',
+    product_aqualor_soft_mini_formula_salt_text: 'Тұздың изотониялық концентрациясы жеке акцент ретінде шығарылған.',
+    product_aqualor_soft_mini_formula_volume_title: '50 мл',
+    product_aqualor_soft_mini_formula_volume_text: 'Қаптама көлемі мұрынды сулауға және шаюға арналған ықшам формат ретінде бөлектелген.',
+    product_aqualor_soft_mini_usage_label: 'Қашан қолданылады',
+    product_aqualor_soft_mini_usage_heading: 'Нұсқаулыққа сай мұрын қуысын сулау және шаю үшін',
+    product_aqualor_soft_mini_usage_daily_title: 'Мұрынды сулау',
+    product_aqualor_soft_mini_usage_daily_text: 'Душ форматын нұсқаулыққа сай мұрын қуысын сулау үшін қолдануға болады.',
+    product_aqualor_soft_mini_usage_hygiene_title: 'Шаю',
+    product_aqualor_soft_mini_usage_hygiene_text: 'Қолдану пайдалану нұсқаулығына сәйкес болуы керек.',
+    product_aqualor_soft_mini_usage_doctor_title: 'Жауапты күтім',
+    product_aqualor_soft_mini_usage_doctor_text: 'Айқын симптомдар немесе күмән болса, нұсқаулықты ескеріп, маманға жүгіну маңызды.',
+    product_aqualor_soft_mini_note_title: 'Маңызды',
+    product_aqualor_soft_mini_note_text: 'Аквалор Софт мини нұсқаулыққа сәйкес қолданылады. Қолданар алдында қолдану тәсілімен және шектеулермен танысыңыз.',
+    product_aqualor_soft_mini_buy_intro: 'Аквалор Софт мини препаратын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.'
   }
 };
 
 // Current language state
 let currentLang = 'ru';
+
+const productFallbacks = {
+  ru: {
+    products_category_allergy: 'Аллергия',
+    products_category_urology: 'Урология',
+    product_vitrum_fizzy: {
+      name: 'Витрум Иммунактив шипучие таблетки',
+      title: 'Витрум Иммунактив шипучие таблетки',
+      desc: 'Шипучий витаминно-минеральный комплекс для поддержки иммунитета взрослых в удобном формате.',
+      kicker: 'Витамины для иммунитета',
+      badge1: 'Для взрослых 18+',
+      badge2: 'Поддержка иммунитета',
+      badge3: 'Шипучий формат',
+      facts: ['13 витаминов', '8 минералов', '20 таблеток'],
+      buy: 'Ищите Витрум Иммунактив шипучие таблетки у аптечных партнеров STADA в Казахстане.'
+    },
+    product_vitrum_syrop: {
+      name: 'Витрум Кидс Проиммун',
+      title: 'Витрум Кидс Проиммун',
+      desc: 'Детский комплекс для ежедневной поддержки иммунитета и рациона ребенка согласно инструкции.',
+      kicker: 'Детская иммунная поддержка',
+      badge1: 'Для детей',
+      badge2: 'Поддержка иммунитета',
+      badge3: 'Удобный прием',
+      facts: ['Витамины', 'β-глюкан', 'Детский формат'],
+      buy: 'Ищите Витрум Кидс Проиммун у аптечных партнеров STADA в Казахстане.'
+    },
+    product_vitrum_magneb6: {
+      name: 'Витрум Магний B6',
+      title: 'Витрум Магний B6',
+      desc: 'Комплекс магния и витамина B6 для поддержки нервной системы и нормального энергетического обмена.',
+      kicker: 'Магний и витамин B6',
+      badge1: 'Для взрослых',
+      badge2: 'Магний + B6',
+      badge3: '60 таблеток',
+      facts: ['Mg', 'B6', '60 таблеток'],
+      buy: 'Ищите Витрум Магний B6 у аптечных партнеров STADA в Казахстане.'
+    },
+    product_vitrum_vitaminc: {
+      name: 'Витрум Витамин C 900 мг',
+      title: 'Витрум Витамин C 900 мг',
+      desc: 'Шипучие таблетки с витамином C 900 мг для поддержки иммунитета и восполнения потребности в витамине C.',
+      kicker: 'Витамин C',
+      badge1: '900 мг',
+      badge2: 'Поддержка иммунитета',
+      badge3: 'Шипучий формат',
+      facts: ['900 мг', 'Витамин C', '20 таблеток'],
+      buy: 'Ищите Витрум Витамин C 900 мг у аптечных партнеров STADA в Казахстане.'
+    },
+    product_vitrum_energy: {
+      name: 'Витрум Энерджи',
+      title: 'Витрум Энерджи',
+      desc: 'Шипучий витаминно-минеральный комплекс для поддержки энергии, активности и ежедневного тонуса.',
+      kicker: 'Энергия и тонус',
+      badge1: 'Для взрослых 18+',
+      badge2: 'Витамины и минералы',
+      badge3: 'Шипучий формат',
+      facts: ['12 витаминов', '8 минералов', '20 таблеток'],
+      buy: 'Ищите Витрум Энерджи у аптечных партнеров STADA в Казахстане.'
+    },
+    product_zodak: {
+      name: 'Зодак',
+      title: 'Зодак таблетки',
+      desc: 'Антигистаминный препарат с цетиризином для облегчения симптомов аллергического ринита и крапивницы.',
+      kicker: 'Антигистаминный препарат',
+      badge1: 'Цетиризин',
+      badge2: '10 мг',
+      badge3: '1 раз в день',
+      facts: ['10 мг', '30 таблеток', 'С 6 лет'],
+      buy: 'Ищите Зодак таблетки у аптечных партнеров STADA в Казахстане.'
+    },
+    product_zodak_drops: {
+      name: 'Зодак капли',
+      title: 'Зодак капли',
+      desc: 'Капли с цетиризином для облегчения симптомов аллергии у взрослых и детей согласно инструкции.',
+      kicker: 'Антигистаминные капли',
+      badge1: 'Цетиризин',
+      badge2: 'Капли',
+      badge3: 'Для детей',
+      facts: ['10 мг/мл', '20 мл', 'Капли'],
+      buy: 'Ищите Зодак капли у аптечных партнеров STADA в Казахстане.'
+    },
+    product_vitaprost: {
+      name: 'Витапрост',
+      title: 'Витапрост таблетки',
+      desc: 'Препарат для применения в урологии согласно инструкции и назначению специалиста.',
+      kicker: 'Урология',
+      badge1: 'Таблетки',
+      badge2: '20 мг',
+      badge3: 'По назначению',
+      facts: ['20 мг', '20 таблеток', '18+'],
+      buy: 'Ищите Витапрост у аптечных партнеров STADA в Казахстане.'
+    }
+  },
+  kz: {}
+};
+
+const productCopyOverrides = {
+  ru: {
+    products_category_allergy: 'Аллергия',
+    products_category_urology: 'Урология',
+    product_vitrum_fizzy: {
+      name: 'Витрум Иммунактив шипучие таблетки',
+      title: 'Витрум Иммунактив шипучие таблетки',
+      desc: 'Шипучий витаминно-минеральный комплекс с витаминами, минералами и β-глюканом для поддержки иммунитета взрослых.',
+      kicker: 'Иммунная поддержка',
+      badge1: 'Для взрослых 18+',
+      badge2: 'Витамины и минералы',
+      badge3: 'Шипучий формат',
+      facts: ['Витамины', 'Минералы', '20 таблеток'],
+      buy: 'Витрум Иммунактив шипучие таблетки можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_label: 'О продукте',
+        overview_heading: 'Шипучий формат для ежедневной поддержки иммунитета',
+        overview_intro: 'Формула объединяет витамины, минералы и β-глюкан в формате шипучих таблеток, который удобно включать в ежедневный режим взрослых.',
+        card_vitamins_title: 'Витаминный комплекс',
+        card_vitamins_text: 'Помогает дополнять рацион микронутриентами, важными для нормальной работы организма.',
+        card_minerals_title: 'Минеральная поддержка',
+        card_minerals_text: 'Минералы дополняют витаминную основу и поддерживают обменные процессы.',
+        card_beta_title: 'β-глюкан',
+        card_beta_text: 'Компонент, который усиливает акцент формулы на поддержке иммунной системы.',
+        card_adults_title: 'Удобный прием',
+        card_adults_text: 'Шипучая таблетка растворяется в воде и подходит для курсового приема согласно инструкции.',
+        formula_label: 'Формула',
+        formula_heading: 'Витамины, минералы и β-глюкан в одном комплексе',
+        formula_intro: 'В центре композиции упаковка продукта, а карточки выделяют три ключевых слоя формулы.',
+        formula_vitamins_text: 'Витамины помогают поддерживать ежедневную потребность организма в микронутриентах.',
+        formula_minerals_text: 'Минералы дополняют рацион и поддерживают нормальный обмен веществ.',
+        formula_beta_text: 'β-глюкан подчеркивает иммунный фокус продукта.',
+        usage_label: 'Когда актуально',
+        usage_heading: 'Для сезона простуд, восстановления и активного ритма',
+        usage_season_title: 'Сезонная нагрузка',
+        usage_season_text: 'Подходит для ежедневной поддержки в периоды повышенной нагрузки на иммунитет.',
+        usage_recovery_title: 'После болезни',
+        usage_recovery_text: 'Может быть частью восстановления ресурсов организма после перенесенной болезни.',
+        usage_daily_title: 'Активный график',
+        usage_daily_text: 'Удобен для взрослых, которым важно поддерживать баланс витаминов и минералов.',
+        note_title: 'Ответственный прием',
+        note_text: 'Перед применением ознакомьтесь с инструкцией и учитывайте индивидуальные ограничения.',
+        benefit1: 'Шипучий формат удобно растворять в воде и включать в ежедневный режим.',
+        benefit2: 'Формула объединяет витамины, минералы и β-глюкан в одном комплексе.',
+        benefit3: 'Подходит для взрослых в периоды сезонной нагрузки на иммунитет.',
+        benefit4: 'Карточка продукта ясно показывает состав, формат и места покупки без лишних повторов.'
+      }
+    },
+    product_vitrum_syrop: {
+      name: 'Витрум Кидс Проиммун',
+      title: 'Витрум Кидс Проиммун',
+      desc: 'Детский продукт для поддержки иммунитета с витамином C, β-глюканом и растительными компонентами в удобном формате.',
+      kicker: 'Детская иммунная поддержка',
+      badge1: 'Для детей',
+      badge2: 'Витамин C и β-глюкан',
+      badge3: 'Сироп',
+      facts: ['Витамин C', 'β-глюкан', '150 мл'],
+      buy: 'Витрум Кидс Проиммун можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Поддержка детского иммунитета в мягком формате',
+        overview_intro: 'Формат сиропа помогает аккуратно представить продукт для детей: с понятными акцентами на витамин C, β-глюкан и ежедневную поддержку.',
+        card_vitamin_title: 'Витамин C',
+        card_vitamin_text: 'Важный компонент для нормальной работы иммунной системы.',
+        card_beta_title: 'β-глюкан',
+        card_beta_text: 'Дополняет иммунный фокус формулы.',
+        card_volume_title: '150 мл',
+        card_volume_text: 'Формат флакона рассчитан на удобное применение согласно инструкции.',
+        card_age_title: 'Детский формат',
+        card_age_text: 'Перед применением важно сверить возрастные рекомендации с инструкцией.',
+        formula_heading: 'Витамин C, β-глюкан и растительная поддержка',
+        formula_intro: 'Композиция строится вокруг флакона, а карточки сохраняют ясные расстояния и читаемые линии.',
+        formula_vitamin_text: 'Витамин C поддерживает нормальную функцию иммунной системы.',
+        formula_beta_text: 'β-глюкан усиливает акцент на иммунной поддержке.',
+        formula_extracts_text: 'Растительные компоненты дополняют формулу продукта.',
+        usage_heading: 'Для детского режима согласно инструкции',
+        usage_season_title: 'Сезон простуд',
+        usage_season_text: 'Может быть актуален в периоды повышенной сезонной нагрузки.',
+        usage_recovery_title: 'После нагрузки',
+        usage_recovery_text: 'Подходит как часть заботы о рационе ребенка согласно инструкции.',
+        usage_daily_title: 'Ежедневный прием',
+        usage_daily_text: 'Формат сиропа удобен для включения в режим ребенка.',
+        note_text: 'Перед применением обязательно ознакомьтесь с инструкцией и рекомендациями по возрасту.',
+        benefit1: 'Детский формат делает продукт понятным для родителей и удобным для режима приема.',
+        benefit2: 'Витамин C и β-глюкан вынесены как ключевые компоненты иммунной поддержки.',
+        benefit3: 'Флакон и дозировка представлены без перегруза карточек.',
+        benefit4: 'Возрастные рекомендации остаются привязаны к инструкции, без лишних обещаний.'
+      }
+    },
+    product_vitrum_magneb6: {
+      name: 'Витрум Магний B6',
+      title: 'Витрум Магний B6',
+      desc: 'Комплекс магния и витамина B6 для поддержки нервной системы, энергетического обмена и ежедневной устойчивости к нагрузкам.',
+      kicker: 'Магний и витамин B6',
+      badge1: 'Для взрослых',
+      badge2: 'Магний + B6',
+      badge3: '60 таблеток',
+      facts: ['Магний', 'B6', '60 таблеток'],
+      buy: 'Витрум Магний B6 можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Два ключевых компонента для нервной системы',
+        overview_intro: 'Страница выделяет магний, витамин B6 и формат упаковки, сохраняя спокойный STADA-ритм карточек и визуальных акцентов.',
+        card_magnesium_title: 'Магний',
+        card_magnesium_text: 'Помогает поддерживать нормальную работу нервной системы и мышц.',
+        card_b6_title: 'Витамин B6',
+        card_b6_text: 'Дополняет действие магния и участвует в энергетическом обмене.',
+        card_format_title: '60 таблеток',
+        card_format_text: 'Формат упаковки удобен для курсового приема согласно инструкции.',
+        card_antistress_title: 'При нагрузках',
+        card_antistress_text: 'Может быть актуален в периоды умственного и физического напряжения.',
+        formula_heading: 'Магний, B6 и удобный формат упаковки',
+        formula_intro: 'Упаковка остается центром композиции, а карточки аккуратно поясняют формулу.',
+        formula_magnesium_text: 'Магний поддерживает нормальную работу нервной системы.',
+        formula_b6_text: 'Витамин B6 помогает нормальному энергетическому обмену.',
+        formula_format_text: '60 таблеток вынесены как практичный формат для курса.',
+        usage_heading: 'Для нагрузки, режима и ежедневной поддержки',
+        usage_stress_title: 'При стрессе',
+        usage_stress_text: 'Компоненты формулы актуальны при повышенной нагрузке.',
+        usage_sleep_title: 'Для режима',
+        usage_sleep_text: 'Поддержка нервной системы помогает сохранять ежедневный ритм.',
+        usage_daily_title: 'Каждый день',
+        usage_daily_text: 'Принимать согласно инструкции и рекомендациям специалиста.',
+        benefit1: 'Магний и витамин B6 представлены как два понятных компонента формулы.',
+        benefit2: 'Акцент на нервной системе и энергетическом обмене помогает быстро считать назначение продукта.',
+        benefit3: 'Формат 60 таблеток вынесен как практичная информация для курса.',
+        benefit4: 'Тексты сохраняют медицински спокойный тон и не перегружают страницу.'
+      }
+    },
+    product_vitrum_vitaminc: {
+      name: 'Витрум Витамин C 900 мг',
+      title: 'Витрум Витамин C 900 мг',
+      desc: 'Шипучие таблетки с витамином C 900 мг для поддержки иммунитета и восполнения потребности в витамине C.',
+      kicker: 'Витамин C',
+      badge1: '900 мг',
+      badge2: 'Поддержка иммунитета',
+      badge3: 'Шипучие таблетки',
+      facts: ['900 мг', 'Витамин C', '20 таблеток'],
+      buy: 'Витрум Витамин C 900 мг можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Высокая дозировка витамина C в шипучем формате',
+        overview_intro: 'Продукт сфокусирован на витамине C 900 мг и удобном формате растворимой таблетки.',
+        card_vitamins_title: '900 мг витамина C',
+        card_vitamins_text: 'Витамин C помогает поддерживать нормальную функцию иммунной системы.',
+        card_minerals_title: 'Шипучий формат',
+        card_minerals_text: 'Растворимая таблетка удобна для приема с водой.',
+        card_beta_title: '20 таблеток',
+        card_beta_text: 'Формат упаковки вынесен как практичный курсовой акцент.',
+        card_adults_title: 'Для взрослых',
+        card_adults_text: 'Принимать согласно инструкции и индивидуальным рекомендациям.',
+        formula_heading: 'Витамин C, дозировка и формат',
+        formula_vitamins_text: '900 мг витамина C выделены как главный компонент продукта.',
+        formula_minerals_text: 'Шипучий формат делает прием наглядным и удобным.',
+        formula_beta_text: '20 таблеток помогают быстро считывать формат упаковки.',
+        usage_heading: 'Для иммунной поддержки и восполнения витамина C',
+        usage_season_title: 'Сезон простуд',
+        usage_season_text: 'Актуален в периоды повышенной потребности в поддержке иммунитета.',
+        usage_recovery_title: 'Восстановление',
+        usage_recovery_text: 'Может применяться для восполнения витамина C согласно инструкции.',
+        usage_daily_title: 'Ежедневный режим',
+        usage_daily_text: 'Удобен для приема с водой в шипучем формате.',
+        benefit1: 'Дозировка 900 мг сразу показывает главный акцент продукта.',
+        benefit2: 'Шипучая таблетка помогает сделать прием с водой простым и понятным.',
+        benefit3: 'Формула сфокусирована на поддержке иммунитета и восполнении витамина C.',
+        benefit4: 'Информация о применении остается привязанной к инструкции.'
+      }
+    },
+    product_vitrum_energy: {
+      name: 'Витрум Энерджи',
+      title: 'Витрум Энерджи',
+      desc: 'Шипучий витаминно-минеральный комплекс для поддержки энергии, активности и ежедневного тонуса взрослых.',
+      kicker: 'Энергия и тонус',
+      badge1: 'Для взрослых',
+      badge2: 'Витамины и минералы',
+      badge3: 'Шипучий формат',
+      facts: ['Витамины B', 'Минералы', '20 таблеток'],
+      buy: 'Витрум Энерджи можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Комплекс для энергии и активного ритма',
+        overview_intro: 'Витрум Энерджи объединяет витамины и минералы в шипучем формате, чтобы поддерживать ежедневный тонус.',
+        formula_heading: 'Витамины группы B, минералы и удобный формат',
+        formula_vitamins_text: 'Витамины группы B участвуют в нормальном энергетическом обмене.',
+        formula_minerals_text: 'Минералы дополняют формулу ежедневной поддержки.',
+        formula_beta_text: 'Шипучий формат помогает сделать прием удобным.',
+        usage_heading: 'Для активного графика и ежедневного тонуса',
+        usage_season_title: 'Интенсивный ритм',
+        usage_season_text: 'Подходит взрослым в периоды активной нагрузки.',
+        usage_recovery_title: 'После усталости',
+        usage_recovery_text: 'Может быть частью поддержки энергетического обмена.',
+        usage_daily_title: 'Ежедневно',
+        usage_daily_text: 'Принимать согласно инструкции, растворяя таблетку в воде.',
+        benefit1: 'Формула сфокусирована на энергии, активности и ежедневном тонусе.',
+        benefit2: 'Витамины группы B и минералы выделены как основные смысловые акценты.',
+        benefit3: 'Шипучий формат делает продукт удобным для приема с водой.',
+        benefit4: 'Страница объясняет продукт коротко, без повторения одного и того же описания.'
+      }
+    },
+    product_zodak: {
+      name: 'Зодак',
+      title: 'Зодак таблетки',
+      desc: 'Антигистаминный препарат с цетиризином для облегчения симптомов аллергического ринита и крапивницы.',
+      kicker: 'Антигистаминный препарат',
+      badge1: 'Цетиризин',
+      badge2: '1 раз в день',
+      badge3: 'С 6 лет',
+      facts: ['10 мг', '1 раз в день', '30 таблеток'],
+      buy: 'Зодак таблетки можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Цетиризин в формате таблеток',
+        overview_intro: 'Страница выделяет дозировку, режим приема и аллергические симптомы, при которых препарат применяют согласно инструкции.',
+        formula_heading: 'Действующее вещество, симптомы и формат',
+        formula_active_title: 'Цетиризин',
+        formula_active_text: 'Действующее вещество антигистаминного препарата.',
+        formula_symptoms_text: 'Применяется при симптомах аллергического ринита и крапивницы согласно инструкции.',
+        formula_format_title: 'Таблетки',
+        formula_format_text: 'Формат таблеток удобен для взрослых и детей с 6 лет согласно инструкции.',
+        usage_heading: 'При сезонных и круглогодичных симптомах аллергии',
+        note_text: 'Перед применением сверяйтесь с инструкцией, особенно при совместном приеме других препаратов.',
+        benefit1: 'Цетиризин вынесен как активный компонент антигистаминного препарата.',
+        benefit2: 'Страница разделяет сезонные, круглогодичные и кожные проявления аллергии.',
+        benefit3: 'Формат таблеток и режим приема считываются через факты в hero и карточках.',
+        benefit4: 'Все формулировки остаются в рамках инструкции к препарату.'
+      }
+    },
+    product_zodak_drops: {
+      name: 'Зодак капли',
+      title: 'Зодак капли',
+      desc: 'Капли с цетиризином для облегчения симптомов аллергии у взрослых и детей согласно инструкции.',
+      kicker: 'Антигистаминные капли',
+      badge1: 'Цетиризин',
+      badge2: 'Капли',
+      badge3: 'Для детей',
+      facts: ['10 мг/мл', 'С 2 лет', '20 мл'],
+      buy: 'Зодак капли можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Цетиризин в формате капель',
+        overview_intro: 'Формат капель помогает аккуратно представить продукт для взрослых и детей, сохраняя акцент на инструкции и возрастных ограничениях.',
+        formula_heading: 'Активный компонент, возраст и жидкий формат',
+        formula_active_title: 'Цетиризин',
+        formula_active_text: 'Активный компонент для облегчения симптомов аллергии.',
+        formula_age_title: 'С 2 лет',
+        formula_age_text: 'Возрастные ограничения и дозировку необходимо сверять с инструкцией.',
+        formula_format_title: 'Капли 20 мл',
+        formula_format_text: 'Жидкий формат подходит для применения согласно инструкции.',
+        usage_heading: 'При аллергическом рините, конъюнктивите и кожных проявлениях',
+        benefit1: 'Капли показывают альтернативный формат Зодака для взрослых и детей.',
+        benefit2: 'Возраст и дозировку страница подает осторожно, с опорой на инструкцию.',
+        benefit3: 'Симптомы аллергии разделены на понятные сценарии применения.',
+        benefit4: 'Упаковка, объем и активный компонент не смешиваются в один повторяющийся текст.'
+      }
+    },
+    product_vitaprost: {
+      name: 'Витапрост',
+      title: 'Витапрост таблетки',
+      desc: 'Урологический препарат в форме таблеток для применения согласно инструкции и назначению специалиста.',
+      kicker: 'Урология',
+      badge1: 'Таблетки',
+      badge2: '20 мг',
+      badge3: '18+',
+      facts: ['20 мг', '20 таблеток', '18+'],
+      buy: 'Витапрост можно найти у аптечных партнеров STADA в Казахстане.',
+      copy: {
+        overview_heading: 'Урологический препарат в таблетках',
+        overview_intro: 'Страница выдержана в спокойной медицинской подаче: упаковка, дозировка, формат и ответственное применение по назначению специалиста.',
+        formula_heading: 'Активный компонент, формат и возрастные ограничения',
+        formula_active_title: 'Активный компонент',
+        formula_active_text: 'Состав и дозировку необходимо сверять с инструкцией к препарату.',
+        formula_age_title: '18+',
+        formula_age_text: 'Препарат предназначен для взрослых согласно инструкции.',
+        formula_format_title: '20 таблеток',
+        formula_format_text: 'Формат упаковки вынесен как основной практичный акцент.',
+        usage_heading: 'В урологии по назначению специалиста',
+        usage_prostatitis_title: 'Хронический простатит',
+        usage_prostatitis_text: 'Применение определяется инструкцией и назначением врача.',
+        usage_bph_title: 'Урологические состояния',
+        usage_bph_text: 'Используйте препарат только по инструкции и рекомендации специалиста.',
+        usage_surgery_title: 'После вмешательств',
+        usage_surgery_text: 'Необходимость применения после процедур определяет врач.',
+        note_text: 'Информация на странице не заменяет консультацию врача. Перед применением ознакомьтесь с инструкцией.',
+        benefit1: 'Урологический профиль продукта обозначен спокойно и без рекламного преувеличения.',
+        benefit2: 'Формат таблеток, дозировка и возрастное ограничение вынесены в отдельные факты.',
+        benefit3: 'Сценарии применения связаны с назначением специалиста и инструкцией.',
+        benefit4: 'Страница сохраняет медицинский тон и помогает быстро перейти к местам покупки.'
+      }
+    }
+  },
+  kz: {
+    products_category_allergy: 'Аллергия',
+    products_category_urology: 'Урология',
+    product_vitrum_fizzy: {
+      name: 'Витрум Иммунактив көпіршікті таблеткалары',
+      title: 'Витрум Иммунактив көпіршікті таблеткалары',
+      desc: 'Ересектердің иммунитетін қолдауға арналған витаминдер, минералдар және β-глюкан бар көпіршікті витамин-минералды кешен.',
+      kicker: 'Иммунитетті қолдау',
+      badge1: 'Ересектерге 18+',
+      badge2: 'Витаминдер мен минералдар',
+      badge3: 'Көпіршікті формат',
+      facts: ['Витаминдер', 'Минералдар', '20 таблетка'],
+      buy: 'Витрум Иммунактив көпіршікті таблеткаларын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Иммунитетті күнделікті қолдауға арналған көпіршікті формат',
+        overview_intro: 'Формула витаминдерді, минералдарды және β-глюканды ересектердің күнделікті режиміне ыңғайлы қосылатын көпіршікті таблетка форматында біріктіреді.',
+        card_vitamins_title: 'Витаминді кешен',
+        card_vitamins_text: 'Ағзаның қалыпты жұмысы үшін маңызды микронутриенттермен рационды толықтыруға көмектеседі.',
+        card_minerals_title: 'Минералды қолдау',
+        card_minerals_text: 'Минералдар витаминді негізді толықтырып, алмасу процестерін қолдайды.',
+        card_beta_title: 'β-глюкан',
+        card_beta_text: 'Формуланың иммундық жүйені қолдау бағытын күшейтетін компонент.',
+        card_adults_title: 'Ыңғайлы қабылдау',
+        card_adults_text: 'Көпіршікті таблетка суда ериді және нұсқаулыққа сай курстық қабылдауға ыңғайлы.',
+        formula_label: 'Формула',
+        formula_heading: 'Витаминдер, минералдар және β-глюкан бір кешенде',
+        formula_intro: 'Композиция ортасында өнім қаптамасы орналасқан, ал карточкалар формуланың негізгі үш қабатын көрсетеді.',
+        formula_vitamins_text: 'Витаминдер ағзаның микронутриенттерге күнделікті қажеттілігін қолдауға көмектеседі.',
+        formula_minerals_text: 'Минералдар рационды толықтырып, зат алмасудың қалыпты жүруін қолдайды.',
+        formula_beta_text: 'β-глюкан өнімнің иммундық бағытын айқындайды.',
+        usage_label: 'Қашан өзекті',
+        usage_heading: 'Суық тию маусымында, қалпына келу кезеңінде және күнделікті режимде',
+        usage_season_title: 'Маусымдық жүктеме',
+        usage_season_text: 'Иммунитетке түсетін жүктеме артатын кезеңдерде күнделікті қолдаудың бөлігі бола алады.',
+        usage_recovery_title: 'Қалпына келу кезеңі',
+        usage_recovery_text: 'Ағза ресурстарын толықтыру қажет болған кезде нұсқаулыққа сай қолдануға болады.',
+        usage_daily_title: 'Күнделікті режим',
+        usage_daily_text: 'Таблетканы суда ерітіп, нұсқаулыққа сай қабылдау ыңғайлы.',
+        note_title: 'Маңызды',
+        note_text: 'Қолданар алдында нұсқаулықпен танысып, қажет болса маманмен кеңесіңіз.',
+        benefit1: 'Көпіршікті форматты суда ерітіп, күнделікті режимге қосу ыңғайлы.',
+        benefit2: 'Формула витаминдерді, минералдарды және β-глюканды бір кешенге біріктіреді.',
+        benefit3: 'Иммунитетке маусымдық жүктеме түскен кезеңдерде ересектерге арналған.',
+        benefit4: 'Өнім карточкасы құрамды, форматты және сатып алу орындарын артық қайталаусыз көрсетеді.'
+      }
+    },
+    product_vitrum_syrop: {
+      name: 'Витрум Кидс Проиммун',
+      title: 'Витрум Кидс Проиммун',
+      desc: 'Баланың иммунитетін және күнделікті рационын нұсқаулыққа сай қолдауға арналған балалар кешені.',
+      kicker: 'Балалар иммунитетін қолдау',
+      badge1: 'Балаларға',
+      badge2: 'Иммунитетті қолдау',
+      badge3: 'Ыңғайлы қабылдау',
+      facts: ['Витамин C', 'β-глюкан', 'Балалар форматы'],
+      buy: 'Витрум Кидс Проиммунды Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Баланың күнделікті иммундық қолдауына арналған формат',
+        overview_intro: 'Өнім витамин C мен β-глюканға назар аударады және ата-аналарға баланың режиміне енгізуге түсінікті форматта берілген.',
+        card_vitamin_title: 'Витамин C',
+        card_vitamin_text: 'Витамин C иммундық жүйенің қалыпты жұмысын қолдауға қатысады.',
+        card_beta_title: 'β-глюкан',
+        card_beta_text: 'Формуланың иммундық қолдау бағытын толықтыратын компонент.',
+        card_age_title: 'Балаларға арналған',
+        card_age_text: 'Жас ерекшелігі мен қабылдау режимін нұсқаулықпен салыстыру қажет.',
+        card_volume_title: 'Ыңғайлы формат',
+        card_volume_text: 'Флакон форматы күнделікті қабылдауды ұйымдастыруға көмектеседі.',
+        formula_label: 'Формула',
+        formula_heading: 'Витамин C, β-глюкан және балаларға арналған формат',
+        formula_intro: 'Карточкалар өнімнің негізгі компоненттерін және қабылдауға қатысты маңызды ақпаратты бөледі.',
+        formula_vitamin_text: 'Витамин C баланың рационындағы маңызды микронутриенттердің бірі.',
+        formula_beta_text: 'β-глюкан өнімнің иммундық қолдау бағытын айқындайды.',
+        formula_extracts_text: 'Формула күнделікті қолдауға арналған компоненттерді біріктіреді.',
+        usage_label: 'Қашан қолдануға болады',
+        usage_heading: 'Күнделікті режимде және маусымдық жүктеме кезінде',
+        usage_season_title: 'Маусымдық кезең',
+        usage_season_text: 'Иммунитетке түсетін жүктеме артқанда нұсқаулыққа сай қолдануға болады.',
+        usage_recovery_title: 'Қалпына келу',
+        usage_recovery_text: 'Баланың рационын қолдау қажет кезеңдерде өзекті болуы мүмкін.',
+        usage_daily_title: 'Күнделікті қабылдау',
+        usage_daily_text: 'Қабылдау режимін нұсқаулыққа сәйкес сақтау маңызды.',
+        note_title: 'Маңызды',
+        note_text: 'Балаларға қолданар алдында нұсқаулықты мұқият оқып, қажет болса маманмен кеңесіңіз.',
+        benefit1: 'Балалар форматы ата-аналарға түсінікті және қабылдау режиміне ыңғайлы.',
+        benefit2: 'Витамин C және β-глюкан иммундық қолдаудың негізгі компоненттері ретінде көрсетілген.',
+        benefit3: 'Флакон мен дозалау ақпараттары карточкаларда артық жүктемесіз берілген.',
+        benefit4: 'Жасқа қатысты ұсынымдар нұсқаулыққа байланыстырылған және артық уәде бермейді.'
+      }
+    },
+    product_vitrum_magneb6: {
+      name: 'Витрум Магний B6',
+      title: 'Витрум Магний B6',
+      desc: 'Жүйке жүйесін және қалыпты энергия алмасуын қолдауға арналған магний мен B6 витамині кешені.',
+      kicker: 'Магний және B6 витамині',
+      badge1: 'Ересектерге',
+      badge2: 'Магний + B6',
+      badge3: '60 таблетка',
+      facts: ['Магний', 'B6 витамині', '60 таблетка'],
+      buy: 'Витрум Магний B6 өнімін Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Жүйке жүйесін қолдауға арналған магний мен B6 витамині',
+        overview_intro: 'Өнім магний мен B6 витаминін біріктіріп, қалыпты энергия алмасуы мен күнделікті тонусты қолдау бағытын анық көрсетеді.',
+        card_magnesium_title: 'Магний',
+        card_magnesium_text: 'Магний жүйке жүйесінің қалыпты жұмысын қолдауға қатысады.',
+        card_b6_title: 'B6 витамині',
+        card_b6_text: 'B6 витамині магнийдің әсерін толықтырып, энергия алмасуына қатысады.',
+        card_format_title: '60 таблетка',
+        card_format_text: 'Қаптама форматы курс туралы практикалық ақпарат береді.',
+        card_antistress_title: 'Күнделікті қолдау',
+        card_antistress_text: 'Компоненттерді нұсқаулыққа сай қабылдау маңызды.',
+        formula_label: 'Формула',
+        formula_heading: 'Магний, B6 витамині және практикалық қаптама форматы',
+        formula_intro: 'Формула карточкалары негізгі компоненттерді және қабылдауға қатысты фактілерді бөледі.',
+        formula_magnesium_title: 'Магний',
+        formula_magnesium_text: 'Магний ағзаның қалыпты жұмысына қажет минералдардың бірі.',
+        formula_b6_title: 'B6 витамині',
+        formula_b6_text: 'B6 витамині формуланың екінші негізгі компоненті ретінде көрсетілген.',
+        formula_format_title: '60 таблетка',
+        formula_format_text: 'Қаптама көлемі курстық қабылдау туралы түсінікті ақпарат береді.',
+        usage_label: 'Қашан өзекті',
+        usage_heading: 'Жүктеме, шаршау және күнделікті режим кезінде',
+        usage_stress_title: 'Жүктеме кезінде',
+        usage_stress_text: 'Қалыпты жүйке жүйесін қолдау қажет болғанда нұсқаулыққа сай қолдануға болады.',
+        usage_sleep_title: 'Режим үшін',
+        usage_sleep_text: 'Компоненттер жүйке жүйесінің қалыпты жұмысын қолдауға көмектеседі.',
+        usage_daily_title: 'Күнделікті',
+        usage_daily_text: 'Қабылдау жиілігі мен дозасын нұсқаулықпен салыстыру қажет.',
+        note_title: 'Маңызды',
+        note_text: 'Қолданар алдында нұсқаулықпен танысып, қарсы көрсетілімдерді тексеріңіз.',
+        benefit1: 'Магний мен B6 витамині формуланың екі түсінікті компоненті ретінде ұсынылған.',
+        benefit2: 'Жүйке жүйесі мен энергия алмасуына жасалған акцент өнімнің мақсатын тез түсінуге көмектеседі.',
+        benefit3: '60 таблетка форматы курсқа қатысты практикалық ақпарат ретінде көрсетілген.',
+        benefit4: 'Мәтіндер медициналық сабырлы тонды сақтап, бетті артық жүктемейді.'
+      }
+    },
+    product_vitrum_vitaminc: {
+      name: 'Витрум Витамин C 900 мг',
+      title: 'Витрум Витамин C 900 мг',
+      desc: 'Иммунитетті қолдау және C витаминіне қажеттілікті толықтыруға арналған 900 мг C витамині бар көпіршікті таблеткалар.',
+      kicker: 'Витамин C',
+      badge1: '900 мг',
+      badge2: 'Иммунитетті қолдау',
+      badge3: 'Көпіршікті формат',
+      facts: ['900 мг', 'Витамин C', '20 таблетка'],
+      buy: 'Витрум Витамин C 900 мг өнімін Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'C витаминін ыңғайлы көпіршікті форматта толықтыру',
+        overview_intro: 'Өнім C витаминінің 900 мг дозасына және суда еритін көпіршікті таблетка форматына назар аударады.',
+        card_vitamins_title: '900 мг C витамині',
+        card_vitamins_text: 'Дозировка өнімнің басты акценті ретінде көрсетілген.',
+        card_minerals_title: 'Иммунитетті қолдау',
+        card_minerals_text: 'C витамині иммундық жүйенің қалыпты жұмысына қатысады.',
+        card_beta_title: 'Көпіршікті таблетка',
+        card_beta_text: 'Таблетка суда ериді және қабылдауды түсінікті етеді.',
+        card_adults_title: 'Нұсқаулыққа сай',
+        card_adults_text: 'Қабылдау режимі мен шектеулерді нұсқаулықпен салыстыру қажет.',
+        formula_label: 'Формула',
+        formula_heading: 'C витамині, дозировка және көпіршікті формат',
+        formula_intro: 'Карточкалар өнімнің негізгі акценттерін: витамин, дозировка және қабылдау форматын көрсетеді.',
+        formula_vitamins_text: 'C витамині өнімнің негізгі компоненті ретінде ұсынылған.',
+        formula_minerals_text: '900 мг дозировка қаптамада және беттегі фактілерде бөлек көрсетілген.',
+        formula_beta_text: 'Көпіршікті формат таблетканы суда ерітіп қабылдауға мүмкіндік береді.',
+        usage_label: 'Қашан өзекті',
+        usage_heading: 'Иммунитетті қолдау және C витаминін толықтыру үшін',
+        usage_season_title: 'Маусымдық кезең',
+        usage_season_text: 'Суық тию маусымында рационды толықтырудың бөлігі болуы мүмкін.',
+        usage_recovery_title: 'Қалпына келу',
+        usage_recovery_text: 'Ағзаға C витаминін толықтыру қажет болған кезеңдерде қолдануға болады.',
+        usage_daily_title: 'Қабылдау форматы',
+        usage_daily_text: 'Таблетканы суда ерітіп, нұсқаулыққа сай қабылдау қажет.',
+        note_title: 'Маңызды',
+        note_text: 'Қолданар алдында нұсқаулықпен танысып, дозировканы сақтаңыз.',
+        benefit1: '900 мг дозировка өнімнің басты акцентін бірден көрсетеді.',
+        benefit2: 'Көпіршікті таблетка сумен қабылдауды қарапайым әрі түсінікті етеді.',
+        benefit3: 'Формула иммунитетті қолдауға және C витаминін толықтыруға бағытталған.',
+        benefit4: 'Қолдану туралы ақпарат нұсқаулыққа байланыстырылған.'
+      }
+    },
+    product_vitrum_energy: {
+      name: 'Витрум Энерджи',
+      title: 'Витрум Энерджи',
+      desc: 'Энергияны, белсенділікті және күнделікті тонусты қолдауға арналған көпіршікті витамин-минералды кешен.',
+      kicker: 'Энергия және тонус',
+      badge1: 'Ересектерге 18+',
+      badge2: 'Витаминдер мен минералдар',
+      badge3: 'Көпіршікті формат',
+      facts: ['B витаминдері', 'Минералдар', '20 таблетка'],
+      buy: 'Витрум Энерджи өнімін Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Энергия мен белсенді ырғаққа арналған кешен',
+        overview_intro: 'Витрум Энерджи витаминдер мен минералдарды күнделікті тонусты қолдауға арналған көпіршікті форматта біріктіреді.',
+        card_vitamins_title: 'B витаминдері',
+        card_vitamins_text: 'B тобының витаминдері қалыпты энергия алмасуына қатысады.',
+        card_minerals_title: 'Минералдар',
+        card_minerals_text: 'Минералдар күнделікті қолдау формуласын толықтырады.',
+        card_beta_title: 'Көпіршікті формат',
+        card_beta_text: 'Суда еритін таблетка қабылдауды ыңғайлы етеді.',
+        card_adults_title: 'Ересектерге',
+        card_adults_text: 'Өнімді нұсқаулыққа сай қабылдау қажет.',
+        formula_label: 'Формула',
+        formula_heading: 'B витаминдері, минералдар және ыңғайлы формат',
+        formula_intro: 'Карточкалар өнімнің энергияға, минералдарға және қабылдау форматына қатысты негізгі акценттерін көрсетеді.',
+        formula_vitamins_text: 'B тобының витаминдері қалыпты энергия алмасуына қатысады.',
+        formula_minerals_text: 'Минералдар күнделікті қолдау формуласын толықтырады.',
+        formula_beta_text: 'Көпіршікті формат қабылдауды ыңғайлы етуге көмектеседі.',
+        usage_label: 'Қашан өзекті',
+        usage_heading: 'Белсенді кесте және күнделікті тонус үшін',
+        usage_season_title: 'Қарқынды ырғақ',
+        usage_season_text: 'Белсенді жүктеме кезеңдерінде ересектерге нұсқаулыққа сай қолдануға болады.',
+        usage_recovery_title: 'Шаршаудан кейін',
+        usage_recovery_text: 'Энергия алмасуын қолдаудың бөлігі болуы мүмкін.',
+        usage_daily_title: 'Күнделікті',
+        usage_daily_text: 'Таблетканы суда ерітіп, нұсқаулыққа сай қабылдау қажет.',
+        note_title: 'Маңызды',
+        note_text: 'Қолданар алдында нұсқаулықпен танысып, қарсы көрсетілімдерді тексеріңіз.',
+        benefit1: 'Формула энергияға, белсенділікке және күнделікті тонусқа бағытталған.',
+        benefit2: 'B тобының витаминдері мен минералдар негізгі мағыналық акценттер ретінде көрсетілген.',
+        benefit3: 'Көпіршікті формат өнімді сумен қабылдауға ыңғайлы етеді.',
+        benefit4: 'Бет өнімді қысқа түсіндіреді және бір сипаттаманы қайталамайды.'
+      }
+    },
+    product_zodak: {
+      name: 'Зодак',
+      title: 'Зодак таблеткалары',
+      desc: 'Аллергиялық ринит және есекжем белгілерін жеңілдетуге арналған цетиризині бар антигистаминдік препарат.',
+      kicker: 'Антигистаминдік препарат',
+      badge1: 'Цетиризин',
+      badge2: 'Күніне 1 рет',
+      badge3: '6 жастан бастап',
+      facts: ['10 мг', 'Күніне 1 рет', '30 таблетка'],
+      buy: 'Зодак таблеткаларын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Цетиризин таблетка форматында',
+        overview_intro: 'Бетте препарат нұсқаулыққа сай қолданылатын дозировка, қабылдау режимі және аллергиялық белгілер бөлек көрсетілген.',
+        card_strength_title: '10 мг',
+        card_strength_text: 'Дозировка өнім фактілері мен қаптамада көрсетілген.',
+        card_action_title: 'Цетиризин',
+        card_action_text: 'Антигистаминдік препараттың белсенді компоненті.',
+        card_daily_title: 'Қабылдау режимі',
+        card_daily_text: 'Қабылдау жиілігі нұсқаулыққа сәйкес сақталуы керек.',
+        card_age_title: '6 жастан бастап',
+        card_age_text: 'Жас шектеулерін нұсқаулықпен салыстыру қажет.',
+        formula_label: 'Формула',
+        formula_heading: 'Белсенді зат, белгілер және формат',
+        formula_intro: 'Карточкалар белсенді компонентті, аллергия белгілерін және таблетка форматын бөледі.',
+        formula_active_title: 'Цетиризин',
+        formula_active_text: 'Антигистаминдік препараттың белсенді заты.',
+        formula_symptoms_title: 'Аллергия белгілері',
+        formula_symptoms_text: 'Нұсқаулыққа сай аллергиялық ринит және есекжем белгілері кезінде қолданылады.',
+        formula_format_title: 'Таблеткалар',
+        formula_format_text: 'Таблетка форматы нұсқаулыққа сай ересектерге және 6 жастан бастап балаларға арналған.',
+        usage_label: 'Қашан қолданылады',
+        usage_heading: 'Маусымдық және жыл бойғы аллергия белгілері кезінде',
+        usage_seasonal_title: 'Маусымдық аллергия',
+        usage_seasonal_text: 'Маусымдық аллергиялық ринит белгілерін жеңілдету үшін қолданылады.',
+        usage_yearround_title: 'Жыл бойғы белгілер',
+        usage_yearround_text: 'Нұсқаулыққа сай аллергиялық белгілер кезінде қолдануға болады.',
+        usage_skin_title: 'Тері көріністері',
+        usage_skin_text: 'Есекжем белгілері кезінде нұсқаулыққа сай қолданылады.',
+        note_title: 'Маңызды',
+        note_text: 'Қолданар алдында, әсіресе басқа препараттармен бірге қабылдағанда, нұсқаулықпен салыстырыңыз.',
+        benefit1: 'Цетиризин антигистаминдік препараттың белсенді компоненті ретінде көрсетілген.',
+        benefit2: 'Бет аллергияның маусымдық, жыл бойғы және тері көріністерін бөледі.',
+        benefit3: 'Таблетка форматы мен қабылдау режимі hero және карточкалардағы фактілер арқылы оқылады.',
+        benefit4: 'Барлық тұжырымдар препарат нұсқаулығы шегінде қалады.'
+      }
+    },
+    product_zodak_drops: {
+      name: 'Зодак тамшылары',
+      title: 'Зодак тамшылары',
+      desc: 'Ересектер мен балалардағы аллергия белгілерін нұсқаулыққа сай жеңілдетуге арналған цетиризині бар тамшылар.',
+      kicker: 'Антигистаминдік тамшылар',
+      badge1: 'Цетиризин',
+      badge2: 'Тамшылар',
+      badge3: 'Балаларға',
+      facts: ['10 мг/мл', '2 жастан бастап', '20 мл'],
+      buy: 'Зодак тамшыларын Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Цетиризин тамшы форматында',
+        overview_intro: 'Тамшы форматы ересектер мен балаларға арналған өнімді нұсқаулық пен жас шектеулеріне сүйене отырып көрсетуге көмектеседі.',
+        card_strength_title: '10 мг/мл',
+        card_strength_text: 'Белсенді компонент концентрациясы өнім фактілерінде көрсетілген.',
+        card_age_title: '2 жастан бастап',
+        card_age_text: 'Жас пен дозаны нұсқаулықпен салыстыру қажет.',
+        card_action_title: 'Цетиризин',
+        card_action_text: 'Аллергия белгілерін жеңілдетуге арналған белсенді компонент.',
+        card_pack_title: '20 мл',
+        card_pack_text: 'Қаптама көлемі жеке практикалық факт ретінде берілген.',
+        formula_label: 'Формула',
+        formula_heading: 'Белсенді компонент, жас және сұйық формат',
+        formula_intro: 'Карточкалар белсенді компонентті, жас шектеуін және тамшы форматын бөліп көрсетеді.',
+        formula_active_title: 'Цетиризин',
+        formula_active_text: 'Аллергия белгілерін жеңілдетуге арналған белсенді компонент.',
+        formula_age_title: '2 жастан бастап',
+        formula_age_text: 'Жас шектеулері мен дозировканы нұсқаулықпен салыстыру қажет.',
+        formula_format_title: '20 мл тамшылар',
+        formula_format_text: 'Сұйық формат нұсқаулыққа сай қолдануға арналған.',
+        usage_label: 'Қашан қолданылады',
+        usage_heading: 'Аллергиялық ринит, конъюнктивит және тері көріністері кезінде',
+        usage_rhinitis_title: 'Аллергиялық ринит',
+        usage_rhinitis_text: 'Аллергияның мұрын белгілерін жеңілдету үшін нұсқаулыққа сай қолданылады.',
+        usage_conjunctivitis_title: 'Аллергиялық конъюнктивит',
+        usage_conjunctivitis_text: 'Аллергияның көз белгілерін жеңілдету үшін нұсқаулыққа сай қолданылады.',
+        usage_skin_title: 'Тері көріністері',
+        usage_skin_text: 'Есекжем сияқты тері белгілері кезінде нұсқаулыққа сай қолданылуы мүмкін.',
+        note_title: 'Маңызды',
+        note_text: 'Балаларға қолданғанда дозаны, жас шектеулерін және қабылдау режимін нұсқаулықпен салыстырыңыз.',
+        benefit1: 'Тамшылар Зодактың ересектер мен балаларға арналған балама форматын көрсетеді.',
+        benefit2: 'Жас пен дозировка бетте нұсқаулыққа сүйене отырып сақ берілген.',
+        benefit3: 'Аллергия белгілері қолданудың түсінікті сценарийлеріне бөлінген.',
+        benefit4: 'Қаптама, көлем және белсенді компонент бір қайталанатын мәтінге араластырылмаған.'
+      }
+    },
+    product_vitaprost: {
+      name: 'Витапрост',
+      title: 'Витапрост таблеткалары',
+      desc: 'Нұсқаулыққа және маман тағайындауына сай урологияда қолдануға арналған таблетка форматындағы препарат.',
+      kicker: 'Урология',
+      badge1: 'Таблеткалар',
+      badge2: '20 мг',
+      badge3: '18+',
+      facts: ['20 мг', '20 таблетка', '18+'],
+      buy: 'Витапрост өнімін Қазақстандағы STADA дәріхана серіктестерінен табуға болады.',
+      copy: {
+        overview_label: 'Өнім туралы',
+        overview_heading: 'Таблетка форматындағы урологиялық препарат',
+        overview_intro: 'Бет сабырлы медициналық стильде жасалған: қаптама, дозировка, формат және маман тағайындауына сай жауапты қолдану бөлек көрсетілген.',
+        card_strength_title: '20 мг',
+        card_strength_text: 'Дозировка өнім карточкасында жеке факт ретінде көрсетілген.',
+        card_active_title: 'Белсенді компонент',
+        card_active_text: 'Құрам мен дозировканы препарат нұсқаулығымен салыстыру қажет.',
+        card_daily_title: 'Қолдану',
+        card_daily_text: 'Қолдану нұсқаулық пен маман ұсынымына сәйкес анықталады.',
+        card_storage_title: 'Жауапты қабылдау',
+        card_storage_text: 'Өзін-өзі емдемей, маман кеңесін сақтау маңызды.',
+        formula_label: 'Формула',
+        formula_heading: 'Белсенді компонент, формат және жас шектеулері',
+        formula_intro: 'Карточкалар препарат туралы негізгі практикалық ақпаратты бөлек көрсетеді.',
+        formula_active_title: 'Белсенді компонент',
+        formula_active_text: 'Құрам мен дозировканы препарат нұсқаулығымен салыстыру қажет.',
+        formula_age_title: '18+',
+        formula_age_text: 'Препарат нұсқаулыққа сай ересектерге арналған.',
+        formula_format_title: '20 таблетка',
+        formula_format_text: 'Қаптама форматы негізгі практикалық акцент ретінде көрсетілген.',
+        usage_label: 'Қашан қолданылады',
+        usage_heading: 'Урологияда маман тағайындауына сай',
+        usage_prostatitis_title: 'Созылмалы простатит',
+        usage_prostatitis_text: 'Қолдану нұсқаулықпен және дәрігер тағайындауымен анықталады.',
+        usage_bph_title: 'Урологиялық жағдайлар',
+        usage_bph_text: 'Препаратты тек нұсқаулыққа және маман ұсынымына сай қолданыңыз.',
+        usage_surgery_title: 'Араласудан кейін',
+        usage_surgery_text: 'Процедуралардан кейін қолдану қажеттілігін дәрігер анықтайды.',
+        note_title: 'Маңызды',
+        note_text: 'Беттегі ақпарат дәрігер кеңесін алмастырмайды. Қолданар алдында нұсқаулықпен танысыңыз.',
+        benefit1: 'Өнімнің урологиялық профилі сабырлы және жарнамалық асыра сілтеусіз белгіленген.',
+        benefit2: 'Таблетка форматы, дозировка және жас шектеуі жеке фактілерге шығарылған.',
+        benefit3: 'Қолдану сценарийлері маман тағайындауымен және нұсқаулықпен байланыстырылған.',
+        benefit4: 'Бет медициналық тонды сақтап, сатып алу орындарына тез өтуге көмектеседі.'
+      }
+    }
+  }
+};
+
+Object.assign(productFallbacks.ru, productCopyOverrides.ru);
+Object.assign(productFallbacks.kz, productCopyOverrides.kz);
+
+function getProductFallback(lang, key) {
+  const dictionary = productFallbacks[lang] || productFallbacks.ru;
+  if (dictionary[key]) return dictionary[key];
+
+  const prefixes = Object.keys(productFallbacks.ru)
+    .filter(item => item.startsWith('product_'))
+    .sort((a, b) => b.length - a.length);
+  const prefix = prefixes.find(item => key === `${item}_name` || key.startsWith(`${item}_`));
+  if (!prefix) return '';
+
+  const data = dictionary[prefix] || productFallbacks.ru[prefix];
+  const suffix = key.slice(prefix.length + 1);
+  if (data.copy && data.copy[suffix]) return data.copy[suffix];
+  const facts = data.facts || [];
+  const firstFact = facts[0] || data.name;
+  const secondFact = facts[1] || data.name;
+  const thirdFact = facts[2] || data.name;
+
+  const suffixMap = {
+    name: data.name,
+    page_title: data.title,
+    page_desc: data.desc,
+    kicker: data.kicker,
+    buy_intro: data.buy,
+    badge_adults: data.badge1,
+    badge_active: data.badge1,
+    badge_age: data.badge3,
+    badge_antistress: data.badge2,
+    badge_course: data.badge3,
+    badge_daily: data.badge3,
+    badge_format: data.badge3,
+    badge_formula: data.badge2,
+    badge_immune: data.badge2,
+    metric_age: thirdFact,
+    metric_beta: thirdFact,
+    metric_count: thirdFact,
+    metric_daily: thirdFact,
+    metric_magnesium: firstFact,
+    metric_minerals: secondFact,
+    metric_pack: thirdFact,
+    metric_strength: firstFact,
+    metric_vitamin: firstFact,
+    metric_vitamins: firstFact,
+    metric_volume: thirdFact,
+    overview_label: 'О продукте',
+    overview_heading: `${data.name}: ключевые свойства`,
+    overview_intro: data.desc,
+    formula_label: 'Формула',
+    formula_heading: `Состав и формат ${data.name}`,
+    formula_intro: 'Карточки выделяют основные компоненты, форму выпуска и правила ответственного применения.',
+    usage_label: 'Когда применяют',
+    usage_heading: `Применение ${data.name} согласно инструкции`,
+    note_title: 'Важно',
+    note_text: 'Перед применением ознакомьтесь с инструкцией и проконсультируйтесь со специалистом.',
+    card_vitamins_title: firstFact,
+    card_minerals_title: secondFact,
+    card_beta_title: thirdFact,
+    card_adults_title: 'Ответственный прием',
+    card_vitamin_title: firstFact,
+    card_age_title: thirdFact,
+    card_volume_title: thirdFact,
+    card_magnesium_title: firstFact,
+    card_b6_title: secondFact,
+    card_format_title: thirdFact,
+    card_antistress_title: 'Ежедневная поддержка',
+    card_action_title: 'Действующее вещество',
+    card_daily_title: 'Удобный прием',
+    card_strength_title: firstFact,
+    card_pack_title: thirdFact,
+    card_active_title: 'Активный компонент',
+    card_storage_title: 'Хранение',
+    formula_vitamins_text: `${firstFact} в составе продукта поддерживает ежедневный рацион.`,
+    formula_minerals_text: `${secondFact} дополняет формулу продукта.`,
+    formula_beta_text: `${thirdFact} подчеркивает формат продукта.`,
+    formula_extracts_text: 'Компоненты формулы подобраны для ежедневной поддержки.',
+    formula_vitamin_text: `${firstFact} является важной частью формулы.`,
+    formula_magnesium_title: firstFact,
+    formula_magnesium_text: `${firstFact} помогает поддерживать нормальную работу организма.`,
+    formula_b6_title: secondFact,
+    formula_b6_text: `${secondFact} дополняет основной компонент.`,
+    formula_format_title: thirdFact,
+    formula_format_text: `${thirdFact} вынесено как удобный формат упаковки.`,
+    formula_active_title: 'Активный компонент',
+    formula_active_text: 'Активный компонент указан в инструкции к препарату.',
+    formula_symptoms_title: 'Симптомы аллергии',
+    formula_symptoms_text: 'Применяется для облегчения симптомов аллергии согласно инструкции.',
+    formula_age_title: 'Возраст',
+    formula_age_text: 'Возрастные ограничения необходимо сверять с инструкцией.',
+    usage_season_title: 'В сезон повышенной нагрузки',
+    usage_season_text: 'Подходит как часть ежедневной поддержки согласно инструкции.',
+    usage_recovery_title: 'Во время восстановления',
+    usage_recovery_text: 'Может быть актуален при восстановлении ресурсов организма.',
+    usage_daily_title: 'Ежедневный ритм',
+    usage_daily_text: 'Удобен для регулярного приема согласно инструкции.',
+    usage_stress_title: 'При нагрузках',
+    usage_stress_text: 'Поддерживает организм в периоды повышенной нагрузки.',
+    usage_sleep_title: 'Для режима',
+    usage_sleep_text: 'Компоненты формулы помогают поддерживать нормальную работу нервной системы.',
+    usage_seasonal_title: 'Сезонная аллергия',
+    usage_seasonal_text: 'Применяется для облегчения симптомов сезонного аллергического ринита.',
+    usage_yearround_title: 'Круглогодичные симптомы',
+    usage_yearround_text: 'Может применяться при аллергических симптомах согласно инструкции.',
+    usage_skin_title: 'Кожные проявления',
+    usage_skin_text: 'Применяется при симптомах крапивницы согласно инструкции.',
+    usage_rhinitis_title: 'Аллергический ринит',
+    usage_rhinitis_text: 'Помогает облегчать назальные симптомы аллергии согласно инструкции.',
+    usage_conjunctivitis_title: 'Аллергический конъюнктивит',
+    usage_conjunctivitis_text: 'Помогает облегчать глазные симптомы аллергии согласно инструкции.',
+    usage_prostatitis_title: 'Хронический простатит',
+    usage_prostatitis_text: 'Применение определяется инструкцией и назначением специалиста.',
+    usage_bph_title: 'Урологические состояния',
+    usage_bph_text: 'Используйте препарат только согласно инструкции и назначению специалиста.',
+    usage_surgery_title: 'После вмешательств',
+    usage_surgery_text: 'Необходимость применения определяет врач.'
+  };
+
+  if (suffixMap[suffix]) return suffixMap[suffix];
+  if (suffix.startsWith('benefit')) return '';
+  if (suffix.endsWith('_text')) return 'Информация представлена для ознакомления; перед применением сверяйтесь с инструкцией.';
+  if (suffix.endsWith('_title')) return data.name;
+  return '';
+}
 
 // Helper to update all elements with data-i18n-key
 function updateLanguage(lang) {
@@ -1366,9 +2876,13 @@ function updateLanguage(lang) {
   const elements = document.querySelectorAll('[data-i18n-key]');
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n-key');
-    const translation = translations[lang][key];
+    const translation = translations[lang][key] || getProductFallback(lang, key);
     if (translation) {
       el.textContent = translation;
+      el.hidden = false;
+    } else if (el.closest('.benefits-list')) {
+      el.textContent = '';
+      el.hidden = true;
     }
   });
   // Highlight the active language option in the custom toggle.  Each
@@ -1378,8 +2892,14 @@ function updateLanguage(lang) {
   // applying the redesign) we leave it untouched.
   const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
   if (langOptions.length) {
+    const langToggle = document.querySelector('.lang-toggle');
+    if (langToggle) {
+      langToggle.dataset.activeLang = lang;
+    }
     langOptions.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
     });
   } else {
     // Fallback: update the text of the single toggle button to reflect
@@ -1485,6 +3005,7 @@ function initHeroCarousel() {
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle('is-active', slideIndex === activeIndex);
     });
+    carousel.classList.toggle('hero-carousel--awards-active', slides[activeIndex].classList.contains('hero-carousel-slide--awards'));
     dots.forEach((dot, dotIndex) => {
       const isActive = dotIndex === activeIndex;
       dot.classList.toggle('is-active', isActive);
@@ -1744,6 +3265,10 @@ function initProductCatalogFilters() {
         const isVisible = activeFilter === 'all' || categories.includes(activeFilter);
         card.hidden = !isVisible;
         card.setAttribute('aria-hidden', String(!isVisible));
+        if (isVisible && card.classList.contains('home-reveal')) {
+          card.classList.remove('is-visible');
+          requestAnimationFrame(() => card.classList.add('is-visible'));
+        }
       });
     });
   });
@@ -1797,6 +3322,292 @@ function initProductDetailPage() {
   });
 }
 
+function initVitrumFizzyHeroLevitation() {
+  const configs = [
+    {
+      pageSelector: '.product-vitrum-vitamin-c-page',
+      heroSelector: '.product-hero--vitrum-vitamin-c',
+      duration: 1420,
+      lift: 6,
+      shadowBase: 0.72
+    },
+    {
+      pageSelector: '.product-vitrum-energy-page',
+      heroSelector: '.product-hero--vitrum-energy',
+      duration: 1460,
+      lift: 7,
+      shadowBase: 0.72
+    },
+    {
+      pageSelector: '.product-vitrum-fizzy-page',
+      heroSelector: '.product-hero--vitrum-fizzy',
+      duration: 1400,
+      lift: 6,
+      shadowBase: 0.74
+    }
+  ];
+
+  const config = configs.find(item => document.querySelector(item.pageSelector));
+  if (!config) return;
+
+  const page = document.querySelector(config.pageSelector);
+  const hero = page.querySelector(config.heroSelector);
+  const packshot = hero?.querySelector('.product-hero-packshot');
+  const heroImage = hero?.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--vitrum-fizzy-hero-float-y', '0px');
+    heroImage.style.setProperty('--vitrum-fizzy-hero-shadow-opacity', config.shadowBase.toFixed(2));
+    heroImage.style.setProperty('--vitrum-fizzy-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    return;
+  }
+
+  let animationFrame = 0;
+  let isVisible = true;
+
+  const renderFrame = time => {
+    if (!isVisible || document.hidden) {
+      animationFrame = 0;
+      resetHero();
+      return;
+    }
+
+    const phase = Math.sin(time / config.duration);
+    const progress = (phase + 1) / 2;
+    const lift = progress * -config.lift;
+    const shadowScaleX = 1 - progress * 0.05;
+    const shadowScaleY = 1 - progress * 0.09;
+    const shadowOpacity = config.shadowBase - progress * 0.1;
+
+    packshot.style.setProperty('--vitrum-fizzy-hero-float-y', `${lift.toFixed(2)}px`);
+    heroImage.style.setProperty('--vitrum-fizzy-hero-shadow-opacity', shadowOpacity.toFixed(3));
+    heroImage.style.setProperty('--vitrum-fizzy-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && isVisible && !document.hidden) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stop = () => {
+    if (animationFrame) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+    }
+    resetHero();
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) start();
+        else stop();
+      });
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  resetHero();
+  start();
+}
+
+function initHomeScrollReveal() {
+  const page = document.querySelector('.home-main');
+  if (!page) return;
+
+  const revealGroups = [
+    ['.about-copy', 'home-reveal--left'],
+    ['.about-stats', 'home-reveal--right'],
+    ['.about-values li', 'home-reveal--scale'],
+    ['.news-section .section-header', 'home-reveal'],
+    ['.news-card', 'home-reveal--scale'],
+    ['.career-media', 'home-reveal--left'],
+    ['.career-content', 'home-reveal--right'],
+    ['.career-fact', 'home-reveal--scale'],
+    ['.hero-products-text', 'home-reveal--left'],
+    ['.hero-products-image', 'home-reveal--right'],
+    ['.products-highlight', 'home-reveal--scale'],
+    ['.product-preview-header', 'home-reveal'],
+    ['.product-preview-card', 'home-reveal--scale'],
+    ['.site-footer .footer-brand', 'home-reveal--left'],
+    ['.site-footer .footer-nav__group', 'home-reveal'],
+    ['.site-footer .footer-warning', 'home-reveal--scale']
+  ];
+
+  const revealItems = [];
+  revealGroups.forEach(([selector, variant]) => {
+    document.querySelectorAll(selector).forEach((item, index) => {
+      if (item.classList.contains('home-reveal')) return;
+      item.classList.add('home-reveal', variant);
+      item.style.setProperty('--home-reveal-delay', `${Math.min(index, 5) * 70}ms`);
+      revealItems.push(item);
+    });
+  });
+
+  if (!revealItems.length) return;
+
+  const showPassedItems = () => {
+    revealItems.forEach(item => {
+      if (item.classList.contains('is-visible')) return;
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        item.classList.add('is-visible');
+      }
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || typeof IntersectionObserver === 'undefined') {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+  showPassedItems();
+  window.addEventListener('scroll', showPassedItems, { passive: true });
+  window.addEventListener('resize', showPassedItems);
+}
+
+function initProductsScrollReveal() {
+  const page = document.querySelector('.products-page');
+  if (!page) return;
+
+  const revealGroups = [
+    ['.catalog-hero__content', 'home-reveal--left'],
+    ['.catalog-hero__visual', 'home-reveal--right'],
+    ['.catalog-metric', 'home-reveal--scale'],
+    ['.catalog-section__header', 'home-reveal'],
+    ['.catalog-filter', 'home-reveal'],
+    ['.catalog-card', 'home-reveal--scale'],
+    ['.catalog-partners__copy', 'home-reveal--left'],
+    ['.catalog-partner', 'home-reveal--scale'],
+    ['.site-footer .footer-brand', 'home-reveal--left'],
+    ['.site-footer .footer-nav__group', 'home-reveal'],
+    ['.site-footer .footer-warning', 'home-reveal--scale']
+  ];
+
+  const revealItems = [];
+  revealGroups.forEach(([selector, variant]) => {
+    document.querySelectorAll(selector).forEach((item, index) => {
+      if (item.classList.contains('home-reveal')) return;
+      item.classList.add('home-reveal', variant);
+      item.style.setProperty('--home-reveal-delay', `${Math.min(index, 6) * 65}ms`);
+      revealItems.push(item);
+    });
+  });
+
+  if (!revealItems.length) return;
+
+  const showPassedItems = () => {
+    revealItems.forEach(item => {
+      if (item.classList.contains('is-visible')) return;
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        item.classList.add('is-visible');
+      }
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || typeof IntersectionObserver === 'undefined') {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+  showPassedItems();
+  window.addEventListener('scroll', showPassedItems, { passive: true });
+  window.addEventListener('resize', showPassedItems);
+}
+
+function initHistoryScrollReveal() {
+  const page = document.querySelector('.history-page');
+  if (!page) return;
+
+  const revealGroups = [
+    ['.history-hero__content', 'home-reveal--left'],
+    ['.history-hero__visual', 'home-reveal--right'],
+    ['.history-summary-card', 'home-reveal--scale'],
+    ['.history-periods__inner', 'home-reveal'],
+    ['.history-section-heading', 'home-reveal'],
+    ['.history-period__header', 'home-reveal--left'],
+    ['.history-event', 'home-reveal--scale'],
+    ['.site-footer .footer-brand', 'home-reveal--left'],
+    ['.site-footer .footer-nav__group', 'home-reveal'],
+    ['.site-footer .footer-warning', 'home-reveal--scale']
+  ];
+
+  const revealItems = [];
+  revealGroups.forEach(([selector, variant]) => {
+    document.querySelectorAll(selector).forEach((item, index) => {
+      if (item.classList.contains('home-reveal')) return;
+      item.classList.add('home-reveal', variant);
+      item.style.setProperty('--home-reveal-delay', `${Math.min(index, 6) * 65}ms`);
+      revealItems.push(item);
+    });
+  });
+
+  if (!revealItems.length) return;
+
+  const showPassedItems = () => {
+    revealItems.forEach(item => {
+      if (item.classList.contains('is-visible')) return;
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        item.classList.add('is-visible');
+      }
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || typeof IntersectionObserver === 'undefined') {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+  showPassedItems();
+  window.addEventListener('scroll', showPassedItems, { passive: true });
+  window.addEventListener('resize', showPassedItems);
+}
+
 function initMagneHeroLevitation() {
   const page = document.querySelector('.product-magne-page');
   if (!page) return;
@@ -1825,11 +3636,964 @@ function initMagneHeroLevitation() {
   observer.observe(hero);
 }
 
+function initEnterogerminaCapsulesHeroLevitation() {
+  const page = document.querySelector('.product-enterogermina-capsules-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--enterogermina-capsules');
+  const packshot = page.querySelector('.enterogermina-capsules-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    packshot.style.setProperty('--enterogermina-capsules-hero-float-y', '0px');
+    heroImage.style.setProperty('--enterogermina-capsules-hero-shadow-opacity', '0.76');
+    heroImage.style.setProperty('--enterogermina-capsules-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('enterogermina-capsules-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initEnterogerminaForteHeroLevitation() {
+  const page = document.querySelector('.product-enterogermina-forte-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--enterogermina-forte');
+  const packshot = page.querySelector('.enterogermina-forte-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    packshot.style.setProperty('--enterogermina-forte-hero-float-y', '0px');
+    heroImage.style.setProperty('--enterogermina-forte-hero-shadow-opacity', '0.72');
+    heroImage.style.setProperty('--enterogermina-forte-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('enterogermina-forte-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initAqualorForteHeroLevitation() {
+  const page = document.querySelector('.product-aqualor-forte-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--aqualor-forte');
+  const packshot = page.querySelector('.aqualor-forte-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--aqualor-hero-shadow-opacity', '0.68');
+    heroImage.style.setProperty('--aqualor-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('aqualor-forte-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initAqualorBabyHeroLevitation() {
+  const page = document.querySelector('.product-aqualor-baby-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--aqualor-baby');
+  const packshot = page.querySelector('.aqualor-baby-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--aqualor-hero-shadow-opacity', '0.7');
+    heroImage.style.setProperty('--aqualor-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('aqualor-baby-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initAqualorGorloHeroLevitation() {
+  const page = document.querySelector('.product-aqualor-gorlo-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--aqualor-gorlo');
+  const packshot = page.querySelector('.aqualor-gorlo-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--aqualor-hero-shadow-opacity', '0.68');
+    heroImage.style.setProperty('--aqualor-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('aqualor-gorlo-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initAqualorSoftHeroLevitation() {
+  const page = document.querySelector('.product-aqualor-soft-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--aqualor-soft');
+  const packshot = page.querySelector('.aqualor-soft-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--aqualor-hero-shadow-opacity', '0.7');
+    heroImage.style.setProperty('--aqualor-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('aqualor-soft-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initAqualorSoftMiniHeroLevitation() {
+  const page = document.querySelector('.product-aqualor-soft-mini-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--aqualor-soft-mini');
+  const packshot = page.querySelector('.aqualor-soft-mini-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--aqualor-hero-shadow-opacity', '0.7');
+    heroImage.style.setProperty('--aqualor-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('aqualor-soft-mini-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initNizoralHeroLevitation() {
+  const page = document.querySelector('.product-nizoral-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--nizoral');
+  const packshot = page.querySelector('.nizoral-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    heroImage.style.setProperty('--nizoral-hero-shadow-opacity', '0.7');
+    heroImage.style.setProperty('--nizoral-hero-shadow-transform', 'scale3d(1, 1, 1)');
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      page.classList.toggle('nizoral-hero-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0.08 });
+
+  observer.observe(hero);
+}
+
+function initFemilexHeroLevitation() {
+  const page = document.querySelector('.product-femilex-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--femilex');
+  const packshot = page.querySelector('.femilex-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--femilex-hero-float-y', '0px');
+    heroImage.style.setProperty('--femilex-hero-shadow-opacity', '0.78');
+    heroImage.style.setProperty('--femilex-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    return;
+  }
+
+  let animationFrame = 0;
+  let isVisible = true;
+
+  const renderFrame = time => {
+    if (!isVisible || document.hidden) {
+      animationFrame = 0;
+      resetHero();
+      return;
+    }
+
+    const phase = Math.sin(time / 1350);
+    const lift = ((phase + 1) / 2) * -7;
+    const shadowScaleX = 1 - ((phase + 1) / 2) * 0.055;
+    const shadowScaleY = 1 - ((phase + 1) / 2) * 0.1;
+    const shadowOpacity = 0.78 - ((phase + 1) / 2) * 0.12;
+
+    packshot.style.setProperty('--femilex-hero-float-y', `${lift.toFixed(2)}px`);
+    heroImage.style.setProperty('--femilex-hero-shadow-opacity', shadowOpacity.toFixed(3));
+    heroImage.style.setProperty('--femilex-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && isVisible && !document.hidden) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stop = () => {
+    if (animationFrame) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+    }
+    resetHero();
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) start();
+        else stop();
+      });
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  start();
+}
+
+function initNoshpaForteLevitation() {
+  const page = document.querySelector('.product-noshpa-forte-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--noshpa-forte');
+  const packshot = page.querySelector('.noshpa-forte-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.noshpa-forte-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.noshpa-forte-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--noshpa-forte-hero-float-y', '0px');
+    heroImage.style.setProperty('--noshpa-forte-hero-shadow-opacity', '0.74');
+    heroImage.style.setProperty('--noshpa-forte-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--noshpa-forte-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1400);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.74 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--noshpa-forte-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--noshpa-forte-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--noshpa-forte-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1250 + index * 0.86);
+        card.style.setProperty('--noshpa-forte-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopIfIdle();
+    } else {
+      start();
+    }
+  });
+
+  start();
+}
+
+function initGecsikonLevitation() {
+  const page = document.querySelector('.product-gecsikon-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--gecsikon');
+  const packshot = page.querySelector('.gecsikon-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.gecsikon-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.gecsikon-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--gecsikon-hero-float-y', '0px');
+    heroImage.style.setProperty('--gecsikon-hero-shadow-opacity', '0.72');
+    heroImage.style.setProperty('--gecsikon-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--gecsikon-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1380);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.72 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--gecsikon-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--gecsikon-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--gecsikon-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1260 + index * 0.84);
+        card.style.setProperty('--gecsikon-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopIfIdle();
+    } else {
+      start();
+    }
+  });
+
+  start();
+}
+
+function initTerginanLevitation() {
+  const page = document.querySelector('.product-terginan-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--terginan');
+  const packshot = page.querySelector('.terginan-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.terginan-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.terginan-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--terginan-hero-float-y', '0px');
+    heroImage.style.setProperty('--terginan-hero-shadow-opacity', '0.74');
+    heroImage.style.setProperty('--terginan-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--terginan-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1380);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.74 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--terginan-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--terginan-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--terginan-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1260 + index * 0.84);
+        card.style.setProperty('--terginan-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopIfIdle();
+    else start();
+  });
+
+  start();
+}
+
+function initKlopidogrelTevaLevitation() {
+  const page = document.querySelector('.product-klopidogrel-teva-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--klopidogrel-teva');
+  const packshot = page.querySelector('.klopidogrel-teva-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.klopidogrel-teva-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.klopidogrel-teva-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--klopidogrel-teva-hero-float-y', '0px');
+    heroImage.style.setProperty('--klopidogrel-teva-hero-shadow-opacity', '0.74');
+    heroImage.style.setProperty('--klopidogrel-teva-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--klopidogrel-teva-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1380);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.74 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--klopidogrel-teva-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--klopidogrel-teva-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--klopidogrel-teva-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1260 + index * 0.84);
+        card.style.setProperty('--klopidogrel-teva-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopIfIdle();
+    } else {
+      start();
+    }
+  });
+
+  start();
+}
+
+function initLizobaktLevitation() {
+  const page = document.querySelector('.product-lizobakt-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--lizobakt');
+  const packshot = page.querySelector('.lizobakt-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.lizobakt-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.lizobakt-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--lizobakt-hero-float-y', '0px');
+    heroImage.style.setProperty('--lizobakt-hero-shadow-opacity', '0.74');
+    heroImage.style.setProperty('--lizobakt-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--lizobakt-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1380);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.74 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--lizobakt-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--lizobakt-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--lizobakt-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1260 + index * 0.84);
+        card.style.setProperty('--lizobakt-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopIfIdle();
+    } else {
+      start();
+    }
+  });
+
+  start();
+}
+
+function initFaringoseptLevitation() {
+  const page = document.querySelector('.product-faringosept-page');
+  if (!page) return;
+
+  const hero = page.querySelector('.product-hero--faringosept');
+  const packshot = page.querySelector('.faringosept-hero-packshot');
+  const heroImage = page.querySelector('.product-hero-image');
+  const formula = page.querySelector('.faringosept-formula-system');
+  const formulaCards = Array.from(page.querySelectorAll('.faringosept-formula-point'));
+  if (!hero || !packshot || !heroImage) return;
+
+  const resetHero = () => {
+    packshot.style.setProperty('--faringosept-hero-float-y', '0px');
+    heroImage.style.setProperty('--faringosept-hero-shadow-opacity', '0.74');
+    heroImage.style.setProperty('--faringosept-hero-shadow-transform', 'scale3d(1, 1, 1)');
+  };
+
+  const resetFormula = () => {
+    formulaCards.forEach(card => {
+      card.style.setProperty('--faringosept-formula-card-y', '0px');
+    });
+  };
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    resetHero();
+    resetFormula();
+    return;
+  }
+
+  let animationFrame = 0;
+  let heroVisible = true;
+  let formulaVisible = !!formula;
+
+  const renderFrame = time => {
+    if (document.hidden || (!heroVisible && !formulaVisible)) {
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+      return;
+    }
+
+    if (heroVisible) {
+      const phase = Math.sin(time / 1380);
+      const liftProgress = (phase + 1) / 2;
+      const lift = liftProgress * -6;
+      const shadowScaleX = 1 - liftProgress * 0.05;
+      const shadowScaleY = 1 - liftProgress * 0.08;
+      const shadowOpacity = 0.74 - liftProgress * 0.1;
+
+      packshot.style.setProperty('--faringosept-hero-float-y', `${lift.toFixed(2)}px`);
+      heroImage.style.setProperty('--faringosept-hero-shadow-opacity', shadowOpacity.toFixed(3));
+      heroImage.style.setProperty('--faringosept-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
+    } else {
+      resetHero();
+    }
+
+    if (formulaVisible) {
+      formulaCards.forEach((card, index) => {
+        const cardPhase = Math.sin(time / 1260 + index * 0.84);
+        card.style.setProperty('--faringosept-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
+      });
+    } else {
+      resetFormula();
+    }
+
+    animationFrame = window.requestAnimationFrame(renderFrame);
+  };
+
+  const start = () => {
+    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
+      animationFrame = window.requestAnimationFrame(renderFrame);
+    }
+  };
+
+  const stopIfIdle = () => {
+    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+      resetHero();
+      resetFormula();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === formula) formulaVisible = entry.isIntersecting;
+      });
+      stopIfIdle();
+      start();
+    }, { threshold: 0.08 });
+
+    observer.observe(hero);
+    if (formula) observer.observe(formula);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopIfIdle();
+    } else {
+      start();
+    }
+  });
+
+  start();
+}
+
 // Highlight the current navigation link as its section enters the viewport
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.menu a');
   if (!sections.length || !navLinks.length) return;
+  if (document.body.classList.contains('history-page')) {
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === 'history.html');
+    });
+    return;
+  }
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
@@ -1928,6 +4692,112 @@ function setYear() {
   }
 }
 
+function initHistoryTimelineMedia() {
+  if (!document.body.classList.contains('history-page')) return;
+
+  const periodImages = {
+    'period-1895': 'assets/history/period-1895-1933.jpg',
+    'period-1933': 'assets/history/period-1933-1948.jpg',
+    'period-1948': 'assets/history/period-1948-1961.jpg',
+    'period-1961': 'assets/history/period-1961-1975.jpg',
+    'period-1975': 'assets/history/period-1975-1993.png',
+    'period-1993': 'assets/history/period-1993-2000.jpg',
+    'period-2000': 'assets/history/period-2000-2005.png',
+    'period-2005': 'assets/history/period-2005-2010.jpg',
+    'period-2010': 'assets/history/period-2010-2015.jpg',
+    'period-2016': 'assets/history/2019.jpg'
+  };
+
+  const eventImages = {
+    '1895': 'assets/history/1895.jpg',
+    '1903': 'assets/history/1903.jpg',
+    '1908': 'assets/history/1908.jpg',
+    '1933': 'assets/history/1933.jpg',
+    '1935': 'assets/history/1935.jpg',
+    '1938': 'assets/history/1938.jpg',
+    '1948': 'assets/history/1948.jpg',
+    '1954': 'assets/history/1954.jpg',
+    '1957': 'assets/history/1957.jpg',
+    '1961': 'assets/history/1961.jpg',
+    '1970': 'assets/history/1970.jpg',
+    '1971': 'assets/history/1971.jpg',
+    '1975': 'assets/history/1975.jpg',
+    '1986': 'assets/history/1986.png',
+    '1992': 'assets/history/1992.png',
+    '1993': 'assets/history/1993.png',
+    '1995': 'assets/history/1995.jpg',
+    '1996': 'assets/history/1996.jpg',
+    '1997': 'assets/history/1997.jpg',
+    '1998': 'assets/history/1998.jpg',
+    '1999': 'assets/history/1999.jpg',
+    '2000': 'assets/history/2000.jpg',
+    '2001': 'assets/history/2001.jpg',
+    '2002': 'assets/history/2002.png',
+    '2003': 'assets/history/2003.png',
+    '2004': 'assets/history/2004.png',
+    '2005': 'assets/history/2005.jpg',
+    '2006': 'assets/history/2006.jpg',
+    '2007': 'assets/history/2007.jpg',
+    '2008': 'assets/history/2008.jpg',
+    '2010': 'assets/history/2010.png',
+    '2011': 'assets/history/2011.png',
+    '2012': 'assets/history/2012.png',
+    '2013': 'assets/history/2013.jpg',
+    '2014': 'assets/history/2014.jpg',
+    '2015': 'assets/history/2015.jpg',
+    '2016': 'assets/history/2016.jpg',
+    '2017': 'assets/history/2017.jpg',
+    '2018': 'assets/history/2018.jpg',
+    '2019': 'assets/history/2019.jpg',
+    '2020': 'assets/history/2020.jpg',
+    '2021': 'assets/history/2021.jpg',
+    '2022': 'assets/history/2022.png'
+  };
+
+  const summaryImages = {
+    '1895': 'assets/history/period-1895-1933.jpg',
+    '1975': 'assets/history/period-1975-1993.png',
+    '1997': 'assets/history/1997.jpg',
+    '2022': 'assets/history/2022.png'
+  };
+
+  document.querySelectorAll('.history-summary-card').forEach(card => {
+    const year = card.querySelector('span')?.textContent.trim();
+    const src = summaryImages[year];
+    if (!src || card.querySelector('.history-summary-card__media')) return;
+
+    const title = card.querySelector('h2')?.textContent.trim() || `STADA ${year}`;
+    const figure = document.createElement('figure');
+    figure.className = 'history-summary-card__media';
+    figure.innerHTML = `<img src="${src}" alt="${title}" loading="lazy">`;
+    card.insertBefore(figure, card.firstElementChild);
+  });
+
+  document.querySelectorAll('.history-period').forEach(period => {
+    const src = periodImages[period.id];
+    const header = period.querySelector('.history-period__header');
+    if (!src || !header || header.querySelector('.history-period__media')) return;
+
+    const title = header.querySelector('h3')?.textContent.trim() || 'STADA company history';
+    const figure = document.createElement('figure');
+    figure.className = 'history-period__media';
+    figure.innerHTML = `<img src="${src}" alt="${title}" loading="lazy">`;
+    header.insertBefore(figure, header.firstElementChild);
+  });
+
+  document.querySelectorAll('.history-event').forEach(event => {
+    const year = event.querySelector('time')?.textContent.trim();
+    const src = eventImages[year];
+    if (!src || event.querySelector('.history-event__media')) return;
+
+    const title = event.querySelector('h4')?.textContent.trim() || `STADA ${year}`;
+    const figure = document.createElement('figure');
+    figure.className = 'history-event__media';
+    figure.innerHTML = `<img src="${src}" alt="${title}" loading="lazy">`;
+    event.insertBefore(figure, event.firstElementChild);
+  });
+}
+
 // Bind event listeners
 document.addEventListener('DOMContentLoaded', () => {
   // Determine the initial language.  If the user has previously selected
@@ -1942,14 +4812,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Initial language update
   updateLanguage(currentLang);
-  initProductCatalogFilters();
   // Initialise libraries
   initSwiper();
   initAOS();
   // Initialise custom scroll behaviours
   initScrollSpy();
   initScrollEffects();
+  initHomeScrollReveal();
+  initProductsScrollReveal();
   initCounters();
+  initHistoryTimelineMedia();
+  initHistoryScrollReveal();
   setYear();
   // Bind language switcher
   // Prefer the redesigned dual‑button toggle if present.  Each button
@@ -1971,8 +4844,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroMetricCounters();
   initNewsCarousel();
   initProductsCarousel();
+  initProductCatalogFilters();
   initProductDetailPage();
+  initVitrumFizzyHeroLevitation();
   initMagneHeroLevitation();
+  initEnterogerminaCapsulesHeroLevitation();
+  initEnterogerminaForteHeroLevitation();
+  initAqualorForteHeroLevitation();
+  initAqualorBabyHeroLevitation();
+  initAqualorGorloHeroLevitation();
+  initAqualorSoftHeroLevitation();
+  initAqualorSoftMiniHeroLevitation();
+  initNizoralHeroLevitation();
+  initFemilexHeroLevitation();
+  initNoshpaForteLevitation();
+  initGecsikonLevitation();
+  initTerginanLevitation();
+  initKlopidogrelTevaLevitation();
+  initLizobaktLevitation();
+  initFaringoseptLevitation();
   // Bind hamburger menu
   const hamburger = document.querySelector('.hamburger');
   const menu = document.querySelector('.menu');
