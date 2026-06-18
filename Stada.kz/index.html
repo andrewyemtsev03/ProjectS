@@ -35,52 +35,28 @@
     </div>
   </nav>
   <!-- Hero section -->
-  <header class="hero-section">
-    <div class="hero-shell">
-      <div class="hero-content">
-        <p class="hero-eyebrow">STADA Kazakhstan</p>
-        <h1 data-i18n-key="hero_title1"></h1>
-        <p class="hero-lead" data-i18n-key="hero_sub1"></p>
+  <header class="hero-section stada-home-hero">
+    <div class="hero-carousel stada-home-hero__media" data-hero-carousel aria-label="STADA hero news carousel">
+      <div class="hero-carousel-slide is-active" data-caption-key="hero_caption_scientists">
+        <img src="assets/hero/hero-building.png" alt="STADA Kazakhstan team group photo">
       </div>
-      <div class="hero-actions">
-        <a href="#about" class="hero-btn" data-i18n-key="cta_more"></a>
-        <a href="products/index.html" class="hero-btn hero-btn-secondary" data-i18n-key="nav_products"></a>
+      <div class="hero-carousel-slide" data-caption-key="hero_caption_office">
+        <img src="assets/hero/hero-logo-sign.png" alt="STADA production specialists reviewing a tablet">
       </div>
-      <div class="hero-metrics" aria-label="STADA facts">
-        <div class="hero-metric">
-          <strong data-hero-count="130" data-hero-suffix="+">0+</strong>
-          <span data-i18n-key="hero_metric_years"></span>
-        </div>
-        <div class="hero-metric">
-          <strong data-hero-count="100" data-hero-suffix="+">0+</strong>
-          <span data-i18n-key="hero_metric_countries"></span>
-        </div>
-        <div class="hero-metric">
-          <strong data-hero-count="11600" data-hero-suffix="+">0+</strong>
-          <span data-i18n-key="hero_metric_employees"></span>
-        </div>
+      <div class="hero-carousel-slide" data-caption-key="hero_caption_logo">
+        <img src="assets/hero/hero-team.png" alt="STADA team group photo">
       </div>
-      <div class="hero-visual">
-        <div class="hero-carousel" data-hero-carousel>
-          <div class="hero-carousel-slide is-active" data-caption-key="hero_caption_office">
-            <img src="assets/hero/carousel-office.png" alt="STADA Kazakhstan office building">
-          </div>
-          <div class="hero-carousel-slide hero-carousel-slide--awards" data-caption-key="hero_caption_awards">
-            <span class="hero-awards-kicker">Recognition 2025</span>
-            <img class="hero-awards-image" src="assets/hero/awards/esg-recognition-2025.png" alt="STADA ESG Recognition 2025: EcoVadis, Sustainalytics, Carbon Disclosure Project and Top Employer">
-          </div>
-          <div class="hero-carousel-slide" data-caption-key="hero_caption_logo">
-            <img src="assets/hero/carousel-logo-wall.png" alt="STADA logo on a brick wall">
-          </div>
-          <div class="hero-carousel-dots" aria-label="Hero image navigation">
-            <button class="hero-carousel-dot is-active" type="button" data-hero-slide="0" aria-label="Show hero image 1" aria-current="true"></button>
-            <button class="hero-carousel-dot" type="button" data-hero-slide="1" aria-label="Show hero image 2"></button>
-            <button class="hero-carousel-dot" type="button" data-hero-slide="2" aria-label="Show hero image 3"></button>
-          </div>
-        </div>
-        <div class="hero-visual-caption" data-hero-caption data-i18n-key="hero_caption_office"></div>
+      <div class="hero-carousel-dots stada-home-hero__progress" aria-label="Hero image navigation">
+        <button class="hero-carousel-dot is-active" type="button" data-hero-slide="0" aria-label="Show hero image 1" aria-current="true"></button>
+        <button class="hero-carousel-dot" type="button" data-hero-slide="1" aria-label="Show hero image 2"></button>
+        <button class="hero-carousel-dot" type="button" data-hero-slide="2" aria-label="Show hero image 3"></button>
       </div>
     </div>
+    <div class="stada-home-hero__copy">
+      <h1 data-i18n-key="hero_title1"></h1>
+      <a href="#about" class="hero-btn" data-i18n-key="cta_more"></a>
+    </div>
+    <div class="hero-visual-caption" data-hero-caption data-i18n-key="hero_caption_scientists"></div>
   </header>
 
   <main class="home-main">
