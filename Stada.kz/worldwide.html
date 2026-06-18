@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n-key="worldwide_page_title">STADA - Worldwide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css?v=worldwide-9" />
+  </head>
+  <body class="worldwide-page">
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="logo" aria-label="STADA logo">
+          <img src="assets/logos/stada_logo.png" alt="STADA logo" />
+        </a>
+        <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="menu">
+          <li><a href="index.html#about" data-i18n-key="nav_about"></a></li>
+          <li><a href="history.html" data-i18n-key="nav_history"></a></li>
+          <li><a class="active" href="worldwide.html" data-i18n-key="nav_worldwide"></a></li>
+          <li><a href="index.html#news" data-i18n-key="nav_news"></a></li>
+          <li><a href="products/index.html" data-i18n-key="nav_products"></a></li>
+          <li><a href="index.html#career" data-i18n-key="nav_career"></a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="lang-option" id="lang-en" data-lang="en" aria-label="Switch language to English">EN</button>
+          <button class="lang-option" id="lang-ru" data-lang="ru" aria-label="Switch language to Russian">RU</button>
+          <button class="lang-option" id="lang-kz" data-lang="kz" aria-label="Switch language to Kazakh">KZ</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="worldwide-hero" aria-labelledby="worldwide-hero-title">
+        <div class="worldwide-hero__inner">
+          <div class="worldwide-hero__content worldwide-reveal">
+            <p class="worldwide-eyebrow" data-i18n-key="worldwide_eyebrow"></p>
+            <h1 id="worldwide-hero-title" data-i18n-key="worldwide_heading"></h1>
+            <p class="worldwide-hero__subtitle" data-i18n-key="worldwide_subtitle"></p>
+            <p class="worldwide-hero__lead" data-i18n-key="worldwide_lead"></p>
+          </div>
+          <div class="worldwide-hero__stats worldwide-reveal" aria-label="STADA worldwide facts">
+            <div>
+              <strong>100+</strong>
+              <span data-i18n-key="worldwide_stat_countries"></span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span data-i18n-key="worldwide_stat_markets"></span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span data-i18n-key="worldwide_stat_standard"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="worldwide-shell" aria-labelledby="global-presence-title">
+        <div class="worldwide-shell__header worldwide-reveal">
+          <p class="worldwide-eyebrow" data-i18n-key="worldwide_overview_eyebrow"></p>
+          <h2 id="global-presence-title" data-i18n-key="worldwide_overview_heading"></h2>
+          <p data-i18n-key="worldwide_overview_intro"></p>
+        </div>
+
+        <div class="worldwide-layout" data-worldwide-page>
+          <aside class="worldwide-info-column worldwide-reveal" aria-label="Selected country information">
+            <div id="country-info-card" class="country-info-card" aria-live="polite"></div>
+
+            <div class="country-picker" id="country-overview">
+              <label class="country-picker__label" for="country-search" data-i18n-key="worldwide_country_label"></label>
+              <div class="country-picker__search">
+                <span aria-hidden="true"></span>
+                <input id="country-search" type="search" placeholder="Search country" autocomplete="off" data-country-search data-i18n-placeholder-key="worldwide_country_search" />
+              </div>
+              <div class="country-picker__list" data-country-list role="listbox" aria-label="STADA countries"></div>
+            </div>
+          </aside>
+
+          <section class="worldwide-globe-panel worldwide-reveal" aria-label="Interactive STADA globe" data-i18n-aria-label-key="worldwide_globe_label">
+            <div class="globe-card">
+              <div class="globe-card__topline">
+                <span data-i18n-key="worldwide_globe_topline"></span>
+                <strong data-selected-country-label>Kazakhstan</strong>
+              </div>
+              <div class="globe-map" id="stada-globe" data-globe-map>
+                <canvas data-globe-canvas aria-label="Interactive globe with STADA country markers"></canvas>
+                <div class="globe-label-layer" data-globe-labels></div>
+                <div class="globe-fallback" data-globe-fallback>
+                  <strong data-i18n-key="worldwide_globe_fallback_title"></strong>
+                  <span data-i18n-key="worldwide_globe_fallback_text"></span>
+                </div>
+              </div>
+              <div class="globe-card__hint">
+                <span data-i18n-key="worldwide_globe_hint_regions"></span>
+                <span data-i18n-key="worldwide_globe_hint_markets"></span>
+              </div>
+            </div>
+            <div class="creator-badge" aria-label="Creator signature">
+              <span>Made by Oleksandr Melai</span>
+              <span class="creator-badge__separator" aria-hidden="true">→</span>
+              <span class="creator-badge__cta">Hire me 😊</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-container footer-modern">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo" aria-label="STADA logo">
+              <img src="assets/logos/stada_logo.png" alt="STADA logo" />
+            </a>
+            <p class="footer-eyebrow">STADA Kazakhstan</p>
+            <p class="footer-text" data-i18n-key="footer_brand_text"></p>
+            <div class="footer-trust" aria-label="STADA facts">
+              <span data-i18n-key="footer_trust_years"></span>
+              <span data-i18n-key="footer_trust_countries"></span>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-nav__group">
+              <h3 data-i18n-key="footer_company_title"></h3>
+              <a href="index.html#about" data-i18n-key="nav_about"></a>
+              <a href="history.html" data-i18n-key="nav_history"></a>
+              <a href="worldwide.html" data-i18n-key="nav_worldwide"></a>
+              <a href="index.html#news" data-i18n-key="nav_news"></a>
+              <a href="index.html#career" data-i18n-key="nav_career"></a>
+            </div>
+            <div class="footer-nav__group">
+              <h3 data-i18n-key="footer_products_title"></h3>
+              <a href="products/index.html" data-i18n-key="products_browse_catalog"></a>
+              <a href="products/coldrex.html" data-i18n-key="product_coldrex_name"></a>
+              <a href="products/enterogermina.html" data-i18n-key="product_enterogermina_name"></a>
+              <a href="products/vitrum-immunaktiv.html" data-i18n-key="product_vitrum_immunaktiv_name"></a>
+            </div>
+            <div class="footer-nav__group">
+              <h3 data-i18n-key="footer_access_title"></h3>
+              <a href="products/index.html#pharmacy-partners" data-i18n-key="where_to_buy_heading"></a>
+              <a href="products/index.html#products-catalog" data-i18n-key="products_filter_all"></a>
+              <a href="products/index.html#products-catalog" data-i18n-key="products_category_respiratory"></a>
+              <a href="products/index.html#products-catalog" data-i18n-key="products_category_cardio"></a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-warning">
+          <strong data-i18n-key="footer_warning_title"></strong>
+          <p data-i18n-key="footer_warning_text"></p>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> STADA. <span data-i18n-key="footer_rights"></span></p>
+          <div class="footer-bottom__links">
+            <a href="https://www.stada.com" target="_blank" rel="noopener">stada.com</a>
+            <a href="#" class="footer-top" data-i18n-key="footer_back_top" aria-label="Back to top"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/worldwide/worldwide-page.js?v=worldwide-9"></script>
+  </body>
+</html>

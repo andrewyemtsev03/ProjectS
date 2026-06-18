@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STADA – Наши продукты</title>
+    <title data-i18n-key="products_page_meta_title">STADA – Наши продукты</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
@@ -18,13 +18,16 @@
         </button>
         <ul class="menu">
           <li><a href="../index.html#about" data-i18n-key="nav_about"></a></li>
+          <li><a href="../history.html" data-i18n-key="nav_history"></a></li>
+          <li><a href="../worldwide.html" data-i18n-key="nav_worldwide"></a></li>
           <li><a href="../index.html#news" data-i18n-key="nav_news"></a></li>
           <li><a href="index.html" data-i18n-key="nav_products"></a></li>
           <li><a href="../index.html#career" data-i18n-key="nav_career"></a></li>
         </ul>
         <div class="lang-toggle">
-          <button class="lang-option" id="lang-ru" data-lang="ru" aria-label="Переключить язык на русский">RU</button>
-          <button class="lang-option" id="lang-kz" data-lang="kz" aria-label="Переключить язык на казахский">KZ</button>
+          <button class="lang-option" id="lang-en" data-lang="en" aria-label="Switch language to English">EN</button>
+          <button class="lang-option" id="lang-ru" data-lang="ru" aria-label="Switch language to Russian">RU</button>
+          <button class="lang-option" id="lang-kz" data-lang="kz" aria-label="Switch language to Kazakh">KZ</button>
         </div>
       </div>
     </nav>
@@ -42,11 +45,11 @@
             </div>
             <div class="catalog-metrics" aria-label="STADA portfolio facts">
               <div class="catalog-metric">
-                <strong>7</strong>
+                <strong>38</strong>
                 <span data-i18n-key="products_metric_portfolio"></span>
               </div>
               <div class="catalog-metric">
-                <strong>5</strong>
+                <strong>6</strong>
                 <span data-i18n-key="products_metric_areas"></span>
               </div>
               <div class="catalog-metric">
@@ -78,12 +81,18 @@
             <button class="catalog-filter" type="button" data-product-filter="digestive" aria-pressed="false" data-i18n-key="products_category_digestive"></button>
             <button class="catalog-filter" type="button" data-product-filter="kids" aria-pressed="false" data-i18n-key="products_category_kids"></button>
             <button class="catalog-filter" type="button" data-product-filter="cardio" aria-pressed="false" data-i18n-key="products_category_cardio"></button>
+            <button class="catalog-filter" type="button" data-product-filter="allergy" aria-pressed="false" data-i18n-key="products_category_allergy"></button>
+            <button class="catalog-filter" type="button" data-product-filter="urology" aria-pressed="false" data-i18n-key="products_category_urology"></button>
+            <button class="catalog-filter" type="button" data-product-filter="women" aria-pressed="false" data-i18n-key="products_category_women"></button>
           </div>
 
           <div class="catalog-grid" data-product-grid>
+
             <a href="coldrex.html" class="catalog-card" data-product-card data-category="cold" style="--card-accent: #d50058;">
               <div class="catalog-card__media">
-                <img src="../assets/products/Coldrex.png" alt="Coldrex" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/Coldrex.png" alt="Coldrex" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_cold"></span>
@@ -93,9 +102,12 @@
               </div>
             </a>
 
-            <a href="vitrum-immunaktiv.html" class="catalog-card catalog-card--wide" data-product-card data-category="immunity" style="--card-accent: #008a72;">
+
+            <a href="vitrum-immunaktiv.html" class="catalog-card catalog-card--wide catalog-card--vitrum" data-product-card data-category="immunity" style="--card-accent: #008a72;">
               <div class="catalog-card__media">
-                <img src="../assets/products/vitrum-immunaktiv/packshot-60-cropped.png" alt="Vitrum Immunaktiv" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-immunaktiv/packshot-60-cropped.png" alt="Vitrum Immunaktiv" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_immunity"></span>
@@ -105,9 +117,72 @@
               </div>
             </a>
 
+
+            <a href="vitrum-immunactive-fizzy.html" class="catalog-card catalog-card--vitrum-fizzy" data-product-card data-category="immunity" style="--card-accent: #00a878;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-immunactive-fizzy/packshot.png" alt="Vitrum Immunaktiv Fizzy" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_immunity"></span>
+                <h3 data-i18n-key="product_vitrum_fizzy_name"></h3>
+                <p data-i18n-key="product_vitrum_fizzy_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="vitrum-energy.html" class="catalog-card catalog-card--vitrum-energy" data-product-card data-category="immunity" style="--card-accent: #f4a300;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-energy/packshot-transparent.png" alt="Vitrum Energy" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_immunity"></span>
+                <h3 data-i18n-key="product_vitrum_energy_name"></h3>
+                <p data-i18n-key="product_vitrum_energy_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="vitrum-vitamin-c-fizzy.html" class="catalog-card catalog-card--vitrum-vitaminc" data-product-card data-category="immunity cold" style="--card-accent: #ff8a00;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-vitaminc-fizzy/packshot.png" alt="Vitrum Vitamin C 900 mg" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_immunity"></span>
+                <h3 data-i18n-key="product_vitrum_vitaminc_name"></h3>
+                <p data-i18n-key="product_vitrum_vitaminc_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="vitrum-magneb6.html" class="catalog-card catalog-card--vitrum-magneb6" data-product-card data-category="immunity" style="--card-accent: #6f54c7;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-magneb6/packshot.png" alt="Vitrum Magnesium B6" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_immunity"></span>
+                <h3 data-i18n-key="product_vitrum_magneb6_name"></h3>
+                <p data-i18n-key="product_vitrum_magneb6_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
             <a href="magneb6kids.html" class="catalog-card" data-product-card data-category="kids" style="--card-accent: #f2b400;">
               <div class="catalog-card__media">
-                <img src="../assets/products/MagneB6Kids2.png" alt="Magne B6 Kids" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/magneb6kids/kids2-cropped.png" alt="Magne B6 Kids" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_kids"></span>
@@ -117,9 +192,42 @@
               </div>
             </a>
 
+
+            <a href="vitrum-kids-proimmun.html" class="catalog-card catalog-card--vitrum-syrop" data-product-card data-category="kids immunity" style="--card-accent: #2fb56f;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitrum-syrop/packshot.png" alt="Vitrum Kids Proimmun" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_kids"></span>
+                <h3 data-i18n-key="product_vitrum_syrop_name"></h3>
+                <p data-i18n-key="product_vitrum_syrop_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="kamistad-baby.html" class="catalog-card catalog-card--kamistad-baby" data-product-card data-category="kids" style="--card-accent: #d50058;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/kamistad-baby/packshot.png?v=kamistad-baby-detail-1" alt="Камистад Бэби" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_kids"></span>
+                <h3 data-i18n-key="product_kamistad_baby_name"></h3>
+                <p data-i18n-key="product_kamistad_baby_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
             <a href="enterogermina.html" class="catalog-card" data-product-card data-category="digestive" style="--card-accent: #0071ce;">
               <div class="catalog-card__media">
-                <img src="../assets/products/EnterogerminaNew.png" alt="Enterogermina" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/EnterogerminaNew.png" alt="Enterogermina" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
@@ -129,9 +237,312 @@
               </div>
             </a>
 
+
+            <a href="enterogermina-forte.html" class="catalog-card catalog-card--wide catalog-card--enterogermina-forte" data-product-card data-category="digestive" style="--card-accent: #1f9d45;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/enterogermina-forte/catalog-packshot.png" alt="Enterogermina Forte" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
+                <h3 data-i18n-key="product_enterogermina_forte_name"></h3>
+                <p data-i18n-key="product_enterogermina_forte_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="enterogermina-capsules.html" class="catalog-card" data-product-card data-category="digestive" style="--card-accent: #00a651;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/enterogermina-capsules/catalog-packshot.png" alt="Enterogermina capsules" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
+                <h3 data-i18n-key="product_enterogermina_capsules_name"></h3>
+                <p data-i18n-key="product_enterogermina_capsules_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="no-shpa.html" class="catalog-card catalog-card--wide catalog-card--noshpa" data-product-card data-category="digestive" style="--card-accent: #d71920;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/no-shpa/packshot.png?v=noshpa-cutout-1" alt="НО-ШПА" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
+                <h3 data-i18n-key="product_noshpa_name"></h3>
+                <p data-i18n-key="product_noshpa_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="no-shpa-forte.html" class="catalog-card catalog-card--noshpa-forte" data-product-card data-category="digestive" style="--card-accent: #b8241a;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/no-shpa-forte/packshot.png?v=noshpa-forte-packshot-2" alt="НО-ШПА Форте" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
+                <h3 data-i18n-key="product_noshpa_forte_name"></h3>
+                <p data-i18n-key="product_noshpa_forte_catalog_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="essentiale.html" class="catalog-card catalog-card--essentiale" data-product-card data-category="digestive" style="--card-accent: #f4a300;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/essentiale/packshot.png?v=essentiale-detail-1" alt="Эссенциале" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_digestive"></span>
+                <h3 data-i18n-key="product_essentiale_name"></h3>
+                <p data-i18n-key="product_essentiale_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="femilex.html" class="catalog-card catalog-card--wide catalog-card--femilex" data-product-card data-category="women" style="--card-accent: #e1007a;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/femilex/packshot.png?v=femilex-detail-2" alt="Фемилекс" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_women"></span>
+                <h3 data-i18n-key="product_femilex_name"></h3>
+                <p data-i18n-key="product_femilex_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="nizoral.html" class="catalog-card catalog-card--nizoral" data-product-card data-category="digestive" style="--card-accent: #f5c400;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/nizoral/packshot.png?v=nizoral-detail-1" alt="Низорал" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_dermatology"></span>
+                <h3 data-i18n-key="product_nizoral_name"></h3>
+                <p data-i18n-key="product_nizoral_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="nizoral-shampoo.html" class="catalog-card catalog-card--nizoral catalog-card--nizoral-shampoo" data-product-card data-category="digestive" style="--card-accent: #f5c400;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/nizoral-shampoo/packshot.png?v=nizoral-shampoo-detail-1" alt="Низорал шампунь" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_dermatology"></span>
+                <h3 data-i18n-key="product_nizoral_shampoo_name"></h3>
+                <p data-i18n-key="product_nizoral_shampoo_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="psilo-balsam.html" class="catalog-card catalog-card--psilo-balsam" data-product-card data-category="digestive" style="--card-accent: #005bb9;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/psilo-balsam/packshot.png?v=psilo-balsam-detail-1" alt="Псило-бальзам" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_dermatology"></span>
+                <h3 data-i18n-key="product_psilo_balsam_name"></h3>
+                <p data-i18n-key="product_psilo_balsam_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="meloksikam.html" class="catalog-card catalog-card--meloksikam" data-product-card data-category="digestive" style="--card-accent: #174f96;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/maintenance.png" alt="Мелоксикам" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_nsaid"></span>
+                <h3 data-i18n-key="product_meloksikam_name"></h3>
+                <p data-i18n-key="product_meloksikam_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="terginan.html" class="catalog-card catalog-card--terginan" data-product-card data-category="women" style="--card-accent: #1f9be2;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/maintenance.png" alt="Тержинан" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_women"></span>
+                <h3 data-i18n-key="product_terginan_name"></h3>
+                <p data-i18n-key="product_terginan_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="gecsikon.html" class="catalog-card catalog-card--wide catalog-card--gecsikon" data-product-card data-category="women" style="--card-accent: #005ea8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/gecsikon/packshot.png?v=gecsikon-packshot-1" alt="Гексикон" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_women"></span>
+                <h3 data-i18n-key="product_gecsikon_name"></h3>
+                <p data-i18n-key="product_gecsikon_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor.html" class="catalog-card catalog-card--aqualor" data-product-card data-category="cold" style="--card-accent: #00a6c8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/extra-forte-packshot.png?v=aqualor-detail-1" alt="Аквалор" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_name"></h3>
+                <p data-i18n-key="product_aqualor_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="lizobakt.html" class="catalog-card catalog-card--lizobakt" data-product-card data-category="cold" style="--card-accent: #f28a00;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/maintenance.png" alt="Лизобакт" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_lizobakt_name"></h3>
+                <p data-i18n-key="product_lizobakt_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="faringosept.html" class="catalog-card catalog-card--faringosept" data-product-card data-category="cold" style="--card-accent: #0b6f2a;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/maintenance.png" alt="Фарингосепт" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_faringosept_name"></h3>
+                <p data-i18n-key="product_faringosept_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor-forte.html" class="catalog-card catalog-card--aqualor catalog-card--aqualor-forte" data-product-card data-category="cold" style="--card-accent: #00a6c8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/active-forte-packshot.png?v=aqualor-forte-detail-4" alt="Аквалор Актив Форте" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_forte_name"></h3>
+                <p data-i18n-key="product_aqualor_forte_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor-baby.html" class="catalog-card catalog-card--aqualor catalog-card--aqualor-baby" data-product-card data-category="cold kids" style="--card-accent: #00a6c8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/baby-packshot.png?v=aqualor-baby-detail-3" alt="Аквалор Беби" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_baby_name"></h3>
+                <p data-i18n-key="product_aqualor_baby_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor-gorlo.html" class="catalog-card catalog-card--aqualor catalog-card--aqualor-gorlo" data-product-card data-category="cold" style="--card-accent: #d50058;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/gorlo-packshot.png?v=aqualor-gorlo-detail-1" alt="Аквалор Горло спрей" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_gorlo_name"></h3>
+                <p data-i18n-key="product_aqualor_gorlo_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor-soft.html" class="catalog-card catalog-card--aqualor catalog-card--aqualor-soft" data-product-card data-category="cold" style="--card-accent: #00a6c8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/soft-packshot.png?v=aqualor-soft-detail-1" alt="Аквалор Софт" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_soft_name"></h3>
+                <p data-i18n-key="product_aqualor_soft_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="aqualor-soft-mini.html" class="catalog-card catalog-card--aqualor catalog-card--aqualor-soft-mini" data-product-card data-category="cold" style="--card-accent: #00a6c8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/aqualor/soft-mini-packshot.png?v=aqualor-soft-mini-detail-1" alt="Аквалор Софт мини" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
+                <h3 data-i18n-key="product_aqualor_soft_mini_name"></h3>
+                <p data-i18n-key="product_aqualor_soft_mini_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
             <a href="sinulan-duo.html" class="catalog-card" data-product-card data-category="cold immunity" style="--card-accent: #4d8f38;">
               <div class="catalog-card__media">
-                <img src="../assets/products/Sinulan.png" alt="Sinulan Duo" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/Sinulan.png" alt="Sinulan Duo" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_respiratory"></span>
@@ -141,9 +552,12 @@
               </div>
             </a>
 
+
             <a href="snup.html" class="catalog-card" data-product-card data-category="cold" style="--card-accent: #00a3ad;">
               <div class="catalog-card__media">
-                <img src="../assets/products/Snup.png" alt="Snup" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/Snup.png" alt="Snup" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_cold"></span>
@@ -153,14 +567,92 @@
               </div>
             </a>
 
+
+            <a href="zodak.html" class="catalog-card catalog-card--zodak" data-product-card data-category="allergy" style="--card-accent: #2366b8;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/zodak/packshot.png" alt="Zodak tablets" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_allergy"></span>
+                <h3 data-i18n-key="product_zodak_name"></h3>
+                <p data-i18n-key="product_zodak_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="zodak-kapli.html" class="catalog-card catalog-card--zodak-drops" data-product-card data-category="allergy kids" style="--card-accent: #2698d6;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/zodak-kapli/packshot.png" alt="Zodak drops" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_allergy"></span>
+                <h3 data-i18n-key="product_zodak_drops_name"></h3>
+                <p data-i18n-key="product_zodak_drops_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
             <a href="edarbi-klo.html" class="catalog-card" data-product-card data-category="cardio" style="--card-accent: #5f6f89;">
               <div class="catalog-card__media">
-                <img src="../assets/products/UnknownProduct.png" alt="Edarbi Klo" />
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/UnknownProduct.png" alt="Edarbi Klo" />
+                </div>
               </div>
               <div class="catalog-card__body">
                 <span class="catalog-card__category" data-i18n-key="products_category_cardio"></span>
                 <h3 data-i18n-key="product_edarbi_klo_name"></h3>
                 <p data-i18n-key="product_edarbi_klo_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="vitaprost.html" class="catalog-card catalog-card--vitaprost" data-product-card data-category="urology" style="--card-accent: #1f7a62;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/vitaprost/packshot.png" alt="Vitaprost" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_urology"></span>
+                <h3 data-i18n-key="product_vitaprost_name"></h3>
+                <p data-i18n-key="product_vitaprost_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="cardiomagnil.html" class="catalog-card catalog-card--cardiomagnil" data-product-card data-category="cardio" style="--card-accent: #b41523;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/cardiomagnil/packshot.jpg" alt="Кардиомагнил" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_cardio"></span>
+                <h3 data-i18n-key="product_cardiomagnil_name"></h3>
+                <p data-i18n-key="product_cardiomagnil_page_desc"></p>
+                <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
+              </div>
+            </a>
+
+
+            <a href="klopidogrel-teva.html" class="catalog-card catalog-card--wide catalog-card--klopidogrel-teva" data-product-card data-category="cardio" style="--card-accent: #cf1730;">
+              <div class="catalog-card__media">
+                <div class="catalog-card__image-wrap">
+                  <img src="../assets/products/maintenance.png" alt="Клопидогрель-Тева" />
+                </div>
+              </div>
+              <div class="catalog-card__body">
+                <span class="catalog-card__category" data-i18n-key="products_category_cardio"></span>
+                <h3 data-i18n-key="product_klopidogrel_teva_name"></h3>
+                <p data-i18n-key="product_klopidogrel_teva_page_desc"></p>
                 <span class="catalog-card__cta" data-i18n-key="cta_more"></span>
               </div>
             </a>
@@ -176,10 +668,10 @@
             <p data-i18n-key="products_partners_intro"></p>
           </div>
           <div class="catalog-partners__logos" aria-label="Pharmacy partners">
-            <div class="catalog-partner"><img src="../assets/logos/logo_kaspi.png" alt="KASPI" /><span>KASPI</span></div>
-            <div class="catalog-partner"><img src="../assets/logos/logo_biosfera.png" alt="Биосфера" /><span>Биосфера</span></div>
-            <div class="catalog-partner"><img src="../assets/logos/logo_europharma.png" alt="Europharma" /><span>Europharma</span></div>
-            <div class="catalog-partner"><img src="../assets/logos/logo_dobraya.png" alt="Добрая" /><span>Добрая</span></div>
+            <a class="catalog-partner" href="https://kaspi.kz/shop/" target="_blank" rel="noopener noreferrer"><img src="../assets/logos/logo_kaspi.png" alt="KASPI" /><span>KASPI</span></a>
+            <a class="catalog-partner" href="https://biosfera.kz/" target="_blank" rel="noopener noreferrer"><img src="../assets/logos/logo_biosfera.png" alt="Биосфера" /><span>Биосфера</span></a>
+            <a class="catalog-partner" href="https://europharma.kz/" target="_blank" rel="noopener noreferrer"><img src="../assets/logos/logo_europharma.png" alt="Europharma" /><span>Europharma</span></a>
+            <a class="catalog-partner" href="https://aptekaplus.kz/" target="_blank" rel="noopener noreferrer"><img src="../assets/logos/logo_aptekaplus.svg" alt="Аптека плюс" /><span>Аптека плюс</span></a>
           </div>
         </div>
       </section>
@@ -204,6 +696,8 @@
             <div class="footer-nav__group">
               <h3 data-i18n-key="footer_company_title"></h3>
               <a href="../index.html#about" data-i18n-key="nav_about"></a>
+              <a href="../history.html" data-i18n-key="nav_history"></a>
+              <a href="../worldwide.html" data-i18n-key="nav_worldwide"></a>
               <a href="../index.html#news" data-i18n-key="nav_news"></a>
               <a href="../index.html#career" data-i18n-key="nav_career"></a>
               <a href="https://www.stada.com" target="_blank" rel="noopener" data-i18n-key="footer_global_link"></a>
@@ -213,7 +707,9 @@
               <a href="index.html" data-i18n-key="products_browse_catalog"></a>
               <a href="coldrex.html" data-i18n-key="product_coldrex_name"></a>
               <a href="enterogermina.html" data-i18n-key="product_enterogermina_name"></a>
-              <a href="vitrum-immunaktiv.html" data-i18n-key="product_vitrum_immunaktiv_name"></a>
+              <a href="no-shpa.html" data-i18n-key="product_noshpa_name"></a>
+              <a href="aqualor.html" data-i18n-key="product_aqualor_name"></a>
+              <a href="cardiomagnil.html" data-i18n-key="product_cardiomagnil_name"></a>
             </div>
             <div class="footer-nav__group">
               <h3 data-i18n-key="footer_access_title"></h3>
@@ -240,6 +736,96 @@
       </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js?v=product-copy-rework-1"></script>
+    <script>
+      if (typeof translations !== 'undefined') {
+        Object.assign(translations.ru, {
+          products_category_dermatology: 'Дерматология',
+          products_category_nsaid: 'НПВП',
+          products_page_meta_title: 'STADA - Наши продукты',
+          product_kamistad_baby_name: 'Камистад Бэби',
+          product_kamistad_baby_page_desc: 'Гель при прорезывании зубов у детей, 20 г, для нанесения на десны по инструкции.',
+          product_noshpa_forte_catalog_desc: 'Таблетки 80 мг с дротаверином для облегчения спазмов гладкой мускулатуры согласно инструкции.',
+          product_femilex_name: 'Фемилекс',
+          product_femilex_page_desc: 'Вагинальные суппозитории 100 мг с молочной кислотой для нормализации микрофлоры и pH.',
+          product_nizoral_name: 'Низорал',
+          product_nizoral_page_desc: 'Крем 2% с кетоконазолом для наружного применения, 15 г.',
+          product_nizoral_shampoo_name: 'Низорал шампунь',
+          product_nizoral_shampoo_page_desc: 'Лечебный шампунь 2% с кетоконазолом, 60 мл, для применения согласно инструкции.',
+          product_psilo_balsam_name: 'Псило-бальзам',
+          product_psilo_balsam_page_desc: 'Гель 1% 20 г с дифенгидрамина гидрохлоридом для наружного применения по инструкции.',
+          product_meloksikam_name: 'Мелоксикам',
+          product_meloksikam_page_desc: 'Раствор для внутримышечного введения 15 мг/1.5 мл, 5 ампул, для применения по инструкции.',
+          product_terginan_name: 'Тержинан',
+          product_terginan_page_desc: 'Вагинальные таблетки №6 комплексного состава для применения по инструкции.',
+          product_gecsikon_name: 'Гексикон',
+          product_gecsikon_page_desc: 'Вагинальные суппозитории 16 мг с хлоргексидином для местного применения.',
+          product_lizobakt_name: 'Лизобакт',
+          product_lizobakt_page_desc: 'Таблетки для рассасывания №30 с лизоцимом и пиридоксином для местного применения.',
+          product_faringosept_name: 'Фарингосепт',
+          product_faringosept_page_desc: 'Таблетки для рассасывания 15 мг №10 с амбазоном, со вкусом мяты.',
+          product_klopidogrel_teva_name: 'Клопидогрель-Тева',
+          product_klopidogrel_teva_page_desc: 'Таблетки, покрытые пленочной оболочкой, 75 мг №28 для применения по назначению врача.'
+        });
+
+        Object.assign(translations.en, {
+          products_category_dermatology: 'Dermatology',
+          products_category_nsaid: 'NSAIDs',
+          products_page_meta_title: 'STADA - Our products',
+          product_kamistad_baby_name: 'Kamistad Baby',
+          product_kamistad_baby_page_desc: 'Teething gel for children, 20 g, for application to gums as directed.',
+          product_noshpa_forte_catalog_desc: '80 mg drotaverine tablets for relief of smooth muscle spasms according to the instructions.',
+          product_femilex_name: 'Femilex',
+          product_femilex_page_desc: 'Vaginal suppositories 100 mg with lactic acid to help normalize microflora and pH.',
+          product_nizoral_name: 'Nizoral',
+          product_nizoral_page_desc: '2% ketoconazole cream for external use, 15 g.',
+          product_nizoral_shampoo_name: 'Nizoral shampoo',
+          product_nizoral_shampoo_page_desc: 'Medicated 2% ketoconazole shampoo, 60 ml, for use according to the instructions.',
+          product_psilo_balsam_name: 'Psilo-balsam',
+          product_psilo_balsam_page_desc: '1% gel, 20 g, with diphenhydramine hydrochloride for external use as directed.',
+          product_meloksikam_name: 'Meloxicam',
+          product_meloksikam_page_desc: 'Solution for intramuscular injection 15 mg/1.5 ml, 5 ampoules, for use as directed.',
+          product_terginan_name: 'Terginan',
+          product_terginan_page_desc: 'Terginan No. 6 is a combined vaginal tablet for local gynecological use according to the instructions.',
+          product_gecsikon_name: 'Geksikon',
+          product_gecsikon_page_desc: 'Vaginal suppositories 16 mg with chlorhexidine for local use.',
+          product_lizobakt_name: 'Lizobakt',
+          product_lizobakt_page_desc: 'Lozenges No. 30 with lysozyme and pyridoxine for local use.',
+          product_faringosept_name: 'Faringosept',
+          product_faringosept_page_desc: '15 mg lozenges No. 10 with ambazone, mint flavor.',
+          product_klopidogrel_teva_name: 'Clopidogrel-Teva',
+          product_klopidogrel_teva_page_desc: 'Film-coated tablets, 75 mg No. 28, for use as prescribed by a doctor.'
+        });
+
+        Object.assign(translations.kz, {
+          products_category_dermatology: 'Тері аурулары',
+          products_category_nsaid: 'ҚҚСП',
+          products_page_meta_title: 'STADA - Біздің өнімдер',
+          product_kamistad_baby_name: 'Камистад Бэби',
+          product_kamistad_baby_page_desc: 'Балаларда тіс жару кезінде қызыл иекке нұсқаулыққа сәйкес жағуға арналған 20 г гель.',
+          product_noshpa_forte_catalog_desc: 'Тегіс бұлшықет түйілуін жеңілдетуге арналған 80 мг дротаверин таблеткалары, нұсқаулыққа сәйкес.',
+          product_femilex_name: 'Фемилекс',
+          product_femilex_page_desc: 'Микрофлора мен pH деңгейін қалыпқа келтіруге көмектесетін сүт қышқылы бар 100 мг қынаптық суппозиторийлер.',
+          product_nizoral_name: 'Низорал',
+          product_nizoral_page_desc: 'Сыртқа қолдануға арналған кетоконазол 2% кремі, 15 г.',
+          product_nizoral_shampoo_name: 'Низорал сусабыны',
+          product_nizoral_shampoo_page_desc: 'Нұсқаулыққа сәйкес қолдануға арналған кетоконазол 2% емдік сусабыны, 60 мл.',
+          product_psilo_balsam_name: 'Псило-бальзам',
+          product_psilo_balsam_page_desc: 'Сыртқа нұсқаулыққа сәйкес қолдануға арналған дифенгидрамин гидрохлориді бар 1% гель, 20 г.',
+          product_meloksikam_name: 'Мелоксикам',
+          product_meloksikam_page_desc: 'Нұсқаулыққа сәйкес қолдануға арналған бұлшықет ішіне енгізілетін 15 мг/1,5 мл ерітінді, 5 ампула.',
+          product_terginan_name: 'Тержинан',
+          product_terginan_page_desc: 'Тержинан №6 — нұсқаулыққа сәйкес гинекологияда жергілікті қолдануға арналған біріктірілген құрамды қынаптық таблеткалар.',
+          product_gecsikon_name: 'Гексикон',
+          product_gecsikon_page_desc: 'Жергілікті қолдануға арналған хлоргексидині бар 16 мг қынаптық суппозиторийлер.',
+          product_lizobakt_name: 'Лизобакт',
+          product_lizobakt_page_desc: 'Жергілікті қолдануға арналған лизоцим мен пиридоксині бар №30 соруға арналған таблеткалар.',
+          product_faringosept_name: 'Фарингосепт',
+          product_faringosept_page_desc: 'Амбазоны бар 15 мг №10 соруға арналған жалбыз дәмді таблеткалар.',
+          product_klopidogrel_teva_name: 'Клопидогрель-Тева',
+          product_klopidogrel_teva_page_desc: 'Дәрігер тағайындауы бойынша қолдануға арналған үлбірлі қабықпен қапталған 75 мг №28 таблеткалар.'
+        });
+      }
+    </script>
   </body>
 </html>
