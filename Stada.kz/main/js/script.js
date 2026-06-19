@@ -23,12 +23,13 @@ const translations = {
     nav_news: 'Новости и Медия',
     nav_products: 'Продукты',
     nav_career: 'Карьера',
-    hero_title1: 'Наша миссия — ваше здоровье',
-    hero_sub1: 'STADA заботится о качестве жизни через инновации и надежные лекарственные решения.',
-    hero_title2: 'Ведущий производитель фармацевтических препаратов',
-    hero_sub2: '130-летний опыт и международное присутствие более чем в 100 странах мира.',
-    hero_title3: 'Партнер, которому доверяют',
-    hero_sub3: 'Мы предлагаем доступные дженерики, потребительские бренды и специальные препараты.',
+    hero_kicker: 'STADA Kazakhstan',
+    hero_title1: 'Забота о здоровье',
+    hero_sub1: 'Качественные препараты, которым доверяют каждый день.',
+    hero_title2: 'Качество без компромиссов',
+    hero_sub2: 'Опыт STADA помогает поддерживать здоровье миллионов людей.',
+    hero_title3: 'Ближе к пациентам',
+    hero_sub3: 'Развиваем доступные решения для семей в Казахстане.',
     hero_metric_years: 'лет опыта',
     hero_metric_countries: 'стран присутствия',
     hero_metric_employees: 'сотрудников по всему миру',
@@ -1011,12 +1012,13 @@ const translations = {
     nav_news: 'Жаңалықтар мен медиа',
     nav_products: 'Өнімдер',
     nav_career: 'Мансап',
-    hero_title1: 'Біздің миссиямыз – сіздің денсаулығыңыз',
-    hero_sub1: 'STADA инновациялар мен сенімді дәрі-дәрмектер арқылы өмір сапасын жақсартады.',
-    hero_title2: 'Фармацевтикалық өнімдердің жетекші өндірушісі',
-    hero_sub2: '130 жылдық тәжірибе және 100-ден астам елдегі халықаралық қатысу.',
-    hero_title3: 'Сенімді серіктес',
-    hero_sub3: 'Біз қолжетімді дженериктерді, тұтынушылық брендтерді және арнайы препараттарды ұсынамыз.',
+    hero_kicker: 'STADA Kazakhstan',
+    hero_title1: 'Денсаулыққа қамқорлық',
+    hero_sub1: 'Күн сайын сенім артатын сапалы дәрі-дәрмектер.',
+    hero_title2: 'Сапаға адалдық',
+    hero_sub2: 'STADA тәжірибесі миллиондаған адамның денсаулығын қолдайды.',
+    hero_title3: 'Пациенттерге жақын',
+    hero_sub3: 'Қазақстан отбасылары үшін қолжетімді шешімдерді дамытамыз.',
     hero_metric_years: 'жылдық тәжірибе',
     hero_metric_countries: 'елдегі қатысу',
     hero_metric_employees: 'қызметкер әлем бойынша',
@@ -3248,9 +3250,12 @@ function initHeroCarousel() {
   const carousel = document.querySelector('[data-hero-carousel]');
   if (!carousel) return;
 
+  const hero = carousel.closest('.stada-home-hero');
   const slides = Array.from(carousel.querySelectorAll('.hero-carousel-slide'));
   const dots = Array.from(carousel.querySelectorAll('.hero-carousel-dot'));
   const caption = document.querySelector('[data-hero-caption]');
+  const heroTitle = hero?.querySelector('.stada-home-hero__copy h1');
+  const heroLead = hero?.querySelector('.stada-home-hero__lead');
   const prevButton = carousel.querySelector('[data-hero-prev]');
   const nextButton = carousel.querySelector('[data-hero-next]');
   if (slides.length < 2) return;
@@ -3258,9 +3263,33 @@ function initHeroCarousel() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let activeIndex = 0;
   let timerId = null;
+  let transitionTimerId = null;
+  let transitionEndTimerId = null;
+  let isTransitioning = false;
+  let queuedIndex = null;
 
-  function showSlide(index) {
+  function clearHeroTransitionTimers() {
+    if (transitionTimerId) {
+      window.clearTimeout(transitionTimerId);
+      transitionTimerId = null;
+    }
+    if (transitionEndTimerId) {
+      window.clearTimeout(transitionEndTimerId);
+      transitionEndTimerId = null;
+    }
+  }
+
+  function setHeroTransitionState(state) {
+    if (!hero) return;
+    hero.classList.toggle('is-changing-out', state === 'out');
+    hero.classList.toggle('is-changing-in', state === 'in');
+  }
+
+  function applySlide(index) {
     activeIndex = (index + slides.length) % slides.length;
+    if (hero) {
+      hero.dataset.heroActiveSlide = String(activeIndex);
+    }
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle('is-active', slideIndex === activeIndex);
     });
@@ -3280,6 +3309,63 @@ function initHeroCarousel() {
       caption.setAttribute('data-i18n-key', captionKey);
       caption.textContent = translations[currentLang]?.[captionKey] || '';
     }
+
+    const titleKey = slides[activeIndex].dataset.titleKey;
+    if (heroTitle && titleKey) {
+      heroTitle.setAttribute('data-i18n-key', titleKey);
+      heroTitle.textContent = translations[currentLang]?.[titleKey] || '';
+    }
+
+    const leadKey = slides[activeIndex].dataset.leadKey;
+    if (heroLead && leadKey) {
+      heroLead.setAttribute('data-i18n-key', leadKey);
+      heroLead.textContent = translations[currentLang]?.[leadKey] || '';
+    }
+  }
+
+  function showSlide(index, options = {}) {
+    const nextIndex = (index + slides.length) % slides.length;
+    const animate = options.animate !== false && !reduceMotion && !!hero;
+
+    if (nextIndex === activeIndex && !isTransitioning) return;
+
+    if (!animate) {
+      clearHeroTransitionTimers();
+      isTransitioning = false;
+      queuedIndex = null;
+      setHeroTransitionState(null);
+      applySlide(nextIndex);
+      return;
+    }
+
+    if (isTransitioning) {
+      queuedIndex = nextIndex;
+      return;
+    }
+
+    isTransitioning = true;
+    hero.classList.add('has-carousel-transitioned');
+    setHeroTransitionState('out');
+
+    transitionTimerId = window.setTimeout(() => {
+      transitionTimerId = null;
+      applySlide(nextIndex);
+      setHeroTransitionState('in');
+
+      transitionEndTimerId = window.setTimeout(() => {
+        transitionEndTimerId = null;
+        isTransitioning = false;
+        setHeroTransitionState(null);
+
+        if (queuedIndex !== null && queuedIndex !== activeIndex) {
+          const queued = queuedIndex;
+          queuedIndex = null;
+          showSlide(queued);
+        } else {
+          queuedIndex = null;
+        }
+      }, 980);
+    }, 560);
   }
 
   function stopAutoplay() {
@@ -3323,7 +3409,7 @@ function initHeroCarousel() {
   carousel.addEventListener('focusin', stopAutoplay);
   carousel.addEventListener('focusout', startAutoplay);
 
-  showSlide(0);
+  applySlide(0);
   startAutoplay();
 }
 
