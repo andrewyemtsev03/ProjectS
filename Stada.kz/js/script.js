@@ -34,7 +34,6 @@ const translations = {
     hero_metric_employees: 'сотрудников по всему миру',
     hero_media_caption: 'Фармацевтическое качество, которому доверяют каждый день',
     hero_caption_office: 'STADA в Казахстане: ближе к пациентам и партнерам',
-        hero_caption_scientists: 'Качество и безопасность на каждом этапе производства',
         hero_caption_awards: 'ESG-награды и признание устойчивого развития STADA',
     hero_caption_logo: '130 лет опыта STADA в заботе о здоровье людей',
     about_heading: 'О компании STADA',
@@ -1022,7 +1021,6 @@ const translations = {
     hero_metric_employees: 'қызметкер әлем бойынша',
     hero_media_caption: 'Күн сайын сенім артатын фармацевтикалық сапа',
     hero_caption_office: 'STADA Қазақстанда: пациенттер мен серіктестерге жақын',
-        hero_caption_scientists: 'Өндірістің әр кезеңіндегі сапа мен қауіпсіздік',
         hero_caption_awards: 'STADA тұрақты дамуы үшін ESG марапаттары мен мойындауы',
     hero_caption_logo: 'STADA-ның адамдар денсаулығына қамқорлық жасаудағы 130 жылдық тәжірибесі',
     about_heading: 'STADA компаниясы туралы',
@@ -1995,7 +1993,353 @@ const translations = {
 };
 
 // Current language state
+<<<<<<< Updated upstream:Stada.kz/js/script.js
+=======
+translations.ru.nav_worldwide = 'Наши филиалы';
+translations.kz.nav_worldwide = 'Біздің филиалдарымыз';
+Object.assign(translations.ru, {
+  worldwide_page_title: 'STADA - Наши филиалы',
+  worldwide_eyebrow: 'Глобальное присутствие STADA',
+  worldwide_heading: 'Наши филиалы',
+  worldwide_subtitle: 'Глобальное присутствие. Локальная экспертиза.',
+  worldwide_lead: 'STADA работает на международных рынках и помогает обеспечивать доступ к надежным продуктам для здоровья.',
+  worldwide_stat_countries: 'стран с продуктами STADA',
+  worldwide_stat_markets: 'ключевых рынков',
+  worldwide_stat_standard: 'единый стандарт заботы о здоровье',
+  worldwide_overview_eyebrow: 'Интерактивный обзор стран',
+  worldwide_overview_heading: 'Глобальное присутствие',
+  worldwide_overview_intro: 'Профили стран объединяют данные локальных офисов, контакты и ссылки на официальные сайты.',
+  worldwide_country_label: 'Обзор стран',
+  worldwide_country_search: 'Поиск страны',
+  worldwide_globe_label: 'Интерактивный глобус STADA',
+  worldwide_globe_topline: 'COBE WebGL глобус',
+  worldwide_globe_fallback_title: 'Глобальная карта',
+  worldwide_globe_fallback_text: 'Выберите рынок STADA в обзоре стран.',
+  worldwide_globe_hint_regions: 'Региональные офисы',
+  worldwide_globe_hint_markets: 'Официальные рынки STADA'
+});
+Object.assign(translations.kz, {
+  worldwide_page_title: 'STADA - Біздің филиалдарымыз',
+  worldwide_eyebrow: 'STADA жаһандық қатысуы',
+  worldwide_heading: 'Біздің филиалдарымыз',
+  worldwide_subtitle: 'Жаһандық қатысу. Жергілікті сараптама.',
+  worldwide_lead: 'STADA халықаралық нарықтарда жұмыс істейді және сенімді денсаулық сақтау өнімдеріне қолжетімділікті қолдайды.',
+  worldwide_stat_countries: 'STADA өнімдері бар ел',
+  worldwide_stat_markets: 'негізгі нарық',
+  worldwide_stat_standard: 'денсаулыққа қамқорлықтың ортақ стандарты',
+  worldwide_overview_eyebrow: 'Елдерге интерактивті шолу',
+  worldwide_overview_heading: 'Жаһандық қатысу',
+  worldwide_overview_intro: 'Ел профильдері жергілікті кеңсе деректерін, байланыстарды және ресми сайт сілтемелерін біріктіреді.',
+  worldwide_country_label: 'Елдерге шолу',
+  worldwide_country_search: 'Елді іздеу',
+  worldwide_globe_label: 'STADA интерактивті глобусы',
+  worldwide_globe_topline: 'COBE WebGL глобусы',
+  worldwide_globe_fallback_title: 'Жаһандық карта',
+  worldwide_globe_fallback_text: 'STADA нарығын елдер шолуынан таңдаңыз.',
+  worldwide_globe_hint_regions: 'Аймақтық кеңселер',
+  worldwide_globe_hint_markets: 'STADA ресми нарықтары'
+});
+
+translations.ru.nav_culture = 'Культура';
+translations.kz.nav_culture = 'Мәдениет';
+Object.assign(translations.ru, {
+  culture_page_title: 'STADA - Корпоративная культура',
+  culture_eyebrow: 'Культура STADA',
+  culture_heading: 'Культура доверия',
+  culture_hero_lead: 'Действуем быстро, открыто и ответственно.',
+  culture_values_cta: 'Смотреть ценности',
+  culture_purpose_cta: 'Наша цель',
+  culture_fact_origin: 'аптечные истоки',
+  culture_fact_years: 'лет доверия',
+  culture_fact_values: 'общие ценности',
+  culture_purpose_eyebrow: 'Забота о здоровье людей',
+  culture_purpose_heading: 'От аптечных корней к культуре доверия',
+  culture_purpose_text_1: 'STADA началась в 1895 году с простой идеи: выпускать лекарства по единым стандартам и делать качественную помощь доступнее.',
+  culture_purpose_text_2: 'Сегодня эти корни видны в нашем подходе: ответственность, открытый диалог и фокус на пользе для человека.',
+  culture_purpose_label: 'Наша цель',
+  culture_purpose_statement: 'Заботиться о здоровье людей как надежный партнер.',
+  culture_values_eyebrow: 'Наши ценности',
+  culture_values_heading: 'Принципы для ежедневных решений',
+  culture_values_intro: 'Четыре ценности помогают командам брать ответственность, быстрее учиться, сотрудничать без барьеров и сохранять доверие.',
+  culture_integrity_title: 'Добросовестность',
+  culture_integrity_tagline: 'Поступать правильно.',
+  culture_trust_title: 'Доверие',
+  culture_trust_text: 'Бережно относимся к информации и выбираем честный диалог.',
+  culture_compliance_title: 'Соблюдение правил',
+  culture_compliance_text: 'Следуем стандартам, признаем ошибки и исправляем причины.',
+  culture_respect_title: 'Уважение',
+  culture_respect_text: 'Общаемся уважительно и даем конструктивную обратную связь.',
+  culture_speakup_title: 'Открытый голос',
+  culture_speakup_text: 'Говорим прямо и помогаем улучшать процессы.',
+  culture_sustainability_title: 'Устойчивость и разнообразие',
+  culture_sustainability_text: 'Ценим индивидуальность и видим различия как силу.',
+  culture_entrepreneurship_title: 'Предпринимательство',
+  culture_entrepreneurship_tagline: 'Мыслить смело.',
+  culture_risk_title: 'Продуманный риск',
+  culture_risk_text: 'Принимаем обоснованные решения и убираем лишнее.',
+  culture_innovation_title: 'Инновации',
+  culture_innovation_text: 'Задаем вопросы привычному и ищем лучшие решения.',
+  culture_anticipation_title: 'Предвидение',
+  culture_anticipation_text: 'Раньше замечаем потребности пациентов, бизнеса и партнеров.',
+  culture_ownership_title: 'Ответственность за идеи',
+  culture_ownership_text: 'Берем инициативу и отвечаем за результат.',
+  culture_agility_title: 'Гибкость',
+  culture_agility_tagline: 'Расти через изменения.',
+  culture_open_title: 'Открытость',
+  culture_open_text: 'Видим новые возможности и сохраняем фокус на решении.',
+  culture_change_title: 'Изменения',
+  culture_change_text: 'Быстро адаптируемся и помогаем другим двигаться вместе.',
+  culture_challenge_title: 'Вызовы',
+  culture_challenge_text: 'Учимся на сложных ситуациях и двигаемся дальше.',
+  culture_urgency_title: 'Приоритеты',
+  culture_urgency_text: 'Отделяем важное от срочного и действуем без задержек.',
+  culture_one_title: 'One STADA',
+  culture_one_tagline: 'Сила одной команды.',
+  culture_communication_title: 'Коммуникация',
+  culture_communication_text: 'Говорим прозрачно, по фактам и по сути.',
+  culture_teamwork_title: 'Командная работа',
+  culture_teamwork_text: 'Сотрудничаем ради общих целей.',
+  culture_growth_title: 'Личный рост',
+  culture_growth_text: 'Развиваемся и стремимся быть сильнее в своем деле.',
+  culture_complexity_title: 'Сложность',
+  culture_complexity_text: 'Используем опыт сети STADA, чтобы упрощать сложное.',
+  culture_action_eyebrow: 'Культура в действии',
+  culture_action_heading: 'Как ценности работают каждый день',
+  culture_action_trust_title: 'Надежность в каждом решении',
+  culture_action_trust_text: 'Качество, стандарты и уважение к пациенту остаются нашей основой.',
+  culture_action_drive_title: 'Инициатива без лишней сложности',
+  culture_action_drive_text: 'Меньше бюрократии, больше ответственности и практических результатов.',
+  culture_action_team_title: 'Единая команда на международном уровне',
+  culture_action_team_text: 'Локальная экспертиза соединяется с глобальным опытом STADA.',
+  culture_next_eyebrow: 'Продолжить знакомство',
+  culture_next_heading: 'Узнайте, как история и люди формируют STADA сегодня.',
+  culture_history_cta: 'История STADA',
+  culture_career_cta: 'Карьера в STADA'
+});
+Object.assign(translations.kz, {
+  culture_page_title: 'STADA - Корпоративтік мәдениет',
+  culture_eyebrow: 'STADA мәдениеті',
+  culture_heading: 'Сенім мәдениеті',
+  culture_hero_lead: 'Жылдам, ашық және жауапты әрекет етеміз.',
+  culture_values_cta: 'Құндылықтарды қарау',
+  culture_purpose_cta: 'Біздің мақсатымыз',
+  culture_fact_origin: 'дәріханалық бастау',
+  culture_fact_years: 'жыл сенім',
+  culture_fact_values: 'ортақ құндылық',
+  culture_purpose_eyebrow: 'Адам денсаулығына қамқорлық',
+  culture_purpose_heading: 'Дәріханалық тамырдан сенім мәдениетіне',
+  culture_purpose_text_1: 'STADA 1895 жылы дәрілерді бірыңғай стандартпен шығару және сапалы көмекті қолжетімді ету идеясынан басталды.',
+  culture_purpose_text_2: 'Бүгінде бұл мұра біздің жұмысымызда көрінеді: жауапкершілік, ашық диалог және адамға пайда әкелуге назар.',
+  culture_purpose_label: 'Біздің мақсатымыз',
+  culture_purpose_statement: 'Сенімді серіктес ретінде адамдардың денсаулығына қамқорлық жасау.',
+  culture_values_eyebrow: 'Біздің құндылықтарымыз',
+  culture_values_heading: 'Күнделікті шешімдерге арналған қағидалар',
+  culture_values_intro: 'Төрт құндылық жауапкершілік алуға, тез үйренуге, ашық ынтымақтасуға және сенімді сақтауға көмектеседі.',
+  culture_integrity_title: 'Адалдық',
+  culture_integrity_tagline: 'Дұрыс әрекет ету.',
+  culture_trust_title: 'Сенім',
+  culture_trust_text: 'Ақпаратқа мұқият қарап, адал диалогты таңдаймыз.',
+  culture_compliance_title: 'Ережелерді сақтау',
+  culture_compliance_text: 'Стандарттарды ұстанып, қателердің себебін түзетеміз.',
+  culture_respect_title: 'Құрмет',
+  culture_respect_text: 'Құрметпен сөйлесіп, пайдалы кері байланыс береміз.',
+  culture_speakup_title: 'Ашық пікір',
+  culture_speakup_text: 'Маңызды сұрақтарды ашық айтып, процестерді жақсартамыз.',
+  culture_sustainability_title: 'Тұрақтылық және әртүрлілік',
+  culture_sustainability_text: 'Даралықты бағалап, айырмашылықтарды күш ретінде көреміз.',
+  culture_entrepreneurship_title: 'Кәсіпкерлік',
+  culture_entrepreneurship_tagline: 'Батыл ойлау.',
+  culture_risk_title: 'Ойластырылған тәуекел',
+  culture_risk_text: 'Негізді шешім қабылдап, артықты алып тастаймыз.',
+  culture_innovation_title: 'Инновация',
+  culture_innovation_text: 'Үйреншікті тәсілге сұрақ қойып, жақсы шешім іздейміз.',
+  culture_anticipation_title: 'Алдын ала көру',
+  culture_anticipation_text: 'Пациенттер, бизнес және серіктестер қажеттілігін ерте байқаймыз.',
+  culture_ownership_title: 'Идеяға жауапкершілік',
+  culture_ownership_text: 'Бастама көтеріп, нәтижеге жауап береміз.',
+  culture_agility_title: 'Икемділік',
+  culture_agility_tagline: 'Өзгеріс арқылы өсу.',
+  culture_open_title: 'Ашықтық',
+  culture_open_text: 'Жаңа мүмкіндікті көріп, шешімге назар аударамыз.',
+  culture_change_title: 'Өзгеріс',
+  culture_change_text: 'Тез бейімделіп, басқаларға бірге қозғалуға көмектесеміз.',
+  culture_challenge_title: 'Сын-қатер',
+  culture_challenge_text: 'Күрделі жағдайдан үйреніп, алға жылжимыз.',
+  culture_urgency_title: 'Басымдықтар',
+  culture_urgency_text: 'Маңыздыны шұғылдан ажыратып, кідіріссіз әрекет етеміз.',
+  culture_one_title: 'One STADA',
+  culture_one_tagline: 'Бір команданың күші.',
+  culture_communication_title: 'Коммуникация',
+  culture_communication_text: 'Ашық, нақты және фактіге сүйеніп сөйлейміз.',
+  culture_teamwork_title: 'Командалық жұмыс',
+  culture_teamwork_text: 'Ортақ мақсат үшін бірге жұмыс істейміз.',
+  culture_growth_title: 'Жеке өсу',
+  culture_growth_text: 'Дамып, өз ісімізде күштірек болуға ұмтыламыз.',
+  culture_complexity_title: 'Күрделілік',
+  culture_complexity_text: 'STADA тәжірибесін қолданып, күрделіні жеңілдетеміз.',
+  culture_action_eyebrow: 'Мәдениет іс жүзінде',
+  culture_action_heading: 'Құндылықтар күн сайын қалай жұмыс істейді',
+  culture_action_trust_title: 'Әр шешімдегі сенімділік',
+  culture_action_trust_text: 'Сапа, стандарттар және пациентке құрмет біздің негізіміз.',
+  culture_action_drive_title: 'Артық күрделіліксіз бастама',
+  culture_action_drive_text: 'Бюрократия аз, жауапкершілік пен нақты нәтиже көп.',
+  culture_action_team_title: 'Халықаралық деңгейдегі бір команда',
+  culture_action_team_text: 'Жергілікті сараптама STADA-ның жаһандық тәжірибесімен бірігеді.',
+  culture_next_eyebrow: 'Танысуды жалғастыру',
+  culture_next_heading: 'STADA тарихы мен адамдары бүгінгі компанияны қалай қалыптастыратынын біліңіз.',
+  culture_history_cta: 'STADA тарихы',
+  culture_career_cta: 'STADA-дағы мансап'
+});
+
+translations.ru.site_name = 'STADA Kazakhstan';
+translations.kz.site_name = 'STADA Kazakhstan';
+translations.ru.history_source_note = 'Хронология основана на материалах глобального сайта STADA и адаптирована для локальной страницы STADA.';
+translations.kz.history_source_note = 'Хронология STADA жаһандық сайтының материалдарына негізделіп, жергілікті STADA бетіне бейімделген.';
+translations.kg = translations.kg || {};
+Object.assign(translations.kg, {
+  site_name: 'STADA Kyrgyzstan',
+  history_source_note: 'Хронология STADA глобалдык сайтынын материалдарына негизделип, жергиликтүү STADA барагына ылайыкташтырылган.',
+  nav_about: 'Компания жөнүндө',
+  nav_culture: 'Маданият',
+  nav_history: 'Компаниянын тарыхы',
+  nav_news: 'Жаңылыктар жана медиа',
+  nav_products: 'Өнүмдөр',
+  nav_career: 'Карьера',
+  nav_worldwide: 'Биздин филиалдар',
+  hero_kicker: 'STADA Kyrgyzstan',
+  hero_title1: 'Ден соолукка кам көрүү',
+  hero_sub1: 'Күн сайын ишеним жараткан сапаттуу препараттар.',
+  hero_title2: 'Сапат компромисссиз',
+  hero_sub2: 'STADA тажрыйбасы миллиондогон адамдардын ден соолугун колдоого жардам берет.',
+  hero_title3: 'Бейтаптарга жакыныраак',
+  hero_sub3: 'Кыргызстандагы үй-бүлөлөр үчүн жеткиликтүү чечимдерди өнүктүрөбүз.',
+  hero_caption_office: 'STADA Кыргызстанда: бейтаптарга жана өнөктөштөргө жакын',
+  hero_caption_logo: 'STADAнын адамдардын ден соолугуна кам көрүүдөгү 130 жылдык тажрыйбасы',
+  cta_more: 'Кененирээк',
+  about_heading: 'STADA компаниясы жөнүндө',
+  about_par1: 'STADA — жогорку сапаттагы фармацевтикалык препараттарды өндүргөн алдыңкы компания. 130 жылдан ашуун тарыхы жана дарыканалык тажрыйбага таянган тамыры менен биз ишенимдүү өнөктөш болуп келебиз.',
+  about_par2: 'Компания үч багытка көңүл бурат: керектөөчүлөрдүн ден соолугуна арналган өнүмдөр, дженериктер жана атайын препараттар. Бүгүн STADA дүйнөнүн 100дөн ашык өлкөсүндө иштейт жана 11 600дөн ашык жумуш орундарын камсыздайт.',
+  about_list1: 'Жеткиликтүүлүк: биздин дженериктер саламаттык сактоону көбүрөөк адамдар үчүн жеткиликтүү кылууга жардам берет.',
+  about_list2: 'Инновациялар: жашоо сапатын жакшыртуу үчүн изилдөөгө жана өнүктүрүүгө инвестициялайбыз.',
+  about_list3: 'Ишенимдүүлүк: сиз ишене ала турган өнөктөш болууга умтулабыз.',
+  stats_sales: '4 059 млн евро — 2024-жылдагы топтун сатуу көлөмү',
+  stats_employees: '> 11 600 кызматкер дүйнө жүзү боюнча',
+  stats_countries: '> 100 өлкөдө катышуу',
+  news_section_lead: 'STADAнын башкы жаңылыктары, медиа материалдары жана өнүм жаңыртуулары бир динамикалык бөлүмдө.',
+  hero_text1: 'CapVest Brain Capital жана Cinven компанияларынан STADAнын контролдук пакетин сатып алууда',
+  news_1_text: 'Бул келишим топтун өнүгүүсүнүн жаңы этабын ачып, STADAнын эл аралык рыноктордогу узак мөөнөттүү стратегиясын күчөтөт.',
+  hero_text2: 'STADAнын өсүү жолу 2024-жылы уланууда — сатуу жана киреше рыноктон ылдам өсүүдө',
+  news_2_text: 'Компания фармацевтикалык рыноктун динамикасынан озуп, сатуу жана киреше боюнча туруктуу өсүү көрсөтүүдө.',
+  hero_text3: 'Кыргызстанда дарыгерлерге ишеним жогору, ал эми алдын алуу багыты дагы да көңүл бурууну талап кылат',
+  news_3_text: 'Изилдөөлөр алдын алуунун, жеткиликтүү маалыматтын жана медицина адистери менен ишенимдүү диалогдун маанилүүлүгүн көрсөтөт.',
+  news_4_title: 'STADA Top Employer Europe 2025 деп таанылды',
+  news_4_text: 'Бул таануу STADA командалары үчүн өсүү маданиятын, кызматкерлерге кам көрүүнү жана өнүгүү мүмкүнчүлүктөрүн чагылдырат.',
+  news_5_title: 'STADA портфели күчтүү керектөө бренддерин жана дженериктерди бириктирет',
+  news_5_text: 'Өнүмдөр линейкасы ар кандай терапиялык багыттарда бейтаптардын ден соолугун колдоого жардам берет.',
+  news_6_title: 'Enterogermina микрофлоранын ден соолугун колдойт',
+  news_6_text: 'Пробиотикалык багыт STADAнын күнүмдүк ден соолук үчүн чечимдеринин маанилүү бөлүгү бойдон калууда.',
+  news_7_title: 'Coldrex суук тийүү мезгилинде таанымал бренд бойдон калууда',
+  news_7_text: 'Суук тийүүнүн белгилерин жеңилдетүүгө арналган каражаттар бейтаптарга кадимки жашоо ритмин сактоого жардам берет.',
+  news_8_title: 'Vitrum Immunaktiv күнүмдүк колдоонун фокусунда',
+  news_8_text: 'Витамин-минералдык комплекстер өзүн жакшы сезүүгө кам көргөн өнүмдөр портфелин толуктайт.',
+  career_heading: 'STADAдагы карьера',
+  career_par1: 'STADAда иштөө — бул өзгөчө жол. Биз бүтүрүүчүлөр үчүн баштапкы ролдордон тартып эксперттик позицияларга чейин ар түрдүү мүмкүнчүлүктөрдү сунуштайбыз. Вакансиялар фармацевтика менен гана чектелбейт: жеткирүү тизмеги, маркетинг, финансы, долбоорлорду башкаруу жана башка багыттар бар.',
+  career_fact1: 'жетекчилердин жарымынан көбү — аялдар',
+  career_fact2: 'кызматкерлер биздин “адамдардын ден соолугуна ишенимдүү өнөктөш катары кам көрүү” максатыбыз менен сыймыктанат',
+  career_fact3: 'кызматкер дүйнө жүзү боюнча',
+  career_fact4: 'улут биздин командада',
+  career_fact5: 'Sustainalytics ESG 2023 рейтингинде фармацевтикалык компаниялардын топ 6% ичинде',
+  career_button: 'Вакансияларды көрүү',
+  hero_products_label: 'БИЗДИН ӨНҮМДӨР',
+  hero_products_heading: 'Жакшы жашоо үчүн сапаттуу дары-дармектер',
+  hero_products_description: 'Биз ар кандай терапиялык багыттарда жогорку сапаттагы дженериктерди жана керектөөчүлөрдүн ден соолугу үчүн өнүмдөрдү сунуштайбыз.',
+  products_metric_portfolio: 'каталогдогу өнүм',
+  products_metric_areas: 'терапиялык багыт',
+  products_catalog_label: 'STADA каталогу',
+  products_browse_catalog: 'Каталогду көрүү',
+  products_category_cold: 'Суук тийүү жана дем алуу',
+  products_category_digestive: 'Тамак сиңирүү',
+  products_category_respiratory: 'Дем алуу жолдору',
+  products_category_immunity: 'Иммунитет',
+  products_category_cardio: 'Кардио',
+  products_filter_all: 'Бардык өнүмдөр',
+  product_coldrex_name: 'Колдрекс',
+  product_enterogermina_name: 'Энтерожермина',
+  product_sinulan_duo_name: 'Синулан Дуо',
+  product_vitrum_immunaktiv_name: 'Витрум Иммунактив',
+  footer_brand_text: 'Биз STADAнын эл аралык тажрыйбасын Кыргызстандагы бейтаптарга, адистерге жана өнөктөштөргө жакын жергиликтүү мамиле менен бириктиребиз.',
+  footer_trust_years: '130+ жыл тажрыйба',
+  footer_trust_countries: '100+ өлкө',
+  footer_company_title: 'Компания',
+  footer_global_link: 'STADA Global',
+  footer_products_title: 'Өнүмдөр',
+  footer_access_title: 'Жеткиликтүүлүк',
+  where_to_buy_heading: 'Кайдан сатып алса болот',
+  footer_warning_title: 'Маанилүү',
+  footer_warning_text: 'Сайттагы маалымат адистин консультациясын алмаштырбайт. Дары каражаттарын колдонор алдында нускаманы окуңуз.',
+  footer_rights: 'Бардык укуктар корголгон.',
+  footer_back_top: 'Жогору',
+});
+
+Object.assign(translations.ru, {
+  button_products: 'Продукты',
+  footer_nav_about: 'О компании',
+  footer_nav_culture: 'Культура',
+  footer_nav_history: 'История компании',
+  footer_nav_worldwide: 'STADA в мире',
+  footer_nav_news: 'Новости и Медиа',
+  footer_nav_career: 'Карьера',
+});
+
+Object.assign(translations.kz, {
+  button_products: 'Өнімдер',
+  footer_nav_about: 'Компания туралы',
+  footer_nav_culture: 'Мәдениет',
+  footer_nav_history: 'Компания тарихы',
+  footer_nav_worldwide: 'STADA әлемде',
+  footer_nav_news: 'Жаңалықтар және медиа',
+  footer_nav_career: 'Мансап',
+});
+
+Object.assign(translations.kg, {
+  button_products: 'Өнүмдөр',
+  footer_nav_about: 'Компания жөнүндө',
+  footer_nav_culture: 'Маданият',
+  footer_nav_history: 'Компаниянын тарыхы',
+  footer_nav_worldwide: 'STADA дүйнөдө',
+  footer_nav_news: 'Жаңылыктар жана медиа',
+  footer_nav_career: 'Карьера',
+});
+
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
 let currentLang = 'ru';
+let currentCountry = 'kz';
+
+const STADA_COUNTRY_OPTIONS = [
+  {
+    code: 'kz',
+    label: 'KZ',
+    name: 'Kazakhstan',
+    backendCountry: 'kazakhstan',
+    defaultLanguage: 'ru',
+    supportedLanguages: ['ru', 'kz'],
+  },
+  {
+    code: 'kg',
+    label: 'KG',
+    name: 'Kyrgyzstan',
+    backendCountry: 'kyrgyzstan',
+    defaultLanguage: 'ru',
+    supportedLanguages: ['ru', 'kg'],
+  },
+];
+
+const STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
+const STADA_LANGUAGE_LABELS = {
+  ru: 'RU',
+  kz: 'KZ',
+  kg: 'KG',
+};
 
 const productFallbacks = {
   ru: {
@@ -2750,6 +3094,160 @@ const productCopyOverrides = {
 Object.assign(productFallbacks.ru, productCopyOverrides.ru);
 Object.assign(productFallbacks.kz, productCopyOverrides.kz);
 
+Object.assign(productFallbacks.ru, {
+  products_category_oral: 'Полость рта',
+  product_kamistad: {
+    name: 'Камистад-Гель N',
+    title: 'Камистад-Гель N',
+    desc: 'Гель для применения в полости рта при раздражении десен и слизистой согласно инструкции.',
+    kicker: 'Уход за полостью рта',
+    badge1: 'Лидокаин + ромашка',
+    badge2: 'Гель',
+    badge3: '12+',
+    facts: ['10 г', 'До 3 раз в день', 'С 12 лет'],
+    buy: 'Камистад-Гель N можно найти у аптечных партнеров STADA.',
+    copy: {
+      overview_label: 'О продукте',
+      overview_heading: 'Гель для десен и слизистой полости рта',
+      overview_intro: 'Камистад-Гель N представлен в формате геля для местного применения согласно инструкции.',
+      card_pack_title: '10 г',
+      card_pack_text: 'Компактная туба подходит для домашней аптечки и поездок.',
+      card_age_title: 'С 12 лет',
+      card_age_text: 'Возрастные ограничения и способ применения необходимо сверять с инструкцией.',
+      card_dose_title: 'До 3 раз в день',
+      card_dose_text: 'Режим применения определяется инструкцией и рекомендацией специалиста.',
+      card_storage_title: 'Ответственный прием',
+      card_storage_text: 'Перед применением ознакомьтесь с инструкцией и учитывайте индивидуальные ограничения.',
+      benefit1: 'Формат геля удобен для местного нанесения.',
+      benefit2: 'Карточка продукта отдельно показывает формат, возраст и режим применения.',
+      benefit3: 'Состав и способ применения остаются в рамках инструкции.',
+      benefit4: 'Блок покупки ведет к аптечным партнерам.',
+      formula_label: 'Формула',
+      formula_heading: 'Лидокаин, ромашка и гелевая форма',
+      formula_intro: 'Формульный блок выделяет основные практические параметры продукта.',
+      formula_active_title: 'Лидокаин',
+      formula_active_text: 'Активный компонент указан в инструкции к препарату.',
+      formula_chamomile_title: 'Ромашка',
+      formula_chamomile_text: 'Растительный компонент дополняет формулу продукта.',
+      formula_format_title: 'Гель',
+      formula_format_text: 'Гелевая форма предназначена для местного применения.',
+      usage_label: 'Когда применяют',
+      usage_heading: 'Для полости рта согласно инструкции',
+      usage_gums_title: 'Десны',
+      usage_gums_text: 'Применение возможно при дискомфорте десен согласно инструкции.',
+      usage_mucosa_title: 'Слизистая',
+      usage_mucosa_text: 'Гель предназначен для местного применения в полости рта.',
+      usage_week_title: 'Курс',
+      usage_week_text: 'Продолжительность применения необходимо сверять с инструкцией.',
+      note_title: 'Важно',
+      note_text: 'Информация на странице не заменяет консультацию специалиста.'
+    }
+  }
+});
+
+Object.assign(productFallbacks.kz, {
+  products_category_oral: 'Ауыз қуысы',
+  product_kamistad: {
+    name: 'Камистад-Гель N',
+    title: 'Камистад-Гель N',
+    desc: 'Нұсқаулыққа сәйкес қызыл иек пен ауыз қуысы шырышты қабығы жайсыздығында қолданылатын гель.',
+    kicker: 'Ауыз қуысына күтім',
+    badge1: 'Лидокаин + түймедақ',
+    badge2: 'Гель',
+    badge3: '12+',
+    facts: ['10 г', 'Күніне 3 ретке дейін', '12 жастан бастап'],
+    buy: 'Камистад-Гель N өнімін STADA дәріхана серіктестерінен табуға болады.',
+    copy: {
+      overview_label: 'Өнім туралы',
+      overview_heading: 'Қызыл иек пен ауыз қуысы шырышты қабығына арналған гель',
+      overview_intro: 'Камистад-Гель N нұсқаулыққа сәйкес жергілікті қолдануға арналған гель форматында ұсынылған.',
+      card_pack_title: '10 г',
+      card_pack_text: 'Ықшам туба үйдегі дәрі қобдишасына және сапарға ыңғайлы.',
+      card_age_title: '12 жастан бастап',
+      card_age_text: 'Жас шектеулері мен қолдану тәсілін нұсқаулықпен салыстыру қажет.',
+      card_dose_title: 'Күніне 3 ретке дейін',
+      card_dose_text: 'Қолдану режимі нұсқаулық пен маман ұсынымына сәйкес анықталады.',
+      card_storage_title: 'Жауапты қолдану',
+      card_storage_text: 'Қолданар алдында нұсқаулықпен танысып, жеке шектеулерді ескеріңіз.',
+      benefit1: 'Гель форматы жергілікті жағуға ыңғайлы.',
+      benefit2: 'Өнім карточкасы форматты, жасты және қолдану режимін бөлек көрсетеді.',
+      benefit3: 'Құрамы мен қолдану тәсілі нұсқаулық шегінде берілген.',
+      benefit4: 'Сатып алу блогы дәріхана серіктестеріне апарады.',
+      formula_label: 'Формула',
+      formula_heading: 'Лидокаин, түймедақ және гель формасы',
+      formula_intro: 'Формула блогы өнімнің негізгі практикалық параметрлерін бөліп көрсетеді.',
+      formula_active_title: 'Лидокаин',
+      formula_active_text: 'Белсенді компонент препарат нұсқаулығында көрсетілген.',
+      formula_chamomile_title: 'Түймедақ',
+      formula_chamomile_text: 'Өсімдік компоненті өнім формуласын толықтырады.',
+      formula_format_title: 'Гель',
+      formula_format_text: 'Гель формасы жергілікті қолдануға арналған.',
+      usage_label: 'Қашан қолданылады',
+      usage_heading: 'Нұсқаулыққа сәйкес ауыз қуысына',
+      usage_gums_title: 'Қызыл иек',
+      usage_gums_text: 'Қызыл иек жайсыздығында нұсқаулыққа сәйкес қолданылуы мүмкін.',
+      usage_mucosa_title: 'Шырышты қабық',
+      usage_mucosa_text: 'Гель ауыз қуысында жергілікті қолдануға арналған.',
+      usage_week_title: 'Курс',
+      usage_week_text: 'Қолдану ұзақтығын нұсқаулықпен салыстыру қажет.',
+      note_title: 'Маңызды',
+      note_text: 'Беттегі ақпарат маман кеңесін алмастырмайды.'
+    }
+  }
+});
+
+productFallbacks.kg = productFallbacks.kg || {};
+Object.assign(productFallbacks.kg, {
+  products_category_oral: 'Ооз көңдөйү',
+  product_kamistad: {
+    name: 'Камистад-Гель N',
+    title: 'Камистад-Гель N',
+    desc: 'Нускамага ылайык тиш этинде жана ооз көңдөйүнүн былжыр челинде ыңгайсыздык болгондо колдонулуучу гель.',
+    kicker: 'Ооз көңдөйүнө кам көрүү',
+    badge1: 'Лидокаин + ромашка',
+    badge2: 'Гель',
+    badge3: '12+',
+    facts: ['10 г', 'Күнүнө 3 жолуга чейин', '12 жаштан баштап'],
+    buy: 'Камистад-Гель N өнүмүн STADAнын дарыкана өнөктөштөрүнөн табууга болот.',
+    copy: {
+      overview_label: 'Өнүм жөнүндө',
+      overview_heading: 'Тиш эти жана ооз көңдөйүнүн былжыр чели үчүн гель',
+      overview_intro: 'Камистад-Гель N нускамага ылайык жергиликтүү колдонууга арналган гель форматында сунушталат.',
+      card_pack_title: '10 г',
+      card_pack_text: 'Ыңгайлуу туба үй дары кутучасына жана жолго ылайыктуу.',
+      card_age_title: '12 жаштан баштап',
+      card_age_text: 'Жаш чектөөлөрүн жана колдонуу ыкмасын нускама менен салыштыруу зарыл.',
+      card_dose_title: 'Күнүнө 3 жолуга чейин',
+      card_dose_text: 'Колдонуу режими нускама жана адистин сунушу боюнча аныкталат.',
+      card_storage_title: 'Жоопкерчиликтүү колдонуу',
+      card_storage_text: 'Колдонор алдында нускаманы окуп, жеке чектөөлөрдү эске алыңыз.',
+      benefit1: 'Гель форматы жергиликтүү сүйкөөгө ыңгайлуу.',
+      benefit2: 'Өнүм карточкасы форматты, жашты жана колдонуу режимин өзүнчө көрсөтөт.',
+      benefit3: 'Курамы жана колдонуу ыкмасы нускаманын чегинде берилет.',
+      benefit4: 'Сатып алуу блогу дарыкана өнөктөштөрүнө алып барат.',
+      formula_label: 'Формула',
+      formula_heading: 'Лидокаин, ромашка жана гель формасы',
+      formula_intro: 'Формула блогу өнүмдүн негизги практикалык параметрлерин бөлүп көрсөтөт.',
+      formula_active_title: 'Лидокаин',
+      formula_active_text: 'Активдүү компонент препараттын нускамасында көрсөтүлгөн.',
+      formula_chamomile_title: 'Ромашка',
+      formula_chamomile_text: 'Өсүмдүк компоненти өнүмдүн формуласын толуктайт.',
+      formula_format_title: 'Гель',
+      formula_format_text: 'Гель формасы жергиликтүү колдонууга арналган.',
+      usage_label: 'Качан колдонулат',
+      usage_heading: 'Нускамага ылайык ооз көңдөйү үчүн',
+      usage_gums_title: 'Тиш эти',
+      usage_gums_text: 'Тиш этинин ыңгайсыздыгында нускамага ылайык колдонулушу мүмкүн.',
+      usage_mucosa_title: 'Былжыр чел',
+      usage_mucosa_text: 'Гель ооз көңдөйүндө жергиликтүү колдонууга арналган.',
+      usage_week_title: 'Курс',
+      usage_week_text: 'Колдонуу узактыгын нускама менен салыштыруу зарыл.',
+      note_title: 'Маанилүү',
+      note_text: 'Баракчадагы маалымат адистин консультациясын алмаштырбайт.'
+    }
+  }
+});
+
 function getProductFallback(lang, key) {
   const dictionary = productFallbacks[lang] || productFallbacks.ru;
   if (dictionary[key]) return dictionary[key];
@@ -2873,20 +3371,346 @@ function getProductFallback(lang, key) {
   return '';
 }
 
+const STADA_BACKEND_BASE_URL = window.STADA_BACKEND_BASE_URL || 'https://stada-content-backend.onrender.com';
+const STADA_DEFAULT_COUNTRY = normalizeCountryCode(window.STADA_BACKEND_COUNTRY || window.STADA_COUNTRY || 'kz');
+const backendPageCache = {};
+let backendPagePayload = null;
+
+function normalizeCountryCode(countryInput) {
+  const requested = String(countryInput || '').trim().toLowerCase();
+  const matched = STADA_COUNTRY_OPTIONS.find(country => {
+    return [country.code, country.backendCountry, country.name].some(value => value.toLowerCase() === requested);
+  });
+  return matched?.code || 'kz';
+}
+
+function getCountryConfig(countryCode = currentCountry) {
+  return STADA_COUNTRY_BY_CODE[normalizeCountryCode(countryCode)] || STADA_COUNTRY_BY_CODE.kz;
+}
+
+function getSupportedLanguages(countryCode = currentCountry) {
+  return getCountryConfig(countryCode).supportedLanguages;
+}
+
+function getLanguageLabel(lang) {
+  return STADA_LANGUAGE_LABELS[lang] || String(lang || '').toUpperCase();
+}
+
+function resolveLanguageForCountry(lang, countryCode = currentCountry) {
+  const country = getCountryConfig(countryCode);
+  const requested = String(lang || '').trim().toLowerCase();
+  if (country.supportedLanguages.includes(requested)) return requested;
+  return country.defaultLanguage || country.supportedLanguages[0] || 'ru';
+}
+
+function mapLanguageForCountry(lang, nextCountryCode, previousCountryCode = currentCountry) {
+  const nextCountry = getCountryConfig(nextCountryCode);
+  const previousCountry = getCountryConfig(previousCountryCode);
+  if (nextCountry.supportedLanguages.includes(lang)) return lang;
+  if (lang && lang !== 'ru' && previousCountry.supportedLanguages.includes(lang)) {
+    const localLanguage = nextCountry.supportedLanguages.find(language => language !== 'ru');
+    if (localLanguage) return localLanguage;
+  }
+  return resolveLanguageForCountry(lang, nextCountry.code);
+}
+
+function persistLocaleState() {
+  try {
+    localStorage.setItem('stada-country', currentCountry);
+    localStorage.setItem('stada-lang', currentLang);
+  } catch (e) {
+    // Ignore storage failures.
+  }
+}
+
+function setToggleActiveIndex(toggle, index) {
+  if (!toggle) return;
+  toggle.dataset.activeIndex = String(index);
+  toggle.style.setProperty('--toggle-active-x', index === 0 ? '0%' : 'calc(100% + 4px)');
+  toggle.style.setProperty('--lang-active-x', index === 0 ? '0%' : 'calc(100% + 4px)');
+}
+
+function getLanguageAriaLabel(lang) {
+  const label = getLanguageLabel(lang);
+  return `Switch language to ${label}`;
+}
+
+function ensureCountryToggle() {
+  document.querySelectorAll('.menu-language').forEach(menuItem => {
+    if (menuItem.querySelector('.country-toggle')) return;
+    const toggle = document.createElement('div');
+    toggle.className = 'country-toggle';
+    toggle.setAttribute('role', 'group');
+    toggle.setAttribute('aria-label', 'Country selector');
+
+    STADA_COUNTRY_OPTIONS.forEach(country => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'country-option-button';
+      button.dataset.country = country.code;
+      button.textContent = country.label;
+      button.setAttribute('aria-label', `Switch country to ${country.name}`);
+      button.addEventListener('click', () => updateCountry(country.code));
+      toggle.appendChild(button);
+    });
+
+    const languageToggle = menuItem.querySelector('.lang-toggle');
+    menuItem.insertBefore(toggle, languageToggle || null);
+  });
+}
+
+function setCountryToggleState(countryCode) {
+  document.querySelectorAll('.country-toggle').forEach(toggle => {
+    const buttons = Array.from(toggle.querySelectorAll('.country-option-button'));
+    const activeIndex = Math.max(0, buttons.findIndex(button => button.dataset.country === countryCode));
+    setToggleActiveIndex(toggle, activeIndex);
+    buttons.forEach(button => {
+      const isActive = button.dataset.country === countryCode;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+}
+
+function renderLanguageOptions(countryCode = currentCountry) {
+  const supportedLanguages = getSupportedLanguages(countryCode);
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    const buttons = Array.from(toggle.querySelectorAll('.lang-option'));
+    buttons.forEach((button, index) => {
+      const lang = supportedLanguages[index];
+      if (!lang) {
+        button.hidden = true;
+        return;
+      }
+      button.hidden = false;
+      button.dataset.lang = lang;
+      button.id = `lang-${lang}`;
+      button.textContent = getLanguageLabel(lang);
+      button.setAttribute('aria-label', getLanguageAriaLabel(lang));
+    });
+  });
+}
+
+function isBackendDrivenPage() {
+  return !!document.querySelector('[data-i18n-key]');
+}
+
+function getCurrentBackendPagePath() {
+  const pathname = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/');
+  const mainMarker = '/main/';
+  const mainIndex = pathname.lastIndexOf(mainMarker);
+  let pagePath = mainIndex >= 0 ? pathname.slice(mainIndex + mainMarker.length) : pathname.replace(/^\/+/, '');
+
+  pagePath = pagePath.replace(/^main\//, '');
+  if (!pagePath || pagePath.endsWith('/')) pagePath = `${pagePath}index.html`;
+  if (pagePath === 'main') pagePath = 'index.html';
+  return pagePath || 'index.html';
+}
+
+function buildBackendPageUrl(lang) {
+  const country = getCountryConfig();
+  const url = new URL(`/api/page/${encodeURIComponent(country.backendCountry)}`, STADA_BACKEND_BASE_URL);
+  url.searchParams.set('lang', lang);
+  url.searchParams.set('page', getCurrentBackendPagePath());
+  return url.href;
+}
+
+async function fetchBackendPage(lang) {
+  const cacheKey = `${currentCountry}:${lang}:${getCurrentBackendPagePath()}`;
+  if (!backendPageCache[cacheKey]) {
+    backendPageCache[cacheKey] = fetch(buildBackendPageUrl(lang))
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Backend returned ${response.status}`);
+        }
+        return response.json();
+      });
+  }
+  return backendPageCache[cacheKey];
+}
+
+function getBackendPageText(key) {
+  if (!backendPagePayload?.content?.text) return '';
+  return backendPagePayload.content.text[key] || '';
+}
+
+function escapeCssIdentifier(value) {
+  if (window.CSS?.escape) return CSS.escape(value);
+  return String(value).replace(/["\\]/g, '\\$&');
+}
+
+function getTranslatedText(lang, key) {
+  if (isBackendDrivenPage()) {
+    return getBackendPageText(key) || translations[lang]?.[key] || translations.ru?.[key] || getProductFallback(lang, key) || getProductFallback('ru', key);
+  }
+  return translations[lang]?.[key] || translations.ru?.[key] || getProductFallback(lang, key) || getProductFallback('ru', key);
+}
+
+function setLanguageToggleState(lang) {
+  renderLanguageOptions(currentCountry);
+  setCountryToggleState(currentCountry);
+  const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
+  if (langOptions.length) {
+    document.querySelectorAll('.lang-toggle').forEach(langToggle => {
+      const buttons = Array.from(langToggle.querySelectorAll('.lang-option:not([hidden])'));
+      const activeIndex = Math.max(0, buttons.findIndex(button => button.dataset.lang === lang));
+      langToggle.dataset.activeLang = lang;
+      setToggleActiveIndex(langToggle, activeIndex);
+      buttons.forEach(btn => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
+    });
+  } else {
+    const langBtn = document.getElementById('langBtn');
+    if (langBtn) {
+      const labels = getSupportedLanguages().map(getLanguageLabel);
+      langBtn.textContent = lang === getSupportedLanguages()[0] ? labels.join(' / ') : labels.reverse().join(' / ');
+    }
+  }
+}
+
+function applyTextFromBackendPayload(payload) {
+  const text = payload?.content?.text || {};
+  const dynamicText = {
+    hero_kicker: payload?.country?.siteName,
+    site_name: payload?.country?.siteName,
+  };
+  document.querySelectorAll('[data-i18n-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-key');
+    const value = dynamicText[key] || text[key] || '';
+    el.textContent = value;
+    el.hidden = !value && !!el.closest('.benefits-list');
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder-key');
+    const value = text[key] || '';
+    if (value) el.setAttribute('placeholder', value);
+  });
+
+  document.querySelectorAll('[data-i18n-aria-label-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label-key');
+    const value = text[key] || '';
+    if (value) el.setAttribute('aria-label', value);
+  });
+
+  (payload?.content?.dom?.text || []).forEach(item => {
+    if (!item?.id) return;
+    document.querySelectorAll(`[data-backend-text-id="${escapeCssIdentifier(item.id)}"]`).forEach(el => {
+      el.textContent = item.value || '';
+    });
+  });
+}
+
+function applyImagesFromBackendPayload(payload) {
+  (payload?.content?.dom?.images || []).forEach(image => {
+    if (!image?.id) return;
+    document.querySelectorAll(`img[data-backend-image-id="${escapeCssIdentifier(image.id)}"]`).forEach(img => {
+      if (image.src) img.src = image.src;
+      if (image.srcset) img.srcset = image.srcset;
+      if (image.sizes) img.sizes = image.sizes;
+      img.alt = image.alt || '';
+      if (image.loading) img.loading = image.loading;
+    });
+  });
+
+  const photos = payload?.content?.photos || [];
+  const photosBySrc = new Map(photos.map(photo => [photo.src, photo]));
+  document.querySelectorAll('img[data-backend-src]').forEach(img => {
+    const originalSrc = img.getAttribute('data-backend-src');
+    const photo = photosBySrc.get(originalSrc);
+    if (!photo) return;
+    img.src = photo.src || photo.url;
+    if (photo.alt) img.alt = photo.alt;
+  });
+}
+
+function showBackendRequiredMessage(error) {
+  backendPagePayload = null;
+  delete backendPageCache[`${currentCountry}:${currentLang}:${getCurrentBackendPagePath()}`];
+  document.body.classList.add('backend-content-pending');
+  document.querySelectorAll('[data-i18n-key]').forEach(el => {
+    el.textContent = '';
+  });
+  document.querySelectorAll('img[data-backend-src]').forEach(img => {
+    img.removeAttribute('src');
+  });
+
+  let screen = document.querySelector('[data-backend-error-screen]');
+  if (!screen) {
+    screen = document.createElement('div');
+    screen.setAttribute('data-backend-error-screen', '');
+    screen.style.cssText = 'position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:#f7f8fb;color:#141414;font:400 16px/1.5 Noto Sans,Arial,sans-serif;';
+    document.body.appendChild(screen);
+  }
+
+  screen.innerHTML = `
+    <section role="alert" aria-live="assertive" style="width:min(100%,560px);padding:44px 38px;border-radius:18px;background:#fff;box-shadow:0 24px 70px rgba(20,20,20,.14);text-align:center;">
+      <img src="assets/logos/stada_logo.png" alt="STADA logo" style="display:block;width:118px;height:auto;margin:0 auto 26px;">
+      <p style="margin:0 0 10px;color:#c4002f;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.08em;">Service unavailable</p>
+      <h1 style="margin:0 0 14px;font-size:clamp(28px,4vw,42px);line-height:1.12;color:#1d1d1f;">Sorry, something went wrong.</h1>
+      <p style="margin:0 auto 28px;max-width:420px;color:#4b4b55;font-size:17px;">We're working on fixing it. Please try refreshing the page in a moment.</p>
+      <button type="button" data-backend-retry style="appearance:none;border:0;border-radius:999px;background:#005db9;color:#fff;padding:13px 24px;font:700 15px/1 Noto Sans,Arial,sans-serif;cursor:pointer;">Refresh page</button>
+    </section>
+  `;
+  screen.querySelector('[data-backend-retry]')?.addEventListener('click', () => window.location.reload());
+  document.title = 'STADA - Service unavailable';
+  console.warn('Page backend unavailable.', error);
+}
+
+function clearBackendRequiredMessage() {
+  document.querySelector('[data-backend-required-message]')?.remove();
+  document.querySelector('[data-backend-error-screen]')?.remove();
+}
+
+async function updateBackendDrivenPage(lang) {
+  lang = resolveLanguageForCountry(lang);
+  currentLang = lang;
+  persistLocaleState();
+
+  document.documentElement.lang = lang;
+  setLanguageToggleState(lang);
+
+  const payload = await fetchBackendPage(lang);
+  backendPagePayload = payload;
+  clearBackendRequiredMessage();
+  applyTextFromBackendPayload(payload);
+  applyImagesFromBackendPayload(payload);
+  document.body.classList.remove('backend-content-pending');
+  if (payload.content?.pageTitle) document.title = payload.content.pageTitle;
+
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.setAttribute('aria-label', getBackendPageText('footer_back_top') || 'Back to top');
+  }
+
+  document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang, country: currentCountry } }));
+  document.querySelectorAll('.hero-overlay').forEach(overlay => {
+    overlay.classList.add('visible');
+  });
+}
+
 // Helper to update all elements with data-i18n-key
+<<<<<<< Updated upstream:Stada.kz/js/script.js
 function updateLanguage(lang) {
+=======
+function updateStaticLanguage(lang) {
+  lang = resolveLanguageForCountry(lang);
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
   currentLang = lang;
   // Persist the selected language so that navigation between pages retains the user’s choice
-  try {
-    localStorage.setItem('stada-lang', lang);
-  } catch (e) {
-    // If localStorage is unavailable (e.g. due to privacy settings), silently ignore
-  }
+  persistLocaleState();
   document.documentElement.lang = lang;
   const elements = document.querySelectorAll('[data-i18n-key]');
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n-key');
+<<<<<<< Updated upstream:Stada.kz/js/script.js
     const translation = translations[lang][key] || getProductFallback(lang, key);
+=======
+    const translation = getTranslatedText(lang, key);
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
     if (translation) {
       el.textContent = translation;
       el.hidden = false;
@@ -2895,37 +3719,40 @@ function updateLanguage(lang) {
       el.hidden = true;
     }
   });
+<<<<<<< Updated upstream:Stada.kz/js/script.js
+=======
+
+  document.querySelectorAll('[data-i18n-placeholder-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder-key');
+    const translation = getTranslatedText(lang, key);
+    if (translation) el.setAttribute('placeholder', translation);
+  });
+
+  document.querySelectorAll('[data-i18n-aria-label-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label-key');
+    const translation = getTranslatedText(lang, key);
+    if (translation) el.setAttribute('aria-label', translation);
+  });
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
   // Highlight the active language option in the custom toggle.  Each
   // language button is annotated with a `data-lang` attribute; we
   // assign the `active` class based on the current language.  If
   // legacy markup with a single `#langBtn` exists (e.g. before
   // applying the redesign) we leave it untouched.
-  const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
-  if (langOptions.length) {
-    const langToggle = document.querySelector('.lang-toggle');
-    if (langToggle) {
-      langToggle.dataset.activeLang = lang;
-    }
-    langOptions.forEach(btn => {
-      const isActive = btn.dataset.lang === lang;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-pressed', String(isActive));
-    });
-  } else {
-    // Fallback: update the text of the single toggle button to reflect
-    // the current language order (RU/KZ or KZ/RU).
-    const langBtn = document.getElementById('langBtn');
-    if (langBtn) {
-      langBtn.textContent = lang === 'ru' ? 'RU / KZ' : 'KZ / RU';
-    }
-  }
+  setLanguageToggleState(lang);
 
   // Update back-to-top button label if it exists
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    backToTop.setAttribute('aria-label', lang === 'ru' ? 'Вернуться наверх' : 'Жоғарыға қайту');
+    backToTop.setAttribute('aria-label', lang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх');
   }
 
+<<<<<<< Updated upstream:Stada.kz/js/script.js
+=======
+  updateDocumentTitle(lang);
+  document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang, country: currentCountry } }));
+
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
   // Reveal hero overlays after text has been populated.  Without this
   // call the overlays remain hidden (opacity 0) to prevent a flash of
   // unstyled content while CSS and translations are loading.  We add
@@ -2937,11 +3764,74 @@ function updateLanguage(lang) {
   });
 }
 
-// Toggle languages on button click
-function toggleLanguage() {
-  updateLanguage(currentLang === 'ru' ? 'kz' : 'ru');
+function updateLanguage(lang) {
+  lang = resolveLanguageForCountry(lang);
+  if (isBackendDrivenPage()) {
+    updateBackendDrivenPage(lang).catch(error => {
+      showBackendRequiredMessage(error);
+      updateStaticLanguage(lang);
+    });
+    return;
+  }
+  updateStaticLanguage(lang);
 }
 
+function updateCountry(countryCode) {
+  const nextCountry = normalizeCountryCode(countryCode);
+  const previousCountry = currentCountry;
+  currentCountry = nextCountry;
+  const nextLanguage = mapLanguageForCountry(currentLang, nextCountry, previousCountry);
+  backendPagePayload = null;
+  updateLanguage(nextLanguage);
+}
+
+// Toggle languages on button click
+function toggleLanguage() {
+  const supportedLanguages = getSupportedLanguages();
+  const currentIndex = supportedLanguages.indexOf(currentLang);
+  updateLanguage(supportedLanguages[(currentIndex + 1) % supportedLanguages.length] || supportedLanguages[0]);
+}
+
+<<<<<<< Updated upstream:Stada.kz/js/script.js
+=======
+function updateDocumentTitle(lang) {
+  const explicitTitle = document.querySelector('title[data-i18n-key]');
+  if (explicitTitle) {
+    const titleKey = explicitTitle.getAttribute('data-i18n-key');
+    const title = getTranslatedText(lang, titleKey);
+    if (title) {
+      explicitTitle.textContent = title;
+      return;
+    }
+  }
+
+  const productHeading = document.querySelector('.product-detail-page h1[data-i18n-key]');
+  if (productHeading?.textContent.trim()) {
+    document.title = `STADA - ${productHeading.textContent.trim()}`;
+    return;
+  }
+
+  const pageTitleMap = [
+    ['worldwide-page', 'worldwide_page_title'],
+    ['products-page', 'products_heading'],
+    ['history-page', 'nav_history'],
+    ['culture-page', 'culture_page_title']
+  ];
+  const bodyClass = document.body?.classList;
+  const matched = pageTitleMap.find(([className]) => bodyClass?.contains(className));
+  if (matched) {
+    const title = getTranslatedText(lang, matched[1]);
+    if (title) {
+      document.title = matched[1] === 'worldwide_page_title' ? title : `STADA - ${title}`;
+      return;
+    }
+  }
+
+  const homeTitle = getTranslatedText(lang, 'nav_about');
+  if (homeTitle) document.title = `STADA - ${homeTitle}`;
+}
+
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
 // Mobile menu toggle
 function setMenuOpen(isOpen) {
   const menu = document.querySelector('.menu');
@@ -3001,7 +3891,12 @@ function initHeroCarousel() {
 
   const slides = Array.from(carousel.querySelectorAll('.hero-carousel-slide'));
   const dots = Array.from(carousel.querySelectorAll('.hero-carousel-dot'));
+<<<<<<< Updated upstream:Stada.kz/js/script.js
   const caption = document.querySelector('[data-hero-caption]');
+=======
+  const heroTitle = hero?.querySelector('.stada-home-hero__copy h1');
+  const heroLead = hero?.querySelector('.stada-home-hero__lead');
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
   const prevButton = carousel.querySelector('[data-hero-prev]');
   const nextButton = carousel.querySelector('[data-hero-next]');
   if (slides.length < 2) return;
@@ -3026,11 +3921,70 @@ function initHeroCarousel() {
       }
     });
 
+<<<<<<< Updated upstream:Stada.kz/js/script.js
     const captionKey = slides[activeIndex].dataset.captionKey;
     if (caption && captionKey) {
       caption.setAttribute('data-i18n-key', captionKey);
       caption.textContent = translations[currentLang]?.[captionKey] || '';
     }
+=======
+    const titleKey = slides[activeIndex].dataset.titleKey;
+    if (heroTitle && titleKey) {
+      heroTitle.setAttribute('data-i18n-key', titleKey);
+      heroTitle.textContent = getTranslatedText(currentLang, titleKey) || '';
+    }
+
+    const leadKey = slides[activeIndex].dataset.leadKey;
+    if (heroLead && leadKey) {
+      heroLead.setAttribute('data-i18n-key', leadKey);
+      heroLead.textContent = getTranslatedText(currentLang, leadKey) || '';
+    }
+  }
+
+  function showSlide(index, options = {}) {
+    const nextIndex = (index + slides.length) % slides.length;
+    const animate = options.animate !== false && !reduceMotion && !!hero;
+
+    if (nextIndex === activeIndex && !isTransitioning) return;
+
+    if (!animate) {
+      clearHeroTransitionTimers();
+      isTransitioning = false;
+      queuedIndex = null;
+      setHeroTransitionState(null);
+      applySlide(nextIndex);
+      return;
+    }
+
+    if (isTransitioning) {
+      queuedIndex = nextIndex;
+      return;
+    }
+
+    isTransitioning = true;
+    hero.classList.add('has-carousel-transitioned');
+    setHeroTransitionState('out');
+
+    transitionTimerId = window.setTimeout(() => {
+      transitionTimerId = null;
+      applySlide(nextIndex);
+      setHeroTransitionState('in');
+
+      transitionEndTimerId = window.setTimeout(() => {
+        transitionEndTimerId = null;
+        isTransitioning = false;
+        setHeroTransitionState(null);
+
+        if (queuedIndex !== null && queuedIndex !== activeIndex) {
+          const queued = queuedIndex;
+          queuedIndex = null;
+          showSlide(queued);
+        } else {
+          queuedIndex = null;
+        }
+      }, 980);
+    }, 560);
+>>>>>>> Stashed changes:Stada.kz/main/js/script.js
   }
 
   function stopAutoplay() {
@@ -4627,7 +5581,7 @@ function initScrollEffects() {
   if (!navBar) return;
   const backToTop = document.createElement('button');
   backToTop.id = 'backToTop';
-  backToTop.setAttribute('aria-label', currentLang === 'ru' ? 'Вернуться наверх' : 'Жоғарыға қайту');
+  backToTop.setAttribute('aria-label', currentLang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх');
   backToTop.innerHTML = '↑';
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -4812,14 +5766,21 @@ function initHistoryTimelineMedia() {
 document.addEventListener('DOMContentLoaded', () => {
   // Determine the initial language.  If the user has previously selected
   // a language and it is stored in localStorage, respect that choice.
+  currentCountry = STADA_DEFAULT_COUNTRY;
   try {
+    const savedCountry = localStorage.getItem('stada-country');
+    if (savedCountry) {
+      currentCountry = normalizeCountryCode(savedCountry);
+    }
     const savedLang = localStorage.getItem('stada-lang');
-    if (savedLang === 'ru' || savedLang === 'kz') {
-      currentLang = savedLang;
+    if (savedLang) {
+      currentLang = resolveLanguageForCountry(savedLang, currentCountry);
     }
   } catch (e) {
     // Fallback to default language when localStorage is not available
   }
+  ensureCountryToggle();
+  renderLanguageOptions(currentCountry);
   // Initial language update
   updateLanguage(currentLang);
   // Initialise libraries
@@ -4839,11 +5800,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // specifies its target language via the data‑lang attribute.  If
   // neither is found (e.g. on older pages) fall back to the single
   // toggle button and the toggleLanguage() helper.
-  const langRu = document.getElementById('lang-ru');
-  const langKz = document.getElementById('lang-kz');
-  if (langRu && langKz) {
-    langRu.addEventListener('click', () => updateLanguage('ru'));
-    langKz.addEventListener('click', () => updateLanguage('kz'));
+  const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
+  if (langOptions.length) {
+    langOptions.forEach(button => {
+      button.addEventListener('click', () => updateLanguage(button.dataset.lang));
+    });
   } else {
     const langBtn = document.getElementById('langBtn');
     if (langBtn) langBtn.addEventListener('click', toggleLanguage);
