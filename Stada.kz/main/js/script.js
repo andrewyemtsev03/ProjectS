@@ -24,6 +24,7 @@ const translations = {
     nav_products: 'Продукты',
     nav_career: 'Карьера',
     hero_kicker: 'STADA Kazakhstan',
+    site_name: 'STADA Kazakhstan',
     hero_title1: 'Забота о здоровье',
     hero_sub1: 'Качественные препараты, которым доверяют каждый день.',
     hero_title2: 'Качество без компромиссов',
@@ -310,6 +311,7 @@ const translations = {
     hero_products_label: 'НАШИ ПРОДУКТЫ',
     hero_products_heading: 'Качественные лекарства для лучшей жизни',
     hero_products_description: 'Мы предлагаем широкий ассортимент высококачественных дженериков и продуктов для здоровья потребителей в различных терапевтических областях.',
+    button_products: 'Продукты',
     products_browse_catalog: 'Смотреть каталог',
     products_metric_portfolio: 'продуктов в каталоге',
     products_metric_areas: 'терапевтических направлений',
@@ -1013,6 +1015,7 @@ const translations = {
     nav_products: 'Өнімдер',
     nav_career: 'Мансап',
     hero_kicker: 'STADA Kazakhstan',
+    site_name: 'STADA Kazakhstan',
     hero_title1: 'Денсаулыққа қамқорлық',
     hero_sub1: 'Күн сайын сенім артатын сапалы дәрі-дәрмектер.',
     hero_title2: 'Сапаға адалдық',
@@ -1300,6 +1303,7 @@ const translations = {
     hero_products_label: 'БІЗДІҢ ӨНІМДЕР',
     hero_products_heading: 'Үздік өмір үшін сапалы дәрілер',
     hero_products_description: 'Біз әртүрлі терапевтік салаларда жоғары сапалы дженериктер мен тұтынушылар денсаулығы өнімдерінің кең ассортиментін ұсынамыз.',
+    button_products: 'Өнімдер',
     products_browse_catalog: 'Каталогты көру',
     products_metric_portfolio: 'каталогтағы өнім',
     products_metric_areas: 'терапевтік бағыт',
@@ -2194,6 +2198,33 @@ Object.assign(translations.kz, {
 });
 
 let currentLang = 'ru';
+let currentCountry = 'kz';
+
+const STADA_COUNTRY_OPTIONS = [
+  {
+    code: 'kz',
+    label: 'KZ',
+    name: 'Kazakhstan',
+    backendCountry: 'kazakhstan',
+    defaultLanguage: 'ru',
+    supportedLanguages: ['ru', 'kz'],
+  },
+  {
+    code: 'kg',
+    label: 'KG',
+    name: 'Kyrgyzstan',
+    backendCountry: 'kyrgyzstan',
+    defaultLanguage: 'ru',
+    supportedLanguages: ['ru', 'kg'],
+  },
+];
+
+const STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
+const STADA_LANGUAGE_LABELS = {
+  ru: 'RU',
+  kz: 'KZ',
+  kg: 'KG',
+};
 
 const productFallbacks = {
   ru: {
@@ -3071,21 +3102,376 @@ function getProductFallback(lang, key) {
   return '';
 }
 
-// Helper to update all elements with data-i18n-key
-function updateLanguage(lang) {
-  if (!translations[lang]) lang = 'ru';
-  currentLang = lang;
-  // Persist the selected language so that navigation between pages retains the user’s choice
+const STADA_BACKEND_BASE_URL = window.STADA_BACKEND_BASE_URL || 'https://stada-content-backend.onrender.com';
+const STADA_DOMAIN_COUNTRY = getCountryCodeFromHostname(window.location.hostname);
+const STADA_CONFIG_COUNTRY = getConfiguredCountryCode();
+const STADA_DEFAULT_COUNTRY = STADA_DOMAIN_COUNTRY || STADA_CONFIG_COUNTRY || 'kz';
+const backendPageCache = {};
+let backendPagePayload = null;
+
+function normalizeCountryCode(countryInput) {
+  const requested = String(countryInput || '').trim().toLowerCase();
+  const matched = STADA_COUNTRY_OPTIONS.find(country => {
+    return [country.code, country.backendCountry, country.name].some(value => value.toLowerCase() === requested);
+  });
+  return matched?.code || 'kz';
+}
+
+function getConfiguredCountryCode() {
+  const configuredCountry = window.STADA_BACKEND_COUNTRY || window.STADA_COUNTRY || '';
+  return configuredCountry ? normalizeCountryCode(configuredCountry) : '';
+}
+
+function getCountryCodeFromHostname(hostname) {
+  const normalizedHostname = String(hostname || '')
+    .trim()
+    .toLowerCase()
+    .replace(/^www\./, '')
+    .split(':')[0];
+
+  const matchedCountry = STADA_COUNTRY_OPTIONS.find(country => {
+    return normalizedHostname === country.code || normalizedHostname.endsWith(`.${country.code}`);
+  });
+
+  return matchedCountry?.code || '';
+}
+
+function getCountryConfig(countryCode = currentCountry) {
+  return STADA_COUNTRY_BY_CODE[normalizeCountryCode(countryCode)] || STADA_COUNTRY_BY_CODE.kz;
+}
+
+function getSupportedLanguages(countryCode = currentCountry) {
+  return getCountryConfig(countryCode).supportedLanguages;
+}
+
+function getLanguageLabel(lang) {
+  return STADA_LANGUAGE_LABELS[lang] || String(lang || '').toUpperCase();
+}
+
+function resolveLanguageForCountry(lang, countryCode = currentCountry) {
+  const country = getCountryConfig(countryCode);
+  const requested = String(lang || '').trim().toLowerCase();
+  if (country.supportedLanguages.includes(requested)) return requested;
+  return country.defaultLanguage || country.supportedLanguages[0] || 'ru';
+}
+
+function persistLocaleState() {
   try {
-    localStorage.setItem('stada-lang', lang);
+    localStorage.setItem('stada-country', currentCountry);
+    localStorage.setItem('stada-lang', currentLang);
   } catch (e) {
-    // If localStorage is unavailable (e.g. due to privacy settings), silently ignore
+    // Ignore storage failures.
   }
-  document.documentElement.lang = lang;
-  const elements = document.querySelectorAll('[data-i18n-key]');
-  elements.forEach(el => {
+}
+
+function initializeLocaleState() {
+  currentCountry = STADA_DEFAULT_COUNTRY;
+  try {
+    const savedCountry = localStorage.getItem('stada-country');
+    if (savedCountry && !STADA_DOMAIN_COUNTRY) {
+      currentCountry = normalizeCountryCode(savedCountry);
+    }
+    const savedLang = localStorage.getItem('stada-lang');
+    if (savedLang) {
+      currentLang = resolveLanguageForCountry(savedLang, currentCountry);
+    } else {
+      currentLang = resolveLanguageForCountry(currentLang, currentCountry);
+    }
+  } catch (e) {
+    currentLang = resolveLanguageForCountry(currentLang, currentCountry);
+  }
+}
+
+function setToggleActiveIndex(toggle, index) {
+  if (!toggle) return;
+  toggle.dataset.activeIndex = String(index);
+  toggle.style.setProperty('--toggle-active-x', index === 0 ? '0%' : 'calc(100% + 4px)');
+  toggle.style.setProperty('--lang-active-x', index === 0 ? '0%' : 'calc(100% + 4px)');
+}
+
+function renderLanguageOptions(countryCode = currentCountry) {
+  const supportedLanguages = getSupportedLanguages(countryCode);
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    const buttons = Array.from(toggle.querySelectorAll('.lang-option'));
+    buttons.forEach((button, index) => {
+      const lang = supportedLanguages[index];
+      if (!lang) {
+        button.hidden = true;
+        return;
+      }
+      button.hidden = false;
+      button.dataset.lang = lang;
+      button.id = `lang-${lang}`;
+      button.textContent = getLanguageLabel(lang);
+      button.setAttribute('aria-label', `Switch language to ${getLanguageLabel(lang)}`);
+    });
+  });
+}
+
+function isBackendDrivenPage() {
+  return !!document.querySelector('[data-i18n-key], [data-backend-text-id], [data-backend-image-id]');
+}
+
+function getCurrentBackendPagePath() {
+  const pathname = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/');
+  const mainMarker = '/main/';
+  const mainIndex = pathname.lastIndexOf(mainMarker);
+  let pagePath = mainIndex >= 0 ? pathname.slice(mainIndex + mainMarker.length) : pathname.replace(/^\/+/, '');
+
+  pagePath = pagePath.replace(/^main\//, '');
+  if (!pagePath || pagePath.endsWith('/')) pagePath = `${pagePath}index.html`;
+  if (pagePath === 'main') pagePath = 'index.html';
+  return pagePath || 'index.html';
+}
+
+function getSiteAssetPath(relativePath) {
+  const depth = Math.max(0, getCurrentBackendPagePath().split('/').length - 1);
+  return `${'../'.repeat(depth)}${String(relativePath || '').replace(/^\/+/, '')}`;
+}
+
+function buildBackendPageUrl(lang) {
+  const country = getCountryConfig();
+  const url = new URL(`/api/page/${encodeURIComponent(country.backendCountry)}`, STADA_BACKEND_BASE_URL);
+  url.searchParams.set('lang', lang);
+  url.searchParams.set('page', getCurrentBackendPagePath());
+  return url.href;
+}
+
+async function fetchBackendPage(lang) {
+  const cacheKey = `${currentCountry}:${lang}:${getCurrentBackendPagePath()}`;
+  if (!backendPageCache[cacheKey]) {
+    backendPageCache[cacheKey] = fetch(buildBackendPageUrl(lang))
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Backend returned ${response.status}`);
+        }
+        return response.json();
+      });
+  }
+  return backendPageCache[cacheKey];
+}
+
+function getBackendPageText(key) {
+  if (!backendPagePayload?.content?.text) return '';
+  return backendPagePayload.content.text[key] || '';
+}
+
+function escapeCssIdentifier(value) {
+  if (window.CSS?.escape) return window.CSS.escape(value);
+  return String(value).replace(/["\\]/g, '\\$&');
+}
+
+function getTranslatedText(lang, key) {
+  return getBackendPageText(key)
+    || translations[lang]?.[key]
+    || translations.ru?.[key]
+    || getProductFallback(lang, key)
+    || getProductFallback('ru', key);
+}
+
+function getStaticTranslatedText(lang, key) {
+  return translations[lang]?.[key]
+    || translations.ru?.[key]
+    || getProductFallback(lang, key)
+    || getProductFallback('ru', key)
+    || '';
+}
+
+function applyStaticI18n(lang) {
+  document.querySelectorAll('[data-static-i18n-key]').forEach(el => {
+    const key = el.getAttribute('data-static-i18n-key');
+    const translation = getStaticTranslatedText(lang, key);
+    if (translation) el.textContent = translation;
+  });
+}
+
+function setLanguageToggleState(lang) {
+  renderLanguageOptions(currentCountry);
+  document.querySelectorAll('.lang-toggle').forEach(langToggle => {
+    const buttons = Array.from(langToggle.querySelectorAll('.lang-option:not([hidden])'));
+    const activeIndex = Math.max(0, buttons.findIndex(button => button.dataset.lang === lang));
+    langToggle.dataset.activeLang = lang;
+    setToggleActiveIndex(langToggle, activeIndex);
+    buttons.forEach(btn => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+}
+
+function applyTextFromBackendPayload(payload) {
+  const text = payload?.content?.text || {};
+  const dynamicText = {
+    hero_kicker: payload?.country?.siteName,
+    site_name: payload?.country?.siteName,
+  };
+
+  document.querySelectorAll('[data-i18n-key]').forEach(el => {
     const key = el.getAttribute('data-i18n-key');
-    const translation = translations[lang]?.[key] || getProductFallback(lang, key);
+    const value = dynamicText[key] || text[key] || '';
+    if (value) {
+      el.textContent = value;
+      el.hidden = false;
+    } else if (el.closest('.benefits-list')) {
+      el.textContent = '';
+      el.hidden = true;
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder-key');
+    const value = text[key] || '';
+    if (value) el.setAttribute('placeholder', value);
+  });
+
+  document.querySelectorAll('[data-i18n-aria-label-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label-key');
+    const value = text[key] || '';
+    if (value) el.setAttribute('aria-label', value);
+  });
+
+  (payload?.content?.dom?.text || []).forEach(item => {
+    if (!item?.id) return;
+    document.querySelectorAll(`[data-backend-text-id="${escapeCssIdentifier(item.id)}"]`).forEach(el => {
+      el.textContent = item.value || '';
+    });
+  });
+}
+
+function normalizeImageLookupKey(value) {
+  return String(value || '')
+    .split('#')[0]
+    .split('?')[0]
+    .replace(/\\/g, '/')
+    .replace(/^https?:\/\/[^/]+\/?/i, '')
+    .replace(/^(\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .replace(/^\.\.\//, '');
+}
+
+function isStableCloudinaryImageUrl(src) {
+  return /^https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\/(?!v\d+\/)/i.test(String(src || ''));
+}
+
+function withRuntimeImageRefresh(src) {
+  if (!isStableCloudinaryImageUrl(src)) return src;
+  if (!window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) return src;
+
+  try {
+    const url = new URL(src);
+    url.searchParams.set('fresh', String(Date.now()));
+    return url.href;
+  } catch (error) {
+    const separator = String(src).includes('?') ? '&' : '?';
+    return `${src}${separator}fresh=${Date.now()}`;
+  }
+}
+
+function applyImagesFromBackendPayload(payload) {
+  (payload?.content?.dom?.images || []).forEach(image => {
+    if (!image?.id) return;
+    document.querySelectorAll(`img[data-backend-image-id="${escapeCssIdentifier(image.id)}"]`).forEach(img => {
+      if (img.dataset.optimizedStaticSrc === 'true' && image.source !== 'override') return;
+
+      const nextSrc = image.source === 'override'
+        ? image.url || image.src || img.src
+        : image.src || img.src;
+      img.src = withRuntimeImageRefresh(nextSrc);
+      if (image.srcset) img.srcset = image.srcset;
+      if (image.sizes) img.sizes = image.sizes;
+      img.alt = image.alt || '';
+      if (image.loading) img.loading = image.loading;
+      img.dataset.backendImageApplied = 'true';
+    });
+  });
+
+  const photosBySrc = new Map();
+  (payload?.content?.photos || []).forEach(photo => {
+    const keys = [photo.src, photo.url].map(normalizeImageLookupKey).filter(Boolean);
+    keys.forEach(key => photosBySrc.set(key, photo));
+  });
+
+  document.querySelectorAll('img').forEach(img => {
+    if (img.dataset.backendImageApplied === 'true') return;
+    const originalSrc = img.getAttribute('data-backend-src') || img.getAttribute('src') || '';
+    const photo = photosBySrc.get(normalizeImageLookupKey(originalSrc));
+    if (!photo) return;
+    img.src = photo.src || photo.url || img.src;
+    if (photo.alt) img.alt = photo.alt;
+    if (photo.loading) img.loading = photo.loading;
+  });
+}
+
+function showBackendRequiredMessage(error) {
+  backendPagePayload = null;
+  delete backendPageCache[`${currentCountry}:${currentLang}:${getCurrentBackendPagePath()}`];
+  hideStadaPageLoader();
+  document.body.classList.add('backend-content-pending');
+
+  let screen = document.querySelector('[data-backend-error-screen]');
+  if (!screen) {
+    screen = document.createElement('div');
+    screen.setAttribute('data-backend-error-screen', '');
+    screen.style.cssText = 'position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:24px;background:#f7f8fb;color:#141414;font:400 16px/1.5 Noto Sans,Arial,sans-serif;';
+    document.body.appendChild(screen);
+  }
+
+  screen.innerHTML = `
+    <section role="alert" aria-live="assertive" style="width:min(100%,560px);padding:44px 38px;border-radius:18px;background:#fff;box-shadow:0 24px 70px rgba(20,20,20,.14);text-align:center;">
+      <img src="${getSiteAssetPath('assets/logos/stada_logo.png')}" alt="STADA logo" style="display:block;width:118px;height:auto;margin:0 auto 26px;">
+      <p style="margin:0 0 10px;color:#c4002f;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.08em;">Service unavailable</p>
+      <h1 style="margin:0 0 14px;font-size:clamp(28px,4vw,42px);line-height:1.12;color:#1d1d1f;">Sorry, our services are unavailable.</h1>
+      <p style="margin:0 auto 28px;max-width:420px;color:#4b4b55;font-size:17px;">We're working on fixing it. Please try refreshing the page in a moment.</p>
+      <button type="button" data-backend-retry style="appearance:none;border:0;border-radius:999px;background:#005db9;color:#fff;padding:13px 24px;font:700 15px/1 Noto Sans,Arial,sans-serif;cursor:pointer;">Refresh page</button>
+    </section>
+  `;
+  screen.querySelector('[data-backend-retry]')?.addEventListener('click', () => window.location.reload());
+  document.title = 'STADA - Service unavailable';
+  console.warn('Page backend unavailable.', error);
+}
+
+function clearBackendRequiredMessage() {
+  document.querySelector('[data-backend-error-screen]')?.remove();
+}
+
+async function updateBackendDrivenPage(lang) {
+  lang = resolveLanguageForCountry(lang);
+  currentLang = lang;
+  persistLocaleState();
+  document.documentElement.lang = lang;
+  setLanguageToggleState(lang);
+  applyStaticI18n(lang);
+
+  const payload = await fetchBackendPage(lang);
+  backendPagePayload = payload;
+  clearBackendRequiredMessage();
+  applyStaticI18n(lang);
+  applyTextFromBackendPayload(payload);
+  applyImagesFromBackendPayload(payload);
+  document.body.classList.remove('backend-content-pending');
+
+  updateDocumentTitle(lang);
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.setAttribute('aria-label', getBackendPageText('footer_back_top') || 'Back to top');
+  }
+
+  document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang, country: currentCountry } }));
+  document.querySelectorAll('.hero-overlay').forEach(overlay => {
+    overlay.classList.add('visible');
+  });
+}
+
+function updateStaticLanguage(lang) {
+  lang = resolveLanguageForCountry(lang);
+  currentLang = lang;
+  persistLocaleState();
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n-key]').forEach(el => {
+    const key = el.getAttribute('data-i18n-key');
+    const translation = getTranslatedText(lang, key);
     if (translation) {
       el.textContent = translation;
       el.hidden = false;
@@ -3097,70 +3483,64 @@ function updateLanguage(lang) {
 
   document.querySelectorAll('[data-i18n-placeholder-key]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder-key');
-    const translation = translations[lang]?.[key] || getProductFallback(lang, key);
+    const translation = getTranslatedText(lang, key);
     if (translation) el.setAttribute('placeholder', translation);
   });
 
   document.querySelectorAll('[data-i18n-aria-label-key]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria-label-key');
-    const translation = translations[lang]?.[key] || getProductFallback(lang, key);
+    const translation = getTranslatedText(lang, key);
     if (translation) el.setAttribute('aria-label', translation);
   });
-  // Highlight the active language option in the custom toggle.  Each
-  // language button is annotated with a `data-lang` attribute; we
-  // assign the `active` class based on the current language.  If
-  // legacy markup with a single `#langBtn` exists (e.g. before
-  // applying the redesign) we leave it untouched.
-  const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
-  if (langOptions.length) {
-    const langToggle = document.querySelector('.lang-toggle');
-    if (langToggle) {
-      langToggle.dataset.activeLang = lang;
-    }
-    langOptions.forEach(btn => {
-      const isActive = btn.dataset.lang === lang;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-pressed', String(isActive));
-    });
-  } else {
-    // Fallback: update the text of the single toggle button to reflect
-    // the current language order (RU/KZ or KZ/RU).
-    const langBtn = document.getElementById('langBtn');
-    if (langBtn) {
-      langBtn.textContent = lang === 'ru' ? 'RU / KZ' : 'KZ / RU';
-    }
-  }
 
-  // Update back-to-top button label if it exists
+  setLanguageToggleState(lang);
+  applyStaticI18n(lang);
+
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    backToTop.setAttribute('aria-label', lang === 'ru' ? 'Вернуться наверх' : 'Жоғарыға қайту');
+    backToTop.setAttribute('aria-label', lang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх');
   }
 
   updateDocumentTitle(lang);
-  document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang } }));
-
-  // Reveal hero overlays after text has been populated.  Without this
-  // call the overlays remain hidden (opacity 0) to prevent a flash of
-  // unstyled content while CSS and translations are loading.  We add
-  // the class on every language update so that toggling languages
-  // re‑triggers the fade in effect if desired.
-  const heroOverlays = document.querySelectorAll('.hero-overlay');
-  heroOverlays.forEach(overlay => {
+  document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang, country: currentCountry } }));
+  document.querySelectorAll('.hero-overlay').forEach(overlay => {
     overlay.classList.add('visible');
   });
 }
 
+// Helper to update all elements with data-i18n-key
+function updateLanguage(lang) {
+  lang = resolveLanguageForCountry(lang);
+  if (isBackendDrivenPage()) {
+    updateBackendDrivenPage(lang).catch(error => {
+      updateStaticLanguage(lang);
+      showBackendRequiredMessage(error);
+    });
+    return;
+  }
+  updateStaticLanguage(lang);
+}
+
+function updateCountry(countryCode) {
+  const nextCountry = normalizeCountryCode(countryCode);
+  if (nextCountry === currentCountry) return;
+  currentCountry = nextCountry;
+  backendPagePayload = null;
+  updateLanguage(resolveLanguageForCountry(currentLang, nextCountry));
+}
+
 // Toggle languages on button click
 function toggleLanguage() {
-  updateLanguage(currentLang === 'ru' ? 'kz' : 'ru');
+  const supportedLanguages = getSupportedLanguages();
+  const currentIndex = supportedLanguages.indexOf(currentLang);
+  updateLanguage(supportedLanguages[(currentIndex + 1) % supportedLanguages.length] || supportedLanguages[0]);
 }
 
 function updateDocumentTitle(lang) {
   const explicitTitle = document.querySelector('title[data-i18n-key]');
   if (explicitTitle) {
     const titleKey = explicitTitle.getAttribute('data-i18n-key');
-    const title = translations[lang]?.[titleKey] || getProductFallback(lang, titleKey);
+    const title = getTranslatedText(lang, titleKey);
     if (title) {
       explicitTitle.textContent = title;
       return;
@@ -3182,14 +3562,14 @@ function updateDocumentTitle(lang) {
   const bodyClass = document.body?.classList;
   const matched = pageTitleMap.find(([className]) => bodyClass?.contains(className));
   if (matched) {
-    const title = translations[lang]?.[matched[1]] || getProductFallback(lang, matched[1]);
+    const title = getTranslatedText(lang, matched[1]);
     if (title) {
       document.title = matched[1] === 'worldwide_page_title' ? title : `STADA - ${title}`;
       return;
     }
   }
 
-  const homeTitle = translations[lang]?.nav_about;
+  const homeTitle = getStaticTranslatedText(lang, 'nav_about') || getTranslatedText(lang, 'nav_about');
   if (homeTitle) document.title = `STADA - ${homeTitle}`;
 }
 
@@ -3307,19 +3687,19 @@ function initHeroCarousel() {
     const captionKey = slides[activeIndex].dataset.captionKey;
     if (caption && captionKey) {
       caption.setAttribute('data-i18n-key', captionKey);
-      caption.textContent = translations[currentLang]?.[captionKey] || '';
+      caption.textContent = getTranslatedText(currentLang, captionKey) || '';
     }
 
     const titleKey = slides[activeIndex].dataset.titleKey;
     if (heroTitle && titleKey) {
       heroTitle.setAttribute('data-i18n-key', titleKey);
-      heroTitle.textContent = translations[currentLang]?.[titleKey] || '';
+      heroTitle.textContent = getTranslatedText(currentLang, titleKey) || '';
     }
 
     const leadKey = slides[activeIndex].dataset.leadKey;
     if (heroLead && leadKey) {
       heroLead.setAttribute('data-i18n-key', leadKey);
-      heroLead.textContent = translations[currentLang]?.[leadKey] || '';
+      heroLead.textContent = getTranslatedText(currentLang, leadKey) || '';
     }
   }
 
@@ -5152,16 +5532,8 @@ function initHistoryTimelineMedia() {
 
 // Bind event listeners
 document.addEventListener('DOMContentLoaded', () => {
-  // Determine the initial language.  If the user has previously selected
-  // a language and it is stored in localStorage, respect that choice.
-  try {
-    const savedLang = localStorage.getItem('stada-lang');
-    if (savedLang === 'ru' || savedLang === 'kz') {
-      currentLang = savedLang;
-    }
-  } catch (e) {
-    // Fallback to default language when localStorage is not available
-  }
+  initializeLocaleState();
+  renderLanguageOptions(currentCountry);
   // Initial language update
   updateLanguage(currentLang);
   // Initialise libraries
@@ -5181,11 +5553,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // specifies its target language via the data‑lang attribute.  If
   // neither is found (e.g. on older pages) fall back to the single
   // toggle button and the toggleLanguage() helper.
-  const langRu = document.getElementById('lang-ru');
-  const langKz = document.getElementById('lang-kz');
-  if (langRu && langKz) {
-    langRu.addEventListener('click', () => updateLanguage('ru'));
-    langKz.addEventListener('click', () => updateLanguage('kz'));
+  const langOptions = document.querySelectorAll('.lang-toggle .lang-option');
+  if (langOptions.length) {
+    langOptions.forEach(button => {
+      button.addEventListener('click', () => updateLanguage(button.dataset.lang));
+    });
   } else {
     const langBtn = document.getElementById('langBtn');
     if (langBtn) langBtn.addEventListener('click', toggleLanguage);

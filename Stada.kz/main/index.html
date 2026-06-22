@@ -22,11 +22,11 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="menu">
-        <li><a href="#about" data-i18n-key="nav_about"></a></li>
-        <li><a href="culture.html" data-i18n-key="nav_culture"></a></li>
-        <li><a href="history.html" data-i18n-key="nav_history"></a></li>
-        <li><a href="worldwide.html" data-i18n-key="nav_worldwide"></a></li>
-        <li><a href="products/index.html" data-i18n-key="nav_products"></a></li>
+        <li><a href="#about" data-static-i18n-key="nav_about"></a></li>
+        <li><a href="culture.html" data-static-i18n-key="nav_culture"></a></li>
+        <li><a href="history.html" data-static-i18n-key="nav_history"></a></li>
+        <li><a href="worldwide.html" data-static-i18n-key="nav_worldwide"></a></li>
+        <li><a href="products/index.html" data-static-i18n-key="nav_products"></a></li>
       </ul>
       <div class="lang-toggle">
         <button class="lang-option" id="lang-ru" data-lang="ru" aria-label="Переключить язык на русский">RU</button>
@@ -37,14 +37,14 @@
   <!-- Hero section -->
   <header class="hero-section stada-home-hero">
     <div class="hero-carousel stada-home-hero__media" data-hero-carousel aria-label="STADA hero news carousel">
-      <div class="hero-carousel-slide is-active" data-caption-key="hero_caption_scientists" data-title-key="hero_title1" data-lead-key="hero_sub1">
-        <img src="assets/hero/hero-building.png" alt="STADA Kazakhstan team group photo">
+      <div class="hero-carousel-slide is-active" data-title-key="hero_title1" data-lead-key="hero_sub1">
+        <img data-backend-image-id="index_image_002" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_002.webp" alt="STADA Kazakhstan team group photo">
       </div>
-      <div class="hero-carousel-slide" data-caption-key="hero_caption_office" data-title-key="hero_title2" data-lead-key="hero_sub2">
-        <img src="assets/hero/hero-logo-sign.png" alt="STADA production specialists reviewing a tablet">
+      <div class="hero-carousel-slide" data-title-key="hero_title2" data-lead-key="hero_sub2">
+        <img data-backend-image-id="index_image_003" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_003.webp" alt="STADA production specialists reviewing a tablet">
       </div>
-      <div class="hero-carousel-slide" data-caption-key="hero_caption_logo" data-title-key="hero_title3" data-lead-key="hero_sub3">
-        <img src="assets/hero/hero-team.png" alt="STADA team group photo">
+      <div class="hero-carousel-slide" data-title-key="hero_title3" data-lead-key="hero_sub3">
+        <img data-backend-image-id="index_image_004" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_004.png" alt="STADA team group photo">
       </div>
       <div class="hero-carousel-dots stada-home-hero__progress" aria-label="Hero image navigation">
         <button class="hero-carousel-dot is-active" type="button" data-hero-slide="0" aria-label="Show hero image 1" aria-current="true"></button>
@@ -53,12 +53,11 @@
       </div>
     </div>
     <div class="stada-home-hero__copy">
-      <p class="stada-home-hero__kicker" data-i18n-key="hero_kicker"></p>
+      <p class="stada-home-hero__kicker" data-static-i18n-key="hero_kicker"></p>
       <h1 data-i18n-key="hero_title1"></h1>
       <p class="stada-home-hero__lead" data-i18n-key="hero_sub1"></p>
-      <a href="#about" class="hero-btn" data-i18n-key="cta_more"></a>
+      <a href="#about" class="hero-btn" data-static-i18n-key="cta_more"></a>
     </div>
-    <div class="hero-visual-caption" data-hero-caption data-i18n-key="hero_caption_scientists"></div>
   </header>
 
   <main class="home-main">
@@ -66,8 +65,8 @@
     <section class="about-section home-section" id="about">
       <div class="home-section__inner about-layout">
         <div class="about-copy">
-          <p class="section-kicker">STADA Kazakhstan</p>
-          <h2 data-i18n-key="about_heading"></h2>
+          <p class="section-kicker" data-i18n-key="site_name"></p>
+          <h2 data-static-i18n-key="about_heading"></h2>
           <div class="about-text">
             <p data-i18n-key="about_par1"></p>
             <p data-i18n-key="about_par2"></p>
@@ -80,7 +79,7 @@
         </div>
         <div class="about-stats" aria-label="STADA facts">
           <div class="about-visual">
-            <img src="assets/news/stada-headquarters-01.jpg" alt="STADA corporate headquarters in Bad Vilbel">
+            <img data-backend-image-id="index_image_005" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_005.webp" alt="STADA corporate headquarters in Bad Vilbel">
             <div class="about-visual__caption">
               <strong>STADA</strong>
               <span data-i18n-key="hero_caption_logo"></span>
@@ -101,8 +100,8 @@
         <div class="section-header">
           <div class="news-header-copy">
             <p class="section-kicker">STADA</p>
-            <h2 data-i18n-key="nav_news"></h2>
-            <p data-i18n-key="news_section_lead"></p>
+            <h2 data-static-i18n-key="nav_news"></h2>
+            <p data-static-i18n-key="news_section_lead"></p>
           </div>
           <div class="news-carousel__controls" aria-label="News carousel controls">
             <button class="news-carousel__button" type="button" data-news-prev aria-label="Previous news">&lsaquo;</button>
@@ -118,80 +117,80 @@
           <div class="news-track" data-news-track>
           <article class="news-card">
             <div class="news-card__media news-card__media--hq">
-              <img src="assets/news/stada-headquarters-01.jpg" alt="STADA headquarters in Bad Vilbel">
+              <img data-backend-image-id="index_image_006" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_006.webp" alt="STADA headquarters in Bad Vilbel">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">2025</span>
+              <span data-backend-text-id="index_text_013" class="news-card__date">2025</span>
               <h3 data-i18n-key="hero_text1"></h3>
               <p data-i18n-key="news_1_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--hq">
-              <img src="assets/news/stada-headquarters-02.jpg" alt="STADA headquarters complete view">
+              <img data-backend-image-id="index_image_007" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_007.jpg" alt="STADA headquarters complete view">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">2024</span>
+              <span data-backend-text-id="index_text_014" class="news-card__date">2024</span>
               <h3 data-i18n-key="hero_text2"></h3>
               <p data-i18n-key="news_2_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--production">
-              <img src="assets/news/stada-production-01.jpg" alt="STADA production specialist at equipment">
+              <img data-backend-image-id="index_image_008" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_008.jpg" alt="STADA production specialist at equipment">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">KZ</span>
+              <span data-backend-text-id="index_text_015" class="news-card__date">KZ</span>
               <h3 data-i18n-key="hero_text3"></h3>
               <p data-i18n-key="news_3_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--lab-team">
-              <img src="assets/news/stada-laboratory-01.jpg" alt="STADA laboratory team at work">
+              <img data-backend-image-id="index_image_009" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_009.jpg" alt="STADA laboratory team at work">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">2025</span>
+              <span data-backend-text-id="index_text_016" class="news-card__date">2025</span>
               <h3 data-i18n-key="news_4_title"></h3>
               <p data-i18n-key="news_4_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--production">
-              <img src="assets/news/stada-production-02.jpg" alt="STADA production process equipment">
+              <img data-backend-image-id="index_image_010" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_010.jpg" alt="STADA production process equipment">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">STADA</span>
+              <span data-backend-text-id="index_text_017" class="news-card__date">STADA</span>
               <h3 data-i18n-key="news_5_title"></h3>
               <p data-i18n-key="news_5_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--lab-detail">
-              <img src="assets/news/stada-laboratory-02.jpg" alt="STADA laboratory glassware">
+              <img data-backend-image-id="index_image_011" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_011.jpg" alt="STADA laboratory glassware">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">Digestive</span>
+              <span data-backend-text-id="index_text_018" class="news-card__date">Digestive</span>
               <h3 data-i18n-key="news_6_title"></h3>
               <p data-i18n-key="news_6_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--lab-detail">
-              <img src="assets/news/stada-laboratory-03.jpg" alt="STADA laboratory equipment detail">
+              <img data-backend-image-id="index_image_012" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_012.jpg" alt="STADA laboratory equipment detail">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">Cold season</span>
+              <span data-backend-text-id="index_text_019" class="news-card__date">Cold season</span>
               <h3 data-i18n-key="news_7_title"></h3>
               <p data-i18n-key="news_7_text"></p>
             </div>
           </article>
           <article class="news-card">
             <div class="news-card__media news-card__media--historic">
-              <img src="assets/news/stada-historic-pharmacy.jpg" alt="Historic STADA pharmacy glass bottles">
+              <img data-backend-image-id="index_image_013" src="https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_013.jpg" alt="Historic STADA pharmacy glass bottles">
             </div>
             <div class="news-card__body">
-              <span class="news-card__date">Wellbeing</span>
+              <span data-backend-text-id="index_text_020" class="news-card__date">Wellbeing</span>
               <h3 data-i18n-key="news_8_title"></h3>
               <p data-i18n-key="news_8_text"></p>
             </div>
@@ -208,36 +207,36 @@
     <section class="career-section home-section" id="career">
       <div class="career-layout home-section__inner">
     <div class="career-media">
-      <img src="assets/products/awards/top-employer-kazakhstan-2025.png" alt="Top Employer Kazakhstan 2025">
-      <img src="assets/products/awards/top-employer-europe-2025.png" alt="Top Employer Europe 2025">
+      <img data-backend-image-id="index_image_014" src="assets/products/awards/top-employer-kazakhstan-2025.png" alt="Top Employer Kazakhstan 2025">
+      <img data-backend-image-id="index_image_015" src="assets/products/awards/top-employer-europe-2025.png" alt="Top Employer Europe 2025">
     </div>
     <div class="career-content">
-      <p class="section-kicker" data-i18n-key="nav_career"></p>
-      <h2 data-i18n-key="career_heading"></h2>
+      <p class="section-kicker" data-static-i18n-key="nav_career"></p>
+      <h2 data-static-i18n-key="career_heading"></h2>
       <p data-i18n-key="career_par1"></p>
       <div class="career-facts">
         <div class="career-fact">
-          <span class="number">&gt;50%</span>
+          <span data-backend-text-id="index_text_021" class="number">&gt;50%</span>
           <span class="text" data-i18n-key="career_fact1"></span>
         </div>
         <div class="career-fact">
-          <span class="number">94%</span>
+          <span data-backend-text-id="index_text_022" class="number">94%</span>
           <span class="text" data-i18n-key="career_fact2"></span>
         </div>
         <div class="career-fact">
-          <span class="number">&gt;11В 600</span>
+          <span data-backend-text-id="index_text_023" class="number">&gt;11В 600</span>
           <span class="text" data-i18n-key="career_fact3"></span>
         </div>
         <div class="career-fact">
-          <span class="number">93</span>
+          <span data-backend-text-id="index_text_024" class="number">93</span>
           <span class="text" data-i18n-key="career_fact4"></span>
         </div>
         <div class="career-fact">
-          <span class="number">Топ&nbsp;6%</span>
+          <span data-backend-text-id="index_text_025" class="number">Топ&nbsp;6%</span>
           <span class="text" data-i18n-key="career_fact5"></span>
         </div>
       </div>
-      <a href="https://jobs.stada.com" class="hero-btn" target="_blank" rel="noopener" data-i18n-key="career_button"></a>
+      <a href="https://jobs.stada.com" class="hero-btn" target="_blank" rel="noopener" data-static-i18n-key="career_button"></a>
     </div>
       </div>
   </section>
@@ -246,20 +245,20 @@
     <section class="products-section hero-products home-section" id="products">
     <div class="hero-products-container products-showcase">
       <div class="hero-products-text">
-        <p class="hero-label" data-i18n-key="hero_products_label"></p>
+        <p class="hero-label" data-static-i18n-key="hero_products_label"></p>
         <h2 class="hero-heading" data-i18n-key="hero_products_heading"></h2>
         <p class="hero-description" data-i18n-key="hero_products_description"></p>
         <div class="products-highlights" aria-label="Product portfolio facts">
           <div class="products-highlight">
             <strong>38</strong>
-            <span data-i18n-key="products_metric_portfolio"></span>
+            <span data-static-i18n-key="products_metric_portfolio"></span>
           </div>
           <div class="products-highlight">
             <strong>6</strong>
-            <span data-i18n-key="products_metric_areas"></span>
+            <span data-static-i18n-key="products_metric_areas"></span>
           </div>
         </div>
-        <a href="products/index.html" class="hero-btn" data-i18n-key="nav_products"></a>
+        <a href="products/index.html" class="hero-btn" data-static-i18n-key="button_products"></a>
       </div>
       <div class="hero-products-image">
         <div class="products-stage">
@@ -269,29 +268,29 @@
     </div>
     <div class="home-section__inner product-preview-shell">
       <div class="product-preview-header">
-        <p class="section-kicker" data-i18n-key="products_catalog_label"></p>
-        <a href="products/index.html" data-i18n-key="products_browse_catalog"></a>
+        <p class="section-kicker" data-static-i18n-key="products_catalog_label"></p>
+        <a href="products/index.html" data-static-i18n-key="products_browse_catalog"></a>
       </div>
       <div class="product-preview-grid">
         <a class="product-preview-card product-preview-card--cold" href="products/coldrex.html">
-          <span class="product-preview-card__category" data-i18n-key="products_category_cold"></span>
+          <span class="product-preview-card__category" data-static-i18n-key="products_category_cold"></span>
           <img src="assets/products/coldrex/packshot.png" alt="Coldrex">
-          <span class="product-preview-card__name" data-i18n-key="product_coldrex_name"></span>
+          <span class="product-preview-card__name" data-static-i18n-key="product_coldrex_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--digestive" href="products/enterogermina.html">
-          <span class="product-preview-card__category" data-i18n-key="products_category_digestive"></span>
+          <span class="product-preview-card__category" data-static-i18n-key="products_category_digestive"></span>
           <img src="assets/products/enterogermina/packshot.png" alt="Enterogermina">
-          <span class="product-preview-card__name" data-i18n-key="product_enterogermina_name"></span>
+          <span class="product-preview-card__name" data-static-i18n-key="product_enterogermina_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--respiratory" href="products/sinulan-duo.html">
-          <span class="product-preview-card__category" data-i18n-key="products_category_respiratory"></span>
+          <span class="product-preview-card__category" data-static-i18n-key="products_category_respiratory"></span>
           <img src="assets/products/sinulan-duo/packshot.png" alt="Sinulan Duo">
-          <span class="product-preview-card__name" data-i18n-key="product_sinulan_duo_name"></span>
+          <span class="product-preview-card__name" data-static-i18n-key="product_sinulan_duo_name"></span>
         </a>
         <a class="product-preview-card product-preview-card--immunity" href="products/vitrum-immunaktiv.html">
-          <span class="product-preview-card__category" data-i18n-key="products_category_immunity"></span>
+          <span class="product-preview-card__category" data-static-i18n-key="products_category_immunity"></span>
           <img src="assets/products/vitrum-immunaktiv/packshot-60-cropped.png" alt="Vitrum Immunaktiv">
-          <span class="product-preview-card__name" data-i18n-key="product_vitrum_immunaktiv_name"></span>
+          <span class="product-preview-card__name" data-static-i18n-key="product_vitrum_immunaktiv_name"></span>
         </a>
       </div>
     </div>
@@ -307,58 +306,58 @@
           <a href="#" class="footer-logo" aria-label="STADA logo">
             <img src="assets/logos/stada_logo.png" alt="STADA logo">
           </a>
-          <p class="footer-eyebrow">STADA Kazakhstan</p>
-          <p class="footer-text" data-i18n-key="footer_brand_text"></p>
+          <p class="footer-eyebrow" data-static-i18n-key="site_name"></p>
+          <p class="footer-text" data-static-i18n-key="footer_brand_text"></p>
           <div class="footer-trust" aria-label="STADA facts">
-            <span data-i18n-key="footer_trust_years"></span>
-            <span data-i18n-key="footer_trust_countries"></span>
+            <span data-static-i18n-key="footer_trust_years"></span>
+            <span data-static-i18n-key="footer_trust_countries"></span>
           </div>
         </div>
 
         <nav class="footer-nav" aria-label="Footer navigation">
           <div class="footer-nav__group">
-            <h3 data-i18n-key="footer_company_title"></h3>
-            <a href="#about" data-i18n-key="nav_about"></a>
-            <a href="culture.html" data-i18n-key="nav_culture"></a>
-            <a href="history.html" data-i18n-key="nav_history"></a>
-            <a href="worldwide.html" data-i18n-key="nav_worldwide"></a>
-            <a href="#news" data-i18n-key="nav_news"></a>
-            <a href="#career" data-i18n-key="nav_career"></a>
-            <a href="https://www.stada.com" target="_blank" rel="noopener" data-i18n-key="footer_global_link"></a>
+            <h3 data-static-i18n-key="footer_company_title"></h3>
+            <a href="#about" data-static-i18n-key="nav_about"></a>
+            <a href="culture.html" data-static-i18n-key="nav_culture"></a>
+            <a href="history.html" data-static-i18n-key="nav_history"></a>
+            <a href="worldwide.html" data-static-i18n-key="nav_worldwide"></a>
+            <a href="#news" data-static-i18n-key="nav_news"></a>
+            <a href="#career" data-static-i18n-key="nav_career"></a>
+            <a href="https://www.stada.com" target="_blank" rel="noopener" data-static-i18n-key="footer_global_link"></a>
           </div>
           <div class="footer-nav__group">
-            <h3 data-i18n-key="footer_products_title"></h3>
-            <a href="products/index.html" data-i18n-key="products_browse_catalog"></a>
-            <a href="products/coldrex.html" data-i18n-key="product_coldrex_name"></a>
-            <a href="products/enterogermina.html" data-i18n-key="product_enterogermina_name"></a>
-            <a href="products/vitrum-immunaktiv.html" data-i18n-key="product_vitrum_immunaktiv_name"></a>
+            <h3 data-static-i18n-key="footer_products_title"></h3>
+            <a href="products/index.html" data-static-i18n-key="products_browse_catalog"></a>
+            <a href="products/coldrex.html" data-static-i18n-key="product_coldrex_name"></a>
+            <a href="products/enterogermina.html" data-static-i18n-key="product_enterogermina_name"></a>
+            <a href="products/vitrum-immunaktiv.html" data-static-i18n-key="product_vitrum_immunaktiv_name"></a>
           </div>
           <div class="footer-nav__group">
-            <h3 data-i18n-key="footer_access_title"></h3>
-            <a href="products/index.html#pharmacy-partners" data-i18n-key="where_to_buy_heading"></a>
-            <a href="products/index.html#products-catalog" data-i18n-key="products_filter_all"></a>
-            <a href="products/index.html#products-catalog" data-i18n-key="products_category_respiratory"></a>
-            <a href="products/index.html#products-catalog" data-i18n-key="products_category_cardio"></a>
+            <h3 data-static-i18n-key="footer_access_title"></h3>
+            <a href="products/index.html#pharmacy-partners" data-static-i18n-key="where_to_buy_heading"></a>
+            <a href="products/index.html#products-catalog" data-static-i18n-key="products_filter_all"></a>
+            <a href="products/index.html#products-catalog" data-static-i18n-key="products_category_respiratory"></a>
+            <a href="products/index.html#products-catalog" data-static-i18n-key="products_category_cardio"></a>
           </div>
         </nav>
       </div>
 
       <div class="footer-warning">
-        <strong data-i18n-key="footer_warning_title"></strong>
-        <p data-i18n-key="footer_warning_text"></p>
+        <strong data-static-i18n-key="footer_warning_title"></strong>
+        <p data-static-i18n-key="footer_warning_text"></p>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> STADA. <span data-i18n-key="footer_rights"></span></p>
+        <p>&copy; <span id="year"></span> STADA. <span data-static-i18n-key="footer_rights"></span></p>
         <div class="footer-bottom__links">
           <a href="https://www.stada.com" target="_blank" rel="noopener">stada.com</a>
-          <a href="#" class="footer-top" data-i18n-key="footer_back_top" aria-label="Back to top"></a>
+          <a href="#" class="footer-top" data-static-i18n-key="footer_back_top" aria-label="Back to top"></a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=country-page-backend-3"></script>
 </body>
 </html>
