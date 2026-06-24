@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Main interactivity script for the STADA “О компании” page.
  *
  * Handles language switching (Russian ↔ Kazakh), mobile menu
@@ -3334,7 +3334,10 @@ function applyTextFromBackendPayload(payload) {
   (payload?.content?.dom?.text || []).forEach(item => {
     if (!item?.id) return;
     document.querySelectorAll(`[data-backend-text-id="${escapeCssIdentifier(item.id)}"]`).forEach(el => {
-      el.textContent = item.value || '';
+      const value = item.value || '';
+      el.textContent = value;
+      el.dataset.backendTextValue = value;
+      delete el.dataset.animated;
     });
   });
 }
@@ -3354,21 +3357,23 @@ function isStableCloudinaryImageUrl(src) {
   return /^https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\/(?!v\d+\/)/i.test(String(src || ''));
 }
 
-function withRuntimeImageRefresh(src) {
+function withRuntimeImageRefresh(src, cacheKey = '') {
   if (!isStableCloudinaryImageUrl(src)) return src;
-  if (!window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) return src;
+  if (!cacheKey && !window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) return src;
 
   try {
     const url = new URL(src);
-    url.searchParams.set('fresh', String(Date.now()));
+    url.searchParams.set(cacheKey ? 'v' : 'fresh', cacheKey || String(Date.now()));
     return url.href;
   } catch (error) {
     const separator = String(src).includes('?') ? '&' : '?';
-    return `${src}${separator}fresh=${Date.now()}`;
+    return `${src}${separator}${cacheKey ? 'v' : 'fresh'}=${encodeURIComponent(cacheKey || String(Date.now()))}`;
   }
 }
 
 function applyImagesFromBackendPayload(payload) {
+  const overrideImageCacheKey = payload?.content?.overrides?.updatedAt || '';
+
   (payload?.content?.dom?.images || []).forEach(image => {
     if (!image?.id) return;
     document.querySelectorAll(`img[data-backend-image-id="${escapeCssIdentifier(image.id)}"]`).forEach(img => {
@@ -3377,7 +3382,7 @@ function applyImagesFromBackendPayload(payload) {
       const nextSrc = image.source === 'override'
         ? image.url || image.src || img.src
         : image.src || img.src;
-      img.src = withRuntimeImageRefresh(nextSrc);
+      img.src = withRuntimeImageRefresh(nextSrc, image.source === 'override' ? overrideImageCacheKey : '');
       if (image.srcset) img.srcset = image.srcset;
       if (image.sizes) img.sizes = image.sizes;
       img.alt = image.alt || '';
@@ -3400,6 +3405,37 @@ function applyImagesFromBackendPayload(payload) {
     img.src = photo.src || photo.url || img.src;
     if (photo.alt) img.alt = photo.alt;
     if (photo.loading) img.loading = photo.loading;
+  });
+}
+
+function renderHomeProductPreview(payload) {
+  const grid = document.querySelector('[data-home-products-grid]');
+  const products = payload?.content?.homeProducts || [];
+  if (!grid || !products.length) return;
+
+  grid.innerHTML = '';
+  products.slice(0, 4).forEach(product => {
+    const card = document.createElement('a');
+    const categoryClass = product.categoryClass ? ` product-preview-card--${product.categoryClass}` : '';
+    card.className = `product-preview-card${categoryClass}`;
+    card.href = product.href || `products/${product.id}.html`;
+    if (product.accent) card.style.setProperty('--product-accent', product.accent);
+
+    const category = document.createElement('span');
+    category.className = 'product-preview-card__category';
+    category.textContent = product.therapeuticArea || product.category || '';
+
+    const image = document.createElement('img');
+    image.src = product.image?.src || product.image?.url || '';
+    image.alt = product.image?.alt || product.name || product.id || '';
+    image.loading = 'lazy';
+
+    const name = document.createElement('span');
+    name.className = 'product-preview-card__name';
+    name.textContent = product.name || product.id || '';
+
+    card.append(category, image, name);
+    grid.appendChild(card);
   });
 }
 
@@ -3449,6 +3485,7 @@ async function updateBackendDrivenPage(lang) {
   applyStaticI18n(lang);
   applyTextFromBackendPayload(payload);
   applyImagesFromBackendPayload(payload);
+  renderHomeProductPreview(payload);
   document.body.classList.remove('backend-content-pending');
 
   updateDocumentTitle(lang);
@@ -4875,112 +4912,6 @@ function initGecsikonLevitation() {
   start();
 }
 
-function initTerginanLevitation() {
-  const page = document.querySelector('.product-terginan-page');
-  if (!page) return;
-
-  const hero = page.querySelector('.product-hero--terginan');
-  const packshot = page.querySelector('.terginan-hero-packshot');
-  const heroImage = page.querySelector('.product-hero-image');
-  const formula = page.querySelector('.terginan-formula-system');
-  const formulaCards = Array.from(page.querySelectorAll('.terginan-formula-point'));
-  if (!hero || !packshot || !heroImage) return;
-
-  const resetHero = () => {
-    packshot.style.setProperty('--terginan-hero-float-y', '0px');
-    heroImage.style.setProperty('--terginan-hero-shadow-opacity', '0.74');
-    heroImage.style.setProperty('--terginan-hero-shadow-transform', 'scale3d(1, 1, 1)');
-  };
-
-  const resetFormula = () => {
-    formulaCards.forEach(card => {
-      card.style.setProperty('--terginan-formula-card-y', '0px');
-    });
-  };
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    resetHero();
-    resetFormula();
-    return;
-  }
-
-  let animationFrame = 0;
-  let heroVisible = true;
-  let formulaVisible = !!formula;
-
-  const renderFrame = time => {
-    if (document.hidden || (!heroVisible && !formulaVisible)) {
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-      return;
-    }
-
-    if (heroVisible) {
-      const phase = Math.sin(time / 1380);
-      const liftProgress = (phase + 1) / 2;
-      const lift = liftProgress * -6;
-      const shadowScaleX = 1 - liftProgress * 0.05;
-      const shadowScaleY = 1 - liftProgress * 0.08;
-      const shadowOpacity = 0.74 - liftProgress * 0.1;
-
-      packshot.style.setProperty('--terginan-hero-float-y', `${lift.toFixed(2)}px`);
-      heroImage.style.setProperty('--terginan-hero-shadow-opacity', shadowOpacity.toFixed(3));
-      heroImage.style.setProperty('--terginan-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
-    } else {
-      resetHero();
-    }
-
-    if (formulaVisible) {
-      formulaCards.forEach((card, index) => {
-        const cardPhase = Math.sin(time / 1260 + index * 0.84);
-        card.style.setProperty('--terginan-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
-      });
-    } else {
-      resetFormula();
-    }
-
-    animationFrame = window.requestAnimationFrame(renderFrame);
-  };
-
-  const start = () => {
-    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
-      animationFrame = window.requestAnimationFrame(renderFrame);
-    }
-  };
-
-  const stopIfIdle = () => {
-    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-    }
-  };
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target === hero) heroVisible = entry.isIntersecting;
-        if (entry.target === formula) formulaVisible = entry.isIntersecting;
-      });
-      stopIfIdle();
-      start();
-    }, { threshold: 0.08 });
-
-    observer.observe(hero);
-    if (formula) observer.observe(formula);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stopIfIdle();
-    else start();
-  });
-
-  start();
-}
-
 function initKlopidogrelTevaLevitation() {
   const page = document.querySelector('.product-klopidogrel-teva-page');
   if (!page) return;
@@ -5042,224 +4973,6 @@ function initKlopidogrelTevaLevitation() {
       formulaCards.forEach((card, index) => {
         const cardPhase = Math.sin(time / 1260 + index * 0.84);
         card.style.setProperty('--klopidogrel-teva-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
-      });
-    } else {
-      resetFormula();
-    }
-
-    animationFrame = window.requestAnimationFrame(renderFrame);
-  };
-
-  const start = () => {
-    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
-      animationFrame = window.requestAnimationFrame(renderFrame);
-    }
-  };
-
-  const stopIfIdle = () => {
-    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-    }
-  };
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target === hero) heroVisible = entry.isIntersecting;
-        if (entry.target === formula) formulaVisible = entry.isIntersecting;
-      });
-      stopIfIdle();
-      start();
-    }, { threshold: 0.08 });
-
-    observer.observe(hero);
-    if (formula) observer.observe(formula);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      stopIfIdle();
-    } else {
-      start();
-    }
-  });
-
-  start();
-}
-
-function initLizobaktLevitation() {
-  const page = document.querySelector('.product-lizobakt-page');
-  if (!page) return;
-
-  const hero = page.querySelector('.product-hero--lizobakt');
-  const packshot = page.querySelector('.lizobakt-hero-packshot');
-  const heroImage = page.querySelector('.product-hero-image');
-  const formula = page.querySelector('.lizobakt-formula-system');
-  const formulaCards = Array.from(page.querySelectorAll('.lizobakt-formula-point'));
-  if (!hero || !packshot || !heroImage) return;
-
-  const resetHero = () => {
-    packshot.style.setProperty('--lizobakt-hero-float-y', '0px');
-    heroImage.style.setProperty('--lizobakt-hero-shadow-opacity', '0.74');
-    heroImage.style.setProperty('--lizobakt-hero-shadow-transform', 'scale3d(1, 1, 1)');
-  };
-
-  const resetFormula = () => {
-    formulaCards.forEach(card => {
-      card.style.setProperty('--lizobakt-formula-card-y', '0px');
-    });
-  };
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    resetHero();
-    resetFormula();
-    return;
-  }
-
-  let animationFrame = 0;
-  let heroVisible = true;
-  let formulaVisible = !!formula;
-
-  const renderFrame = time => {
-    if (document.hidden || (!heroVisible && !formulaVisible)) {
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-      return;
-    }
-
-    if (heroVisible) {
-      const phase = Math.sin(time / 1380);
-      const liftProgress = (phase + 1) / 2;
-      const lift = liftProgress * -6;
-      const shadowScaleX = 1 - liftProgress * 0.05;
-      const shadowScaleY = 1 - liftProgress * 0.08;
-      const shadowOpacity = 0.74 - liftProgress * 0.1;
-
-      packshot.style.setProperty('--lizobakt-hero-float-y', `${lift.toFixed(2)}px`);
-      heroImage.style.setProperty('--lizobakt-hero-shadow-opacity', shadowOpacity.toFixed(3));
-      heroImage.style.setProperty('--lizobakt-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
-    } else {
-      resetHero();
-    }
-
-    if (formulaVisible) {
-      formulaCards.forEach((card, index) => {
-        const cardPhase = Math.sin(time / 1260 + index * 0.84);
-        card.style.setProperty('--lizobakt-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
-      });
-    } else {
-      resetFormula();
-    }
-
-    animationFrame = window.requestAnimationFrame(renderFrame);
-  };
-
-  const start = () => {
-    if (!animationFrame && !document.hidden && (heroVisible || formulaVisible)) {
-      animationFrame = window.requestAnimationFrame(renderFrame);
-    }
-  };
-
-  const stopIfIdle = () => {
-    if (animationFrame && (document.hidden || (!heroVisible && !formulaVisible))) {
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-    }
-  };
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target === hero) heroVisible = entry.isIntersecting;
-        if (entry.target === formula) formulaVisible = entry.isIntersecting;
-      });
-      stopIfIdle();
-      start();
-    }, { threshold: 0.08 });
-
-    observer.observe(hero);
-    if (formula) observer.observe(formula);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      stopIfIdle();
-    } else {
-      start();
-    }
-  });
-
-  start();
-}
-
-function initFaringoseptLevitation() {
-  const page = document.querySelector('.product-faringosept-page');
-  if (!page) return;
-
-  const hero = page.querySelector('.product-hero--faringosept');
-  const packshot = page.querySelector('.faringosept-hero-packshot');
-  const heroImage = page.querySelector('.product-hero-image');
-  const formula = page.querySelector('.faringosept-formula-system');
-  const formulaCards = Array.from(page.querySelectorAll('.faringosept-formula-point'));
-  if (!hero || !packshot || !heroImage) return;
-
-  const resetHero = () => {
-    packshot.style.setProperty('--faringosept-hero-float-y', '0px');
-    heroImage.style.setProperty('--faringosept-hero-shadow-opacity', '0.74');
-    heroImage.style.setProperty('--faringosept-hero-shadow-transform', 'scale3d(1, 1, 1)');
-  };
-
-  const resetFormula = () => {
-    formulaCards.forEach(card => {
-      card.style.setProperty('--faringosept-formula-card-y', '0px');
-    });
-  };
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    resetHero();
-    resetFormula();
-    return;
-  }
-
-  let animationFrame = 0;
-  let heroVisible = true;
-  let formulaVisible = !!formula;
-
-  const renderFrame = time => {
-    if (document.hidden || (!heroVisible && !formulaVisible)) {
-      animationFrame = 0;
-      resetHero();
-      resetFormula();
-      return;
-    }
-
-    if (heroVisible) {
-      const phase = Math.sin(time / 1380);
-      const liftProgress = (phase + 1) / 2;
-      const lift = liftProgress * -6;
-      const shadowScaleX = 1 - liftProgress * 0.05;
-      const shadowScaleY = 1 - liftProgress * 0.08;
-      const shadowOpacity = 0.74 - liftProgress * 0.1;
-
-      packshot.style.setProperty('--faringosept-hero-float-y', `${lift.toFixed(2)}px`);
-      heroImage.style.setProperty('--faringosept-hero-shadow-opacity', shadowOpacity.toFixed(3));
-      heroImage.style.setProperty('--faringosept-hero-shadow-transform', `scale3d(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)}, 1)`);
-    } else {
-      resetHero();
-    }
-
-    if (formulaVisible) {
-      formulaCards.forEach((card, index) => {
-        const cardPhase = Math.sin(time / 1260 + index * 0.84);
-        card.style.setProperty('--faringosept-formula-card-y', `${(cardPhase * 5).toFixed(2)}px`);
       });
     } else {
       resetFormula();
@@ -5372,7 +5085,7 @@ function initScrollEffects() {
 function initCounters() {
   const counters = document.querySelectorAll('.career-fact .number');
   if (!counters.length) return;
-  const animateCounter = (el, endVal, formatValue) => {
+  const animateCounter = (el, endVal, formatValue, finalText) => {
     const duration = 2000;
     const startTime = performance.now();
     const startVal = 0;
@@ -5382,6 +5095,8 @@ function initCounters() {
       el.textContent = el.dataset.prefix + formatValue(value) + el.dataset.suffix;
       if (progress < 1) {
         requestAnimationFrame(animate);
+      } else {
+        el.textContent = finalText;
       }
     };
     requestAnimationFrame(animate);
@@ -5397,7 +5112,12 @@ function initCounters() {
         const el = entry.target;
         if (!el.dataset.animated) {
           // Store prefix and suffix so we can reassemble the original format
-          const text = el.textContent;
+          const text = el.dataset.backendTextValue || el.textContent;
+          if (!/[0-9]/.test(text)) {
+            el.textContent = text;
+            el.dataset.animated = 'true';
+            return;
+          }
           const prefixMatch = text.match(/^[^0-9]+/);
           const suffixMatch = text.match(/[^0-9]+$/);
           el.dataset.prefix = prefixMatch ? prefixMatch[0] : '';
@@ -5407,7 +5127,7 @@ function initCounters() {
           const formatValue = shouldGroup
             ? value => value.toLocaleString('ru-RU').replace(/\s/g, '\u00a0')
             : value => String(value);
-          animateCounter(el, endVal, formatValue);
+          animateCounter(el, endVal, formatValue, text);
           el.dataset.animated = 'true';
         }
       }
@@ -5583,10 +5303,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFemilexHeroLevitation();
   initNoshpaForteLevitation();
   initGecsikonLevitation();
-  initTerginanLevitation();
   initKlopidogrelTevaLevitation();
-  initLizobaktLevitation();
-  initFaringoseptLevitation();
   // Bind hamburger menu
   const hamburger = document.querySelector('.hamburger');
   const menu = document.querySelector('.menu');
