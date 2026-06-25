@@ -3439,6 +3439,122 @@ function renderHomeProductPreview(payload) {
   });
 }
 
+function normalizeProductCardId(value) {
+  return String(value || '')
+    .split(/[?#]/)[0]
+    .replace(/\\/g, '/')
+    .replace(/^(\.\/)+/, '')
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^products\//, '')
+    .replace(/\.html$/i, '')
+    .replace(/\/index$/i, '')
+    .trim();
+}
+
+function resolveProductCardHref(href) {
+  const value = String(href || '').trim();
+  if (!value || /^(?:https?:)?\/\//i.test(value) || value.startsWith('#')) return value;
+
+  const normalized = value.replace(/\\/g, '/').replace(/^(\.\/)+/, '');
+  if (getCurrentBackendPagePath().startsWith('products/') && normalized.startsWith('products/')) {
+    return normalized.replace(/^products\//, '');
+  }
+  return normalized;
+}
+
+function createProductCatalogCard(product) {
+  const card = document.createElement('a');
+  card.className = 'catalog-card';
+  card.dataset.productCard = '';
+  card.dataset.dynamicProductCard = 'true';
+  card.dataset.category = product.category || '';
+  card.href = resolveProductCardHref(product.href || `products/${product.id}.html`);
+  if (product.accent) card.style.setProperty('--card-accent', product.accent);
+
+  const media = document.createElement('div');
+  media.className = 'catalog-card__media';
+
+  const image = document.createElement('img');
+  image.src = withRuntimeImageRefresh(product.image?.url || product.image?.src || '');
+  image.alt = product.image?.alt || product.name || product.id || '';
+  image.loading = 'lazy';
+  media.appendChild(image);
+
+  const body = document.createElement('div');
+  body.className = 'catalog-card__body';
+
+  const category = document.createElement('span');
+  category.className = 'catalog-card__category';
+  category.textContent = product.therapeuticArea || product.category || '';
+
+  const title = document.createElement('h3');
+  title.textContent = product.name || product.id || '';
+
+  const description = document.createElement('p');
+  description.textContent = product.shortDescription || '';
+
+  const cta = document.createElement('span');
+  cta.className = 'catalog-card__cta';
+  cta.textContent = getTranslatedText(currentLang, 'cta_more') || 'Подробнее';
+
+  body.append(category, title, description, cta);
+  card.append(media, body);
+  return card;
+}
+
+function applyProductCatalogCards(payload) {
+  const products = payload?.content?.productCatalog || [];
+  if (!products.length) return;
+
+  const productsById = new Map(products.map(product => [product.id, product]));
+  document.querySelectorAll('[data-product-card]').forEach(card => {
+    const cardId = normalizeProductCardId(card.getAttribute('href'));
+    const product = productsById.get(cardId);
+    if (!product) return;
+
+    if (product.href) card.setAttribute('href', resolveProductCardHref(product.href));
+    if (product.category) card.dataset.category = product.category;
+    if (product.accent) card.style.setProperty('--card-accent', product.accent);
+
+    const image = card.querySelector('.catalog-card__media img, img');
+    const imageSrc = product.image?.url || product.image?.src || '';
+    if (image && imageSrc) {
+      image.src = withRuntimeImageRefresh(imageSrc);
+      image.alt = product.image?.alt || product.name || product.id || '';
+      image.dataset.backendImageApplied = 'true';
+    }
+
+    const category = card.querySelector('.catalog-card__category');
+    if (category && product.therapeuticArea) {
+      category.textContent = product.therapeuticArea;
+    }
+
+    const title = card.querySelector('.catalog-card__body h3, h3');
+    if (title && product.name) {
+      title.textContent = product.name;
+    }
+
+    const description = card.querySelector('.catalog-card__body p, p');
+    if (description && product.shortDescription) {
+      description.textContent = product.shortDescription;
+    }
+  });
+
+  const grid = document.querySelector('[data-product-grid]');
+  if (!grid) return;
+
+  const existingIds = new Set(
+    Array.from(grid.querySelectorAll('[data-product-card]'))
+      .map(card => normalizeProductCardId(card.getAttribute('href')))
+      .filter(Boolean)
+  );
+  products.forEach(product => {
+    if (!product.id || existingIds.has(product.id)) return;
+    grid.appendChild(createProductCatalogCard(product));
+    existingIds.add(product.id);
+  });
+}
+
 function showBackendRequiredMessage(error) {
   backendPagePayload = null;
   delete backendPageCache[`${currentCountry}:${currentLang}:${getCurrentBackendPagePath()}`];
@@ -3485,6 +3601,7 @@ async function updateBackendDrivenPage(lang) {
   applyStaticI18n(lang);
   applyTextFromBackendPayload(payload);
   applyImagesFromBackendPayload(payload);
+  applyProductCatalogCards(payload);
   renderHomeProductPreview(payload);
   document.body.classList.remove('backend-content-pending');
 
@@ -4009,8 +4126,7 @@ function initProductsCarousel() {
 
 function initProductCatalogFilters() {
   const filters = Array.from(document.querySelectorAll('[data-product-filter]'));
-  const cards = Array.from(document.querySelectorAll('[data-product-card]'));
-  if (!filters.length || !cards.length) return;
+  if (!filters.length) return;
 
   filters.forEach(filterButton => {
     filterButton.addEventListener('click', () => {
@@ -4022,6 +4138,7 @@ function initProductCatalogFilters() {
         button.setAttribute('aria-pressed', String(isActive));
       });
 
+      const cards = Array.from(document.querySelectorAll('[data-product-card]'));
       cards.forEach(card => {
         const categories = (card.dataset.category || '').split(' ');
         const isVisible = activeFilter === 'all' || categories.includes(activeFilter);
