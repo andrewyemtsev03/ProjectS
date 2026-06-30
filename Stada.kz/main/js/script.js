@@ -3718,6 +3718,15 @@ function clearBackendRequiredMessage() {
   document.querySelector('[data-backend-error-screen]')?.remove();
 }
 
+function useStaticBackendPageFallback(error) {
+  backendPagePayload = null;
+  delete backendPageCache[`${currentCountry}:${currentLang}:${getCurrentBackendPagePath()}`];
+  clearBackendRequiredMessage();
+  document.body.classList.remove('backend-content-pending');
+  hideStadaPageLoader();
+  console.warn('Page backend unavailable; using static page content.', error);
+}
+
 function normalizeDynamicProductImageSrc(src) {
   const value = String(src || '').trim();
   if (!value) return getSiteAssetPath('assets/products/catalog-thumbs/catalog-hero-podium.webp');
@@ -4295,7 +4304,7 @@ function updateLanguage(lang) {
   if (isBackendDrivenPage()) {
     updateBackendDrivenPage(lang).catch(error => {
       updateStaticLanguage(lang);
-      showBackendRequiredMessage(error);
+      useStaticBackendPageFallback(error);
     });
     return;
   }
