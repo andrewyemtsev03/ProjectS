@@ -4107,6 +4107,47 @@ function createDynamicUsageItem(item, index) {
   return article;
 }
 
+function getProductFallbackCardImageSrc(slug) {
+  const normalizedSlug = normalizeProductCardId(slug);
+  if (!normalizedSlug) return '';
+  const extension = normalizedSlug === 'cardiomagnil' ? 'jpg' : 'png';
+  return `https://res.cloudinary.com/ds2aaznn7/image/upload/stada/products/${normalizedSlug}/card.${extension}`;
+}
+
+function createLegacyProductFallbackPayload(slug, legacy) {
+  const normalizedSlug = normalizeProductCardId(slug);
+  const copy = legacy?.copy || {};
+  const name = copy.hero?.title || copy.overview?.heading || normalizedSlug;
+  const therapeuticArea = copy.hero?.kicker || copy.overview?.label || '';
+  const shortDescription = copy.hero?.lead || copy.overview?.intro || '';
+  const imageSrc = getProductFallbackCardImageSrc(normalizedSlug) || legacy?.heroImageSrc || '';
+
+  return {
+    product: {
+      id: normalizedSlug,
+      slug: normalizedSlug,
+      name,
+      therapeuticArea,
+      shortDescription,
+      image: {
+        src: imageSrc,
+        url: imageSrc,
+        alt: legacy?.heroImageAlt || name,
+      },
+      page: {
+        title: name ? `STADA - ${name}` : 'STADA - Product',
+      },
+    },
+  };
+}
+
+function navigateToLegacyProductPage(slug) {
+  const normalizedSlug = normalizeProductCardId(slug);
+  if (!normalizedSlug) return false;
+  window.location.replace(`${encodeURIComponent(normalizedSlug)}.html`);
+  return true;
+}
+
 function renderDynamicProductPage(payload, legacy = null) {
   const product = payload?.product || {};
   const page = product.page || {};
@@ -4201,10 +4242,29 @@ async function updateDynamicProductPage(lang) {
   setLanguageToggleState(lang);
   applyStaticI18n(lang);
   updateStaticLanguage(lang);
-  const [payload, legacy] = await Promise.all([
-    fetchBackendProduct(lang),
-    fetchLegacyProductBlueprint(getDynamicProductSlug())
-  ]);
+  const slug = getDynamicProductSlug();
+  const legacyPromise = fetchLegacyProductBlueprint(slug);
+  let payload = null;
+  let legacy = null;
+  try {
+    [payload, legacy] = await Promise.all([
+      fetchBackendProduct(lang),
+      legacyPromise
+    ]);
+  } catch (error) {
+    legacy = await legacyPromise.catch(() => null);
+    if (!legacy) {
+      if (window.location.protocol === 'file:' && navigateToLegacyProductPage(slug)) return;
+      throw error;
+    }
+    const fallbackImageSrc = getProductFallbackCardImageSrc(slug);
+    if (fallbackImageSrc) {
+      legacy.heroImageSrc = fallbackImageSrc;
+      legacy.formulaImageSrc = fallbackImageSrc;
+    }
+    payload = createLegacyProductFallbackPayload(slug, legacy);
+    console.warn('Product backend unavailable; using legacy product page content.', error);
+  }
   renderDynamicProductPage(payload, legacy);
   await waitForCriticalImages();
   document.body.classList.remove('backend-content-pending');
