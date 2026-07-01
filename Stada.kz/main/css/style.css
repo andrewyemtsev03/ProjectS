@@ -8397,6 +8397,14 @@ footer {
   filter: drop-shadow(0 0 5px rgba(21, 151, 223, 0.42));
 }
 
+.product-detail-page .product-formula .snup-formula-source-dot {
+  fill: #ffffff;
+  stroke: rgba(21, 151, 223, 0.82);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(21, 151, 223, 0.34));
+  vector-effect: non-scaling-stroke;
+}
+
 .product-detail-page .product-formula .snup-formula-core {
   top: 42%;
   width: min(48vw, 450px);
@@ -8464,7 +8472,7 @@ footer {
 .product-detail-page .product-formula .snup-formula-point--format {
   --point-x: -50%;
   bottom: -2.2rem;
-  left: 55%;
+  left: 52%;
 }
 
 .product-detail-page .product-formula .snup-formula-point img {

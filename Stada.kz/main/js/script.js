@@ -81,6 +81,8 @@ const FRONTEND_STATIC_TEXT = {
     "hero_products_label": "НАШИ ПРОДУКТЫ",
     "nav_about": "О компании",
     "nav_career": "Карьера",
+    "nav_categories": "Категории",
+    "nav_company": "Компания",
     "nav_culture": "Культура",
     "nav_history": "История компании",
     "nav_news": "Новости и Медия",
@@ -97,20 +99,24 @@ const FRONTEND_STATIC_TEXT = {
     "product_cardiomagnil_name": "Кардиомагнил",
     "product_coldrex_name": "Колдрекс",
     "product_enterogermina_name": "Энтерожермина",
+    "product_magneb6kids_name": "Магне Б6 Кидс",
     "product_noshpa_name": "НО-ШПА",
     "product_related_heading": "Другие варианты Аквалор",
     "product_related_intro": "Подберите похожий формат линейки Аквалор по объему, способу распыления и зоне применения.",
     "product_related_label": "Похожие товары",
     "product_sinulan_duo_name": "Синулан Дуо",
     "product_vitrum_immunaktiv_name": "Витрум Иммунактив",
+    "product_zodak_name": "Зодак",
     "products_browse_catalog": "Смотреть каталог",
     "products_catalog_label": "Каталог STADA",
+    "products_category_allergy": "Аллергия",
     "products_category_cardio": "Кардио",
     "products_category_cold": "Простуда и дыхание",
     "products_category_digestive": "Пищеварение",
     "products_category_immunity": "Иммунитет",
     "products_category_kids": "Для детей",
     "products_category_respiratory": "Дыхательные пути",
+    "products_category_urology": "Урология",
     "products_filter_all": "Все продукты",
     "products_metric_areas": "терапевтических направлений",
     "products_metric_portfolio": "продуктов в каталоге",
@@ -140,6 +146,8 @@ const FRONTEND_STATIC_TEXT = {
     "hero_products_label": "БІЗДІҢ ӨНІМДЕР",
     "nav_about": "Компания туралы",
     "nav_career": "Мансап",
+    "nav_categories": "Санаттар",
+    "nav_company": "Компания",
     "nav_culture": "Мәдениет",
     "nav_history": "Компания тарихы",
     "nav_news": "Жаңалықтар мен медиа",
@@ -156,26 +164,232 @@ const FRONTEND_STATIC_TEXT = {
     "product_cardiomagnil_name": "Кардиомагнил",
     "product_coldrex_name": "Колдрекс",
     "product_enterogermina_name": "Энтерожермина",
+    "product_magneb6kids_name": "Магне Б6 Кидс",
     "product_noshpa_name": "НО-ШПА",
     "product_related_heading": "Аквалордың басқа нұсқалары",
     "product_related_intro": "Аквалор желісінен көлемі, бүрку форматы және қолдану аймағы бойынша ұқсас нұсқаны таңдаңыз.",
     "product_related_label": "Ұқсас тауарлар",
     "product_sinulan_duo_name": "Синулан Дуо",
     "product_vitrum_immunaktiv_name": "Витрум Иммунактив",
+    "product_zodak_name": "Зодак",
     "products_browse_catalog": "Каталогты көру",
     "products_catalog_label": "STADA каталогы",
+    "products_category_allergy": "Аллергия",
     "products_category_cardio": "Кардио",
     "products_category_cold": "Суық тию және тыныс алу",
     "products_category_digestive": "Ас қорыту",
     "products_category_immunity": "Иммунитет",
     "products_category_kids": "Балаларға арналған",
     "products_category_respiratory": "Тыныс алу жолдары",
+    "products_category_urology": "Урология",
     "products_filter_all": "Барлық өнімдер",
     "products_metric_areas": "терапевтік бағыт",
     "products_metric_portfolio": "каталогтағы өнім",
     "products_partners_heading": "Дәріханалар мен онлайн-сервистерде қолжетімді",
     "site_name": "STADA Kazakhstan",
     "where_to_buy_heading": "Қайдан сатып алуға болады"
+  }
+};
+
+Object.assign(FRONTEND_STATIC_TEXT.ru, {
+  history_source_note: 'Ключевые этапы основаны на корпоративной хронологии STADA.'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.kz, {
+  history_source_note: 'Негізгі кезеңдер STADA корпоративтік хронологиясына негізделген.'
+});
+
+const LOCALIZED_BACKEND_DOM_TEXT = {
+  kz: {
+    history_text_001: 'STADA - Компания тарихы',
+    history_text_002: 'STADA 1895-2022',
+    history_text_003: 'Компания тарихы',
+    history_text_004: '130 жылдан астам сапа, қолжетімділік және адамдар денсаулығына қамқорлық.',
+    history_text_005: 'Хронологияны көру',
+    history_text_006: '1895',
+    history_text_007: 'Дәріханалық бастаулар',
+    history_text_008: 'Фармацевтер дәрілерді бірыңғай стандарттармен, бірдей қаптамада және бір бағада шығару үшін бірікті.',
+    history_text_009: '1975',
+    history_text_010: 'Дженериктерге бетбұрыс',
+    history_text_011: 'STADA өнім желісін дженериктермен кеңейтіп, болашақ халықаралық өсудің негізін қалады.',
+    history_text_012: '1997',
+    history_text_013: 'Биржаға шығу',
+    history_text_014: 'STADA акциялары алғаш рет Франкфурт және Дюссельдорф биржаларындағы ресми саудаға жіберілді.',
+    history_text_015: '2022',
+    history_text_016: 'Тұрақты өсу',
+    history_text_017: 'Компания өндірісті, specialty бағытын және биосимилярларды кеңейтіп, тұрақты даму туралы алғашқы жаһандық есебін жариялады.',
+    history_text_018: '1895-1933',
+    history_text_019: '1933-1948',
+    history_text_020: '1948-1961',
+    history_text_021: '1961-1975',
+    history_text_022: '1975-1993',
+    history_text_023: '1993-2000',
+    history_text_024: '2000-2005',
+    history_text_025: '2005-2010',
+    history_text_026: '2010-2015',
+    history_text_027: '2016-2022',
+    history_text_028: 'Уақыт арқылы саяхат',
+    history_text_029: 'STADA-ның ұрпақтар арқылы жолы',
+    history_text_030: '1895-1933',
+    history_text_031: 'Бірыңғай стандарт идеясының тууы',
+    history_text_032: 'Фармацевтер бірге көбірек нәтижеге жету үшін бірікті: препараттар бірдей ережелермен өндіріліп, біркелкі қапталып, бір бағада сатылды.',
+    history_text_033: '1895',
+    history_text_034: 'STADA тарихының басталуы',
+    history_text_035: '1895 жылғы 14 наурыз STADA-ның бастауы саналады: Берлин, Дрезден, Вюрцбург, Дармштадт және басқа қалалардағы фармацевтер препараттарды бірге шығара бастады.',
+    history_text_036: '1903',
+    history_text_037: 'Дәріханалық препараттарды реттеу',
+    history_text_038: 'Неміс фармацевтер қауымдастығы фармацевтикалық арнайы өнімдерді дербес өндіру ережелерін бекітті: шығарудан және таңбалаудан бастап қаптама мен бағаға дейін.',
+    history_text_039: '1908',
+    history_text_040: 'Қауымдастықтың мамандандырылған компаниясы',
+    history_text_041: 'Неміс фармацевтер қауымдастығының мамандандырылған компаниясы құрылып, қатысушыларға препараттарды бірдей талаптармен шығаруға мүмкіндік берді.',
+    history_text_042: '1933',
+    history_text_043: 'Жаңа ұйымдастырушылық форма',
+    history_text_044: 'Қауымдастық St.d.A кәсіби қоғамдастығына өткеннен кейін мамандандырылған компания Неміс фармацевтер қауымдастығының өз препараттары бөліміне айналды.',
+    history_text_045: '1933-1948',
+    history_text_046: 'STADA қауымдастық белгісі ретінде',
+    history_text_047: 'Екінші дүниежүзілік соғыстан кейін STADA қауымдастық сауда маркасына айналып, бизнес Солтүстік және Оңтүстік атты екі кооперативтік құрылым арқылы қайта іске қосылды.',
+    history_text_048: '1935',
+    history_text_049: 'STADA брендінің пайда болуы',
+    history_text_050: 'St.d.A қысқартуы тіркелген STADA белгісіне айналып, стандартты формулалар бойынша шығарылатын дәріханалық препараттардың ортақ атауы болды.',
+    history_text_051: '1938',
+    history_text_052: 'Мюнхендегі филиал',
+    history_text_053: 'STADA Мюнхенде филиал ашты. 1944 жылғы бомбалаудан кейін кеңселер Галлеге көшірілді, бірақ соғыс соңында жұмыс тоқтады.',
+    history_text_054: '1948',
+    history_text_055: 'Соғыстан кейін қайта іске қосылу',
+    history_text_056: 'STADA бұрынғы ГФР аумағында екі кооператив ретінде қайта құрылды: Эссендегі STADA North және Тюбингендегі STADA South, негізгі назар өзін-өзі емдеуге арналған өнімдерге аударылды.',
+    history_text_057: '1948-1961',
+    history_text_058: 'Өндірістік компанияға көшу',
+    history_text_059: 'Соғыстан кейінгі екі кооператив бірігіп, Бад-Фильбель/Дортельвайльдегі алаң болашақ өнеркәсіптік өсудің негізіне айналды.',
+    history_text_060: '1954',
+    history_text_061: 'Бірыңғай компания',
+    history_text_062: 'STADA North және STADA South Stada, Standardpräparate Deutscher Apotheken eGmbH болып бірікті, компания Франкфурт-на-Майнға көшті және STADA тауар белгісі тіркелді.',
+    history_text_063: '1957',
+    history_text_064: 'Бад-Фильбельдегі алаң',
+    history_text_065: 'Компания Франкфурт маңындағы үй-жайларды сатып алып, онда заманауи фармацевтикалық өндірістік база біртіндеп қалыптасты.',
+    history_text_066: '1961',
+    history_text_067: 'Орталықтандырылған өндіріс',
+    history_text_068: 'Өкілдер жиналысы STADA препараттарын тек дәріханаларда ғана емес, Дортельвайльде орталықтандырылған түрде де өндіруге болады деп шешті.',
+    history_text_069: '1961-1975',
+    history_text_070: 'Заманауи индустриялық компанияның негізі',
+    history_text_071: 'STADA өз препараттарының көтерме саудасын бастады, құқықтық формасын өзгертті және фармацевтермен тығыз байланысын сақтады.',
+    history_text_072: '1970',
+    history_text_073: 'Акционерлік модельге көшу',
+    history_text_074: 'Кооператив көбірек капитал тартып, тұрақты даму үшін корпорацияға айналды; бұл кезеңде акциялар тек фармацевтерге қолжетімді болды.',
+    history_text_075: '1971',
+    history_text_076: 'Топтың жаңа компаниялары',
+    history_text_077: 'NIDDAPHARM GmbH және STADA-CHEMIE GmbH құрылды, сондай-ақ STADA UZARA-Werk GmbH компаниясын сатып алды.',
+    history_text_078: '1975-1993',
+    history_text_079: 'Дженериктер және алғашқы халықаралық қадамдар',
+    history_text_080: 'Дженериктерді дамыту шешімі негізгі бетбұрыс болды: компания қайта құрылып, тез өсіп, шетелдік нарықтарға шықты.',
+    history_text_081: '1975',
+    history_text_082: 'STADAPHARM және дженериктер',
+    history_text_083: 'STADA желісін дженериктермен кеңейтті, STADAPHARM GmbH құрды, алғашқы лицензияларды алды; табысты өнімдердің бірі Nifedipin STADA болды.',
+    history_text_084: '1986',
+    history_text_085: 'Алғашқы шетелдік инвестициялар',
+    history_text_086: 'Швейцариялық Helvepharm AG сатып алынған соң STADA алғаш рет шетелге шықты. Кейін Австрияда STADA GmbH Austria, Бельгияда Eurogenerics SA және Нидерландта Centrafarm BV пайда болды.',
+    history_text_087: '1992',
+    history_text_088: 'Азиядағы бастау',
+    history_text_089: 'STADA Азиядағы қызметін Гонконгтағы STADA Pharmaceuticals (Asia) Ltd. арқылы бастады.',
+    history_text_090: '1993-2000',
+    history_text_091: 'Жаһандық ойыншы және биржалық тарих',
+    history_text_092: '100 жылдығына қарай бизнес қарқынды өсіп, STADA сатылым бойынша Германия саласының топ-10 қатарына кірді және халықаралық экспансиясын жалғастырды.',
+    history_text_093: '1993',
+    history_text_094: 'Фармацевт емес акционерлер',
+    history_text_095: 'Алғаш рет STADA акционерлері фармацевтер мен компания қызметкерлері ғана емес, басқа инвесторлар да бола алды.',
+    history_text_096: '1995',
+    history_text_097: 'Холдингтік құрылым',
+    history_text_098: 'STADA Бад-Фильбельдегі орташа холдингке қайта ұйымдасты; STADAPharm GmbH және STADA OTC Arzneimittel GmbH рецептуралық және OTC препараттардың негізгі маркетингін өз мойнына алды.',
+    history_text_099: '1996',
+    history_text_100: 'ALIUD және жаңа нарықтар',
+    history_text_101: 'STADA ALIUD PHARMA GmbH компаниясын екінші неміс дженерик желісі ретінде сатып алып, Франция мен Чехияда кеңейді.',
+    history_text_102: '1997',
+    history_text_103: 'IPO',
+    history_text_104: '29 қазанда STADA акциялары алғаш рет Франкфурт және Дюссельдорф қор биржаларындағы ресми саудаға жіберілді.',
+    history_text_105: '1998',
+    history_text_106: 'Портфельді кеңейту',
+    history_text_107: 'Атаулы акциялармен IPO аяқталып, STADA Даниядағы активтерді, Onkologika компаниясын және Fresenius рецептуралық брендтер пакетін сатып алды.',
+    history_text_108: '1999',
+    history_text_109: 'Таиланд, Испания, Италия',
+    history_text_110: 'Халықаралық даму жеделдеді: Бангкокта STADA Asiatic Co. Inc. іске қосылды, Испаниядағы Ciclum Farma және Италиядағы EG S.p.A компанияларына инвестиция салынды.',
+    history_text_111: '2000',
+    history_text_112: 'Ирландия және акцияларды бөлшектеу',
+    history_text_113: 'STADA Ирландия дженериктер нарығының көшбасшысы Clonmel Healthcare Ltd. компаниясын сатып алып, жай және артықшылықты акцияларды 1:10 қатынасында бөлшектеді.',
+    history_text_114: '2000-2005',
+    history_text_115: 'Индекстер, биодженериктер және Ресей',
+    history_text_116: 'STADA MDAX және Euro Stoxx 600 индекстеріне кіріп, биодженериктер әзірлеуді бастады және Ресейге стратегиялық кіруді қоса алғанда халықаралық қатысуын күшейтті.',
+    history_text_117: '2001',
+    history_text_118: 'Биодженериктер және MDAX',
+    history_text_119: 'Биодженериктерді әзірлеу басталды, Азия бизнесі кеңейді, түсім 500 млн еуродан асты, артықшылықты акциялар жай акцияларға айырбасталды және STADA MDAX құрамына кірді.',
+    history_text_120: '2002',
+    history_text_121: 'АҚШ, Испания және EuroSTOXX 600',
+    history_text_122: 'Компания STADA Inc. арқылы АҚШ нарығына шықты, Испания мен Италиядағы позициясын күшейтті, жергілікті брендтерді сатып алды және EuroSTOXX 600 индексіне кірді.',
+    history_text_123: '2003',
+    history_text_124: 'Жаңа активтер және білім беру бастамасы',
+    history_text_125: 'STADA Италиядағы New Pharmajani компаниясына инвестиция салды, Europa Fachhochschule Fresenius-пен бірге health management профессорлық кафедрасын жариялады, Schein Pharmaceuticals UK және redinomedica брендтер пакетін сатып алды.',
+    history_text_126: '2004',
+    history_text_127: 'Nizhpharm',
+    history_text_128: 'Акциялар іс жүзінде 1:1 бөлшектелді, Италиядағы брендтік портфель күшейді, ал Nizhpharm-ның шамамен 97,5%-ын сатып алу Ресейдегі маңызды қадам болды.',
+    history_text_129: '2005',
+    history_text_130: 'Португалия, Қытай және Mobilat',
+    history_text_131: 'STADA Португалиядағы Ciclum Farma, Қытайдағы Beijing Center-Lab Pharmaceutical Company компаниясының 58%-ын және Mobilat кіретін 11 еуропалық бренд пакетін сатып алды.',
+    history_text_132: '2005-2010',
+    history_text_133: 'Hemofarm, биосимилярлар және тиімділік',
+    history_text_134: 'Компания стратегиялық маңызды Hemofarm компаниясын сатып алып, топтың алғашқы биосимилярын іске қосты және алғашқы корпоративтік bond орналастырды.',
+    history_text_135: '2006',
+    history_text_136: 'Hemofarm',
+    history_text_137: 'STADA АҚШ-тағы бизнестен шығып, Сербияның Вршац қаласындағы Hemofarm A.D. компаниясын сатып алды.',
+    history_text_138: '2007',
+    history_text_139: 'MAKIZ және Forum Bioscience',
+    history_text_140: 'STADA MAKIZ Group арқылы Ресейдегі қатысуын күшейтіп, британдық Forum Bioscience Holdings Ltd. компаниясын сатып алды.',
+    history_text_141: '2008',
+    history_text_142: 'Топтың алғашқы биосимиляры',
+    history_text_143: 'Неміс cell pharm компаниясы созылмалы бүйрек жеткіліксіздігі және химиотерапия кезіндегі анемияны емдеуге арналған алғашқы STADA биосимилярын ұсынды; Германияда препарат Silapo атауымен сатылды.',
+    history_text_144: '2010',
+    history_text_145: 'Алғашқы корпоративтік bond',
+    history_text_146: 'STADA алғашқы корпоративтік bond-ты сәтті орналастырып, STADA - build the future тиімділік бағдарламасын іске қосты.',
+    history_text_147: '2010-2015',
+    history_text_148: 'Брендтік портфельдің өсуі',
+    history_text_149: 'Компания брендтік өнімдерді белсенді сатып алып, тиімділік бағдарламасын мерзімінен бұрын аяқтады және британдық OTC өндірушісі Thornton & Ross компаниясын сатып алды.',
+    history_text_150: '2011',
+    history_text_151: 'Cetraben және Gedeon Richter-пен серіктестік',
+    history_text_152: 'STADA Cetraben сатып алып, Gedeon Richter-пен екі биосимиляр әзірлеуді бастады және Шығыс Еуропа мен Таяу Шығысқа арналған Grünenthal портфелін сатып алды.',
+    history_text_153: '2012',
+    history_text_154: 'Spirig және Австралия',
+    history_text_155: 'Орталық Еуропадағы ЕО нарықтарына арналған Grünenthal портфелі сатып алынды, швейцариялық Spirig Pharma AG алынды, Австралияда еншілес компания құрылды, ал тиімділік бағдарламасы аясында жеке өндірістік алаңдар сатылды.',
+    history_text_156: '2013',
+    history_text_157: 'STADA diagnostics және Thornton & Ross',
+    history_text_158: 'STADA дербестендірілген терапияға кірді, Германияда алғашқылардың бірі болып 2D-штрихкод енгізді, Thornton & Ross сатып алды, Сербияда IT shared service center құрды, Grastofil лицензиялады, Мьянмада кеңейді және екінші corporate bond орналастырды.',
+    history_text_159: '2014',
+    history_text_160: '2 млрд еуро сатылым',
+    history_text_161: 'Дубайда логистикалық орталық ашылды, STADA сатылымы алғаш рет 2 млрд еуродан асты, Ресейге арналған Aqualor және Ұлыбритания мен Ирландияға арналған Flexitol құқықтары сатып алынды.',
+    history_text_162: '2015',
+    history_text_163: '120 жылдық',
+    history_text_164: 'STADA 120 жылдығын атап өтті, STADA Diagnostik-ті Ebola экспресс-тестімен кеңейтті, Еуропаға арналған Pegfilgrastim лицензиялады, SCIOTEC және аргентиналық Laboratorio Vannier сатып алды, ал CROMA-PHARMA-пен ынтымақтастық aesthetics бағытын күшейтті.',
+    history_text_165: '2016-2022',
+    history_text_166: 'Жаңа өсу мәдениеті және specialty фокусы',
+    history_text_167: 'STADA халықаралық брендтік өнімдерді, биосимилярларды, specialty бағытын және тұрақты дамуды күшейтті.',
+    history_text_168: '2016',
+    history_text_169: 'Брендтік өнімдерге фокус',
+    history_text_170: 'Табысты Branded Products өнімдерін мақсатты халықаралық дамыту басталды.',
+    history_text_171: '2017',
+    history_text_172: 'Bain Capital және Cinven',
+    history_text_173: 'Bain Capital және Cinven тарапынан ерікті ашық сатып алу ұсынысы сәтті өтті; иелік үлесі шамамен 65%-ға жетті.',
+    history_text_174: '2018',
+    history_text_175: 'Ladival, Nizoral және жаңа CEO',
+    history_text_176: 'STADA Ladival құқықтарын қайтарды, Nizoral бойынша EMEA құқықтарын сатып алды, BIOCEUTICALS мажоритарлық акционері болды, Peter Goldschmidt CEO болып, корпоративтік мәдениет процесін бастады; делистинг жарияланды.',
+    history_text_177: '2019',
+    history_text_178: 'Күшті портфель және One STADA құндылықтары',
+    history_text_179: 'Компания GSK OTC портфелін сатып алды, Movymia және Bortezomib STADA іске қосты, Nizoral сатылымын EMEA-да бастады, Walmark сатып алды, Ресей/ТМД-дағы Takeda OTC портфеліне инвестиция салды, Alvotech-пен серіктестік жасады және Biopharma Ukraine бизнесін сатып алды.',
+    history_text_180: '2020',
+    history_text_181: 'Alvotech және Lobsor',
+    history_text_182: 'STADA Еуропаға арналған жеті биосимиляр бойынша Alvotech-пен стратегиялық серіктестік жасады және Паркинсон ауруына арналған препарат құқықтарымен бірге Lobsor Pharmaceuticals компаниясын сатып алды.',
+    history_text_183: '2021',
+    history_text_184: 'Sanofi, Calliditas және биосимилярлар',
+    history_text_185: 'Паркинсон ауруының кеш сатысына арналған заманауи помпалық технологиялы жаңа өнім, oncology-биосимиляр bevacizumab іске қосылды, Sanofi-дің 16 consumer healthcare бренді сатып алынды, ал Calliditas Therapeutics-пен Еуропадағы IgA-нефропатия бойынша серіктестік жасалды.',
+    history_text_186: '2022',
+    history_text_187: 'Өндіріс, specialty және тұрақтылық',
+    history_text_188: 'STADA Румыниядағы құны 50 млн еуродан асатын нысанмен өндірістік желісін кеңейтті, Kinpeygo іске қосты, Еуропада жоғары концентрациялы adalimumab biosimilar шығарды, алғашқы жаһандық Sustainability Report жариялап, ең тұрақты фармкомпаниялардың топ-10% қатарына кірді.',
+    history_text_189: 'stada.com'
   }
 };
 
@@ -202,6 +416,19 @@ function applyFrontendStaticText(lang) {
       el.textContent = value;
       el.hidden = false;
     }
+  });
+}
+
+function applyLocalizedBackendDomText(lang) {
+  const localizedText = LOCALIZED_BACKEND_DOM_TEXT[lang];
+  if (!localizedText) return;
+
+  Object.entries(localizedText).forEach(([id, value]) => {
+    document.querySelectorAll(`[data-backend-text-id="${escapeCssIdentifier(id)}"]`).forEach(el => {
+      el.textContent = value;
+      el.dataset.backendTextValue = value;
+      delete el.dataset.animated;
+    });
   });
 }
 
@@ -390,6 +617,15 @@ function getSiteAssetPath(relativePath) {
   return `${'../'.repeat(depth)}${String(relativePath || '').replace(/^\/+/, '')}`;
 }
 
+function getCurrentProductCategoryFromUrl() {
+  const params = new URLSearchParams(window.location.search || '');
+  const explicitCategory = params.get('category') || params.get('filter');
+  if (explicitCategory) return explicitCategory.trim().toLowerCase();
+
+  const hashMatch = String(window.location.hash || '').match(/^#category-([a-z0-9-]+)$/i);
+  return hashMatch ? hashMatch[1].toLowerCase() : '';
+}
+
 function buildBackendPageUrl(lang) {
   const country = getCountryConfig();
   const url = new URL(`/api/page/${encodeURIComponent(country.backendCountry)}`, STADA_BACKEND_BASE_URL);
@@ -525,6 +761,8 @@ function applyTextFromBackendPayload(payload) {
       delete el.dataset.animated;
     });
   });
+
+  applyLocalizedBackendDomText(currentLang);
 }
 
 function normalizeImageLookupKey(value) {
@@ -1019,6 +1257,127 @@ function createDynamicFormulaPoint(item, index) {
   return article;
 }
 
+let formulaConnectorFrame = 0;
+
+function clampNumber(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function scheduleFormulaConnectorUpdate() {
+  if (formulaConnectorFrame) window.cancelAnimationFrame(formulaConnectorFrame);
+  formulaConnectorFrame = window.requestAnimationFrame(() => {
+    formulaConnectorFrame = 0;
+    updateFormulaConnectors();
+  });
+}
+
+function getFormulaConnectorPoint(rect, anchor) {
+  if (anchor === 'right') return { x: rect.right, y: rect.top + rect.height * 0.5 };
+  if (anchor === 'left') return { x: rect.left, y: rect.top + rect.height * 0.5 };
+  return { x: rect.left + rect.width * 0.5, y: rect.top };
+}
+
+function getRenderedFormulaImageRect(image) {
+  const rect = image.getBoundingClientRect();
+  const naturalWidth = image.naturalWidth || rect.width;
+  const naturalHeight = image.naturalHeight || rect.height;
+  if (!naturalWidth || !naturalHeight || !rect.width || !rect.height) return rect;
+
+  const scale = Math.min(rect.width / naturalWidth, rect.height / naturalHeight);
+  const renderedWidth = naturalWidth * scale;
+  const renderedHeight = naturalHeight * scale;
+
+  return {
+    left: rect.left + (rect.width - renderedWidth) / 2,
+    right: rect.left + (rect.width + renderedWidth) / 2,
+    top: rect.top + (rect.height - renderedHeight) / 2,
+    bottom: rect.top + (rect.height + renderedHeight) / 2,
+    width: renderedWidth,
+    height: renderedHeight
+  };
+}
+
+function getFormulaProductConnectorPoint(productRect, cardAnchor, anchor) {
+  const horizontalY = clampNumber(cardAnchor.y, productRect.top + productRect.height * 0.16, productRect.bottom - productRect.height * 0.2);
+  if (anchor === 'right') {
+    return { x: productRect.left - 10, y: horizontalY };
+  }
+  if (anchor === 'left') {
+    return { x: productRect.right + 10, y: horizontalY };
+  }
+  const bottomOffset = Math.max(24, Math.min(46, productRect.height * 0.12));
+  return {
+    x: productRect.left + productRect.width * 0.5,
+    y: productRect.bottom + bottomOffset
+  };
+}
+
+function toFormulaSvgPoint(point, systemRect, viewBox) {
+  return {
+    x: ((point.x - systemRect.left) / systemRect.width) * viewBox.width,
+    y: ((point.y - systemRect.top) / systemRect.height) * viewBox.height
+  };
+}
+
+function createFormulaConnectorPath(start, end, anchor) {
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  if (anchor === 'top') {
+    const direction = dy < 0 ? -1 : 1;
+    const pull = Math.max(28, Math.min(86, Math.abs(dy) * 0.48));
+    return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} C ${start.x.toFixed(1)} ${(start.y + direction * pull).toFixed(1)} ${end.x.toFixed(1)} ${(end.y - direction * pull).toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+  }
+  const direction = dx < 0 ? -1 : 1;
+  const horizontalPull = Math.max(48, Math.min(124, Math.abs(dx) * 0.72));
+  const verticalEase = dy * 0.12;
+  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} C ${(start.x + direction * horizontalPull).toFixed(1)} ${(start.y + verticalEase).toFixed(1)} ${(end.x - direction * horizontalPull).toFixed(1)} ${(end.y - verticalEase).toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+}
+
+function getFormulaSourceDots(svg, count) {
+  const dots = Array.from(svg.querySelectorAll('.snup-formula-source-dot'));
+  while (dots.length < count) {
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('class', 'snup-formula-source-dot');
+    dot.setAttribute('r', '4');
+    svg.appendChild(dot);
+    dots.push(dot);
+  }
+  return dots;
+}
+
+function updateFormulaConnectors() {
+  const system = document.querySelector('.snup-formula-system');
+  const svg = system?.querySelector('.snup-formula-lines');
+  const product = system?.querySelector('.snup-formula-product');
+  if (!system || !svg || !product) return;
+
+  const viewBox = svg.viewBox?.baseVal;
+  const systemRect = system.getBoundingClientRect();
+  const productRect = getRenderedFormulaImageRect(product);
+  if (!viewBox || !systemRect.width || !systemRect.height || !productRect.width || !productRect.height) return;
+
+  const connectors = [
+    { point: system.querySelector('.snup-formula-point--active'), path: svg.querySelectorAll('.snup-formula-line')[0], dot: svg.querySelectorAll('.snup-formula-dot')[0], anchor: 'right' },
+    { point: system.querySelector('.snup-formula-point--seawater'), path: svg.querySelectorAll('.snup-formula-line')[1], dot: svg.querySelectorAll('.snup-formula-dot')[1], anchor: 'left' },
+    { point: system.querySelector('.snup-formula-point--format'), path: svg.querySelectorAll('.snup-formula-line')[2], dot: svg.querySelectorAll('.snup-formula-dot')[2], anchor: 'top' }
+  ];
+  const sourceDots = getFormulaSourceDots(svg, connectors.length);
+
+  connectors.forEach((connector, index) => {
+    if (!connector.point || !connector.path || !connector.dot) return;
+    const cardAnchor = getFormulaConnectorPoint(connector.point.getBoundingClientRect(), connector.anchor);
+    const productAnchor = getFormulaProductConnectorPoint(productRect, cardAnchor, connector.anchor);
+    const start = toFormulaSvgPoint(productAnchor, systemRect, viewBox);
+    const end = toFormulaSvgPoint(cardAnchor, systemRect, viewBox);
+    connector.path.setAttribute('d', createFormulaConnectorPath(start, end, connector.anchor));
+    connector.dot.setAttribute('cx', end.x.toFixed(1));
+    connector.dot.setAttribute('cy', end.y.toFixed(1));
+    connector.dot.setAttribute('r', '5.5');
+    sourceDots[index]?.setAttribute('cx', start.x.toFixed(1));
+    sourceDots[index]?.setAttribute('cy', start.y.toFixed(1));
+  });
+}
+
 function createDynamicUsageItem(item, index) {
   const article = document.createElement('article');
   article.className = item.className || `usage-item vitrum-animate is-visible${index === 0 ? ' is-active' : ''}`;
@@ -1080,6 +1439,7 @@ function renderDynamicProductPage(payload) {
   if (formulaImage) {
     formulaImage.src = blueprint?.formulaImageSrc || normalizeDynamicProductImageSrc(page.formulaImage || product.image?.url || product.image?.src);
     formulaImage.alt = '';
+    formulaImage.addEventListener('load', scheduleFormulaConnectorUpdate, { once: true });
   }
 
   const badges = page.badges?.length ? page.badges : [product.therapeuticArea, product.shortDescription].filter(Boolean).slice(0, 3);
@@ -1102,6 +1462,7 @@ function renderDynamicProductPage(payload) {
   replaceChildrenFromList('[data-product-usage-items]', usageItems, createDynamicUsageItem, { hideEmpty: true });
   replaceChildrenFromList('[data-product-partners]', purchaseLinks, createDynamicPartnerCard, { hideEmpty: true });
   applyLegacyProductLayout(blueprint);
+  scheduleFormulaConnectorUpdate();
 
   document.title = page.title || `STADA - ${product.name || ''}`;
   document.dispatchEvent(new CustomEvent('stada:dynamicproductrender', { detail: { product, lang: currentLang, country: currentCountry } }));
@@ -1131,6 +1492,7 @@ async function updateDynamicProductPage(lang) {
   const payload = await fetchBackendProduct(lang);
   renderDynamicProductPage(payload);
   await waitForCriticalImages();
+  scheduleFormulaConnectorUpdate();
   document.body.classList.remove('backend-content-pending');
   hideStadaPageLoader();
 }
@@ -1150,6 +1512,7 @@ async function updateBackendDrivenPage(lang) {
   clearBackendRequiredMessage();
   applyTextFromBackendPayload(payload);
   applyImagesFromBackendPayload(payload);
+  initHistoryTimelineMedia();
   applyProductCatalogCards(payload);
   renderHomeProductPreview(payload);
   applyProductMetrics(payload);
@@ -1685,34 +2048,46 @@ function initProductCatalogFilters() {
   const filters = Array.from(document.querySelectorAll('[data-product-filter]'));
   if (!filters.length) return;
 
+  const applyProductCatalogFilter = (activeFilter) => {
+    const targetFilter = filters.find(button => button.dataset.productFilter === activeFilter) || filters.find(button => button.dataset.productFilter === 'all');
+    if (!targetFilter) return;
+
+    filters.forEach(button => {
+      const isActive = button === targetFilter;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+    cards.forEach(card => {
+      const categories = (card.dataset.category || '').split(' ');
+      const isVisible = targetFilter.dataset.productFilter === 'all' || categories.includes(targetFilter.dataset.productFilter);
+      card.hidden = !isVisible;
+      card.setAttribute('aria-hidden', String(!isVisible));
+      if (isVisible && card.classList.contains('home-reveal')) {
+        card.classList.remove('is-visible');
+        requestAnimationFrame(() => card.classList.add('is-visible'));
+      }
+    });
+  };
+
   filters.forEach(filterButton => {
     filterButton.addEventListener('click', () => {
-      const activeFilter = filterButton.dataset.productFilter;
-
-      filters.forEach(button => {
-        const isActive = button === filterButton;
-        button.classList.toggle('is-active', isActive);
-        button.setAttribute('aria-pressed', String(isActive));
-      });
-
-      const cards = Array.from(document.querySelectorAll('[data-product-card]'));
-      cards.forEach(card => {
-        const categories = (card.dataset.category || '').split(' ');
-        const isVisible = activeFilter === 'all' || categories.includes(activeFilter);
-        card.hidden = !isVisible;
-        card.setAttribute('aria-hidden', String(!isVisible));
-        if (isVisible && card.classList.contains('home-reveal')) {
-          card.classList.remove('is-visible');
-          requestAnimationFrame(() => card.classList.add('is-visible'));
-        }
-      });
+      applyProductCatalogFilter(filterButton.dataset.productFilter);
     });
   });
+
+  const linkedCategory = getCurrentProductCategoryFromUrl();
+  if (linkedCategory) applyProductCatalogFilter(linkedCategory);
 }
 
 function initProductDetailPage() {
   const page = document.querySelector('.product-detail-page');
   if (!page) return;
+
+  scheduleFormulaConnectorUpdate();
+  window.addEventListener('resize', scheduleFormulaConnectorUpdate);
+  document.addEventListener('stada:dynamicproductrender', scheduleFormulaConnectorUpdate);
 
   page.classList.add('vitrum-reveal-ready');
   const revealItems = Array.from(page.querySelectorAll('.vitrum-animate'));
