@@ -944,27 +944,11 @@ function applyLegacyProductLayout(legacy) {
   const badges = document.querySelector('[data-product-badges]');
   if (badges) badges.hidden = !legacy.heroOptions.hasBadges || !badges.children.length;
 
-  const formulaLayout = document.querySelector('.product-formula-layout');
-  if (formulaLayout && legacy.formulaLayoutClassName) {
-    formulaLayout.className = legacy.formulaLayoutClassName;
-  }
-
-  const formulaSystem = document.querySelector('.snup-formula-system');
-  if (formulaSystem && legacy.formulaSystemClassName) {
-    formulaSystem.className = legacy.formulaSystemClassName;
-  }
-
-  const formulaLines = document.querySelector('.snup-formula-lines');
-  if (formulaLines && legacy.formulaLinesClassName) {
-    formulaLines.setAttribute('class', legacy.formulaLinesClassName);
-  }
-
-  if (legacy.formulaLineClassName) {
-    document.querySelectorAll('.snup-formula-lines path').forEach(path => path.setAttribute('class', legacy.formulaLineClassName));
-  }
-  if (legacy.formulaDotClassName) {
-    document.querySelectorAll('.snup-formula-lines circle').forEach(circle => circle.setAttribute('class', legacy.formulaDotClassName));
-  }
+  document.querySelector('.product-formula-layout')?.setAttribute('class', 'product-section-inner product-formula-layout snup-formula-layout');
+  document.querySelector('.snup-formula-system')?.setAttribute('class', 'snup-formula-system vitrum-animate is-visible');
+  document.querySelector('.snup-formula-lines')?.setAttribute('class', 'snup-formula-lines');
+  document.querySelectorAll('.snup-formula-lines path').forEach(path => path.setAttribute('class', 'snup-formula-line'));
+  document.querySelectorAll('.snup-formula-lines circle').forEach(circle => circle.setAttribute('class', 'snup-formula-dot'));
 }
 
 function getApiProductBlueprint(product, page) {
@@ -1007,8 +991,8 @@ function getApiProductBlueprint(product, page) {
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
   const modifiers = ['active', 'seawater', 'format'];
-  article.className = item.className || `snup-formula-point snup-formula-point--${modifiers[index] || 'format'} vitrum-animate is-visible`;
-  if (!article.classList.contains('is-visible')) article.classList.add('is-visible');
+  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'} vitrum-animate is-visible`;
+  if (!item.title && !item.text) article.classList.add('snup-formula-point--icon-only');
   if (item.imageSrc) {
     const image = document.createElement('img');
     image.src = normalizeDynamicProductImageSrc(item.imageSrc);
@@ -1027,9 +1011,11 @@ function createDynamicFormulaPoint(item, index) {
     article.appendChild(title);
   }
 
-  const text = document.createElement('p');
-  text.textContent = item.text || '';
-  article.appendChild(text);
+  if (item.text) {
+    const text = document.createElement('p');
+    text.textContent = item.text;
+    article.appendChild(text);
+  }
   return article;
 }
 
