@@ -38,6 +38,8 @@ const STADA_COUNTRY_OPTIONS = [
     label: 'KZ',
     name: 'Kazakhstan',
     backendCountry: 'kazakhstan',
+    domain: 'stada.kz',
+    aliases: ['www.stada.kz'],
     defaultLanguage: 'ru',
     supportedLanguages: ['ru', 'kz'],
   },
@@ -46,6 +48,8 @@ const STADA_COUNTRY_OPTIONS = [
     label: 'KG',
     name: 'Kyrgyzstan',
     backendCountry: 'kyrgyzstan',
+    domain: 'stada.kg',
+    aliases: ['www.stada.kg'],
     defaultLanguage: 'ru',
     supportedLanguages: ['ru', 'kg'],
   },
@@ -496,7 +500,14 @@ async function waitForCriticalImages() {
 function normalizeCountryCode(countryInput) {
   const requested = String(countryInput || '').trim().toLowerCase();
   const matched = STADA_COUNTRY_OPTIONS.find(country => {
-    return [country.code, country.backendCountry, country.name].some(value => value.toLowerCase() === requested);
+    return [
+      country.code,
+      country.label,
+      country.backendCountry,
+      country.name,
+      country.domain,
+      ...(country.aliases || []),
+    ].some(value => String(value || '').toLowerCase() === requested);
   });
   return matched?.code || 'kz';
 }
@@ -513,11 +524,20 @@ function getCountryCodeFromHostname(hostname) {
     .replace(/^www\./, '')
     .split(':')[0];
 
-  const matchedCountry = STADA_COUNTRY_OPTIONS.find(country => {
-    return normalizedHostname === country.code || normalizedHostname.endsWith(`.${country.code}`);
+  const matchedDomainCountry = STADA_COUNTRY_OPTIONS.find(country => {
+    return [
+      country.domain,
+      ...(country.aliases || []),
+    ]
+      .map(value => String(value || '').trim().toLowerCase().replace(/^www\./, ''))
+      .includes(normalizedHostname);
   });
 
-  return matchedCountry?.code || '';
+  if (matchedDomainCountry) return matchedDomainCountry.code;
+
+  const topLevelDomain = normalizedHostname.split('.').pop();
+  const matchedTldCountry = STADA_COUNTRY_OPTIONS.find(country => country.code === topLevelDomain);
+  return matchedTldCountry?.code || '';
 }
 
 function getCountryConfig(countryCode = currentCountry) {
