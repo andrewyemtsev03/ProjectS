@@ -192,6 +192,71 @@ const FRONTEND_STATIC_TEXT = {
     "products_partners_heading": "Дәріханалар мен онлайн-сервистерде қолжетімді",
     "site_name": "STADA Kazakhstan",
     "where_to_buy_heading": "Қайдан сатып алуға болады"
+  },
+  "kg": {
+    "about_heading": "STADA компаниясы жөнүндө",
+    "benefits_heading": "Артыкчылыктар",
+    "button_products": "Продуктылар",
+    "career_button": "Вакансияларды көрүү",
+    "career_heading": "STADAдагы карьера",
+    "cta_more": "Кененирээк",
+    "footer_access_title": "Жеткиликтүүлүк",
+    "footer_back_top": "Жогору",
+    "footer_brand_text": "Биз STADAнын эл аралык тажрыйбасын Кыргызстандагы бейтаптарга, адистерге жана өнөктөштөргө жакындык менен айкалыштырабыз.",
+    "footer_company_title": "Компания",
+    "footer_global_link": "STADA Global",
+    "footer_products_title": "Продуктылар",
+    "footer_rights": "Бардык укуктар корголгон.",
+    "footer_trust_countries": "100+ өлкө",
+    "footer_trust_years": "130+ жылдык тажрыйба",
+    "footer_warning_text": "Сайттагы маалымат адистин кеңешин алмаштырбайт. Дары каражаттарын колдонор алдында нускама менен таанышыңыз.",
+    "footer_warning_title": "Маанилүү",
+    "hero_kicker": "STADA Kyrgyzstan",
+    "hero_products_label": "БИЗДИН ПРОДУКТЫЛАР",
+    "nav_about": "Компания жөнүндө",
+    "nav_career": "Карьера",
+    "nav_categories": "Категориялар",
+    "nav_company": "Компания",
+    "nav_culture": "Маданият",
+    "nav_history": "Компаниянын тарыхы",
+    "nav_news": "Жаңылыктар жана медиа",
+    "nav_products": "Продуктылар",
+    "nav_worldwide": "Биздин филиалдар",
+    "news_section_lead": "STADA жаңылыктары, медиа материалдары жана продукт жаңыртуулары бир заманбап блокто.",
+    "product_aqualor_baby_name": "Аквалор Беби",
+    "product_aqualor_forte_name": "Аквалор Актив Форте",
+    "product_aqualor_gorlo_name": "Аквалор Горло",
+    "product_aqualor_name": "Аквалор",
+    "product_aqualor_soft_mini_name": "Аквалор Софт мини",
+    "product_aqualor_soft_name": "Аквалор Софт",
+    "product_back": "Продуктыларга кайтуу",
+    "product_cardiomagnil_name": "Кардиомагнил",
+    "product_coldrex_name": "Колдрекс",
+    "product_enterogermina_name": "Энтерожермина",
+    "product_magneb6kids_name": "Магне Б6 Кидс",
+    "product_noshpa_name": "НО-ШПА",
+    "product_related_heading": "Аквалордун башка варианттары",
+    "product_related_intro": "Аквалор линиясынан көлөмү, чачыратуу форматы жана колдонуу аймагы боюнча окшош вариантты тандаңыз.",
+    "product_related_label": "Окшош товарлар",
+    "product_sinulan_duo_name": "Синулан Дуо",
+    "product_vitrum_immunaktiv_name": "Витрум Иммунактив",
+    "product_zodak_name": "Зодак",
+    "products_browse_catalog": "Каталогду көрүү",
+    "products_catalog_label": "STADA каталогу",
+    "products_category_allergy": "Аллергия",
+    "products_category_cardio": "Кардио",
+    "products_category_cold": "Суук тийүү жана дем алуу",
+    "products_category_digestive": "Тамак сиңирүү",
+    "products_category_immunity": "Иммунитет",
+    "products_category_kids": "Балдар үчүн",
+    "products_category_respiratory": "Дем алуу жолдору",
+    "products_category_urology": "Урология",
+    "products_filter_all": "Бардык продуктылар",
+    "products_metric_areas": "терапиялык багыт",
+    "products_metric_portfolio": "каталогдогу продукт",
+    "products_partners_heading": "Дарыканаларда жана онлайн сервистерде жеткиликтүү",
+    "site_name": "STADA Kyrgyzstan",
+    "where_to_buy_heading": "Кайдан сатып алса болот"
   }
 };
 
@@ -201,6 +266,10 @@ Object.assign(FRONTEND_STATIC_TEXT.ru, {
 
 Object.assign(FRONTEND_STATIC_TEXT.kz, {
   history_source_note: 'Негізгі кезеңдер STADA корпоративтік хронологиясына негізделген.'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.kg, {
+  history_source_note: 'Негизги этаптар STADAнын корпоративдик хронологиясына негизделген.'
 });
 
 const LOCALIZED_BACKEND_DOM_TEXT = {
@@ -399,7 +468,7 @@ const LOCALIZED_BACKEND_DOM_TEXT = {
 
 function frontendLanguageFallbackOrder(lang) {
   const requested = String(lang || '').trim().toLowerCase();
-  const regionalFallbacks = requested === 'kg' ? ['kz'] : [];
+  const regionalFallbacks = [];
   return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];
 }
 
@@ -1598,7 +1667,8 @@ function updateStaticLanguage(lang) {
 
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    backToTop.setAttribute('aria-label', ['kz', 'kg'].includes(lang) ? 'Жоғарыға қайту' : 'Вернуться наверх');
+    const backToTopLabel = lang === 'kg' ? 'Жогору кайтуу' : lang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх';
+    backToTop.setAttribute('aria-label', backToTopLabel);
   }
 
   updateDocumentTitle(lang);
