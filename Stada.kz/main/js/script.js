@@ -960,10 +960,13 @@ function applyImagesFromBackendPayload(payload) {
 
 function renderHomeProductPreview(payload) {
   const grid = document.querySelector('[data-home-products-grid]');
-  const products = payload?.content?.homeProducts || [];
-  if (!grid || !products.length) return;
+  if (!grid || !Array.isArray(payload?.content?.homeProducts)) return;
 
+  const products = payload.content.homeProducts;
   grid.innerHTML = '';
+  grid.hidden = !products.length;
+  if (!products.length) return;
+
   products.slice(0, 4).forEach(product => {
     const card = document.createElement('a');
     const categoryClass = product.categoryClass ? ` product-preview-card--${product.categoryClass}` : '';
@@ -994,8 +997,9 @@ function renderHomeProductPreview(payload) {
 }
 
 function applyProductMetrics(payload) {
-  const productCount = (payload?.content?.productCatalog || []).length;
-  if (!productCount) return;
+  if (!Array.isArray(payload?.content?.productCatalog)) return;
+
+  const productCount = payload.content.productCatalog.length;
 
   ['index_text_026', 'products_index_text_002'].forEach(id => {
     document.querySelectorAll(`[data-backend-text-id="${escapeCssIdentifier(id)}"]`).forEach(el => {
@@ -1046,7 +1050,11 @@ function getDynamicProductHref(product) {
 
 function createProductCatalogCard(product) {
   const card = document.createElement('a');
-  card.className = 'catalog-card';
+  const extraClassName = String(product.className || '')
+    .split(/\s+/)
+    .filter(className => className && className !== 'catalog-card')
+    .join(' ');
+  card.className = ['catalog-card', extraClassName].filter(Boolean).join(' ');
   card.dataset.productCard = '';
   card.dataset.dynamicProductCard = 'true';
   card.dataset.productId = product.id || '';
@@ -1085,10 +1093,69 @@ function createProductCatalogCard(product) {
   return card;
 }
 
-function applyProductCatalogCards(payload) {
-  const products = payload?.content?.productCatalog || [];
-  if (!products.length) return;
+function getActiveProductCatalogFilter() {
+  return document.querySelector('[data-product-filter].is-active')?.dataset.productFilter
+    || getCurrentProductCategoryFromUrl()
+    || 'all';
+}
 
+function setProductCatalogChromeVisible(isVisible) {
+  document.querySelectorAll('.catalog-filters').forEach(container => {
+    container.hidden = !isVisible;
+  });
+
+  const partners = document.querySelector('.catalog-partners');
+  if (partners) partners.hidden = !isVisible;
+}
+
+function applyProductCatalogFilter(activeFilter = 'all') {
+  const filters = Array.from(document.querySelectorAll('[data-product-filter]'));
+  const targetFilter = filters.find(button => button.dataset.productFilter === activeFilter)
+    || filters.find(button => button.dataset.productFilter === 'all')
+    || null;
+  const filterValue = targetFilter?.dataset.productFilter || activeFilter || 'all';
+
+  filters.forEach(button => {
+    const isActive = button === targetFilter;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+
+  const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+  cards.forEach(card => {
+    const categories = (card.dataset.category || '').split(' ');
+    const isVisible = filterValue === 'all' || categories.includes(filterValue);
+    card.hidden = !isVisible;
+    card.setAttribute('aria-hidden', String(!isVisible));
+    if (isVisible && card.classList.contains('home-reveal')) {
+      card.classList.remove('is-visible');
+      requestAnimationFrame(() => card.classList.add('is-visible'));
+    }
+  });
+}
+
+function applyProductCatalogCards(payload) {
+  if (!Array.isArray(payload?.content?.productCatalog)) return;
+
+  const products = payload.content.productCatalog;
+  setProductCatalogChromeVisible(Boolean(products.length));
+  const grid = document.querySelector('[data-product-grid]');
+  if (!grid) return;
+
+  const isAuthoritativeProductCountry = payload?.country?.id === 'kyrgyzstan' || currentCountry === 'kg';
+  if (isAuthoritativeProductCountry || !products.length) {
+    grid.innerHTML = '';
+    grid.hidden = !products.length;
+    if (!products.length) return;
+
+    products.forEach(product => {
+      grid.appendChild(createProductCatalogCard(product));
+    });
+    applyProductCatalogFilter(getActiveProductCatalogFilter());
+    return;
+  }
+
+  grid.hidden = false;
   const productsById = new Map(products.map(product => [product.id, product]));
   document.querySelectorAll('[data-product-card]').forEach(card => {
     const cardId = card.dataset.productId || normalizeProductCardId(card.getAttribute('href'));
@@ -1124,18 +1191,52 @@ function applyProductCatalogCards(payload) {
     }
   });
 
-  const grid = document.querySelector('[data-product-grid]');
-  if (!grid) return;
-
   const existingIds = new Set(
     Array.from(grid.querySelectorAll('[data-product-card]'))
       .map(card => card.dataset.productId || normalizeProductCardId(card.getAttribute('href')))
       .filter(Boolean)
   );
+
   products.forEach(product => {
     if (!product.id || existingIds.has(product.id)) return;
     grid.appendChild(createProductCatalogCard(product));
     existingIds.add(product.id);
+  });
+  applyProductCatalogFilter(getActiveProductCatalogFilter());
+}
+
+function getFooterProductHref(product) {
+  const href = getDynamicProductHref(product);
+  return getCurrentBackendPagePath().startsWith('products/') ? href : `products/${href}`;
+}
+
+function renderFooterProductLinks(payload) {
+  if (!Array.isArray(payload?.content?.productCatalog)) return;
+
+  const products = payload.content.productCatalog;
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  footer.querySelectorAll('.footer-nav__group').forEach(group => {
+    const productHeading = group.querySelector('[data-i18n-key="footer_products_title"], [data-static-i18n-key="footer_products_title"]');
+    const categoryHeading = group.querySelector('[data-i18n-key="nav_categories"], [data-static-i18n-key="nav_categories"]');
+
+    if (categoryHeading) {
+      group.hidden = !products.length;
+      return;
+    }
+
+    if (!productHeading) return;
+    group.querySelectorAll('a').forEach(link => link.remove());
+    group.hidden = !products.length;
+    if (!products.length) return;
+
+    products.slice(0, 6).forEach(product => {
+      const link = document.createElement('a');
+      link.href = getFooterProductHref(product);
+      link.textContent = product.name || product.slug || product.id || '';
+      group.appendChild(link);
+    });
   });
 }
 
@@ -1615,6 +1716,7 @@ async function updateBackendDrivenPage(lang) {
   initHistoryTimelineMedia();
   applyProductCatalogCards(payload);
   renderHomeProductPreview(payload);
+  renderFooterProductLinks(payload);
   applyProductMetrics(payload);
   await waitForCriticalImages();
   document.body.classList.remove('backend-content-pending');
@@ -2148,29 +2250,6 @@ function initProductsCarousel() {
 function initProductCatalogFilters() {
   const filters = Array.from(document.querySelectorAll('[data-product-filter]'));
   if (!filters.length) return;
-
-  const applyProductCatalogFilter = (activeFilter) => {
-    const targetFilter = filters.find(button => button.dataset.productFilter === activeFilter) || filters.find(button => button.dataset.productFilter === 'all');
-    if (!targetFilter) return;
-
-    filters.forEach(button => {
-      const isActive = button === targetFilter;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-pressed', String(isActive));
-    });
-
-    const cards = Array.from(document.querySelectorAll('[data-product-card]'));
-    cards.forEach(card => {
-      const categories = (card.dataset.category || '').split(' ');
-      const isVisible = targetFilter.dataset.productFilter === 'all' || categories.includes(targetFilter.dataset.productFilter);
-      card.hidden = !isVisible;
-      card.setAttribute('aria-hidden', String(!isVisible));
-      if (isVisible && card.classList.contains('home-reveal')) {
-        card.classList.remove('is-visible');
-        requestAnimationFrame(() => card.classList.add('is-visible'));
-      }
-    });
-  };
 
   filters.forEach(filterButton => {
     filterButton.addEventListener('click', () => {
