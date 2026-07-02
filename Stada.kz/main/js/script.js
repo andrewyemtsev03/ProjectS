@@ -397,10 +397,19 @@ const LOCALIZED_BACKEND_DOM_TEXT = {
   }
 };
 
+function frontendLanguageFallbackOrder(lang) {
+  const requested = String(lang || '').trim().toLowerCase();
+  const regionalFallbacks = requested === 'kg' ? ['kz'] : [];
+  return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];
+}
+
 function getFrontendStaticText(lang, key) {
   if (!key) return '';
-  const dictionary = FRONTEND_STATIC_TEXT[lang] || FRONTEND_STATIC_TEXT.ru;
-  return dictionary?.[key] || FRONTEND_STATIC_TEXT.ru?.[key] || '';
+  for (const candidateLang of frontendLanguageFallbackOrder(lang)) {
+    const value = FRONTEND_STATIC_TEXT[candidateLang]?.[key];
+    if (value) return value;
+  }
+  return '';
 }
 
 function applyFrontendStaticText(lang) {
@@ -424,7 +433,9 @@ function applyFrontendStaticText(lang) {
 }
 
 function applyLocalizedBackendDomText(lang) {
-  const localizedText = LOCALIZED_BACKEND_DOM_TEXT[lang];
+  const localizedText = frontendLanguageFallbackOrder(lang)
+    .map(candidateLang => LOCALIZED_BACKEND_DOM_TEXT[candidateLang])
+    .find(Boolean);
   if (!localizedText) return;
 
   Object.entries(localizedText).forEach(([id, value]) => {
@@ -1587,7 +1598,7 @@ function updateStaticLanguage(lang) {
 
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    backToTop.setAttribute('aria-label', lang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх');
+    backToTop.setAttribute('aria-label', ['kz', 'kg'].includes(lang) ? 'Жоғарыға қайту' : 'Вернуться наверх');
   }
 
   updateDocumentTitle(lang);
