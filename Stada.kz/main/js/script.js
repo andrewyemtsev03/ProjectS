@@ -53,6 +53,16 @@ const STADA_COUNTRY_OPTIONS = [
     defaultLanguage: 'ru',
     supportedLanguages: ['ru', 'kg'],
   },
+  {
+    code: 'ge',
+    label: 'GE',
+    name: 'Georgia',
+    backendCountry: 'georgia',
+    domain: 'stada.ge',
+    aliases: ['www.stada.ge'],
+    defaultLanguage: 'ge',
+    supportedLanguages: ['ge', 'en'],
+  },
 ];
 
 const STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
@@ -60,6 +70,8 @@ const STADA_LANGUAGE_LABELS = {
   ru: 'RU',
   kz: 'KZ',
   kg: 'KG',
+  ge: 'GE',
+  en: 'EN',
 };
 
 const FRONTEND_STATIC_TEXT = {
@@ -260,6 +272,138 @@ const FRONTEND_STATIC_TEXT = {
   }
 };
 
+FRONTEND_STATIC_TEXT.en = {
+  "about_heading": "About STADA",
+  "benefits_heading": "Benefits",
+  "button_products": "Products",
+  "career_button": "View vacancies",
+  "career_heading": "Careers at STADA",
+  "cta_more": "Learn more",
+  "footer_access_title": "Access",
+  "footer_back_top": "Back to top",
+  "footer_brand_text": "We combine STADA's international experience with local proximity to patients, specialists, and partners in Georgia.",
+  "footer_company_title": "Company",
+  "footer_global_link": "STADA Global",
+  "footer_products_title": "Products",
+  "footer_rights": "All rights reserved.",
+  "footer_trust_countries": "100+ countries",
+  "footer_trust_years": "130+ years of experience",
+  "footer_warning_text": "The information on this website does not replace professional advice. Read the package leaflet before using medicines.",
+  "footer_warning_title": "Important",
+  "hero_kicker": "STADA Georgia",
+  "hero_products_label": "OUR PRODUCTS",
+  "nav_about": "About company",
+  "nav_career": "Careers",
+  "nav_categories": "Categories",
+  "nav_company": "Company",
+  "nav_culture": "Culture",
+  "nav_history": "Company history",
+  "nav_news": "News and Media",
+  "nav_products": "Products",
+  "nav_worldwide": "Our locations",
+  "news_section_lead": "STADA news, media stories, and product updates in one dynamic section.",
+  "product_aqualor_baby_name": "Aqualor Baby",
+  "product_aqualor_forte_name": "Aqualor Active Forte",
+  "product_aqualor_gorlo_name": "Aqualor Throat",
+  "product_aqualor_name": "Aqualor",
+  "product_aqualor_soft_mini_name": "Aqualor Soft mini",
+  "product_aqualor_soft_name": "Aqualor Soft",
+  "product_back": "Back to products",
+  "product_cardiomagnil_name": "Cardiomagnyl",
+  "product_coldrex_name": "Coldrex",
+  "product_enterogermina_name": "Enterogermina",
+  "product_magneb6kids_name": "Magne B6 Kids",
+  "product_noshpa_name": "NO-SPA",
+  "product_related_heading": "Other Aqualor options",
+  "product_related_intro": "Choose a similar Aqualor format by volume, spray type, and area of use.",
+  "product_related_label": "Related products",
+  "product_sinulan_duo_name": "Sinulan Duo",
+  "product_vitrum_immunaktiv_name": "Vitrum Immunaktiv",
+  "product_zodak_name": "Zodak",
+  "products_browse_catalog": "Browse catalog",
+  "products_catalog_label": "STADA catalog",
+  "products_category_allergy": "Allergy",
+  "products_category_cardio": "Cardio",
+  "products_category_cold": "Cold and breathing",
+  "products_category_digestive": "Digestive health",
+  "products_category_immunity": "Immunity",
+  "products_category_kids": "For children",
+  "products_category_respiratory": "Respiratory",
+  "products_category_urology": "Urology",
+  "products_filter_all": "All products",
+  "products_metric_areas": "therapeutic areas",
+  "products_metric_portfolio": "products in catalog",
+  "products_partners_heading": "Available in pharmacies and online services",
+  "site_name": "STADA Georgia",
+  "where_to_buy_heading": "Where to buy",
+};
+
+FRONTEND_STATIC_TEXT.ge = {
+  "about_heading": "STADA-ს შესახებ",
+  "benefits_heading": "უპირატესობები",
+  "button_products": "პროდუქტები",
+  "career_button": "ვაკანსიების ნახვა",
+  "career_heading": "კარიერა STADA-ში",
+  "cta_more": "გაიგეთ მეტი",
+  "footer_access_title": "წვდომა",
+  "footer_back_top": "ზემოთ დაბრუნება",
+  "footer_brand_text": "ჩვენ ვაერთიანებთ STADA-ს საერთაშორისო გამოცდილებას ადგილობრივ სიახლოვესთან პაციენტებთან, სპეციალისტებთან და პარტნიორებთან საქართველოში.",
+  "footer_company_title": "კომპანია",
+  "footer_global_link": "STADA Global",
+  "footer_products_title": "პროდუქტები",
+  "footer_rights": "ყველა უფლება დაცულია.",
+  "footer_trust_countries": "100+ ქვეყანა",
+  "footer_trust_years": "130+ წლიანი გამოცდილება",
+  "footer_warning_text": "საიტზე მოცემული ინფორმაცია არ ცვლის სპეციალისტის კონსულტაციას. მედიკამენტის გამოყენებამდე გაეცანით ინსტრუქციას.",
+  "footer_warning_title": "მნიშვნელოვანია",
+  "hero_kicker": "STADA Georgia",
+  "hero_products_label": "ჩვენი პროდუქტები",
+  "nav_about": "კომპანიის შესახებ",
+  "nav_career": "კარიერა",
+  "nav_categories": "კატეგორიები",
+  "nav_company": "კომპანია",
+  "nav_culture": "კულტურა",
+  "nav_history": "კომპანიის ისტორია",
+  "nav_news": "სიახლეები და მედია",
+  "nav_products": "პროდუქტები",
+  "nav_worldwide": "ჩვენი ოფისები",
+  "news_section_lead": "STADA-ს სიახლეები, მედია მასალები და პროდუქტის განახლებები ერთ დინამიკურ ბლოკში.",
+  "product_aqualor_baby_name": "აკვალორ ბეიბი",
+  "product_aqualor_forte_name": "აკვალორ აქტივ ფორტე",
+  "product_aqualor_gorlo_name": "აკვალორ ყელი",
+  "product_aqualor_name": "აკვალორი",
+  "product_aqualor_soft_mini_name": "აკვალორ სოფტი მინი",
+  "product_aqualor_soft_name": "აკვალორ სოფტი",
+  "product_back": "პროდუქტებზე დაბრუნება",
+  "product_cardiomagnil_name": "კარდიომაგნილი",
+  "product_coldrex_name": "კოლდრექსი",
+  "product_enterogermina_name": "ენტეროჟერმინა",
+  "product_magneb6kids_name": "მაგნე B6 Kids",
+  "product_noshpa_name": "ნო-შპა",
+  "product_related_heading": "აკვალორის სხვა ვარიანტები",
+  "product_related_intro": "აირჩიეთ აკვალორის მსგავსი ფორმატი მოცულობის, შესხურების ტიპისა და გამოყენების არეალის მიხედვით.",
+  "product_related_label": "მსგავსი პროდუქტები",
+  "product_sinulan_duo_name": "სინულან დუო",
+  "product_vitrum_immunaktiv_name": "ვიტრუმ იმუნაქტივი",
+  "product_zodak_name": "ზოდაკი",
+  "products_browse_catalog": "კატალოგის ნახვა",
+  "products_catalog_label": "STADA კატალოგი",
+  "products_category_allergy": "ალერგია",
+  "products_category_cardio": "გულ-სისხლძარღვთა",
+  "products_category_cold": "გაციება და სასუნთქი გზები",
+  "products_category_digestive": "საჭმლის მონელება",
+  "products_category_immunity": "იმუნიტეტი",
+  "products_category_kids": "ბავშვებისთვის",
+  "products_category_respiratory": "სასუნთქი გზები",
+  "products_category_urology": "უროლოგია",
+  "products_filter_all": "ყველა პროდუქტი",
+  "products_metric_areas": "თერაპიული მიმართულება",
+  "products_metric_portfolio": "პროდუქტი კატალოგში",
+  "products_partners_heading": "ხელმისაწვდომია აფთიაქებსა და ონლაინ სერვისებში",
+  "site_name": "STADA Georgia",
+  "where_to_buy_heading": "სად შევიძინოთ",
+};
+
 Object.assign(FRONTEND_STATIC_TEXT.ru, {
   history_source_note: 'Ключевые этапы основаны на корпоративной хронологии STADA.'
 });
@@ -270,6 +414,14 @@ Object.assign(FRONTEND_STATIC_TEXT.kz, {
 
 Object.assign(FRONTEND_STATIC_TEXT.kg, {
   history_source_note: 'Негизги этаптар STADAнын корпоративдик хронологиясына негизделген.'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.en, {
+  history_source_note: 'Key milestones are based on STADA corporate chronology.'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.ge, {
+  history_source_note: 'ძირითადი ეტაპები ეფუძნება STADA-ს კორპორატიულ ქრონოლოგიას.'
 });
 
 const LOCALIZED_BACKEND_DOM_TEXT = {
@@ -468,6 +620,9 @@ const LOCALIZED_BACKEND_DOM_TEXT = {
 
 function frontendLanguageFallbackOrder(lang) {
   const requested = String(lang || '').trim().toLowerCase();
+  if (requested === 'ge') return ['ge', 'en'];
+  if (requested === 'en') return ['en', 'ge'];
+  if (requested === 'kg') return ['kg'];
   const regionalFallbacks = [];
   return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];
 }
@@ -1142,7 +1297,7 @@ function applyProductCatalogCards(payload) {
   const grid = document.querySelector('[data-product-grid]');
   if (!grid) return;
 
-  const isAuthoritativeProductCountry = payload?.country?.id === 'kyrgyzstan' || currentCountry === 'kg';
+  const isAuthoritativeProductCountry = payload?.country?.id !== 'kazakhstan' || currentCountry !== 'kz';
   if (isAuthoritativeProductCountry || !products.length) {
     grid.innerHTML = '';
     grid.hidden = !products.length;
@@ -1725,13 +1880,21 @@ async function updateBackendDrivenPage(lang) {
   updateDocumentTitle(lang);
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    backToTop.setAttribute('aria-label', getBackendPageText('footer_back_top') || 'Back to top');
+    backToTop.setAttribute('aria-label', getBackendPageText('footer_back_top') || getBackToTopLabel(lang));
   }
 
   document.dispatchEvent(new CustomEvent('stada:languagechange', { detail: { lang, country: currentCountry } }));
   document.querySelectorAll('.hero-overlay').forEach(overlay => {
     overlay.classList.add('visible');
   });
+}
+
+function getBackToTopLabel(lang) {
+  if (lang === 'ge') return 'ზემოთ დაბრუნება';
+  if (lang === 'en') return 'Back to top';
+  if (lang === 'kg') return 'Жогору кайтуу';
+  if (lang === 'kz') return 'Жоғарыға қайту';
+  return 'Вернуться наверх';
 }
 
 function updateStaticLanguage(lang) {
@@ -1769,8 +1932,7 @@ function updateStaticLanguage(lang) {
 
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    const backToTopLabel = lang === 'kg' ? 'Жогору кайтуу' : lang === 'kz' ? 'Жоғарыға қайту' : 'Вернуться наверх';
-    backToTop.setAttribute('aria-label', backToTopLabel);
+    backToTop.setAttribute('aria-label', getBackToTopLabel(lang));
   }
 
   updateDocumentTitle(lang);
@@ -3291,7 +3453,7 @@ function initScrollEffects() {
   if (!navBar) return;
   const backToTop = document.createElement('button');
   backToTop.id = 'backToTop';
-  backToTop.setAttribute('aria-label', currentLang === 'ru' ? 'Вернуться наверх' : 'Жоғарыға қайту');
+  backToTop.setAttribute('aria-label', getBackToTopLabel(currentLang));
   backToTop.innerHTML = '↑';
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
