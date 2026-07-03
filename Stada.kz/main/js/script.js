@@ -1538,11 +1538,6 @@ function applyLegacyProductLayout(legacy) {
   const badges = document.querySelector('[data-product-badges]');
   if (badges) badges.hidden = !legacy.heroOptions.hasBadges || !badges.children.length;
 
-  document.querySelector('.product-formula-layout')?.setAttribute('class', 'product-section-inner product-formula-layout snup-formula-layout');
-  document.querySelector('.snup-formula-system')?.setAttribute('class', 'snup-formula-system vitrum-animate is-visible');
-  document.querySelector('.snup-formula-lines')?.setAttribute('class', 'snup-formula-lines');
-  document.querySelectorAll('.snup-formula-lines path').forEach(path => path.setAttribute('class', 'snup-formula-line'));
-  document.querySelectorAll('.snup-formula-lines circle').forEach(circle => circle.setAttribute('class', 'snup-formula-dot'));
 }
 
 function getApiProductBlueprint(product, page) {
@@ -1584,154 +1579,40 @@ function getApiProductBlueprint(product, page) {
 
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
-  const modifiers = ['active', 'seawater', 'format'];
-  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'} vitrum-animate is-visible`;
-  if (!item.title && !item.text) article.classList.add('snup-formula-point--icon-only');
+  article.className = 'formula-point vitrum-animate is-visible';
+  if (!item.title && !item.text) article.classList.add('formula-point--icon-only');
+
+  const media = document.createElement('div');
+  media.className = 'formula-point-media';
   if (item.imageSrc) {
     const image = document.createElement('img');
     image.src = normalizeDynamicProductImageSrc(item.imageSrc);
     image.alt = item.imageAlt || '';
     image.loading = 'lazy';
-    article.appendChild(image);
+    media.appendChild(image);
   } else {
     const value = document.createElement('span');
     value.textContent = item.value || String(index + 1);
-    article.appendChild(value);
+    media.appendChild(value);
   }
+  article.appendChild(media);
 
-  if (item.title) {
-    const title = document.createElement('h3');
-    title.textContent = item.title;
-    article.appendChild(title);
-  }
-
-  if (item.text) {
-    const text = document.createElement('p');
-    text.textContent = item.text;
-    article.appendChild(text);
+  if (item.title || item.text) {
+    const body = document.createElement('div');
+    body.className = 'formula-point-body';
+    if (item.title) {
+      const title = document.createElement('h3');
+      title.textContent = item.title;
+      body.appendChild(title);
+    }
+    if (item.text) {
+      const text = document.createElement('p');
+      text.textContent = item.text;
+      body.appendChild(text);
+    }
+    article.appendChild(body);
   }
   return article;
-}
-
-let formulaConnectorFrame = 0;
-
-function clampNumber(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
-
-function scheduleFormulaConnectorUpdate() {
-  if (formulaConnectorFrame) window.cancelAnimationFrame(formulaConnectorFrame);
-  formulaConnectorFrame = window.requestAnimationFrame(() => {
-    formulaConnectorFrame = 0;
-    updateFormulaConnectors();
-  });
-}
-
-function getFormulaConnectorPoint(rect, anchor) {
-  if (anchor === 'right') return { x: rect.right, y: rect.top + rect.height * 0.5 };
-  if (anchor === 'left') return { x: rect.left, y: rect.top + rect.height * 0.5 };
-  return { x: rect.left + rect.width * 0.5, y: rect.top };
-}
-
-function getRenderedFormulaImageRect(image) {
-  const rect = image.getBoundingClientRect();
-  const naturalWidth = image.naturalWidth || rect.width;
-  const naturalHeight = image.naturalHeight || rect.height;
-  if (!naturalWidth || !naturalHeight || !rect.width || !rect.height) return rect;
-
-  const scale = Math.min(rect.width / naturalWidth, rect.height / naturalHeight);
-  const renderedWidth = naturalWidth * scale;
-  const renderedHeight = naturalHeight * scale;
-
-  return {
-    left: rect.left + (rect.width - renderedWidth) / 2,
-    right: rect.left + (rect.width + renderedWidth) / 2,
-    top: rect.top + (rect.height - renderedHeight) / 2,
-    bottom: rect.top + (rect.height + renderedHeight) / 2,
-    width: renderedWidth,
-    height: renderedHeight
-  };
-}
-
-function getFormulaProductConnectorPoint(productRect, cardAnchor, anchor) {
-  const horizontalY = clampNumber(cardAnchor.y, productRect.top + productRect.height * 0.16, productRect.bottom - productRect.height * 0.2);
-  if (anchor === 'right') {
-    return { x: productRect.left - 10, y: horizontalY };
-  }
-  if (anchor === 'left') {
-    return { x: productRect.right + 10, y: horizontalY };
-  }
-  const bottomOffset = Math.max(24, Math.min(46, productRect.height * 0.12));
-  return {
-    x: productRect.left + productRect.width * 0.5,
-    y: productRect.bottom + bottomOffset
-  };
-}
-
-function toFormulaSvgPoint(point, systemRect, viewBox) {
-  return {
-    x: ((point.x - systemRect.left) / systemRect.width) * viewBox.width,
-    y: ((point.y - systemRect.top) / systemRect.height) * viewBox.height
-  };
-}
-
-function createFormulaConnectorPath(start, end, anchor) {
-  const dx = end.x - start.x;
-  const dy = end.y - start.y;
-  if (anchor === 'top') {
-    const direction = dy < 0 ? -1 : 1;
-    const pull = Math.max(28, Math.min(86, Math.abs(dy) * 0.48));
-    return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} C ${start.x.toFixed(1)} ${(start.y + direction * pull).toFixed(1)} ${end.x.toFixed(1)} ${(end.y - direction * pull).toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
-  }
-  const direction = dx < 0 ? -1 : 1;
-  const horizontalPull = Math.max(48, Math.min(124, Math.abs(dx) * 0.72));
-  const verticalEase = dy * 0.12;
-  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} C ${(start.x + direction * horizontalPull).toFixed(1)} ${(start.y + verticalEase).toFixed(1)} ${(end.x - direction * horizontalPull).toFixed(1)} ${(end.y - verticalEase).toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
-}
-
-function getFormulaSourceDots(svg, count) {
-  const dots = Array.from(svg.querySelectorAll('.snup-formula-source-dot'));
-  while (dots.length < count) {
-    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    dot.setAttribute('class', 'snup-formula-source-dot');
-    dot.setAttribute('r', '4');
-    svg.appendChild(dot);
-    dots.push(dot);
-  }
-  return dots;
-}
-
-function updateFormulaConnectors() {
-  const system = document.querySelector('.snup-formula-system');
-  const svg = system?.querySelector('.snup-formula-lines');
-  const product = system?.querySelector('.snup-formula-product');
-  if (!system || !svg || !product) return;
-
-  const viewBox = svg.viewBox?.baseVal;
-  const systemRect = system.getBoundingClientRect();
-  const productRect = getRenderedFormulaImageRect(product);
-  if (!viewBox || !systemRect.width || !systemRect.height || !productRect.width || !productRect.height) return;
-
-  const connectors = [
-    { point: system.querySelector('.snup-formula-point--active'), path: svg.querySelectorAll('.snup-formula-line')[0], dot: svg.querySelectorAll('.snup-formula-dot')[0], anchor: 'right' },
-    { point: system.querySelector('.snup-formula-point--seawater'), path: svg.querySelectorAll('.snup-formula-line')[1], dot: svg.querySelectorAll('.snup-formula-dot')[1], anchor: 'left' },
-    { point: system.querySelector('.snup-formula-point--format'), path: svg.querySelectorAll('.snup-formula-line')[2], dot: svg.querySelectorAll('.snup-formula-dot')[2], anchor: 'top' }
-  ];
-  const sourceDots = getFormulaSourceDots(svg, connectors.length);
-
-  connectors.forEach((connector, index) => {
-    if (!connector.point || !connector.path || !connector.dot) return;
-    const cardAnchor = getFormulaConnectorPoint(connector.point.getBoundingClientRect(), connector.anchor);
-    const productAnchor = getFormulaProductConnectorPoint(productRect, cardAnchor, connector.anchor);
-    const start = toFormulaSvgPoint(productAnchor, systemRect, viewBox);
-    const end = toFormulaSvgPoint(cardAnchor, systemRect, viewBox);
-    connector.path.setAttribute('d', createFormulaConnectorPath(start, end, connector.anchor));
-    connector.dot.setAttribute('cx', end.x.toFixed(1));
-    connector.dot.setAttribute('cy', end.y.toFixed(1));
-    connector.dot.setAttribute('r', '5.5');
-    sourceDots[index]?.setAttribute('cx', start.x.toFixed(1));
-    sourceDots[index]?.setAttribute('cy', start.y.toFixed(1));
-  });
 }
 
 function createDynamicUsageItem(item, index) {
@@ -1795,7 +1676,6 @@ function renderDynamicProductPage(payload) {
   if (formulaImage) {
     formulaImage.src = blueprint?.formulaImageSrc || normalizeDynamicProductImageSrc(page.formulaImage || product.image?.url || product.image?.src);
     formulaImage.alt = '';
-    formulaImage.addEventListener('load', scheduleFormulaConnectorUpdate, { once: true });
   }
 
   const badges = page.badges?.length ? page.badges : [product.therapeuticArea, product.shortDescription].filter(Boolean).slice(0, 3);
@@ -1818,7 +1698,6 @@ function renderDynamicProductPage(payload) {
   replaceChildrenFromList('[data-product-usage-items]', usageItems, createDynamicUsageItem, { hideEmpty: true });
   replaceChildrenFromList('[data-product-partners]', purchaseLinks, createDynamicPartnerCard, { hideEmpty: true });
   applyLegacyProductLayout(blueprint);
-  scheduleFormulaConnectorUpdate();
 
   document.title = page.title || `STADA - ${product.name || ''}`;
   document.dispatchEvent(new CustomEvent('stada:dynamicproductrender', { detail: { product, lang: currentLang, country: currentCountry } }));
@@ -1848,7 +1727,6 @@ async function updateDynamicProductPage(lang) {
   const payload = await fetchBackendProduct(lang);
   renderDynamicProductPage(payload);
   await waitForCriticalImages();
-  scheduleFormulaConnectorUpdate();
   document.body.classList.remove('backend-content-pending');
   hideStadaPageLoader();
 }
@@ -2426,10 +2304,6 @@ function initProductCatalogFilters() {
 function initProductDetailPage() {
   const page = document.querySelector('.product-detail-page');
   if (!page) return;
-
-  scheduleFormulaConnectorUpdate();
-  window.addEventListener('resize', scheduleFormulaConnectorUpdate);
-  document.addEventListener('stada:dynamicproductrender', scheduleFormulaConnectorUpdate);
 
   page.classList.add('vitrum-reveal-ready');
   const revealItems = Array.from(page.querySelectorAll('.vitrum-animate'));
