@@ -424,6 +424,36 @@ Object.assign(FRONTEND_STATIC_TEXT.ge, {
   history_source_note: 'ძირითადი ეტაპები ეფუძნება STADA-ს კორპორატიულ ქრონოლოგიას.'
 });
 
+Object.assign(FRONTEND_STATIC_TEXT.ru, {
+  product_nav_overview: 'Обзор',
+  product_nav_formula: 'Состав',
+  product_nav_usage: 'Применение'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.kz, {
+  product_nav_overview: 'Шолу',
+  product_nav_formula: 'Құрамы',
+  product_nav_usage: 'Қолданылуы'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.kg, {
+  product_nav_overview: 'Жалпы маалымат',
+  product_nav_formula: 'Курамы',
+  product_nav_usage: 'Колдонуу'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.en, {
+  product_nav_overview: 'Overview',
+  product_nav_formula: 'Composition',
+  product_nav_usage: 'How to use'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.ge, {
+  product_nav_overview: 'მიმოხილვა',
+  product_nav_formula: 'შემადგენლობა',
+  product_nav_usage: 'გამოყენება'
+});
+
 const LOCALIZED_BACKEND_DOM_TEXT = {
   kz: {
     history_text_001: 'STADA - Компания тарихы',
@@ -1485,41 +1515,80 @@ function createDynamicProductMetric(item) {
   return article;
 }
 
-function createDynamicProductFact(item) {
+function createDynamicProductFact(item, index) {
   const article = document.createElement('article');
-  article.className = 'product-fact-card vitrum-animate is-visible';
+  article.className = 'pd-stat';
+  article.setAttribute('data-reveal', '');
+  article.style.setProperty('--reveal-delay', `${Math.min(index * 110, 440)}ms`);
+
   const value = document.createElement('span');
-  value.textContent = item.value || '';
+  value.className = 'pd-stat-value';
+  const raw = String(item.value || '').trim();
+  value.textContent = raw;
+  const numericMatch = raw.match(/^(\d{1,6})(.{0,6})$/);
+  if (numericMatch) {
+    value.dataset.countTo = numericMatch[1];
+    value.dataset.countSuffix = numericMatch[2] || '';
+  }
+
   const title = document.createElement('h3');
+  title.className = 'pd-stat-title';
   title.textContent = item.title || '';
   const text = document.createElement('p');
+  text.className = 'pd-stat-text';
   text.textContent = item.text || '';
   article.append(value, title, text);
   return article;
 }
 
-function createDynamicProductBenefit(text) {
+function createDynamicProductBenefit(text, index) {
   const item = document.createElement('li');
-  item.className = 'vitrum-animate is-visible';
-  item.textContent = text;
+  item.className = 'pd-benefit';
+  item.setAttribute('data-reveal', '');
+  item.style.setProperty('--reveal-delay', `${Math.min(index * 80, 480)}ms`);
+
+  const check = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  check.setAttribute('class', 'pd-benefit-check');
+  check.setAttribute('viewBox', '0 0 24 24');
+  check.setAttribute('aria-hidden', 'true');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M4.5 12.8l4.8 4.7L19.5 6.5');
+  check.appendChild(path);
+
+  const label = document.createElement('span');
+  label.textContent = text;
+  item.append(check, label);
   return item;
 }
 
-function createDynamicPartnerCard(link) {
+function createDynamicPartnerCard(link, index) {
   const card = document.createElement('a');
-  card.className = 'partner-card vitrum-animate is-visible';
+  card.className = 'pd-partner';
   card.href = link.url;
   card.target = '_blank';
   card.rel = 'noopener noreferrer';
   card.setAttribute('aria-label', link.ariaLabel || link.label || 'Pharmacy partner');
+  card.setAttribute('data-reveal', '');
+  card.style.setProperty('--reveal-delay', `${Math.min(index * 80, 320)}ms`);
 
+  const logo = document.createElement('span');
+  logo.className = 'pd-partner-logo';
   const image = document.createElement('img');
   image.src = normalizeDynamicProductImageSrc(link.logoSrc);
   image.alt = link.logoAlt || link.label || '';
   image.loading = 'lazy';
-  const label = document.createElement('p');
-  label.textContent = link.label || '';
-  card.append(image, label);
+  logo.appendChild(image);
+
+  const name = document.createElement('span');
+  name.className = 'pd-partner-name';
+  name.textContent = link.label || '';
+
+  const arrow = document.createElement('span');
+  arrow.className = 'pd-partner-arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '→';
+
+  card.append(logo, name, arrow);
   return card;
 }
 
@@ -1584,32 +1653,44 @@ function getApiProductBlueprint(product, page) {
 
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
-  const modifiers = ['active', 'seawater', 'format'];
-  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'} vitrum-animate is-visible`;
-  if (!item.title && !item.text) article.classList.add('snup-formula-point--icon-only');
+  article.className = 'pd-explorer-item';
+  article.tabIndex = 0;
+  article.setAttribute('data-reveal', '');
+  article.style.setProperty('--reveal-delay', `${Math.min(index * 100, 400)}ms`);
+
+  const media = document.createElement('span');
+  media.className = 'pd-explorer-media';
   if (item.imageSrc) {
     const image = document.createElement('img');
     image.src = normalizeDynamicProductImageSrc(item.imageSrc);
     image.alt = item.imageAlt || '';
     image.loading = 'lazy';
-    article.appendChild(image);
+    media.appendChild(image);
   } else {
-    const value = document.createElement('span');
-    value.textContent = item.value || String(index + 1);
-    article.appendChild(value);
+    media.classList.add('pd-explorer-media--value');
+    media.textContent = item.value || String(index + 1).padStart(2, '0');
   }
+  article.appendChild(media);
 
+  const content = document.createElement('div');
+  content.className = 'pd-explorer-content';
   if (item.title) {
     const title = document.createElement('h3');
     title.textContent = item.title;
-    article.appendChild(title);
+    content.appendChild(title);
   }
 
   if (item.text) {
     const text = document.createElement('p');
     text.textContent = item.text;
-    article.appendChild(text);
+    content.appendChild(text);
   }
+  article.appendChild(content);
+
+  const progress = document.createElement('span');
+  progress.className = 'pd-explorer-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  article.appendChild(progress);
   return article;
 }
 
@@ -1736,18 +1817,22 @@ function updateFormulaConnectors() {
 
 function createDynamicUsageItem(item, index) {
   const article = document.createElement('article');
-  article.className = item.className || `usage-item vitrum-animate is-visible${index === 0 ? ' is-active' : ''}`;
-  if (!article.classList.contains('is-visible')) article.classList.add('is-visible');
-  if (item.isActive || index === 0) article.classList.add('is-active');
-  article.tabIndex = 0;
+  article.className = 'pd-step';
+  article.setAttribute('data-reveal', '');
+  article.style.setProperty('--reveal-delay', `${Math.min(index * 90, 360)}ms`);
+
   const marker = document.createElement('span');
-  const content = document.createElement('div');
+  marker.className = 'pd-step-marker';
+  marker.textContent = String(index + 1).padStart(2, '0');
+
+  const body = document.createElement('div');
+  body.className = 'pd-step-body';
   const title = document.createElement('h3');
   title.textContent = item.title || '';
   const text = document.createElement('p');
   text.textContent = item.text || '';
-  content.append(title, text);
-  article.append(marker, content);
+  body.append(title, text);
+  article.append(marker, body);
   return article;
 }
 
@@ -1823,17 +1908,209 @@ function renderDynamicProductPage(payload) {
   document.title = page.title || `STADA - ${product.name || ''}`;
   document.dispatchEvent(new CustomEvent('stada:dynamicproductrender', { detail: { product, lang: currentLang, country: currentCountry } }));
 
-  document.querySelectorAll('[data-vitrum-usage] .usage-item').forEach(item => {
-    item.addEventListener('click', () => {
-      document.querySelectorAll('[data-vitrum-usage] .usage-item').forEach(current => current.classList.toggle('is-active', current === item));
-    });
-    item.addEventListener('keydown', event => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      item.click();
-    });
-  });
+  initDynamicProductBodyInteractions();
+}
 
+/* ---- Dynamic product body: reveals, count-ups, scrollspy, explorer, timeline, tilt ---- */
+
+let pdGlobalBindingsDone = false;
+let pdRevealObserver = null;
+let pdExplorerTimer = 0;
+let pdScrollFrame = 0;
+
+function pdPrefersReducedMotion() {
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+}
+
+function pdStartCountUp(el) {
+  if (el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const target = parseInt(el.dataset.countTo, 10);
+  if (!Number.isFinite(target)) return;
+  const suffix = el.dataset.countSuffix || '';
+  if (pdPrefersReducedMotion()) {
+    el.textContent = `${target}${suffix}`;
+    return;
+  }
+  const duration = 1100;
+  const startTime = performance.now();
+  const step = now => {
+    const t = Math.min(1, (now - startTime) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = `${Math.round(target * eased)}${suffix}`;
+    if (t < 1) window.requestAnimationFrame(step);
+  };
+  window.requestAnimationFrame(step);
+}
+
+function pdSetupReveals() {
+  const targets = Array.from(document.querySelectorAll('[data-reveal]:not(.is-in)'));
+  if (!('IntersectionObserver' in window) || pdPrefersReducedMotion()) {
+    targets.forEach(el => {
+      el.classList.add('is-in');
+      el.querySelectorAll('.pd-stat-value[data-count-to]').forEach(pdStartCountUp);
+    });
+    return;
+  }
+  if (!pdRevealObserver) {
+    pdRevealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        entry.target.querySelectorAll('.pd-stat-value[data-count-to]').forEach(pdStartCountUp);
+        pdRevealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+  }
+  targets.forEach(el => pdRevealObserver.observe(el));
+}
+
+function pdExplorerItems(explorer) {
+  return Array.from(explorer.querySelectorAll('.pd-explorer-item'));
+}
+
+function pdExplorerSetActive(explorer, index) {
+  explorer.dataset.activeIndex = String(index);
+  pdExplorerItems(explorer).forEach((item, i) => {
+    item.classList.toggle('is-active', i === index);
+    item.setAttribute('aria-current', i === index ? 'true' : 'false');
+    const bar = item.querySelector('.pd-explorer-progress');
+    if (bar) {
+      bar.style.animation = 'none';
+      void bar.offsetWidth;
+      bar.style.animation = '';
+    }
+  });
+}
+
+function pdExplorerStopAuto(explorer) {
+  if (pdExplorerTimer) window.clearInterval(pdExplorerTimer);
+  pdExplorerTimer = 0;
+  explorer.classList.remove('is-auto');
+}
+
+function pdExplorerStartAuto(explorer) {
+  pdExplorerStopAuto(explorer);
+  if (pdPrefersReducedMotion() || pdExplorerItems(explorer).length < 2) return;
+  explorer.classList.add('is-auto');
+  pdExplorerTimer = window.setInterval(() => {
+    const items = pdExplorerItems(explorer);
+    if (!items.length) return;
+    const current = Number(explorer.dataset.activeIndex) || 0;
+    pdExplorerSetActive(explorer, (current + 1) % items.length);
+  }, 5000);
+}
+
+function pdSetupExplorer() {
+  const explorer = document.querySelector('[data-pd-explorer]');
+  if (!explorer) return;
+  pdExplorerStopAuto(explorer);
+  if (!pdExplorerItems(explorer).length) return;
+
+  if (!explorer.dataset.pdBound) {
+    explorer.dataset.pdBound = '1';
+
+    const activateFromEvent = event => {
+      const item = event.target.closest('.pd-explorer-item');
+      if (!item || !explorer.contains(item)) return false;
+      const index = pdExplorerItems(explorer).indexOf(item);
+      if (index < 0) return false;
+      pdExplorerSetActive(explorer, index);
+      pdExplorerStartAuto(explorer);
+      return true;
+    };
+
+    explorer.addEventListener('click', activateFromEvent);
+    explorer.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (activateFromEvent(event)) event.preventDefault();
+    });
+    explorer.addEventListener('mouseenter', () => {
+      explorer.classList.add('is-paused');
+      if (pdExplorerTimer) window.clearInterval(pdExplorerTimer);
+      pdExplorerTimer = 0;
+    });
+    explorer.addEventListener('mouseleave', () => {
+      explorer.classList.remove('is-paused');
+      pdExplorerSetActive(explorer, Number(explorer.dataset.activeIndex) || 0);
+      pdExplorerStartAuto(explorer);
+    });
+  }
+
+  pdExplorerSetActive(explorer, 0);
+  pdExplorerStartAuto(explorer);
+}
+
+function pdSetupTilt() {
+  const stage = document.querySelector('[data-pd-tilt]');
+  if (!stage || pdPrefersReducedMotion()) return;
+  if (!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches)) return;
+  stage.addEventListener('mousemove', event => {
+    const rect = stage.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    stage.style.setProperty('--pd-tilt-x', `${(-y * 7).toFixed(2)}deg`);
+    stage.style.setProperty('--pd-tilt-y', `${(x * 9).toFixed(2)}deg`);
+  });
+  stage.addEventListener('mouseleave', () => {
+    stage.style.setProperty('--pd-tilt-x', '0deg');
+    stage.style.setProperty('--pd-tilt-y', '0deg');
+  });
+}
+
+function pdUpdateScrollUI() {
+  const progressBar = document.querySelector('[data-pd-progress]');
+  const doc = document.documentElement;
+  const maxScroll = doc.scrollHeight - window.innerHeight;
+  if (progressBar && maxScroll > 0) {
+    progressBar.style.width = `${Math.min(100, Math.max(0, (window.scrollY / maxScroll) * 100))}%`;
+  }
+
+  const links = document.querySelectorAll('[data-pd-jumpnav] a');
+  if (links.length) {
+    const probe = window.innerHeight * 0.35;
+    let currentId = 'benefits';
+    ['benefits', 'formula', 'usage', 'pharmacy-partners'].forEach(id => {
+      const section = document.getElementById(id);
+      if (section && section.getBoundingClientRect().top <= probe) currentId = id;
+    });
+    links.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === `#${currentId}`));
+  }
+
+  const timeline = document.querySelector('[data-pd-timeline]');
+  const fill = document.querySelector('[data-pd-timeline-fill]');
+  if (timeline && fill) {
+    const rect = timeline.getBoundingClientRect();
+    const mid = window.innerHeight * 0.55;
+    if (rect.height > 0) {
+      const progress = Math.min(1, Math.max(0, (mid - rect.top) / rect.height));
+      fill.style.height = `${(progress * 100).toFixed(2)}%`;
+    }
+    timeline.querySelectorAll('.pd-step').forEach(step => {
+      const marker = step.querySelector('.pd-step-marker');
+      if (marker) step.classList.toggle('is-passed', marker.getBoundingClientRect().top <= mid);
+    });
+  }
+}
+
+function pdScheduleScrollUpdate() {
+  if (pdScrollFrame) return;
+  pdScrollFrame = window.requestAnimationFrame(() => {
+    pdScrollFrame = 0;
+    pdUpdateScrollUI();
+  });
+}
+
+function initDynamicProductBodyInteractions() {
+  pdSetupReveals();
+  pdSetupExplorer();
+  if (!pdGlobalBindingsDone) {
+    pdGlobalBindingsDone = true;
+    pdSetupTilt();
+    window.addEventListener('scroll', pdScheduleScrollUpdate, { passive: true });
+    window.addEventListener('resize', pdScheduleScrollUpdate);
+  }
+  pdScheduleScrollUpdate();
 }
 
 async function updateDynamicProductPage(lang) {
