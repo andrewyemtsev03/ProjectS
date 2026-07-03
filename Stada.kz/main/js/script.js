@@ -1474,40 +1474,58 @@ function replaceChildrenFromList(selector, items, renderItem, { hideEmpty = fals
   if (hideEmpty) container.hidden = !renderedItems.length;
 }
 
+function decodeHtmlEntities(value) {
+  const text = String(value ?? '');
+  if (!/&(?:#\d+|#x[0-9a-f]+|[a-z][a-z0-9]*);/i.test(text)) return text;
+  const doc = new DOMParser().parseFromString(text, 'text/html');
+  return doc.documentElement.textContent || text;
+}
+
+function applyRevealStagger(element, index) {
+  element.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
+  element.addEventListener('transitionend', () => {
+    element.style.transitionDelay = '';
+  }, { once: true });
+  return element;
+}
+
 function createDynamicProductMetric(item) {
   const article = document.createElement('div');
   article.className = 'product-hero-metric';
   const value = document.createElement('strong');
-  value.textContent = item.value || item.title || '';
+  value.textContent = decodeHtmlEntities(item.value || item.title || '');
   const label = document.createElement('span');
-  label.textContent = item.title && item.value ? item.title : item.text || '';
+  label.textContent = decodeHtmlEntities(item.title && item.value ? item.title : item.text || '');
   article.append(value, label);
   return article;
 }
 
-function createDynamicProductFact(item) {
+function createDynamicProductFact(item, index) {
   const article = document.createElement('article');
-  article.className = 'product-fact-card vitrum-animate is-visible';
+  article.className = 'product-fact-card vitrum-animate';
+  applyRevealStagger(article, index);
   const value = document.createElement('span');
-  value.textContent = item.value || '';
+  value.textContent = decodeHtmlEntities(item.value || '');
   const title = document.createElement('h3');
-  title.textContent = item.title || '';
+  title.textContent = decodeHtmlEntities(item.title || '');
   const text = document.createElement('p');
-  text.textContent = item.text || '';
+  text.textContent = decodeHtmlEntities(item.text || '');
   article.append(value, title, text);
   return article;
 }
 
-function createDynamicProductBenefit(text) {
+function createDynamicProductBenefit(text, index) {
   const item = document.createElement('li');
-  item.className = 'vitrum-animate is-visible';
-  item.textContent = text;
+  item.className = 'vitrum-animate';
+  applyRevealStagger(item, index);
+  item.textContent = decodeHtmlEntities(text);
   return item;
 }
 
-function createDynamicPartnerCard(link) {
+function createDynamicPartnerCard(link, index) {
   const card = document.createElement('a');
-  card.className = 'partner-card vitrum-animate is-visible';
+  card.className = 'partner-card vitrum-animate';
+  applyRevealStagger(card, index);
   card.href = link.url;
   card.target = '_blank';
   card.rel = 'noopener noreferrer';
@@ -1579,7 +1597,8 @@ function getApiProductBlueprint(product, page) {
 
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
-  article.className = 'formula-point vitrum-animate is-visible';
+  article.className = 'formula-point vitrum-animate';
+  applyRevealStagger(article, index);
   if (!item.title && !item.text) article.classList.add('formula-point--icon-only');
 
   const media = document.createElement('div');
@@ -1592,7 +1611,7 @@ function createDynamicFormulaPoint(item, index) {
     media.appendChild(image);
   } else {
     const value = document.createElement('span');
-    value.textContent = item.value || String(index + 1);
+    value.textContent = decodeHtmlEntities(item.value || String(index + 1));
     media.appendChild(value);
   }
   article.appendChild(media);
@@ -1602,12 +1621,12 @@ function createDynamicFormulaPoint(item, index) {
     body.className = 'formula-point-body';
     if (item.title) {
       const title = document.createElement('h3');
-      title.textContent = item.title;
+      title.textContent = decodeHtmlEntities(item.title);
       body.appendChild(title);
     }
     if (item.text) {
       const text = document.createElement('p');
-      text.textContent = item.text;
+      text.textContent = decodeHtmlEntities(item.text);
       body.appendChild(text);
     }
     article.appendChild(body);
@@ -1617,16 +1636,18 @@ function createDynamicFormulaPoint(item, index) {
 
 function createDynamicUsageItem(item, index) {
   const article = document.createElement('article');
-  article.className = item.className || `usage-item vitrum-animate is-visible${index === 0 ? ' is-active' : ''}`;
-  if (!article.classList.contains('is-visible')) article.classList.add('is-visible');
+  article.className = item.className || `usage-item vitrum-animate${index === 0 ? ' is-active' : ''}`;
   if (item.isActive || index === 0) article.classList.add('is-active');
+  if (article.classList.contains('vitrum-animate') && !article.classList.contains('is-visible')) {
+    applyRevealStagger(article, index);
+  }
   article.tabIndex = 0;
   const marker = document.createElement('span');
   const content = document.createElement('div');
   const title = document.createElement('h3');
-  title.textContent = item.title || '';
+  title.textContent = decodeHtmlEntities(item.title || '');
   const text = document.createElement('p');
-  text.textContent = item.text || '';
+  text.textContent = decodeHtmlEntities(item.text || '');
   content.append(title, text);
   article.append(marker, content);
   return article;
@@ -2301,12 +2322,128 @@ function initProductCatalogFilters() {
   if (linkedCategory) applyProductCatalogFilter(linkedCategory);
 }
 
+function animateProductMetricValue(element) {
+  if (element.dataset.countupDone) return;
+  element.dataset.countupDone = 'true';
+  const original = element.textContent.trim();
+  const match = original.match(/^([^\d]*)(\d{1,6})([.,]\d+)?(.*)$/);
+  if (!match) return;
+  const target = parseInt(match[2], 10);
+  if (!isFinite(target) || target <= 1) return;
+
+  const begin = () => {
+    const duration = 900;
+    const start = performance.now();
+    const step = now => {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = `${match[1]}${Math.round(target * eased)}${match[3] || ''}${match[4] || ''}`;
+      if (progress < 1) window.requestAnimationFrame(step);
+      else element.textContent = original;
+    };
+    element.textContent = `${match[1]}0${match[3] || ''}${match[4] || ''}`;
+    window.requestAnimationFrame(step);
+  };
+
+  if (document.body.classList.contains('stada-page-loaded') || typeof MutationObserver === 'undefined') {
+    begin();
+    return;
+  }
+  const waiter = new MutationObserver(() => {
+    if (!document.body.classList.contains('stada-page-loaded')) return;
+    waiter.disconnect();
+    begin();
+  });
+  waiter.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+}
+
+let productMetricCountupObserver = null;
+
+function initProductMetricCountups(page) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (typeof IntersectionObserver === 'undefined') return;
+
+  if (!productMetricCountupObserver) {
+    productMetricCountupObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        productMetricCountupObserver.unobserve(entry.target);
+        animateProductMetricValue(entry.target);
+      });
+    }, { threshold: 0.6 });
+  }
+
+  page.querySelectorAll('.product-hero-metric strong, .product-fact-card > span').forEach(element => {
+    if (element.dataset.countupBound) return;
+    element.dataset.countupBound = 'true';
+    productMetricCountupObserver.observe(element);
+  });
+}
+
+function attachProductTilt(container, target, maxTilt) {
+  if (!container || !target || container.dataset.tiltBound) return;
+  container.dataset.tiltBound = 'true';
+  let frame = 0;
+
+  container.addEventListener('pointermove', event => {
+    const rect = container.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+    if (frame) window.cancelAnimationFrame(frame);
+    frame = window.requestAnimationFrame(() => {
+      frame = 0;
+      target.style.transform = `perspective(900px) rotateX(${(-py * maxTilt).toFixed(2)}deg) rotateY(${(px * maxTilt).toFixed(2)}deg)`;
+    });
+  });
+
+  container.addEventListener('pointerleave', () => {
+    if (frame) window.cancelAnimationFrame(frame);
+    frame = 0;
+    target.style.transform = '';
+  });
+}
+
+function initProductTiltEffects(page) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const heroImage = page.querySelector('.product-hero-image');
+  attachProductTilt(heroImage, heroImage, 5);
+
+  const formulaStage = page.querySelector('.formula-showcase-stage');
+  attachProductTilt(formulaStage, formulaStage?.querySelector('.formula-showcase-pack'), 7);
+}
+
+function initProductScrollProgress() {
+  if (document.querySelector('.product-scroll-progress')) return;
+  const bar = document.createElement('div');
+  bar.className = 'product-scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+
+  let frame = 0;
+  const update = () => {
+    frame = 0;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    bar.style.transform = `scaleX(${ratio.toFixed(4)})`;
+  };
+  const requestUpdate = () => {
+    if (!frame) frame = window.requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  update();
+}
+
 function initProductDetailPage() {
   const page = document.querySelector('.product-detail-page');
   if (!page) return;
 
   page.classList.add('vitrum-reveal-ready');
-  const revealItems = Array.from(page.querySelectorAll('.vitrum-animate'));
+  const revealItems = [];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealPassedItems = () => {
     revealItems.forEach(item => {
@@ -2317,10 +2454,9 @@ function initProductDetailPage() {
     });
   };
 
-  if (reduceMotion || typeof IntersectionObserver === 'undefined') {
-    revealItems.forEach(item => item.classList.add('is-visible'));
-  } else {
-    const revealObserver = new IntersectionObserver(entries => {
+  let revealObserver = null;
+  if (!reduceMotion && typeof IntersectionObserver !== 'undefined') {
+    revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
@@ -2328,11 +2464,30 @@ function initProductDetailPage() {
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
 
-    revealItems.forEach(item => revealObserver.observe(item));
-    revealPassedItems();
     window.addEventListener('scroll', revealPassedItems, { passive: true });
     window.addEventListener('resize', revealPassedItems);
   }
+
+  const registerRevealItems = () => {
+    const newItems = Array.from(page.querySelectorAll('.vitrum-animate:not(.is-visible)'))
+      .filter(item => !revealItems.includes(item));
+    if (!newItems.length) return;
+    revealItems.push(...newItems);
+    if (!revealObserver) {
+      newItems.forEach(item => item.classList.add('is-visible'));
+      return;
+    }
+    newItems.forEach(item => revealObserver.observe(item));
+    revealPassedItems();
+  };
+
+  registerRevealItems();
+  initProductMetricCountups(page);
+  document.addEventListener('stada:dynamicproductrender', () => {
+    registerRevealItems();
+    initProductMetricCountups(page);
+    initProductTiltEffects(page);
+  });
 
   const usageItems = Array.from(page.querySelectorAll('[data-vitrum-usage] .usage-item'));
   usageItems.forEach(item => {
@@ -2347,6 +2502,9 @@ function initProductDetailPage() {
       activate();
     });
   });
+
+  initProductTiltEffects(page);
+  initProductScrollProgress();
 }
 
 function initVitrumFizzyHeroLevitation() {
