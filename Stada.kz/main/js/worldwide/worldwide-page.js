@@ -12,14 +12,35 @@ const pageCopy = {
   kz: {
     noMatches: "Елдер табылмады",
   },
+  az: {
+    noMatches: "Ölkə tapılmadı",
+  },
 };
+
+const countryCodeToId = {
+  kz: "kazakhstan",
+  kg: "kyrgyzstan",
+  ge: "georgia",
+  az: "azerbaijan",
+};
+
+function getInitialCountryId(countries) {
+  const datasetCountry = document.documentElement.dataset.stadaCountry || window.STADA_CURRENT_COUNTRY || "";
+  const configuredCountry = window.STADA_BACKEND_COUNTRY || window.STADA_COUNTRY || "";
+  const hostnameTld = String(window.location.hostname || "").trim().toLowerCase().split(".").pop();
+  const candidates = [datasetCountry, configuredCountry, hostnameTld, defaultCountryId]
+    .map(value => countryCodeToId[String(value || "").toLowerCase()] || String(value || "").toLowerCase())
+    .filter(Boolean);
+
+  return candidates.find(candidate => countries.some(country => country.id === candidate)) || defaultCountryId;
+}
 
 export class WorldwidePage {
   constructor(root = document) {
     this.root = root;
     this.lang = document.documentElement.lang || "en";
     this.countries = countriesData;
-    this.selectedCountry = this.countries.find((country) => country.id === defaultCountryId) || this.countries[0];
+    this.selectedCountry = this.countries.find((country) => country.id === getInitialCountryId(this.countries)) || this.countries[0];
     this.infoCard = new CountryInfoCard(root.querySelector("#country-info-card"));
     this.globe = new GlobeMap(root.querySelector("[data-globe-map]"), this.countries, {
       selectedId: this.selectedCountry.id,

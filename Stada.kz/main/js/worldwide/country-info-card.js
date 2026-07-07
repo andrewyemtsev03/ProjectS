@@ -40,6 +40,19 @@ const localizedCopy = {
       phone: "Телефон",
     },
   },
+  az: {
+    back: "Ölkələrə baxışa qayıt",
+    flag: "bayrağı",
+    viewWebsite: "Lokal sayta keç",
+    visitWebsite: "Saytı aç",
+    rows: {
+      locationTitle: "Məkan",
+      address: "Ünvan",
+      website: "Sayt",
+      email: "Email",
+      phone: "Telefon",
+    },
+  },
 };
 
 function createTextElement(tagName, className, text) {

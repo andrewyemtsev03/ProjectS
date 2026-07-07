@@ -63,6 +63,16 @@ const STADA_COUNTRY_OPTIONS = [
     defaultLanguage: 'ge',
     supportedLanguages: ['ge', 'en'],
   },
+  {
+    code: 'az',
+    label: 'AZ',
+    name: 'Azerbaijan',
+    backendCountry: 'azerbaijan',
+    domain: 'stada.az',
+    aliases: ['www.stada.az'],
+    defaultLanguage: 'az',
+    supportedLanguages: ['az', 'ru'],
+  },
 ];
 
 const STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
@@ -72,6 +82,7 @@ const STADA_LANGUAGE_LABELS = {
   kg: 'KG',
   ge: 'GE',
   en: 'EN',
+  az: 'AZ',
 };
 
 const FRONTEND_STATIC_TEXT = {
@@ -404,6 +415,72 @@ FRONTEND_STATIC_TEXT.ge = {
   "where_to_buy_heading": "სად შევიძინოთ",
 };
 
+FRONTEND_STATIC_TEXT.az = {
+  "about_heading": "STADA haqqında",
+  "benefits_heading": "Üstünlüklər",
+  "button_products": "Məhsullar",
+  "career_button": "Vakansiyalara baxın",
+  "career_heading": "STADA-da karyera",
+  "cta_more": "Daha ətraflı",
+  "footer_access_title": "Əlçatanlıq",
+  "footer_back_top": "Yuxarı",
+  "footer_brand_text": "STADA-nın beynəlxalq təcrübəsini Azərbaycanda pasiyentlərə, mütəxəssislərə və tərəfdaşlara yaxınlıqla birləşdiririk.",
+  "footer_company_title": "Şirkət",
+  "footer_global_link": "STADA Global",
+  "footer_products_title": "Məhsullar",
+  "footer_rights": "Bütün hüquqlar qorunur.",
+  "footer_trust_countries": "100+ ölkə",
+  "footer_trust_years": "130+ il təcrübə",
+  "footer_warning_text": "Saytdakı məlumat mütəxəssis məsləhətini əvəz etmir. Dərman vasitələrindən istifadə etməzdən əvvəl təlimatı oxuyun.",
+  "footer_warning_title": "Vacibdir",
+  "hero_kicker": "STADA Azerbaijan",
+  "hero_products_label": "MƏHSULLARIMIZ",
+  "nav_about": "Şirkət haqqında",
+  "nav_career": "Karyera",
+  "nav_categories": "Kateqoriyalar",
+  "nav_company": "Şirkət",
+  "nav_culture": "Mədəniyyət",
+  "nav_history": "Şirkətin tarixi",
+  "nav_news": "Xəbərlər və media",
+  "nav_products": "Məhsullar",
+  "nav_worldwide": "Filiallarımız",
+  "news_section_lead": "STADA xəbərləri, media materialları və məhsul yenilikləri bir bölmədə.",
+  "product_aqualor_baby_name": "Аквалор Беби",
+  "product_aqualor_forte_name": "Аквалор Актив Форте",
+  "product_aqualor_gorlo_name": "Аквалор Горло",
+  "product_aqualor_name": "Аквалор",
+  "product_aqualor_soft_mini_name": "Аквалор Софт мини",
+  "product_aqualor_soft_name": "Аквалор Софт",
+  "product_back": "Məhsullara qayıt",
+  "product_cardiomagnil_name": "Кардиомагнил",
+  "product_coldrex_name": "Колдрекс",
+  "product_enterogermina_name": "Энтерожермина",
+  "product_magneb6kids_name": "Магне Б6 Кидс",
+  "product_noshpa_name": "НО-ШПА",
+  "product_related_heading": "Oxşar məhsullar",
+  "product_related_intro": "Həcm, format və istifadə sahəsinə görə uyğun variantı seçin.",
+  "product_related_label": "Oxşar məhsullar",
+  "product_sinulan_duo_name": "Синулан Дуо",
+  "product_vitrum_immunaktiv_name": "Витрум Иммунактив",
+  "product_zodak_name": "Зодак",
+  "products_browse_catalog": "Kataloqa baxın",
+  "products_catalog_label": "STADA kataloqu",
+  "products_category_allergy": "Allergiya",
+  "products_category_cardio": "Kardio",
+  "products_category_cold": "Soyuqdəymə və tənəffüs",
+  "products_category_digestive": "Həzm",
+  "products_category_immunity": "İmmunitet",
+  "products_category_kids": "Uşaqlar üçün",
+  "products_category_respiratory": "Tənəffüs yolları",
+  "products_category_urology": "Urologiya",
+  "products_filter_all": "Bütün məhsullar",
+  "products_metric_areas": "terapevtik istiqamət",
+  "products_metric_portfolio": "kataloqda məhsul",
+  "products_partners_heading": "Apteklərdə və onlayn servislərdə mövcuddur",
+  "site_name": "STADA Azerbaijan",
+  "where_to_buy_heading": "Haradan almaq olar",
+};
+
 Object.assign(FRONTEND_STATIC_TEXT.ru, {
   history_source_note: 'Ключевые этапы основаны на корпоративной хронологии STADA.'
 });
@@ -422,6 +499,10 @@ Object.assign(FRONTEND_STATIC_TEXT.en, {
 
 Object.assign(FRONTEND_STATIC_TEXT.ge, {
   history_source_note: 'ძირითადი ეტაპები ეფუძნება STADA-ს კორპორატიულ ქრონოლოგიას.'
+});
+
+Object.assign(FRONTEND_STATIC_TEXT.az, {
+  history_source_note: 'Əsas mərhələlər STADA-nın korporativ xronologiyasına əsaslanır.'
 });
 
 const LOCALIZED_BACKEND_DOM_TEXT = {
@@ -803,6 +884,11 @@ function persistLocaleState() {
   }
 }
 
+function exposeCurrentCountry() {
+  window.STADA_CURRENT_COUNTRY = currentCountry;
+  document.documentElement.dataset.stadaCountry = currentCountry;
+}
+
 function initializeLocaleState() {
   currentCountry = STADA_DEFAULT_COUNTRY;
   try {
@@ -814,11 +900,12 @@ function initializeLocaleState() {
     if (savedLang) {
       currentLang = resolveLanguageForCountry(savedLang, currentCountry);
     } else {
-      currentLang = resolveLanguageForCountry(currentLang, currentCountry);
+      currentLang = resolveLanguageForCountry(getCountryConfig(currentCountry).defaultLanguage, currentCountry);
     }
   } catch (e) {
-    currentLang = resolveLanguageForCountry(currentLang, currentCountry);
+    currentLang = resolveLanguageForCountry(getCountryConfig(currentCountry).defaultLanguage, currentCountry);
   }
+  exposeCurrentCountry();
 }
 
 function setToggleActiveIndex(toggle, index) {
@@ -2161,6 +2248,7 @@ function updateCountry(countryCode) {
   const nextCountry = normalizeCountryCode(countryCode);
   if (nextCountry === currentCountry) return;
   currentCountry = nextCountry;
+  exposeCurrentCountry();
   backendPagePayload = null;
   updateLanguage(resolveLanguageForCountry(currentLang, nextCountry));
 }
