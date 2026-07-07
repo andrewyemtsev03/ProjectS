@@ -1396,65 +1396,12 @@ function applyProductCatalogCards(payload) {
   const grid = document.querySelector('[data-product-grid]');
   if (!grid) return;
 
-  const isAuthoritativeProductCountry = payload?.country?.id !== 'kazakhstan' || currentCountry !== 'kz';
-  if (isAuthoritativeProductCountry || !products.length) {
-    grid.innerHTML = '';
-    grid.hidden = !products.length;
-    if (!products.length) return;
-
-    products.forEach(product => {
-      grid.appendChild(createProductCatalogCard(product));
-    });
-    applyProductCatalogFilter(getActiveProductCatalogFilter());
-    return;
-  }
-
-  grid.hidden = false;
-  const productsById = new Map(products.map(product => [product.id, product]));
-  document.querySelectorAll('[data-product-card]').forEach(card => {
-    const cardId = card.dataset.productId || normalizeProductCardId(card.getAttribute('href'));
-    const product = productsById.get(cardId);
-    if (!product) return;
-
-    card.dataset.productId = product.id;
-    card.setAttribute('href', resolveProductCardHref(getDynamicProductHref(product)));
-    if (product.category) card.dataset.category = product.category;
-    if (product.accent) card.style.setProperty('--card-accent', product.accent);
-
-    const image = card.querySelector('.catalog-card__media img, img');
-    const imageSrc = product.image?.url || product.image?.src || '';
-    if (image && imageSrc) {
-      image.src = withRuntimeImageRefresh(imageSrc);
-      image.alt = product.image?.alt || product.name || product.id || '';
-      image.dataset.backendImageApplied = 'true';
-    }
-
-    const category = card.querySelector('.catalog-card__category');
-    if (category && product.therapeuticArea) {
-      category.textContent = product.therapeuticArea;
-    }
-
-    const title = card.querySelector('.catalog-card__body h3, h3');
-    if (title && product.name) {
-      title.textContent = product.name;
-    }
-
-    const description = card.querySelector('.catalog-card__body p, p');
-    if (description && product.shortDescription) {
-      description.textContent = product.shortDescription;
-    }
-  });
-
-  const existingIds = new Set(
-    Array.from(grid.querySelectorAll('[data-product-card]'))
-      .map(card => card.dataset.productId || normalizeProductCardId(card.getAttribute('href')))
-      .filter(Boolean)
-  );
+  grid.innerHTML = '';
+  grid.hidden = !products.length;
+  if (!products.length) return;
 
   products.forEach(product => {
-    if (!product.id || existingIds.has(product.id)) return;
     grid.appendChild(createProductCatalogCard(product));
-    existingIds.add(product.id);
   });
   applyProductCatalogFilter(getActiveProductCatalogFilter());
 }
