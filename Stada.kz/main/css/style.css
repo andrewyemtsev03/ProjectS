@@ -16169,3 +16169,915 @@ html[lang="kz"] .culture-hero--worldwide h1 {
     font-size: clamp(2rem, 9.4vw, 2.65rem);
   }
 }
+
+/* ==========================================================================
+   Product formula v2 — immersive interactive showcase
+   ========================================================================== */
+
+.product-detail-page .product-formula--v2 {
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 82% 0%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.08), transparent 65%),
+    linear-gradient(180deg, #f4faff 0%, #eef6ff 52%, #f8fbff 100%);
+}
+
+.product-detail-page .product-formula--v2 .product-formula-layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.8rem, 3.2vw, 2.8rem);
+  align-items: stretch;
+}
+
+.product-detail-page .product-formula--v2 .product-section-header {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product-detail-page .product-formula--v2 .product-section-header p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Stage panel ------------------------------------------------------- */
+
+.product-detail-page .product-formula--v2 .snup-formula-system {
+  position: relative;
+  justify-self: stretch;
+  width: 100%;
+  min-height: 780px;
+  border-radius: 34px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(1150px 560px at 50% 118%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.38), transparent 62%),
+    radial-gradient(720px 460px at 10% -14%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.24), transparent 64%),
+    radial-gradient(640px 420px at 94% 12%, rgba(64, 150, 238, 0.16), transparent 66%),
+    linear-gradient(158deg, #081c38 0%, #0b2a52 46%, #081f40 100%);
+  box-shadow:
+    0 44px 90px rgba(8, 34, 68, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system::before,
+.product-detail-page .product-formula--v2 .snup-formula-system::after {
+  content: none;
+}
+
+/* --- Backdrop: aurora, grid ------------------------------------------- */
+
+.product-detail-page .product-formula--v2 .fx-backdrop {
+  position: absolute;
+  inset: -70px;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate3d(calc(var(--fx-mx, 0) * 22px), calc(var(--fx-my, 0) * 16px), 0);
+}
+
+.product-detail-page .product-formula--v2 .fx-aurora {
+  position: absolute;
+  width: 56%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0;
+  transition: opacity 1.6s ease 0.2s;
+  will-change: transform;
+}
+
+.product-detail-page .product-formula--v2 .fx-aurora--1 {
+  top: -18%;
+  left: -14%;
+  background: radial-gradient(circle at 40% 40%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.5), transparent 68%);
+  animation: fxAuroraDriftA 17s ease-in-out infinite alternate;
+}
+
+.product-detail-page .product-formula--v2 .fx-aurora--2 {
+  right: -16%;
+  bottom: -24%;
+  background: radial-gradient(circle at 55% 45%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.42), transparent 66%);
+  animation: fxAuroraDriftB 21s ease-in-out infinite alternate;
+}
+
+.product-detail-page .product-formula--v2 .fx-aurora--3 {
+  top: 8%;
+  right: 8%;
+  width: 34%;
+  background: radial-gradient(circle at 50% 50%, rgba(120, 190, 255, 0.3), transparent 64%);
+  animation: fxAuroraDriftA 14s ease-in-out 1.2s infinite alternate-reverse;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-aurora--1 { opacity: 0.75; }
+.product-detail-page .product-formula--v2.is-inview .fx-aurora--2 { opacity: 0.6; }
+.product-detail-page .product-formula--v2.is-inview .fx-aurora--3 { opacity: 0.5; }
+
+@keyframes fxAuroraDriftA {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(46px, 30px, 0) scale(1.12); }
+}
+
+@keyframes fxAuroraDriftB {
+  from { transform: translate3d(0, 0, 0) scale(1.08); }
+  to { transform: translate3d(-52px, -24px, 0) scale(0.96); }
+}
+
+.product-detail-page .product-formula--v2 .fx-grid {
+  position: absolute;
+  inset: 70px;
+  background-image: radial-gradient(rgba(163, 208, 255, 0.2) 1px, transparent 1.5px);
+  background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(118% 92% at 50% 44%, rgba(0, 0, 0, 0.9), transparent 76%);
+  mask-image: radial-gradient(118% 92% at 50% 44%, rgba(0, 0, 0, 0.9), transparent 76%);
+  opacity: 0;
+  transition: opacity 1.2s ease 0.35s;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-grid {
+  opacity: 0.55;
+}
+
+/* --- Particles ---------------------------------------------------------- */
+
+.product-detail-page .product-formula--v2 .fx-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.4s ease 0.9s;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-particles {
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2 .fx-particles span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 12px rgba(var(--product-accent-rgb, 0, 93, 185), 0.9);
+  opacity: 0;
+  animation: fxParticleFloat 9s linear infinite;
+}
+
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(1) { top: 24%; left: 12%; animation-delay: 0s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(2) { top: 66%; left: 8%; width: 4px; height: 4px; animation-delay: 2.4s; animation-duration: 11s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(3) { top: 38%; left: 30%; width: 3px; height: 3px; animation-delay: 4.6s; animation-duration: 8s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(4) { top: 74%; left: 38%; animation-delay: 1.4s; animation-duration: 10s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(5) { top: 20%; left: 56%; width: 3px; height: 3px; animation-delay: 3.2s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(6) { top: 60%; left: 64%; width: 4px; height: 4px; animation-delay: 5.8s; animation-duration: 12s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(7) { top: 30%; left: 78%; animation-delay: 0.8s; animation-duration: 9.5s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(8) { top: 70%; left: 88%; width: 3px; height: 3px; animation-delay: 4s; animation-duration: 10.5s; }
+.product-detail-page .product-formula--v2 .fx-particles span:nth-child(9) { top: 48%; left: 92%; width: 4px; height: 4px; animation-delay: 6.6s; animation-duration: 8.5s; }
+
+@keyframes fxParticleFloat {
+  0% { opacity: 0; transform: translate3d(0, 22px, 0) scale(0.6); }
+  14% { opacity: 0.9; }
+  60% { opacity: 0.45; }
+  100% { opacity: 0; transform: translate3d(0, -52px, 0) scale(1.15); }
+}
+
+/* --- Connector lines, dots, pulses -------------------------------------- */
+
+.product-detail-page .product-formula--v2 .snup-formula-line {
+  stroke: rgba(214, 236, 255, 0.58);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(var(--product-accent-rgb, 0, 93, 185), 0.5));
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition:
+    stroke-dashoffset 1.15s cubic-bezier(0.55, 0.1, 0.3, 1) 0.55s,
+    stroke 0.3s ease,
+    stroke-opacity 0.3s ease,
+    stroke-width 0.3s ease,
+    filter 0.3s ease;
+}
+
+.product-detail-page .product-formula--v2.is-inview .snup-formula-line {
+  stroke-dashoffset: 0;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-dot {
+  fill: #ffffff;
+  stroke: rgba(var(--product-accent-rgb, 0, 93, 185), 0.95);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 8px rgba(var(--product-accent-rgb, 0, 93, 185), 0.75));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.product-detail-page .product-formula--v2.is-inview .snup-formula-dot {
+  opacity: 1;
+  animation: fxFadeIn 0.5s ease 1.35s backwards;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-source-dot {
+  fill: rgb(var(--product-accent-rgb, 0, 93, 185));
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(var(--product-accent-rgb, 0, 93, 185), 0.8));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.product-detail-page .product-formula--v2.is-inview .snup-formula-source-dot {
+  opacity: 1;
+  animation: fxFadeIn 0.5s ease 1.25s backwards;
+}
+
+@keyframes fxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-detail-page .product-formula--v2 .fx-pulse {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 7px rgba(var(--product-accent-rgb, 0, 93, 185), 0.95));
+  pointer-events: none;
+}
+
+/* --- Hover focus states -------------------------------------------------- */
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus] .snup-formula-line {
+  stroke-opacity: 0.14;
+  filter: none;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="0"] .snup-formula-line:nth-of-type(1),
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="1"] .snup-formula-line:nth-of-type(2),
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="2"] .snup-formula-line:nth-of-type(3) {
+  stroke: #ffffff;
+  stroke-opacity: 1;
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 10px rgba(var(--product-accent-rgb, 0, 93, 185), 0.95));
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus] .snup-formula-dot,
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus] .snup-formula-source-dot {
+  opacity: 0.22;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="0"] .snup-formula-dot:nth-of-type(1),
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="1"] .snup-formula-dot:nth-of-type(2),
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus="2"] .snup-formula-dot:nth-of-type(3) {
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus] .fx-halo {
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-system[data-fx-focus] .snup-formula-point:not(:hover) .fx-card-inner {
+  opacity: 0.45;
+}
+
+/* --- Core: rings, halo, pedestal, packshot ------------------------------- */
+
+.product-detail-page .product-formula--v2 .snup-formula-core {
+  top: 43%;
+  width: min(46vw, 460px);
+  height: 460px;
+  z-index: 3;
+}
+
+.product-detail-page .product-formula--v2 .fx-ring {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease 0.4s;
+}
+
+.product-detail-page .product-formula--v2 .fx-ring--outer {
+  width: 640px;
+  height: 640px;
+  margin: -320px 0 0 -320px;
+  border: 1.5px dashed rgba(190, 220, 255, 0.22);
+  animation: fxSpin 70s linear infinite;
+}
+
+.product-detail-page .product-formula--v2 .fx-ring--mid {
+  width: 480px;
+  height: 480px;
+  margin: -240px 0 0 -240px;
+  border: 1px solid rgba(var(--product-accent-rgb, 0, 93, 185), 0.4);
+  animation: fxSpinReverse 46s linear infinite;
+  transition-delay: 0.55s;
+}
+
+.product-detail-page .product-formula--v2 .fx-ring--outer::before,
+.product-detail-page .product-formula--v2 .fx-ring--mid::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 14px 3px rgba(var(--product-accent-rgb, 0, 93, 185), 0.9);
+}
+
+.product-detail-page .product-formula--v2 .fx-ring--outer::before {
+  width: 7px;
+  height: 7px;
+  top: -4px;
+  margin-left: -3.5px;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-ring {
+  opacity: 1;
+}
+
+@keyframes fxSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fxSpinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.product-detail-page .product-formula--v2 .fx-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(var(--product-accent-rgb, 0, 93, 185), 0.5), transparent 66%);
+  filter: blur(46px);
+  opacity: 0;
+  transition: opacity 1.1s ease 0.3s;
+  pointer-events: none;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-halo {
+  opacity: 0.8;
+  animation: fxHaloPulse 6s ease-in-out 1.4s infinite alternate;
+}
+
+@keyframes fxHaloPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.14); }
+}
+
+.product-detail-page .product-formula--v2 .fx-pedestal {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 360px;
+  height: 66px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(2, 12, 28, 0.65), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.9s ease 0.5s;
+  pointer-events: none;
+}
+
+.product-detail-page .product-formula--v2 .fx-pedestal::after {
+  content: '';
+  position: absolute;
+  inset: 12px 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--product-accent-rgb, 0, 93, 185), 0.45);
+  opacity: 0.85;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-pedestal {
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-pack {
+  display: block;
+  perspective: 900px;
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2:not(.is-inview) .snup-formula-pack {
+  opacity: 0;
+}
+
+.product-detail-page .product-formula--v2.is-inview .snup-formula-pack {
+  animation: fxPackIn 0.95s cubic-bezier(0.17, 0.89, 0.32, 1.18) 0.1s backwards;
+}
+
+@keyframes fxPackIn {
+  from { opacity: 0; transform: translateY(58px) scale(0.84); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-pack::after {
+  content: none;
+}
+
+.product-detail-page .product-formula--v2 .fx-pack-lift {
+  position: absolute;
+  inset: 0;
+  transform:
+    translate3d(0, var(--fx-bob, 0px), 0)
+    rotateX(calc(var(--fx-my, 0) * -4deg))
+    rotateY(calc(var(--fx-mx, 0) * 6deg));
+  will-change: transform;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-product {
+  position: absolute;
+  left: 50%;
+  bottom: 1%;
+  width: auto;
+  height: min(100%, 440px);
+  max-width: min(82%, 350px);
+  transform: translateX(-50%);
+  filter:
+    drop-shadow(0 38px 42px rgba(1, 8, 20, 0.55))
+    drop-shadow(0 0 44px rgba(var(--product-accent-rgb, 0, 93, 185), 0.28));
+}
+
+/* --- Cards ---------------------------------------------------------------- */
+
+.product-detail-page .product-formula--v2 .snup-formula-points {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point {
+  --point-x: 0px;
+  position: absolute;
+  display: block;
+  width: 280px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  overflow: visible;
+  text-align: left;
+  animation: none;
+  transform: translate3d(var(--point-x, 0px), var(--fx-float, 0px), 0);
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point::before,
+.product-detail-page .product-formula--v2 .snup-formula-point::after {
+  content: none;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--active {
+  top: 10%;
+  left: 3.5%;
+  right: auto;
+  bottom: auto;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--seawater {
+  top: 10%;
+  right: 3.5%;
+  left: auto;
+  bottom: auto;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--format {
+  --point-x: -50%;
+  top: auto;
+  left: 50%;
+  right: auto;
+  bottom: 3.4%;
+  width: min(560px, 58%);
+}
+
+.product-detail-page .product-formula--v2 .fx-card-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding: 1.35rem 1.35rem 1.45rem;
+  border-radius: 22px;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(var(--product-accent-rgb, 0, 93, 185), 0.12)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 60px rgba(2, 10, 26, 0.42);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.product-detail-page .product-formula--v2 .fx-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(var(--product-accent-rgb, 0, 93, 185), 0.95), transparent);
+  opacity: 0.85;
+}
+
+.product-detail-page .product-formula--v2 .fx-card-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(92% 64% at 50% 0%, rgba(255, 255, 255, 0.16), transparent 62%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point:hover .fx-card-inner {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.65);
+  box-shadow:
+    0 36px 72px rgba(2, 10, 26, 0.5),
+    0 0 0 1px rgba(var(--product-accent-rgb, 0, 93, 185), 0.35),
+    0 0 46px rgba(var(--product-accent-rgb, 0, 93, 185), 0.3);
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point:hover .fx-card-inner::after {
+  opacity: 1;
+}
+
+.product-detail-page .product-formula--v2:not(.is-inview) .fx-card-inner {
+  opacity: 0;
+}
+
+.product-detail-page .product-formula--v2.is-inview .fx-card-inner {
+  animation: fxCardIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) calc(0.7s + var(--fx-i, 0) * 0.16s) backwards;
+}
+
+@keyframes fxCardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.product-detail-page .product-formula--v2 .fx-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 86px;
+  height: 86px;
+  border-radius: 24px;
+  background: linear-gradient(150deg, #ffffff, #e4edfa);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 14px 28px rgba(2, 10, 26, 0.4);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point:hover .fx-card-media {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point .fx-card-media img {
+  width: 58px;
+  height: 58px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(2, 10, 26, 0.4));
+}
+
+.product-detail-page .product-formula--v2 .fx-card-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgb(var(--product-accent-rgb, 0, 93, 185));
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.product-detail-page .product-formula--v2 .fx-card-index {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.3rem;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point .fx-card-body h3 {
+  margin: 0 0 0.4rem;
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point .fx-card-body p {
+  margin: 0;
+  color: rgba(226, 238, 255, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--format .fx-card-inner {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.15rem 1.55rem;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--format .fx-card-media {
+  width: 74px;
+  height: 74px;
+  border-radius: 20px;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--format .fx-card-body {
+  flex: 1 1 auto;
+  padding-right: 2rem;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--icon-only .fx-card-inner {
+  align-items: center;
+}
+
+.product-detail-page .product-formula--v2 .snup-formula-point--icon-only .fx-card-media {
+  width: 108px;
+  height: 108px;
+}
+
+/* --- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 1220px) {
+  .product-detail-page .product-formula--v2 .snup-formula-point {
+    width: 244px;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point--format {
+    width: min(560px, 58%);
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point--active {
+    left: 2%;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point--seawater {
+    right: 2%;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-core {
+    width: min(40vw, 420px);
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--outer {
+    width: 540px;
+    height: 540px;
+    margin: -270px 0 0 -270px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--mid {
+    width: 420px;
+    height: 420px;
+    margin: -210px 0 0 -210px;
+  }
+}
+
+@media (max-width: 960px) {
+  .product-detail-page .product-formula--v2 .snup-formula-system {
+    display: grid;
+    gap: 1.1rem;
+    min-height: 0;
+    padding: 1.6rem 1.15rem 1.35rem;
+    border-radius: 26px;
+    align-items: stretch;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-lines,
+  .product-detail-page .product-formula--v2 .fx-particles {
+    display: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-backdrop {
+    inset: 0;
+    transform: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-grid {
+    inset: 0;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-core {
+    position: relative;
+    inset: auto;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 330px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--outer {
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--mid {
+    width: 232px;
+    height: 232px;
+    margin: -116px 0 0 -116px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-halo {
+    width: 260px;
+    height: 260px;
+    margin: -130px 0 0 -130px;
+    filter: blur(36px);
+  }
+
+  .product-detail-page .product-formula--v2 .fx-pedestal {
+    bottom: 2px;
+    width: 230px;
+    height: 44px;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-pack {
+    display: block;
+    perspective: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-pack-lift {
+    transform: none;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-product {
+    position: absolute;
+    inset: auto;
+    left: 50%;
+    bottom: 5%;
+    width: auto;
+    height: min(92%, 290px);
+    max-width: 80%;
+    max-height: none;
+    object-fit: contain;
+    transform: translateX(-50%);
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-points {
+    position: relative;
+    inset: auto;
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 0.4rem;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point,
+  .product-detail-page .product-formula--v2 .snup-formula-point--active,
+  .product-detail-page .product-formula--v2 .snup-formula-point--seawater,
+  .product-detail-page .product-formula--v2 .snup-formula-point--format {
+    --point-x: 0px;
+    position: relative;
+    inset: auto;
+    display: block;
+    grid-template-columns: none;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    transform: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-card-inner,
+  .product-detail-page .product-formula--v2 .snup-formula-point--format .fx-card-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.05rem 1.15rem;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-card-media,
+  .product-detail-page .product-formula--v2 .snup-formula-point--format .fx-card-media,
+  .product-detail-page .product-formula--v2 .snup-formula-point--icon-only .fx-card-media {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point .fx-card-media img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-card-value {
+    font-size: 1.3rem;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-card-body {
+    flex: 1 1 auto;
+    padding-right: 1.6rem;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point .fx-card-body h3 {
+    font-size: 0.98rem;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-point .fx-card-body p {
+    font-size: 0.88rem;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-card-index {
+    top: 0.9rem;
+    right: 1rem;
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-detail-page .product-formula--v2 .snup-formula-system {
+    padding: 1.3rem 0.85rem 1.1rem;
+    border-radius: 22px;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-core {
+    height: 270px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--outer {
+    width: 244px;
+    height: 244px;
+    margin: -122px 0 0 -122px;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-ring--mid {
+    width: 190px;
+    height: 190px;
+    margin: -95px 0 0 -95px;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-product {
+    height: min(90%, 235px);
+  }
+}
+
+/* --- Reduced motion -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .product-detail-page .product-formula--v2 .fx-aurora,
+  .product-detail-page .product-formula--v2 .fx-ring,
+  .product-detail-page .product-formula--v2 .fx-particles span,
+  .product-detail-page .product-formula--v2.is-inview .fx-halo,
+  .product-detail-page .product-formula--v2.is-inview .snup-formula-pack,
+  .product-detail-page .product-formula--v2.is-inview .fx-card-inner,
+  .product-detail-page .product-formula--v2.is-inview .snup-formula-dot,
+  .product-detail-page .product-formula--v2.is-inview .snup-formula-source-dot {
+    animation: none;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-aurora,
+  .product-detail-page .product-formula--v2 .fx-grid,
+  .product-detail-page .product-formula--v2 .fx-ring,
+  .product-detail-page .product-formula--v2 .fx-halo,
+  .product-detail-page .product-formula--v2 .fx-pedestal,
+  .product-detail-page .product-formula--v2 .fx-particles,
+  .product-detail-page .product-formula--v2 .snup-formula-line,
+  .product-detail-page .product-formula--v2 .snup-formula-dot,
+  .product-detail-page .product-formula--v2 .snup-formula-source-dot,
+  .product-detail-page .product-formula--v2 .fx-card-inner,
+  .product-detail-page .product-formula--v2 .snup-formula-pack {
+    transition: none;
+  }
+
+  .product-detail-page .product-formula--v2 .snup-formula-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+
+  .product-detail-page .product-formula--v2 .fx-pulse {
+    display: none;
+  }
+}

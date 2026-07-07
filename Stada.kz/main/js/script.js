@@ -59,7 +59,7 @@ const STADA_COUNTRY_OPTIONS = [
     name: 'Georgia',
     backendCountry: 'georgia',
     domain: 'stada.ge',
-    aliases: ['www.stada.ge'],
+    aliases: ['www.stada.ge', 'new.stada.ge'],
     defaultLanguage: 'ge',
     supportedLanguages: ['ge', 'en'],
   },
@@ -1254,13 +1254,25 @@ function getActiveProductCatalogFilter() {
     || 'all';
 }
 
-function setProductCatalogChromeVisible(isVisible) {
+function shouldShowStaticPharmacyPartners(payload = backendPagePayload) {
+  return currentCountry === 'kz' && payload?.country?.id === 'kazakhstan';
+}
+
+function setPharmacyPartnerLinksVisible(isVisible) {
+  document.querySelectorAll('a[href="#pharmacy-partners"]').forEach(link => {
+    link.hidden = !isVisible;
+  });
+}
+
+function setProductCatalogChromeVisible(isVisible, payload = backendPagePayload) {
   document.querySelectorAll('.catalog-filters').forEach(container => {
     container.hidden = !isVisible;
   });
 
   const partners = document.querySelector('.catalog-partners');
-  if (partners) partners.hidden = !isVisible;
+  const showPartners = isVisible && shouldShowStaticPharmacyPartners(payload);
+  if (partners) partners.hidden = !showPartners;
+  setPharmacyPartnerLinksVisible(showPartners);
 }
 
 function applyProductCatalogFilter(activeFilter = 'all') {
@@ -1293,7 +1305,7 @@ function applyProductCatalogCards(payload) {
   if (!Array.isArray(payload?.content?.productCatalog)) return;
 
   const products = payload.content.productCatalog;
-  setProductCatalogChromeVisible(Boolean(products.length));
+  setProductCatalogChromeVisible(Boolean(products.length), payload);
   const grid = document.querySelector('[data-product-grid]');
   if (!grid) return;
 
@@ -1538,11 +1550,7 @@ function applyLegacyProductLayout(legacy) {
   const badges = document.querySelector('[data-product-badges]');
   if (badges) badges.hidden = !legacy.heroOptions.hasBadges || !badges.children.length;
 
-  document.querySelector('.product-formula-layout')?.setAttribute('class', 'product-section-inner product-formula-layout snup-formula-layout');
-  document.querySelector('.snup-formula-system')?.setAttribute('class', 'snup-formula-system vitrum-animate is-visible');
-  document.querySelector('.snup-formula-lines')?.setAttribute('class', 'snup-formula-lines');
-  document.querySelectorAll('.snup-formula-lines path').forEach(path => path.setAttribute('class', 'snup-formula-line'));
-  document.querySelectorAll('.snup-formula-lines circle').forEach(circle => circle.setAttribute('class', 'snup-formula-dot'));
+  document.querySelector('.snup-formula-system')?.classList.add('is-visible');
 }
 
 function getApiProductBlueprint(product, page) {
@@ -1585,31 +1593,47 @@ function getApiProductBlueprint(product, page) {
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
   const modifiers = ['active', 'seawater', 'format'];
-  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'} vitrum-animate is-visible`;
+  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'}`;
+  article.style.setProperty('--fx-i', String(index));
   if (!item.title && !item.text) article.classList.add('snup-formula-point--icon-only');
+
+  const inner = document.createElement('div');
+  inner.className = 'fx-card-inner';
+
+  const indexBadge = document.createElement('span');
+  indexBadge.className = 'fx-card-index';
+  indexBadge.textContent = String(index + 1).padStart(2, '0');
+
+  const media = document.createElement('div');
+  media.className = 'fx-card-media';
   if (item.imageSrc) {
     const image = document.createElement('img');
     image.src = normalizeDynamicProductImageSrc(item.imageSrc);
     image.alt = item.imageAlt || '';
     image.loading = 'lazy';
-    article.appendChild(image);
+    media.appendChild(image);
   } else {
     const value = document.createElement('span');
+    value.className = 'fx-card-value';
     value.textContent = item.value || String(index + 1);
-    article.appendChild(value);
+    media.appendChild(value);
   }
 
+  const body = document.createElement('div');
+  body.className = 'fx-card-body';
   if (item.title) {
     const title = document.createElement('h3');
     title.textContent = item.title;
-    article.appendChild(title);
+    body.appendChild(title);
   }
-
   if (item.text) {
     const text = document.createElement('p');
     text.textContent = item.text;
-    article.appendChild(text);
+    body.appendChild(text);
   }
+
+  inner.append(indexBadge, media, body);
+  article.appendChild(inner);
   return article;
 }
 
@@ -1720,7 +1744,13 @@ function updateFormulaConnectors() {
   const sourceDots = getFormulaSourceDots(svg, connectors.length);
 
   connectors.forEach((connector, index) => {
-    if (!connector.point || !connector.path || !connector.dot) return;
+    if (!connector.path || !connector.dot) return;
+    if (!connector.point) {
+      connector.path.removeAttribute('d');
+      connector.dot.setAttribute('r', '0');
+      sourceDots[index]?.setAttribute('r', '0');
+      return;
+    }
     const cardAnchor = getFormulaConnectorPoint(connector.point.getBoundingClientRect(), connector.anchor);
     const productAnchor = getFormulaProductConnectorPoint(productRect, cardAnchor, connector.anchor);
     const start = toFormulaSvgPoint(productAnchor, systemRect, viewBox);
@@ -1729,8 +1759,170 @@ function updateFormulaConnectors() {
     connector.dot.setAttribute('cx', end.x.toFixed(1));
     connector.dot.setAttribute('cy', end.y.toFixed(1));
     connector.dot.setAttribute('r', '5.5');
+    sourceDots[index]?.setAttribute('r', '4');
     sourceDots[index]?.setAttribute('cx', start.x.toFixed(1));
     sourceDots[index]?.setAttribute('cy', start.y.toFixed(1));
+  });
+}
+
+function initFormulaShowcase() {
+  const section = document.querySelector('.product-formula--v2');
+  const stage = section?.querySelector('[data-formula-stage]');
+  const svg = stage?.querySelector('.snup-formula-lines');
+  if (!section || !stage || !svg || stage.dataset.fxReady) return;
+  stage.dataset.fxReady = 'true';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktopView = window.matchMedia('(min-width: 961px)');
+  const pointer = { targetX: 0, targetY: 0, x: 0, y: 0 };
+  let cards = [];
+  let pulses = [];
+  let frame = 0;
+  let lastTick = 0;
+  let revealedAt = 0;
+  let stageVisible = false;
+
+  const collectNodes = () => {
+    cards = Array.from(stage.querySelectorAll('.snup-formula-point'));
+    pulses = Array.from(svg.querySelectorAll('.snup-formula-line')).map((path, index) => {
+      let dot = svg.querySelector(`.fx-pulse[data-fx-pulse="${index}"]`);
+      if (!dot) {
+        dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('class', 'fx-pulse');
+        dot.setAttribute('data-fx-pulse', String(index));
+        dot.setAttribute('r', '3.6');
+        dot.setAttribute('opacity', '0');
+        svg.appendChild(dot);
+      }
+      return { path, dot, progress: index * 0.27 };
+    });
+  };
+
+  const hidePulses = () => pulses.forEach(pulse => pulse.dot.setAttribute('opacity', '0'));
+
+  const focusIndexForCard = card => {
+    if (card.classList.contains('snup-formula-point--active')) return 0;
+    if (card.classList.contains('snup-formula-point--seawater')) return 1;
+    return 2;
+  };
+
+  const updatePulses = (now, delta) => {
+    if (!section.classList.contains('is-inview')) {
+      hidePulses();
+      return;
+    }
+    if (!revealedAt) revealedAt = now;
+    const focused = stage.dataset.fxFocus;
+    pulses.forEach((pulse, index) => {
+      let length = 0;
+      try { length = pulse.path.getTotalLength(); } catch (error) { length = 0; }
+      if (!length || now - revealedAt < 1400 + index * 360) {
+        pulse.dot.setAttribute('opacity', '0');
+        return;
+      }
+      const isFocused = focused === String(index);
+      pulse.progress = (pulse.progress + delta * (isFocused ? 0.00042 : 0.00019)) % 1;
+      const point = pulse.path.getPointAtLength(pulse.progress * length);
+      const fade = Math.max(0, Math.min(1, pulse.progress / 0.14, (1 - pulse.progress) / 0.14));
+      const dim = focused && !isFocused ? 0.2 : 1;
+      pulse.dot.setAttribute('cx', point.x.toFixed(1));
+      pulse.dot.setAttribute('cy', point.y.toFixed(1));
+      pulse.dot.setAttribute('r', isFocused ? '5' : '3.6');
+      pulse.dot.setAttribute('opacity', (fade * dim * 0.95).toFixed(3));
+    });
+  };
+
+  const shouldAnimate = () => stageVisible && !document.hidden && !reduceMotion.matches && desktopView.matches;
+
+  const stopLoop = () => {
+    if (frame) {
+      window.cancelAnimationFrame(frame);
+      frame = 0;
+    }
+    lastTick = 0;
+    hidePulses();
+  };
+
+  const tick = now => {
+    frame = 0;
+    if (!shouldAnimate()) {
+      stopLoop();
+      return;
+    }
+    const delta = lastTick ? Math.min(64, now - lastTick) : 16;
+    lastTick = now;
+    const t = now * 0.001;
+    pointer.x += (pointer.targetX - pointer.x) * 0.075;
+    pointer.y += (pointer.targetY - pointer.y) * 0.075;
+    stage.style.setProperty('--fx-mx', pointer.x.toFixed(4));
+    stage.style.setProperty('--fx-my', pointer.y.toFixed(4));
+    stage.style.setProperty('--fx-bob', `${(Math.sin(t * 1.05) * 7).toFixed(2)}px`);
+    cards.forEach((card, index) => {
+      card.style.setProperty('--fx-float', `${(Math.sin(t * 0.85 + index * 2.1) * 6).toFixed(2)}px`);
+    });
+    updateFormulaConnectors();
+    updatePulses(now, delta);
+    frame = window.requestAnimationFrame(tick);
+  };
+
+  const syncLoop = () => {
+    if (shouldAnimate()) {
+      if (!frame) frame = window.requestAnimationFrame(tick);
+    } else {
+      stopLoop();
+    }
+  };
+
+  if (reduceMotion.matches || typeof IntersectionObserver === 'undefined') {
+    section.classList.add('is-inview');
+    stageVisible = true;
+    syncLoop();
+  } else {
+    const stageObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        stageVisible = entry.isIntersecting;
+        if (entry.intersectionRatio >= 0.22) section.classList.add('is-inview');
+        syncLoop();
+      });
+    }, { threshold: [0, 0.22] });
+    stageObserver.observe(section);
+  }
+
+  document.addEventListener('visibilitychange', syncLoop);
+  desktopView.addEventListener?.('change', () => {
+    syncLoop();
+    scheduleFormulaConnectorUpdate();
+  });
+  reduceMotion.addEventListener?.('change', () => {
+    if (reduceMotion.matches) section.classList.add('is-inview');
+    syncLoop();
+  });
+
+  stage.addEventListener('pointermove', event => {
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    const rect = stage.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    pointer.targetX = clampNumber(((event.clientX - rect.left) / rect.width) * 2 - 1, -1, 1);
+    pointer.targetY = clampNumber(((event.clientY - rect.top) / rect.height) * 2 - 1, -1, 1);
+  });
+  stage.addEventListener('pointerleave', () => {
+    pointer.targetX = 0;
+    pointer.targetY = 0;
+    delete stage.dataset.fxFocus;
+  });
+  stage.addEventListener('pointerover', event => {
+    const card = event.target instanceof Element ? event.target.closest('.snup-formula-point') : null;
+    if (card) {
+      stage.dataset.fxFocus = String(focusIndexForCard(card));
+    } else {
+      delete stage.dataset.fxFocus;
+    }
+  });
+
+  collectNodes();
+  document.addEventListener('stada:dynamicproductrender', () => {
+    collectNodes();
+    syncLoop();
   });
 }
 
@@ -1811,6 +2003,11 @@ function renderDynamicProductPage(payload) {
   const usageItems = page.usageItems || [];
   const benefits = page.benefits || [];
   const purchaseLinks = page.purchaseLinks || [];
+  const hasPurchaseLinks = purchaseLinks.length > 0;
+  const buySection = document.getElementById('pharmacy-partners');
+  if (buySection) buySection.hidden = !hasPurchaseLinks;
+  setPharmacyPartnerLinksVisible(hasPurchaseLinks);
+
   replaceChildrenFromList('[data-product-metrics]', metrics, createDynamicProductMetric, { hideEmpty: true });
   replaceChildrenFromList('[data-product-facts]', facts, createDynamicProductFact, { hideEmpty: true });
   replaceChildrenFromList('[data-product-benefits]', benefits, createDynamicProductBenefit, { hideEmpty: true });
@@ -2430,6 +2627,7 @@ function initProductDetailPage() {
   scheduleFormulaConnectorUpdate();
   window.addEventListener('resize', scheduleFormulaConnectorUpdate);
   document.addEventListener('stada:dynamicproductrender', scheduleFormulaConnectorUpdate);
+  initFormulaShowcase();
 
   page.classList.add('vitrum-reveal-ready');
   const revealItems = Array.from(page.querySelectorAll('.vitrum-animate'));
