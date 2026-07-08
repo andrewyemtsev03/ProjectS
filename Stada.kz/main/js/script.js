@@ -29,53 +29,11 @@ if (document.readyState === 'complete') {
   window.addEventListener('load', hideStadaPageLoaderWhenReady, { once: true });
 }
 
-let currentLang = 'ru';
-let currentCountry = 'kz';
+let currentLang = '';
+let currentCountry = '';
 
-const STADA_COUNTRY_OPTIONS = [
-  {
-    code: 'kz',
-    label: 'KZ',
-    name: 'Kazakhstan',
-    backendCountry: 'kazakhstan',
-    domain: 'stada.kz',
-    aliases: ['www.stada.kz'],
-    defaultLanguage: 'ru',
-    supportedLanguages: ['ru', 'kz'],
-  },
-  {
-    code: 'kg',
-    label: 'KG',
-    name: 'Kyrgyzstan',
-    backendCountry: 'kyrgyzstan',
-    domain: 'stada.kg',
-    aliases: ['www.stada.kg'],
-    defaultLanguage: 'ru',
-    supportedLanguages: ['ru', 'kg'],
-  },
-  {
-    code: 'ge',
-    label: 'GE',
-    name: 'Georgia',
-    backendCountry: 'georgia',
-    domain: 'stada.ge',
-    aliases: ['www.stada.ge', 'new.stada.ge'],
-    defaultLanguage: 'ge',
-    supportedLanguages: ['ge', 'en'],
-  },
-  {
-    code: 'az',
-    label: 'AZ',
-    name: 'Azerbaijan',
-    backendCountry: 'azerbaijan',
-    domain: 'stada.az',
-    aliases: ['www.stada.az'],
-    defaultLanguage: 'az',
-    supportedLanguages: ['az', 'ru'],
-  },
-];
-
-const STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
+let STADA_COUNTRY_OPTIONS = [];
+let STADA_COUNTRY_BY_CODE = Object.fromEntries(STADA_COUNTRY_OPTIONS.map(country => [country.code, country]));
 const STADA_LANGUAGE_LABELS = {
   ru: 'RU',
   kz: 'KZ',
@@ -760,9 +718,9 @@ function applyLocalizedBackendDomText(lang) {
 }
 
 const STADA_BACKEND_BASE_URL = window.STADA_BACKEND_BASE_URL || 'https://stada-content-backend.onrender.com';
-const STADA_DOMAIN_COUNTRY = getCountryCodeFromHostname(window.location.hostname);
-const STADA_CONFIG_COUNTRY = getConfiguredCountryCode();
-const STADA_DEFAULT_COUNTRY = STADA_DOMAIN_COUNTRY || STADA_CONFIG_COUNTRY || 'kz';
+let STADA_DOMAIN_COUNTRY = '';
+let STADA_CONFIG_COUNTRY = '';
+let STADA_DEFAULT_COUNTRY = 'kz';
 const backendPageCache = {};
 const backendProductCache = {};
 let backendPagePayload = null;
@@ -787,6 +745,72 @@ async function fetchJsonWithTimeout(url) {
 
 function wait(ms) {
   return new Promise(resolve => window.setTimeout(resolve, ms));
+}
+
+function getDefaultCountryCode() {
+  return STADA_COUNTRY_OPTIONS[0]?.code || '';
+}
+
+function codeFromBackendCountry(country) {
+  const aliases = Array.isArray(country?.aliases) ? country.aliases : [];
+  const aliasCode = aliases
+    .map(alias => String(alias || '').trim().toLowerCase())
+    .find(alias => /^[a-z]{2}$/.test(alias));
+  const domainCode = String(country?.domain || '')
+    .trim()
+    .toLowerCase()
+    .split('.')
+    .pop();
+
+  return aliasCode || (/^[a-z]{2}$/.test(domainCode) ? domainCode : '') || String(country?.id || '').slice(0, 2).toLowerCase();
+}
+
+function countryOptionFromBackend(country) {
+  const code = codeFromBackendCountry(country);
+  const domain = String(country?.domain || '').trim().toLowerCase();
+  const aliases = [
+    ...(Array.isArray(country?.aliases) ? country.aliases : []),
+    domain,
+    domain ? `www.${domain.replace(/^www\./, '')}` : '',
+  ].filter(Boolean);
+
+  return {
+    code,
+    label: code.toUpperCase(),
+    name: country?.name || country?.id || code.toUpperCase(),
+    backendCountry: country?.id || code,
+    domain,
+    aliases: [...new Set(aliases)],
+    defaultLanguage: String(country?.defaultLanguage || country?.supportedLanguages?.[0] || 'ru').toLowerCase(),
+    supportedLanguages: Array.isArray(country?.supportedLanguages) && country.supportedLanguages.length
+      ? country.supportedLanguages.map(language => String(language || '').trim().toLowerCase()).filter(Boolean)
+      : ['ru'],
+  };
+}
+
+function setCountryOptions(countries) {
+  const options = (Array.isArray(countries) ? countries : [])
+    .map(countryOptionFromBackend)
+    .filter(country => country.code && country.backendCountry && country.supportedLanguages.length);
+
+  if (!options.length) {
+    throw new Error('Backend country registry did not include any usable countries.');
+  }
+
+  STADA_COUNTRY_OPTIONS = options;
+  STADA_COUNTRY_BY_CODE = Object.fromEntries(options.map(country => [country.code, country]));
+}
+
+async function loadFrontendCountryOptions() {
+  const url = new URL('/api/countries', STADA_BACKEND_BASE_URL);
+  const payload = await fetchJsonWithTimeout(url.href);
+  setCountryOptions(payload?.countries);
+}
+
+function refreshCountryDefaults() {
+  STADA_DOMAIN_COUNTRY = getCountryCodeFromHostname(window.location.hostname);
+  STADA_CONFIG_COUNTRY = getConfiguredCountryCode();
+  STADA_DEFAULT_COUNTRY = STADA_DOMAIN_COUNTRY || STADA_CONFIG_COUNTRY || getDefaultCountryCode();
 }
 
 async function waitForCriticalImages() {
@@ -832,7 +856,7 @@ function normalizeCountryCode(countryInput) {
       ...(country.aliases || []),
     ].some(value => String(value || '').toLowerCase() === requested);
   });
-  return matched?.code || 'kz';
+  return matched?.code || getDefaultCountryCode();
 }
 
 function getConfiguredCountryCode() {
@@ -864,7 +888,9 @@ function getCountryCodeFromHostname(hostname) {
 }
 
 function getCountryConfig(countryCode = currentCountry) {
-  return STADA_COUNTRY_BY_CODE[normalizeCountryCode(countryCode)] || STADA_COUNTRY_BY_CODE.kz;
+  const country = STADA_COUNTRY_BY_CODE[normalizeCountryCode(countryCode)] || STADA_COUNTRY_OPTIONS[0];
+  if (!country) throw new Error('Country registry is unavailable.');
+  return country;
 }
 
 function getSupportedLanguages(countryCode = currentCountry) {
@@ -892,11 +918,15 @@ function persistLocaleState() {
 }
 
 function exposeCurrentCountry() {
+  const country = getCountryConfig(currentCountry);
   window.STADA_CURRENT_COUNTRY = currentCountry;
+  window.STADA_CURRENT_BACKEND_COUNTRY = country.backendCountry;
   document.documentElement.dataset.stadaCountry = currentCountry;
+  document.documentElement.dataset.stadaCountryId = country.backendCountry;
 }
 
 function initializeLocaleState() {
+  refreshCountryDefaults();
   currentCountry = STADA_DEFAULT_COUNTRY;
   try {
     const savedCountry = localStorage.getItem('stada-country');
@@ -4036,9 +4066,15 @@ function initHistoryTimelineMedia() {
 }
 
 // Bind event listeners
-document.addEventListener('DOMContentLoaded', () => {
-  initializeLocaleState();
-  renderLanguageOptions(currentCountry);
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await loadFrontendCountryOptions();
+    initializeLocaleState();
+    renderLanguageOptions(currentCountry);
+  } catch (error) {
+    showBackendRequiredMessage(error);
+    return;
+  }
   // Initial language update
   updateLanguage(currentLang);
   // Initialise libraries

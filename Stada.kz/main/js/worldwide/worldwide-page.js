@@ -17,19 +17,11 @@ const pageCopy = {
   },
 };
 
-const countryCodeToId = {
-  kz: "kazakhstan",
-  kg: "kyrgyzstan",
-  ge: "georgia",
-  az: "azerbaijan",
-};
-
 function getInitialCountryId(countries) {
-  const datasetCountry = document.documentElement.dataset.stadaCountry || window.STADA_CURRENT_COUNTRY || "";
+  const datasetCountryId = document.documentElement.dataset.stadaCountryId || window.STADA_CURRENT_BACKEND_COUNTRY || "";
   const configuredCountry = window.STADA_BACKEND_COUNTRY || window.STADA_COUNTRY || "";
-  const hostnameTld = String(window.location.hostname || "").trim().toLowerCase().split(".").pop();
-  const candidates = [datasetCountry, configuredCountry, hostnameTld, defaultCountryId]
-    .map(value => countryCodeToId[String(value || "").toLowerCase()] || String(value || "").toLowerCase())
+  const candidates = [datasetCountryId, configuredCountry, defaultCountryId]
+    .map(value => String(value || "").toLowerCase())
     .filter(Boolean);
 
   return candidates.find(candidate => countries.some(country => country.id === candidate)) || defaultCountryId;
