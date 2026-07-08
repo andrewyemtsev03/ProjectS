@@ -1159,6 +1159,21 @@ function isStableCloudinaryImageUrl(src) {
   return /^https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\/(?!v\d+\/)/i.test(String(src || ''));
 }
 
+function resolveCountryCloudinaryHeroImageSrc(src, countryId = '') {
+  const value = String(src || '');
+  const targetCountry = String(countryId || getCountryConfig().backendCountry || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  if (!targetCountry || targetCountry === 'kazakhstan') return value;
+
+  return value.replace(
+    /(https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\/(?:v\d+\/)?stada\/hero\/)kazakhstan(\/)/gi,
+    `$1${targetCountry}$2`
+  );
+}
+
 function withRuntimeImageRefresh(src, cacheKey = '') {
   if (!isStableCloudinaryImageUrl(src)) return src;
   if (!cacheKey && !window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) return src;
@@ -1202,15 +1217,22 @@ function resolveProductAssetImageSrc(src) {
 
 function applyImagesFromBackendPayload(payload) {
   const overrideImageCacheKey = payload?.content?.overrides?.updatedAt || '';
+  const payloadCountryId = payload?.country?.id || getCountryConfig().backendCountry;
 
   (payload?.content?.dom?.images || []).forEach(image => {
     if (!image?.id) return;
     document.querySelectorAll(`img[data-backend-image-id="${escapeCssIdentifier(image.id)}"]`).forEach(img => {
-      if (img.dataset.optimizedStaticSrc === 'true' && image.source !== 'override') return;
-
-      const nextSrc = image.source === 'override'
+      const rawNextSrc = image.source === 'override'
         ? image.url || image.src || img.src
         : image.src || img.src;
+      const nextSrc = resolveCountryCloudinaryHeroImageSrc(rawNextSrc, payloadCountryId);
+      if (
+        img.dataset.optimizedStaticSrc === 'true'
+        && image.source !== 'override'
+        && normalizeImageLookupKey(nextSrc) === normalizeImageLookupKey(img.getAttribute('src') || img.src)
+      ) {
+        return;
+      }
       img.src = withRuntimeImageRefresh(resolveProductAssetImageSrc(nextSrc), image.source === 'override' ? overrideImageCacheKey : '');
       if (image.srcset) img.srcset = image.srcset;
       if (image.sizes) img.sizes = image.sizes;
@@ -1231,7 +1253,7 @@ function applyImagesFromBackendPayload(payload) {
     const originalSrc = img.getAttribute('data-backend-src') || img.getAttribute('src') || '';
     const photo = photosBySrc.get(normalizeImageLookupKey(originalSrc));
     if (!photo) return;
-    img.src = photo.src || photo.url || img.src;
+    img.src = resolveCountryCloudinaryHeroImageSrc(photo.src || photo.url || img.src, payloadCountryId);
     if (photo.alt) img.alt = photo.alt;
     if (photo.loading) img.loading = photo.loading;
   });
@@ -1520,7 +1542,11 @@ function handleBackendPageFailure(error) {
 
 function normalizeDynamicProductImageSrc(src) {
   const value = String(src || '').trim();
-  if (!value) return 'https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_016.png';
+  if (!value) {
+    return resolveCountryCloudinaryHeroImageSrc(
+      'https://res.cloudinary.com/ds2aaznn7/image/upload/stada/hero/kazakhstan/index/index_image_016.png'
+    );
+  }
   if (/^(?:https?:)?\/\//i.test(value) || /^data:/i.test(value)) return withRuntimeImageRefresh(value);
   const resolvedProductAsset = resolveProductAssetImageSrc(value);
   if (resolvedProductAsset !== value) return withRuntimeImageRefresh(resolvedProductAsset);
