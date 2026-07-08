@@ -1,4 +1,4 @@
-import { getCountryName, getCountryRegion } from "./countries-data.js?v=worldwide-23";
+import { getCountryName, getCountryRegion } from "./countries-data.js?v=worldwide-34";
 
 const localizedCopy = {
   en: {
