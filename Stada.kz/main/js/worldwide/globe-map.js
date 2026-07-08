@@ -1,5 +1,5 @@
 import createGlobe from "https://esm.sh/cobe@2.0.1";
-import { getCountryName } from "./countries-data.js?v=worldwide-22";
+import { getCountryName } from "./countries-data.js?v=worldwide-23";
 
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const toRadians = (degrees) => (degrees * Math.PI) / 180;

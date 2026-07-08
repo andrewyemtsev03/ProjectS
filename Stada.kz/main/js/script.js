@@ -766,7 +766,7 @@ function codeFromBackendCountry(country) {
 }
 
 function countryOptionFromBackend(country) {
-  const code = codeFromBackendCountry(country);
+  const code = String(country?.code || "").trim().toLowerCase() || codeFromBackendCountry(country);
   const domain = String(country?.domain || '').trim().toLowerCase();
   const aliases = [
     ...(Array.isArray(country?.aliases) ? country.aliases : []),
@@ -2348,6 +2348,75 @@ function initAOS() {
       once: true
     });
   }
+}
+
+function initHomeHeroCopyFit() {
+  const hero = document.querySelector('.stada-home-hero');
+  const copy = hero?.querySelector('.stada-home-hero__copy');
+  const title = copy?.querySelector('h1');
+  if (!hero || !copy || !title) return;
+
+  let fitFrame = null;
+
+  function doesHeroCopyFit() {
+    return copy.scrollHeight <= copy.clientHeight + 1
+      && copy.scrollWidth <= copy.clientWidth + 1
+      && title.scrollWidth <= title.clientWidth + 1;
+  }
+
+  function fitHeroCopy() {
+    fitFrame = null;
+    hero.classList.remove('is-hero-copy-dense');
+    hero.style.removeProperty('height');
+    hero.style.setProperty('--home-hero-title-scale', '1');
+
+    if (!copy.clientHeight || doesHeroCopyFit()) return;
+
+    hero.classList.add('is-hero-copy-dense');
+
+    const minScale = window.innerWidth <= 420 ? 0.58 : window.innerWidth <= 760 ? 0.64 : 0.7;
+    let low = minScale;
+    let high = 1;
+
+    for (let i = 0; i < 8; i += 1) {
+      const mid = (low + high) / 2;
+      hero.style.setProperty('--home-hero-title-scale', mid.toFixed(3));
+      if (doesHeroCopyFit()) {
+        low = mid;
+      } else {
+        high = mid;
+      }
+    }
+
+    hero.style.setProperty('--home-hero-title-scale', low.toFixed(3));
+
+    if (!doesHeroCopyFit()) {
+      const extraHeight = Math.ceil(copy.scrollHeight - copy.clientHeight + 24);
+      if (extraHeight > 0) {
+        hero.style.height = `${hero.clientHeight + extraHeight}px`;
+      }
+    }
+  }
+
+  function scheduleHeroCopyFit() {
+    if (fitFrame) window.cancelAnimationFrame(fitFrame);
+    fitFrame = window.requestAnimationFrame(fitHeroCopy);
+  }
+
+  window.addEventListener('resize', scheduleHeroCopyFit);
+  document.addEventListener('stada:languagechange', scheduleHeroCopyFit);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleHeroCopyFit).catch(() => {});
+  }
+
+  new MutationObserver(scheduleHeroCopyFit).observe(copy, {
+    childList: true,
+    characterData: true,
+    subtree: true
+  });
+
+  scheduleHeroCopyFit();
 }
 
 // Initialise the homepage hero image carousel.
@@ -4075,6 +4144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     showBackendRequiredMessage(error);
     return;
   }
+  initHomeHeroCopyFit();
   // Initial language update
   updateLanguage(currentLang);
   // Initialise libraries
