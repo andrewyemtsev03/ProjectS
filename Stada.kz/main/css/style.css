@@ -11993,8 +11993,9 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
-  gap: clamp(2rem, 4vw, 3.25rem);
+  grid-template-columns: minmax(0, 700px) minmax(280px, 0.46fr);
+  gap: clamp(2rem, 3.6vw, 3rem);
+  justify-content: center;
   align-items: center;
 }
 
@@ -12047,18 +12048,18 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
   grid-column: 1;
   grid-row: 1;
   min-width: 0;
-  max-width: 760px;
+  max-width: 700px;
 }
 
 .career-content h2 {
-  max-width: 680px;
+  max-width: 620px;
   margin-bottom: 1.15rem;
   font-size: 2.7rem;
 }
 
 .career-section p {
   margin: 0 0 1rem;
-  max-width: 730px;
+  max-width: 620px;
   color: #405066;
   font-size: 1rem;
   line-height: 1.7;
@@ -12072,13 +12073,12 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
 
 .career-content .career-facts {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
   margin: clamp(1.45rem, 2.6vw, 2rem) 0 clamp(1.3rem, 2.6vw, 1.8rem);
 }
 
 .career-content .career-fact {
-  grid-column: span 2;
   min-height: 126px;
   padding: 1rem;
   border: 1px solid rgba(15, 39, 66, 0.08);
@@ -12091,7 +12091,7 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
 
 .career-content .career-fact:nth-child(4),
 .career-content .career-fact:nth-child(5) {
-  grid-column: span 3;
+  grid-column: span 1;
 }
 
 .career-fact .number {
