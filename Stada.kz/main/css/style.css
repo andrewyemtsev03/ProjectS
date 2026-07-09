@@ -12004,7 +12004,10 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2px;
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+  justify-items: center;
+  justify-self: center;
+  width: min(360px, 100%);
   min-height: 0;
   padding: 0;
   border: 0;
@@ -12015,8 +12018,10 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
 
 .career-media img {
   display: block;
-  width: 100%;
-  height: clamp(190px, 13.8vw, 230px);
+  width: clamp(260px, 20vw, 360px);
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
   min-height: 0;
   object-fit: contain;
   border: 0;
@@ -12026,8 +12031,10 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
 }
 
 .career-media img:nth-child(2) {
-  width: 100%;
-  height: clamp(190px, 13.8vw, 230px);
+  width: clamp(260px, 20vw, 360px);
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
 }
 
 .career-content {
@@ -13223,12 +13230,14 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
     min-height: 0;
     grid-template-columns: 1fr;
     justify-self: center;
-    width: min(520px, 100%);
+    width: min(380px, 100%);
   }
 
   .career-media img {
     min-height: 0;
-    height: clamp(170px, 29vw, 230px);
+    width: clamp(250px, 48vw, 360px);
+    height: auto;
+    max-height: 150px;
   }
 
   .career-content .career-facts {
@@ -13329,18 +13338,21 @@ header.stada-home-hero.is-changing-in .stada-home-hero__copy {
 
   .career-media {
     grid-template-columns: 1fr;
-    gap: 2px;
+    gap: 1.1rem;
     padding: 0;
     width: 100%;
   }
 
   .career-media img {
-    height: clamp(155px, 44vw, 210px);
+    width: clamp(230px, 78vw, 330px);
+    height: auto;
+    max-height: 138px;
   }
 
   .career-media img:nth-child(2) {
-    width: 100%;
-    height: clamp(155px, 44vw, 210px);
+    width: clamp(230px, 78vw, 330px);
+    height: auto;
+    max-height: 138px;
   }
 
 
