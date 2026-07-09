@@ -160,7 +160,7 @@ export const countriesData = [
       "lng": 28.3699,
       "locationTitle": "STADA Moldova",
       "address": "",
-      "website": "https://stada.md/",
+      "website": "https://new.stada.md/",
       "websiteLabel": "Visit Website",
       "email": "",
       "phone": "",
