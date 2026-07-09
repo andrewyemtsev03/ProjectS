@@ -1708,20 +1708,12 @@ function getApiProductBlueprint(product, page) {
 
 function createDynamicFormulaPoint(item, index) {
   const article = document.createElement('article');
-  const modifiers = ['active', 'seawater', 'format'];
-  article.className = `snup-formula-point snup-formula-point--${modifiers[index] || 'format'}`;
-  article.style.setProperty('--fx-i', String(index));
-  if (!item.title && !item.text) article.classList.add('snup-formula-point--icon-only');
-
-  const inner = document.createElement('div');
-  inner.className = 'fx-card-inner';
-
-  const indexBadge = document.createElement('span');
-  indexBadge.className = 'fx-card-index';
-  indexBadge.textContent = String(index + 1).padStart(2, '0');
+  article.className = 'formula-point vitrum-animate';
+  applyRevealStagger(article, index);
+  if (!item.title && !item.text) article.classList.add('formula-point--icon-only');
 
   const media = document.createElement('div');
-  media.className = 'fx-card-media';
+  media.className = 'formula-point-media';
   if (item.imageSrc) {
     const image = document.createElement('img');
     image.src = normalizeDynamicProductImageSrc(item.imageSrc);
@@ -1730,26 +1722,26 @@ function createDynamicFormulaPoint(item, index) {
     media.appendChild(image);
   } else {
     const value = document.createElement('span');
-    value.className = 'fx-card-value';
     value.textContent = decodeHtmlEntities(item.value || String(index + 1));
     media.appendChild(value);
   }
+  article.appendChild(media);
 
-  const body = document.createElement('div');
-  body.className = 'fx-card-body';
-  if (item.title) {
-    const title = document.createElement('h3');
-    title.textContent = decodeHtmlEntities(item.title);
-    body.appendChild(title);
+  if (item.title || item.text) {
+    const body = document.createElement('div');
+    body.className = 'formula-point-body';
+    if (item.title) {
+      const title = document.createElement('h3');
+      title.textContent = decodeHtmlEntities(item.title);
+      body.appendChild(title);
+    }
+    if (item.text) {
+      const text = document.createElement('p');
+      text.textContent = decodeHtmlEntities(item.text);
+      body.appendChild(text);
+    }
+    article.appendChild(body);
   }
-  if (item.text) {
-    const text = document.createElement('p');
-    text.textContent = decodeHtmlEntities(item.text);
-    body.appendChild(text);
-  }
-
-  inner.append(indexBadge, media, body);
-  article.appendChild(inner);
   return article;
 }
 
@@ -2894,8 +2886,8 @@ function initProductTiltEffects(page) {
   const heroImage = page.querySelector('.product-hero-image');
   attachProductTilt(heroImage, heroImage, 5);
 
-  const formulaStage = page.querySelector('[data-formula-stage]');
-  attachProductTilt(formulaStage, formulaStage?.querySelector('.snup-formula-pack'), 7);
+  const formulaStage = page.querySelector('.formula-showcase-stage');
+  attachProductTilt(formulaStage, formulaStage?.querySelector('.formula-showcase-pack'), 7);
 }
 
 function initProductScrollProgress() {
