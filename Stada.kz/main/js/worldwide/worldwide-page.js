@@ -1,6 +1,6 @@
-import { countriesData, defaultCountryId, getCountryName, getCountryRegion, getCountrySearchValues } from "./countries-data.js?v=worldwide-34";
-import { CountryInfoCard } from "./country-info-card.js?v=worldwide-34";
-import { GlobeMap } from "./globe-map.js?v=worldwide-34";
+import { countriesData, defaultCountryId, getCountryName, getCountryRegion, getCountrySearchValues } from "./countries-data.js?v=worldwide-35";
+import { CountryInfoCard } from "./country-info-card.js?v=worldwide-35";
+import { GlobeMap } from "./globe-map.js?v=worldwide-35";
 
 const pageCopy = {
   en: {
@@ -14,6 +14,9 @@ const pageCopy = {
   },
   az: {
     noMatches: "Ölkə tapılmadı",
+  },
+  ro: {
+    noMatches: "Nu au fost gasite tari",
   },
 };
 

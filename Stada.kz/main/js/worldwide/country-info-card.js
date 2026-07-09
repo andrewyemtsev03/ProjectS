@@ -1,4 +1,4 @@
-import { getCountryName, getCountryRegion } from "./countries-data.js?v=worldwide-34";
+import { getCountryName, getCountryRegion } from "./countries-data.js?v=worldwide-35";
 
 const localizedCopy = {
   en: {
@@ -49,6 +49,19 @@ const localizedCopy = {
       locationTitle: "Məkan",
       address: "Ünvan",
       website: "Sayt",
+      email: "Email",
+      phone: "Telefon",
+    },
+  },
+  ro: {
+    back: "Inapoi la lista tarilor",
+    flag: "drapel",
+    viewWebsite: "Vezi site-ul local",
+    visitWebsite: "Viziteaza site-ul",
+    rows: {
+      locationTitle: "Locatie",
+      address: "Adresa",
+      website: "Website",
       email: "Email",
       phone: "Telefon",
     },

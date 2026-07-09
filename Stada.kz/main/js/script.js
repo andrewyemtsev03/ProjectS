@@ -41,6 +41,7 @@ const STADA_LANGUAGE_LABELS = {
   ge: 'GE',
   en: 'EN',
   az: 'AZ',
+  ro: 'RO',
 };
 
 const FRONTEND_STATIC_TEXT = {
