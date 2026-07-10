@@ -10910,8 +10910,6 @@ html[lang="kz"] .hero-content h1 {
 
 .stada-home-hero .hero-carousel-slide:nth-child(1) img {
   object-position: 65% 40%;
-  transform: scale(1.10);
-  transform-origin: 5% center;
 }
 
 .stada-home-hero .hero-carousel-slide:nth-child(2) img {
@@ -11126,8 +11124,7 @@ html[lang="kz"] .stada-home-hero__copy h1 {
   }
 
   .stada-home-hero .hero-carousel-slide img {
-    width: 142%;
-    max-width: none;
+    width: 100%;
     object-fit: cover;
     object-position: 70% center;
   }
@@ -11219,11 +11216,10 @@ html[lang="kz"] .stada-home-hero__copy h1 {
   }
 
   header.stada-home-hero .hero-carousel-slide img {
-    width: 160%;
-    max-width: none;
+    width: 100%;
     object-fit: cover;
     object-position: 54% center;
-    transform: translateX(-12%) scale(1.02);
+    transform: none;
   }
 
   header.stada-home-hero .hero-carousel-slide:nth-child(1) img,
