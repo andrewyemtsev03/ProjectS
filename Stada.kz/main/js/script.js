@@ -42,6 +42,7 @@ const STADA_LANGUAGE_LABELS = {
   en: 'EN',
   az: 'AZ',
   ro: 'RO',
+  uz: 'UZ',
 };
 
 const FRONTEND_STATIC_TEXT = {
@@ -520,6 +521,55 @@ FRONTEND_STATIC_TEXT.ro = {
   where_to_buy_heading: 'De unde cumpăr',
 };
 
+FRONTEND_STATIC_TEXT.uz = {
+  about_heading: 'STADA haqida',
+  benefits_heading: 'Afzalliklari',
+  button_products: 'Mahsulotlar',
+  career_button: "Bo‘sh ish o‘rinlarini ko‘rish",
+  career_heading: 'STADA kompaniyasidagi karyera',
+  cta_more: "Batafsil ma’lumot",
+  footer_access_title: 'Foydalanish imkoniyati',
+  footer_back_top: 'Yuqoriga',
+  footer_brand_text: "STADA kompaniyasining xalqaro tajribasini O‘zbekistondagi bemorlar, mutaxassislar va hamkorlarga yaqinlik bilan birlashtiramiz.",
+  footer_company_title: 'Kompaniya',
+  footer_global_link: 'STADA Global',
+  footer_products_title: 'Mahsulotlar',
+  footer_rights: 'Barcha huquqlar himoyalangan.',
+  footer_trust_countries: '100 dan ortiq mamlakat',
+  footer_trust_years: '130+ yillik tajriba',
+  footer_warning_text: "Saytdagi ma’lumot mutaxassis maslahatining o‘rnini bosmaydi. Dori vositalarini qo‘llashdan oldin yo‘riqnomani o‘qing.",
+  footer_warning_title: 'Muhim',
+  hero_kicker: 'STADA Uzbekistan',
+  hero_products_label: 'BIZNING MAHSULOTLARIMIZ',
+  nav_about: 'Kompaniya haqida',
+  nav_career: 'Karyera',
+  nav_categories: 'Toifalar',
+  nav_company: 'Kompaniya',
+  nav_culture: 'Madaniyat',
+  nav_history: 'Kompaniya tarixi',
+  nav_news: 'Yangiliklar va media',
+  nav_products: 'Mahsulotlar',
+  nav_worldwide: 'Bizning vakolatxonalarimiz',
+  news_section_lead: 'STADA yangiliklari, media materiallari va mahsulot yangilanishlari bitta zamonaviy bo‘limda.',
+  product_back: 'Mahsulotlarga qaytish',
+  products_browse_catalog: "Katalogni ko‘rish",
+  products_catalog_label: 'STADA katalogi',
+  products_category_allergy: 'Allergiya',
+  products_category_cardio: 'Kardiologiya',
+  products_category_cold: 'Shamollash va nafas olish',
+  products_category_digestive: 'Ovqat hazm qilish',
+  products_category_immunity: 'Immunitet',
+  products_category_kids: 'Bolalar uchun',
+  products_category_respiratory: 'Nafas olish yo‘llari',
+  products_category_urology: 'Urologiya',
+  products_filter_all: 'Barcha mahsulotlar',
+  products_metric_areas: 'terapevtik yo‘nalish',
+  products_metric_portfolio: 'katalogdagi mahsulot',
+  products_partners_heading: 'Dorixonalar va onlayn xizmatlarda mavjud',
+  site_name: 'STADA Uzbekistan',
+  where_to_buy_heading: 'Qayerdan sotib olish mumkin',
+};
+
 const LOCALIZED_BACKEND_DOM_TEXT = {
   kz: {
     history_text_001: 'STADA - Компания тарихы',
@@ -719,6 +769,7 @@ function frontendLanguageFallbackOrder(lang) {
   if (requested === 'ge') return ['ge', 'en'];
   if (requested === 'en') return ['en', 'ge'];
   if (requested === 'ro') return ['ro', 'en'];
+  if (requested === 'uz') return ['uz', 'ru'];
   if (requested === 'kg') return ['kg'];
   const regionalFallbacks = [];
   return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];

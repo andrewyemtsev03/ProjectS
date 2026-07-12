@@ -235,6 +235,10 @@ export const countriesData = [
           "name": "Узбекистан",
           "region": "Мир / Центральная Азия"
         },
+        "uz": {
+          "name": "O‘zbekiston",
+          "region": "Jahon / Markaziy Osiyo"
+        },
         "kz": {
           "name": "Өзбекстан",
           "region": "Әлем / Орталық Азия"
