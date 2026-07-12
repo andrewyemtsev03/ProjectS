@@ -17292,3 +17292,236 @@ html[lang="kz"] .culture-hero--worldwide h1 {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Shared site layout and visual rhythm
+   ========================================================================== */
+
+:root {
+  --site-content-max: 1180px;
+  --site-gutter: clamp(1rem, 3.2vw, 2rem);
+  --site-shell: min(var(--site-content-max), calc(100% - (var(--site-gutter) * 2)));
+  --site-section-space: clamp(3.75rem, 7vw, 6.5rem);
+  --site-section-space-compact: clamp(2.75rem, 5vw, 4.5rem);
+  --site-copy-max: 70ch;
+  --site-radius-sm: 10px;
+  --site-radius-md: 16px;
+  --site-radius-lg: 24px;
+  --site-border: rgba(0, 69, 135, 0.12);
+  --site-shadow-sm: 0 10px 28px rgba(0, 49, 99, 0.08);
+  --site-shadow-md: 0 22px 54px rgba(0, 49, 99, 0.12);
+}
+
+/* Every primary page region uses the same outer grid. */
+.nav-container,
+.home-section__inner,
+.about-section .container,
+.gallery-section .container,
+.products-section .container,
+.career-section .container,
+.hero-products-container,
+.catalog-hero__inner,
+.catalog-section__inner,
+.catalog-partners__inner,
+.history-hero__inner,
+.history-summary__inner,
+.history-periods__inner,
+.history-timeline__inner,
+.footer-modern,
+.worldwide-hero__inner,
+.worldwide-shell,
+.culture-section__inner,
+.culture-hero__content,
+.product-detail-container,
+.product-detail-page .product-hero-content,
+.product-detail-page .product-section-inner {
+  width: var(--site-shell);
+  max-width: var(--site-content-max);
+  margin-inline: auto;
+}
+
+.catalog-hero,
+.catalog-section,
+.catalog-partners,
+.product-detail-page .product-hero,
+.product-detail-page .product-section,
+.product-detail-page .product-detail-section,
+.product-detail-page .product-where-to-buy {
+  padding-inline: 0;
+}
+
+.nav-container,
+nav.scrolled .nav-container {
+  padding-inline: 0;
+}
+
+/* Hero copy now lands on the exact same left edge as body copy. */
+.stada-home-hero__copy,
+.worldwide-hero--static .worldwide-hero__copy,
+.culture-hero--worldwide .culture-hero__copy {
+  margin-left: max(var(--site-gutter), calc((100% - var(--site-content-max)) / 2));
+}
+
+/* Consistent vertical cadence between major sections. */
+.home-about,
+.home-products,
+.home-news,
+.home-career,
+.culture-purpose,
+.culture-values,
+.culture-action,
+.history-summary,
+.history-timeline,
+.worldwide-shell,
+.catalog-section,
+.catalog-partners,
+.product-section {
+  padding-block: var(--site-section-space);
+}
+
+.culture-next,
+.history-periods,
+.product-note,
+.product-buy {
+  padding-block: var(--site-section-space-compact);
+}
+
+/* A predictable reading measure improves hierarchy and line length. */
+.home-about__copy,
+.culture-purpose__copy,
+.culture-section__header,
+.culture-action__copy,
+.history-section-heading,
+.worldwide-shell__header,
+.catalog-section__header,
+.product-section-heading {
+  max-width: var(--site-copy-max);
+}
+
+.home-section h2,
+.culture-purpose__copy h2,
+.culture-section__header h2,
+.culture-action__copy h2,
+.culture-next h2,
+.history-section-heading h2,
+.worldwide-shell__header h2,
+.catalog-section h2,
+.product-section h2 {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+
+.home-section p,
+.culture-page p,
+.history-page p,
+.worldwide-page p,
+.products-page p,
+.product-detail-page p {
+  text-wrap: pretty;
+}
+
+/* Shared surface language for cards and media. */
+.home-about__visual,
+.home-news-card,
+.home-career-card,
+.culture-purpose__visual,
+.culture-purpose__statement,
+.culture-value-card,
+.culture-action__media,
+.history-summary-card,
+.history-event,
+.worldwide-country-detail,
+.country-picker,
+.globe-card,
+.catalog-card,
+.catalog-partners__inner,
+.product-overview-card,
+.product-usage-card {
+  border-radius: var(--site-radius-md);
+}
+
+.culture-purpose__statement,
+.culture-value-card,
+.history-summary-card,
+.history-event,
+.worldwide-country-detail,
+.country-picker,
+.globe-card,
+.catalog-card,
+.product-overview-card,
+.product-usage-card {
+  border-color: var(--site-border);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.home-about__visual,
+.culture-purpose__visual,
+.culture-action__media,
+.history-hero__visual,
+.history-period__media {
+  overflow: hidden;
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+}
+
+/* Keyboard focus is visible and consistent across the site. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(213, 0, 88, 0.42);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .nav-container,
+  nav.scrolled .nav-container {
+    width: var(--site-shell);
+  }
+
+  .stada-home-hero__copy,
+  .worldwide-hero--static .worldwide-hero__copy,
+  .culture-hero--worldwide .culture-hero__copy {
+    margin-left: var(--site-gutter);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --site-gutter: 1rem;
+    --site-section-space: 3.5rem;
+    --site-section-space-compact: 2.75rem;
+    --site-radius-md: 14px;
+    --site-radius-lg: 18px;
+  }
+
+  .nav-container,
+  nav.scrolled .nav-container {
+    width: 100%;
+    padding-inline: var(--site-gutter);
+  }
+
+  header.stada-home-hero .stada-home-hero__copy,
+  .worldwide-hero--static .worldwide-hero__copy,
+  .culture-hero--worldwide .culture-hero__copy {
+    width: calc(100% - (var(--site-gutter) * 2));
+    margin-left: var(--site-gutter);
+  }
+
+  .culture-hero__facts {
+    right: var(--site-gutter);
+    left: var(--site-gutter);
+  }
+
+  .home-section h2,
+  .culture-purpose__copy h2,
+  .culture-section__header h2,
+  .culture-action__copy h2,
+  .culture-next h2,
+  .history-section-heading h2,
+  .worldwide-shell__header h2,
+  .catalog-section h2,
+  .product-section h2 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.08;
+  }
+}
