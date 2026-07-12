@@ -43,6 +43,7 @@ const STADA_LANGUAGE_LABELS = {
   az: 'AZ',
   ro: 'RO',
   uz: 'UZ',
+  hy: 'HY',
 };
 
 const FRONTEND_STATIC_TEXT = {
@@ -770,6 +771,7 @@ function frontendLanguageFallbackOrder(lang) {
   if (requested === 'en') return ['en', 'ge'];
   if (requested === 'ro') return ['ro', 'en'];
   if (requested === 'uz') return ['uz', 'ru'];
+  if (requested === 'hy') return ['hy', 'ru'];
   if (requested === 'kg') return ['kg'];
   const regionalFallbacks = [];
   return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];
