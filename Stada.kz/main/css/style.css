@@ -17611,6 +17611,58 @@ input:focus-visible {
   }
 }
 
+/* Homepage accessibility and perceived-performance polish */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10010;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--stada-blue);
+  box-shadow: 0 10px 30px rgba(0, 48, 96, 0.2);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.home-main:focus {
+  outline: none;
+}
+
+.home-section[id] {
+  scroll-margin-top: 104px;
+}
+
+.home-main :where(a, button):focus-visible,
+nav :where(a, button):focus-visible,
+#backToTop:focus-visible {
+  outline: 3px solid #e04a87;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .stada-home-hero .hero-btn,
+  .news-carousel__button,
+  .lang-toggle .lang-option,
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
+
 /* Shared line-and-label signature for every major section heading. */
 .culture-eyebrow,
 .history-eyebrow,

@@ -48,6 +48,7 @@ const STADA_LANGUAGE_LABELS = {
 
 const FRONTEND_STATIC_TEXT = {
   "ru": {
+    "skip_to_content": "Перейти к основному содержанию",
     "about_heading": "О компании STADA",
     "benefits_heading": "Преимущества",
     "button_products": "Продукты",
@@ -113,6 +114,7 @@ const FRONTEND_STATIC_TEXT = {
     "where_to_buy_heading": "Где купить"
   },
   "kz": {
+    "skip_to_content": "Негізгі мазмұнға өту",
     "about_heading": "STADA компаниясы туралы",
     "benefits_heading": "Артықшылықтар",
     "button_products": "Өнімдер",
@@ -178,6 +180,7 @@ const FRONTEND_STATIC_TEXT = {
     "where_to_buy_heading": "Қайдан сатып алуға болады"
   },
   "kg": {
+    "skip_to_content": "Негизги мазмунга өтүү",
     "about_heading": "STADA компаниясы жөнүндө",
     "benefits_heading": "Артыкчылыктар",
     "button_products": "Продуктылар",
@@ -245,6 +248,7 @@ const FRONTEND_STATIC_TEXT = {
 };
 
 FRONTEND_STATIC_TEXT.en = {
+  "skip_to_content": "Skip to main content",
   "about_heading": "About STADA",
   "benefits_heading": "Benefits",
   "button_products": "Products",
@@ -311,6 +315,7 @@ FRONTEND_STATIC_TEXT.en = {
 };
 
 FRONTEND_STATIC_TEXT.ge = {
+  "skip_to_content": "მთავარ შინაარსზე გადასვლა",
   "about_heading": "STADA-ს შესახებ",
   "benefits_heading": "უპირატესობები",
   "button_products": "პროდუქტები",
@@ -377,6 +382,7 @@ FRONTEND_STATIC_TEXT.ge = {
 };
 
 FRONTEND_STATIC_TEXT.az = {
+  "skip_to_content": "Əsas məzmuna keçin",
   "about_heading": "STADA haqqında",
   "benefits_heading": "Üstünlüklər",
   "button_products": "Məhsullar",
@@ -474,6 +480,7 @@ Object.assign(FRONTEND_STATIC_TEXT.az, {
 });
 
 FRONTEND_STATIC_TEXT.hy = {
+  "skip_to_content": "Անցնել հիմնական բովանդակությանը",
   "about_heading": "STADA-ի մասին",
   "benefits_heading": "Առավելությունները",
   "button_products": "Ապրանքներ",
@@ -541,6 +548,7 @@ FRONTEND_STATIC_TEXT.hy = {
 };
 
 FRONTEND_STATIC_TEXT.ro = {
+  skip_to_content: 'Sari la conținutul principal',
   about_heading: 'Despre STADA',
   benefits_heading: 'Beneficii',
   button_products: 'Produse',
@@ -590,6 +598,7 @@ FRONTEND_STATIC_TEXT.ro = {
 };
 
 FRONTEND_STATIC_TEXT.uz = {
+  skip_to_content: 'Asosiy tarkibga o‘tish',
   about_heading: 'STADA haqida',
   benefits_heading: 'Afzalliklari',
   button_products: 'Mahsulotlar',
