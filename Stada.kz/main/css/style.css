@@ -17573,6 +17573,7 @@ input:focus-visible {
 }
 
 .about-section .stat {
+  overflow: hidden;
   width: 100%;
   min-height: 82px;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -17584,8 +17585,11 @@ input:focus-visible {
 }
 
 .about-section .stat::before {
-  height: 3px;
-  border-radius: var(--site-radius-md) var(--site-radius-md) 0 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 0;
 }
 
 .about-section .stat-number {
@@ -17604,5 +17608,66 @@ input:focus-visible {
   .about-section .stat {
     min-height: 76px;
     padding: 0.9rem 1rem;
+  }
+}
+
+/* Shared line-and-label signature for every major section heading. */
+.culture-eyebrow,
+.history-eyebrow,
+.hero-products-text .hero-label,
+.worldwide-hero--static .worldwide-hero__kicker {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.culture-eyebrow::before,
+.history-eyebrow::before,
+.hero-products-text .hero-label::before,
+.worldwide-hero--static .worldwide-hero__kicker::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 3px;
+  flex: 0 0 2rem;
+  border-radius: 999px;
+  background: var(--stada-red);
+}
+
+.culture-next .culture-eyebrow::before,
+.worldwide-hero--static .worldwide-hero__kicker::before {
+  background: currentColor;
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .section-kicker,
+  .culture-eyebrow,
+  .history-eyebrow,
+  .catalog-eyebrow,
+  .product-detail-page .product-kicker,
+  .hero-products-text .hero-label,
+  .worldwide-hero--static .worldwide-hero__kicker {
+    gap: 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .section-kicker::before,
+  .culture-eyebrow::before,
+  .history-eyebrow::before,
+  .catalog-eyebrow::before,
+  .product-detail-page .product-kicker::before,
+  .hero-products-text .hero-label::before,
+  .worldwide-hero--static .worldwide-hero__kicker::before {
+    width: 1.65rem;
+    flex-basis: 1.65rem;
   }
 }
