@@ -471,6 +471,55 @@ Object.assign(FRONTEND_STATIC_TEXT.az, {
   history_source_note: 'Əsas mərhələlər STADA-nın korporativ xronologiyasına əsaslanır.'
 });
 
+FRONTEND_STATIC_TEXT.ro = {
+  about_heading: 'Despre STADA',
+  benefits_heading: 'Beneficii',
+  button_products: 'Produse',
+  career_button: 'Vezi posturile vacante',
+  career_heading: 'Cariere la STADA',
+  cta_more: 'Află mai multe',
+  footer_access_title: 'Acces',
+  footer_back_top: 'Înapoi sus',
+  footer_brand_text: 'Combinăm experiența internațională STADA cu apropierea locală de pacienți, specialiști și parteneri din Moldova.',
+  footer_company_title: 'Companie',
+  footer_global_link: 'STADA Global',
+  footer_products_title: 'Produse',
+  footer_rights: 'Toate drepturile rezervate.',
+  footer_trust_countries: '100+ țări',
+  footer_trust_years: '130+ ani de experiență',
+  footer_warning_text: 'Informațiile de pe acest site nu înlocuiesc sfatul unui specialist. Citiți prospectul înainte de a utiliza medicamente.',
+  footer_warning_title: 'Important',
+  hero_kicker: 'STADA Moldova',
+  hero_products_label: 'PRODUSELE NOASTRE',
+  nav_about: 'Despre companie',
+  nav_career: 'Cariere',
+  nav_categories: 'Categorii',
+  nav_company: 'Companie',
+  nav_culture: 'Cultură',
+  nav_history: 'Istoria companiei',
+  nav_news: 'Știri și media',
+  nav_products: 'Produse',
+  nav_worldwide: 'Rețeaua internațională',
+  news_section_lead: 'Știri, articole media și noutăți despre produsele STADA într-o singură secțiune.',
+  product_back: 'Înapoi la produse',
+  products_browse_catalog: 'Vezi catalogul',
+  products_catalog_label: 'Catalogul STADA',
+  products_category_allergy: 'Alergie',
+  products_category_cardio: 'Cardiologie',
+  products_category_cold: 'Răceală și respirație',
+  products_category_digestive: 'Sănătate digestivă',
+  products_category_immunity: 'Imunitate',
+  products_category_kids: 'Pentru copii',
+  products_category_respiratory: 'Aparat respirator',
+  products_category_urology: 'Urologie',
+  products_filter_all: 'Toate produsele',
+  products_metric_areas: 'arii terapeutice',
+  products_metric_portfolio: 'produse în catalog',
+  products_partners_heading: 'Disponibile în farmacii și servicii online',
+  site_name: 'STADA Moldova',
+  where_to_buy_heading: 'De unde cumpăr',
+};
+
 const LOCALIZED_BACKEND_DOM_TEXT = {
   kz: {
     history_text_001: 'STADA - Компания тарихы',
@@ -669,6 +718,7 @@ function frontendLanguageFallbackOrder(lang) {
   const requested = String(lang || '').trim().toLowerCase();
   if (requested === 'ge') return ['ge', 'en'];
   if (requested === 'en') return ['en', 'ge'];
+  if (requested === 'ro') return ['ro', 'en'];
   if (requested === 'kg') return ['kg'];
   const regionalFallbacks = [];
   return [...new Set([requested, ...regionalFallbacks, 'ru'].filter(Boolean))];
