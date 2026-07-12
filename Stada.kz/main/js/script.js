@@ -73,7 +73,7 @@ const FRONTEND_STATIC_TEXT = {
     "nav_company": "Компания",
     "nav_culture": "Культура",
     "nav_history": "История компании",
-    "nav_news": "Новости и Медия",
+    "nav_news": "Новости и Медиа",
     "nav_products": "Продукты",
     "nav_worldwide": "Наши филиалы",
     "news_section_lead": "Главные новости, медиа и продуктовые обновления STADA в одном динамичном блоке.",
