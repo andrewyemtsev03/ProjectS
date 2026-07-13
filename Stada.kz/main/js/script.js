@@ -855,6 +855,15 @@ function frontendLanguageFallbackOrder(lang) {
 
 function getFrontendStaticText(lang, key) {
   if (!key) return '';
+
+  // The site identity belongs to the active country, not to a language. This
+  // prevents a shared language fallback (for example English) from showing
+  // "STADA Georgia" on another country's site while page content is loading.
+  if (key === 'site_name' || key === 'hero_kicker') {
+    const country = STADA_COUNTRY_BY_CODE[currentCountry];
+    if (country?.siteName) return country.siteName;
+  }
+
   for (const candidateLang of frontendLanguageFallbackOrder(lang)) {
     const value = FRONTEND_STATIC_TEXT[candidateLang]?.[key];
     if (value) return value;
@@ -958,6 +967,7 @@ function countryOptionFromBackend(country) {
     code,
     label: code.toUpperCase(),
     name: country?.name || country?.id || code.toUpperCase(),
+    siteName: country?.siteName || `STADA ${country?.name || country?.id || code.toUpperCase()}`,
     backendCountry: country?.id || code,
     domain,
     aliases: [...new Set(aliases)],
