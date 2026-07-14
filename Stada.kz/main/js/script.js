@@ -1449,6 +1449,55 @@ function applyImagesFromBackendPayload(payload) {
   });
 }
 
+function renderManagedNewsCards(payload) {
+  const newsCards = payload?.content?.settings?.newsCards;
+  const carousel = document.querySelector('[data-news-carousel]');
+  const track = carousel?.querySelector('[data-news-track]');
+  if (!track || !Array.isArray(newsCards)) return;
+
+  const countryId = payload?.country?.id || getCountryConfig().backendCountry;
+  const refreshKey = payload?.content?.overrides?.updatedAt || '';
+  const cards = document.createDocumentFragment();
+
+  newsCards.forEach((story, index) => {
+    const article = document.createElement('article');
+    article.className = 'news-card';
+    article.dataset.newsId = story.id || `news-${index + 1}`;
+
+    const media = document.createElement('div');
+    media.className = 'news-card__media';
+    const imageSource = resolveCountryCloudinaryHeroImageSrc(story.image?.src || '', countryId);
+    if (imageSource) {
+      const image = document.createElement('img');
+      image.src = withRuntimeImageRefresh(resolveProductAssetImageSrc(imageSource), refreshKey);
+      image.alt = story.image?.alt || story.title || '';
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      media.appendChild(image);
+    }
+
+    const body = document.createElement('div');
+    body.className = 'news-card__body';
+    if (story.date) {
+      const date = document.createElement('span');
+      date.className = 'news-card__date';
+      date.textContent = story.date;
+      body.appendChild(date);
+    }
+    const title = document.createElement('h3');
+    title.textContent = story.title || '';
+    const text = document.createElement('p');
+    text.textContent = story.text || '';
+    body.append(title, text);
+    article.append(media, body);
+    cards.appendChild(article);
+  });
+
+  track.replaceChildren(cards);
+  track.scrollLeft = 0;
+  track.dispatchEvent(new Event('scroll'));
+}
+
 function renderHomeProductPreview(payload) {
   const grid = document.querySelector('[data-home-products-grid]');
   if (!grid || !Array.isArray(payload?.content?.homeProducts)) return;
@@ -2361,6 +2410,7 @@ async function updateBackendDrivenPage(lang) {
   clearBackendRequiredMessage();
   applyTextFromBackendPayload(payload);
   applyImagesFromBackendPayload(payload);
+  renderManagedNewsCards(payload);
   initHistoryTimelineMedia();
   applyProductCatalogCards(payload);
   renderHomeProductPreview(payload);
@@ -2836,13 +2886,13 @@ function initNewsCarousel() {
   if (!carousel) return;
 
   const track = carousel.querySelector('[data-news-track]');
-  const cards = Array.from(carousel.querySelectorAll('.news-card'));
+  const getCards = () => Array.from(track?.querySelectorAll('.news-card') || []);
   const prevButton = document.querySelector('[data-news-prev]');
   const nextButton = document.querySelector('[data-news-next]');
   const current = document.querySelector('[data-news-current]');
   const total = document.querySelector('[data-news-total]');
   const progress = carousel.querySelector('[data-news-progress]');
-  if (!track || !cards.length) return;
+  if (!track || !getCards().length) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   track.scrollLeft = 0;
@@ -2850,9 +2900,11 @@ function initNewsCarousel() {
   let rafId = null;
 
   const formatIndex = value => String(value).padStart(2, '0');
-  const getPositions = () => cards.map(card => card.offsetLeft - track.offsetLeft);
+  const getPositions = () => getCards().map(card => card.offsetLeft - track.offsetLeft);
   const getMaxStartIndex = () => {
+    const cards = getCards();
     const positions = getPositions();
+    if (!cards.length) return 0;
     const maxScroll = track.scrollWidth - track.clientWidth;
     const tolerance = Math.max(24, cards[0].getBoundingClientRect().width * 0.1);
     let maxIndex = positions.length - 1;
@@ -2916,6 +2968,20 @@ function initNewsCarousel() {
   nextButton?.addEventListener('click', () => {
     scrollToIndex(getIndex() + 1);
     startAutoplay();
+  });
+
+  carousel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      scrollToIndex(getIndex() - 1);
+      startAutoplay();
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      scrollToIndex(getIndex() + 1);
+      startAutoplay();
+    }
   });
 
   track.addEventListener('scroll', () => {
