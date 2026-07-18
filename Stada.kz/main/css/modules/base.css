@@ -1,0 +1,1167 @@
+﻿/*
+ * STADA corporate website style sheet
+ *
+ * This file defines the colour palette and layout rules for the
+ * responsive “О компании” page. The design is inspired by the STADA
+ * corporate style guide, using the official blue, red and grey
+ * colours as well as generous white space. Animations are kept
+ * subtle and unobtrusive. Mobile breakpoints ensure comfortable
+ * viewing on smartphones and tablets.
+ */
+
+:root {
+  --stada-blue: #005db9;
+  --stada-red: #d50058;
+  --stada-grey: #828895;
+  --bg-light: #fafafa;
+  --text-dark: #2a2a2a;
+  --font-family: 'Noto Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+}
+
+body::before {
+  content: '';
+  inset: 0;
+  z-index: 9998;
+  background: #ffffff;
+  pointer-events: auto;
+}
+
+body::after {
+  content: '';
+  left: 50%;
+  top: 50%;
+  z-index: 9999;
+  width: clamp(150px, 24vw, 240px);
+  aspect-ratio: 311 / 97;
+  background: url('../../assets/logos/stada_logo.png') center / contain no-repeat;
+  filter: drop-shadow(0 14px 24px rgba(0, 93, 185, 0.16));
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  animation: stadaLogoBreathing 1.6s ease-in-out infinite;
+}
+
+body:not(.stada-page-loaded) {
+  overflow: hidden;
+}
+
+body.stada-page-loaded::before,
+body.stada-page-loaded::after {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes stadaLogoBreathing {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.88;
+    filter: drop-shadow(0 14px 24px rgba(0, 93, 185, 0.14));
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.075);
+    opacity: 1;
+    filter: drop-shadow(0 20px 34px rgba(0, 93, 185, 0.24));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
+}
+
+/* Navigation bar */
+/*
+ * Navigation bar
+ *
+ * The header has been redesigned to feel more substantial and to remain
+ * consistent in height as visitors scroll the page.  The default
+ * implementation shrank the bar and logo on scroll, which made the
+ * interface feel cramped.  We remove that size change here and instead
+ * enlarge the bar and logo to improve legibility.  A subtle fade‑in
+ * animation runs once on page load to give the navigation a polished
+ * appearance.
+ */
+nav {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Keep the background and shadow transitions but remove padding
+     transitions since the height no longer changes on scroll. */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Slide the navigation bar in from slightly above the viewport on load */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navFadeIn 0.6s ease-out forwards;
+}
+
+/* Keyframes for nav fade‑in animation */
+@keyframes navFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+ * The container for the navigation items has been given more generous
+ * padding to make the header feel taller.  We removed the padding
+ * transition because the height will no longer shrink on scroll.
+ */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+/*
+ * Increase the size of the logo to better balance the enlarged
+ * navigation bar.  The width remains auto so the aspect ratio is
+ * preserved.
+ */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/*
+ * Navigation links use a slightly larger font to improve readability.
+ * A custom underline animation replaces the static bottom border.  On
+ * hover or when active the underline smoothly expands from left to
+ * right.  The border property is disabled to avoid conflicting with
+ * the animated underline.
+ */
+.menu li a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--stada-blue);
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: none;
+}
+
+/* Underline effect: start with zero width */
+.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--stada-red);
+  transition: width 0.3s ease;
+}
+
+/* Expand underline on hover and when active */
+.menu li a:hover::after,
+.menu li a.active::after {
+  width: 100%;
+}
+
+/* When hovering or active, change the text colour.  The underline
+   animation is handled separately above. */
+.menu li a:hover,
+.menu li a.active {
+  color: var(--stada-red);
+}
+
+/* Language toggle */
+.lang-toggle {
+  margin-left: 1rem;
+}
+
+.lang-toggle button {
+  background-color: var(--stada-blue);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.lang-toggle button:hover {
+  background-color: var(--stada-red);
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--stada-blue);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/*----------------------------------------
+ * Navigation scroll behaviour
+ *
+ * When the user scrolls down the page the navigation bar gently
+ * collapses and its background becomes more solid.  This effect
+ * improves legibility against busy hero imagery and frees up
+ * vertical space on smaller screens.  The logo is scaled down
+ * proportionally.  An ‘active’ class is added to the current
+ * navigation link when its corresponding section enters the viewport.
+ */
+/*
+ * Override the behaviour of the navigation bar when the page is
+ * scrolled.  Previously the nav shrank and the logo became smaller.
+ * Now we maintain the same dimensions as the default state but
+ * slightly increase the background opacity and box shadow to improve
+ * contrast against the page content.  This keeps the bar feeling
+ * substantial and consistent without taking away space.
+ */
+nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+nav.scrolled .nav-container {
+  padding: 1rem 1.5rem;
+}
+
+nav.scrolled .logo img {
+  height: 50px;
+}
+
+/* Active nav link highlighting
+ *
+ * Remove the bottom border from active links since the animated underline
+ * handles the highlighting.  Only the text colour is changed here.
+ */
+.menu li a.active {
+  color: var(--stada-red);
+  border-bottom-color: transparent;
+}
+
+/* Hamburger animation into a cross when menu is open */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Back to top button styling */
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--stada-red);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(213, 0, 88, 0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
+
+  /* Increase the font size so the arrow is clearly visible on all
+     devices. The default button inherits 1rem; bump it up to 1.5rem. */
+  font-size: 1.5rem;
+}
+
+#backToTop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(213, 0, 88, 0.5);
+}
+
+#backToTop.show {
+  display: flex;
+}
+
+/* Counter numbers animation: style ensures numbers are clearly
+   distinguished from their descriptions and align nicely in the facts grid. */
+.career-fact .number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 50vh, 500px);
+  overflow: hidden;
+
+  /* Initially hide the hero section to avoid any flash of centred
+   * content while the page is loading.  It becomes visible once
+   * JavaScript adds the `.loaded` class. */
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Reveal the hero section once initialisation is complete */
+.hero-section.loaded {
+  opacity: 1;
+}
+
+.hero-section .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-section .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+ * Hero overlay positioning
+ *
+ * The hero headlines and call‑to‑action buttons should sit neatly within
+ * the coloured ellipse on each slide.  To achieve this we anchor the
+ * overlay to the left of the slide (rather than centring it) and only
+ * translate vertically to centre it on the y‑axis.  A modest maximum
+ * width prevents long lines of text spilling out of the ellipse on
+ * ultra‑wide displays.
+ */
+.hero-overlay {
+  position: absolute;
+  /* Vertical anchor: align the overlay at 46% from the top of the
+   * slide.  This ensures all slides share a common baseline and
+   * the headlines align visually across the carousel. */
+  top: 46%;
+  /* Horizontal anchor: clamp between a small pixel offset and a
+   * percentage of the viewport width to ensure there is always
+   * comfortable breathing room on the left edge regardless of screen
+   * size.  On very narrow screens this resolves to ~16px; on large
+   * desktops it caps at ~96px. */
+  left: clamp(16px, 6vw, 96px);
+  /* Only translate vertically so the overlay is centred along its
+   * own height, avoiding any unwanted horizontal shifting. */
+  transform: translateY(-50%);
+  text-align: left;
+  color: inherit;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  /* Limit the width to prevent the text running out of the ellipse.
+   * On very wide screens the overlay will occupy at most ~32% of the
+   * viewport or 700px (whichever is smaller).  A conservative cap
+   * like this ensures that even on the narrowest ellipse (slide 2 and 3)
+   * the headline never spills into the photographic area. */
+  max-width: min(32vw, 700px);
+  /*
+   * Initially hide the overlay until it is explicitly revealed via
+   * JavaScript.  This prevents the headline from flashing in the
+   * centre of the slide before our positioning CSS is applied.
+   * When the `.visible` class is added the overlay will fade in.
+   */
+  /* Hide the overlay entirely until JavaScript adds the `.visible` class.
+   * Using display:none eliminates any chance that the headline will be
+   * temporarily centred before the positioning styles are applied. */
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-out;
+}
+
+/* When the overlay is marked as visible (via JS), display it and
+ * trigger the fade‑in animation.  Visibility is toggled once the
+ * language has been initialised to avoid a flash of unstyled content. */
+.hero-overlay.visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInOverlay 1s ease-out;
+}
+
+/* Hide the headline and button inside the overlay until the overlay is
+ * visible.  Swiper duplicates slides when looping, which results in
+ * extra hero overlays being present in the DOM.  Without this rule
+ * the duplicate overlays briefly display the headline in the centre
+ * of the screen before our script adds the `.visible` class. */
+.hero-overlay h1,
+.hero-overlay .hero-btn {
+  visibility: hidden;
+}
+
+.hero-overlay.visible h1,
+.hero-overlay.visible .hero-btn {
+  visibility: visible;
+}
+
+/*
+ * Hero overlay heading styling
+ *
+ * The original hero headline used a very large, heavy weight which felt
+ * overpowering on top of the coloured ellipse.  To achieve a more
+ * contemporary and elegant look we reduce the font size, lighten the
+ * weight and add a touch of letter spacing.  The new clamp values
+ * ensure the heading scales smoothly across viewport sizes without
+ * dominating the slide on large desktops or becoming illegible on
+ * mobile screens.  A subtle shadow improves contrast against the
+ * underlying artwork without appearing too pronounced.
+ */
+.hero-overlay h1 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  color: var(--stada-grey);
+}
+
+@keyframes fadeInOverlay {
+  /*
+   * Fade the hero overlay into view.  We animate only the
+   * vertical translation so that the overlay never jumps horizontally
+   * (which previously caused it to appear centred on first load).
+   */
+  from {
+    opacity: 0;
+    transform: translateY(-60%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* Swiper pagination customisation */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: var(--stada-grey);
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--stada-red);
+}
+
+/* About section */
+.about-section {
+  padding: 4rem 1rem;
+  background-color: #fff;
+}
+
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--stada-blue);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1 1 55%;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.about-stats {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.values-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.values-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.value-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--stada-red);
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.stat {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--stada-blue);
+  background-color: rgba(0, 93, 185, 0.05);
+  padding: 0.8rem 1rem;
+  border-left: 4px solid var(--stada-red);
+  border-radius: 4px;
+}
+
+/* Gallery section */
+.gallery-section {
+  padding: 4rem 1rem;
+  background-color: var(--bg-light);
+}
+
+.gallery-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  color: var(--stada-blue);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* Products section */
+.products-section {
+  padding: 4rem 1rem;
+  background-color: var(--bg-light);
+}
+
+.products-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-section h2 {
+  font-size: 2rem;
+  color: var(--stada-blue);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Grid layout for product cards */
+.products-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Create as many columns as will fit with minimum width of 240px */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Individual product card container (an anchor element) */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for product images */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+/* Product name caption overlay */
+.product-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0, 93, 185, 0) 0%, rgba(0, 93, 185, 0.8) 100%);
+}
+
+@media (max-width: 768px) {
+  /* Slightly reduce padding and height on smaller screens */
+  .product-card img {
+    height: 180px;
+    padding: 0.8rem;
+  }
+  .product-name {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* CTA button in hero overlay */
+/*
+ * Call‑to‑action button styling
+ *
+ * Replace the chunky pill‑style button with a leaner, more modern design.
+ * The button is now rendered as an inline flex container so that an
+ * arrow icon can be appended via the ::after pseudo element.  The base
+ * state features a transparent background with a coloured border and
+ * text; on hover the button fills with the brand red and the text
+ * colour inverts.  A gentle vertical lift and arrow slide provide
+ * tactile feedback.  The smaller padding and font size keep the
+ * button from overwhelming the hero typography.
+ */
+.hero-btn {
+  /* Redefine the CTA button to be bolder and more inviting.  Use a solid
+   * background and generous padding to improve clickability.  A large
+   * rounded shape echoes the STADA branding. */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background-color: var(--stada-red);
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(213, 0, 88, 0.35);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Append an arrow to the CTA button */
+.hero-btn::after {
+  content: "→";
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #c4004e;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(213, 0, 88, 0.4);
+}
+
+.hero-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* Position overrides for each slide's overlay to align with overlapping ellipses */
+/*
+ * Override positions for hero overlay cards on each slide.
+ * These values place the overlay near the intersecting circles in the hero artwork.
+ * For slide 1 (s1) the overlay sits left of centre; for slide 2 (s2) it sits right of centre; for slide 3 (s3) it sits lower centre.
+ */
+.hero-overlay.s1 {
+  /* Use same positioning for slide 1 as base hero overlay */
+  top: 46%;
+  left: clamp(16px, 6vw, 96px);
+  transform: translateY(-50%);
+}
+.hero-overlay.s2 {
+  /* Use same positioning for slide 2 as base hero overlay */
+  top: 46%;
+  left: clamp(16px, 6vw, 96px);
+  transform: translateY(-50%);
+}
+.hero-overlay.s3 {
+  /* Use same positioning for slide 3 as base hero overlay */
+  top: 46%;
+  left: clamp(16px, 6vw, 96px);
+  transform: translateY(-50%);
+}
+
+/* Centralize hero overlay on small screens */
+@media (max-width: 768px) {
+  /*
+   * On small screens we recenter the overlay so that it remains
+   * comfortably readable when the ellipses collapse into each other.
+   * The 54% top anchor ensures the headlines sit a little lower on
+   * phones, leaving room for the logo and navigation.
+   */
+  .hero-overlay {
+    top: 54% !important;
+    left: 50% !important;
+    /* Only translate vertically to avoid horizontal centering glitch */
+    transform: translateY(-50%) !important;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  /*
+   * Adjust hero image cropping on mobile.  Each slide contains a large
+   * coloured ellipse on the left and photographic content on the
+   * right.  When the viewport is narrow, `object-fit: cover` crops
+   * evenly from both sides, which causes the human‑centred portion of
+   * the image to disappear.  By shifting the object position towards
+   * the right we ensure that the important content remains visible on
+   * phones.
+   */
+  .hero-section .swiper-slide:nth-child(1) .hero-img,
+  .hero-section .swiper-slide:nth-child(2) .hero-img,
+  .hero-section .swiper-slide:nth-child(3) .hero-img {
+    object-position: 70% center;
+  }
+
+  /* Slightly increase hero height on mobile to reveal more of the
+     photographic area after shifting the crop. */
+  .hero-section {
+    height: clamp(360px, 65vh, 640px);
+  }
+
+  /* Reduce hero heading size further on small screens */
+  .hero-overlay h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--stada-blue);
+  color: #fff;
+  padding: 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-overlay h1 {
+    /* Scale down the heading further on medium screens for better balance */
+    font-size: 1.6rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Custom additions for product carousel and language toggle
+ *
+ * The following rules introduce a horizontally scrolling carousel for
+ * the products section and a redesigned language selector.  These
+ * definitions appear near the end of the stylesheet to ensure they
+ * override earlier rules where appropriate.
+ */
+
+/* Products carousel layout
+ *
+ * Replace the masonry grid with a continuous horizontal strip.  The
+ * flex container prevents wrapping and hides the scrollbars.  Each
+ * product card has a fixed width so that the scrolling speed remains
+ * consistent regardless of viewport size.  On hover the card lifts
+ * forward and scales slightly larger; the z‑index ensures the hovered
+ * card appears above its neighbours.  A smoother transition on both
+ * transform and box‑shadow gives the interaction a polished feel.
+ */
+.products-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.products-carousel .product-card {
+  /* Allow the carousel items to size themselves based on their image
+   * dimensions.  Remove any fixed width so that the images can
+   * determine the layout. */
+  flex: 0 0 auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.products-carousel .product-card:hover {
+  /* Do not apply any transforms or shadows to the anchor itself on hover.
+   * Hover effects are handled on the image directly to avoid the
+   * appearance of a rectangular container. */
+  transform: none;
+  box-shadow: none;
+  z-index: auto;
+}
+
+/* Apply transitions to product images so they scale smoothly on hover */
+.products-carousel .product-card img {
+  position: relative;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Enlarge the product image and add a shadow on hover.  This effect
+ * applies only to the image itself, ensuring that no rectangular
+ * background becomes visible. */
+.products-carousel .product-card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* Remove card backgrounds and borders in the carousel for a clean,
+ * image‑only look */
+.products-carousel .product-card {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+/* Hide product names in the carousel */
+.products-carousel .product-name {
+  display: none;
+}
+
+/* Images in the carousel should fill their container height without
+ * padding or background colour.  Maintain consistent height across
+ * products while allowing the width to adjust automatically based on
+ * the image proportions. */
+.products-carousel .product-card img {
+  height: 220px;
+  width: auto;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Language toggle redesign
+ *
+ * Replace the single colour pill with a dual‑segment toggle.  Each
+ * segment acts as a button for its respective language.  The active
+ * language is highlighted with the brand blue while the inactive
+ * language remains transparent.  A border ties the two segments
+ * together into a unified pill shape.  The sizing and typographic
+ * treatment mirror the navigation links for consistency.
+ */
+.lang-toggle {
+  --lang-active-x: 0%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  flex: 0 0 auto;
+  width: 102px;
+  min-height: 36px;
+  margin-left: 1rem;
+  padding: 4px;
+  border: 1.5px solid rgba(0, 93, 185, 0.46);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+  box-shadow: 0 8px 18px rgba(0, 93, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  overflow: hidden;
+}
+
+.lang-toggle::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 6px);
+  border-radius: inherit;
+  background: linear-gradient(135deg, #0069c7 0%, var(--stada-blue) 64%, #004f9f 100%);
+  box-shadow: 0 6px 14px rgba(0, 93, 185, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  transform: translateX(var(--lang-active-x));
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s ease;
+}
+
+.lang-toggle[data-active-lang="kz"] {
+  --lang-active-x: calc(100% + 4px);
+}
+
+.lang-toggle .lang-option {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 28px;
+  padding: 0 0.48rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #00549f;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.lang-toggle .lang-option:hover {
+  transform: translateY(-1px);
+}
+
+.lang-toggle .lang-option.active {
+  color: #ffffff;
+}
+
+.lang-toggle .lang-option:focus-visible {
+  outline: 2px solid rgba(213, 0, 88, 0.36);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-toggle::before,
+  .lang-toggle .lang-option {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    touch-action: pan-y pinch-zoom;
+  }
+  body {
+    position: relative;
+  }
+  header,
+  section,
+  footer,
+  .nav-container,
+  .hero-section,
+  .hero-shell,
+  .hero-content,
+  .hero-actions,
+  .hero-visual,
+  .hero-carousel {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .hero-content h1,
+  .hero-lead,
+  .hero-visual-caption,
+  .menu li a {
+    overflow-wrap: anywhere;
+  }
+  nav {
+    overflow: visible;
+  }
+  .nav-container {
+    position: relative;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  nav.scrolled .nav-container {
+    padding: 0.75rem 1rem;
+  }
+  .logo img,
+  nav.scrolled .logo img {
+    height: 42px;
+  }
+  .logo {
+    flex: 0 0 auto;
+    order: 1;
+  }
+  .menu {
+    order: 4;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    max-height: 0;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0 0.65rem;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid rgba(0, 93, 185, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 18px 36px rgba(0, 46, 100, 0.16);
+    transform: translateY(-8px);
+    transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease, padding 0.22s ease;
+  }
+  .menu.open {
+    max-height: 430px;
+    padding: 0.65rem;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .menu li {
+    width: 100%;
+  }
+  .menu li a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+  }
+  .menu li a::after {
+    display: none;
+  }
+  .menu li a:hover,
+  .menu li a.active {
+    color: var(--stada-blue);
+    background-color: rgba(0, 93, 185, 0.07);
+  }
+  .hamburger {
+    order: 3;
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  .hamburger:hover,
+  .hamburger:focus-visible {
+    background-color: rgba(0, 93, 185, 0.08);
+  }
+  .lang-toggle {
+    order: 2;
+    flex: 0 0 auto;
+    width: 92px;
+    min-height: 34px;
+    margin-left: 0;
+  }
+  .lang-toggle .lang-option {
+    min-height: 26px;
+    padding: 0 0.42rem;
+    font-size: 0.78rem;
+  }
+  .about-content {
+    flex-direction: column;
+  }
+  .about-text, .about-stats {
+    flex: 1 1 100%;
+  }
+  .hero-section {
+    height: clamp(320px, 60vh, 600px);
+  }
+}

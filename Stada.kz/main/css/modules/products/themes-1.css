@@ -1,0 +1,1333 @@
+.product-snup-page .product-hero {
+  background:
+    linear-gradient(120deg, #ffffff 0%, #e8f8ff 36%, #f6fbfd 64%, #fff1f4 100%),
+    repeating-linear-gradient(90deg, rgba(0, 151, 200, 0.055) 0 1px, transparent 1px 80px);
+}
+
+.product-snup-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 151, 200, 0.2), rgba(0, 167, 165, 0.12), rgba(228, 0, 43, 0.1));
+}
+
+.product-snup-page .product-hero-image {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(229, 249, 255, 0.96)),
+    linear-gradient(90deg, rgba(0, 151, 200, 0.12), rgba(228, 0, 43, 0.06));
+}
+
+.product-snup-page .product-hero-image > img {
+  width: min(82%, 420px);
+}
+
+.product-hero-nutrients--snup {
+  grid-template-columns: repeat(2, minmax(58px, auto));
+}
+
+.product-hero-nutrients--snup span {
+  width: auto;
+  min-width: 58px;
+  padding: 0 0.45rem;
+}
+
+.product-snup-page .product-fact-card:nth-child(4) span {
+  color: #b0002d;
+  background: var(--product-citrus-soft);
+}
+
+.product-snup-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 67% 52%, rgba(0, 151, 200, 0.16), transparent 24%),
+    linear-gradient(180deg, #f3fbff 0%, #ffffff 100%);
+}
+
+.product-snup-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-snup-page .snup-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.snup-formula-system {
+  position: relative;
+  min-height: 760px;
+  isolation: isolate;
+}
+
+.snup-formula-system::before {
+  content: '';
+  position: absolute;
+  inset: 4% 2% 4%;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 151, 200, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 151, 200, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 151, 200, 0.065) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 151, 200, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.snup-formula-system::after {
+  content: '';
+  position: absolute;
+  right: 18%;
+  bottom: 19%;
+  z-index: 1;
+  width: min(52%, 520px);
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 151, 200, 0.2), transparent 68%);
+  filter: blur(10px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.snup-formula-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.snup-formula-line {
+  fill: none;
+  stroke: rgba(21, 151, 223, 0.58);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 7px rgba(21, 151, 223, 0.16));
+  vector-effect: non-scaling-stroke;
+}
+
+.snup-formula-dot {
+  fill: #1597df;
+  stroke: #ffffff;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 5px rgba(21, 151, 223, 0.42));
+  vector-effect: non-scaling-stroke;
+}
+
+.snup-formula-core {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  z-index: 3;
+  width: min(48vw, 450px);
+  height: 440px;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.snup-formula-pack {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.snup-formula-pack::after {
+  content: '';
+  position: absolute;
+  right: 20%;
+  bottom: 7%;
+  left: 18%;
+  z-index: 0;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 95, 145, 0.16);
+  filter: blur(10px);
+}
+
+.snup-formula-pack img {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 28px rgba(8, 46, 84, 0.18));
+}
+
+.snup-formula-product {
+  left: 50%;
+  bottom: 1%;
+  width: auto;
+  height: min(100%, 430px);
+  max-width: min(82%, 340px);
+  transform: translateX(-50%);
+}
+
+.snup-formula-connector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 151, 200, 0.1), rgba(0, 151, 200, 0.78));
+  box-shadow: 0 0 14px rgba(0, 151, 200, 0.2);
+  transform-origin: left center;
+  animation: snupConnectorPulse 4.8s ease-in-out infinite;
+}
+
+.snup-formula-connector::after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #1597df;
+  box-shadow: 0 0 0 2px rgba(21, 151, 223, 0.34);
+  transform: translateY(-50%);
+}
+
+.snup-formula-connector--active {
+  width: 250px;
+  transform: translate(-130px, -54px) rotate(180deg);
+}
+
+.snup-formula-connector--seawater {
+  width: 250px;
+  transform: translate(130px, -54px) rotate(0deg);
+  animation-delay: 0.35s;
+}
+
+.snup-formula-connector--format {
+  width: 170px;
+  transform: translate(0, 126px) rotate(90deg);
+  animation-delay: 0.7s;
+}
+
+.snup-formula-connector--bridge {
+  display: none;
+}
+
+.snup-formula-points {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.snup-formula-point {
+  --point-x: 0;
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 260px;
+  min-height: 220px;
+  padding: 1.1rem 1.2rem 1.25rem;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.05);
+  backdrop-filter: blur(3px);
+  overflow: visible;
+  text-align: center;
+  transform: translate(var(--point-x), 0);
+  animation: snupFormulaPointFloat 6s ease-in-out infinite;
+}
+
+.snup-formula-point::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(21, 151, 223, 0.3);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.snup-formula-point::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 74px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #1597df, transparent);
+  box-shadow: 0 0 10px rgba(21, 151, 223, 0.28);
+  transform: translateX(-50%);
+}
+
+.snup-formula-point--active {
+  top: 0.8rem;
+  left: 0;
+}
+
+.snup-formula-point--seawater {
+  top: 0.8rem;
+  right: 0;
+  animation-delay: 0.45s;
+}
+
+.snup-formula-point--format {
+  --point-x: -50%;
+  bottom: -2.2rem;
+  left: 55%;
+  animation-delay: 0.9s;
+}
+
+.snup-formula-point img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 98px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 16px rgba(8, 46, 84, 0.1));
+}
+
+.snup-formula-point--active img {
+  max-width: 160px;
+  height: 92px;
+  padding: 0.25rem;
+}
+
+.snup-formula-point--seawater img {
+  max-width: 88px;
+  height: 110px;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.snup-formula-point--format img {
+  max-width: 78px;
+  height: 102px;
+}
+
+.snup-formula-point p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.product-vitrum-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 50%, rgba(248, 196, 0, 0.18), transparent 24%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-vitrum-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-vitrum-page .vitrum-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-vitrum-page .vitrum-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(248, 196, 0, 0.2) 151px 152px, transparent 153px 208px, rgba(0, 138, 114, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(248, 196, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 138, 114, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-vitrum-page .vitrum-formula-system::after {
+  right: 19%;
+  bottom: 18%;
+  background: radial-gradient(ellipse at center, rgba(248, 196, 0, 0.22), transparent 68%);
+}
+
+.product-vitrum-page .vitrum-formula-line {
+  stroke: rgba(0, 138, 114, 0.56);
+  filter: drop-shadow(0 0 7px rgba(0, 138, 114, 0.16));
+}
+
+.product-vitrum-page .vitrum-formula-dot {
+  fill: var(--product-accent);
+  filter: drop-shadow(0 0 5px rgba(0, 138, 114, 0.36));
+}
+
+.product-vitrum-page .vitrum-formula-core {
+  top: 42%;
+  width: min(52vw, 540px);
+  height: 460px;
+}
+
+.product-vitrum-page .vitrum-formula-pack::after {
+  right: 14%;
+  bottom: 8%;
+  left: 14%;
+  background: rgba(68, 92, 38, 0.14);
+}
+
+.product-vitrum-page .vitrum-formula-product {
+  left: 50%;
+  bottom: 7%;
+  width: min(104%, 520px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}
+
+.product-vitrum-page .vitrum-formula-point::before {
+  border-color: rgba(0, 138, 114, 0.28);
+}
+
+.product-vitrum-page .vitrum-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-citrus), var(--product-accent), transparent);
+  box-shadow: 0 0 10px rgba(248, 196, 0, 0.24);
+}
+
+.product-vitrum-page .vitrum-formula-point img {
+  max-width: 132px;
+  height: 104px;
+  padding: 0.3rem;
+}
+
+.product-vitrum-page .vitrum-formula-point--minerals img {
+  max-width: 124px;
+}
+
+.product-vitrum-page .vitrum-formula-point--beta img {
+  max-width: 142px;
+  height: 100px;
+}
+
+.product-coldrex-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(248, 196, 0, 0.16), transparent 30%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.58) 0%, rgba(255, 249, 223, 0.66) 35%, rgba(239, 248, 255, 0.54) 68%, rgba(248, 251, 255, 0.42) 100%);
+}
+
+.product-coldrex-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 93, 185, 0.07), rgba(248, 196, 0, 0.12), rgba(213, 0, 88, 0.045));
+}
+
+.product-coldrex-page .product-hero-image {
+  min-height: 430px;
+  padding: 1.25rem;
+  border-color: rgba(0, 93, 185, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 219, 0.94)),
+    linear-gradient(90deg, rgba(0, 93, 185, 0.08), rgba(213, 0, 88, 0.06));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+  transform: translateZ(0);
+}
+
+.product-coldrex-page .product-hero-image > img {
+  width: min(78%, 390px);
+  max-height: 370px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: coldrexHeroFloat 9s linear infinite;
+}
+
+.product-coldrex-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-coldrex-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-citrus);
+}
+
+.product-coldrex-page .product-fact-card span {
+  color: var(--product-blue-dark);
+  background: linear-gradient(135deg, #fff5c4, #ffffff);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-blue-dark);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-coldrex-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-coldrex-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 50%, rgba(248, 196, 0, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(213, 0, 88, 0.1), transparent 18%),
+    linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.product-coldrex-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-coldrex-page .coldrex-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-coldrex-page .coldrex-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(248, 196, 0, 0.22) 151px 152px, transparent 153px 208px, rgba(0, 93, 185, 0.12) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 93, 185, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(248, 196, 0, 0.065) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-coldrex-page .coldrex-formula-system::after {
+  right: 18%;
+  bottom: 17%;
+  background: radial-gradient(ellipse at center, rgba(248, 196, 0, 0.24), transparent 68%);
+}
+
+.product-coldrex-page .coldrex-formula-line {
+  stroke: rgba(0, 93, 185, 0.62);
+  stroke-width: 2.35;
+  filter: drop-shadow(0 0 9px rgba(0, 93, 185, 0.18));
+}
+
+.product-coldrex-page .coldrex-formula-dot {
+  fill: var(--product-accent);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 93, 185, 0.36));
+}
+
+.product-coldrex-page .coldrex-formula-core {
+  top: 48%;
+  width: min(52vw, 540px);
+  height: 440px;
+}
+
+.product-coldrex-page .coldrex-formula-pack::after {
+  right: 13%;
+  bottom: 10%;
+  left: 13%;
+  background: rgba(8, 46, 84, 0.14);
+}
+
+.product-coldrex-page .coldrex-formula-product {
+  left: 50%;
+  bottom: 13%;
+  width: min(74%, 370px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 28px 28px rgba(8, 46, 84, 0.18));
+}
+
+.product-coldrex-page .coldrex-formula-point {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+}
+
+.product-coldrex-page .coldrex-formula-point::before {
+  border-color: rgba(0, 93, 185, 0.28);
+}
+
+.product-coldrex-page .coldrex-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-berry), var(--product-accent), transparent);
+  box-shadow: 0 0 10px rgba(248, 196, 0, 0.28);
+}
+
+.product-coldrex-page .coldrex-formula-point img {
+  max-width: 132px;
+  height: 98px;
+  margin-bottom: 0.75rem;
+  padding: 0.1rem;
+}
+
+.product-coldrex-page .coldrex-formula-point--phenylephrine img {
+  max-width: 138px;
+}
+
+.product-coldrex-page .coldrex-formula-point--vitamin-c img {
+  max-width: 142px;
+}
+
+.product-coldrex-page .coldrex-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-coldrex-page .coldrex-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(0, 166, 81, 0.14), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 113, 206, 0.1), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #edf8ff 34%, #f4fbf7 66%, #eef8ff 100%);
+}
+
+.product-enterogermina-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 113, 206, 0.16), rgba(0, 166, 81, 0.12), rgba(0, 167, 165, 0.06));
+}
+
+.product-enterogermina-page .product-hero-image {
+  --enterogermina-hero-shadow-opacity: 0.76;
+  --enterogermina-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  padding: 1.2rem;
+  border-color: rgba(0, 113, 206, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(234, 246, 255, 0.96)),
+    linear-gradient(90deg, rgba(0, 113, 206, 0.1), rgba(0, 166, 81, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-enterogermina-page .product-hero-image::after {
+  left: 16%;
+  right: 16%;
+  bottom: 2.05rem;
+  height: 22px;
+  background: rgba(8, 46, 84, 0.13);
+  filter: blur(13px);
+  opacity: var(--enterogermina-hero-shadow-opacity);
+  transform: var(--enterogermina-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: enterogerminaHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+  width: min(92%, 520px);
+  max-height: 300px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: enterogerminaHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-enterogermina-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-enterogermina-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #eaf6ff, #ffffff);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-enterogermina-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-enterogermina-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(0, 113, 206, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(0, 166, 81, 0.12), transparent 18%),
+    linear-gradient(180deg, #f1faff 0%, #ffffff 100%);
+}
+
+.product-enterogermina-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-enterogermina-page .enterogermina-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-enterogermina-page .enterogermina-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 113, 206, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 166, 81, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 113, 206, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 166, 81, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-enterogermina-page .enterogermina-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(0, 113, 206, 0.18), transparent 68%);
+}
+
+.product-enterogermina-page .enterogermina-formula-line {
+  stroke: rgba(0, 113, 206, 0.74);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(0, 113, 206, 0.22));
+}
+
+.product-enterogermina-page .enterogermina-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 113, 206, 0.32));
+}
+
+.product-enterogermina-page .enterogermina-formula-core {
+  top: 50%;
+  width: min(56vw, 560px);
+  height: 430px;
+}
+
+.product-enterogermina-page .enterogermina-formula-pack::after {
+  right: 7%;
+  bottom: 18%;
+  left: 7%;
+  height: 24px;
+  background: rgba(8, 46, 84, 0.13);
+}
+
+.product-enterogermina-page .enterogermina-formula-product {
+  left: 50%;
+  bottom: 27%;
+  z-index: 3;
+  width: min(100%, 540px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 24px rgba(8, 46, 84, 0.16));
+}
+
+.product-enterogermina-page .enterogermina-formula-point {
+  width: 224px;
+  min-height: 190px;
+  padding: 0.9rem 1rem 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-page .enterogermina-formula-point::before {
+  border-color: rgba(0, 113, 206, 0.28);
+}
+
+.product-enterogermina-page .enterogermina-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(0, 113, 206, 0.24);
+}
+
+.product-enterogermina-page .enterogermina-formula-point > span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 0.82rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--product-accent), var(--product-accent-strong));
+  box-shadow: 0 16px 24px rgba(0, 113, 206, 0.16);
+  font-size: 1.34rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-enterogermina-page .enterogermina-formula-point--spores > span {
+  background: linear-gradient(135deg, var(--product-citrus), #007d3d);
+  box-shadow: 0 16px 24px rgba(0, 166, 81, 0.16);
+}
+
+.product-enterogermina-page .enterogermina-formula-point--format > span {
+  color: var(--product-accent-strong);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2px rgba(0, 113, 206, 0.16), 0 16px 24px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-page .enterogermina-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-enterogermina-page .enterogermina-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-page .enterogermina-formula-card-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 116px;
+  margin: -0.1rem auto 0.78rem;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 14px 16px rgba(8, 46, 84, 0.12));
+}
+
+.product-enterogermina-page .enterogermina-formula-card-image--bacillus {
+  max-width: 150px;
+  height: 106px;
+}
+
+.product-enterogermina-page .enterogermina-formula-card-image--spores {
+  max-width: 132px;
+  height: 108px;
+}
+
+.product-enterogermina-page .enterogermina-formula-card-image--flacon {
+  max-width: 142px;
+  height: 112px;
+}
+
+.product-enterogermina-page .enterogermina-formula-point--format > span {
+  display: none;
+}
+
+.product-enterogermina-page .product-note {
+  border-top-color: var(--product-citrus);
+  background: linear-gradient(135deg, #ffffff, #effaf3);
+}
+
+.product-enterogermina-page .product-where-to-buy {
+  background: #f1faff;
+}
+
+.product-enterogermina-capsules-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(0, 166, 81, 0.16), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 113, 206, 0.1), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #eefaf3 34%, #edf8ff 66%, #f8fbff 100%);
+}
+
+.product-enterogermina-capsules-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 166, 81, 0.14), rgba(0, 113, 206, 0.12), rgba(0, 167, 165, 0.06));
+}
+
+.product-enterogermina-capsules-page .product-hero-image {
+  --enterogermina-capsules-hero-shadow-opacity: 0.76;
+  --enterogermina-capsules-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 335px;
+  padding: 1.2rem;
+  overflow: hidden;
+  border-color: rgba(0, 166, 81, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(232, 248, 238, 0.96)),
+    linear-gradient(90deg, rgba(0, 166, 81, 0.09), rgba(0, 113, 206, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-enterogermina-capsules-page .product-hero-image::after {
+  left: 18%;
+  right: 18%;
+  bottom: 2.05rem;
+  height: 22px;
+  background: rgba(8, 46, 84, 0.13);
+  filter: blur(13px);
+  opacity: var(--enterogermina-capsules-hero-shadow-opacity);
+  transform: var(--enterogermina-capsules-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: enterogerminaCapsulesHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-capsules-page .product-hero-image > .enterogermina-capsules-hero-packshot {
+  width: min(96%, 600px);
+  max-height: 310px;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, var(--enterogermina-capsules-hero-float-y, 0px), 0);
+  will-change: transform;
+  animation: enterogerminaCapsulesHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-capsules-page.enterogermina-capsules-hero-paused .product-hero-image > .enterogermina-capsules-hero-packshot,
+.product-enterogermina-capsules-page.enterogermina-capsules-hero-paused .product-hero-image::after {
+  animation-play-state: paused;
+}
+
+.product-enterogermina-capsules-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-accent);
+}
+
+.product-enterogermina-capsules-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent-strong);
+}
+
+.product-enterogermina-capsules-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #e8f8ee, #ffffff);
+}
+
+.product-enterogermina-capsules-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-enterogermina-capsules-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-enterogermina-capsules-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-berry);
+}
+
+.product-enterogermina-capsules-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(0, 166, 81, 0.15), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(0, 113, 206, 0.12), transparent 18%),
+    linear-gradient(180deg, #effaf3 0%, #ffffff 100%);
+}
+
+.product-enterogermina-capsules-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 166, 81, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 113, 206, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 166, 81, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 113, 206, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(0, 166, 81, 0.18), transparent 68%);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-line {
+  stroke: rgba(0, 125, 61, 0.7);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(0, 166, 81, 0.22));
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 113, 206, 0.32));
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-core {
+  top: 50%;
+  width: min(42vw, 410px);
+  height: 350px;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-pack::after {
+  right: 13%;
+  bottom: 22%;
+  left: 13%;
+  height: 18px;
+  background: rgba(8, 46, 84, 0.13);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-product {
+  left: 50%;
+  bottom: 28%;
+  z-index: 3;
+  width: min(100%, 380px);
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 18px 20px rgba(8, 46, 84, 0.16));
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point {
+  width: 224px;
+  min-height: 190px;
+  padding: 0.9rem 1rem 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point::before {
+  border-color: rgba(0, 166, 81, 0.28);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(0, 166, 81, 0.24);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point > span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 0.82rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--product-accent), var(--product-accent-strong));
+  box-shadow: 0 16px 24px rgba(0, 166, 81, 0.16);
+  font-size: 1.34rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point--spores > span {
+  background: linear-gradient(135deg, var(--product-citrus), #00579c);
+  box-shadow: 0 16px 24px rgba(0, 113, 206, 0.16);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point--format > span {
+  color: var(--product-accent-strong);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2px rgba(0, 166, 81, 0.16), 0 16px 24px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-card-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 116px;
+  margin: -0.1rem auto 0.78rem;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 14px 16px rgba(8, 46, 84, 0.12));
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-card-image--bacillus {
+  max-width: 150px;
+  height: 106px;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-card-image--spores {
+  max-width: 132px;
+  height: 108px;
+}
+
+.product-enterogermina-capsules-page .enterogermina-capsules-formula-card-image--capsules {
+  max-width: 142px;
+  height: 112px;
+}
+
+.product-enterogermina-capsules-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #effaf3);
+}
+
+.product-enterogermina-capsules-page .product-where-to-buy {
+  background: #f1fbf5;
+}
+
+.product-enterogermina-forte-page .product-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(0, 166, 81, 0.18), transparent 30%),
+    radial-gradient(circle at 58% 78%, rgba(0, 113, 206, 0.12), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #f2fbf5 34%, #edf8ff 66%, #fff8ef 100%);
+}
+
+.product-enterogermina-forte-page .product-hero::after {
+  background: linear-gradient(135deg, rgba(0, 166, 81, 0.14), rgba(0, 113, 206, 0.12), rgba(242, 102, 34, 0.08));
+}
+
+.product-enterogermina-forte-page .product-hero-image {
+  --enterogermina-forte-hero-shadow-opacity: 0.72;
+  --enterogermina-forte-hero-shadow-transform: scale3d(1, 1, 1);
+  min-height: 350px;
+  padding: 1rem;
+  overflow: hidden;
+  border-color: rgba(0, 166, 81, 0.13);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(236, 249, 242, 0.96)),
+    linear-gradient(90deg, rgba(0, 166, 81, 0.08), rgba(0, 113, 206, 0.08));
+  box-shadow: 0 28px 60px rgba(8, 46, 84, 0.14);
+}
+
+.product-enterogermina-forte-page .product-hero-image::after {
+  left: 14%;
+  right: 14%;
+  bottom: 2rem;
+  height: 20px;
+  background: rgba(8, 46, 84, 0.12);
+  filter: blur(13px);
+  opacity: var(--enterogermina-forte-hero-shadow-opacity);
+  transform: var(--enterogermina-forte-hero-shadow-transform);
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: enterogerminaForteHeroShadow 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-forte-page .product-hero-image > .enterogermina-forte-hero-packshot {
+  width: min(100%, 650px);
+  max-height: 318px;
+  object-fit: contain;
+  backface-visibility: hidden;
+  filter: none;
+  transform: translate3d(0, var(--enterogermina-forte-hero-float-y, 0px), 0);
+  will-change: transform;
+  animation: enterogerminaForteHeroFloat 9.5s ease-in-out infinite;
+}
+
+.product-enterogermina-forte-page.enterogermina-forte-hero-paused .product-hero-image > .enterogermina-forte-hero-packshot,
+.product-enterogermina-forte-page.enterogermina-forte-hero-paused .product-hero-image::after {
+  animation-play-state: paused;
+}
+
+.product-enterogermina-forte-page .product-hero-metric:nth-child(2) strong {
+  color: var(--product-citrus);
+}
+
+.product-enterogermina-forte-page .product-hero-metric:nth-child(3) strong {
+  color: var(--product-accent);
+}
+
+.product-enterogermina-forte-page .product-fact-card span {
+  color: var(--product-accent-strong);
+  background: linear-gradient(135deg, #e8f8ee, #ffffff);
+}
+
+.product-enterogermina-forte-page .product-fact-card:nth-child(2) span {
+  color: #ffffff;
+  background: var(--product-accent-strong);
+}
+
+.product-enterogermina-forte-page .product-fact-card:nth-child(3) span {
+  color: #ffffff;
+  background: var(--product-citrus);
+}
+
+.product-enterogermina-forte-page .product-fact-card:nth-child(4) span {
+  color: #ffffff;
+  background: var(--product-accent);
+}
+
+.product-enterogermina-forte-page .product-formula {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 52%, rgba(0, 166, 81, 0.15), transparent 24%),
+    radial-gradient(circle at 84% 24%, rgba(0, 113, 206, 0.12), transparent 18%),
+    linear-gradient(180deg, #effaf3 0%, #ffffff 100%);
+}
+
+.product-enterogermina-forte-page .product-formula .product-section-inner {
+  width: min(1420px, 100%);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-layout {
+  grid-template-columns: minmax(320px, 0.42fr) minmax(720px, 1fr);
+  gap: clamp(2rem, 4vw, 3.6rem);
+  align-items: center;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-system::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 150px, rgba(0, 166, 81, 0.18) 151px 152px, transparent 153px 208px, rgba(0, 113, 206, 0.14) 209px 210px, transparent 211px),
+    linear-gradient(90deg, rgba(0, 166, 81, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 113, 206, 0.055) 1px, transparent 1px);
+  background-size: auto, 62px 62px, 62px 62px;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-system::after {
+  right: 11%;
+  bottom: 19%;
+  width: min(62%, 600px);
+  background: radial-gradient(ellipse at center, rgba(0, 166, 81, 0.18), transparent 68%);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-line {
+  stroke: rgba(0, 125, 61, 0.72);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 9px rgba(0, 166, 81, 0.22));
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-dot {
+  fill: var(--product-citrus);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(0, 113, 206, 0.32));
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-core {
+  top: 50%;
+  width: min(46vw, 455px);
+  height: 370px;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-pack::after {
+  right: 13%;
+  bottom: 22%;
+  left: 13%;
+  height: 18px;
+  background: rgba(8, 46, 84, 0.12);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-product {
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  width: min(108%, 430px);
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 18px 20px rgba(8, 46, 84, 0.14));
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point {
+  width: 224px;
+  min-height: 190px;
+  padding: 0.9rem 1rem 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point::before {
+  border-color: rgba(0, 166, 81, 0.28);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point::after {
+  background: linear-gradient(90deg, transparent, var(--product-accent), var(--product-citrus), transparent);
+  box-shadow: 0 0 10px rgba(0, 166, 81, 0.24);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point > span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 0.82rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--product-accent), var(--product-accent-strong));
+  box-shadow: 0 16px 24px rgba(0, 166, 81, 0.16);
+  font-size: 1.34rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point--spores > span {
+  background: linear-gradient(135deg, var(--product-citrus), #00579c);
+  box-shadow: 0 16px 24px rgba(0, 113, 206, 0.16);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point--format > span {
+  color: var(--product-accent-strong);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2px rgba(0, 166, 81, 0.16), 0 16px 24px rgba(8, 46, 84, 0.08);
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-card-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 116px;
+  margin: -0.1rem auto 0.78rem;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 14px 16px rgba(8, 46, 84, 0.12));
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-card-image--bacillus {
+  max-width: 150px;
+  height: 106px;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-card-image--spores {
+  max-width: 132px;
+  height: 108px;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-card-image--flacon {
+  max-width: 142px;
+  height: 112px;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-badge {
+  width: 118px;
+  height: 82px;
+  margin-bottom: 0.78rem;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 38%),
+    linear-gradient(135deg, #00a651 0%, #007d3d 56%, #00579c 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42), 0 16px 24px rgba(0, 166, 81, 0.16);
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point--format > span {
+  display: none;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--product-blue-dark);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.product-enterogermina-forte-page .enterogermina-forte-formula-point p {
+  margin-top: 0.55rem;
+}
+
+.product-enterogermina-forte-page .product-note {
+  border-top-color: var(--product-accent);
+  background: linear-gradient(135deg, #ffffff, #effaf3);
+}
+
+.product-enterogermina-forte-page .product-where-to-buy {
+  background: #f1fbf5;
+}

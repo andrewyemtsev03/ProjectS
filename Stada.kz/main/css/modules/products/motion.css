@@ -1,0 +1,1660 @@
+/* ── Product page interactions & motion ─────────────────────── */
+
+.product-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1400;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--stada-blue), var(--product-accent, #005db9) 45%, var(--stada-red));
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.product-detail-page.vitrum-reveal-ready .vitrum-stagger .vitrum-animate.is-visible {
+  transition-delay: 0s;
+}
+
+.product-detail-page.vitrum-reveal-ready .product-fact-card.vitrum-animate,
+.product-detail-page.vitrum-reveal-ready .formula-point.vitrum-animate,
+.product-detail-page.vitrum-reveal-ready .partner-card.vitrum-animate,
+.product-detail-page.vitrum-reveal-ready .usage-item.vitrum-animate,
+.product-detail-page.vitrum-reveal-ready .benefits-list li.vitrum-animate {
+  transition: opacity 0.55s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.product-detail-page .product-hero-image,
+.formula-showcase-pack {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+.product-detail-page .product-hero-image::before {
+  content: '';
+  position: absolute;
+  top: -12%;
+  bottom: -12%;
+  left: -75%;
+  z-index: 2;
+  width: 45%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.product-detail-page .product-hero-image:hover::before {
+  left: 135%;
+}
+
+.product-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -80%;
+  width: 50%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+
+.product-button:hover::before,
+.product-button:focus-visible::before {
+  left: 140%;
+}
+
+.product-button:focus-visible {
+  outline: 3px solid rgba(var(--product-accent-rgb, 0, 93, 185), 0.35);
+  outline-offset: 3px;
+}
+
+.product-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.product-badges span {
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+}
+
+.product-badges span:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.42);
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(8, 46, 84, 0.08);
+}
+
+.product-hero-metrics {
+  position: relative;
+  z-index: 2;
+}
+
+.product-hero-metric {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+}
+
+.product-hero-metric:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.3);
+  box-shadow: 0 14px 28px rgba(8, 46, 84, 0.11);
+}
+
+.product-hero-metric strong {
+  transition: transform 0.26s ease;
+  transform-origin: left bottom;
+}
+
+.product-hero-metric:hover strong {
+  transform: scale(1.07);
+}
+
+.product-detail-page .product-fact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 48px rgba(8, 46, 84, 0.13);
+}
+
+.product-fact-card span {
+  transition: transform 0.26s ease;
+}
+
+.product-detail-page .product-fact-card:hover span {
+  transform: scale(1.1);
+}
+
+.product-detail-page .benefits-list li:hover {
+  transform: translateX(5px);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.34);
+  box-shadow: 0 16px 30px rgba(8, 46, 84, 0.09);
+}
+
+.product-detail-page .formula-point:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.32);
+  box-shadow: 0 24px 44px rgba(8, 46, 84, 0.12);
+}
+
+.formula-point::before {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail-page .formula-point:hover::before {
+  transform: translateY(calc(-50% + 4px)) scale(1.3);
+  box-shadow: 0 0 0 4px rgba(var(--product-accent-rgb, 0, 93, 185), 0.16);
+}
+
+.formula-point-media {
+  transition: transform 0.3s ease;
+}
+
+.product-detail-page .formula-point:hover .formula-point-media {
+  transform: scale(1.06);
+}
+
+.product-detail-page .partner-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--product-accent-rgb, 0, 93, 185), 0.3);
+  box-shadow: 0 22px 42px rgba(8, 46, 84, 0.13);
+}
+
+.product-detail-page .partner-card img {
+  transition: transform 0.3s ease;
+}
+
+.product-detail-page .partner-card:hover img {
+  transform: scale(1.07);
+}
+
+.usage-item > span {
+  transition: box-shadow 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-detail-page.vitrum-reveal-ready .product-hero-text.vitrum-animate .product-kicker,
+  .product-detail-page.vitrum-reveal-ready .product-hero-text.vitrum-animate h1,
+  .product-detail-page.vitrum-reveal-ready .product-hero-text.vitrum-animate > p,
+  .product-detail-page.vitrum-reveal-ready .product-hero-text.vitrum-animate .product-hero-actions,
+  .product-detail-page.vitrum-reveal-ready .product-hero-text.vitrum-animate .product-badges {
+    opacity: 0;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible .product-kicker {
+    animation: productFadeUp 0.55s ease 0.05s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible h1 {
+    animation: productFadeUp 0.6s ease 0.14s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible > p {
+    animation: productFadeUp 0.6s ease 0.24s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible .product-hero-actions {
+    animation: productFadeUp 0.6s ease 0.34s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible .product-badges {
+    animation: productFadeUp 0.6s ease 0.44s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-text.vitrum-animate.is-visible .product-kicker::before {
+    animation: productKickerLine 0.5s ease 0.4s both;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .product-hero-visual.vitrum-animate.is-visible .product-hero-image > img {
+    animation: productPackIn 0.7s cubic-bezier(0.22, 0.8, 0.32, 1) both, vitrumProductFloat 6s ease-in-out 0.7s infinite;
+  }
+
+  .product-detail-page.vitrum-reveal-ready.stada-page-loaded .formula-showcase.vitrum-animate.is-visible .formula-showcase-points::before {
+    transform-origin: top center;
+    animation: productRailGrow 0.9s ease 0.15s both;
+  }
+
+  .product-detail-page .benefits-list li.vitrum-animate.is-visible::before {
+    animation: productCheckPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+  }
+
+  .usage-item.is-active > span {
+    animation: productUsagePulse 2.6s ease-in-out infinite;
+  }
+}
+
+@keyframes productFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes productKickerLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 2rem;
+  }
+}
+
+@keyframes productPackIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes productRailGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes productCheckPop {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes productUsagePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--product-accent-rgb, 0, 93, 185), 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(var(--product-accent-rgb, 0, 93, 185), 0);
+  }
+}
+
+@keyframes vitrumProductFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes magneHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+@keyframes magneHeroShadow {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.94, 0.88, 1);
+  }
+}
+
+@keyframes enterogerminaHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes enterogerminaHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes enterogerminaCapsulesHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes enterogerminaCapsulesHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes enterogerminaForteHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes enterogerminaForteHeroShadow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: scale3d(0.96, 0.92, 1);
+  }
+}
+
+@keyframes sinulanHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes sinulanHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes edarbiHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes edarbiHeroShadow {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.95, 0.9, 1);
+  }
+}
+
+@keyframes cardiomagnilHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes cardiomagnilHeroShadow {
+  0%,
+  100% {
+    opacity: 0.74;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.96, 0.92, 1);
+  }
+}
+
+@keyframes noshpaHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes noshpaHeroShadow {
+  0%,
+  100% {
+    opacity: 0.74;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.64;
+    transform: scale3d(0.96, 0.92, 1);
+  }
+}
+
+@keyframes essentialeHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes essentialeHeroShadow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: scale3d(0.96, 0.92, 1);
+  }
+}
+
+@keyframes nizoralHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.6deg);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(0.5deg);
+  }
+}
+
+@keyframes nizoralHeroShadow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.48;
+    transform: scale3d(0.9, 0.78, 1);
+  }
+}
+
+@keyframes aqualorHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes aqualorHeroShadow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: scale3d(0.96, 0.92, 1);
+  }
+}
+
+@keyframes coldrexHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  12.5%,
+  87.5% {
+    transform: translate3d(0, -1px, 0);
+  }
+  25%,
+  75% {
+    transform: translate3d(0, -4px, 0);
+  }
+  37.5%,
+  62.5% {
+    transform: translate3d(0, -7px, 0);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
+@keyframes vitrumPhotoDrift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+@keyframes snupFormulaLevitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes snupFormulaPointFloat {
+  0%,
+  100% {
+    transform: translate(var(--point-x), 0);
+  }
+  50% {
+    transform: translate(var(--point-x), -10px);
+  }
+}
+
+@keyframes snupConnectorPulse {
+  0%,
+  100% {
+    opacity: 0.52;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 980px) {
+  .product-detail-page .product-hero {
+    padding-top: 3rem;
+  }
+
+  .product-detail-page .product-hero-content,
+  .product-formula-layout,
+  .product-usage-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-page .product-hero-text h1 {
+    font-size: 2.65rem;
+  }
+
+  .product-detail-page .product-hero-image {
+    min-height: 350px;
+  }
+
+  .product-facts-grid,
+  .product-detail-page .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-detail-page [class*="-formula-layout"] {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-showcase-stage {
+    min-height: 420px;
+  }
+
+  .formula-showcase-packshot {
+    max-height: 340px;
+  }
+}
+
+@media (max-width: 980px) {
+  .product-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .product-detail-page .product-hero,
+  .product-detail-section,
+  .product-detail-page .product-where-to-buy {
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+  }
+
+  .product-detail-page .product-hero-content,
+  .product-detail-page .product-section-inner,
+  .product-detail-page .product-hero-text,
+  .product-detail-page .product-hero-visual,
+  .product-detail-page .product-hero-image,
+  .product-detail-page .product-facts-grid,
+  .product-detail-page .product-benefits-panel,
+  .product-detail-page .usage-list,
+  .product-detail-page .product-note {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .product-detail-page .product-hero-content,
+  .product-detail-page .product-section-inner {
+    width: calc(100vw - 1.7rem);
+    max-width: calc(100vw - 1.7rem);
+  }
+
+  .product-detail-page .product-hero-text,
+  .product-detail-page .product-section-header,
+  .product-detail-page .product-fact-card,
+  .product-detail-page .benefits-list li,
+  .product-detail-page .usage-item,
+  .product-detail-page .product-note {
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .product-hero-text h1,
+  .product-section-header h2,
+  .product-benefits-panel h2 {
+    font-size: 2rem;
+    line-height: 1.14;
+  }
+
+  .product-detail-page .product-hero-text p {
+    max-width: 100%;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .product-aqualor-forte-page .product-hero-text p,
+  .product-aqualor-baby-page .product-hero-text p,
+  .product-aqualor-gorlo-page .product-hero-text p,
+  .product-aqualor-soft-page .product-hero-text p,
+  .product-aqualor-soft-mini-page .product-hero-text p {
+    max-width: min(100%, 33ch);
+  }
+
+  .product-hero-actions,
+  .product-detail-page .benefits-list,
+  .product-facts-grid,
+  .product-detail-page .partners-grid,
+  .product-hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero-actions {
+    display: grid;
+  }
+
+  .product-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-related-card {
+    grid-template-rows: 132px auto auto;
+    min-height: auto;
+  }
+
+  .product-related-card img {
+    max-height: 124px;
+  }
+
+  .product-badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-badges span {
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .product-aqualor-baby-page .product-badges,
+  .product-aqualor-gorlo-page .product-badges,
+  .product-aqualor-soft-page .product-badges,
+  .product-aqualor-soft-mini-page .product-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .product-magne-page .product-badges span:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .product-button {
+    width: 100%;
+  }
+
+  .product-detail-page .product-hero-image {
+    min-height: 230px;
+    padding: 1.25rem;
+  }
+
+  .product-detail-page .product-hero-image > img {
+    max-height: 190px;
+  }
+
+  .product-magne-page .product-hero-image > .magne-hero-packshot {
+    max-height: 190px;
+  }
+
+  .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+    width: min(100%, 420px);
+    max-height: 170px;
+  }
+
+  .product-enterogermina-capsules-page .product-hero-image > .enterogermina-capsules-hero-packshot {
+    width: min(100%, 440px);
+    max-height: 180px;
+  }
+
+  .product-enterogermina-forte-page .product-hero-image > .enterogermina-forte-hero-packshot {
+    width: min(100%, 460px);
+    max-height: 180px;
+  }
+
+  .product-sinulan-page .product-hero-image > .sinulan-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 175px;
+  }
+
+  .product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
+    width: min(100%, 430px);
+    max-height: 165px;
+  }
+
+  .product-cardiomagnil-page .product-hero-image > .cardiomagnil-hero-packshot {
+    width: min(100%, 320px);
+    max-height: 170px;
+  }
+
+  .product-noshpa-page .product-hero-image > .noshpa-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-noshpa-forte-page .product-hero-image > .noshpa-forte-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-gecsikon-page .product-hero-image > .gecsikon-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-klopidogrel-teva-page .product-hero-image > .klopidogrel-teva-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-kamistad-baby-page .product-hero-image > .kamistad-baby-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-psilo-balsam-page .product-hero-image > .psilo-balsam-hero-packshot {
+    width: min(100%, 345px);
+    max-height: 170px;
+  }
+
+  .product-essentiale-page .product-hero-image > .essentiale-hero-packshot {
+    max-height: 185px;
+  }
+
+  .product-nizoral-page .product-hero-image > .nizoral-hero-packshot {
+    width: min(100%, 390px);
+    max-height: 172px;
+  }
+
+  .product-aqualor-page .product-hero-image > .aqualor-hero-packshot {
+    max-height: 190px;
+  }
+
+  .product-hero-nutrients {
+    display: none;
+  }
+
+  .product-detail-page .product-hero-metrics {
+    display: none;
+  }
+
+  .usage-item {
+    grid-template-columns: 1fr;
+  }
+
+  .usage-item:hover,
+  .usage-item:focus-visible,
+  .usage-item.is-active {
+    transform: none;
+  }
+
+  .usage-item > span {
+    width: 100%;
+    height: 6px;
+    min-height: 6px;
+  }
+
+  .product-coldrex-page .coldrex-formula-core {
+    width: min(100%, 260px);
+    height: 310px;
+  }
+
+  .product-coldrex-page .coldrex-formula-product {
+    bottom: 5%;
+    width: 100%;
+  }
+
+  .product-magne-page .magne-formula-core {
+    width: min(100%, 240px);
+    height: 280px;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-magne-page .magne-formula-product {
+    bottom: 22%;
+    width: min(100%, 120px);
+  }
+
+  .product-magne-page .magne-formula-points {
+    margin-top: 1.5rem;
+  }
+
+  .product-femilex-page .femilex-formula-core {
+    width: min(100%, 270px);
+    height: 230px;
+    margin-bottom: 2rem;
+  }
+
+  .product-femilex-page .femilex-formula-product {
+    bottom: 24%;
+    width: min(100%, 230px);
+  }
+
+  .product-femilex-page .femilex-formula-points {
+    margin-top: 1.35rem;
+  }
+
+  .product-femilex-page .femilex-formula-point,
+  .product-femilex-page .femilex-formula-point--acid,
+  .product-femilex-page .femilex-formula-point--balance,
+  .product-femilex-page .femilex-formula-point--format {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-core {
+    width: min(100%, 270px);
+    height: 230px;
+    margin-bottom: 2rem;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-product {
+    bottom: 24%;
+    width: min(100%, 235px);
+    max-height: 138px;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-points {
+    margin-top: 1.35rem;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-point,
+  .product-gecsikon-page .gecsikon-formula-point--chlorhexidine,
+  .product-gecsikon-page .gecsikon-formula-point--local,
+  .product-gecsikon-page .gecsikon-formula-point--format {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-core {
+    width: min(100%, 270px);
+    height: 230px;
+    margin-bottom: 2rem;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-product {
+    bottom: 24%;
+    width: min(100%, 235px);
+    max-height: 138px;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-points {
+    margin-top: 1.35rem;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-point,
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-point--component,
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-point--dose,
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-point--format {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-core {
+    width: min(100%, 270px);
+    height: 230px;
+    margin-bottom: 2rem;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-product {
+    bottom: 24%;
+    width: min(100%, 235px);
+    max-height: 138px;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-points {
+    margin-top: 1.35rem;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-point,
+  .product-kamistad-baby-page .kamistad-baby-formula-point--chamomile,
+  .product-kamistad-baby-page .kamistad-baby-formula-point--gel,
+  .product-kamistad-baby-page .kamistad-baby-formula-point--format {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-core {
+    width: min(100%, 270px);
+    height: 230px;
+    margin-bottom: 2rem;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-product {
+    bottom: 24%;
+    width: min(100%, 235px);
+    max-height: 138px;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-points {
+    margin-top: 1.35rem;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-point,
+  .product-psilo-balsam-page .psilo-balsam-formula-point--component,
+  .product-psilo-balsam-page .psilo-balsam-formula-point--dose,
+  .product-psilo-balsam-page .psilo-balsam-formula-point--format {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-core {
+    width: min(100%, 300px);
+    height: 220px;
+    margin-bottom: 1rem;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-product {
+    bottom: 20%;
+    width: 100%;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-pack::after {
+    bottom: 14%;
+  }
+
+  .product-enterogermina-capsules-page .enterogermina-capsules-formula-core {
+    width: min(100%, 260px);
+    height: 210px;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-enterogermina-capsules-page .enterogermina-capsules-formula-product {
+    bottom: 28%;
+    width: min(100%, 240px);
+  }
+
+  .product-enterogermina-capsules-page .enterogermina-capsules-formula-pack::after {
+    bottom: 20%;
+  }
+
+  .product-enterogermina-forte-page .enterogermina-forte-formula-core {
+    width: min(100%, 260px);
+    height: 210px;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-enterogermina-forte-page .enterogermina-forte-formula-product {
+    top: 50%;
+    bottom: auto;
+    width: min(108%, 276px);
+    transform: translate(-50%, -50%);
+  }
+
+  .product-enterogermina-forte-page .enterogermina-forte-formula-pack::after {
+    bottom: 20%;
+  }
+
+  .product-sinulan-page .sinulan-formula-core {
+    width: min(100%, 280px);
+    height: 225px;
+    margin-bottom: 1rem;
+  }
+
+  .product-sinulan-page .sinulan-formula-product {
+    bottom: 14%;
+    width: 100%;
+  }
+
+  .product-sinulan-page .sinulan-formula-pack::after {
+    bottom: 13%;
+  }
+
+  .product-edarbi-page .edarbi-formula-core {
+    width: min(100%, 300px);
+    height: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .product-edarbi-page .edarbi-formula-product {
+    bottom: 22%;
+    width: 100%;
+  }
+
+  .product-edarbi-page .edarbi-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-edarbi-page .edarbi-formula-point,
+  .product-edarbi-page .edarbi-formula-point--azilsartan,
+  .product-edarbi-page .edarbi-formula-point--chlorthalidone,
+  .product-edarbi-page .edarbi-formula-point--control {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-cardiomagnil-page .cardiomagnil-formula-core {
+    width: min(100%, 300px);
+    height: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .product-cardiomagnil-page .cardiomagnil-formula-product {
+    bottom: 22%;
+    width: min(100%, 260px);
+  }
+
+  .product-cardiomagnil-page .cardiomagnil-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-cardiomagnil-page .cardiomagnil-formula-point,
+  .product-cardiomagnil-page .cardiomagnil-formula-point--asa,
+  .product-cardiomagnil-page .cardiomagnil-formula-point--magnesium,
+  .product-cardiomagnil-page .cardiomagnil-formula-point--format {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-noshpa-page .noshpa-formula-core {
+    width: min(100%, 320px);
+    height: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .product-noshpa-page .noshpa-formula-product {
+    bottom: 24%;
+    width: min(100%, 300px);
+  }
+
+  .product-noshpa-page .noshpa-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-noshpa-page .noshpa-formula-point,
+  .product-noshpa-page .noshpa-formula-point--drotaverine,
+  .product-noshpa-page .noshpa-formula-point--spasm,
+  .product-noshpa-page .noshpa-formula-point--format {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-noshpa-forte-page .noshpa-forte-formula-core {
+    width: min(100%, 320px);
+    height: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .product-noshpa-forte-page .noshpa-forte-formula-product {
+    bottom: 28%;
+    width: min(86%, 260px);
+    max-height: 150px;
+  }
+
+  .product-noshpa-forte-page .noshpa-forte-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-noshpa-forte-page .noshpa-forte-formula-point,
+  .product-noshpa-forte-page .noshpa-forte-formula-point--drotaverine,
+  .product-noshpa-forte-page .noshpa-forte-formula-point--spasm,
+  .product-noshpa-forte-page .noshpa-forte-formula-point--format {
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-essentiale-page .essentiale-formula-core {
+    top: auto;
+    left: auto;
+    width: min(100%, 260px);
+    height: 230px;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .product-essentiale-page .essentiale-formula-product {
+    bottom: 14%;
+    max-width: 150px;
+    max-height: 210px;
+  }
+
+  .product-essentiale-page .essentiale-formula-pack::after {
+    bottom: 12%;
+  }
+
+  .product-essentiale-page .essentiale-formula-point,
+  .product-essentiale-page .essentiale-formula-point--phospholipids,
+  .product-essentiale-page .essentiale-formula-point--liver,
+  .product-essentiale-page .essentiale-formula-point--format {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-nizoral-page .nizoral-formula-core {
+    top: auto;
+    left: auto;
+    width: min(100%, 280px);
+    height: 190px;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .product-nizoral-page .nizoral-formula-product {
+    bottom: 26%;
+    max-width: 230px;
+    max-height: 118px;
+  }
+
+  .product-nizoral-shampoo-page .nizoral-formula-core {
+    height: 300px;
+  }
+
+  .product-nizoral-shampoo-page .nizoral-formula-product {
+    bottom: 14%;
+    max-width: 220px;
+    max-height: 245px;
+  }
+
+  .product-nizoral-page .nizoral-formula-pack::after {
+    bottom: 18%;
+  }
+
+  .product-nizoral-page .nizoral-formula-point,
+  .product-nizoral-page .nizoral-formula-point--component,
+  .product-nizoral-page .nizoral-formula-point--use,
+  .product-nizoral-page .nizoral-formula-point--format {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .product-aqualor-page .aqualor-formula-core {
+    top: auto;
+    left: auto;
+    width: min(100%, 260px);
+    height: 230px;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .product-aqualor-page .aqualor-formula-product {
+    bottom: 14%;
+    max-width: 150px;
+    max-height: 210px;
+  }
+
+  .product-aqualor-forte-page .aqualor-formula-core {
+    height: 218px;
+  }
+
+  .product-aqualor-forte-page .aqualor-formula-product {
+    max-width: 136px;
+    max-height: 178px;
+  }
+
+  .product-aqualor-baby-page .aqualor-formula-core {
+    height: 214px;
+  }
+
+  .product-aqualor-baby-page .aqualor-formula-product {
+    max-width: 112px;
+    max-height: 172px;
+  }
+
+  .product-aqualor-gorlo-page .aqualor-formula-core {
+    height: 210px;
+  }
+
+  .product-aqualor-gorlo-page .aqualor-formula-product {
+    max-width: 96px;
+    max-height: 168px;
+  }
+
+  .product-aqualor-soft-page .aqualor-formula-core {
+    height: 210px;
+  }
+
+  .product-aqualor-soft-page .aqualor-formula-product {
+    max-width: 104px;
+    max-height: 168px;
+  }
+
+  .product-aqualor-soft-mini-page .aqualor-formula-core {
+    height: 210px;
+  }
+
+  .product-aqualor-soft-mini-page .aqualor-formula-product {
+    max-width: 96px;
+    max-height: 168px;
+  }
+
+  .product-aqualor-page .aqualor-formula-pack::after {
+    bottom: 12%;
+  }
+
+  .product-aqualor-page .aqualor-formula-point,
+  .product-aqualor-page .aqualor-formula-point--seawater,
+  .product-aqualor-page .aqualor-formula-point--nose,
+  .product-aqualor-page .aqualor-formula-point--format {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-page .product-hero {
+    padding-top: 2rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .product-detail-page .product-hero-image {
+    min-height: 210px;
+  }
+
+  .product-detail-page .product-hero-image > img {
+    max-height: 175px;
+  }
+
+  .product-magne-page .product-hero-image > .magne-hero-packshot {
+    max-height: 175px;
+  }
+
+  .product-enterogermina-page .product-hero-image > .enterogermina-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-enterogermina-capsules-page .product-hero-image > .enterogermina-capsules-hero-packshot {
+    max-height: 160px;
+  }
+
+  .product-enterogermina-forte-page .product-hero-image > .enterogermina-forte-hero-packshot {
+    max-height: 155px;
+  }
+
+  .product-sinulan-page .product-hero-image > .sinulan-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-edarbi-page .product-hero-image > .edarbi-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-cardiomagnil-page .product-hero-image > .cardiomagnil-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-noshpa-page .product-hero-image > .noshpa-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-noshpa-forte-page .product-hero-image > .noshpa-forte-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-gecsikon-page .product-hero-image > .gecsikon-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-klopidogrel-teva-page .product-hero-image > .klopidogrel-teva-hero-packshot {
+    max-height: 145px;
+  }
+
+  .product-essentiale-page .product-hero-image > .essentiale-hero-packshot {
+    max-height: 165px;
+  }
+
+  .product-nizoral-page .product-hero-image > .nizoral-hero-packshot {
+    max-height: 150px;
+  }
+
+  .product-nizoral-shampoo-page .product-hero-image > .nizoral-hero-packshot {
+    max-height: 245px;
+  }
+
+  .product-aqualor-page .product-hero-image > .aqualor-hero-packshot {
+    max-height: 170px;
+  }
+
+  .product-aqualor-forte-page .product-hero-image > .aqualor-forte-hero-packshot {
+    max-height: 168px;
+  }
+
+  .product-aqualor-baby-page .product-hero-image > .aqualor-baby-hero-packshot {
+    max-height: 168px;
+  }
+
+  .product-aqualor-gorlo-page .product-hero-image > .aqualor-gorlo-hero-packshot {
+    max-height: 168px;
+  }
+
+  .product-aqualor-soft-page .product-hero-image > .aqualor-soft-hero-packshot {
+    max-height: 168px;
+  }
+
+  .product-aqualor-soft-mini-page .product-hero-image > .aqualor-soft-mini-hero-packshot {
+    max-height: 168px;
+  }
+
+  .product-enterogermina-page .enterogermina-formula-core {
+    height: 190px;
+  }
+
+  .product-enterogermina-capsules-page .enterogermina-capsules-formula-core {
+    height: 195px;
+  }
+
+  .product-enterogermina-forte-page .enterogermina-forte-formula-core {
+    height: 195px;
+  }
+
+  .product-sinulan-page .sinulan-formula-core {
+    height: 205px;
+  }
+
+  .product-edarbi-page .edarbi-formula-core {
+    height: 185px;
+  }
+
+  .product-cardiomagnil-page .cardiomagnil-formula-core {
+    height: 185px;
+  }
+
+  .product-noshpa-page .noshpa-formula-core {
+    height: 185px;
+  }
+
+  .product-essentiale-page .essentiale-formula-core {
+    height: 205px;
+  }
+
+  .product-essentiale-page .essentiale-formula-product {
+    max-height: 190px;
+  }
+
+  .product-nizoral-page .nizoral-formula-core {
+    height: 172px;
+  }
+
+  .product-nizoral-page .nizoral-formula-product {
+    max-width: 210px;
+    max-height: 104px;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-core {
+    height: 208px;
+  }
+
+  .product-gecsikon-page .gecsikon-formula-product {
+    max-width: 218px;
+    max-height: 118px;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-core {
+    height: 208px;
+  }
+
+  .product-klopidogrel-teva-page .klopidogrel-teva-formula-product {
+    max-width: 218px;
+    max-height: 118px;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-core {
+    height: 208px;
+  }
+
+  .product-kamistad-baby-page .kamistad-baby-formula-product {
+    max-width: 218px;
+    max-height: 118px;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-core {
+    height: 208px;
+  }
+
+  .product-psilo-balsam-page .psilo-balsam-formula-product {
+    max-width: 218px;
+    max-height: 118px;
+  }
+
+  .product-aqualor-page .aqualor-formula-core {
+    height: 205px;
+  }
+
+  .product-aqualor-page .aqualor-formula-product {
+    max-height: 190px;
+  }
+
+  .product-aqualor-forte-page .aqualor-formula-core {
+    height: 190px;
+  }
+
+  .product-aqualor-forte-page .aqualor-formula-product {
+    max-height: 158px;
+  }
+
+  .product-aqualor-baby-page .aqualor-formula-core {
+    height: 188px;
+  }
+
+  .product-aqualor-baby-page .aqualor-formula-product {
+    max-height: 148px;
+  }
+
+  .product-aqualor-gorlo-page .aqualor-formula-core {
+    height: 184px;
+  }
+
+  .product-aqualor-gorlo-page .aqualor-formula-product {
+    max-height: 144px;
+  }
+
+  .product-aqualor-soft-page .aqualor-formula-core {
+    height: 184px;
+  }
+
+  .product-aqualor-soft-page .aqualor-formula-product {
+    max-height: 144px;
+  }
+
+  .product-aqualor-soft-mini-page .aqualor-formula-core {
+    height: 184px;
+  }
+
+  .product-aqualor-soft-mini-page .aqualor-formula-product {
+    max-height: 144px;
+  }
+
+  .product-fact-card,
+  .formula-point,
+  .usage-item,
+  .product-note {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .product-detail-page .product-formula {
+    overflow: hidden;
+  }
+
+  .product-detail-page .product-formula-layout {
+    gap: 1.25rem;
+  }
+
+  .formula-showcase {
+    gap: 1rem;
+  }
+
+  .formula-showcase-stage {
+    min-height: 0;
+    padding: 1.5rem 1rem 2.25rem;
+  }
+
+  .formula-showcase-packshot {
+    max-height: 250px;
+  }
+
+  .formula-showcase-pack::after {
+    bottom: -16px;
+    height: 16px;
+  }
+
+  .formula-showcase-points {
+    gap: 0.8rem;
+  }
+
+  .formula-point {
+    gap: 0.9rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .formula-point-media {
+    width: 64px;
+    height: 64px;
+  }
+
+  .formula-point-media img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-page .product-formula {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .product-detail-page .product-formula .product-section-header h2 {
+    font-size: 1.72rem;
+    line-height: 1.18;
+    word-break: break-word;
+  }
+
+  .formula-showcase-packshot {
+    max-height: 210px;
+  }
+
+  .formula-point-body h3 {
+    font-size: 0.98rem;
+  }
+
+  .formula-point-body p {
+    font-size: 0.86rem;
+    line-height: 1.42;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-detail-page .product-hero-image::after,
+  .product-detail-page .product-hero-image > img,
+  .product-detail-page [class*="-formula-point"],
+  .product-detail-page [class*="-formula-line"],
+  .product-detail-page [class*="-formula-dot"],
+  .product-hero-nutrients span,
+  .formula-showcase-packshot {
+    animation: none;
+  }
+
+  .product-detail-page.vitrum-reveal-ready .vitrum-animate,
+  .usage-item {
+    transition: none;
+  }
+}

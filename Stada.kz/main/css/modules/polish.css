@@ -1,0 +1,430 @@
+/* ==========================================================================
+   Shared site layout and visual rhythm
+   ========================================================================== */
+
+:root {
+  --site-content-max: 1180px;
+  --site-gutter: clamp(1rem, 3.2vw, 2rem);
+  --site-shell: min(var(--site-content-max), calc(100% - (var(--site-gutter) * 2)));
+  --site-section-space: clamp(3.75rem, 7vw, 6.5rem);
+  --site-section-space-compact: clamp(2.75rem, 5vw, 4.5rem);
+  --site-copy-max: 70ch;
+  --site-radius-sm: 10px;
+  --site-radius-md: 16px;
+  --site-radius-lg: 24px;
+  --site-border: rgba(0, 69, 135, 0.12);
+  --site-shadow-sm: 0 10px 28px rgba(0, 49, 99, 0.08);
+  --site-shadow-md: 0 22px 54px rgba(0, 49, 99, 0.12);
+}
+
+/* Every primary page region uses the same outer grid. */
+.nav-container,
+.home-section__inner,
+.about-section .container,
+.gallery-section .container,
+.products-section .container,
+.career-section .container,
+.hero-products-container,
+.catalog-hero__inner,
+.catalog-section__inner,
+.catalog-partners__inner,
+.history-hero__inner,
+.history-summary__inner,
+.history-periods__inner,
+.history-timeline__inner,
+.footer-modern,
+.worldwide-hero__inner,
+.worldwide-shell,
+.culture-section__inner,
+.culture-hero__content,
+.product-detail-container,
+.product-detail-page .product-hero-content,
+.product-detail-page .product-section-inner {
+  width: var(--site-shell);
+  max-width: var(--site-content-max);
+  margin-inline: auto;
+}
+
+.catalog-hero,
+.catalog-section,
+.catalog-partners,
+.product-detail-page .product-hero,
+.product-detail-page .product-section,
+.product-detail-page .product-detail-section,
+.product-detail-page .product-where-to-buy {
+  padding-inline: 0;
+}
+
+.nav-container,
+nav.scrolled .nav-container {
+  padding-inline: 0;
+}
+
+/* Hero copy now lands on the exact same left edge as body copy. */
+.stada-home-hero__copy,
+.worldwide-hero--static .worldwide-hero__copy,
+.culture-hero--worldwide .culture-hero__copy {
+  margin-left: max(var(--site-gutter), calc((100% - var(--site-content-max)) / 2));
+}
+
+/* Consistent vertical cadence between major sections. */
+.home-about,
+.home-products,
+.home-news,
+.home-career,
+.culture-purpose,
+.culture-values,
+.culture-action,
+.history-summary,
+.history-timeline,
+.worldwide-shell,
+.catalog-section,
+.catalog-partners,
+.product-section {
+  padding-block: var(--site-section-space);
+}
+
+.culture-next,
+.history-periods,
+.product-note,
+.product-buy {
+  padding-block: var(--site-section-space-compact);
+}
+
+/* A predictable reading measure improves hierarchy and line length. */
+.home-about__copy,
+.culture-purpose__copy,
+.culture-section__header,
+.culture-action__copy,
+.history-section-heading,
+.worldwide-shell__header,
+.catalog-section__header,
+.product-section-heading {
+  max-width: var(--site-copy-max);
+}
+
+.home-section h2,
+.culture-purpose__copy h2,
+.culture-section__header h2,
+.culture-action__copy h2,
+.culture-next h2,
+.history-section-heading h2,
+.worldwide-shell__header h2,
+.catalog-section h2,
+.product-section h2 {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+
+.home-section p,
+.culture-page p,
+.history-page p,
+.worldwide-page p,
+.products-page p,
+.product-detail-page p {
+  text-wrap: pretty;
+}
+
+/* Shared surface language for cards and media. */
+.home-about__visual,
+.home-news-card,
+.home-career-card,
+.culture-purpose__visual,
+.culture-purpose__statement,
+.culture-value-card,
+.culture-action__media,
+.history-summary-card,
+.history-event,
+.worldwide-country-detail,
+.country-picker,
+.globe-card,
+.catalog-card,
+.catalog-partners__inner,
+.product-overview-card,
+.product-usage-card {
+  border-radius: var(--site-radius-md);
+}
+
+.culture-purpose__statement,
+.culture-value-card,
+.history-summary-card,
+.history-event,
+.worldwide-country-detail,
+.country-picker,
+.globe-card,
+.catalog-card,
+.product-overview-card,
+.product-usage-card {
+  border-color: var(--site-border);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.home-about__visual,
+.culture-purpose__visual,
+.culture-action__media,
+.history-hero__visual,
+.history-period__media {
+  overflow: hidden;
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+}
+
+/* Keyboard focus is visible and consistent across the site. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(213, 0, 88, 0.42);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .nav-container,
+  nav.scrolled .nav-container {
+    width: var(--site-shell);
+  }
+
+  .stada-home-hero__copy,
+  .worldwide-hero--static .worldwide-hero__copy,
+  .culture-hero--worldwide .culture-hero__copy {
+    margin-left: var(--site-gutter);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --site-gutter: 1rem;
+    --site-section-space: 3.5rem;
+    --site-section-space-compact: 2.75rem;
+    --site-radius-md: 14px;
+    --site-radius-lg: 18px;
+  }
+
+  .nav-container,
+  nav.scrolled .nav-container {
+    width: 100%;
+    padding-inline: var(--site-gutter);
+  }
+
+  header.stada-home-hero .stada-home-hero__copy,
+  .worldwide-hero--static .worldwide-hero__copy,
+  .culture-hero--worldwide .culture-hero__copy {
+    width: calc(100% - (var(--site-gutter) * 2));
+    margin-left: var(--site-gutter);
+  }
+
+  .culture-hero__facts {
+    right: var(--site-gutter);
+    left: var(--site-gutter);
+  }
+
+  .home-section h2,
+  .culture-purpose__copy h2,
+  .culture-section__header h2,
+  .culture-action__copy h2,
+  .culture-next h2,
+  .history-section-heading h2,
+  .worldwide-shell__header h2,
+  .catalog-section h2,
+  .product-section h2 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.08;
+  }
+}
+
+/* Values heading: a single clear statement without a competing text column. */
+.culture-values .culture-section__header {
+  display: block;
+  max-width: 900px;
+}
+
+.culture-values .culture-section__header h2 {
+  max-width: 22ch;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* About media and facts form one precisely aligned visual module. */
+.about-stats {
+  width: 100%;
+  gap: 0.85rem;
+  align-self: center;
+}
+
+.about-visual {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+}
+
+.about-visual img {
+  min-width: 0;
+  min-height: 0;
+  color: transparent;
+  font-size: 0;
+}
+
+.about-visual__caption {
+  right: clamp(1rem, 3vw, 1.5rem);
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  left: clamp(1rem, 3vw, 1.5rem);
+}
+
+.about-section .stats {
+  width: 100%;
+  gap: 0.7rem;
+}
+
+.about-section .stat {
+  overflow: hidden;
+  width: 100%;
+  min-height: 82px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-radius: var(--site-radius-md);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.about-section .stat::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 0;
+}
+
+.about-section .stat-number {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--site-radius-sm);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 720px) {
+  .about-visual,
+  .about-visual img {
+    min-height: 0;
+  }
+
+  .about-section .stat {
+    min-height: 76px;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* Homepage accessibility and perceived-performance polish */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10010;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--stada-blue);
+  box-shadow: 0 10px 30px rgba(0, 48, 96, 0.2);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.home-main:focus {
+  outline: none;
+}
+
+.home-section[id] {
+  scroll-margin-top: 104px;
+}
+
+.home-main :where(a, button):focus-visible,
+nav :where(a, button):focus-visible,
+#backToTop:focus-visible {
+  outline: 3px solid #e04a87;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .stada-home-hero .hero-btn,
+  .news-carousel__button,
+  .lang-toggle .lang-option,
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
+
+/* Shared line-and-label signature for every major section heading. */
+.culture-eyebrow,
+.history-eyebrow,
+.hero-products-text .hero-label,
+.worldwide-hero--static .worldwide-hero__kicker {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.culture-eyebrow::before,
+.history-eyebrow::before,
+.hero-products-text .hero-label::before,
+.worldwide-hero--static .worldwide-hero__kicker::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 3px;
+  flex: 0 0 2rem;
+  border-radius: 999px;
+  background: var(--stada-red);
+}
+
+.culture-next .culture-eyebrow::before,
+.worldwide-hero--static .worldwide-hero__kicker::before {
+  background: currentColor;
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .section-kicker,
+  .culture-eyebrow,
+  .history-eyebrow,
+  .catalog-eyebrow,
+  .product-detail-page .product-kicker,
+  .hero-products-text .hero-label,
+  .worldwide-hero--static .worldwide-hero__kicker {
+    gap: 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .section-kicker::before,
+  .culture-eyebrow::before,
+  .history-eyebrow::before,
+  .catalog-eyebrow::before,
+  .product-detail-page .product-kicker::before,
+  .hero-products-text .hero-label::before,
+  .worldwide-hero--static .worldwide-hero__kicker::before {
+    width: 1.65rem;
+    flex-basis: 1.65rem;
+  }
+}
