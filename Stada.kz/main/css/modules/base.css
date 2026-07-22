@@ -1099,7 +1099,7 @@ footer {
     transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease, padding 0.22s ease;
   }
   .menu.open {
-    max-height: 430px;
+    max-height: 520px;
     padding: 0.65rem;
     visibility: visible;
     opacity: 1;
@@ -1107,6 +1107,10 @@ footer {
   }
   .menu li {
     width: 100%;
+  }
+  .menu-language {
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(0, 93, 185, 0.12);
   }
   .menu li a {
     display: block;
@@ -1144,16 +1148,15 @@ footer {
     background-color: rgba(0, 93, 185, 0.08);
   }
   .lang-toggle {
-    order: 2;
-    flex: 0 0 auto;
-    width: 92px;
-    min-height: 34px;
-    margin-left: 0;
+    width: 100%;
+    min-height: 44px;
+    margin: 0.45rem 0 0;
+    border-radius: 8px;
   }
   .lang-toggle .lang-option {
-    min-height: 26px;
+    min-height: 36px;
     padding: 0 0.42rem;
-    font-size: 0.78rem;
+    font-size: 0.86rem;
   }
   .about-content {
     flex-direction: column;

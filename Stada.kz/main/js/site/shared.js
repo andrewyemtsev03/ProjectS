@@ -297,6 +297,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.addEventListener('click', toggleMenu);
   }
+
+  // Keep the language switcher in the main navigation on larger screens,
+  // but make it part of the hamburger panel on mobile.
+  const langToggle = document.querySelector('.nav-container > .lang-toggle');
+  const langToggleDesktopMarker = langToggle ? document.createComment('language-toggle') : null;
+  if (langToggle && langToggleDesktopMarker) {
+    const mobileLanguageItem = document.createElement('li');
+    mobileLanguageItem.className = 'menu-language';
+    langToggle.parentNode.insertBefore(langToggleDesktopMarker, langToggle);
+
+    const placeLanguageToggle = () => {
+      if (window.innerWidth <= 768) {
+        if (langToggle.parentNode !== mobileLanguageItem) {
+          mobileLanguageItem.appendChild(langToggle);
+          menu.appendChild(mobileLanguageItem);
+        }
+      } else if (langToggle.parentNode === mobileLanguageItem) {
+        langToggleDesktopMarker.parentNode.insertBefore(langToggle, langToggleDesktopMarker.nextSibling);
+        mobileLanguageItem.remove();
+      }
+    };
+
+    placeLanguageToggle();
+    window.addEventListener('resize', placeLanguageToggle);
+  }
   // Close mobile menu when clicking a nav link
   document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', () => {
